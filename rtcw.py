@@ -26,50 +26,7 @@ def stripColors(line):
     ret = line
     for color in colors:
         ret = ret.replace(color,"")
-    return ret;
-
-regexes = {
-    "grenade" : "^\[skipnotify\](.*) was exploded by (.*)[\'s] grenade",
-    "Panzerfaust" : "^\[skipnotify\](.*) was blasted by (.*)[\'s] Panzerfaust",
-    "thompson" : "^\[skipnotify\](.*) was killed by (.*)[\'s] Thompson",
-    "mp40" : "^\[skipnotify\](.*) was killed by (.*)[\'s] MP40",
-    "sten" : "^\[skipnotify\](.*) was killed by (.*)[\'s] Sten",
-    "luger" : "^\[skipnotify\](.*) was killed by (.*)[\'s] Luger 9mm",
-    "colt" : "^\[skipnotify\](.*) was killed by (.*)[\'s] \.45ACP 1911",
-    "sniper" : "^\[skipnotify\](.*) was killed by (.*)[\'s] sniper rifle",
-    "mauser" : "^\[skipnotify\](.*) was killed by (.*)[\'s] Mauser",
-    "venom" : "^\[skipnotify\](.*) was ventilated by (.*)[\'s] Venom",
-    "flamethrower" : "^\[skipnotify\](.*) was cooked by (.*)[\'s] flamethrower",
-    "knife" : "^\[skipnotify\](.*) was stabbed by (.*)[\'s] knife",
-    "support" : "^\[skipnotify\](.*) was blasted by (.*)[\'s] support fire",
-    "artillery" : "^\[skipnotify\](.*) was shelled by (.*)[\'s] artillery support",
-    "dynamite" : "^\[skipnotify\](.*) was blasted by (.*)[\'s] dynamite",
-    "mg42" : "^\[skipnotify\](.*) was perforated by (.*)[\'s] crew-served MG42",
-
-    "crush" : "^\[skipnotify\](.*) was crushed\.",
-    "died" : "^\[skipnotify\](.*) died\.",
-    "drown" : "^\[skipnotify\](.*) drowned\.",
-    "fell" : "^\[skipnotify\](.*) fell to his death\.",
-    "Vaporized" : "^\[skipnotify\](.*) vaporized himself\.",
-    "artyd" : "^\[skipnotify\](.*) fired-for-effect on himself\.",
-    "canned" : "^\[skipnotify\](.*) obliterated himself\.",
-    "dynamited" : "^\[skipnotify\](.*) dynamited himself to pieces\.",
-    "Dove" : "^\[skipnotify\](.*) dove on his own grenade\.",
-
-    "rename"   : "^\[skipnotify\](.*) renamed to (.*)",
-    "teamkill" : "^\[skipnotify\](.*) WAS KILLED BY TEAMMATE (.*)",
-    "suicide"  : "^\[skipnotify\](.*) killed himself",
-    "info"     : "^\[skipnotify\]\*\*\* INFO:(.*)",
-    "chat"     : "^\[skipnotify\](.*)\: (.*)",
-    "teamchat" : "^\[skipnotify\]\((.*)\: (.*)",
-    "vote"     : "^\[skipnotify\](.*) called a vote",
-    "kick"     : "^\[skipnotify\](.*) player kicked",
-    
-    "fightline" : "^\[skipnotify\]FIGHT\!(.*)",
-    "fullhold"  : "^\[skipnotify\](.*) Objective NOT reached in time",
-    "timelimit" : "^\[skipnotify]Timelimit hit\."
-}
-    
+    return ret;  
 
 class LogLine:
     
