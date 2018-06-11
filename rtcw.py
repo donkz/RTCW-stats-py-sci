@@ -360,5 +360,34 @@ print(decypher_name("----E corpserrr", valid_names))
 debug = True
 x = print("kek") if debug else ""
 
+line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
+def process_OSP_line(line):
+       #original php $split = preg_split("/[\s]+/", $statsline);
+tokens = re.match("\s+", line)
+tokens
+tokens[0]
+		tokenslen = len(tokens)
+		
+		ospDF = pd.DataFrame(columns=["team","frags","deaths","suicides","teamkills","gibs","dmg","dmr","teamdmg","frageff","damageeff","damageperfrag","score"])
+		$newstats["team"] = $split[0];
+		$newstats["frags"] = $split[$len-11];
+		$newstats["deaths"] = $split[$len-10];
+		$newstats["suicides"] = $split[$len-9];
+		$newstats["teamkills"] = $split[$len-8];
+		$newstats["gibs"] = $split[$len-6];
+		$newstats["dmg"] = $split[$len-5];
+		$newstats["dmr"] = $split[$len-4];
+		$newstats["teamdmg"] = $split[$len-3];
+		$newstats["frageff"] = $newstats["deaths"] == 0 ? $newstats["frags"] : $newstats["frags"] / $newstats["deaths"];
+		$newstats["damageeff"] = $newstats["dmr"] == 0 ? $newstats["dmg"] : $newstats["dmg"] / $newstats["dmr"];
+		$newstats["damageperfrag"] = $newstats["frags"] == 0 ? 0 : $newstats["dmg"] / $newstats["frags"];
+		$newstats["score"] = $split[$len-2];
+		
+		// reassemble the name
+		$name = $split[1];
+		for($l=2; $l<=$len-12; $l++)
+			$name .= " " . $split[$l];
+
+
 
             
