@@ -14,15 +14,16 @@ def openFile(filename):
         return lines
 
 def setup_colors():
+    '''Make an array for stripColors function'''
     colors_arr = []
     for x in range(33,126):
         colors_arr.append("^"+chr(x))
-
     return colors_arr
 
 colors = setup_colors()
     
 def stripColors(line):
+    '''Strip character combinations like ^7don^eN^7ka to doNka'''
     ret = line
     for color in colors:
         ret = ret.replace(color,"")
@@ -56,8 +57,15 @@ class StatLine:
          self.mod=mod
          self.victim=victim
 
-
-
+#Disassemble the following lines into a dataframe
+#                                Kll Dth Sui TK Eff Gib DG    DR      TD  Score
+#line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
+#line = "Allies /mute sem        19  10   2  2  65   4  3588  2085  226     46"
+def process_OSP_line(line):
+    tokens = re.split("\s+", line)    
+    player = " ".join(tokens[1:len(tokens)-11])
+    temp = pd.DataFrame([[player, tokens[0],tokens[-11],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2]]], columns=osp_columns)
+    return temp
 
 EVENT_KILL = "kill"
 EVENT_SUICIDE = "Suicide"
@@ -93,6 +101,8 @@ WEAPON_AS = "Airstrike"
 WEAPON_ART = "Artillery"
 WEAPON_DYN = "Dynamite"
 WEAPON_MG42 = "MG42"
+
+osp_columns=["player", "team","frags","deaths","suicides","teamkills","Eff", "gibs","dmg","dmr","teamdmg","score"]
 
 line_types = [
         ["grenade", "^\[skipnotify\](.*) was exploded by (.*)\'s grenade",EVENT_KILL, WEAPON_GRENADE,True],
@@ -177,9 +187,12 @@ for x in range(0,fileLen):
     for key, value in log_lines.items():
         x = re.match(value.regex,line)
         if x:
+            line_order = line_order + 1
+            
             if value.event == EVENT_START and game_paused == False:
                 game_started = True
                 round_order = round_order + 1
+                ospDF = pd.DataFrame(columns=osp_columns)
             
             if value.event == EVENT_PAUSE:
                 game_paused = True
@@ -187,8 +200,9 @@ for x in range(0,fileLen):
             if value.event == EVENT_DEF_WIN:
                 game_started = False
                 game_paused = False
-                
-            line_order = line_order + 1
+            
+            if value.event == EVENT_OSP_STATS_ALLIES or value.event == EVENT_OSP_STATS_AXIS:
+                ospDF = ospDF.append(process_OSP_line(line))
             
             if len(x.groups()) > 0: 
                 victim = x[1]
@@ -249,7 +263,12 @@ stats["Deaths2"]= stats["Deaths"] + stats[EVENT_SUICIDE]
 stats = stats.drop(index='')
 stats.fillna(0)
 pd.options.display.float_format = '{:0,.0f}'.format
-print(stats[["kill","Deaths2","Suicide","TK","TKd"]].fillna("0"))
+stats_all = stats.join(ospDF)
+cols = ["kill","Deaths2","Suicide","TK","TKd"] + osp_columns[1:]
+print(stats_all[cols].fillna("0"))
+
+
+
 
 #Given a team of player names create a matrix of character vs position and figure out prominent chars
 #example: players(["+-ab", "+-cd" ) will return +- 
@@ -360,33 +379,6 @@ print(decypher_name("----E corpserrr", valid_names))
 debug = True
 x = print("kek") if debug else ""
 
-line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
-def process_OSP_line(line):
-       #original php $split = preg_split("/[\s]+/", $statsline);
-tokens = re.match("\s+", line)
-tokens
-tokens[0]
-		tokenslen = len(tokens)
-		
-		ospDF = pd.DataFrame(columns=["team","frags","deaths","suicides","teamkills","gibs","dmg","dmr","teamdmg","frageff","damageeff","damageperfrag","score"])
-		$newstats["team"] = $split[0];
-		$newstats["frags"] = $split[$len-11];
-		$newstats["deaths"] = $split[$len-10];
-		$newstats["suicides"] = $split[$len-9];
-		$newstats["teamkills"] = $split[$len-8];
-		$newstats["gibs"] = $split[$len-6];
-		$newstats["dmg"] = $split[$len-5];
-		$newstats["dmr"] = $split[$len-4];
-		$newstats["teamdmg"] = $split[$len-3];
-		$newstats["frageff"] = $newstats["deaths"] == 0 ? $newstats["frags"] : $newstats["frags"] / $newstats["deaths"];
-		$newstats["damageeff"] = $newstats["dmr"] == 0 ? $newstats["dmg"] : $newstats["dmg"] / $newstats["dmr"];
-		$newstats["damageperfrag"] = $newstats["frags"] == 0 ? 0 : $newstats["dmg"] / $newstats["frags"];
-		$newstats["score"] = $split[$len-2];
-		
-		// reassemble the name
-		$name = $split[1];
-		for($l=2; $l<=$len-12; $l++)
-			$name .= " " . $split[$l];
 
 
 
