@@ -148,10 +148,45 @@ line_types = [
         ["ospallies", "^Allies",EVENT_OSP_STATS_ALLIES, "", False]
         ]
 
-
 log_lines = {}  
 for i in line_types:
     log_lines[i[0]] = LogLine(i[0], i[1],i[2], i[3],i[4])
+    
+G_AXIS = "Axis"
+G_ALLIES = "Allies"
+O_WIN = "Offense win"
+D_WIN = "Defense win"
+O_FLAG = "Offense flag"
+D_FLAG = "Defense flag"
+O_OBJ = "Mid objective"
+
+
+map_announce = {
+        "mp_ice" : [
+                  [O_WIN,"Offense win", "Axis transmitted the documents!"],
+                  [D_FLAG,"Defense flag", "Allies reclaim the Shipping Halls!"],
+                  [O_FLAG,"Offense flag","Axis captures the Shipping Halls!"],
+                  [O_OBJ,"Service Door breached!"],
+                  [O_OBJ,"Fortress Wall breached!"]
+                ]
+        }
+        
+class RTCWMap:
+      
+    def __init__(self, code, name, announcements, defense, offense, timelimit):
+         self.code = code
+         self.name = name
+         self.announcements = announcements
+         self.defense = defense
+         self.offense = offense
+         self.timelimit = timelimit
+         
+maps = {}  
+maps["mp_ice"] = RTCWMap("mp_ice", "Ice", map_announce["mp_ice"], G_ALLIES, G_AXIS, 10)
+        
+
+    
+
 
 ##############################################
 #        FILE PROCESSING                     #
@@ -193,6 +228,9 @@ for x in range(0,fileLen):
                 game_started = True
                 round_order = round_order + 1
                 ospDF = pd.DataFrame(columns=osp_columns)
+            
+            if value.event == EVENT_OBJECTIVE:
+                print(line)
             
             if value.event == EVENT_PAUSE:
                 game_paused = True
@@ -260,10 +298,11 @@ stats["Deaths"]= deaths[EVENT_KILL]
 stats["TKd"]= deaths[EVENT_TEAMKILL]
 stats["Suicide"]= deaths[EVENT_SUICIDE]
 stats["Deaths2"]= stats["Deaths"] + stats[EVENT_SUICIDE]
-stats = stats.drop(index='')
-stats.fillna(0)
+stats = stats.drop(index='') #empty players
+stats = stats.fillna(0)
 pd.options.display.float_format = '{:0,.0f}'.format
-stats_all = stats.join(ospDF)
+ospDF.index = ospDF["player"]
+stats_all = stats.join(ospDF) #Totals fall out naturally
 cols = ["kill","Deaths2","Suicide","TK","TKd"] + osp_columns[1:]
 print(stats_all[cols].fillna("0"))
 
