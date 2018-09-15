@@ -5,7 +5,7 @@ from datetime import datetime
 
 from utils.rtcwcolors import stripColors , setup_colors
 from constants.logtext import Const, LogLine
-from textsci.teams import add_team_name, get_captain
+from textsci.teams import add_team_name, get_captain, get_round_guid
 
 class StatLine:
     
@@ -25,15 +25,17 @@ class StatLine:
 
 class MatchLine:
       
-    def __init__(self, file_date, log_date, round_guid, round_order, round_num, players, final_round, winner):
+    def __init__(self, file_date, log_date, round_guid, round_order, round_num, players, defense_hold, winner, round_time, round_diff):
          self.file_date = file_date
          self.log_date = log_date
          self.round_guid = round_guid
          self.round_order=round_order
          self.round_num=round_num
          self.players = players
-         self.final_round = final_round
+         self.defense_hold = defense_hold
          self.winner = winner
+         self.round_time = round_time
+         self.round_diff = round_diff
 
 class FileProcessor:
 
@@ -63,9 +65,24 @@ class FileProcessor:
             for line in ins:
                 lines.append(line)
             return lines
+        
+    def summarize_round(self, logdf, ospdf):
+        kills = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["killer","event"])["event"].count().unstack()
+        deaths = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["victim","event"])["event"].count().unstack()
 
-    def get_match_guid(stats_all):
-        return get_captain(stats_all, "Allies") + "-" + get_captain(stats_all, "Axis") + "-" + "-".join(stats_all.sort_values("kill")["kill"].astype(int).astype(str))
+        stats  = pd.DataFrame(kills[Const.EVENT_KILL])
+        stats["TK"]  = kills[Const.EVENT_TEAMKILL]
+        stats["Deaths"]= deaths[Const.EVENT_KILL]
+        stats["TKd"]= deaths[Const.EVENT_TEAMKILL]
+        stats["Suicide"]= deaths[Const.EVENT_SUICIDE]
+        stats["Deaths2"]= stats["Deaths"] + stats[Const.EVENT_SUICIDE]
+        stats = stats.drop(index='') #empty players
+        stats = stats.fillna(0)
+        pd.options.display.float_format = '{:0,.0f}'.format
+        ospdf.index = ospdf["player"]
+        stats_all = stats.join(ospdf) #Totals fall out naturally
+        stats_all = add_team_name(stats_all)
+        return stats_all
 
     def process_log(self):
         #init
@@ -75,9 +92,14 @@ class FileProcessor:
         game_started = False
         game_paused = False
         line_num = 0
-        log_events = []
+        matches = []
         osp_stats = {}
         log_date = ""
+        defense_hold = 0
+        log_date = str(datetime.now())
+        
+        log_events = []
+        tmp_log_events = []
         
         #const
         colors = setup_colors()
@@ -105,52 +127,83 @@ class FileProcessor:
                 if x:
                     line_order = line_order + 1
                     
+                    if value.event == Const.EVENT_LOGFILE_TIMESTAMP: #beginning of every logfile
+                        #Sun Apr 08 18:51:44 2018
+                        log_date = str(datetime.strptime(x[1].strip(), "%a %b %d %H:%M:%S %Y" ))
+                    
                     if value.event == Const.EVENT_START and game_paused == False:
                         game_started = True
                         round_order = round_order + 1
                         ospDF = pd.DataFrame(columns=Const.osp_columns)
-                        print("Round begin")
-                    
-                    if value.event == Const.EVENT_PAUSE:
+                        tmp_log_events = []
+                        tmp_stats_all = []
+                        new_match_line = MatchLine(file_date, log_date, "new_guid", round_order, None, None, None, None, None, None)
+                                         
+                    if value.event == Const.EVENT_PAUSE: #game paused. Unpause will result in FIGHT line again
                         game_paused = True
-                        
-                    if value.event == Const.EVENT_MAIN_TIMELIMIT or value.event == Const.EVENT_MAIN_SERVER_TIME: #need to add all ending scenarios here
-                        game_started = False
-                        game_paused = False
-                        print("Round end")
-                        
-                    if value.event == Const.EVENT_OSP_REACHED:
-                        game_started = False
-                        game_paused = False
-                        osp_stats[round_order] = ospDF
-                        print("Round 2 end osp stats. time " + x[1] + " original " +x[2] )
-                        
-                    if value.event == Const.EVENT_OSP_NOT_REACHED:
-                        game_started = False
-                        game_paused = False
-                        osp_stats[round_order] = ospDF
-                        print("Round 2 end osp stats " + x[1])
-                    
-                    if value.event == Const.EVENT_OSP_TIME_SET:
-                        game_started = False
-                        game_paused = False
-                        osp_stats[round_order] = ospDF
-                        print("Round 1 end osp stats " + x[1])
-                         
-                    if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS:
-                        ospline = self.process_OSP_line(line)
-                        ospDF = ospDF.append(ospline)
-                     
-                    if value.event == Const.EVENT_OSP_STATS_ACCURACY: 
-                        #not everything deserves it's own function
+
+                    if value.event == Const.EVENT_OSP_STATS_ACCURACY: #happens aat the end of every round for a player that is ON A TEAM
                         #Accuracy info for: /mute doNka (2 Rounds)
                         #get round number
-                        round_num = int(line.split("(")[-1].split(" ")[0]) 
+                        new_match_line.round_num = int(line.split("(")[-1].split(" ")[0])
                     
-                    if value.event == Const.EVENT_LOGFILE_TIMESTAMP:
-                        #Sun Apr 08 18:51:44 2018
-                        log_date = str(datetime.strptime(x[1].strip(), "%a %b %d %H:%M:%S %Y" ))
+                    if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS: #OSP team stats per player
+                        ospline = self.process_OSP_line(line)
+                        ospDF = ospDF.append(ospline)
+                        
+                    if value.event == Const.EVENT_MAIN_TIMELIMIT: #happens before OSP stats if the time ran out
+                        game_started = False
+                        game_paused = False
+                        new_match_line.defense_hold = 1
+                        # implement timelimit hit. It appears before OSP stats only when clock ran out
+                                           
+                    if value.event == Const.EVENT_MAIN_SERVER_TIME: 
+                        #happens after OSP stats, but not when map changes
+                        #also happens anytime ref changes timelimit 
+                        game_started = False
+                        game_paused = False
+                        new_match_line.round_time = float(x[1])
+                        
+                    if value.event == Const.EVENT_OSP_REACHED: #osp round 2 defense lost
+                        game_started = False
+                        game_paused = False
+                        time1 = x[1].strip().split(":")
+                        roundtime = float(time1[0]) + float(time1[1])/60
+                        new_match_line.round_time = roundtime 
+                        time2 = x[2].strip().split(":")
+                        new_match_line.round_diff = float(time2[0]) + float(time2[1])/60 - roundtime
+                        new_match_line.round_num = 2
+                        
+                    if value.event == Const.EVENT_OSP_NOT_REACHED: #osp round 2 defense lost
+                        game_started = False
+                        game_paused = False
+                        time = x[1].strip().split(":")
+                        roundtime = float(time[0]) + float(time[1])/60
+                        new_match_line.round_diff = 0
+                        new_match_line.defense_hold = 1
+                        round_num = 2
+                        new_match_line.round_time = roundtime
                     
+                    if value.event == Const.EVENT_OSP_TIME_SET: #osp round 1 end. Not indicative of win or loss
+                        game_started = False
+                        game_paused = False
+                        time = x[1].strip().split(":")
+                        new_match_line.round_time = float(time[0]) + float(time[1])/60
+                        new_match_line.round_num = 1
+                    
+                    if value.event == Const.EVENT_OSP_REACHED or value.event == Const.EVENT_OSP_NOT_REACHED or value.event == Const.EVENT_OSP_TIME_SET:
+                        #if either of the 3 above, dump stats
+                        #TODO add guid, players, winner, full hold
+                        tmplogdf = pd.DataFrame([vars(e) for e in tmp_log_events])
+                        osp_stats[round_order] = ospDF
+                        tmp_stats_all = self.summarize_round(tmplogdf, ospDF)
+                        round_guid = get_round_guid(tmp_stats_all)
+                        tmplogdf["round_guid"] = "a"
+                        new_match_line.round_guid = round_guid
+                        matches.append(new_match_line)
+                        log_events = log_events + tmp_log_events
+                         
+                                                          
                     if len(x.groups()) > 0: 
                         victim = x[1]
 #                if killer.find("doNka") > 0: print(line)
@@ -185,7 +238,7 @@ class FileProcessor:
             
             if stat_entry:
                 processedLine = "Logged" #stat_entry.toString()
-                log_events.append(stat_entry)
+                tmp_log_events.append(stat_entry)
                 line_num = line_num + 1
                 #print("Added " + processedLine)
             elif ospline is not None:
@@ -202,5 +255,6 @@ class FileProcessor:
         file.close() 
         
         logdf = pd.DataFrame([vars(e) for e in log_events])
+        matchesdf = pd.DataFrame([vars(e) for e in matches])
         logdf = logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
-        return {"logdf":logdf, "ospdf":ospDF, "matchesdf":None}
+        return {"logdf":logdf, "ospdf":ospDF, "matchesdf":matchesdf}

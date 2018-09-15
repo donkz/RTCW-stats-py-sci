@@ -1,0 +1,815 @@
+timestampIgnored	logfile opened on Sun Apr 08 18:51:44 2018
+ChatIgnored	
+SuicideIgnored	[skipnotify]----E jaytee killed himself.
+StartIgnored	[skipnotify]FIGHT!
+killLogged	[skipnotify]/mute eternal was exploded by ----E Spuddy's grenade
+Team killLogged	[skipnotify]/mute Op!o WAS KILLED BY TEAMMATE /mute eternal
+killLogged	[skipnotify]/mute nigel was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Dynamite planted near the Service Door!
+ChatIgnored	[skipnotify](/mute eternal) (South Service Halls): lieutenant MP40
+ChatIgnored	[skipnotify](/mute eternal) (South Service Halls): lieutenant MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute Op!o was exploded by ----E jaytee's grenade
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's Thompson
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]----E Spuddy was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]----E oreo was blasted by /mute ABomB's Panzerfaust
+ChatIgnored	[skipnotify]: (/mute doNka)(South Service Halls): I need ammo!
+ChatIgnored	[skipnotify]: (/mute doNka)(South Service Halls): I need ammo!
+ChatIgnored	[skipnotify]: (/mute sem)(South Service Halls): I need ammo!
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+killLogged	[skipnotify]/mute eternal was exploded by ----E caffeine's grenade
+killLogged	[skipnotify]----E v1k!ng was killed by /mute nigel's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E caffeine's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Service Door breached!
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+killLogged	[skipnotify]/mute ABomB was killed by ----E caffeine's MP40
+killLogged	[skipnotify]----E caffeine was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]----E oreo was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]/mute nigel was killed by ----E jaytee's MP40
+killLogged	[skipnotify]----E jaytee was exploded by /mute nigel's grenade
+killLogged	[skipnotify]----E v1k!ng was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute sem was killed by ----E Spuddy's MP40
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+killLogged	[skipnotify]----E copserr was killed by /mute doNka's Thompson
+SuicideLogged	[skipnotify]----E Spuddy killed himself.
+Team killLogged	[skipnotify]----E oreo WAS KILLED BY TEAMMATE ----E v1k!ng
+killLogged	[skipnotify]/mute doNka was killed by ----E copserr's MP40
+killLogged	[skipnotify]----E oreo was exploded by /mute sem's grenade
+killLogged	[skipnotify]----E jaytee was exploded by /mute sem's grenade
+killLogged	[skipnotify]----E v1k!ng was killed by /mute nigel's MP40
+killLogged	[skipnotify]----E caffeine was shelled by /mute eternal's artillery support
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 58/28]
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+killLogged	[skipnotify]/mute nigel was exploded by ----E copserr's grenade
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+killLogged	[skipnotify]/mute sem was killed by ----E Spuddy's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+SuicideLogged	[skipnotify]/mute ABomB vaporized himself.
+killLogged	[skipnotify]/mute Op!o was killed by ----E oreo's MP40
+Team killLogged	[skipnotify]----E jaytee WAS KILLED BY TEAMMATE ----E copserr
+killLogged	[skipnotify]/mute eternal was killed by ----E caffeine's MP40
+Team killLogged	[skipnotify]----E oreo WAS KILLED BY TEAMMATE ----E copserr
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+killLogged	[skipnotify]----E jaytee was killed by /mute doNka's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Dynamite planted near the Fortress Wall!
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]----E Spuddy was blasted by /mute nigel's support fire
+killLogged	[skipnotify]/mute Op!o was killed by ----E v1k!ng's MP40
+killLogged	[skipnotify]/mute nigel was killed by ----E copserr's MP40
+killLogged	[skipnotify]----E oreo was killed by /mute doNka's Thompson
+ChatIgnored	[skipnotify]: (/mute Op!o)(Allied Stronghold): Medic!
+killLogged	[skipnotify]----E copserr was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute sem was killed by ----E jaytee's Luger 9mm
+killLogged	[skipnotify]----E jaytee was killed by /mute doNka's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E caffeine's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+killLogged	[skipnotify]----E caffeine was killed by /mute eternal's MP40
+ChatLogged	[skipnotify]----E jaytee was killed by /mute ABomB
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+killLogged	[skipnotify]/mute ABomB was killed by ----E copserr's MP40
+killLogged	[skipnotify]/mute sem was killed by ----E Spuddy's MP40
+killLogged	[skipnotify]/mute nigel was killed by ----E copserr's MP40
+ChatIgnored	[skipnotify](/mute doNka) (Allied Stronghold): [Enemy spawn @ 58/28]
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+killLogged	[skipnotify]----E copserr was exploded by /mute Op!o's grenade
+killLogged	[skipnotify]----E oreo was exploded by /mute nigel's grenade
+killLogged	[skipnotify]/mute ABomB was killed by ----E jaytee's MP40
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's Thompson
+killLogged	[skipnotify]----E copserr was killed by /mute nigel's MP40
+killLogged	[skipnotify]----E oreo was killed by /mute nigel's MP40
+Team killLogged	[skipnotify]/mute nigel WAS KILLED BY TEAMMATE /mute sem
+killLogged	[skipnotify]----E copserr was killed by /mute sem's Thompson
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+killLogged	[skipnotify]----E v1k!ng was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute Op!o was killed by ----E Spuddy's MP40
+killLogged	[skipnotify]----E Spuddy was killed by /mute nigel's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's Thompson
+killLogged	[skipnotify]/mute ABomB was killed by ----E copserr's MP40
+killLogged	[skipnotify]/mute eternal was killed by ----E jaytee's MP40
+killLogged	[skipnotify]/mute sem was killed by ----E copserr's MP40
+killLogged	[skipnotify]----E oreo was killed by /mute doNka's Thompson
+ChatIgnored	[skipnotify]/mute eternal: LOL
+killLogged	[skipnotify]/mute doNka was killed by ----E copserr's MP40
+SuicideLogged	[skipnotify]----E copserr fell to his death.
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's Thompson
+killLogged	[skipnotify]----E Spuddy was killed by /mute doNka's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+ObjectiveLogged	[skipnotify]*** INFO: Axis have stolen Allied Documents!
+ChatIgnored	
+killLogged	[skipnotify]----E jaytee was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]----E oreo was killed by /mute nigel's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Allies have returned Allied Documents!
+ChatIgnored	
+Team killLogged	[skipnotify]/mute ABomB WAS KILLED BY TEAMMATE /mute sem
+killLogged	[skipnotify]/mute Op!o was killed by ----E v1k!ng's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E Spuddy's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+SuicideLogged	[skipnotify]----E copserr killed himself.
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+SuicideLogged	[skipnotify]/mute ABomB vaporized himself.
+killLogged	[skipnotify]----E Spuddy was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's Thompson
+killLogged	[skipnotify]----E copserr was killed by /mute nigel's MP40
+killLogged	[skipnotify]/mute nigel was killed by ----E jaytee's MP40
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's Thompson
+killLogged	[skipnotify]----E oreo was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E jaytee's MP40
+SuicideLogged	[skipnotify]/mute sem killed himself.
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's Thompson
+killLogged	[skipnotify]----E oreo was killed by /mute eternal's MP40
+killLogged	[skipnotify]/mute ABomB was killed by ----E Spuddy's MP40
+killLogged	[skipnotify]----E jaytee was killed by /mute nigel's MP40
+SuicideLogged	[skipnotify]/mute Op!o fell to his death.
+killLogged	[skipnotify]----E oreo was killed by /mute eternal's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E caffeine's MP40
+killLogged	[skipnotify]----E copserr was killed by /mute sem's Thompson
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Great shot.
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's Thompson
+killLogged	[skipnotify]/mute nigel was killed by ----E oreo's MP40
+SuicideLogged	[skipnotify]----E Spuddy dove on his own grenade.
+killLogged	[skipnotify]/mute doNka was exploded by ----E Spuddy's grenade
+SuicideLogged	[skipnotify]/mute ABomB vaporized himself.
+killLogged	[skipnotify]----E copserr was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]----E caffeine was exploded by /mute eternal's grenade
+killLogged	[skipnotify]/mute sem was killed by ----E jaytee's MP40
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+killLogged	[skipnotify]----E oreo was killed by /mute Op!o 's .45ACP 1911
+ChatIgnored	[skipnotify](/mute Op!o) (Allied Stronghold): [Grenade_Primed]
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's Thompson
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute Op!o was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute nigel was killed by ----E copserr's MP40
+ChatIgnored	[skipnotify]: (/mute doNka)(Allied Stronghold): I need ammo!
+killLogged	[skipnotify]----E copserr was killed by /mute sem's Thompson
+ChatIgnored	[skipnotify]: (/mute eternal)(South Service Halls): I'm a lieutenant.
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+ObjectiveLogged	[skipnotify]*** INFO: Axis have stolen Allied Documents!
+ChatIgnored	
+killLogged	[skipnotify]----E caffeine was killed by /mute sem's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Allies have returned Allied Documents!
+ChatIgnored	
+killLogged	[skipnotify]/mute ABomB was killed by ----E Spuddy's MP40
+killLogged	[skipnotify]----E Spuddy was killed by /mute eternal's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute Op!o's Thompson
+ChatIgnored	[skipnotify](/mute Op!o) (Allied Stronghold): [Grenade_Primed]
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's Thompson
+killLogged	[skipnotify]----E oreo was exploded by /mute nigel's grenade
+killLogged	[skipnotify]----E v1k!ng was exploded by /mute sem's grenade
+SuicideLogged	[skipnotify]/mute sem dove on his own grenade.
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+killLogged	[skipnotify]/mute Op!o was killed by ----E copserr's MP40
+killLogged	[skipnotify]----E copserr was killed by /mute eternal's MP40
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Great shot.
+killLogged	[skipnotify]----E v1k!ng was killed by /mute nigel's MP40
+killLogged	[skipnotify]----E oreo was killed by /mute Op!o's Thompson
+killLogged	[skipnotify]----E jaytee was shelled by /mute nigel's artillery support
+killLogged	[skipnotify]----E caffeine was killed by /mute sem's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+killLogged	[skipnotify]/mute eternal was exploded by ----E Spuddy's grenade
+killLogged	[skipnotify]----E caffeine was killed by /mute sem's Thompson
+killLogged	[skipnotify]/mute sem was killed by ----E jaytee's MP40
+killLogged	[skipnotify]----E jaytee was killed by /mute nigel's MP40
+SuicideLogged	[skipnotify]/mute ABomB killed himself.
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+killLogged	[skipnotify]----E Spuddy was killed by /mute doNka's Thompson
+SuicideLogged	[skipnotify]----E copserr killed himself.
+killLogged	[skipnotify]----E oreo was exploded by /mute ABomB's grenade
+SuicideLogged	[skipnotify]/mute ABomB dove on his own grenade.
+killLogged	[skipnotify]----E v1k!ng was exploded by /mute ABomB's grenade
+killLogged	[skipnotify]----E jaytee was killed by /mute nigel's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+killLogged	[skipnotify]----E caffeine was killed by /mute nigel's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute nigel's MP40
+killLogged	[skipnotify]----E Spuddy was exploded by /mute doNka's grenade
+killLogged	[skipnotify]/mute sem was killed by ----E copserr's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute eternal's MP40
+SuicideLogged	[skipnotify]----E copserr killed himself.
+killLogged	[skipnotify]----E oreo was killed by /mute doNka's Thompson
+killLogged	[skipnotify]----E copserr was killed by /mute eternal's MP40
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Hello.
+killLogged	[skipnotify]/mute eternal was killed by ----E v1k!ng's MP40
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Bye.
+ChatIgnored	[skipnotify]: /mute eternal (North Service Halls): Hi.
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Yes!
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+killLogged	[skipnotify]----E v1k!ng was blasted by /mute ABomB's Panzerfaust
+Team killLogged	[skipnotify]/mute Op!o WAS KILLED BY TEAMMATE /mute ABomB
+killLogged	[skipnotify]/mute sem was killed by ----E caffeine's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute nigel's MP40
+Timelimit hitIgnored	[skipnotify]Timelimit hit.
+accuracy_roundIgnored	Accuracy info for: /mute doNka (1 Round)
+ChatIgnored	
+ChatIgnored	Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+ChatIgnored	-------------------------------------------------
+ChatIgnored	Knife    :   0.0    0/11       0      0
+ChatIgnored	Colt     :  16.7    1/6        0      0         0
+ChatIgnored	MP-40    :                     0      2         0
+ChatIgnored	Thompson :  33.0  111/336     18      0         9
+ChatIgnored	Grenade  :  25.0    1/4        1      1
+ChatIgnored	Syringe  : 100.0    2/2        0      0
+ChatIgnored	
+ChatIgnored	Healthpacks: 18/20
+ChatIgnored	Revivals   : 2
+ChatIgnored	
+ChatIgnored	Damage Given: 2367    Bodies Gibbed: 5
+ChatIgnored	Damage Recvd: 1435    Team Damage  : 0
+ChatIgnored	
+ChatIgnored	
+ChatIgnored	TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+ChatIgnored	---------------------------------------------------------------------
+stats_axospline	Axis   ----E caffeine    9  18   4  0  33   0  1693  2289   42     25
+stats_axospline	Axis   ----E copserr    11  14   4  2  44   6  2026  2766   96     22
+stats_axospline	Axis   ----E jaytee     10  15   0  0  40   3  1803  2349   98     21
+stats_axospline	Axis   ----E oreo        2  16   0  0  11   0  1054  2788   78     19
+stats_axospline	Axis   ----E Spuddy     10   9   2  0  52   7  1870  2326   92     14
+stats_axospline	Axis   ----E v1k!ng      3  17   0  1  15   0  1287  2902  100     11
+ChatIgnored	---------------------------------------------------------------------
+stats_axospline	Axis   Totals           45  89  10  3  33  16  9733 15420  506    112
+ChatIgnored	
+ChatIgnored	TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+ChatIgnored	---------------------------------------------------------------------
+stats_alospline	Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48
+stats_alospline	Allies /mute sem        19  10   2  2  65   4  3588  2085  226     46
+stats_alospline	Allies /mute nigel      19  14   6  0  57   8  2962  1497  107     37
+stats_alospline	Allies /mute Op!o        4   9   1  0  30   1  1628  1964   30     11
+stats_alospline	Allies /mute ABomB      11   7   5  1  61   7  3085   896   92     -5
+stats_alospline	Allies /mute eternal     9  17   7  1  34   8  1790  1856  243     -5
+ChatIgnored	---------------------------------------------------------------------
+stats_alospline	Allies Totals           81  60  21  4  57  33 15420  9733  698    132
+ChatIgnored	
+ChatIgnored	
+osp_time_setIgnored	[skipnotify]>>> Clock set to: 10:00
+ChatIgnored	
+ChatIgnored	
+Server time setIgnored	[skipnotify]Server: timelimit changed to 10.000000
+ChatIgnored	[skipnotify]/mute Op!o is ready!
+ChatIgnored	[skipnotify](/mute Op!o) (Axis Deployment): ***[Respawning.as]_[Engineer.]***
+ChatIgnored	[skipnotify]/mute eternal is ready!
+ChatIgnored	[skipnotify]/mute sem is ready!
+ChatIgnored	[skipnotify]----E v1k!ng is ready!
+ChatIgnored	[skipnotify]----E copserr is ready!
+ChatIgnored	[skipnotify]----E Spuddy is ready!
+ChatIgnored	[skipnotify]/mute ABomB is ready!
+ChatIgnored	[skipnotify](/mute Op!o) (Axis Lookout Post): Nig wanna go back to med now?
+ChatIgnored	[skipnotify](/mute eternal) (South Service Halls): HEY LANGUAGE
+SuicideIgnored	[skipnotify]----E jaytee killed himself.
+ChatIgnored	[skipnotify]----E jaytee is ready!
+killIgnored	[skipnotify]/mute ABomB was killed by ----E oreo 's .45ACP 1911
+SuicideIgnored	[skipnotify]----E caffeine killed himself.
+SuicideIgnored	[skipnotify]----E Spuddy killed himself.
+ChatIgnored	[skipnotify](/mute nigel) (Axis Transmitter): [Class Lieutenant]
+ChatIgnored	[skipnotify](/mute nigel) (Axis Transmitter): [Class Medic]
+SuicideIgnored	[skipnotify]/mute nigel killed himself.
+Team killIgnored	[skipnotify]/mute sem WAS KILLED BY TEAMMATE /mute eternal
+killIgnored	[skipnotify]/mute eternal was killed by ----E oreo's Thompson
+Team killIgnored	[skipnotify]----E v1k!ng WAS KILLED BY TEAMMATE ----E copserr
+killIgnored	[skipnotify]/mute doNka was killed by ----E copserr's Thompson
+killIgnored	[skipnotify]/mute Op!o was killed by ----E copserr 's .45ACP 1911
+killIgnored	[skipnotify]----E copserr was killed by /mute sem's Luger 9mm
+ChatIgnored	[skipnotify]/mute nigel is ready!
+SuicideIgnored	[skipnotify]/mute sem killed himself.
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+killIgnored	[skipnotify]----E oreo was killed by /mute eternal's MP40
+killIgnored	[skipnotify]----E v1k!ng was killed by /mute eternal's MP40
+killIgnored	[skipnotify]----E Spuddy was killed by /mute sem's MP40
+Team killIgnored	[skipnotify]/mute ABomB WAS KILLED BY TEAMMATE /mute Op!o
+Team killIgnored	[skipnotify]----E v1k!ng WAS KILLED BY TEAMMATE ----E Spuddy
+ChatIgnored	[skipnotify]----E caffeine is ready!
+Team killIgnored	[skipnotify]/mute ABomB WAS KILLED BY TEAMMATE /mute nigel
+Team killIgnored	[skipnotify]/mute Op!o WAS KILLED BY TEAMMATE /mute nigel
+killIgnored	[skipnotify]/mute eternal was killed by ----E copserr's Thompson
+ChatIgnored	[skipnotify]/mute doNka is ready!
+ChatIgnored	[skipnotify](/mute doNka) (North Service Halls): North Service Halls __READY AS__
+ChatIgnored	[skipnotify](/mute doNka) (North Service Halls): North Service Halls[____MEDIC___]
+ChatIgnored	[skipnotify](/mute doNka) (North Service Halls): North Service Halls[__AUTOPICK__]
+SuicideIgnored	[skipnotify]/mute doNka killed himself.
+ChatIgnored	[skipnotify](/mute eternal) (South Service Halls): engineer
+SuicideIgnored	[skipnotify]/mute sem killed himself.
+SuicideIgnored	[skipnotify]/mute eternal killed himself.
+ChatIgnored	[skipnotify]----E oreo is ready!
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[ MEDIC  ]
+SuicideIgnored	[skipnotify]/mute doNka killed himself.
+ChatIgnored	[skipnotify]All players ready!
+ChatIgnored	Match starting...[skipnotify](/mute eternal) (South Service Halls): defaultspawn
+ChatIgnored	[skipnotify](/mute eternal) (South Service Halls): defaultspawn
+Team killIgnored	[skipnotify]----E oreo WAS KILLED BY TEAMMATE ----E copserr
+Team killIgnored	[skipnotify]/mute doNka WAS KILLED BY TEAMMATE /mute eternal
+killIgnored	[skipnotify]----E v1k!ng was killed by /mute sem's MP40
+StartIgnored	[skipnotify]FIGHT!
+killLogged	[skipnotify]----E jaytee was exploded by /mute doNka's grenade
+Team killLogged	[skipnotify]/mute doNka WAS KILLED BY TEAMMATE /mute sem
+killLogged	[skipnotify]/mute sem was killed by ----E caffeine's Thompson
+killLogged	[skipnotify]/mute nigel was killed by ----E caffeine's Thompson
+killLogged	[skipnotify]/mute doNka was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]----E v1k!ng was killed by /mute Op!o's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute eternal's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute ABomB was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]----E jaytee was killed by /mute doNka's MP40
+ChatIgnored	[skipnotify]: (/mute sem)(Axis Lookout Post): Medic!
+ObjectiveLogged	[skipnotify]*** INFO: Dynamite planted near the Service Door!
+killLogged	[skipnotify]----E copserr was killed by /mute doNka's MP40
+ChatIgnored	[skipnotify](/mute Op!o) (South Service Halls): ***[Respawning.as]_[Lt.Mp40]***
+killLogged	[skipnotify]/mute eternal was killed by ----E oreo's Thompson
+killLogged	[skipnotify]/mute doNka was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]----E oreo was killed by /mute sem's MP40
+killLogged	[skipnotify]----E v1k!ng was killed by /mute sem's MP40
+killLogged	[skipnotify]----E Spuddy was killed by /mute nigel's Luger 9mm
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+ChatIgnored	[skipnotify](/mute eternal) (North Service Halls): lieutenant MP40
+ChatIgnored	[skipnotify](/mute eternal) (North Service Halls): lieutenant MP40
+SuicideLogged	[skipnotify]/mute doNka killed himself.
+ChatIgnored	[skipnotify](/mute Op!o) (South Service Halls): ***[Respawning.as]_[Lt.Mp40]***
+SuicideLogged	[skipnotify]/mute sem killed himself.
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's MP40
+killLogged	[skipnotify]/mute eternal was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute doNka was blasted by ----E jaytee's Panzerfaust
+ChatIgnored	[skipnotify]: (/mute doNka)(South Service Halls): Medic!
+ObjectiveLogged	[skipnotify]*** INFO: Service Door breached!
+killLogged	[skipnotify]/mute sem was shelled by ----E caffeine's artillery support
+killLogged	[skipnotify]/mute nigel was killed by ----E caffeine's MP40
+SuicideLogged	[skipnotify]----E oreo killed himself.
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 09/39]
+killLogged	[skipnotify]/mute ABomB was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute eternal was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute Op!o was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute ABomB was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]----E copserr was killed by /mute sem's MP40
+killLogged	[skipnotify]/mute sem was exploded by ----E jaytee's grenade
+killLogged	[skipnotify]/mute eternal was killed by ----E Spuddy's Thompson
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]/mute ABomB was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]----E jaytee was blasted by /mute ABomB's Panzerfaust
+killLogged	[skipnotify]/mute eternal was killed by ----E v1k!ng's Thompson
+killLogged	[skipnotify]----E copserr was killed by /mute sem's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's MP40
+killLogged	[skipnotify]----E oreo was killed by /mute nigel's Luger 9mm
+ObjectiveLogged	[skipnotify]*** INFO: Axis have stolen Allied Documents!
+ChatIgnored	
+killLogged	[skipnotify]/mute nigel was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+ObjectiveLogged	[skipnotify]*** INFO: Axis have stolen Allied Documents!
+ChatIgnored	
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E copserr's Thompson
+ObjectiveLogged	[skipnotify]*** INFO: Allies have returned Allied Documents!
+ChatIgnored	
+killLogged	[skipnotify]/mute ABomB was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute doNka was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E copserr's Thompson
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Hi.
+ChatIgnored	[skipnotify](/mute ABomB) (Allied Stronghold): going medic
+ChatIgnored	[skipnotify](/mute eternal) (Allied Stronghold): engineer
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+SuicideLogged	[skipnotify]----E copserr killed himself.
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+ChatIgnored	[skipnotify](/mute doNka) (South Service Halls): South Service Halls[Enemy spawn @ 37/07]
+killLogged	[skipnotify]/mute nigel was killed by ----E copserr's Thompson
+killLogged	[skipnotify]----E copserr was killed by /mute Op!o's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's MP40
+killLogged	[skipnotify]/mute eternal was killed by ----E v1k!ng's Thompson
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+ChatIgnored	[skipnotify]: (/mute eternal)(South Service Halls): Medic!
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+killLogged	[skipnotify]----E v1k!ng was killed by /mute eternal's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E copserr's Thompson
+killLogged	[skipnotify]----E Spuddy was killed by /mute doNka's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Dynamite planted near the Fortress Wall!
+ChatIgnored	[skipnotify](/mute eternal) (Allied Stronghold): lieutenant MP40
+ChatLogged	[skipnotify]/mute ABomB was killed by ----E jaytee
+killLogged	[skipnotify]/mute sem was killed by ----E copserr 's .45ACP 1911
+killLogged	[skipnotify]----E copserr was killed by /mute nigel's MP40
+killLogged	[skipnotify]/mute eternal was killed by ----E oreo's MP40
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+ChatIgnored	[skipnotify](/mute eternal) (Allied Stronghold): lieutenant MP40
+ChatIgnored	[skipnotify](/mute eternal) (Allied Stronghold): lieutenant MP40
+SuicideLogged	[skipnotify]/mute nigel killed himself.
+Team killLogged	[skipnotify]----E oreo WAS KILLED BY TEAMMATE ----E caffeine
+killLogged	[skipnotify]/mute doNka was killed by ----E caffeine's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute eternal's MP40
+killLogged	[skipnotify]/mute nigel was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]----E v1k!ng was killed by /mute eternal's MP40
+killLogged	[skipnotify]----E copserr was killed by /mute Op!o's MP40
+killLogged	[skipnotify]----E caffeine was killed by /mute eternal's MP40
+killLogged	[skipnotify]/mute Op!o was exploded by ----E jaytee's grenade
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's MP40
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+killLogged	[skipnotify]----E oreo was killed by /mute ABomB's MP40
+killLogged	[skipnotify]/mute ABomB was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute Op!o was exploded by ----E jaytee's grenade
+killLogged	[skipnotify]/mute nigel was exploded by ----E jaytee's grenade
+ChatIgnored	[skipnotify]SUSPECT: source disconnected
+SuicideLogged	[skipnotify]----E copserr killed himself.
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+killLogged	[skipnotify]/mute nigel was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E v1k!ng's Thompson
+killLogged	[skipnotify]----E copserr was killed by /mute Op!o's MP40
+killLogged	[skipnotify]/mute doNka was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute Op!o was blasted by ----E jaytee's Panzerfaust
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+killLogged	[skipnotify]/mute sem was killed by ----E jaytee 's .45ACP 1911
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+killLogged	[skipnotify]/mute ABomB was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute eternal was shelled by ----E caffeine's artillery support
+killLogged	[skipnotify]----E caffeine was killed by /mute doNka's MP40
+killLogged	[skipnotify]/mute doNka was killed by ----E v1k!ng's Thompson
+killLogged	[skipnotify]/mute eternal was blasted by ----E jaytee's Panzerfaust
+SuicideLogged	[skipnotify]----E v1k!ng killed himself.
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+ChatIgnored	[skipnotify](/mute Op!o) (South Service Halls): [/Killed]
+SuicideLogged	[skipnotify]/mute Op!o killed himself.
+killLogged	[skipnotify]/mute sem was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute ABomB was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute eternal was blasted by ----E caffeine's support fire
+killLogged	[skipnotify]----E jaytee was killed by /mute nigel's MP40
+killLogged	[skipnotify]/mute Op!o was exploded by ----E jaytee's grenade
+SuicideLogged	[skipnotify]----E copserr killed himself.
+killLogged	[skipnotify]/mute sem was killed by ----E caffeine's MP40
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+SuicideLogged	[skipnotify]/mute doNka killed himself.
+killLogged	[skipnotify]/mute Op!o was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute nigel was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute eternal was killed by ----E copserr's Thompson
+Team killLogged	[skipnotify]----E copserr WAS KILLED BY TEAMMATE ----E jaytee
+killLogged	[skipnotify]/mute doNka was killed by ----E caffeine's MP40
+Team killLogged	[skipnotify]----E oreo WAS KILLED BY TEAMMATE ----E Spuddy
+killLogged	[skipnotify]----E jaytee was killed by /mute sem's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Allies reclaim the Shipping Halls!
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]/mute eternal was killed by ----E oreo's MP40
+killLogged	[skipnotify]----E copserr was killed by /mute sem's MP40
+ObjectiveLogged	[skipnotify]*** INFO: Axis captures the Shipping Halls!
+killLogged	[skipnotify]----E caffeine was killed by /mute ABomB's MP40
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+killLogged	[skipnotify]/mute sem was exploded by ----E jaytee's grenade
+killLogged	[skipnotify]/mute Op!o was killed by ----E oreo's MP40
+ChatLogged	[skipnotify]/mute ABomB was killed by ----E jaytee
+killLogged	[skipnotify]/mute nigel was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute eternal was killed by ----E oreo's MP40
+killLogged	[skipnotify]/mute sem was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute doNka was killed by ----E copserr's Thompson
+SuicideLogged	[skipnotify]----E copserr killed himself.
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]----E copserr was killed by /mute nigel's MP40
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute eternal was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute nigel was blasted by ----E jaytee's Panzerfaust
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]/mute eternal was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute nigel was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute ABomB was blasted by ----E jaytee's Panzerfaust
+killLogged	[skipnotify]/mute Op!o was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute sem was killed by ----E copserr's Thompson
+SuicideLogged	[skipnotify]----E copserr killed himself.
+ChatIgnored	[skipnotify](/mute Op!o) (Allied Stronghold): ***[Respawning.as]_[Medic.]***
+SuicideLogged	[skipnotify]----E jaytee killed himself.
+SuicideLogged	[skipnotify]----E caffeine killed himself.
+killLogged	[skipnotify]----E v1k!ng was killed by /mute doNka's MP40
+ChatIgnored	[skipnotify](/mute nigel) (North Service Halls): [Class Lieutenant]
+killLogged	[skipnotify]/mute sem was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute sem was blasted by ----E jaytee's Panzerfaust
+Team killLogged	[skipnotify]----E copserr WAS KILLED BY TEAMMATE ----E Spuddy
+killLogged	[skipnotify]----E caffeine was killed by /mute eternal's Luger 9mm
+killLogged	[skipnotify]/mute nigel was shelled by ----E caffeine's artillery support
+killLogged	[skipnotify]----E jaytee was killed by /mute ABomB's MP40
+killLogged	[skipnotify]/mute eternal was killed by ----E oreo's MP40
+killLogged	[skipnotify]/mute nigel was killed by ----E oreo's MP40
+killLogged	[skipnotify]/mute Op!o was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute ABomB was killed by ----E Spuddy's Thompson
+killLogged	[skipnotify]/mute doNka was killed by ----E copserr's Thompson
+killLogged	[skipnotify]/mute nigel was killed by ----E caffeine's MP40
+killLogged	[skipnotify]/mute doNka was killed by ----E caffeine 's .45ACP 1911
+killLogged	[skipnotify]----E v1k!ng was killed by /mute sem's MP40
+SuicideLogged	[skipnotify]----E jaytee dove on his own grenade.
+killLogged	[skipnotify]/mute sem was killed by ----E caffeine's MP40
+ChatIgnored	[skipnotify]: ----E jaytee (unknown): Woohooo!
+killLogged	[skipnotify]----E copserr was killed by /mute eternal's Luger 9mm
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Yeah!
+SuicideLogged	[skipnotify]/mute eternal killed himself.
+ChatIgnored	[skipnotify]: ----E copserr (unknown): Bye.
+Timelimit hitIgnored	[skipnotify]Timelimit hit.
+accuracy_roundIgnored	Accuracy info for: /mute doNka (2 Rounds)
+ChatIgnored	
+ChatIgnored	Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+ChatIgnored	-------------------------------------------------
+ChatIgnored	Knife    :   0.0    0/11       0      0
+ChatIgnored	Luger    :  33.3    1/3        0      0         0
+ChatIgnored	Colt     :  16.7    1/6        0      1         0
+ChatIgnored	MP-40    :  26.3   98/372      8      4        14
+ChatIgnored	Thompson :  33.0  111/336     18      7         9
+ChatIgnored	Panzer   :                     0      1         0
+ChatIgnored	Grenade  :  25.0    2/8        2      1
+ChatIgnored	Syringe  :  85.7    6/7        0      0
+ChatIgnored	
+ChatIgnored	Healthpacks: 46/49
+ChatIgnored	Revivals   : 6
+ChatIgnored	
+ChatIgnored	Damage Given: 4396    Bodies Gibbed: 5
+ChatIgnored	Damage Recvd: 4293    Team Damage  : 31
+ChatIgnored	
+ChatIgnored	
+ChatIgnored	TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+ChatIgnored	---------------------------------------------------------------------
+stats_axospline	Axis   /mute nigel      24  30   8  0  44  10  4558  4711  107     31
+stats_axospline	Axis   /mute eternal    16  39  10  1  29  14  3511  4520  243     28
+stats_axospline	Axis   /mute Op!o        8  22   2  0  26   2  2718  4364  102     25
+stats_axospline	Axis   /mute doNka      28  16   2  0  63   5  4396  4293   31     12
+stats_axospline	Axis   /mute ABomB      15  19   5  1  44   8  4119  4170   92      9
+stats_axospline	Axis   /mute sem        28  30   3  3  48   4  5357  7189  290      7
+ChatIgnored	---------------------------------------------------------------------
+stats_axospline	Axis   Totals          119 156  30  5  43  43 24659 29247  865    112
+ChatIgnored	
+ChatIgnored	TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+ChatIgnored	---------------------------------------------------------------------
+stats_alospline	Allies ----E oreo        9  20   1  0  31   6  1842  3488  106     38
+stats_alospline	Allies ----E Spuddy     20  11   2  2  64  13  3534  3220  201     25
+stats_alospline	Allies ----E copserr    29  29   9  2  50  13  5510  5417  132     23
+stats_alospline	Allies ----E v1k!ng      7  25   1  1  21   3  3070  4685  100      8
+stats_alospline	Allies ----E caffeine   29  35  13  1  45   5  5995  3975  252      4
+stats_alospline	Allies ----E jaytee     38  33  11  1  53  22  9296  3874  250     -8
+ChatIgnored	---------------------------------------------------------------------
+stats_alospline	Allies Totals          132 153  37  7  46  62 29247 24659 1041     90
+ChatIgnored	
+ChatIgnored	
+osp_time_not_reachedIgnored	[skipnotify]>>> Objective NOT reached in time (10:00)
+ChatIgnored	
+ChatIgnored	
+ChatIgnored	Resolving wolfmotd.idsoftware.com
+ChatIgnored	Couldn't resolve address
+ChatIgnored	PunkBuster Client: Master Query Sent to (MASTER3.EVENBALANCE.COM) 216.240.146.139
+ChatIgnored	RE_Shutdown( 1 )
+ChatIgnored	Shutting down OpenGL subsystem
+ChatIgnored	...wglMakeCurrent( NULL, NULL ): success
+ChatIgnored	...deleting GL context: success
+ChatIgnored	...releasing DC: success
+ChatIgnored	...destroying window
+ChatIgnored	...resetting display
+ChatIgnored	...shutting down QGL
+ChatIgnored	...unloading OpenGL DLL
+ChatIgnored	Current search path:
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-pak01.pk3 (7 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-pak00.pk3 (15 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin07.2ad2c119.pk3 (77 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps6.pk3 (81 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps5.pk3 (35 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps4.pk3 (52 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps3.pk3 (83 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps2.pk3 (47 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps1.pk3 (34 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pakmaps0.pk3 (21 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak5.pk3 (77 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak4.pk3 (5 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak3.pk3 (76 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak2.pk3 (3 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak1.pk3 (308 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak0.pk3 (783 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_bin.pk3 (4 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\ufo_homiefix.pk3 (32 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\tundra_rush_beta.pk3 (35 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\te_ufo.pk3 (32 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\te_pacific2.pk3 (22 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\te_frostbite.pk3 (99 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\te_escape2.00014d16.pk3 (11 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\pak0.pk3 (4775 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mml_church_v1.pk3 (79 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\fnf_tournament_v2.pk3 (13 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\[DC]-vild.pk3 (4 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\[DC]-strafe.pk3 (4 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\[DC]-assfx.pk3 (4 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-pak01.8fe8ae1d.pk3 (7 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-pak00.beeba756.pk3 (15 files)
+ChatIgnored	    on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin07.pk3 (66 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin06.pk3 (50 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin05.pk3 (46 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin04.pk3 (38 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin03.pk3 (32 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\osp\osp-bin02.pk3 (31 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein/osp
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\{AM}trickjump_2.pk3 (11 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_theriver.pk3 (49 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_skin_SCOPE01b_v2.pk3 (5 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_river.pk3 (55 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pburg.pk3 (31 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_password2_v1.pk3 (103 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_te_kungfugrip.pk3 (233 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_infamy.pk3 (258 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_chateau3025.pk3 (2 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_chateau3020.pk3 (2 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_castle3040.pk3 (2 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_castle2030.pk3 (2 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak_1-1.pk3 (104 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pak01.pk3 (16 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_pacific.pk3 (22 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_kolotrickjump.pk3 (11 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_frogpond_beta2.pk3 (22 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_frogpond_beta.pk3 (20 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_forest.pk3 (18 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_ctfmultidemo.pk3 (10 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_communique.pk3 (8 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_communique.0eb3c5ba.pk3 (9 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_cannon.pk3 (25 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_breakout.pk3 (76 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_blauckaus.pk3 (54 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_base2o.pk3 (7 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\mp_aim.pk3 (33 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\wl_tundra_rush.pk3 (27 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\wl_river.pk3 (59 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\wl_beach.pk3 (8 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\viojump1_exp4.pk3 (28 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\viojump1_exp.pk3 (28 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\tj_xp3_t02.pk3 (23 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\te_sub.pk3 (4 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\te_escape2.pk3 (271 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\supplybeta1.pk3 (212 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\strayjump2.pk3 (39 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\strayjump1.pk3 (19 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\soundpack.pk3 (16 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\lights.pk3 (51 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\jumptown_beta.pk3 (64 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\ff_duel.pk3 (16 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\dzm_trickjump.pk3 (4 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\curry.pk3 (4 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\common-astro-spog.pk3 (80 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\brickjump_final.pk3 (9 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\bp_valhalla.pk3 (6 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\axis_complex.pk3 (13 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein\main\astro-skies.pk3 (11 files)
+ChatIgnored	    not on the pure list
+ChatIgnored	F:\Games\Return to Castle Wolfenstein/main
+ChatIgnored	
+ChatIgnored	handle 1: sound/music/x_action.wav
+ChatIgnored	handle 2: rtcwconsole.log
+ChatIgnored	----------------------
+ChatIgnored	37132 files in pk3 files
+ChatIgnored	Hunk_Clear: reset the hunk ok
+ChatIgnored	----- Initializing Renderer ----
+ChatIgnored	-------------------------------
+ChatIgnored	----- R_Init -----
+ChatIgnored	Initializing OpenGL subsystem
+ChatIgnored	...initializing QGL
+ChatIgnored	...calling LoadLibrary( 'C:\WINDOWS\system32\opengl32.dll' ): succeeded
+ChatIgnored	...setting mode -1: 1680 1050 W
+ChatIgnored	...created window@565,57 (1686x1079)
+ChatIgnored	Initializing OpenGL driver
+ChatIgnored	...getting DC: succeeded
+ChatIgnored	...GLW_ChoosePFD( 32, 32, 0 )
+ChatIgnored	...215 PFDs found
+ChatIgnored	...hardware acceleration found
+ChatIgnored	...PIXELFORMAT 9 selected
+ChatIgnored	...creating GL context: succeeded
+ChatIgnored	...making context current: succeeded
+ChatIgnored	Initializing OpenGL extensions
+ChatIgnored	...ignoring GL_EXT_texture_compression_s3tc
+ChatIgnored	...using GL_EXT_texture_env_add
+ChatIgnored	...using WGL_EXT_swap_control
+ChatIgnored	...using GL_ARB_multitexture
+ChatIgnored	...using GL_EXT_compiled_vertex_array
+ChatIgnored	...WGL_3DFX_gamma_control not found
+ChatIgnored	...ignoring GL_NV_fog_distance
+ChatIgnored	
+ChatIgnored	GL_VENDOR: NVIDIA Corporation
+ChatIgnored	GL_RENDERER: GeForce GTX 970/PCIe/SSE2
+ChatIgnored	GL_VERSION: 4.6.0 NVIDIA 391.35
+ChatIgnored	GL_EXTENSIONS: GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_depth_texture GL_ARB_draw_buffers GL_ARB_draw_instanced GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_map_buffer_range GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_shader_objects GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shadow GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_compression GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_mirrored_repeat GL_ARB_texture_non_power_of_two GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_transpose_matrix GL_ARB_vertex_array_object GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_specular_color GL_EXT_shadow_funcs GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KTX_buffer_region GL_NV_blend_square GL_NV_conditional_render GL_NV_copy_depth_to_color GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_explicit_multisample GL_NV_fence GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_gpu_program4 GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program_fp64 GL_NV_half_float GL_NV_light_max_exponent GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_shader_buffer_load GL_NV_texgen_reflection GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_rectangle GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NVX_conditional_render GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum GL_WIN_swap_hint WGL_EXT_swap_control
+ChatIgnored	GL_MAX_TEXTURE_SIZE: 16384
+ChatIgnored	GL_MAX_ACTIVE_TEXTURES_ARB: 4
+ChatIgnored	
+ChatIgnored	PIXELFORMAT: color(32-bits) Z(24-bit) stencil(0-bits)
+ChatIgnored	MODE: -1, 1680 x 1050 windowed hz:60
+ChatIgnored	GAMMA: software w/ 0 overbright bits
+ChatIgnored	CPU: Intel Pentium III
+ChatIgnored	rendering primitives: single glDrawElements
+ChatIgnored	texturemode: GL_LINEAR_MIPMAP_NEAREST
+ChatIgnored	picmip: 1
+ChatIgnored	texture bits: 32
+ChatIgnored	multitexture: enabled
+ChatIgnored	compiled vertex arrays: enabled
+ChatIgnored	texenv add: enabled
+ChatIgnored	compressed textures: disabled
+ChatIgnored	NV distance fog: disabled
+ChatIgnored	HACK: using vertex lightmap approximation
+ChatIgnored	Initializing Shaders
+ChatIgnored	----- finished R_Init -----
+ChatIgnored	Resolving wolfmotd.idsoftware.com

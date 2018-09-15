@@ -79,3 +79,7 @@ def add_team_name(stats_all):
         else:
             stats_all.loc[stats_all[stats_all["team"]=="Axis"].index, "team_name"]  = get_captain(stats_all, "Axis")
     return stats_all
+
+def get_round_guid(stats_all):
+        return get_captain(stats_all, "Allies") + "-" + get_captain(stats_all, "Axis") + "-" + "-".join(stats_all.sort_values("kill")["kill"].astype(int).astype(str))
+
