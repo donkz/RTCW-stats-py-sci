@@ -5,7 +5,8 @@ from datetime import datetime
 
 from utils.rtcwcolors import stripColors , setup_colors
 from constants.logtext import Const, LogLine
-from textsci.teams import add_team_name, get_captain, get_round_guid
+from textsci.teams import add_team_name, get_round_guid
+from constants.maps import ConstMap
 
 class StatLine:
     
@@ -25,9 +26,10 @@ class StatLine:
 
 class MatchLine:
       
-    def __init__(self, file_date, log_date, round_guid, round_order, round_num, players, defense_hold, winner, round_time, round_diff):
+    def __init__(self, file_date, log_date, file_size, round_guid, round_order, round_num, players, defense_hold, winner, round_time, round_diff):
          self.file_date = file_date
          self.log_date = log_date
+         self.file_size = file_size
          self.round_guid = round_guid
          self.round_order=round_order
          self.round_num=round_num
@@ -81,6 +83,7 @@ class FileProcessor:
         pd.options.display.float_format = '{:0,.0f}'.format
         ospdf.index = ospdf["player"]
         stats_all = stats.join(ospdf) #Totals fall out naturally
+        #print(stats_all)
         stats_all = add_team_name(stats_all)
         return stats_all
 
@@ -93,12 +96,9 @@ class FileProcessor:
         game_paused = False
         line_num = 0
         matches = []
-        osp_stats = {}
         log_date = ""
-        defense_hold = 0
         log_date = str(datetime.now())
         
-        log_events = []
         tmp_log_events = []
         
         #const
@@ -112,6 +112,11 @@ class FileProcessor:
     
         file_date = self.get_file_date()
         file_size = self.get_file_size()
+        
+        map_class = ConstMap
+        map_class.load_maps(map_class)
+        announcements = map_class.transpose_by_obj(map_class)
+        
     
         #go through each line in the file
         for x in range(0,fileLen):
@@ -132,12 +137,14 @@ class FileProcessor:
                         log_date = str(datetime.strptime(x[1].strip(), "%a %b %d %H:%M:%S %Y" ))
                     
                     if value.event == Const.EVENT_START and game_paused == False:
+                        if (game_started): #round aborted or otherwise interrupted
+                            tmp_log_events = []                        
                         game_started = True
                         round_order = round_order + 1
                         ospDF = pd.DataFrame(columns=Const.osp_columns)
                         tmp_log_events = []
                         tmp_stats_all = []
-                        new_match_line = MatchLine(file_date, log_date, "new_guid", round_order, None, None, None, None, None, None)
+                        new_match_line = MatchLine(file_date, log_date, file_size, "new_guid", round_order, None, None, None, None, None, None)
                                          
                     if value.event == Const.EVENT_PAUSE: #game paused. Unpause will result in FIGHT line again
                         game_paused = True
@@ -162,46 +169,69 @@ class FileProcessor:
                         #also happens anytime ref changes timelimit 
                         game_started = False
                         game_paused = False
-                        new_match_line.round_time = float(x[1])
+                        new_match_line.round_time = int(float(x[1])*60)
                         
                     if value.event == Const.EVENT_OSP_REACHED: #osp round 2 defense lost
                         game_started = False
                         game_paused = False
+                        new_match_line.defense_hold = 0
                         time1 = x[1].strip().split(":")
-                        roundtime = float(time1[0]) + float(time1[1])/60
+                        roundtime = int(time1[0])*60 + int(time1[1])
                         new_match_line.round_time = roundtime 
                         time2 = x[2].strip().split(":")
-                        new_match_line.round_diff = float(time2[0]) + float(time2[1])/60 - roundtime
+                        new_match_line.round_diff = int(time2[0])*60 + int(time2[1]) - roundtime
+                        #print("round times(t1,t2,diff) " + x[1].strip() + " " + x[2].strip() + " " + str(new_match_line.round_diff))
                         new_match_line.round_num = 2
+                        print(new_match_line.defense_hold)
                         
                     if value.event == Const.EVENT_OSP_NOT_REACHED: #osp round 2 defense lost
                         game_started = False
                         game_paused = False
                         time = x[1].strip().split(":")
-                        roundtime = float(time[0]) + float(time[1])/60
+                        roundtime = int(time[0])*60 + int(time[1])
                         new_match_line.round_diff = 0
                         new_match_line.defense_hold = 1
-                        round_num = 2
+                        new_match_line.round_num = 2
                         new_match_line.round_time = roundtime
                     
                     if value.event == Const.EVENT_OSP_TIME_SET: #osp round 1 end. Not indicative of win or loss
                         game_started = False
                         game_paused = False
                         time = x[1].strip().split(":")
-                        new_match_line.round_time = float(time[0]) + float(time[1])/60
+                        new_match_line.round_time = int(time[0])*60 + int(time[1])
                         new_match_line.round_num = 1
+                        new_match_line.round_diff = 0 #TODO do round1 diference to timelimit
+                        if(new_match_line.defense_hold != 1): #TODO do this through maps info to get timelimit and round difference
+                            new_match_line.defense_hold = 0
                     
                     if value.event == Const.EVENT_OSP_REACHED or value.event == Const.EVENT_OSP_NOT_REACHED or value.event == Const.EVENT_OSP_TIME_SET:
                         #if either of the 3 above, dump stats
-                        #TODO add guid, players, winner, full hold
-                        tmplogdf = pd.DataFrame([vars(e) for e in tmp_log_events])
-                        osp_stats[round_order] = ospDF
-                        tmp_stats_all = self.summarize_round(tmplogdf, ospDF)
-                        round_guid = get_round_guid(tmp_stats_all)
-                        tmplogdf["round_guid"] = "a"
+                        #TODO add players, winner, full hold
+                        tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
+                        tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
+                        tmp_stats_all = add_team_name(tmp_stats_all)
+                        round_guid = get_round_guid(tmp_stats_all)                      
+                        tmp_stats_all["round_guid"] = round_guid
+                        tmp_stats_all["round_num"] = new_match_line.round_num
+                        
+                        tmp_logdf["round_guid"] = round_guid
+                        tmp_logdf["round_num"] = new_match_line.round_num
                         new_match_line.round_guid = round_guid
+                        #print(str(new_match_line.round_diff))
                         matches.append(new_match_line)
-                        log_events = log_events + tmp_log_events
+                        #log_events = log_events + tmp_log_events
+                        try:
+                            logdf
+                        except NameError:
+                            logdf = tmp_logdf
+                        else:
+                            logdf = logdf.append(tmp_logdf)
+                        try:
+                            stats_all
+                        except NameError:
+                            stats_all = tmp_stats_all
+                        else:
+                            stats_all = stats_all.append(tmp_stats_all)
                          
                                                           
                     if len(x.groups()) > 0: 
@@ -218,10 +248,17 @@ class FileProcessor:
                        stat_entry = StatLine("temp",line_order, round_order,round_num,killer,value.event, value.mod, victim)
                     elif value.event == Const.EVENT_OBJECTIVE:
                         #insert processing here for who and what
-                        testkiller = "Allies"
-                        testvictim = "Axis"
-                        testobj = "Flag"
-                        stat_entry = StatLine("temp",line_order, round_order,round_num,testkiller,"Objective", testobj, testvictim)
+                        if(x[1] in announcements):
+                            
+                            announcement_values = announcements[x[1]]
+                            map_info= map_class.maps[announcement_values[1]]                      
+                            obj_offender = map_info.offense
+                            obj_defender = map_info.defense
+                            obj_type = announcement_values[0]
+                            print("Known objective: " + x[1] + " map: " + map_info.name)
+                            stat_entry = StatLine("temp",line_order, round_order,round_num,obj_offender,"Objective", obj_type, obj_defender)
+                        else:
+                            print("Unknown objective: " + x[1])
                         #print(stat_entry.toString())
                     else:
                         stat_entry = None
@@ -246,7 +283,7 @@ class FileProcessor:
             else:
                 #
                 processedLine = "Ignored"
-            write_line = value.event + processedLine + "\t" + line.rstrip() + "\n"
+            write_line = "r#" + str(round_order)  + value.event + processedLine + "\t" + line.rstrip() + "\n"
             
             #write the line processing notes into debig file
             file.write(write_line)
@@ -254,7 +291,10 @@ class FileProcessor:
         #close debig file        
         file.close() 
         
-        logdf = pd.DataFrame([vars(e) for e in log_events])
+        #logdf = pd.DataFrame([vars(e) for e in log_events])
+        #print(matches[1].round_diff)
+        #print([vars(e) for e in matches])
         matchesdf = pd.DataFrame([vars(e) for e in matches])
+        #print(matchesdf["round_diff"])
         logdf = logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
-        return {"logdf":logdf, "ospdf":ospDF, "matchesdf":matchesdf}
+        return {"logdf":logdf, "stats":stats_all, "matchesdf":matchesdf}

@@ -76,7 +76,7 @@ class Const:
             ["rename","^\[skipnotify\](.*) renamed to (.*)",EVENT_RENAME, "",False],
             ["teamkill", "^\[skipnotify\](.*) WAS KILLED BY TEAMMATE (.*)",EVENT_TEAMKILL, "None", True],
             ["suicide","^\[skipnotify\](.*) killed himself",EVENT_SUICIDE, EVENT_MOD_SLASHKILL, True],
-            ["info","^\[skipnotify\]\*\*\* INFO:(.*)",EVENT_OBJECTIVE, "", False],
+            ["info","^\[skipnotify\]\*\*\* INFO: (.*)",EVENT_OBJECTIVE, "", False],
             ["teamchat", "^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
             ["vote", "^\[skipnotify\](.*) called a vote", EVENT_CALLVOTE,"", False],
             ["kick", "^\[skipnotify\](.*) player kicked", EVENT_KICK,"", False],
@@ -97,6 +97,12 @@ class Const:
             ["logdate","^logfile opened on(.*)", EVENT_LOGFILE_TIMESTAMP, "", False],
             ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
             ["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False]
+            #Axis engineer disarmed
+            #Allied engineer disarmed
+            #Allies have stolen
+            #Allies have returned
+            #Axis have stolen
+            #Axis have returned
             ]
     
     osp_columns=["player", "team","frags","deaths","suicides","teamkills","Eff", "gibs","dmg","dmr","teamdmg","score"]

@@ -1,6 +1,6 @@
 from textsci.aliases import decypher_name
 import time
-from textsci.teams import team_name_chars, team_name_front
+from textsci.teams import team_name_chars, team_name_front, get_team_name
 
 name = "n!kon"
 valid_names = ["donka","caffeine","nikon","source", "lunatic","reker","corpse"]
@@ -31,3 +31,50 @@ def test_clan_tags():
     print(team_name_front(test_teams[0:6]))
     print(team_name_front(test_teams[7:]))
     print("--- %s seconds ---" % (time.time() - start_time))
+    
+#standard front chars clan tag
+players = ["exe-donkz",
+           "exe-wiza4d",
+           "exe-flog",
+           "exe-blog",
+           "exe-bizz",
+           "exe-pschonic",
+           "ex-tard"]
+
+#similar chars, but not too many
+players2 = ["colgate",
+           "wiza4d",
+           "flog",
+           "blog",
+           "bolg",
+           "mogul",
+           ]
+
+#one letter somewhat repeats
+players3 = ["donkz",
+           "kittens",
+           "caffeine",
+           "blan",
+           "clan",
+           "brazilian flan"]
+
+#suffix clan tag
+players4 = ["luigi-x-",
+           "eternal-x-",
+           "slaya-x-",
+           "ringer-x-",
+           "elutard",
+           "cky-x-",
+           "mario-x-"
+           ]
+
+test_strings = [players, players2, players3, players4]
+
+def test_all(test_strings):
+    for team in test_strings:
+        print("Team: " + ",".join(team))
+        print("Front chars method: " + team_name_front(team))
+        print("Segments method: " + team_name_chars(team))
+        print("Final result: " + get_team_name(team))
+        
+test_all(test_strings)
