@@ -5020,7 +5020,7 @@ r#14killLogged	[skipnotify]John_Mullins was killed by Kittens's Thompson
 r#14ChatIgnored	[skipnotify]: (tE)DeadEye (Central Access Room): Affirmative.
 r#14ChatIgnored	[skipnotify]John_Mullins: why dont u plant
 r#14ChatIgnored	[skipnotify]John_Mullins: lol
-r#14ObjectiveIgnored	[skipnotify]*** INFO: Allies have breached the Sub Area!
+r#14ObjectiveLogged	[skipnotify]*** INFO: Allies have breached the Sub Area!
 r#14ObjectiveIgnored	[skipnotify]*** INFO: Dynamite planted near Storage Door!
 r#14Team killLogged	[skipnotify]murkey WAS KILLED BY TEAMMATE KernKraft 4000
 r#14SuicideLogged	[skipnotify]KernKraft 4000 vaporized himself.
@@ -5028,7 +5028,7 @@ r#14killLogged	[skipnotify]fX WarRi0R was blasted by KernKraft 4000's Panzerfaus
 r#14ChatIgnored	[skipnotify]fX WarRi0R: where
 r#14SuicideLogged	[skipnotify]caffeine killed himself.
 r#14ChatIgnored	[skipnotify]: (John_Mullins)(Submarine Storage): Move!
-r#14ObjectiveIgnored	[skipnotify]*** INFO: Allies capture the Central Access Room!
+r#14ObjectiveLogged	[skipnotify]*** INFO: Allies capture the Central Access Room!
 r#14killLogged	[skipnotify]L04din9 was ventilated by nigel's Venom
 r#14killLogged	[skipnotify]donkz was blasted by s*ra!ser's Panzerfaust
 r#14killLogged	[skipnotify]s*ra!ser was killed by caffeine's MP40
@@ -5038,7 +5038,7 @@ r#14killLogged	[skipnotify]caffeine was blasted by s*ra!ser's Panzerfaust
 r#14killLogged	[skipnotify]s*ra!ser was exploded by KernKraft 4000's grenade
 r#14ChatIgnored	[skipnotify]: (caffeine)(Submarine Storage): Medic!
 r#14killLogged	[skipnotify]John_Mullins was killed by fX WarRi0R's Thompson
-r#14ObjectiveIgnored	[skipnotify]*** INFO: Allies have breached the Sub Area!
+r#14ObjectiveLogged	[skipnotify]*** INFO: Allies have breached the Sub Area!
 r#14killLogged	[skipnotify]peniswrinkle was killed by (tE)DeadEye's MP40
 r#14killLogged	[skipnotify](tE)DeadEye was killed by Kittens's Thompson
 r#14SuicideLogged	[skipnotify]KernKraft 4000 dove on his own grenade.
@@ -5058,7 +5058,7 @@ r#14killLogged	[skipnotify](tE)DeadEye was killed by rekernator's Thompson
 r#14killLogged	[skipnotify]murkey was killed by peniswrinkle's Thompson
 r#14ChatIgnored	PunkBuster Client: No Master Query Sent - DNS has not yet resolved for ID2.EVENBALANCE.COM
 r#14ChatIgnored	[skipnotify]SOD]aGGeR disconnected
-r#14ObjectiveIgnored	[skipnotify]*** INFO: Allied team has destoryed the Axis Submarine!
+r#14ObjectiveLogged	[skipnotify]*** INFO: Allied team has destoryed the Axis Submarine!
 r#14Team killLogged	[skipnotify]s*ra!ser WAS KILLED BY TEAMMATE Kittens
 r#14Team killLogged	[skipnotify]fX WarRi0R WAS KILLED BY TEAMMATE Kittens
 r#14accuracy_roundIgnored	Accuracy info for: donkz (1 Round)
@@ -5174,7 +5174,7 @@ r#15ChatIgnored	[skipnotify]SOD]aGGeR: idk he said he even deleted all those fol
 r#15killLogged	[skipnotify]nigel was killed by rekernator's MP40
 r#15killLogged	[skipnotify]fX WarRi0R was exploded by (tE)DeadEye's grenade
 r#15killLogged	[skipnotify](tE)DeadEye was exploded by rekernator's grenade
-r#15ObjectiveIgnored	[skipnotify]*** INFO: Allies capture the Central Access Room!
+r#15ObjectiveLogged	[skipnotify]*** INFO: Allies capture the Central Access Room!
 r#15SuicideLogged	[skipnotify]nigel killed himself.
 r#15SuicideLogged	[skipnotify]caffeine killed himself.
 r#15ChatIgnored	[skipnotify](caffeine) (Central Access Room): --pliers
@@ -5191,7 +5191,7 @@ r#15killLogged	[skipnotify](tE)DeadEye was blasted by s*ra!ser's Panzerfaust
 r#15killLogged	[skipnotify]KernKraft 4000 was blasted by s*ra!ser's Panzerfaust
 r#15killLogged	[skipnotify]John_Mullins was blasted by s*ra!ser's Panzerfaust
 r#15killLogged	[skipnotify]peniswrinkle was killed by caffeine's Thompson
-r#15ObjectiveIgnored	[skipnotify]*** INFO: Allies have breached the Sub Area!
+r#15ObjectiveLogged	[skipnotify]*** INFO: Allies have breached the Sub Area!
 r#15ChatIgnored	[skipnotify]: John_Mullins (Central Access Room): Good game.
 r#15SuicideLogged	[skipnotify]s*ra!ser killed himself.
 r#15SuicideLogged	[skipnotify]caffeine killed himself.

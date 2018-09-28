@@ -65,7 +65,7 @@ class ConstMap:
                       [OBJ_NM,"the Gold"]
                     ],
             "mp_beach" : [
-                      [O_WIN,"Allies transmitted the documents!"],
+                      [O_WIN,"Allies transmitted the documents!"],#same as frostbite
                       [D_FLAG,"Axis reclaims the Forward Bunker!"],
                       [O_FLAG,"Allies capture the Forward Bunker!"],
                       [O_OBJ,"The Sea Wall has been breached!"],
@@ -102,11 +102,17 @@ class ConstMap:
             }
   
     def load_maps(self):
-        maps = {}  
+        maps = {}
+        #                        code,      name,  announcements,                defense,         offense, timelimit
         maps["mp_ice"] = RTCWMap("mp_ice", "Ice", self.map_announce["mp_ice"], self.G_ALLIES, self.G_AXIS, 10)
         maps["te_ufo"] = RTCWMap("te_ufo", "UFO", self.map_announce["te_ufo"], self.G_AXIS, self.G_ALLIES, 10)
         maps["te_frostbite"] = RTCWMap("te_frostbite", "Frostbite", self.map_announce["te_frostbite"], self.G_AXIS, self.G_ALLIES, 10)
         maps["mp_village"] = RTCWMap("mp_village", "Village", self.map_announce["mp_village"], self.G_AXIS, self.G_ALLIES, 10)
+        maps["mp_beach"] = RTCWMap("mp_beach", "Beach", self.map_announce["mp_beach"], self.G_AXIS, self.G_ALLIES, 8)
+        maps["mp_sub"] = RTCWMap("mp_sub", "Sub", self.map_announce["mp_sub"], self.G_AXIS, self.G_ALLIES, 12)
+        maps["mp_base"] = RTCWMap("mp_base", "Base", self.map_announce["mp_base"], self.G_AXIS, self.G_ALLIES, 15)
+        maps["tundra_rush_beta"] = RTCWMap("tundra_rush_beta", "Tundra", self.map_announce["tundra_rush_beta"], self.G_AXIS, self.G_ALLIES, 12)
+        maps["mp_assault"] = RTCWMap("mp_assault", "Assault", self.map_announce["mp_assault"], self.G_ALLIES, self.G_AXIS, 10)
         self.maps = maps
     
     def transpose_by_obj(self):

@@ -7,6 +7,7 @@ from utils.rtcwcolors import stripColors , setup_colors
 from constants.logtext import Const, LogLine
 from textsci.teams import add_team_name, get_round_guid
 from constants.maps import ConstMap
+from collections import Counter
 
 class StatLine:
     
@@ -116,6 +117,7 @@ class FileProcessor:
         map_class = ConstMap
         map_class.load_maps(map_class)
         announcements = map_class.transpose_by_obj(map_class)
+        map_counter = Counter()
         
     
         #go through each line in the file
@@ -182,7 +184,6 @@ class FileProcessor:
                         new_match_line.round_diff = int(time2[0])*60 + int(time2[1]) - roundtime
                         #print("round times(t1,t2,diff) " + x[1].strip() + " " + x[2].strip() + " " + str(new_match_line.round_diff))
                         new_match_line.round_num = 2
-                        print(new_match_line.defense_hold)
                         
                     if value.event == Const.EVENT_OSP_NOT_REACHED: #osp round 2 defense lost
                         game_started = False
@@ -193,6 +194,7 @@ class FileProcessor:
                         new_match_line.defense_hold = 1
                         new_match_line.round_num = 2
                         new_match_line.round_time = roundtime
+                        
                     
                     if value.event == Const.EVENT_OSP_TIME_SET: #osp round 1 end. Not indicative of win or loss
                         game_started = False
@@ -204,15 +206,31 @@ class FileProcessor:
                         if(new_match_line.defense_hold != 1): #TODO do this through maps info to get timelimit and round difference
                             new_match_line.defense_hold = 0
                     
+                    #wrap up the round
                     if value.event == Const.EVENT_OSP_REACHED or value.event == Const.EVENT_OSP_NOT_REACHED or value.event == Const.EVENT_OSP_TIME_SET:
                         #if either of the 3 above, dump stats
                         #TODO add players, winner, full hold
+                        map_code = map_counter.most_common(1)[0][0]
+                        map_counter = Counter() #reset it
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
                         tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
                         tmp_stats_all = add_team_name(tmp_stats_all)
                         round_guid = get_round_guid(tmp_stats_all)                      
                         tmp_stats_all["round_guid"] = round_guid
                         tmp_stats_all["round_num"] = new_match_line.round_num
+                        
+                        tmp_map = map_class.maps[map_code]
+                        tmp_stats_all["map"] = tmp_map.name
+                        
+                        print(tmp_stats_all.columns.values)
+                        print(tmp_stats_all["team"])
+                        print(tmp_map.defense)
+                        print(tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index)
+                        print(tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index])
+
+                        tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index,"side"] = "Defense"
+                        tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.offense].index,"side"] = "Offense"
+                        print(tmp_stats_all.columns.values)
                         
                         tmp_logdf["round_guid"] = round_guid
                         tmp_logdf["round_num"] = new_match_line.round_num
@@ -232,7 +250,6 @@ class FileProcessor:
                             stats_all = tmp_stats_all
                         else:
                             stats_all = stats_all.append(tmp_stats_all)
-                         
                                                           
                     if len(x.groups()) > 0: 
                         victim = x[1]
@@ -255,6 +272,7 @@ class FileProcessor:
                             obj_offender = map_info.offense
                             obj_defender = map_info.defense
                             obj_type = announcement_values[0]
+                            map_counter[map_info.code] +=1
                             print("Known objective: " + x[1] + " map: " + map_info.name)
                             stat_entry = StatLine("temp",line_order, round_order,round_num,obj_offender,"Objective", obj_type, obj_defender)
                         else:
