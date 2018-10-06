@@ -105,7 +105,7 @@ class ConstMap:
         maps = {}
         #                        code,      name,  announcements,                defense,         offense, timelimit
         maps["mp_ice"] = RTCWMap("mp_ice", "Ice", self.map_announce["mp_ice"], self.G_ALLIES, self.G_AXIS, 10)
-        maps["te_ufo"] = RTCWMap("te_ufo", "UFO", self.map_announce["te_ufo"], self.G_AXIS, self.G_ALLIES, 10)
+        maps["te_ufo"] = RTCWMap("te_ufo", "UFO", self.map_announce["te_ufo"], self.G_AXIS, self.G_ALLIES, 12)
         maps["te_frostbite"] = RTCWMap("te_frostbite", "Frostbite", self.map_announce["te_frostbite"], self.G_AXIS, self.G_ALLIES, 10)
         maps["mp_village"] = RTCWMap("mp_village", "Village", self.map_announce["mp_village"], self.G_AXIS, self.G_ALLIES, 10)
         maps["mp_beach"] = RTCWMap("mp_beach", "Beach", self.map_announce["mp_beach"], self.G_AXIS, self.G_ALLIES, 8)
