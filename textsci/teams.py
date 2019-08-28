@@ -1,5 +1,11 @@
 import pandas as pd
 import numpy as np
+import hashlib
+
+#Hash a string
+#Example get_hash(round2_stats_string)
+def get_hash(string):
+    return hashlib.md5(string.encode()).hexdigest()
 
 #Given a team of player names create a matrix of character vs position and figure out prominent chars
 #example: players(["+-ab", "+-cd" ) will return +- 
@@ -83,7 +89,24 @@ def add_team_name(stats_all):
         stats_all.loc[stats_all[stats_all["team"]=="Axis"].index, "team_captain"]  = get_captain(stats_all, "Axis")
     return stats_all
 
-def get_round_guid(stats_all):
+def get_round_guid_osp(osp_lines):
+        osp_guid = get_hash(''.join(osp_lines))
+        return osp_guid
+    
+def get_player_list(stats_all):
+        playerlist = stats_all.sort_values("killer")
+        players = "#".join(playerlist["killer"])
+        return players.replace(",","") # for csv
+
+def get_round_guid_client_log(stats_all):
+        stats_all["killer"] = stats_all.index #could just reset_index
+        match_id_table = stats_all.sort_values(["killer", "kill","Deaths"])[["killer", "kill","Deaths"]]
+        match_id_string = ''.join(match_id_table.to_string(index=False, header=False))
+        #print(match_id_table.to_string(index=False, header=False))
+        client_log_guid = get_hash(match_id_string)
+        return client_log_guid
+    
+def get_round_desc_client_log(stats_all):
         allies_team = stats_all[stats_all["team"] == "Allies"]["team_name"][0]
         axis_team = stats_all[stats_all["team"] == "Axis"]["team_name"][0]
         
@@ -92,4 +115,3 @@ def get_round_guid(stats_all):
         teams = [allies_team,axis_team]
         teams.sort() #be consistent about identifying a match guid
         return "-vs-".join(map(str, teams))+ "-" + "-".join(stats_all.sort_values("kill")["kill"].astype(int).astype(str))
-    

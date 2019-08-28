@@ -43,15 +43,15 @@ log_date = matchesdf["log_date"][0]
 if(log_date == ""):
     log_date = matchesdf["file_date"]
 #logdf.to_csv(results_dir + log_date + ".csv")
-logdf.to_csv(r"C:\Users\stavos\Desktop\test2.csv", index=False)
-statsdf.to_csv(r"C:\Users\stavos\Desktop\stats2.csv", index=False)
-matchesdf.to_csv(r"C:\Users\stavos\Desktop\matches2.csv", index=False)
+logdf.to_csv(r"./test_samples/result_client_log.csv", index=False)
+statsdf.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
+matchesdf.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
 
 matchesdf[["round_order","round_num","round_time","winner"]]
 
 
 
-
+#TODO point system https://github.com/id-Software/RTCW-MP/blob/937b209a3c14857bea09a692545c59ac1a241275/src/game/g_team.h
 
 
 

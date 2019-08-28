@@ -9,6 +9,12 @@ class Const:
     EVENT_TEAMKILL = "Team kill"
     
     EVENT_RENAME="Renamed"
+    
+    EVENT_OBJ_AXIS_RETURN = "Axis Return Obj"
+    EVENT_OBJ_ALLIES_RETURN = "Allies Return Obj"
+    EVENT_OBJ_AXIS_STOLE = "Axis Stole Obj"
+    EVENT_OBJ_ALLIES_STOLE = "Allies Stole Obj"
+    
     EVENT_OBJECTIVE = "Objective"
     EVENT_CHAT = "Chat"
     EVENT_CALLVOTE = "Callvote"
@@ -19,6 +25,9 @@ class Const:
     EVENT_MAIN_TIMELIMIT = "Timelimit hit"
     EVENT_MAIN_SERVER_TIME = "Server time set"
     
+    EVENT_OSP_STATS_START = "OSP Stats begin"
+    EVENT_OSP_STATS_MID = "Skip osp Axis totals"
+    EVENT_OSP_STATS_END = "OSP Stats end"
     EVENT_OSP_STATS_ALLIES = "stats_al"
     EVENT_OSP_STATS_AXIS = "stats_ax"
     EVENT_OSP_STATS_ACCURACY = "accuracy_round"
@@ -76,12 +85,19 @@ class Const:
             ["rename","^\[skipnotify\](.*) renamed to (.*)",EVENT_RENAME, "",False],
             ["teamkill", "^\[skipnotify\](.*) WAS KILLED BY TEAMMATE (.*)",EVENT_TEAMKILL, "None", True],
             ["suicide","^\[skipnotify\](.*) killed himself",EVENT_SUICIDE, EVENT_MOD_SLASHKILL, True],
+            #["alliesStole","^\[skipnotify\]\*\*\* INFO: Allies have stolen (.*)",EVENT_OBJ_ALLIES_STOLE, "", False],
+            #["axisStole","^\[skipnotify\]\*\*\* INFO: Axis have stolen (.*)",EVENT_OBJ_AXIS_STOLE, "", False],
+            #["alliesRet","^\[skipnotify\]\*\*\* INFO: Allies have returned (.*)",EVENT_OBJ_ALLIES_RETURN, "", False],
+            #["axisRet","^\[skipnotify\]\*\*\* INFO: Axis have returned (.*)",EVENT_OBJ_AXIS_RETURN, "", False],
             ["info","^\[skipnotify\]\*\*\* INFO: (.*)",EVENT_OBJECTIVE, "", False],
             ["teamchat", "^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
             ["vote", "^\[skipnotify\](.*) called a vote", EVENT_CALLVOTE,"", False],
             ["kick", "^\[skipnotify\](.*) player kicked", EVENT_KICK,"", False],
             ["fightline", "^\[skipnotify\]FIGHT\!(.*)",EVENT_START,"",False],
             ["pause", "^\[skipnotify\](.*) PAUSED",EVENT_PAUSE, "", False ],
+            ["ospbegin", "^TEAM   Player          Kll Dth Sui",EVENT_OSP_STATS_START, "", False],
+            ["ospmid", "^Axis   Totals",EVENT_OSP_STATS_MID, "", False],
+            ["ospend", "^Allies Totals",EVENT_OSP_STATS_END, "", False],
             ["ospaxis", "^Axis",EVENT_OSP_STATS_AXIS, "", False],
             ["ospallies", "^Allies",EVENT_OSP_STATS_ALLIES, "", False],
             #time indicators
@@ -115,11 +131,11 @@ class LogLine:
         return "MATCH_ID"
           
     def __init__(self, line_type, regex, event, mod, stats):
-         self.line_type = line_type
-         self.regex = regex
-         self.event = event
-         self.mod = mod
-         self.stats = stats
+         self.line_type = line_type # line ID. Not used for other than debugging
+         self.regex = regex         # match on this expression
+         self.event = event         # what happened in a given line
+         self.mod = mod             # method of death
+         self.stats = stats         # True or False - if the line is recordable or just logical
     
     def LoadLogLines():
         log_lines = {}  
