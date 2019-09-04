@@ -180,7 +180,9 @@ class FileProcessor:
                     if value.event == Const.EVENT_OSP_STATS_END:
                         reading_osp_stats = False
                         osp_guid = get_round_guid_osp(osp_lines)
-                        print("Processing OSP stats id: " + osp_guid)
+                        #print("Processing OSP stats id: " + osp_guid)
+                        #print("Osp stats for guid calculation. Round: " + str(round_order))
+                        #print(*osp_lines, sep = "\n")
                         osp_lines = []
                     
                     if value.event == Const.EVENT_OSP_STATS_MID:
@@ -190,8 +192,7 @@ class FileProcessor:
                     if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS: #OSP team stats per player
                         osp_line = self.process_OSP_line(line)
                         ospDF = ospDF.append(osp_line)
-                        osp_lines.append(line)
-                        
+                        osp_lines.append(line.strip())                      
                         
                     if value.event == Const.EVENT_MAIN_TIMELIMIT: #happens before OSP stats if the time ran out
                         game_started = False
@@ -229,21 +230,23 @@ class FileProcessor:
                         new_match_line.round_num = 2
                         new_match_line.round_time = roundtime
                         
-                    
-                    if value.event == Const.EVENT_OSP_TIME_SET: #osp round 1 end. Not indicative of win or loss
+                    #[skipnotify]>>> Clock set to: 10:00
+                    #[skipnotify]>>> Clock set to: 6:56
+                    if value.event == Const.EVENT_OSP_TIME_SET: #osp round 1 end.
                         game_started = False
                         game_paused = False
-                        if (new_match_line.defense_hold !=1): #do we know that it was fullhold from "Timelimit hit"?
+                        
+                        if (new_match_line.defense_hold != 1): #do we know that it was fullhold from "Timelimit hit"?
                             new_match_line.defense_hold = 0
+                        
+                        #Get time from that line
                         time = x[1].strip().split(":")
                         new_match_line.round_time = int(time[0])*60 + int(time[1])
+                        
                         new_match_line.round_num = 1
                         #TEMP_STORAGE
                         #tmp_r1_time = new_match_line.round_time
                         tmp_r1_fullhold = new_match_line.defense_hold
-                        #EO TEMP STORAGE
-                        if(new_match_line.defense_hold != 1): #TODO do this through maps info to get timelimit and round difference
-                            new_match_line.defense_hold = 0
                     
                     ######################################################################
                     #####################wrap up the round################################
@@ -279,12 +282,13 @@ class FileProcessor:
                         #print(tmp_stats_all.columns.values)
 
                         if value.event == Const.EVENT_OSP_TIME_SET:
-                            #round 1
+                            #round 1. Time set is not indicative of win or loss. It could be set in result of a cap(5:33) or result of hold(10:00)
                             new_match_line.round_diff = tmp_map.timelimit*60 - new_match_line.round_time
-                            tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.offense].index,"round_win"] = 1 
-                            tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index,"round_win"] = 0
+                            tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.offense].index,"round_win"] = abs(1 - new_match_line.defense_hold)
+                            tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index,"round_win"] = new_match_line.defense_hold
                             tmp_stats_all["game_result"] = "R1MSB"
                             new_match_line.winner = tmp_map.offense
+                            
                         if value.event == Const.EVENT_OSP_NOT_REACHED:
                             #round 2 DEFENSE HELD (WON OR DRAW)
                             if tmp_r1_fullhold == 1:
@@ -293,6 +297,7 @@ class FileProcessor:
                                 tmp_stats_all["game_result"] = "FULLHOLD"
                                 new_match_line.winner = "Draw"
                             elif tmp_r1_fullhold == 0:
+                                print("R1 fh not detected")
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.offense].index,"round_win"] = 0 
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index,"round_win"] = 1
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.defense].index,"game_result"] = "WON"
@@ -302,6 +307,7 @@ class FileProcessor:
                                 print("bad round 2 winner status")
                             del tmp_r1_fullhold
                             #del tmp_r1_time 
+                            
                         if value.event == Const.EVENT_OSP_REACHED:
                             #round 2 DEFENSE LOST THE GAME
                             tmp_stats_all.loc[tmp_stats_all[tmp_stats_all["team"] == tmp_map.offense].index,"round_win"] = 1 
@@ -311,6 +317,10 @@ class FileProcessor:
                             new_match_line.winner = tmp_map.offense
                             del tmp_r1_fullhold
                             #del tmp_r1_time 
+                        
+                        print("Thinking offence team is " + tmp_map.offense)
+                        print("Thinking defence team is " + tmp_map.defense)
+                        print(tmp_stats_all.sort_values("team")[["player","team","round_num","round_win","game_result"]])
       
                         
                         tmp_logdf["round_guid"] = round_guid
@@ -360,7 +370,7 @@ class FileProcessor:
                             obj_defender = map_info.defense
                             obj_type = announcement_values[0]
                             map_counter[map_info.code] +=1
-                            print("Known objective: ".ljust(20) + x[1] + " map: " + map_info.name)
+                            #print("Known objective: ".ljust(20) + x[1] + " map: " + map_info.name)
                             stat_entry = StatLine("temp",line_order, round_order,round_num,obj_offender,"Objective", obj_type, obj_defender)
                         else:
                             print("Unknown objective: ".ljust(20) + x[1])

@@ -22,8 +22,8 @@ pd.set_option("display.width",300)
 
 #debug_file = r"C:\Users\stavos\Desktop\python scripts\rtcwlogpy\testfile.txt"
 debug_file = r".\test_samples\testfile.txt"
-#read_file = r".\test_samples\rtcwconsole - r2.log"
-read_file = r".\test_samples\rtcwconsole-8-30-2018.log"
+read_file = r".\test_samples\rtcwconsole - r2.log"
+#read_file = r".\test_samples\rtcwconsole-8-30-2018.log"
 
 
 processor = FileProcessor(read_file, debug_file)

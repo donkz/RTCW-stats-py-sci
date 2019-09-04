@@ -1,0 +1,45 @@
+Accuracy info for: /mute Toff (2 Rounds)
+
+Weapon     Acrcy Hits/Atts Kll Dth HS
+-------------------------------------
+Luger    :  29.4    5/17     1   1  1
+MP-40    :  18.4   34/185    2   2  1
+Thompson :  13.8   24/174    2   0  2
+Panzer   :                   0   1  0
+Grenade  :  50.0    2/4      0   0
+Syringe  : 100.0    4/4      0   0
+
+Healthpacks: 28/38
+Revivals   : 4
+
+Damage Given: 1267    Bodies Gibbed: 4
+Damage Recvd: 1904    Team Damage  : 117
+
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Axis   /mute eternal'   23  12   5  1  65   6  4194  1999  115     61
+Axis   /mute Op!o       13  10   2  1  56   6  1911  1435  160     36
+Axis   /mute ABomB      12  11   3  0  52   8  3001  1753   36      8
+Axis   /mute Toff        5   4   2  1  55   4  1267  1904  117      8
+Axis   /mute daky        0  13   1  1   0   0   600  2000   32      5
+Axis   /mute sem        13  17   5  3  43   1  2921  2734  190      4
+---------------------------------------------------------------------
+Axis   Totals           66  67  18  7  49  25 13894 11825  650    122
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Allies wish*WarRi0R     10  18   3  0  35   4  1848  2416   53     44
+Allies w*sh Ra!ser      11  13   1  1  45   1  2182  2847   34     28
+Allies TK|POW            2  11   3  0  15   2   715  1494   31      7
+Allies wish*gutzzzzzzz   7  13   1  0  35   1  1202  2817  100      6
+Allies wish*virus047'   13  13   9  0  50   8  3057  1800    0      3
+Allies endddddddddd     10  10   0  0  50   2  2821  2520   14      3
+---------------------------------------------------------------------
+Allies Totals           53  78  17  1  40  18 11825 13894  232     91
+
+
+
+Stats recorded: 22:49:39 (03 May 2018)
+
+

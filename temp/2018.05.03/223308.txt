@@ -1,0 +1,47 @@
+Accuracy info for: /mute daky (2 Rounds)
+
+Weapon     Acrcy Hits/Atts Kll Dth HS
+-------------------------------------
+Knife    :   0.0    0/3      0   0
+Luger    :   0.0    0/2      0   0  0
+MP-40    :  27.9   19/68     2   1  3
+Thompson :  40.0   20/50     2   1  2
+Grenade  :  33.3    1/3      0   0
+Airstrike:   0.0    0/2      0   1
+Syringe  : 100.0    2/2      0   0
+
+Ammopacks  : 7/10
+Healthpacks: 5/6
+Revivals   : 2
+
+Damage Given: 917     Bodies Gibbed: 1
+Damage Recvd: 660     Team Damage  : 19
+
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Axis   wish*virus047'    9   4   3  0  69   6  2469   656    0      8
+Axis   TK|POW            1   4   2  0  20   0   191   468    0      6
+Axis   endddddddddd     10   5   2  0  66   0  1558  1486   50      3
+Axis   w*sh Ra!ser       5   7   3  1  41   1   882  1039   54      2
+Axis   wish*WarRi0R      4   9   3  1  30   3  1033  1398  313      2
+Axis   wish*gutzzzzzzz   1   9   0  1  10   0   353  1585   18      1
+---------------------------------------------------------------------
+Axis   Totals           30  38  13  3  44  10  6486  6632  435     22
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Allies /mute Op!o        5   9   1  0  35   2  1036  1713   14     33
+Allies /mute daky        4   7   4  0  36   1   917   660   19     28
+Allies /mute sem         6   6   2  0  50   0   730  1085  206      6
+Allies /mute eternal'    7   6   1  1  53   1  1977  1296  112      2
+Allies /mute ABomB       7   8   2  0  46   4  1660  1231    0      2
+Allies /mute Toff        0   2   1  1   0   0   312   501  106     -3
+---------------------------------------------------------------------
+Allies Totals           29  38  11  2  43   8  6632  6486  457     68
+
+
+
+Stats recorded: 22:33:09 (03 May 2018)
+
+

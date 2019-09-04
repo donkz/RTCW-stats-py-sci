@@ -1,0 +1,41 @@
+Accuracy info for: /mute sem (2 Rounds)
+
+Weapon     Acrcy Hits/Atts Kll Dth HS
+-------------------------------------
+Colt     :  25.0    1/4      0   0  0
+MP-40    :  29.0   27/93     5   0  4
+Thompson :  40.0   14/35     1   1  2
+Panzer   :                   0   1  0
+Grenade  :   0.0    0/9      0   0
+Dynamite :  50.0    1/2      0   0
+
+Damage Given: 917     Bodies Gibbed: 0
+Damage Recvd: 377     Team Damage  : 0
+
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Axis   endddddddddd      9   5   0  0  64   1  1260   828    0      5
+Axis   w*sh Ra!ser       4   4   0  0  50   2   558   560   14      1
+Axis   wish*gutzzzzzzz   2   3   0  0  40   0   354   657    0      1
+Axis   TK|POW            0   5   0  0   0   1    36   574    0      0
+Axis   wish*virus047'    3   4   1  1  42   3   854   460  178     -1
+---------------------------------------------------------------------
+Axis   Totals           18  21   1  1  46   7  3062  3079  192      6
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Allies /mute daky        4   3   0  0  57   1   514   644    0      7
+Allies /mute Op!o        3   5   0  0  37   1   675   648   28      6
+Allies /mute eternal'    7   4   1  0  63   2   935   747   50      1
+Allies /mute Toff        3   2   0  0  60   3   360   350    0      0
+Allies /mute sem         6   3   1  0  66   0   917   377    0     -2
+Allies /mute ABomB       2   3   2  0  40   3   768   752    0     -4
+---------------------------------------------------------------------
+Allies Totals           25  20   4  0  55  10  4169  3518   78      8
+
+
+
+Stats recorded: 23:50:28 (03 May 2018)
+
+
