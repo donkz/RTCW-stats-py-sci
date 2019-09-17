@@ -55,6 +55,41 @@ class Const:
     WEAPON_DYN = "Dynamite"
     WEAPON_MG42 = "MG42"
     
+    STAT_BASE_KILLER = "Killer" #equivalent to player name
+    STAT_BASE_KILL = "Kills"
+    STAT_BASE_DEATHS = "Deaths"
+    STAT_BASE_TK = "TK"
+    STAT_BASE_TKd = "TKd"
+    STAT_BASE_SUI = "Suicides"
+    STAT_BASE_ALLDEATHS = "All_Deaths"
+    
+    #                                Kll Dth Sui TK Eff Gib DG    DR      TD  Score
+    #line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
+    #line = "Allies /mute sem        19  10   2  2  65   4  3588  2085  226     46"
+    STAT_OSP_SUM_PLAYER = "OSP_Player"
+    STAT_OSP_SUM_TEAM = "OSP_Team"
+    STAT_OSP_SUM_FRAGS = "OSP_Kills"
+    STAT_OSP_SUM_DEATHS = "OSP_Deaths"
+    STAT_OSP_SUM_SUICIDES = "OSP_Suicides"
+    STAT_OSP_SUM_TK = "OSP_TK"
+    STAT_OSP_SUM_EFF = "OSP_Eff"
+    STAT_OSP_SUM_GIBS = "OSP_Gibs"
+    STAT_OSP_SUM_DMG = "OSP_Damage_Given"
+    STAT_OSP_SUM_DMR = "OSP_Damage_Received"
+    STAT_OSP_SUM_TEAMDG = "OSP_Team_Damage"
+    STAT_OSP_SUM_SCORE = "OSP_Score"
+    osp_columns=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_OSP_SUM_SCORE]
+    #osp_columns=["player", "team","frags","deaths","suicides","teamkills","Eff", "gibs","dmg","dmr","teamdmg","score"]
+
+    STAT_POST_ADJSCORE = "AdjScore"
+    
+    mod_by_type = { 
+                    "Guns" : [WEAPON_MP40,WEAPON_THOMPSON,WEAPON_STEN], 
+                    "Pistols": [WEAPON_LUGER,WEAPON_COLT],
+                    "Explosives" : [WEAPON_PANZER, WEAPON_GRENADE, WEAPON_AS, WEAPON_ART],
+                    "Random" : [WEAPON_SNIPER, WEAPON_VENOM, WEAPON_FLAME, WEAPON_DYN, WEAPON_MG42, WEAPON_KNIFE]
+                   }
+    
    
     line_types = [
             ["grenade", "^\[skipnotify\](.*) was exploded by (.*)\'s grenade",EVENT_KILL, WEAPON_GRENADE,True],
@@ -85,27 +120,22 @@ class Const:
             ["rename","^\[skipnotify\](.*) renamed to (.*)",EVENT_RENAME, "",False],
             ["teamkill", "^\[skipnotify\](.*) WAS KILLED BY TEAMMATE (.*)",EVENT_TEAMKILL, "None", True],
             ["suicide","^\[skipnotify\](.*) killed himself",EVENT_SUICIDE, EVENT_MOD_SLASHKILL, True],
-            #["alliesStole","^\[skipnotify\]\*\*\* INFO: Allies have stolen (.*)",EVENT_OBJ_ALLIES_STOLE, "", False],
-            #["axisStole","^\[skipnotify\]\*\*\* INFO: Axis have stolen (.*)",EVENT_OBJ_AXIS_STOLE, "", False],
-            #["alliesRet","^\[skipnotify\]\*\*\* INFO: Allies have returned (.*)",EVENT_OBJ_ALLIES_RETURN, "", False],
-            #["axisRet","^\[skipnotify\]\*\*\* INFO: Axis have returned (.*)",EVENT_OBJ_AXIS_RETURN, "", False],
             ["info","^\[skipnotify\]\*\*\* INFO: (.*)",EVENT_OBJECTIVE, "", False],
             ["teamchat", "^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
             ["vote", "^\[skipnotify\](.*) called a vote", EVENT_CALLVOTE,"", False],
             ["kick", "^\[skipnotify\](.*) player kicked", EVENT_KICK,"", False],
             ["fightline", "^\[skipnotify\]FIGHT\!(.*)",EVENT_START,"",False],
             ["pause", "^\[skipnotify\](.*) PAUSED",EVENT_PAUSE, "", False ],
+            #match ending main 
             ["ospbegin", "^TEAM   Player          Kll Dth Sui",EVENT_OSP_STATS_START, "", False],
             ["ospmid", "^Axis   Totals",EVENT_OSP_STATS_MID, "", False],
             ["ospend", "^Allies Totals",EVENT_OSP_STATS_END, "", False],
             ["ospaxis", "^Axis",EVENT_OSP_STATS_AXIS, "", False],
             ["ospallies", "^Allies",EVENT_OSP_STATS_ALLIES, "", False],
-            #time indicators
             ["roundind", "^Accuracy info for:", EVENT_OSP_STATS_ACCURACY, "", False],
-            #main 
             ["timelimitmain", "^\[skipnotify\]Timelimit hit\.",EVENT_MAIN_TIMELIMIT, "", False],
             ["clocksetmain", "^\[skipnotify\]Server: timelimit changed to (.*)",EVENT_MAIN_SERVER_TIME, "", False],
-            #osp
+            #match ending osp
             ["fullholdosp", "^\[skipnotify\]>>> Objective NOT reached in time \((.*)\)",EVENT_OSP_NOT_REACHED, "", False],
             ["clocksetosp", "^\[skipnotify\]>>> Clock set to: (.*)",EVENT_OSP_TIME_SET, "", False],
             ["clocklostosp", "^\[skipnotify\]>>> Objective reached at (.*) \(original: (.*)\)",EVENT_OSP_REACHED, "", False],
@@ -113,6 +143,7 @@ class Const:
             ["logdate","^logfile opened on(.*)", EVENT_LOGFILE_TIMESTAMP, "", False],
             ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
             ["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False]
+            #the following lines are in maps file
             #Axis engineer disarmed
             #Allied engineer disarmed
             #Allies have stolen
@@ -120,16 +151,12 @@ class Const:
             #Axis have stolen
             #Axis have returned
             ]
-    
-    osp_columns=["player", "team","frags","deaths","suicides","teamkills","Eff", "gibs","dmg","dmr","teamdmg","score"]
 
-
-
+'''
+class Logline represents a single line of text processed and prepared for storage in standardized way
+'''
 class LogLine:
-    
-    def matchid(self):
-        return "MATCH_ID"
-          
+             
     def __init__(self, line_type, regex, event, mod, stats):
          self.line_type = line_type # line ID. Not used for other than debugging
          self.regex = regex         # match on this expression

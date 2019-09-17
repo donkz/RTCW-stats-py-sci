@@ -70,6 +70,26 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near the main door!"],
                       [O_PLANT, "Dynamite planted near the storage wall!"] #TODO check this
                     ],
+            "axis_complex" : [
+                      [O_WIN,"Allies have transmitted the decoder manual!"],
+                      [D_FLAG,"Axis reclaims the Forward Deployment area!"], #TODO check this
+                      [O_FLAG,"Allies capture the Forward Deployment area!"],
+                      [O_OBJ,"The service door has been breached!"],
+                      [O_OBJ,"The Eastern Tower has been breached!"],
+                      [O_OBJ,"The main complex has been breached!"],
+                      [O_PLANT, "Dynamite planted near the Eastern Tower Entrance!"],
+                      [O_PLANT, "Dynamite planted near the Main Entrance!"],
+                      [O_PLANT, "Nothing about planting the service door"]
+                    ],
+            "te_escape" : [
+                      [O_WIN,"The Allied team escaped with the Unholy Grail!"],
+                      [D_FLAG,"The Axis team reclaimed the Flag!"],
+                      [O_FLAG,"The Allied team captured the Flag!"],
+                      [O_OBJ,"The Tunnel Door was obliterated!"],
+                      [O_OBJ,"The Main Gate has been destroyed!"],
+                      [O_PLANT, "Dynamite planted near the Tunnel Door!"],
+                      [O_PLANT, "Dynamite planted near the Main Gate!!"]
+                    ],
             "mp_village" : [
                       [O_WIN,"The Allies have escaped with the Gold!"],
                       [D_FLAG,"Axis reclaims the Northwest Courtyard!"],
@@ -83,9 +103,9 @@ class ConstMap:
                       [O_FLAG,"Allies capture the Forward Bunker!"],
                       [O_OBJ,"The Sea Wall has been breached!"],
                       [O_OBJ,"you would thing there would be something about door here but no"],
-                      [OBJ_NM,"the War Documents"] #same as frostbite
-                      #[O_PLANT, ""],
-                      #[O_PLANT, ""]
+                      [OBJ_NM,"the War Documents"], #same as frostbite
+                      [O_PLANT, "Dynamite planted near the Sea Wall breach!"],
+                      [O_PLANT, "Dynamite planted near the Sea Wall door!"]
                     ],
             "mp_sub" : [
                       [O_WIN,"Allied team has destoryed the Axis Submarine!"],
@@ -100,9 +120,9 @@ class ConstMap:
                     ],
             "mp_base" : [
                       [O_WIN,"Allied team has disabled the North Radar!"], #one or the other... whatever
-                      [O_OBJ,"Allied team has disabled the South Radar!"]
-                      #[O_PLANT, ""],
-                      #[O_PLANT, ""]
+                      [O_OBJ,"Allied team has disabled the South Radar!"],
+                      [O_PLANT, "Dynamite planted near the South Radar [02]!"],
+                      [O_PLANT, "Dynamite planted near the North Radar [01]!"]
                     ],
             "tundra_rush_beta" : [
                       [O_WIN,"Allies transmitted the beatdown list!"],
@@ -120,24 +140,42 @@ class ConstMap:
                       #[O_PLANT, ""],
                       #[O_PLANT, ""],
                       #[O_PLANT, ""]
+                    ],
+            "mp_password" : [
+                      [O_WIN,"Allies escaped with the Endoarm!"],
+                      [D_FLAG,"Axis reclaims the Service Halls!"],
+                      [O_FLAG,"Allies capture the Service Halls!"],
+                      [D_FLAG,"Process aborted..."],
+                      [D_FLAG,"Password has been changed..."],
+                      [O_OBJ,"Allies breach the Service Door!"],
+                      [O_PLANT, "Dynamite planted near Service Door!"],
+                      [O_PLANT, "Process started with valid password!"],
+                      [O_OBJ,"Process finished!"]
                     ]
-            #todo castle, password, church
+            #TODO: church, ?
             }
-  
+    
+    '''
+    Load all map data into a map dictionary {mapcode : mapclass}
+    '''
     def load_maps(self):
         maps = {}
-        #                                  code,                name,        announcements,                         defense,      offense,    timelimit
-        maps["mp_ice"] =           RTCWMap("mp_ice",           "Ice",       self.map_announce["mp_ice"],           self.G_ALLIES, self.G_AXIS,   10,   "Allied Documents")
-        maps["te_ufo"] =           RTCWMap("te_ufo",           "UFO",       self.map_announce["te_ufo"],           self.G_AXIS,   self.G_ALLIES, 12,   "The UFO Documents")
-        maps["te_frostbite"] =     RTCWMap("te_frostbite",     "Frostbite", self.map_announce["te_frostbite"],     self.G_AXIS,   self.G_ALLIES, 10,   "the War Documents")
-        maps["mp_village"] =       RTCWMap("mp_village",       "Village",   self.map_announce["mp_village"],       self.G_AXIS,   self.G_ALLIES, 10,   "the Gold")
-        maps["mp_beach"] =         RTCWMap("mp_beach",         "Beach",     self.map_announce["mp_beach"],         self.G_AXIS,   self.G_ALLIES, 8,    "the War Documents")
-        maps["mp_sub"] =           RTCWMap("mp_sub",           "Sub",       self.map_announce["mp_sub"],           self.G_AXIS,   self.G_ALLIES, 12,    "")
-        maps["mp_base"] =          RTCWMap("mp_base",          "Base",      self.map_announce["mp_base"],          self.G_AXIS,   self.G_ALLIES, 15,    "")
-        maps["tundra_rush_beta"] = RTCWMap("tundra_rush_beta", "Tundra",    self.map_announce["tundra_rush_beta"], self.G_AXIS,   self.G_ALLIES, 12,    "The Docs")
-        maps["mp_assault"] =       RTCWMap("mp_assault",       "Assault",   self.map_announce["mp_assault"],       self.G_ALLIES, self.G_AXIS,   10,    "")
-        maps["anymap"] =           RTCWMap("anymap",           "anymap",    self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
+        #                                  code,                name,         announcements,                         defense,       offense,    timelimit  Objective name
+        maps["mp_ice"] =           RTCWMap("mp_ice",           "Ice",         self.map_announce["mp_ice"],           self.G_ALLIES, self.G_AXIS,   10,   "Allied Documents")
+        maps["axis_complex"] =     RTCWMap("axis_complex",     "Axis Complex",self.map_announce["axis_complex"],     self.G_AXIS,   self.G_ALLIES, 10,   "The Decoder Manual")     #check timelimit
+        maps["te_escape"] =        RTCWMap("te_escape",        "Escape",      self.map_announce["te_escape"],        self.G_AXIS,   self.G_ALLIES, 10,   "the Unholy Grail")       #check timelimit
+        maps["te_ufo"] =           RTCWMap("te_ufo",           "UFO",         self.map_announce["te_ufo"],           self.G_AXIS,   self.G_ALLIES, 12,   "The UFO Documents")
+        maps["te_frostbite"] =     RTCWMap("te_frostbite",     "Frostbite",   self.map_announce["te_frostbite"],     self.G_AXIS,   self.G_ALLIES, 10,   "the War Documents")
+        maps["mp_village"] =       RTCWMap("mp_village",       "Village",     self.map_announce["mp_village"],       self.G_AXIS,   self.G_ALLIES, 10,   "the Gold")
+        maps["mp_beach"] =         RTCWMap("mp_beach",         "Beach",       self.map_announce["mp_beach"],         self.G_AXIS,   self.G_ALLIES, 8,    "the War Documents")
+        maps["mp_sub"] =           RTCWMap("mp_sub",           "Sub",         self.map_announce["mp_sub"],           self.G_AXIS,   self.G_ALLIES, 12,    "")
+        maps["mp_base"] =          RTCWMap("mp_base",          "Base",        self.map_announce["mp_base"],          self.G_AXIS,   self.G_ALLIES, 15,    "")
+        maps["tundra_rush_beta"] = RTCWMap("tundra_rush_beta", "Tundra",      self.map_announce["tundra_rush_beta"], self.G_AXIS,   self.G_ALLIES, 12,    "The Docs")
+        maps["mp_assault"] =       RTCWMap("mp_assault",       "Assault",     self.map_announce["mp_assault"],       self.G_ALLIES, self.G_AXIS,   10,    "")
+        maps["mp_password"] =      RTCWMap("mp_password",      "Password",    self.map_announce["mp_password"],      self.G_AXIS,   self.G_ALLIES, 12,    "the Endoarm")
+        maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
+        #each map will have additional objective likes related to stoled and returned objectives
         for mapname, map_ in maps.items():
             map_.announcements.append([self.D_RETURN, map_.defense + " have returned " + map_.objname + "!"])
             map_.announcements.append([self.O_STEAL,  map_.offense + " have stolen " +   map_.objname + "!"])

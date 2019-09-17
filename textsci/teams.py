@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import hashlib
 
+from constants.logtext import Const
+
 #Hash a string
 #Example get_hash(round2_stats_string)
 def get_hash(string):
@@ -71,22 +73,22 @@ def get_team_name(players):
     return team_name_default
 
 def get_captain(stats_all, team):
-    row = stats_all[stats_all["team"] == team].sort_values(["kill","dmg"]).tail(1)
+    row = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM] == team].sort_values([Const.STAT_BASE_KILL,Const.STAT_OSP_SUM_DMG]).tail(1)
     return row.index.values[0]
 
           
 def add_team_name(stats_all):
-    if(stats_all["team"].dropna().unique().size == 2): #OSP stats were joined
-        allies = stats_all[stats_all["team"]=="Allies"].index.values
-        axis = stats_all[stats_all["team"]=="Axis"].index.values
+    if(stats_all[Const.STAT_OSP_SUM_TEAM].dropna().unique().size == 2): #OSP stats were joined
+        allies = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index.values
+        axis = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index.values
         allies_team_name = get_team_name(allies)
         axis_team_name = get_team_name(axis)
-        stats_all["player_strip"]=stats_all["player"].str.replace(allies_team_name, "").str.replace(axis_team_name, "").str.strip()
+        stats_all["player_strip"]=stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(allies_team_name, "").str.replace(axis_team_name, "").str.strip()
         
-        stats_all.loc[stats_all[stats_all["team"]=="Allies"].index, "team_name"] = allies_team_name
-        stats_all.loc[stats_all[stats_all["team"]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
-        stats_all.loc[stats_all[stats_all["team"]=="Axis"].index, "team_name"] = axis_team_name
-        stats_all.loc[stats_all[stats_all["team"]=="Axis"].index, "team_captain"]  = get_captain(stats_all, "Axis")
+        stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_name"] = allies_team_name
+        stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
+        stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_name"] = axis_team_name
+        stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_captain"]  = get_captain(stats_all, "Axis")
     return stats_all
 
 def get_round_guid_osp(osp_lines):
@@ -94,24 +96,24 @@ def get_round_guid_osp(osp_lines):
         return osp_guid
     
 def get_player_list(stats_all):
-        playerlist = stats_all.sort_values("killer")
-        players = "#".join(playerlist["killer"])
+        playerlist = stats_all.sort_values(Const.STAT_BASE_KILLER)
+        players = "#".join(playerlist[Const.STAT_BASE_KILLER])
         return players.replace(",","") # for csv
 
 def get_round_guid_client_log(stats_all):
-        stats_all["killer"] = stats_all.index #could just reset_index
-        match_id_table = stats_all.sort_values(["killer", "kill","Deaths"])[["killer", "kill","Deaths"]]
+        stats_all[Const.STAT_BASE_KILLER] = stats_all.index #could just reset_index
+        match_id_table = stats_all.sort_values([Const.STAT_BASE_KILLER, Const.STAT_BASE_KILL,Const.STAT_BASE_DEATHS])[[Const.STAT_BASE_KILLER, Const.STAT_BASE_KILL,Const.STAT_BASE_DEATHS]]
         match_id_string = ''.join(match_id_table.to_string(index=False, header=False))
         #print(match_id_table.to_string(index=False, header=False))
         client_log_guid = get_hash(match_id_string)
         return client_log_guid
     
 def get_round_desc_client_log(stats_all):
-        allies_team = stats_all[stats_all["team"] == "Allies"]["team_name"][0]
-        axis_team = stats_all[stats_all["team"] == "Axis"]["team_name"][0]
+        allies_team = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM] == "Allies"]["team_name"][0]
+        axis_team = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM] == "Axis"]["team_name"][0]
         
-        if (allies_team == "No tag"): allies_team = stats_all[stats_all["team"] == "Allies"]["team_captain"][0]
-        if (axis_team == "No tag"): axis_team = stats_all[stats_all["team"] == "Axis"]["team_captain"][0]
+        if (allies_team == "No tag"): allies_team = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM] == "Allies"]["team_captain"][0]
+        if (axis_team == "No tag"): axis_team = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM] == "Axis"]["team_captain"][0]
         teams = [allies_team,axis_team]
         teams.sort() #be consistent about identifying a match guid
         return "-vs-".join(map(str, teams))+ "-" + "-".join(stats_all.sort_values("kill")["kill"].astype(int).astype(str))

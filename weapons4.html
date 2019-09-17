@@ -1,0 +1,2304 @@
+<html>
+ <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  <style>
+   .gold {
+  background-color: #D4AF37;
+}
+.silver {
+  background-color: #C0C0C0;
+}
+.bronze {
+  background-color: #cd7f32;
+}
+.norank {
+  background-color: #F5F5F5;
+}
+table.blueTable {
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #14191B;
+  background-color: #F3FFFB;
+  width: 80%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 0px 6px;
+}
+table.blueTable tbody td {
+  font-size: 14px;
+  color: #292929;
+}
+table.blueTable thead {
+  background: #030D14;
+  background: -moz-linear-gradient(top, #42494f 0%, #1c252b 66%, #030D14 100%);
+  background: -webkit-linear-gradient(top, #42494f 0%, #1c252b 66%, #030D14 100%);
+  background: linear-gradient(to bottom, #42494f 0%, #1c252b 66%, #030D14 100%);
+  border-bottom: 0px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 14px;
+  font-weight: bold;
+  color: #EFEFEF;
+  text-align: center;
+  border-left: 4px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+  </style>
+ </head>
+ <body>
+<h1 class="header">
+ Base stats
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Player
+  </th>
+  <th>
+   Kills
+  </th>
+  <th>
+   Deaths
+  </th>
+  <th>
+   TK
+  </th>
+  <th>
+   TKd
+  </th>
+  <th>
+   Suicides
+  </th>
+  <th>
+   All_Deaths
+  </th>
+  <th>
+   OSP_Gibs
+  </th>
+  <th>
+   OSP_Damage_Given
+  </th>
+  <th>
+   OSP_Damage_Received
+  </th>
+  <th>
+   OSP_Team_Damage
+  </th>
+ </tr>
+ <tr>
+  <td>
+   ----E Spuddy
+  </td>
+  <td class="norank">
+   20
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="bronze">
+   13
+  </td>
+  <td class="norank">
+   3534
+  </td>
+  <td class="norank">
+   3220
+  </td>
+  <td class="norank">
+   201
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E caffeine
+  </td>
+  <td class="silver">
+   29
+  </td>
+  <td class="norank">
+   22
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   35
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="silver">
+   5995
+  </td>
+  <td class="norank">
+   3975
+  </td>
+  <td class="norank">
+   252
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E copserr
+  </td>
+  <td class="silver">
+   29
+  </td>
+  <td class="norank">
+   21
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   32
+  </td>
+  <td class="bronze">
+   13
+  </td>
+  <td class="bronze">
+   5510
+  </td>
+  <td class="norank">
+   5417
+  </td>
+  <td class="norank">
+   132
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E jaytee
+  </td>
+  <td class="gold">
+   39
+  </td>
+  <td class="norank">
+   23
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   35
+  </td>
+  <td class="gold">
+   22
+  </td>
+  <td class="gold">
+   9296
+  </td>
+  <td class="norank">
+   3874
+  </td>
+  <td class="norank">
+   250
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E oreo
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   19
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   24
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   1842
+  </td>
+  <td class="norank">
+   3488
+  </td>
+  <td class="norank">
+   106
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E v1k!ng
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   24
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   25
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   3070
+  </td>
+  <td class="norank">
+   4685
+  </td>
+  <td class="norank">
+   100
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute ABomB
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   24
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   4119
+  </td>
+  <td class="norank">
+   4170
+  </td>
+  <td class="norank">
+   92
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute Op!o
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   22
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   26
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2718
+  </td>
+  <td class="norank">
+   4364
+  </td>
+  <td class="norank">
+   102
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute doNka
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   4396
+  </td>
+  <td class="norank">
+   4293
+  </td>
+  <td class="norank">
+   31
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute eternal
+  </td>
+  <td class="norank">
+   16
+  </td>
+  <td class="norank">
+   29
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   39
+  </td>
+  <td class="silver">
+   14
+  </td>
+  <td class="norank">
+   3511
+  </td>
+  <td class="norank">
+   4520
+  </td>
+  <td class="norank">
+   243
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute nigel
+  </td>
+  <td class="norank">
+   24
+  </td>
+  <td class="norank">
+   22
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   31
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   4558
+  </td>
+  <td class="norank">
+   4711
+  </td>
+  <td class="norank">
+   107
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute sem
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   31
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   5357
+  </td>
+  <td class="norank">
+   7189
+  </td>
+  <td class="norank">
+   290
+  </td>
+ </tr>
+</table><h1 class="header">
+ Weapon stats
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Player
+  </th>
+  <th>
+   MP40
+  </th>
+  <th>
+   Thompson
+  </th>
+  <th>
+   Sten
+  </th>
+  <th>
+   Luger
+  </th>
+  <th>
+   Colt
+  </th>
+  <th>
+   Panzerfaust
+  </th>
+  <th>
+   Grenade
+  </th>
+  <th>
+   Airstrike
+  </th>
+  <th>
+   Artillery
+  </th>
+  <th>
+   Sniper
+  </th>
+  <th>
+   Venom
+  </th>
+  <th>
+   Flame
+  </th>
+  <th>
+   Dynamite
+  </th>
+  <th>
+   MG42
+  </th>
+  <th>
+   Knife
+  </th>
+ </tr>
+ <tr>
+  <td>
+   ----E Spuddy
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E caffeine
+  </td>
+  <td class="gold">
+   21
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E copserr
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="silver">
+   17
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E jaytee
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="gold">
+   23
+  </td>
+  <td class="gold">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E oreo
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E v1k!ng
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute ABomB
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   10
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute Op!o
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute doNka
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="gold">
+   18
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute eternal
+  </td>
+  <td class="bronze">
+   12
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute nigel
+  </td>
+  <td class="silver">
+   17
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   3
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="silver">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute sem
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="bronze">
+   16
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+</table><h1 class="header">
+ Awards
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Player
+  </th>
+  <th>
+   Kills
+  </th>
+  <th>
+   KDR
+  </th>
+  <th>
+   KillStreak
+  </th>
+  <th>
+   Pack5
+  </th>
+  <th>
+   Deathroll
+  </th>
+  <th>
+   Blownup
+  </th>
+  <th>
+   Panzed
+  </th>
+  <th>
+   FirstInDoor
+  </th>
+  <th>
+   AdjScore
+  </th>
+  <th>
+   Caps
+  </th>
+  <th>
+   Holds
+  </th>
+  <th>
+   Wins
+  </th>
+  <th>
+   RankPts
+  </th>
+ </tr>
+ <tr>
+  <td>
+   /mute nigel
+  </td>
+  <td class="norank">
+   24
+  </td>
+  <td class="norank">
+   1.09
+  </td>
+  <td class="gold">
+   8
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   68
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   18
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute doNka
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="gold">
+   2
+  </td>
+  <td class="bronze">
+   6
+  </td>
+  <td class="silver">
+   3
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   38
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   19
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E jaytee
+  </td>
+  <td class="gold">
+   39
+  </td>
+  <td class="bronze">
+   1.7
+  </td>
+  <td class="silver">
+   7
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="bronze">
+   20
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E copserr
+  </td>
+  <td class="silver">
+   29
+  </td>
+  <td class="norank">
+   1.38
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="bronze">
+   49
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="bronze">
+   20
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E caffeine
+  </td>
+  <td class="silver">
+   29
+  </td>
+  <td class="norank">
+   1.32
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   42
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   21
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute sem
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="bronze">
+   6
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   43
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   24
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E Spuddy
+  </td>
+  <td class="norank">
+   20
+  </td>
+  <td class="gold">
+   2
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   31
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   27
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E oreo
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   0.47
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   51
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   33
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute eternal
+  </td>
+  <td class="norank">
+   16
+  </td>
+  <td class="norank">
+   0.55
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   40
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   34
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute ABomB
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="norank">
+   0.83
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   39
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute Op!o
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   0.36
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   34
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   42
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E v1k!ng
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0.29
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   46
+  </td>
+ </tr>
+</table><h1 class="header">
+ Kill matrix
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Killer
+  </th>
+  <th>
+   ----E Spuddy
+  </th>
+  <th>
+   ----E caffeine
+  </th>
+  <th>
+   ----E copserr
+  </th>
+  <th>
+   ----E jaytee
+  </th>
+  <th>
+   ----E oreo
+  </th>
+  <th>
+   ----E v1k!ng
+  </th>
+  <th>
+   /mute ABomB
+  </th>
+  <th>
+   /mute Op!o
+  </th>
+  <th>
+   /mute doNka
+  </th>
+  <th>
+   /mute eternal
+  </th>
+  <th>
+   /mute nigel
+  </th>
+  <th>
+   /mute sem
+  </th>
+ </tr>
+ <tr>
+  <td>
+   ----E Spuddy
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   3
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E caffeine
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="gold">
+   8
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   7
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E copserr
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="gold">
+   7
+  </td>
+  <td class="norank">
+   5
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E jaytee
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="gold">
+   13
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E oreo
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   5
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   ----E v1k!ng
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute ABomB
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute Op!o
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute doNka
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="gold">
+   8
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute eternal
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="gold">
+   7
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute nigel
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   /mute sem
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="gold">
+   9
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+</table>  <script type="text/javascript">
+   $('th').click(function(){
+    var table = $(this).parents('table').eq(0)
+    var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+    this.asc = !this.asc
+    if (!this.asc){rows = rows.reverse()}
+    for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+})
+function comparer(index) {
+    return function(a, b) {
+        var valA = getCellValue(a, index), valB = getCellValue(b, index)
+        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+    }
+}
+function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
+  </script>
+ </body>
+</html>
