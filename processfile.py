@@ -2,12 +2,15 @@ import re
 import pandas as pd
 import os.path
 from datetime import datetime
+import time as _time
+
 
 from utils.rtcwcolors import stripColors , setup_colors
 from constants.logtext import Const, LogLine
 from textsci.teams import add_team_name, get_round_guid_client_log, get_round_guid_osp, get_player_list
 from constants.maps import ConstMap
 from collections import Counter
+
 
 class StatLine:
     
@@ -70,6 +73,17 @@ class FileProcessor:
             for line in ins:
                 lines.append(line)
             return lines
+    
+    # Rename players in the datasets as they change their names in game
+    # Params:
+    # renames : dictionary of name changes
+    # columns to rename
+    # dataframe
+    def handle_renames(self, renames, columns, df, index):
+        df = df.replace(renames)
+        if index:
+            df = df.rename(index=renames)
+        return df
         
     def summarize_round(self, logdf, ospdf):
         kills = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["killer","event"])["event"].count().unstack()
@@ -118,6 +132,7 @@ class FileProcessor:
         return stats_all
 
     def process_log(self):
+        time_start_process_log = _time.time()
         #Initialize local variables
         line_order = 0
         round_order = 0
@@ -128,33 +143,37 @@ class FileProcessor:
         line_num = 0
         matches = []
         osp_lines = []
-        log_date = ""
         log_date = str(datetime.now())
         
         tmp_log_events = []
+        renames = {}
         
         #Load in Constants
         colors = setup_colors()
         log_lines = LogLine.LoadLogLines()
+        
+        #Load in map constants
+        map_class = ConstMap
+        map_class.load_maps(map_class)
+        announcements = map_class.transpose_by_obj(map_class)
+        map_counter = Counter()
     
         #Prep debug log
         debug_log = open(self.debug_file,"w")
         debug_log.write("line".ljust(5) + "roundNum " + "##".ljust(2)  + "Event".ljust(20) + "Logged as".ljust(10) + "LineText".rstrip() + "\n")
         log_file_lines = self.openFile()
         fileLen = len(log_file_lines)-1
-    
+        
+        #Derive log file properties
         file_date = self.get_file_date()
         file_size = self.get_file_size()
-        
-        map_class = ConstMap
-        map_class.load_maps(map_class)
-        announcements = map_class.transpose_by_obj(map_class)
-        map_counter = Counter()
-        
     
         #go through each line in the file
         for x in range(0,fileLen):
+            #strip color coding
             line = stripColors(log_file_lines[x], colors)
+            
+            #init loop variables
             matched = None
             stat_entry = None
             ospline = None
@@ -165,6 +184,10 @@ class FileProcessor:
                 #if it looks like something we recognize (x is not None) then add this line appropriately
                 if x:
                     line_order = line_order + 1
+                    
+                    if value.event == Const.EVENT_RENAME:
+                        #print("x" + str(x) + " x0: " + x[0] + " x1: " + x[1] + " x2: " + x[2])
+                        renames[x[1]] = x[2]
                     
                     if value.event == Const.EVENT_LOGFILE_TIMESTAMP: #beginning of every logfile
                         #Sun Apr 08 18:51:44 2018
@@ -306,8 +329,6 @@ class FileProcessor:
                             tmp_stats_all["map"] = tmp_map.name
                             new_match_line.map = tmp_map.name
                         
-                        new_match_line.players = get_player_list(tmp_stats_all)
-                        
                         #Recalculated scores (substract kills and suicides)
                         tmp_stats_all[Const.STAT_POST_ADJSCORE] = tmp_stats_all[Const.STAT_OSP_SUM_SCORE].fillna(0).astype(int) - tmp_stats_all[Const.STAT_BASE_KILL].fillna(0).astype(int) + tmp_stats_all[Const.STAT_BASE_SUI].fillna(0).astype(int)*3 + tmp_stats_all[Const.STAT_BASE_TK].fillna(0).astype(int)*3
                         #print(tmp_stats_all[["AdjScore","score","kill","Suicide","TK"]])                  
@@ -321,6 +342,7 @@ class FileProcessor:
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"side"] = "Defense"
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"side"] = "Offense"
                         #print(tmp_stats_all.columns.values)
+                        new_match_line.players = get_player_list(tmp_stats_all)
 
                         if value.event == Const.EVENT_OSP_TIME_SET:
                             #round 1. Time set is not indicative of win or loss. It could be set in result of a cap(5:33) or result of hold(10:00)
@@ -336,7 +358,8 @@ class FileProcessor:
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"round_win"] = 0 
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"round_win"] = 1 #they get a round win , but a game win is full hold
                                 tmp_stats_all["game_result"] = "FULLHOLD"
-                                new_match_line.winner = "Draw"
+                                #new_match_line.winner = "Draw"
+                                new_match_line.winner = tmp_map.defense
                             elif tmp_r1_fullhold == 0:
                                 #print("R1 fh not detected")
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"round_win"] = 0 
@@ -386,7 +409,6 @@ class FileProcessor:
                                                           
                     if len(x.groups()) > 0: 
                         victim = x[1]
-#                if killer.find("doNka") > 0: print(line)
                     else: 
                         victim = ""
                     if len(x.groups()) > 1:
@@ -402,11 +424,12 @@ class FileProcessor:
                     #ELSE go through objective checks and write an objective entry
                     if(value.stats and game_started):
                        stat_entry = StatLine("temp",line_order, round_order,round_num,killer,value.event, value.mod, victim)
-                    elif value.event == Const.EVENT_OBJECTIVE:
+                    elif value.event == Const.EVENT_OBJECTIVE and game_started:
                         #insert processing here for who and what
                         if(x[1] in announcements):                       
                             announcement_values = announcements[x[1]]
-                            map_info= map_class.maps[announcement_values[1]]                      
+                            map_info= map_class.maps[announcement_values[1]]  
+                            #print(x[1] + " interpreted as " + map_info.code)
                             obj_offender = map_info.offense
                             obj_defender = map_info.defense
                             obj_type = announcement_values[0]
@@ -414,7 +437,10 @@ class FileProcessor:
                             #print("Known objective: ".ljust(20) + x[1] + " map: " + map_info.name)
                             stat_entry = StatLine("temp",line_order, round_order,round_num,obj_offender,"Objective", obj_type, obj_defender)
                         else:
-                            print("---------------Unknown objective: ".ljust(20) + x[1])
+                            if ("the War Documents" in x[1]):
+                                "This objective repeats in various maps so we are going to skip it"
+                            else:
+                                print("---------------Unknown objective: ".ljust(20) + x[1])
                     else:
                         stat_entry = None
                     matched = key
@@ -452,5 +478,12 @@ class FileProcessor:
         #print([vars(e) for e in matches])
         matchesdf = pd.DataFrame([vars(e) for e in matches])
         #print(matchesdf["round_diff"])
+        
+        logdf = self.handle_renames(renames, ["killer","victim"], logdf, False)
+        stats_all = self.handle_renames(renames, ['player_strip','Killer','team_captain','OSP_Player'], stats_all, True)
+        #just leave it matchesdf = handle_renames(renames, columns, matchesdf)
+        
         logdf = logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
+        time_end_process_log = _time.time()
+        print ("Time to process " + self.read_file + " is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
         return {"logdf":logdf, "stats":stats_all, "matchesdf":matchesdf}

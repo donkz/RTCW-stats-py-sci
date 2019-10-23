@@ -1,25 +1,155 @@
 Kills,Deaths,TK,TKd,Suicides,All_Deaths,OSP_Player,OSP_Team,OSP_Kills,OSP_Deaths,OSP_Suicides,OSP_TK,OSP_Eff,OSP_Gibs,OSP_Damage_Given,OSP_Damage_Received,OSP_Team_Damage,OSP_Score,player_strip,team_name,team_captain,round_order,Killer,round_guid,osp_guid,round_num,map,AdjScore,side,round_win,game_result
-10.0,8.0,0.0,0.0,2.0,10.0,----E Spuddy,Axis,10,9,2,0,52,7,1870,2326,92,14,Spuddy,----E,----E copserr,1,----E Spuddy,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,10,Offense,0.0,R1MSB
-9.0,14.0,0.0,0.0,4.0,18.0,----E caffeine,Axis,9,18,4,0,33,0,1693,2289,42,25,caffeine,----E,----E copserr,1,----E caffeine,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,28,Offense,0.0,R1MSB
-11.0,11.0,2.0,0.0,4.0,15.0,----E copserr,Axis,11,14,4,2,44,6,2026,2766,96,22,copserr,----E,----E copserr,1,----E copserr,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,29,Offense,0.0,R1MSB
-10.0,15.0,0.0,1.0,0.0,16.0,----E jaytee,Axis,10,15,0,0,40,3,1803,2349,98,21,jaytee,----E,----E copserr,1,----E jaytee,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,11,Offense,0.0,R1MSB
-2.0,16.0,0.0,2.0,0.0,18.0,----E oreo,Axis,2,16,0,0,11,0,1054,2788,78,19,oreo,----E,----E copserr,1,----E oreo,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,17,Offense,0.0,R1MSB
-3.0,17.0,1.0,0.0,0.0,17.0,----E v1k!ng,Axis,3,17,0,1,15,0,1287,2902,100,11,v1k!ng,----E,----E copserr,1,----E v1k!ng,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,11,Offense,0.0,R1MSB
-11.0,6.0,1.0,1.0,5.0,12.0,/mute ABomB,Allies,11,7,5,1,61,7,3085,896,92,-5,ABomB,/mute,/mute sem,1,/mute ABomB,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,2,Defense,1.0,R1MSB
-4.0,9.0,0.0,2.0,1.0,12.0,/mute Op!o,Allies,4,9,1,0,30,1,1628,1964,30,11,Op!o,/mute,/mute sem,1,/mute Op!o,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,10,Defense,1.0,R1MSB
-19.0,3.0,0.0,0.0,0.0,3.0,/mute doNka,Allies,19,3,0,0,86,5,2367,1435,0,48,doNka,/mute,/mute sem,1,/mute doNka,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,29,Defense,1.0,R1MSB
-9.0,10.0,1.0,0.0,7.0,17.0,/mute eternal,Allies,9,17,7,1,34,8,1790,1856,243,-5,eternal,/mute,/mute sem,1,/mute eternal,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,10,Defense,1.0,R1MSB
-19.0,8.0,0.0,1.0,6.0,15.0,/mute nigel,Allies,19,14,6,0,57,8,2962,1497,107,37,nigel,/mute,/mute sem,1,/mute nigel,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,36,Defense,1.0,R1MSB
-19.0,9.0,2.0,0.0,2.0,11.0,/mute sem,Allies,19,10,2,2,65,4,3588,2085,226,46,sem,/mute,/mute sem,1,/mute sem,ef4cba7870d904f81ea5eea593bf6629,70656a8ef0d53a80b747d4bde5ad3b3c,1,Ice,39,Defense,1.0,R1MSB
-10.0,2.0,2.0,0.0,0.0,2.0,----E Spuddy,Allies,20,11,2,2,64,13,3534,3220,201,25,Spuddy,----E,----E jaytee,2,----E Spuddy,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,21,Defense,1.0,FULLHOLD
-20.0,8.0,1.0,0.0,9.0,17.0,----E caffeine,Allies,29,35,13,1,45,5,5995,3975,252,4,caffeine,----E,----E jaytee,2,----E caffeine,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,14,Defense,1.0,FULLHOLD
-18.0,10.0,0.0,2.0,5.0,17.0,----E copserr,Allies,29,29,9,2,50,13,5510,5417,132,23,copserr,----E,----E jaytee,2,----E copserr,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,20,Defense,1.0,FULLHOLD
-29.0,8.0,1.0,0.0,11.0,19.0,----E jaytee,Allies,38,33,11,1,53,22,9296,3874,250,-8,jaytee,----E,----E jaytee,2,----E jaytee,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,-1,Defense,1.0,FULLHOLD
-7.0,3.0,0.0,2.0,1.0,6.0,----E oreo,Allies,9,20,1,0,31,6,1842,3488,106,38,oreo,----E,----E jaytee,2,----E oreo,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,34,Defense,1.0,FULLHOLD
-4.0,7.0,0.0,0.0,1.0,8.0,----E v1k!ng,Allies,7,25,1,1,21,3,3070,4685,100,8,v1k!ng,----E,----E jaytee,2,----E v1k!ng,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,7,Defense,1.0,FULLHOLD
-4.0,12.0,0.0,0.0,0.0,12.0,/mute ABomB,Axis,15,19,5,1,44,8,4119,4170,92,9,ABomB,/mute,/mute sem,2,/mute ABomB,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,5,Offense,0.0,FULLHOLD
-4.0,13.0,0.0,0.0,1.0,14.0,/mute Op!o,Axis,8,22,2,0,26,2,2718,4364,102,25,Op!o,/mute,/mute sem,2,/mute Op!o,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,24,Offense,0.0,FULLHOLD
-9.0,11.0,0.0,1.0,2.0,14.0,/mute doNka,Axis,28,16,2,0,63,5,4396,4293,31,12,doNka,/mute,/mute sem,2,/mute doNka,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,9,Offense,0.0,FULLHOLD
-7.0,19.0,0.0,0.0,3.0,22.0,/mute eternal,Axis,16,39,10,1,29,14,3511,4520,243,28,eternal,/mute,/mute sem,2,/mute eternal,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,30,Offense,0.0,FULLHOLD
-5.0,14.0,0.0,0.0,2.0,16.0,/mute nigel,Axis,24,30,8,0,44,10,4558,4711,107,31,nigel,/mute,/mute sem,2,/mute nigel,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,32,Offense,0.0,FULLHOLD
-9.0,19.0,1.0,0.0,1.0,20.0,/mute sem,Axis,28,30,3,3,48,4,5357,7189,290,7,sem,/mute,/mute sem,2,/mute sem,07c686e623999367b3a480a775a1cc57,f13ea99e37a932dafb54e8fcd88664da,2,Ice,4,Offense,0.0,FULLHOLD
+2.0,4.0,1.0,0.0,1.0,5.0,CHUCK_donka,Axis,2,4,1,1,33,0,424,738,99,10,,??,Lunatic ????,1,CHUCK_donka,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,14,Defense,0.0,R1MSB
+4.0,3.0,0.0,0.0,0.0,3.0,DillWeed,Allies,4,3,0,0,57,0,330,514,0,46,,ll,John_Mullins,1,DillWeed,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,42,Offense,1.0,R1MSB
+6.0,2.0,0.0,0.0,4.0,6.0,John_Mullins,Allies,6,6,4,0,50,1,1100,592,50,-3,,ll,John_Mullins,1,John_Mullins,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,3,Offense,1.0,R1MSB
+3.0,3.0,0.0,0.0,4.0,7.0,Kittens,Allies,3,6,4,0,33,0,324,559,0,23,,ll,John_Mullins,1,Kittens,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,32,Offense,1.0,R1MSB
+5.0,4.0,0.0,1.0,1.0,6.0,Lunatic ????,Axis,5,5,1,0,50,2,1031,522,93,12,,??,Lunatic ????,1,Lunatic ????,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,10,Defense,0.0,R1MSB
+1.0,4.0,0.0,0.0,1.0,5.0,illkilla,Axis,1,4,1,0,20,0,210,560,0,-1,,??,Lunatic ????,1,illkilla,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,1,Defense,0.0,R1MSB
+0.0,1.0,0.0,0.0,0.0,1.0,SOURCE,Axis,0,1,0,0,0,0,0,83,0,0,,??,Lunatic ????,1,SOURCE,95ce6a7a0ebbd672cef16e84e3af727b,1d21835b03339e920c4bec51997276da,1,Escape,0,Defense,0.0,R1MSB
+5.0,5.0,0.0,0.0,2.0,7.0,CHUCK_donka,Allies,7,11,3,1,38,1,1498,2010,117,11,,??,Lunatic ????,2,CHUCK_donka,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,12,Offense,0.0,LOST
+4.0,5.0,0.0,0.0,0.0,5.0,DillWeed,Axis,8,8,0,0,50,0,1118,1246,0,30,,No tag,John_Mullins,2,DillWeed,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,26,Defense,1.0,WON
+3.0,5.0,0.0,0.0,0.0,5.0,Fister Miagi,Axis,3,5,0,0,37,1,617,830,0,13,,No tag,John_Mullins,2,Fister Miagi,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,10,Defense,1.0,WON
+4.0,5.0,0.0,0.0,0.0,5.0,John_Mullins,Axis,10,11,4,0,47,1,1874,1559,78,6,,No tag,John_Mullins,2,John_Mullins,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,2,Defense,1.0,WON
+4.0,2.0,0.0,0.0,0.0,2.0,Kittens,Axis,7,8,4,0,46,0,1439,1203,0,21,,No tag,John_Mullins,2,Kittens,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,17,Defense,1.0,WON
+8.0,4.0,0.0,0.0,1.0,5.0,Lunatic ????,Allies,13,10,2,0,56,6,1993,1234,129,10,,??,Lunatic ????,2,Lunatic ????,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,5,Offense,0.0,LOST
+2.0,2.0,0.0,0.0,1.0,3.0,SOURCE,Allies,2,4,1,0,33,1,491,673,0,-1,,??,Lunatic ????,2,SOURCE,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,0,Offense,0.0,LOST
+2.0,4.0,0.0,0.0,0.0,4.0,illkilla,Allies,3,8,1,0,27,1,856,1131,50,29,,??,Lunatic ????,2,illkilla,c153631d68f7bfba19215f78f9b1f5e6,7c6827a320e6fbbbabcd3734fce2d43e,2,Escape,27,Offense,0.0,LOST
+9.0,4.0,1.0,0.0,1.0,5.0,CHUCK_donka,Allies,9,5,1,0,64,0,1605,1013,18,45,,??,Lunatic ????,3,CHUCK_donka,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,42,Offense,1.0,R1MSB
+3.0,14.0,0.0,0.0,1.0,15.0,DillWeed,Axis,3,15,1,0,16,2,926,1735,172,11,,No tag,Kittens,3,DillWeed,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,11,Defense,0.0,R1MSB
+4.0,7.0,0.0,0.0,1.0,8.0,Fister Miagi,Axis,4,8,1,0,33,2,878,1487,34,20,,No tag,Kittens,3,Fister Miagi,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,19,Defense,0.0,R1MSB
+10.0,8.0,0.0,0.0,2.0,10.0,John_Mullins,Axis,10,10,2,0,50,0,1817,1625,14,13,,No tag,Kittens,3,John_Mullins,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,9,Defense,0.0,R1MSB
+11.0,4.0,0.0,0.0,2.0,6.0,Kittens,Axis,11,6,2,0,64,1,1307,1213,28,35,,No tag,Kittens,3,Kittens,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,30,Defense,0.0,R1MSB
+12.0,9.0,0.0,1.0,0.0,10.0,Lunatic ????,Allies,12,9,0,0,57,0,2116,1723,36,25,,??,Lunatic ????,3,Lunatic ????,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,13,Offense,1.0,R1MSB
+6.0,6.0,1.0,0.0,2.0,8.0,SOURCE,Allies,6,8,2,1,42,1,1297,780,165,1,,??,Lunatic ????,3,SOURCE,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,4,Offense,1.0,R1MSB
+6.0,9.0,0.0,1.0,2.0,12.0,illkilla,Allies,6,11,2,0,35,4,1042,1412,0,19,,??,Lunatic ????,3,illkilla,337ab9ebeebfac4c7c0ee07f1ba523d3,0eaec8cc81b40f7ae837030e42ed40b1,1,Escape,19,Offense,1.0,R1MSB
+1.0,2.0,0.0,0.0,1.0,3.0,CHUCK_donka,Axis,10,7,2,0,58,0,1946,1319,18,-2,,??,Lunatic ????,4,CHUCK_donka,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,0,Defense,0.0,LOST
+4.0,2.0,0.0,0.0,2.0,4.0,John_Mullins,Allies,14,14,4,0,50,1,2417,2075,14,0,,ll,Kittens,4,John_Mullins,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,2,Offense,1.0,WON
+5.0,0.0,0.0,0.0,0.0,0.0,Kittens,Allies,16,6,2,0,72,1,2116,1423,28,35,,ll,Kittens,4,Kittens,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,30,Offense,1.0,WON
+4.0,3.0,0.0,0.0,0.0,3.0,Lunatic ????,Axis,16,12,0,0,57,2,2739,2200,36,4,,??,Lunatic ????,4,Lunatic ????,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,0,Defense,0.0,LOST
+0.0,3.0,0.0,0.0,1.0,4.0,DillWeed,Allies,3,19,2,0,13,2,996,2243,172,10,,ll,Kittens,4,DillWeed,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,13,Offense,1.0,WON
+0.0,3.0,0.0,0.0,0.0,3.0,SOURCE,Axis,6,11,2,1,35,1,1501,1204,179,0,,??,Lunatic ????,4,SOURCE,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,0,Defense,0.0,LOST
+0.0,1.0,0.0,0.0,0.0,1.0,illkilla,Axis,6,12,2,0,33,4,1042,1702,0,0,,??,Lunatic ????,4,illkilla,317ab0e1b2a407e03bb177798f664cea,49509e0b46a7c773754672ee47ec53fe,2,Escape,0,Defense,0.0,LOST
+7.0,5.0,0.0,2.0,1.0,8.0,CHUCK_donka,Axis,7,6,1,0,53,1,1230,906,106,6,,??,CHUCK_donka,5,CHUCK_donka,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,2,Defense,0.0,R1MSB
+5.0,9.0,0.0,1.0,0.0,10.0,DillWeed,Allies,5,9,0,0,35,0,785,1196,0,13,,No tag,John_Mullins,5,DillWeed,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,8,Offense,1.0,R1MSB
+1.0,4.0,0.0,0.0,0.0,4.0,Fister Miagi,Allies,1,4,0,0,20,0,320,714,0,16,,No tag,John_Mullins,5,Fister Miagi,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,15,Offense,1.0,R1MSB
+7.0,6.0,0.0,0.0,1.0,7.0,John_Mullins,Allies,7,7,1,0,50,0,1513,1203,0,5,,No tag,John_Mullins,5,John_Mullins,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,1,Offense,1.0,R1MSB
+7.0,1.0,1.0,0.0,2.0,3.0,Kittens,Allies,7,3,2,1,70,2,1182,550,113,44,,No tag,John_Mullins,5,Kittens,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,46,Offense,1.0,R1MSB
+4.0,5.0,1.0,0.0,0.0,5.0,Lunatic ????,Axis,4,5,0,1,44,4,995,1211,138,7,,??,CHUCK_donka,5,Lunatic ????,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,6,Defense,0.0,R1MSB
+7.0,6.0,0.0,0.0,1.0,7.0,PennyWi$E,Axis,7,6,1,0,53,1,1012,1165,28,8,,??,CHUCK_donka,5,PennyWi$E,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,4,Defense,0.0,R1MSB
+2.0,4.0,1.0,0.0,1.0,5.0,illkilla,Axis,2,5,1,1,28,1,426,518,149,18,,??,CHUCK_donka,5,illkilla,8251ad1dfabbd75f4a412022d9eb173a,1ed1afec440aa8d77bcff592364a210c,1,Escape,22,Defense,0.0,R1MSB
+4.0,5.0,2.0,0.0,0.0,5.0,CHUCK_donka,Allies,11,11,1,2,50,1,2021,2071,214,8,,No tag,Lunatic ????,6,CHUCK_donka,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,10,Offense,1.0,WON
+3.0,6.0,0.0,0.0,0.0,6.0,DillWeed,Axis,8,15,0,0,34,1,1315,1952,99,13,,No tag,John_Mullins,6,DillWeed,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,10,Defense,0.0,LOST
+2.0,4.0,0.0,1.0,0.0,5.0,Fister Miagi,Axis,3,8,0,0,27,1,613,1554,42,5,,No tag,John_Mullins,6,Fister Miagi,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,3,Defense,0.0,LOST
+7.0,3.0,0.0,0.0,2.0,5.0,John_Mullins,Axis,14,11,3,0,56,0,2589,1995,0,5,,No tag,John_Mullins,6,John_Mullins,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,4,Defense,0.0,LOST
+6.0,4.0,0.0,0.0,1.0,5.0,Kittens,Axis,13,8,3,1,61,4,2254,1302,113,17,,No tag,John_Mullins,6,Kittens,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,14,Defense,0.0,LOST
+6.0,3.0,0.0,1.0,1.0,5.0,Lunatic ????,Allies,10,9,1,1,52,4,2060,1790,206,9,,No tag,Lunatic ????,6,Lunatic ????,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,6,Offense,1.0,WON
+2.0,2.0,0.0,0.0,0.0,2.0,P.I.M.P.,Allies,2,2,0,0,50,1,302,316,54,4,,No tag,Lunatic ????,6,P.I.M.P.,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,2,Offense,1.0,WON
+2.0,5.0,1.0,0.0,1.0,6.0,PennyWi$E,Axis,9,11,2,1,45,2,1427,1820,70,4,,No tag,John_Mullins,6,PennyWi$E,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,8,Defense,0.0,LOST
+5.0,4.0,0.0,0.0,1.0,5.0,SOURCE,Allies,5,5,1,0,50,3,979,720,90,35,,No tag,Lunatic ????,6,SOURCE,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,33,Offense,1.0,WON
+5.0,6.0,0.0,1.0,1.0,8.0,illkilla,Allies,7,12,2,1,36,7,1084,1124,167,18,,No tag,Lunatic ????,6,illkilla,91c4c2576199efa31425dc748f2804e1,42bf4790a7f54dc4a2f5033f3cf195c8,2,Escape,16,Offense,1.0,WON
+6.0,4.0,0.0,0.0,1.0,5.0,CHUCK_donka,Allies,6,5,1,0,54,0,858,878,0,10,,No tag,Lunatic ????,7,CHUCK_donka,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,7,Defense,0.0,R1MSB
+4.0,6.0,0.0,0.0,0.0,6.0,DillWeed,Axis,4,6,0,0,40,0,676,775,14,9,,No tag,John_Mullins,7,DillWeed,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,5,Offense,1.0,R1MSB
+1.0,7.0,0.0,0.0,0.0,7.0,Fister Miagi,Axis,1,7,0,0,12,1,330,1471,0,16,,No tag,John_Mullins,7,Fister Miagi,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,15,Offense,1.0,R1MSB
+8.0,5.0,0.0,0.0,1.0,6.0,John_Mullins,Axis,8,6,1,0,57,0,1202,1216,42,6,,No tag,John_Mullins,7,John_Mullins,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,1,Offense,1.0,R1MSB
+4.0,5.0,0.0,0.0,0.0,5.0,Kittens,Axis,4,5,0,0,44,0,925,1076,14,38,,No tag,John_Mullins,7,Kittens,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,34,Offense,1.0,R1MSB
+7.0,3.0,0.0,0.0,1.0,4.0,Lunatic ????,Allies,7,4,1,0,63,3,938,618,18,21,,No tag,Lunatic ????,7,Lunatic ????,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,17,Defense,0.0,R1MSB
+7.0,4.0,0.0,1.0,0.0,5.0,P.I.M.P.,Allies,7,4,0,0,63,2,1339,891,0,30,,No tag,Lunatic ????,7,P.I.M.P.,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,23,Defense,0.0,R1MSB
+3.0,4.0,0.0,0.0,1.0,5.0,PennyWi$E,Axis,3,5,1,0,37,0,622,646,0,27,,No tag,John_Mullins,7,PennyWi$E,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,27,Offense,1.0,R1MSB
+2.0,3.0,0.0,0.0,1.0,4.0,SOURCE,Allies,2,4,1,0,33,0,818,568,14,1,,No tag,Lunatic ????,7,SOURCE,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,2,Defense,0.0,R1MSB
+5.0,6.0,1.0,0.0,0.0,6.0,illkilla,Allies,5,6,0,1,45,1,1231,800,368,17,,No tag,Lunatic ????,7,illkilla,de4f448f842d84924b4dab6a7d738abe,969742441742ce0ef4ec248e11d50f75,1,Ice,15,Defense,0.0,R1MSB
+4.0,5.0,0.0,0.0,0.0,5.0,CHUCK_donka,Axis,10,10,1,0,50,0,1819,1842,0,7,,No tag,SOURCE,8,CHUCK_donka,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,3,Offense,0.0,LOST
+2.0,2.0,0.0,1.0,0.0,3.0,DillWeed,Allies,6,8,0,0,42,1,1014,1099,14,7,,No tag,John_Mullins,8,DillWeed,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,5,Defense,1.0,WON
+4.0,3.0,1.0,0.0,0.0,3.0,Fister Miagi,Allies,5,10,0,1,33,3,1060,1995,36,15,,No tag,John_Mullins,8,Fister Miagi,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,14,Defense,1.0,WON
+10.0,4.0,0.0,0.0,1.0,5.0,John_Mullins,Allies,18,11,2,0,62,0,2752,2546,42,9,,No tag,John_Mullins,8,John_Mullins,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,2,Defense,1.0,WON
+8.0,3.0,0.0,0.0,1.0,4.0,Kittens,Allies,12,9,1,0,57,1,2134,1800,42,27,,No tag,John_Mullins,8,Kittens,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,22,Defense,1.0,WON
+1.0,7.0,0.0,0.0,1.0,8.0,Lunatic ????,Axis,8,12,2,0,40,3,1646,1819,32,6,,No tag,SOURCE,8,Lunatic ????,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,8,Offense,0.0,LOST
+2.0,5.0,0.0,0.0,2.0,7.0,P.I.M.P.,Axis,9,11,2,0,45,2,2089,1852,82,-3,,No tag,SOURCE,8,P.I.M.P.,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,1,Offense,0.0,LOST
+4.0,6.0,0.0,0.0,0.0,6.0,PennyWi$E,Allies,7,11,1,0,38,2,1929,1342,0,6,,No tag,John_Mullins,8,PennyWi$E,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,2,Defense,1.0,WON
+8.0,6.0,0.0,0.0,0.0,6.0,SOURCE,Axis,10,10,1,0,50,2,1645,1806,64,12,,No tag,SOURCE,8,SOURCE,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,4,Offense,0.0,LOST
+3.0,5.0,0.0,0.0,1.0,6.0,illkilla,Axis,8,12,1,1,40,2,1583,1570,368,24,,No tag,SOURCE,8,illkilla,88eb36b421d2c6ec52ee5a179edc0343,2c2c647646ddb10dceb652bcca683823,2,Ice,24,Offense,0.0,LOST
+4.0,14.0,0.0,0.0,2.0,16.0,CHUCK_donka,Axis,4,14,2,0,22,0,1466,3233,184,16,,No tag,Lunatic ????,9,CHUCK_donka,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,18,Offense,0.0,R1MSB
+7.0,14.0,0.0,1.0,0.0,15.0,Cypher,Axis,7,14,0,0,33,1,1633,2851,14,15,,No tag,Lunatic ????,9,Cypher,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,8,Offense,0.0,R1MSB
+7.0,12.0,0.0,1.0,0.0,13.0,DillWeed,Allies,7,12,0,0,36,3,1900,2142,126,17,,No tag,Kittens,9,DillWeed,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,10,Defense,1.0,R1MSB
+8.0,11.0,1.0,0.0,0.0,11.0,Fister Miagi,Allies,8,11,0,1,42,5,1651,2203,18,25,,No tag,Kittens,9,Fister Miagi,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,20,Defense,1.0,R1MSB
+17.0,12.0,0.0,0.0,5.0,17.0,John_Mullins,Allies,17,17,5,0,50,0,3661,2960,54,21,,No tag,Kittens,9,John_Mullins,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,19,Defense,1.0,R1MSB
+26.0,9.0,1.0,1.0,8.0,18.0,Kittens,Allies,26,15,8,1,63,5,4417,2266,367,11,,No tag,Kittens,9,Kittens,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,12,Defense,1.0,R1MSB
+14.0,12.0,3.0,2.0,3.0,17.0,Lunatic ????,Axis,14,15,3,3,48,1,2669,2934,418,25,,No tag,Lunatic ????,9,Lunatic ????,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,29,Offense,0.0,R1MSB
+8.0,10.0,1.0,1.0,2.0,13.0,P.I.M.P.,Axis,8,12,2,1,40,3,1778,2450,138,14,,No tag,Lunatic ????,9,P.I.M.P.,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,15,Offense,0.0,R1MSB
+17.0,7.0,1.0,0.0,7.0,14.0,PennyWi$E,Allies,17,11,7,1,60,7,3837,1661,257,8,,No tag,Kittens,9,PennyWi$E,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,15,Defense,1.0,R1MSB
+11.0,12.0,3.0,3.0,2.0,17.0,SOURCE,Axis,11,14,2,3,44,2,2503,2392,490,6,,No tag,Lunatic ????,9,SOURCE,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,10,Offense,0.0,R1MSB
+2.0,2.0,0.0,1.0,1.0,4.0,TK|POW,Allies,2,2,1,0,50,1,298,549,0,14,,No tag,Kittens,9,TK|POW,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,15,Defense,1.0,R1MSB
+9.0,15.0,0.0,0.0,1.0,16.0,illkilla,Axis,9,16,1,0,36,1,1732,1904,14,25,,No tag,Lunatic ????,9,illkilla,9a616c8d474c2dff7c61476c53fea121,43cdb4f2b2c167ba4e59a11d5237d9ab,1,Ice,19,Offense,0.0,R1MSB
+17.0,6.0,0.0,1.0,4.0,11.0,CHUCK_donka,Allies,21,24,6,0,46,4,4637,5204,256,63,,No tag,Cypher,10,CHUCK_donka,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,58,Defense,1.0,FULLHOLD
+20.0,10.0,1.0,1.0,3.0,14.0,Cypher,Allies,27,27,3,1,50,5,4941,5376,341,36,,No tag,Cypher,10,Cypher,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,28,Defense,1.0,FULLHOLD
+4.0,16.0,0.0,0.0,0.0,16.0,DillWeed,Axis,11,28,0,0,28,4,2608,5467,126,24,,No tag,John_Mullins,10,DillWeed,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,20,Offense,0.0,FULLHOLD
+2.0,13.0,0.0,1.0,0.0,14.0,Fister Miagi,Axis,10,24,0,1,29,5,2281,4566,68,41,,No tag,John_Mullins,10,Fister Miagi,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,39,Offense,0.0,FULLHOLD
+13.0,14.0,0.0,1.0,1.0,16.0,John_Mullins,Axis,30,32,6,0,48,1,6431,6186,68,15,,No tag,John_Mullins,10,John_Mullins,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,5,Offense,0.0,FULLHOLD
+12.0,15.0,0.0,0.0,4.0,19.0,Kittens,Axis,38,33,12,1,53,6,6775,5628,381,32,,No tag,John_Mullins,10,Kittens,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,32,Offense,0.0,FULLHOLD
+9.0,8.0,0.0,1.0,3.0,12.0,Lunatic ????,Allies,23,26,6,3,46,5,4655,4016,504,9,,No tag,Cypher,10,Lunatic ????,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,9,Defense,1.0,FULLHOLD
+8.0,5.0,1.0,0.0,3.0,8.0,P.I.M.P.,Allies,16,20,5,2,44,5,3674,3778,228,15,,No tag,Cypher,10,P.I.M.P.,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,19,Defense,1.0,FULLHOLD
+2.0,0.0,1.0,0.0,2.0,2.0,,,,,,,,,,,,,,,,10,PennyWi$E,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,7,,,FULLHOLD
+10.0,13.0,1.0,0.0,2.0,15.0,PennyWi$E,Axis,29,28,11,3,50,12,6493,4398,805,11,,No tag,John_Mullins,10,PennyWi$E,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,10,Offense,0.0,FULLHOLD
+16.0,5.0,2.0,1.0,8.0,14.0,SOURCE,Allies,27,26,10,5,50,12,6955,3484,797,-10,,No tag,Cypher,10,SOURCE,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,4,Defense,1.0,FULLHOLD
+3.0,5.0,0.0,0.0,3.0,8.0,TK|POW,Axis,5,10,4,0,33,1,776,1872,0,11,,No tag,John_Mullins,10,TK|POW,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,17,Offense,0.0,FULLHOLD
+6.0,12.0,0.0,0.0,3.0,15.0,illkilla,Allies,15,30,4,0,33,4,3255,3506,42,25,,No tag,Cypher,10,illkilla,74c32565d7495b0b73094d53b1fdfaf8,cfc08a1a1640c0b0350057495c6f3483,2,Ice,28,Defense,1.0,FULLHOLD
+1.0,0.0,0.0,1.0,1.0,2.0,DillWeed,Axis,1,1,1,0,50,1,487,170,0,-1,,No tag,John_Mullins,11,DillWeed,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,1,Defense,0.0,R1MSB
+3.0,2.0,0.0,1.0,0.0,3.0,John_Mullins,Axis,3,2,0,0,60,0,415,429,0,13,,No tag,John_Mullins,11,John_Mullins,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,10,Defense,0.0,R1MSB
+1.0,1.0,2.0,0.0,0.0,1.0,Kittens,Axis,1,1,0,2,50,0,247,108,299,-3,,No tag,John_Mullins,11,Kittens,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,2,Defense,0.0,R1MSB
+2.0,0.0,0.0,0.0,0.0,0.0,Lunatic ????,Allies,2,0,0,0,100,0,126,28,0,3,,No tag,SOURCE,11,Lunatic ????,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,1,Offense,1.0,R1MSB
+2.0,0.0,0.0,1.0,0.0,1.0,P.I.M.P.,Allies,2,0,0,0,100,0,234,252,0,2,,No tag,SOURCE,11,P.I.M.P.,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,0,Offense,1.0,R1MSB
+3.0,1.0,1.0,0.0,1.0,2.0,SOURCE,Allies,3,2,1,1,60,2,757,219,214,-2,,No tag,SOURCE,11,SOURCE,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,1,Offense,1.0,R1MSB
+0.0,1.0,0.0,0.0,0.0,1.0,CHUCK_donka,Allies,0,1,0,0,0,0,72,218,0,10,,No tag,SOURCE,11,CHUCK_donka,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,10,Offense,1.0,R1MSB
+0.0,1.0,0.0,0.0,0.0,1.0,Cypher,Allies,0,1,0,0,0,0,54,361,0,40,,No tag,SOURCE,11,Cypher,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,40,Offense,1.0,R1MSB
+0.0,1.0,0.0,0.0,0.0,1.0,Fister Miagi,Axis,0,1,0,0,0,0,70,286,0,0,,No tag,John_Mullins,11,Fister Miagi,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,0,Defense,0.0,R1MSB
+0.0,2.0,0.0,0.0,0.0,2.0,PennyWi$E,Axis,0,2,0,0,0,0,17,180,0,0,,No tag,John_Mullins,11,PennyWi$E,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,0,Defense,0.0,R1MSB
+0.0,1.0,0.0,0.0,0.0,1.0,TK|POW,Axis,0,1,0,0,0,0,154,106,0,0,,No tag,John_Mullins,11,TK|POW,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,0,Defense,0.0,R1MSB
+0.0,2.0,0.0,0.0,0.0,2.0,illkilla,Allies,0,2,0,0,0,0,36,312,0,0,,No tag,SOURCE,11,illkilla,b9f5f1d4a4d418fa3c117859ffc0a0bc,14cc4fd1678ec6dc9db4ac4f537c69db,1,Frostbite,0,Offense,1.0,R1MSB
+11.0,7.0,0.0,0.0,3.0,10.0,CHUCK_donka,Axis,11,11,3,0,50,2,1692,1390,64,50,,No tag,SOURCE,12,CHUCK_donka,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,48,Defense,0.0,R1MSB
+6.0,6.0,0.0,1.0,2.0,9.0,Cypher,Axis,6,9,2,0,40,1,1182,1438,0,25,,No tag,SOURCE,12,Cypher,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,25,Defense,0.0,R1MSB
+8.0,8.0,0.0,0.0,1.0,9.0,DillWeed,Allies,9,10,2,0,47,4,1396,1980,0,22,,No tag,Kittens,12,DillWeed,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,17,Offense,1.0,R1MSB
+6.0,10.0,0.0,0.0,0.0,10.0,Fister Miagi,Allies,6,11,0,0,35,2,792,2114,116,24,,No tag,Kittens,12,Fister Miagi,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,18,Offense,1.0,R1MSB
+8.0,9.0,1.0,0.0,2.0,11.0,John_Mullins,Allies,11,13,2,1,45,0,2261,2652,158,34,,No tag,Kittens,12,John_Mullins,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,35,Offense,1.0,R1MSB
+14.0,10.0,0.0,1.0,1.0,12.0,Kittens,Allies,15,12,1,2,55,0,2768,2792,299,40,,No tag,Kittens,12,Kittens,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,29,Offense,1.0,R1MSB
+9.0,8.0,1.0,0.0,1.0,9.0,Lunatic ????,Axis,11,9,1,1,55,5,1936,1130,170,11,,No tag,SOURCE,12,Lunatic ????,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,8,Defense,0.0,R1MSB
+7.0,6.0,0.0,1.0,3.0,10.0,P.I.M.P.,Axis,9,8,3,0,52,0,1869,1873,14,21,,No tag,SOURCE,12,P.I.M.P.,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,23,Defense,0.0,R1MSB
+5.0,8.0,0.0,0.0,3.0,11.0,PennyWi$E,Allies,5,12,3,0,29,4,1339,1408,0,17,,No tag,Kittens,12,PennyWi$E,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,21,Offense,1.0,R1MSB
+13.0,5.0,1.0,0.0,5.0,10.0,SOURCE,Axis,16,11,6,2,59,16,4548,1155,487,1,,No tag,SOURCE,12,SOURCE,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,6,Defense,0.0,R1MSB
+6.0,9.0,0.0,0.0,3.0,12.0,illkilla,Axis,6,14,3,0,30,3,1050,1958,0,21,,No tag,SOURCE,12,illkilla,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,24,Defense,0.0,R1MSB
+0.0,7.0,0.0,0.0,3.0,10.0,TK|POW,Allies,0,11,3,0,0,1,388,1331,0,7,,No tag,Kittens,12,TK|POW,cdcbc2bb0aa54e07c212c1fd96c9e815,44ff1ef6b1d52134cb617ed9aebebce9,1,Frostbite,16,Offense,1.0,R1MSB
+3.0,5.0,1.0,0.0,2.0,7.0,CHUCK_donka,Allies,3,7,2,1,30,1,965,1106,36,10,,No tag,SOURCE,13,CHUCK_donka,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,16,Offense,1.0,WON
+5.0,6.0,0.0,0.0,1.0,7.0,Cypher,Allies,5,7,1,0,41,2,1248,1507,0,17,,No tag,SOURCE,13,Cypher,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,15,Offense,1.0,WON
+7.0,9.0,1.0,0.0,0.0,9.0,DillWeed,Axis,7,9,0,1,43,3,1328,1803,71,7,,No tag,Kittens,13,DillWeed,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,3,Defense,0.0,LOST
+6.0,7.0,2.0,1.0,0.0,8.0,Fister Miagi,Axis,6,7,0,2,46,4,1091,1508,135,45,,No tag,Kittens,13,Fister Miagi,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,45,Defense,0.0,LOST
+5.0,8.0,0.0,1.0,3.0,12.0,John_Mullins,Axis,5,11,3,0,31,2,2054,1800,28,8,,No tag,Kittens,13,John_Mullins,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,12,Defense,0.0,LOST
+17.0,10.0,0.0,0.0,2.0,12.0,Kittens,Axis,17,12,2,0,58,2,2418,2797,18,44,,No tag,Kittens,13,Kittens,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,33,Defense,0.0,LOST
+3.0,8.0,1.0,0.0,1.0,9.0,Lunatic ????,Allies,3,9,1,1,25,1,919,1014,148,0,,No tag,SOURCE,13,Lunatic ????,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,3,Offense,1.0,WON
+6.0,7.0,0.0,1.0,0.0,8.0,P.I.M.P.,Allies,6,7,0,0,46,0,1062,1419,18,42,,No tag,SOURCE,13,P.I.M.P.,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,36,Offense,1.0,WON
+6.0,9.0,0.0,0.0,1.0,10.0,PennyWi$E,Axis,6,10,1,0,37,4,1579,1406,0,25,,No tag,Kittens,13,PennyWi$E,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,22,Defense,0.0,LOST
+14.0,4.0,1.0,1.0,1.0,6.0,SOURCE,Allies,14,5,1,1,73,9,3532,870,276,10,,No tag,SOURCE,13,SOURCE,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,2,Offense,1.0,WON
+3.0,6.0,0.0,1.0,1.0,8.0,TK|POW,Axis,3,7,1,0,30,1,540,1109,0,16,,No tag,Kittens,13,TK|POW,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,16,Defense,0.0,LOST
+10.0,8.0,0.0,1.0,0.0,9.0,illkilla,Allies,10,8,0,0,55,1,1411,1699,0,61,,No tag,SOURCE,13,illkilla,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,51,Offense,1.0,WON
+8.0,6.0,1.0,1.0,1.0,8.0,soobsoob,Allies,8,7,1,1,53,0,1286,1395,50,10,,No tag,SOURCE,13,soobsoob,dd4984debb615b5b6e83d66f0dfb790f,4974c752e139721f6ead9a8887231dee,2,Frostbite,8,Offense,1.0,WON
+12.0,13.0,0.0,0.0,0.0,13.0,CHUCK_donka,Allies,15,20,2,1,42,1,2917,3359,118,32,,No tag,Lunatic ????,14,CHUCK_donka,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,20,Offense,1.0,R1MSB
+6.0,5.0,0.0,1.0,2.0,8.0,Cypher,Allies,11,14,3,0,44,3,2316,2900,72,18,,No tag,Lunatic ????,14,Cypher,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,18,Offense,1.0,R1MSB
+6.0,8.0,0.0,0.0,1.0,9.0,DillWeed,Axis,13,18,1,1,41,4,2428,3496,199,26,,No tag,Kittens,14,DillWeed,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,23,Defense,0.0,R1MSB
+7.0,8.0,0.0,1.0,0.0,9.0,Fister Miagi,Axis,13,15,0,2,46,4,2146,3205,135,24,,No tag,Kittens,14,Fister Miagi,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,17,Defense,0.0,R1MSB
+13.0,12.0,0.0,0.0,4.0,16.0,John_Mullins,Axis,18,27,7,0,40,2,4852,4434,84,11,,No tag,Kittens,14,John_Mullins,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,10,Defense,0.0,R1MSB
+14.0,11.0,0.0,0.0,5.0,16.0,Kittens,Axis,31,28,7,0,52,4,4816,4229,171,36,,No tag,Kittens,14,Kittens,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,37,Defense,0.0,R1MSB
+14.0,11.0,1.0,0.0,3.0,14.0,Lunatic ????,Allies,17,23,4,2,42,4,3407,3180,212,12,,No tag,Lunatic ????,14,Lunatic ????,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,10,Offense,1.0,R1MSB
+9.0,10.0,0.0,0.0,1.0,11.0,P.I.M.P.,Allies,15,18,1,0,45,2,2318,3307,36,54,,No tag,Lunatic ????,14,P.I.M.P.,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,48,Offense,1.0,R1MSB
+13.0,4.0,1.0,0.0,10.0,14.0,PennyWi$E,Axis,19,20,11,1,48,12,4431,2562,101,-17,,No tag,Kittens,14,PennyWi$E,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,3,Defense,0.0,R1MSB
+8.0,10.0,2.0,0.0,3.0,13.0,SOURCE,Allies,22,18,4,3,55,14,5900,2587,694,-7,,No tag,Lunatic ????,14,SOURCE,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,0,Offense,1.0,R1MSB
+6.0,12.0,0.0,2.0,0.0,14.0,illkilla,Allies,16,20,0,0,44,5,2889,4053,36,19,,No tag,Lunatic ????,14,illkilla,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,13,Offense,1.0,R1MSB
+9.0,13.0,0.0,0.0,2.0,15.0,soobsoob,Axis,17,22,3,1,43,1,3496,4035,192,13,,No tag,Kittens,14,soobsoob,08858b5f95d7b2624ad7413ca01401c8,a7c437267ee43d372e926147cc0c735f,1,Frostbite,10,Defense,0.0,R1MSB
+11.0,6.0,0.0,1.0,0.0,7.0,CHUCK_donka,Axis,11,6,0,0,64,4,2202,1461,0,39,,No tag,CHUCK_donka,15,CHUCK_donka,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,28,Defense,0.0,LOST
+4.0,8.0,0.0,0.0,0.0,8.0,Cypher,Axis,4,8,0,0,33,4,1332,1340,0,12,,No tag,CHUCK_donka,15,Cypher,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,8,Defense,0.0,LOST
+4.0,10.0,1.0,0.0,0.0,10.0,DillWeed,Allies,4,10,0,1,28,1,1200,1494,169,23,,No tag,John_Mullins,15,DillWeed,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,22,Offense,1.0,WON
+5.0,5.0,1.0,2.0,2.0,9.0,Fister Miagi,Allies,5,7,2,1,41,3,738,1452,54,6,,No tag,John_Mullins,15,Fister Miagi,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,10,Offense,1.0,WON
+11.0,6.0,0.0,0.0,3.0,9.0,John_Mullins,Allies,11,9,3,0,55,0,2087,1602,0,6,,No tag,John_Mullins,15,John_Mullins,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,4,Offense,1.0,WON
+11.0,9.0,1.0,1.0,5.0,15.0,Kittens,Allies,11,14,5,1,44,0,1783,2256,154,8,,No tag,John_Mullins,15,Kittens,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,15,Offense,1.0,WON
+10.0,8.0,1.0,1.0,1.0,10.0,Lunatic ????,Axis,10,9,1,1,52,3,2024,1172,125,8,,No tag,CHUCK_donka,15,Lunatic ????,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,4,Defense,0.0,LOST
+8.0,8.0,0.0,0.0,5.0,13.0,P.I.M.P.,Axis,8,13,5,0,38,2,1464,2171,14,16,,No tag,CHUCK_donka,15,P.I.M.P.,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,23,Defense,0.0,LOST
+3.0,9.0,0.0,0.0,2.0,11.0,PennyWi$E,Allies,3,10,2,0,23,2,960,2020,0,27,,No tag,John_Mullins,15,PennyWi$E,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,30,Offense,1.0,WON
+10.0,3.0,1.0,1.0,3.0,7.0,SOURCE,Axis,10,6,3,1,62,7,2680,622,191,-1,,No tag,CHUCK_donka,15,SOURCE,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,1,Defense,0.0,LOST
+4.0,10.0,1.0,0.0,0.0,10.0,illkilla,Axis,4,10,0,1,28,0,1001,1248,110,4,,No tag,CHUCK_donka,15,illkilla,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,3,Defense,0.0,LOST
+9.0,8.0,0.0,0.0,1.0,9.0,soobsoob,Allies,9,9,1,0,50,0,1246,1879,0,21,,No tag,John_Mullins,15,soobsoob,df7d4cdf988edc1544c69bf586302923,6c68fb300fac1dec751550d26e45e249,2,Frostbite,15,Offense,1.0,WON

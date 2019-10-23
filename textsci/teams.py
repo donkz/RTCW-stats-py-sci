@@ -83,8 +83,11 @@ def add_team_name(stats_all):
         axis = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index.values
         allies_team_name = get_team_name(allies)
         axis_team_name = get_team_name(axis)
-        stats_all["player_strip"]=stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(allies_team_name, "").str.replace(axis_team_name, "").str.strip()
-        
+#        print(stats_all[Const.STAT_OSP_SUM_PLAYER])
+#        print(allies_team_name)
+#        print(stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(to_replace=allies_team_name, value=""))
+#        stats_all["player_strip"]=stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(to_replace=allies_team_name, value="").str.replace(to_replace=axis_team_name, value="").str.strip()   
+        stats_all["player_strip"]=""
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_name"] = allies_team_name
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_name"] = axis_team_name
@@ -96,9 +99,13 @@ def get_round_guid_osp(osp_lines):
         return osp_guid
     
 def get_player_list(stats_all):
-        playerlist = stats_all.sort_values(Const.STAT_BASE_KILLER)
-        players = "#".join(playerlist[Const.STAT_BASE_KILLER])
-        return players.replace(",","") # for csv
+        #debug stats_all = statsdf[statsdf["round_order"]==1]
+        playerlisto = stats_all[stats_all["side"] == "Offense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]
+        playerlisto_str = ["#".join(playerlisto[Const.STAT_BASE_KILLER]), playerlisto.iloc[0,1], "Offense"]
+        playerlistd = stats_all[stats_all["side"] == "Defense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]
+        playerlistd_str = ["#".join(playerlistd[Const.STAT_BASE_KILLER]), playerlistd.iloc[0,1], "Defense"]
+        players = sorted([playerlisto_str , playerlistd_str], key=lambda x: x[0])
+        return players #.replace(",","") # for csv
 
 def get_round_guid_client_log(stats_all):
         stats_all[Const.STAT_BASE_KILLER] = stats_all.index #could just reset_index

@@ -1,4 +1,4 @@
-from constants.logtext import Const # need to actually copy paste cont class to console until i figure out how to cross call the folders
+from constants.logtext import Const 
 from collections import Counter
 import pandas as pd
 
@@ -108,64 +108,7 @@ class Awards:
         #print(awardsdf[[name for name in awardsdf.columns if "_rank" in name]])
            
         return [awardsdf,columns]
-    
-    '''
-    Kill matrix (who killed who how many times)
-    '''
-    def awards_kill_matrix(self, data):
-        event_lines_dataframe = data["logdf"]
-        kill_matrix = event_lines_dataframe[event_lines_dataframe.event.isin(["kill","Team kill"])].groupby(["killer","victim"]).count().reset_index().pivot(index = "killer", columns = "victim", values = "event").fillna(0)
-        kill_matrix_rank = kill_matrix.rank(method="min", ascending=False, axis = 1)
-        result = kill_matrix.join(kill_matrix_rank, rsuffix = "_rank")
-        return [result, ""] #just to match others
-    
-    '''
-    Traditional stats
-    '''
-    def all_stats_matrix(self, data):
-        sum_lines_dataframe   = data["stats"]
-        
-        base_stats = sum_lines_dataframe[[Const.STAT_BASE_KILL, Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS]]
-        base_stats_sum = base_stats.groupby(base_stats.index).agg({Const.STAT_BASE_KILL : "sum", Const.STAT_BASE_DEATHS : "sum", Const.STAT_BASE_TK : "sum", Const.STAT_BASE_TKd : "sum", Const.STAT_BASE_SUI : "sum", Const.STAT_BASE_ALLDEATHS : "sum"})
-        
-        #use only round 2 stats
-        osp_stats  = sum_lines_dataframe[sum_lines_dataframe["round_num"] == 2][[Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]].fillna(0).astype(int)
-        osp_stats_sum = osp_stats.groupby(osp_stats.index).agg({Const.STAT_OSP_SUM_GIBS : "sum", Const.STAT_OSP_SUM_DMG : "sum" , Const.STAT_OSP_SUM_DMR : "sum" , Const.STAT_OSP_SUM_TEAMDG : "sum"})
-
-        stats_all_sum = base_stats_sum.join(osp_stats_sum)
-        #columns = [Const.STAT_BASE_KILL, Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS, Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]
-        #stats = sum_lines_dataframe[columns]
-        stats_all_sum_rank = stats_all_sum.rank(method="min", ascending=False)
-        stats_all_sum_rank[[Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS,Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]] = 0
-        stats = stats_all_sum.join(stats_all_sum_rank, rsuffix = "_rank")
-        return [stats, ""] #just to match others
-    
-    '''
-    Weapon count awards
-    '''
-    def award_weapon_counts(self,data):
-        event_lines_dataframe = data["logdf"]
-        #sum_lines_dataframe   = data["stats"]
-        #matches_dataframe     = data["matchesdf"]
-        temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]
-        temp2 = temp.groupby(["killer","mod"]).count().reset_index()
-        pd.options.display.float_format = '{:,.0f}'.format
-        result = temp2.pivot(index = "killer", columns = "mod", values = "event")
-        existing_columns = result.columns
-        new_columns = []
-        for mod_type in Const.mod_by_type.keys():
-            for mod in Const.mod_by_type[mod_type]:
-                if mod in existing_columns: 
-                    new_columns.append(mod)
-                    result[mod + "_rank"] = result[mod].rank(method="min", ascending=False, na_option='keep') 
-                    new_columns.append(mod + "_rank")
-                else:
-                    result[mod] = 0
-                    result[mod + "_rank"] = 0
-                    new_columns.append(mod)
-        return [result.fillna(0), new_columns]
-    
-    
+       
     
     '''
     First in the door award

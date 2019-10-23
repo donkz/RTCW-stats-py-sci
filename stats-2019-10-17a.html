@@ -1,0 +1,3376 @@
+<html>
+ <head>
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+  </link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+  </script>
+  <style>
+   .versusgt {
+  font-weight: bold;
+  color: blue;
+}
+.versusgt {
+  font-weight: bold;
+  color: red;
+}
+.gold {
+  background-color: #D4AF37;
+}
+.silver {
+  background-color: #C0C0C0;
+}
+.bronze {
+  background-color: #cd7f32;
+}
+.Allies {
+  background-color: #BFDAFF;
+}
+.Axis {
+  background-color: #FFBFBF;
+}
+.norank {
+  background-color: #F5F5F5;
+}
+    
+table.blueTable {
+  font-family: "Courier New", Courier, monospace;
+  border: 1px solid #14191B;
+  background-color: #F3FFFB;
+  text-align: center;
+  border-collapse: collapse;
+}
+.bars {
+  width: 13em;
+  text-align: left;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 0px 6px;
+}
+table.blueTable tbody td {
+  font-size: 14px;
+  color: #292929;
+}
+table.blueTable thead {
+  background: #030D14;
+  background: -moz-linear-gradient(top, #42494f 0%, #1c252b 66%, #030D14 100%);
+  background: -webkit-linear-gradient(top, #42494f 0%, #1c252b 66%, #030D14 100%);
+  background: linear-gradient(to bottom, #42494f 0%, #1c252b 66%, #030D14 100%);
+  border-bottom: 0px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 14px;
+  font-weight: bold;
+  color: #EFEFEF;
+  text-align: center;
+  border-left: 4px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+    
+progress[value]::-webkit-progress-bar {
+  background-color: #B1E59F;
+  foreground-color: #FF5757;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.ui-tooltip {
+    white-space: pre-line;
+}
+  </style>
+ </head>
+ <body>
+<h1 class="header">
+ Results
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   #
+  </th>
+  <th>
+   map
+  </th>
+  <th>
+   Round
+  </th>
+  <th>
+   Round Time
+  </th>
+  <th>
+   Team 1
+  </th>
+  <th>
+   winner
+  </th>
+  <th>
+   Team 2
+  </th>
+ </tr>
+ <tr>
+  <td>
+   1
+  </td>
+  <td>
+   Escape
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="33.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Lunatic_????
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,SOURC
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+John_Mullins
+Kittens">
+   DillWeed ,John_Mullins ,Kittens
+  </td>
+ </tr>
+ <tr>
+  <td>
+   2
+  </td>
+  <td>
+   Escape
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:3em;" value="100.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Lunatic_????
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,SOURC
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   3
+  </td>
+  <td>
+   Escape
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="68.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Lunatic_????
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,SOURC
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   4
+  </td>
+  <td>
+   Escape
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:6em;" value="23.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Lunatic_????
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,SOURC
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+John_Mullins
+Kittens">
+   DillWeed ,John_Mullins ,Kittens
+  </td>
+ </tr>
+ <tr>
+  <td>
+   5
+  </td>
+  <td>
+   Escape
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="35.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Lunatic_????
+Ra!ser
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,Ra!se
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   6
+  </td>
+  <td>
+   Escape
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:3em;" value="94.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,P.I.M
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+Ra!ser">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   7
+  </td>
+  <td>
+   Ice
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="39.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,P.I.M
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+Ra!ser">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   8
+  </td>
+  <td>
+   Ice
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:4em;" value="100.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Lunatic ???? ,P.I.M
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+Ra!ser">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   9
+  </td>
+  <td>
+   Ice
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="100.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+Ra!ser
+TK|POW">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   10
+  </td>
+  <td>
+   Ice
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="100.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+Pennywi$e
+TK|POW">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   11
+  </td>
+  <td>
+   Frostbite
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="13.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+PennyWi$E
+TK|POW">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   12
+  </td>
+  <td>
+   Frostbite
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="71.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+PennyWi$E
+TK|POW">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   13
+  </td>
+  <td>
+   Frostbite
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:6em;" value="73.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla
+soobsoob">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+PennyWi$E
+TK|POW">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   14
+  </td>
+  <td>
+   Frostbite
+  </td>
+  <td>
+   1
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:9em;" value="84.0">
+   </progress>
+  </td>
+  <td class="Allies fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versusgt">
+   &gt;
+  </td>
+  <td class="Axis fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+PennyWi$E
+soobsoob">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+ <tr>
+  <td>
+   15
+  </td>
+  <td>
+   Frostbite
+  </td>
+  <td>
+   2
+  </td>
+  <td class="bars">
+   <progress id="round_time" max="100" style="width:8em;" value="76.0">
+   </progress>
+  </td>
+  <td class="Axis fullroster" title="CHUCK_donka
+Cypher
+Lunatic_????
+P.I.M.P.
+SOURCE
+illkilla">
+   CHUCK_donka ,Cypher ,Lunatic ???
+  </td>
+  <td class="versuslt">
+   &lt;
+  </td>
+  <td class="Allies fullroster" title="DillWeed
+Fister_Miagi
+John_Mullins
+Kittens
+PennyWi$E
+soobsoob">
+   DillWeed ,Fister Miagi ,John_Mul
+  </td>
+ </tr>
+</table><h1 class="header">
+ Base stats
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Player
+  </th>
+  <th>
+   Kills
+  </th>
+  <th>
+   Deaths
+  </th>
+  <th>
+   TK
+  </th>
+  <th>
+   TKd
+  </th>
+  <th>
+   Suicides
+  </th>
+  <th>
+   All_Deaths
+  </th>
+  <th>
+   Rounds
+  </th>
+  <th>
+   OSP_Gibs
+  </th>
+  <th>
+   OSP_Damage_Given
+  </th>
+  <th>
+   OSP_Damage_Received
+  </th>
+  <th>
+   OSP_Team_Damage
+  </th>
+  <th>
+   KDR
+  </th>
+  <th>
+   KPR
+  </th>
+  <th>
+   DPR
+  </th>
+  <th>
+   DPF
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Cypher
+  </td>
+  <td class="norank">
+   48
+  </td>
+  <td class="norank">
+   50
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   62
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   7521
+  </td>
+  <td class="norank">
+   8223
+  </td>
+  <td class="norank">
+   341
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   6.9
+  </td>
+  <td class="norank">
+   1074
+  </td>
+  <td class="norank">
+   156
+  </td>
+ </tr>
+ <tr>
+  <td>
+   DillWeed
+  </td>
+  <td class="norank">
+   62
+  </td>
+  <td class="norank">
+   111
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   120
+  </td>
+  <td class="gold">
+   15
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="norank">
+   9579
+  </td>
+  <td class="norank">
+   15304
+  </td>
+  <td class="norank">
+   651
+  </td>
+  <td class="norank">
+   0.6
+  </td>
+  <td class="norank">
+   4.1
+  </td>
+  <td class="norank">
+   638
+  </td>
+  <td class="norank">
+   154
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Fister Miagi
+  </td>
+  <td class="norank">
+   49
+  </td>
+  <td class="norank">
+   85
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   94
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   6400
+  </td>
+  <td class="norank">
+   11905
+  </td>
+  <td class="norank">
+   335
+  </td>
+  <td class="norank">
+   0.6
+  </td>
+  <td class="norank">
+   3.8
+  </td>
+  <td class="norank">
+   492
+  </td>
+  <td class="norank">
+   130
+  </td>
+ </tr>
+ <tr>
+  <td>
+   John_Mullins
+  </td>
+  <td class="silver">
+   126
+  </td>
+  <td class="norank">
+   98
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   31
+  </td>
+  <td class="norank">
+   132
+  </td>
+  <td class="gold">
+   15
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="gold">
+   20204
+  </td>
+  <td class="norank">
+   17763
+  </td>
+  <td class="norank">
+   230
+  </td>
+  <td class="norank">
+   1.3
+  </td>
+  <td class="bronze">
+   8.4
+  </td>
+  <td class="silver">
+   1346
+  </td>
+  <td class="norank">
+   160
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Kittens
+  </td>
+  <td class="gold">
+   143
+  </td>
+  <td class="norank">
+   87
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   35
+  </td>
+  <td class="norank">
+   125
+  </td>
+  <td class="gold">
+   15
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="silver">
+   18919
+  </td>
+  <td class="norank">
+   16409
+  </td>
+  <td class="norank">
+   736
+  </td>
+  <td class="silver">
+   1.6
+  </td>
+  <td class="gold">
+   9.5
+  </td>
+  <td class="norank">
+   1261
+  </td>
+  <td class="norank">
+   132
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Lunatic ????
+  </td>
+  <td class="bronze">
+   108
+  </td>
+  <td class="norank">
+   93
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   117
+  </td>
+  <td class="gold">
+   15
+  </td>
+  <td class="silver">
+   24
+  </td>
+  <td class="norank">
+   16036
+  </td>
+  <td class="norank">
+   13245
+  </td>
+  <td class="norank">
+   1180
+  </td>
+  <td class="norank">
+   1.2
+  </td>
+  <td class="norank">
+   7.2
+  </td>
+  <td class="norank">
+   1069
+  </td>
+  <td class="norank">
+   148
+  </td>
+ </tr>
+ <tr>
+  <td>
+   P.I.M.P.
+  </td>
+  <td class="norank">
+   59
+  </td>
+  <td class="norank">
+   57
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   16
+  </td>
+  <td class="norank">
+   78
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   8591
+  </td>
+  <td class="norank">
+   9536
+  </td>
+  <td class="norank">
+   396
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   5.9
+  </td>
+  <td class="norank">
+   859
+  </td>
+  <td class="norank">
+   145
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PennyWi$E
+  </td>
+  <td class="norank">
+   37
+  </td>
+  <td class="norank">
+   45
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   63
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   9032
+  </td>
+  <td class="norank">
+   7824
+  </td>
+  <td class="norank">
+   805
+  </td>
+  <td class="norank">
+   0.8
+  </td>
+  <td class="norank">
+   6.2
+  </td>
+  <td class="gold">
+   1505
+  </td>
+  <td class="gold">
+   244
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PennyWise
+  </td>
+  <td class="norank">
+   33
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   38
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   3356
+  </td>
+  <td class="norank">
+   3162
+  </td>
+  <td class="norank">
+   70
+  </td>
+  <td class="norank">
+   1.2
+  </td>
+  <td class="norank">
+   6.6
+  </td>
+  <td class="norank">
+   671
+  </td>
+  <td class="norank">
+   101
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Pennywi$e
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   inf
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   SOURCE
+  </td>
+  <td class="norank">
+   98
+  </td>
+  <td class="norank">
+   65
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   99
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="gold">
+   35
+  </td>
+  <td class="bronze">
+   17783
+  </td>
+  <td class="norank">
+   9379
+  </td>
+  <td class="norank">
+   1597
+  </td>
+  <td class="bronze">
+   1.5
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="bronze">
+   1270
+  </td>
+  <td class="silver">
+   181
+  </td>
+ </tr>
+ <tr>
+  <td>
+   TK|POW
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   21
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   31
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1316
+  </td>
+  <td class="norank">
+   2981
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0.4
+  </td>
+  <td class="norank">
+   1.6
+  </td>
+  <td class="norank">
+   263
+  </td>
+  <td class="bronze">
+   164
+  </td>
+ </tr>
+ <tr>
+  <td>
+   donka
+  </td>
+  <td class="norank">
+   96
+  </td>
+  <td class="norank">
+   86
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   108
+  </td>
+  <td class="gold">
+   15
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   15088
+  </td>
+  <td class="norank">
+   15013
+  </td>
+  <td class="norank">
+   641
+  </td>
+  <td class="norank">
+   1.1
+  </td>
+  <td class="norank">
+   6.4
+  </td>
+  <td class="norank">
+   1005
+  </td>
+  <td class="norank">
+   157
+  </td>
+ </tr>
+ <tr>
+  <td>
+   illkilla
+  </td>
+  <td class="norank">
+   65
+  </td>
+  <td class="norank">
+   107
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   125
+  </td>
+  <td class="gold">
+   15
+  </td>
+  <td class="bronze">
+   19
+  </td>
+  <td class="norank">
+   10232
+  </td>
+  <td class="norank">
+   11980
+  </td>
+  <td class="norank">
+   737
+  </td>
+  <td class="norank">
+   0.6
+  </td>
+  <td class="norank">
+   4.3
+  </td>
+  <td class="norank">
+   682
+  </td>
+  <td class="norank">
+   157
+  </td>
+ </tr>
+ <tr>
+  <td>
+   soobsoob
+  </td>
+  <td class="norank">
+   26
+  </td>
+  <td class="norank">
+   27
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   32
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2532
+  </td>
+  <td class="norank">
+   3274
+  </td>
+  <td class="norank">
+   50
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="silver">
+   8.7
+  </td>
+  <td class="norank">
+   844
+  </td>
+  <td class="norank">
+   97
+  </td>
+ </tr>
+</table><h1 class="header">
+ Weapon stats
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Player
+  </th>
+  <th>
+   MP40
+  </th>
+  <th>
+   Thompson
+  </th>
+  <th>
+   Sten
+  </th>
+  <th>
+   Luger
+  </th>
+  <th>
+   Colt
+  </th>
+  <th>
+   Panzerfaust
+  </th>
+  <th>
+   Grenade
+  </th>
+  <th>
+   Airstrike
+  </th>
+  <th>
+   Artillery
+  </th>
+  <th>
+   Sniper
+  </th>
+  <th>
+   Venom
+  </th>
+  <th>
+   Flame
+  </th>
+  <th>
+   Dynamite
+  </th>
+  <th>
+   MG42
+  </th>
+  <th>
+   Knife
+  </th>
+ </tr>
+ <tr>
+  <td>
+   CHUCK_donka
+  </td>
+  <td class="norank">
+   27
+  </td>
+  <td class="bronze">
+   48
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   18
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Cypher
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="norank">
+   27
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   DillWeed
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   22
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Fister Miagi
+  </td>
+  <td class="norank">
+   19
+  </td>
+  <td class="norank">
+   20
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   John_Mullins
+  </td>
+  <td class="gold">
+   59
+  </td>
+  <td class="silver">
+   53
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="bronze">
+   6
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Kittens
+  </td>
+  <td class="bronze">
+   55
+  </td>
+  <td class="gold">
+   60
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   21
+  </td>
+  <td class="silver">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Lunatic ????
+  </td>
+  <td class="silver">
+   56
+  </td>
+  <td class="norank">
+   29
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   2
+  </td>
+  <td class="gold">
+   10
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   1
+  </td>
+ </tr>
+ <tr>
+  <td>
+   P.I.M.P.
+  </td>
+  <td class="norank">
+   22
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PennyWi$E
+  </td>
+  <td class="norank">
+   21
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="silver">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="silver">
+   32
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   SOURCE
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="silver">
+   7
+  </td>
+  <td class="gold">
+   53
+  </td>
+  <td class="bronze">
+   14
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   TK|POW
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   illkilla
+  </td>
+  <td class="norank">
+   35
+  </td>
+  <td class="norank">
+   16
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="gold">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   soobsoob
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+</table><h1 class="header">
+ Awards
+</h1><table class="blueTable">
+ <tr>
+  <th class="awardheader">
+   Player
+  </th>
+  <th class="awardheader" title="Kills in the entire match">
+   Kills
+  </th>
+  <th class="awardheader" title="Kills to enemy deaths ratio">
+   KDR
+  </th>
+  <th class="awardheader" title="Kills without dying">
+   KillStreak
+  </th>
+  <th class="awardheader" title="5 kills without dying">
+   Pack5
+  </th>
+  <th class="awardheader" title="Consecutive deaths without a kill">
+   Deathroll
+  </th>
+  <th class="awardheader" title="Exploded by grenade, AS, dynamite">
+   Blownup
+  </th>
+  <th class="awardheader" title="Died to panzer">
+   Panzed
+  </th>
+  <th class="awardheader" title="First killer or victim of the round">
+   FirstInDoor
+  </th>
+  <th class="awardheader" title="Objective Score (Total minus kills, TKs, and deaths)">
+   AdjScore
+  </th>
+  <th class="awardheader" title="Captured objective on offense">
+   Caps
+  </th>
+  <th class="awardheader" title="Held the time on defense">
+   Holds
+  </th>
+  <th class="awardheader">
+   Wins
+  </th>
+  <th class="awardheader" title="Total rank for the match">
+   RankPts
+  </th>
+ </tr>
+ <tr>
+  <td>
+   Kittens
+  </td>
+  <td class="gold">
+   143
+  </td>
+  <td class="gold">
+   1.64
+  </td>
+  <td class="gold">
+   9
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="gold">
+   385
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="gold">
+   9
+  </td>
+ </tr>
+ <tr>
+  <td>
+   SOURCE
+  </td>
+  <td class="norank">
+   98
+  </td>
+  <td class="silver">
+   1.51
+  </td>
+  <td class="silver">
+   8
+  </td>
+  <td class="silver">
+   4
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   67
+  </td>
+  <td class="silver">
+   5
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="silver">
+   29
+  </td>
+ </tr>
+ <tr>
+  <td>
+   John_Mullins
+  </td>
+  <td class="silver">
+   126
+  </td>
+  <td class="bronze">
+   1.29
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="bronze">
+   3
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   119
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="bronze">
+   30
+  </td>
+ </tr>
+ <tr>
+  <td>
+   CHUCK_donka
+  </td>
+  <td class="norank">
+   96
+  </td>
+  <td class="norank">
+   1.12
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="silver">
+   288
+  </td>
+  <td class="silver">
+   5
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   36
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Lunatic ????
+  </td>
+  <td class="bronze">
+   108
+  </td>
+  <td class="norank">
+   1.16
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="bronze">
+   4
+  </td>
+  <td class="norank">
+   129
+  </td>
+  <td class="silver">
+   5
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   40
+  </td>
+ </tr>
+ <tr>
+  <td>
+   DillWeed
+  </td>
+  <td class="norank">
+   62
+  </td>
+  <td class="norank">
+   0.56
+  </td>
+  <td class="silver">
+   8
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   216
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="gold">
+   4
+  </td>
+  <td class="norank">
+   42
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Fister Miagi
+  </td>
+  <td class="norank">
+   49
+  </td>
+  <td class="norank">
+   0.58
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   225
+  </td>
+  <td class="bronze">
+   4
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="silver">
+   3
+  </td>
+  <td class="norank">
+   42
+  </td>
+ </tr>
+ <tr>
+  <td>
+   illkilla
+  </td>
+  <td class="norank">
+   65
+  </td>
+  <td class="norank">
+   0.61
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="bronze">
+   262
+  </td>
+  <td class="silver">
+   5
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   46
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PennyWi$E
+  </td>
+  <td class="norank">
+   72
+  </td>
+  <td class="norank">
+   0.99
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="bronze">
+   3
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   149
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="silver">
+   2
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   47
+  </td>
+ </tr>
+ <tr>
+  <td>
+   P.I.M.P.
+  </td>
+  <td class="norank">
+   59
+  </td>
+  <td class="norank">
+   1.04
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   190
+  </td>
+  <td class="bronze">
+   4
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   50
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Cypher
+  </td>
+  <td class="norank">
+   48
+  </td>
+  <td class="norank">
+   0.96
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="bronze">
+   3
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   142
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   55
+  </td>
+ </tr>
+ <tr>
+  <td>
+   soobsoob
+  </td>
+  <td class="norank">
+   26
+  </td>
+  <td class="norank">
+   0.96
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   33
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="bronze">
+   2
+  </td>
+  <td class="norank">
+   58
+  </td>
+ </tr>
+ <tr>
+  <td>
+   TK|POW
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   0.38
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   64
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="bronze">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   60
+  </td>
+ </tr>
+</table><h1 class="header">
+ Kill matrix
+</h1><table class="blueTable">
+ <tr>
+  <th>
+   Killer
+  </th>
+  <th>
+   CHUCK_donka
+  </th>
+  <th>
+   Cypher
+  </th>
+  <th>
+   DillWeed
+  </th>
+  <th>
+   Fister Miagi
+  </th>
+  <th>
+   John_Mullins
+  </th>
+  <th>
+   Kittens
+  </th>
+  <th>
+   Lunatic ????
+  </th>
+  <th>
+   P.I.M.P.
+  </th>
+  <th>
+   PennyWi$E
+  </th>
+  <th>
+   SOURCE
+  </th>
+  <th>
+   TK|POW
+  </th>
+  <th>
+   illkilla
+  </th>
+  <th>
+   soobsoob
+  </th>
+ </tr>
+ <tr>
+  <td>
+   CHUCK_donka
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   28
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="norank">
+   16
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   9
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Cypher
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   11
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+ </tr>
+ <tr>
+  <td>
+   DillWeed
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="norank">
+   6
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   14
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   14
+  </td>
+  <td class="norank">
+   1
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Fister Miagi
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   14
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="norank">
+   2
+  </td>
+ </tr>
+ <tr>
+  <td>
+   John_Mullins
+  </td>
+  <td class="norank">
+   27
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   23
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   30
+  </td>
+  <td class="norank">
+   1
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Kittens
+  </td>
+  <td class="norank">
+   28
+  </td>
+  <td class="norank">
+   15
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   36
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   18
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   29
+  </td>
+  <td class="norank">
+   1
+  </td>
+ </tr>
+ <tr>
+  <td>
+   Lunatic ????
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   20
+  </td>
+  <td class="norank">
+   22
+  </td>
+  <td class="gold">
+   27
+  </td>
+  <td class="norank">
+   17
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   6
+  </td>
+ </tr>
+ <tr>
+  <td>
+   P.I.M.P.
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   10
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="gold">
+   20
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+ </tr>
+ <tr>
+  <td>
+   PennyWi$E
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   8
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   17
+  </td>
+  <td class="norank">
+   1
+  </td>
+ </tr>
+ <tr>
+  <td>
+   SOURCE
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="gold">
+   24
+  </td>
+  <td class="norank">
+   14
+  </td>
+  <td class="norank">
+   20
+  </td>
+  <td class="norank">
+   19
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   12
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   7
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   2
+  </td>
+ </tr>
+ <tr>
+  <td>
+   TK|POW
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   illkilla
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="gold">
+   14
+  </td>
+  <td class="norank">
+   13
+  </td>
+  <td class="gold">
+   14
+  </td>
+  <td class="norank">
+   9
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   11
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+ <tr>
+  <td>
+   soobsoob
+  </td>
+  <td class="norank">
+   1
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   4
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   3
+  </td>
+  <td class="norank">
+   0
+  </td>
+  <td class="norank">
+   5
+  </td>
+  <td class="norank">
+   2
+  </td>
+  <td class="gold">
+   6
+  </td>
+  <td class="norank">
+   0
+  </td>
+ </tr>
+</table>  <script type="text/javascript">
+   $('th').click(function(){
+    var table = $(this).parents('table').eq(0)
+    var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+    this.asc = !this.asc
+    if (!this.asc){rows = rows.reverse()}
+    for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+})
+
+$(document).ready(function(){
+   $(".awardheader").tooltip();
+});  
+
+$(document).ready(function(){
+   $(".fullroster").tooltip();
+});  
+
+function comparer(index) {
+    return function(a, b) {
+        var valA = getCellValue(a, index), valB = getCellValue(b, index)
+        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+    }
+}
+function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
+  </script>
+ </body>
+</html>

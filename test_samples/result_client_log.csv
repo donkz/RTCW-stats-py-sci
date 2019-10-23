@@ -1,363 +1,1427 @@
 round_guid,line_order,round_order,round_num,event,killer,mod,victim
-ef4cba7870d904f81ea5eea593bf6629,4,1,1,kill,----E Spuddy,Grenade,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,5,1,1,Team kill,/mute eternal,None,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,6,1,1,kill,----E jaytee,Panzerfaust,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,7,1,1,kill,/mute doNka,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,8,1,1,Objective,Axis,Offense plant,Allies
-ef4cba7870d904f81ea5eea593bf6629,11,1,1,kill,/mute sem,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,12,1,1,kill,----E jaytee,Grenade,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,13,1,1,kill,/mute sem,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,14,1,1,Suicide,,/kill,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,15,1,1,kill,/mute ABomB,Panzerfaust,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,16,1,1,kill,/mute ABomB,Panzerfaust,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,23,1,1,kill,----E caffeine,Grenade,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,24,1,1,kill,/mute nigel,MP40,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,25,1,1,kill,----E caffeine,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,26,1,1,Objective,Axis,Mid objective,Allies
-ef4cba7870d904f81ea5eea593bf6629,27,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,28,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,29,1,1,Suicide,,/kill,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,33,1,1,kill,----E caffeine,MP40,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,34,1,1,kill,/mute ABomB,Panzerfaust,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,35,1,1,kill,/mute ABomB,Panzerfaust,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,36,1,1,kill,----E jaytee,MP40,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,37,1,1,kill,/mute nigel,Grenade,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,38,1,1,kill,/mute sem,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,39,1,1,kill,----E Spuddy,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,44,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,45,1,1,kill,/mute doNka,Thompson,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,46,1,1,Suicide,,/kill,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,47,1,1,Team kill,----E v1k!ng,None,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,48,1,1,kill,----E copserr,MP40,/mute doNka
-ef4cba7870d904f81ea5eea593bf6629,49,1,1,kill,/mute sem,Grenade,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,50,1,1,kill,/mute sem,Grenade,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,51,1,1,kill,/mute nigel,MP40,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,52,1,1,kill,/mute eternal,Artillery,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,56,1,1,Objective,Axis,Defense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,57,1,1,kill,----E copserr,Grenade,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,58,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,59,1,1,kill,----E Spuddy,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,60,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,61,1,1,Suicide,,Panzerfaust,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,62,1,1,kill,----E oreo,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,63,1,1,Team kill,----E copserr,None,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,64,1,1,kill,----E caffeine,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,65,1,1,Team kill,----E copserr,None,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,66,1,1,Suicide,,/kill,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,67,1,1,kill,/mute doNka,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,68,1,1,Objective,Axis,Offense plant,Allies
-ef4cba7870d904f81ea5eea593bf6629,69,1,1,Suicide,,/kill,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,70,1,1,kill,/mute nigel,Airstrike,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,71,1,1,kill,----E v1k!ng,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,72,1,1,kill,----E copserr,MP40,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,73,1,1,kill,/mute doNka,Thompson,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,75,1,1,kill,/mute sem,Thompson,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,76,1,1,kill,----E jaytee,Luger,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,77,1,1,kill,/mute doNka,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,78,1,1,kill,----E caffeine,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,79,1,1,kill,/mute doNka,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,80,1,1,Objective,Axis,Defense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,81,1,1,kill,/mute eternal,MP40,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,81,1,1,kill,/mute ABomB,Panzerfaust,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,82,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,83,1,1,kill,----E copserr,MP40,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,84,1,1,kill,----E Spuddy,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,85,1,1,kill,----E copserr,MP40,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,87,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,88,1,1,kill,/mute Op!o,Grenade,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,89,1,1,kill,/mute nigel,Grenade,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,90,1,1,kill,----E jaytee,MP40,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,91,1,1,kill,/mute sem,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,92,1,1,kill,/mute nigel,MP40,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,93,1,1,kill,/mute nigel,MP40,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,94,1,1,Team kill,/mute sem,None,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,95,1,1,kill,/mute sem,Thompson,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,96,1,1,Suicide,,/kill,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,97,1,1,kill,/mute sem,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,98,1,1,kill,----E Spuddy,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,99,1,1,kill,/mute nigel,MP40,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,100,1,1,kill,/mute doNka,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,101,1,1,kill,----E copserr,MP40,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,102,1,1,kill,----E jaytee,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,103,1,1,kill,----E copserr,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,104,1,1,kill,/mute doNka,Thompson,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,106,1,1,kill,----E copserr,MP40,/mute doNka
-ef4cba7870d904f81ea5eea593bf6629,107,1,1,Suicide,,World,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,108,1,1,kill,/mute doNka,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,109,1,1,kill,/mute doNka,Thompson,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,110,1,1,Objective,Axis,Defense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,111,1,1,Objective,Axis,Stole objective,Allies
-ef4cba7870d904f81ea5eea593bf6629,112,1,1,kill,/mute ABomB,Panzerfaust,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,113,1,1,kill,/mute nigel,MP40,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,114,1,1,Objective,Axis,Returned objective,Allies
-ef4cba7870d904f81ea5eea593bf6629,115,1,1,Team kill,/mute sem,None,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,116,1,1,kill,----E v1k!ng,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,117,1,1,kill,/mute doNka,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,118,1,1,kill,----E Spuddy,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,119,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,120,1,1,Suicide,,/kill,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,121,1,1,Suicide,,/kill,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,122,1,1,Suicide,,/kill,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,123,1,1,Suicide,,Panzerfaust,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,124,1,1,kill,/mute ABomB,Panzerfaust,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,125,1,1,kill,/mute sem,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,126,1,1,kill,/mute nigel,MP40,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,127,1,1,kill,----E jaytee,MP40,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,128,1,1,kill,/mute sem,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,129,1,1,kill,/mute sem,Thompson,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,130,1,1,kill,----E caffeine,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,131,1,1,kill,----E jaytee,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,132,1,1,Suicide,,/kill,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,133,1,1,kill,/mute doNka,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,134,1,1,kill,/mute eternal,MP40,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,135,1,1,kill,----E Spuddy,MP40,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,136,1,1,kill,/mute nigel,MP40,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,137,1,1,Suicide,,World,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,138,1,1,kill,/mute eternal,MP40,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,139,1,1,kill,/mute doNka,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,140,1,1,kill,----E caffeine,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,141,1,1,kill,/mute sem,Thompson,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,143,1,1,kill,/mute doNka,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,144,1,1,kill,----E oreo,MP40,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,145,1,1,Suicide,,Grenade,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,146,1,1,kill,----E Spuddy,Grenade,/mute doNka
-ef4cba7870d904f81ea5eea593bf6629,147,1,1,Suicide,,Panzerfaust,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,148,1,1,kill,/mute ABomB,Panzerfaust,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,149,1,1,kill,/mute eternal,Grenade,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,150,1,1,kill,----E jaytee,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,151,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,152,1,1,kill,/mute Op!o,Colt,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,154,1,1,kill,/mute doNka,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,155,1,1,kill,/mute sem,Thompson,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,156,1,1,kill,----E caffeine,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,157,1,1,kill,----E copserr,MP40,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,159,1,1,kill,/mute sem,Thompson,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,161,1,1,Suicide,,/kill,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,162,1,1,Objective,Axis,Stole objective,Allies
-ef4cba7870d904f81ea5eea593bf6629,163,1,1,kill,/mute sem,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,164,1,1,Objective,Axis,Returned objective,Allies
-ef4cba7870d904f81ea5eea593bf6629,165,1,1,kill,----E Spuddy,MP40,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,166,1,1,kill,/mute eternal,MP40,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,167,1,1,kill,/mute Op!o,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,169,1,1,Objective,Axis,Defense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,170,1,1,kill,/mute doNka,Thompson,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,171,1,1,kill,/mute nigel,Grenade,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,172,1,1,kill,/mute sem,Grenade,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,173,1,1,Suicide,,Grenade,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,174,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,175,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,176,1,1,kill,----E copserr,MP40,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,177,1,1,kill,/mute eternal,MP40,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,179,1,1,kill,/mute nigel,MP40,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,180,1,1,kill,/mute Op!o,Thompson,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,181,1,1,kill,/mute nigel,Artillery,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,182,1,1,kill,/mute sem,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,183,1,1,Objective,Axis,Defense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,184,1,1,Suicide,,/kill,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,185,1,1,Suicide,,/kill,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,186,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,187,1,1,kill,----E Spuddy,Grenade,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,188,1,1,kill,/mute sem,Thompson,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,189,1,1,kill,----E jaytee,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,190,1,1,kill,/mute nigel,MP40,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,191,1,1,Suicide,,/kill,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,192,1,1,Suicide,,/kill,/mute nigel
-ef4cba7870d904f81ea5eea593bf6629,193,1,1,kill,/mute doNka,Thompson,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,194,1,1,Suicide,,/kill,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,195,1,1,kill,/mute ABomB,Grenade,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,196,1,1,Suicide,,Grenade,/mute ABomB
-ef4cba7870d904f81ea5eea593bf6629,197,1,1,kill,/mute ABomB,Grenade,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,198,1,1,kill,/mute nigel,MP40,----E jaytee
-ef4cba7870d904f81ea5eea593bf6629,199,1,1,Objective,Axis,Defense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,200,1,1,kill,/mute nigel,MP40,----E caffeine
-ef4cba7870d904f81ea5eea593bf6629,201,1,1,kill,/mute nigel,MP40,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,202,1,1,kill,/mute doNka,Grenade,----E Spuddy
-ef4cba7870d904f81ea5eea593bf6629,203,1,1,kill,----E copserr,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,204,1,1,kill,/mute eternal,MP40,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,205,1,1,Suicide,,/kill,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,206,1,1,kill,/mute doNka,Thompson,----E oreo
-ef4cba7870d904f81ea5eea593bf6629,207,1,1,kill,/mute eternal,MP40,----E copserr
-ef4cba7870d904f81ea5eea593bf6629,209,1,1,kill,----E v1k!ng,MP40,/mute eternal
-ef4cba7870d904f81ea5eea593bf6629,213,1,1,Objective,Axis,Offense flag,Allies
-ef4cba7870d904f81ea5eea593bf6629,214,1,1,kill,/mute ABomB,Panzerfaust,----E v1k!ng
-ef4cba7870d904f81ea5eea593bf6629,215,1,1,Team kill,/mute ABomB,None,/mute Op!o
-ef4cba7870d904f81ea5eea593bf6629,216,1,1,kill,----E caffeine,MP40,/mute sem
-ef4cba7870d904f81ea5eea593bf6629,217,1,1,kill,/mute nigel,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,278,2,2,kill,/mute doNka,Grenade,----E jaytee
-07c686e623999367b3a480a775a1cc57,279,2,2,Team kill,/mute sem,None,/mute doNka
-07c686e623999367b3a480a775a1cc57,280,2,2,kill,----E caffeine,Thompson,/mute sem
-07c686e623999367b3a480a775a1cc57,281,2,2,kill,----E caffeine,Thompson,/mute nigel
-07c686e623999367b3a480a775a1cc57,282,2,2,kill,----E Spuddy,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,283,2,2,kill,/mute Op!o,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,284,2,2,kill,/mute eternal,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,285,2,2,kill,----E copserr,Thompson,/mute Op!o
-07c686e623999367b3a480a775a1cc57,286,2,2,kill,----E Spuddy,Thompson,/mute ABomB
-07c686e623999367b3a480a775a1cc57,287,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,288,2,2,kill,/mute doNka,MP40,----E jaytee
-07c686e623999367b3a480a775a1cc57,290,2,2,Objective,Axis,Offense plant,Allies
-07c686e623999367b3a480a775a1cc57,291,2,2,kill,/mute doNka,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,293,2,2,kill,----E oreo,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,294,2,2,kill,----E Spuddy,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,295,2,2,kill,/mute sem,MP40,----E oreo
-07c686e623999367b3a480a775a1cc57,296,2,2,kill,/mute sem,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,297,2,2,kill,/mute nigel,Luger,----E Spuddy
-07c686e623999367b3a480a775a1cc57,298,2,2,Objective,Axis,Offense flag,Allies
-07c686e623999367b3a480a775a1cc57,301,2,2,Suicide,,/kill,/mute doNka
-07c686e623999367b3a480a775a1cc57,303,2,2,Suicide,,/kill,/mute sem
-07c686e623999367b3a480a775a1cc57,304,2,2,Suicide,,/kill,/mute nigel
-07c686e623999367b3a480a775a1cc57,305,2,2,kill,/mute sem,MP40,----E jaytee
-07c686e623999367b3a480a775a1cc57,306,2,2,kill,----E jaytee,Panzerfaust,/mute eternal
-07c686e623999367b3a480a775a1cc57,307,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,308,2,2,kill,----E jaytee,Panzerfaust,/mute doNka
-07c686e623999367b3a480a775a1cc57,310,2,2,Objective,Axis,Mid objective,Allies
-07c686e623999367b3a480a775a1cc57,311,2,2,kill,----E caffeine,Artillery,/mute sem
-07c686e623999367b3a480a775a1cc57,312,2,2,kill,----E caffeine,MP40,/mute nigel
-07c686e623999367b3a480a775a1cc57,313,2,2,Suicide,,/kill,----E oreo
-07c686e623999367b3a480a775a1cc57,315,2,2,kill,----E caffeine,MP40,/mute ABomB
-07c686e623999367b3a480a775a1cc57,316,2,2,kill,----E Spuddy,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,317,2,2,kill,----E copserr,Thompson,/mute Op!o
-07c686e623999367b3a480a775a1cc57,318,2,2,kill,----E jaytee,Panzerfaust,/mute ABomB
-07c686e623999367b3a480a775a1cc57,319,2,2,kill,/mute sem,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,320,2,2,kill,----E jaytee,Grenade,/mute sem
-07c686e623999367b3a480a775a1cc57,321,2,2,kill,----E Spuddy,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,322,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,323,2,2,kill,----E jaytee,Panzerfaust,/mute ABomB
-07c686e623999367b3a480a775a1cc57,324,2,2,kill,/mute ABomB,Panzerfaust,----E jaytee
-07c686e623999367b3a480a775a1cc57,325,2,2,kill,----E v1k!ng,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,326,2,2,kill,/mute sem,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,327,2,2,kill,/mute doNka,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,328,2,2,kill,/mute nigel,Luger,----E oreo
-07c686e623999367b3a480a775a1cc57,329,2,2,Objective,Axis,Stole objective,Allies
-07c686e623999367b3a480a775a1cc57,330,2,2,kill,----E Spuddy,Thompson,/mute nigel
-07c686e623999367b3a480a775a1cc57,331,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,332,2,2,Objective,Axis,Stole objective,Allies
-07c686e623999367b3a480a775a1cc57,333,2,2,kill,/mute doNka,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,334,2,2,kill,----E copserr,Thompson,/mute Op!o
-07c686e623999367b3a480a775a1cc57,335,2,2,Objective,Axis,Returned objective,Allies
-07c686e623999367b3a480a775a1cc57,336,2,2,kill,----E copserr,Thompson,/mute ABomB
-07c686e623999367b3a480a775a1cc57,337,2,2,kill,----E copserr,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,338,2,2,kill,----E copserr,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,342,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,343,2,2,Suicide,,/kill,----E copserr
-07c686e623999367b3a480a775a1cc57,344,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,346,2,2,kill,----E copserr,Thompson,/mute nigel
-07c686e623999367b3a480a775a1cc57,347,2,2,kill,/mute Op!o,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,348,2,2,kill,/mute doNka,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,349,2,2,kill,----E v1k!ng,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,350,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,352,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,353,2,2,kill,/mute eternal,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,354,2,2,kill,----E copserr,Thompson,/mute Op!o
-07c686e623999367b3a480a775a1cc57,355,2,2,kill,/mute doNka,MP40,----E Spuddy
-07c686e623999367b3a480a775a1cc57,356,2,2,Objective,Axis,Offense plant,Allies
-07c686e623999367b3a480a775a1cc57,357,2,2,kill,----E jaytee,Panzerfaust,/mute ABomB
-07c686e623999367b3a480a775a1cc57,358,2,2,kill,----E copserr,Colt,/mute sem
-07c686e623999367b3a480a775a1cc57,359,2,2,kill,/mute nigel,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,360,2,2,kill,----E oreo,MP40,/mute eternal
-07c686e623999367b3a480a775a1cc57,361,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,362,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,365,2,2,Suicide,,/kill,/mute nigel
-07c686e623999367b3a480a775a1cc57,366,2,2,Team kill,----E caffeine,None,----E oreo
-07c686e623999367b3a480a775a1cc57,367,2,2,kill,----E caffeine,MP40,/mute doNka
-07c686e623999367b3a480a775a1cc57,368,2,2,kill,/mute eternal,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,369,2,2,kill,----E jaytee,Panzerfaust,/mute nigel
-07c686e623999367b3a480a775a1cc57,370,2,2,kill,/mute eternal,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,371,2,2,kill,/mute Op!o,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,372,2,2,kill,/mute eternal,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,373,2,2,kill,----E jaytee,Grenade,/mute Op!o
-07c686e623999367b3a480a775a1cc57,374,2,2,kill,/mute sem,MP40,----E jaytee
-07c686e623999367b3a480a775a1cc57,375,2,2,Suicide,,/kill,/mute eternal
-07c686e623999367b3a480a775a1cc57,376,2,2,kill,/mute ABomB,MP40,----E oreo
-07c686e623999367b3a480a775a1cc57,377,2,2,kill,----E copserr,Thompson,/mute ABomB
-07c686e623999367b3a480a775a1cc57,378,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,379,2,2,kill,----E jaytee,Grenade,/mute Op!o
-07c686e623999367b3a480a775a1cc57,380,2,2,kill,----E jaytee,Grenade,/mute nigel
-07c686e623999367b3a480a775a1cc57,382,2,2,Suicide,,/kill,----E copserr
-07c686e623999367b3a480a775a1cc57,383,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,384,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,385,2,2,Suicide,,/kill,/mute eternal
-07c686e623999367b3a480a775a1cc57,386,2,2,kill,----E copserr,Thompson,/mute nigel
-07c686e623999367b3a480a775a1cc57,387,2,2,kill,----E v1k!ng,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,388,2,2,kill,/mute Op!o,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,389,2,2,kill,----E Spuddy,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,390,2,2,kill,----E jaytee,Panzerfaust,/mute Op!o
-07c686e623999367b3a480a775a1cc57,391,2,2,Objective,Axis,Defense flag,Allies
-07c686e623999367b3a480a775a1cc57,392,2,2,kill,----E jaytee,Colt,/mute sem
-07c686e623999367b3a480a775a1cc57,393,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,394,2,2,kill,----E caffeine,MP40,/mute ABomB
-07c686e623999367b3a480a775a1cc57,395,2,2,kill,----E caffeine,Artillery,/mute eternal
-07c686e623999367b3a480a775a1cc57,396,2,2,kill,/mute doNka,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,397,2,2,kill,----E v1k!ng,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,398,2,2,kill,----E jaytee,Panzerfaust,/mute eternal
-07c686e623999367b3a480a775a1cc57,399,2,2,Suicide,,/kill,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,400,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,401,2,2,Objective,Axis,Offense flag,Allies
-07c686e623999367b3a480a775a1cc57,403,2,2,Suicide,,/kill,/mute Op!o
-07c686e623999367b3a480a775a1cc57,404,2,2,kill,----E caffeine,MP40,/mute sem
-07c686e623999367b3a480a775a1cc57,405,2,2,kill,----E copserr,Thompson,/mute Op!o
-07c686e623999367b3a480a775a1cc57,406,2,2,kill,----E caffeine,MP40,/mute eternal
-07c686e623999367b3a480a775a1cc57,407,2,2,kill,----E jaytee,Panzerfaust,/mute ABomB
-07c686e623999367b3a480a775a1cc57,408,2,2,kill,----E caffeine,Airstrike,/mute eternal
-07c686e623999367b3a480a775a1cc57,409,2,2,kill,/mute nigel,MP40,----E jaytee
-07c686e623999367b3a480a775a1cc57,410,2,2,kill,----E jaytee,Grenade,/mute Op!o
-07c686e623999367b3a480a775a1cc57,411,2,2,Suicide,,/kill,----E copserr
-07c686e623999367b3a480a775a1cc57,412,2,2,kill,----E caffeine,MP40,/mute sem
-07c686e623999367b3a480a775a1cc57,413,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,414,2,2,Suicide,,/kill,/mute doNka
-07c686e623999367b3a480a775a1cc57,415,2,2,kill,----E jaytee,Panzerfaust,/mute Op!o
-07c686e623999367b3a480a775a1cc57,416,2,2,kill,----E jaytee,Panzerfaust,/mute nigel
-07c686e623999367b3a480a775a1cc57,417,2,2,kill,----E copserr,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,418,2,2,Team kill,----E jaytee,None,----E copserr
-07c686e623999367b3a480a775a1cc57,419,2,2,kill,----E caffeine,MP40,/mute doNka
-07c686e623999367b3a480a775a1cc57,420,2,2,Team kill,----E Spuddy,None,----E oreo
-07c686e623999367b3a480a775a1cc57,421,2,2,kill,/mute sem,MP40,----E jaytee
-07c686e623999367b3a480a775a1cc57,422,2,2,Objective,Axis,Defense flag,Allies
-07c686e623999367b3a480a775a1cc57,423,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,424,2,2,kill,----E oreo,MP40,/mute eternal
-07c686e623999367b3a480a775a1cc57,425,2,2,kill,/mute sem,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,426,2,2,Objective,Axis,Offense flag,Allies
-07c686e623999367b3a480a775a1cc57,427,2,2,kill,/mute ABomB,MP40,----E caffeine
-07c686e623999367b3a480a775a1cc57,428,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,429,2,2,kill,----E jaytee,Grenade,/mute sem
-07c686e623999367b3a480a775a1cc57,430,2,2,kill,----E oreo,MP40,/mute Op!o
-07c686e623999367b3a480a775a1cc57,430,2,2,kill,----E jaytee,Panzerfaust,/mute ABomB
-07c686e623999367b3a480a775a1cc57,431,2,2,kill,----E copserr,Thompson,/mute nigel
-07c686e623999367b3a480a775a1cc57,432,2,2,kill,----E oreo,MP40,/mute eternal
-07c686e623999367b3a480a775a1cc57,433,2,2,kill,----E caffeine,MP40,/mute sem
-07c686e623999367b3a480a775a1cc57,434,2,2,kill,----E copserr,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,435,2,2,Suicide,,/kill,----E copserr
-07c686e623999367b3a480a775a1cc57,436,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,437,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,438,2,2,kill,/mute nigel,MP40,----E copserr
-07c686e623999367b3a480a775a1cc57,439,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,440,2,2,kill,----E jaytee,Panzerfaust,/mute eternal
-07c686e623999367b3a480a775a1cc57,441,2,2,kill,----E jaytee,Panzerfaust,/mute nigel
-07c686e623999367b3a480a775a1cc57,442,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,443,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,444,2,2,kill,----E Spuddy,Thompson,/mute eternal
-07c686e623999367b3a480a775a1cc57,445,2,2,kill,----E Spuddy,Thompson,/mute nigel
-07c686e623999367b3a480a775a1cc57,446,2,2,kill,----E jaytee,Panzerfaust,/mute ABomB
-07c686e623999367b3a480a775a1cc57,447,2,2,kill,----E caffeine,MP40,/mute Op!o
-07c686e623999367b3a480a775a1cc57,448,2,2,kill,----E copserr,Thompson,/mute sem
-07c686e623999367b3a480a775a1cc57,449,2,2,Suicide,,/kill,----E copserr
-07c686e623999367b3a480a775a1cc57,451,2,2,Suicide,,/kill,----E jaytee
-07c686e623999367b3a480a775a1cc57,452,2,2,Suicide,,/kill,----E caffeine
-07c686e623999367b3a480a775a1cc57,453,2,2,kill,/mute doNka,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,455,2,2,kill,----E copserr,Thompson,/mute sem
-07c686e623999367b3a480a775a1cc57,456,2,2,kill,----E jaytee,Panzerfaust,/mute sem
-07c686e623999367b3a480a775a1cc57,457,2,2,Team kill,----E Spuddy,None,----E copserr
-07c686e623999367b3a480a775a1cc57,458,2,2,kill,/mute eternal,Luger,----E caffeine
-07c686e623999367b3a480a775a1cc57,459,2,2,kill,----E caffeine,Artillery,/mute nigel
-07c686e623999367b3a480a775a1cc57,460,2,2,kill,/mute ABomB,MP40,----E jaytee
-07c686e623999367b3a480a775a1cc57,461,2,2,kill,----E oreo,MP40,/mute eternal
-07c686e623999367b3a480a775a1cc57,462,2,2,kill,----E oreo,MP40,/mute nigel
-07c686e623999367b3a480a775a1cc57,463,2,2,kill,----E caffeine,MP40,/mute Op!o
-07c686e623999367b3a480a775a1cc57,464,2,2,kill,----E Spuddy,Thompson,/mute ABomB
-07c686e623999367b3a480a775a1cc57,465,2,2,kill,----E copserr,Thompson,/mute doNka
-07c686e623999367b3a480a775a1cc57,466,2,2,kill,----E caffeine,MP40,/mute nigel
-07c686e623999367b3a480a775a1cc57,467,2,2,kill,----E caffeine,Colt,/mute doNka
-07c686e623999367b3a480a775a1cc57,468,2,2,kill,/mute sem,MP40,----E v1k!ng
-07c686e623999367b3a480a775a1cc57,469,2,2,Suicide,,Grenade,----E jaytee
-07c686e623999367b3a480a775a1cc57,470,2,2,kill,----E caffeine,MP40,/mute sem
-07c686e623999367b3a480a775a1cc57,472,2,2,kill,/mute eternal,Luger,----E copserr
-07c686e623999367b3a480a775a1cc57,474,2,2,Suicide,,/kill,/mute eternal
+95ce6a7a0ebbd672cef16e84e3af727b,46,1,1,kill,Lunatic ????,Grenade,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,47,1,1,kill,Lunatic ????,MP40,John_Mullins
+95ce6a7a0ebbd672cef16e84e3af727b,48,1,1,kill,illkilla,MP40,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,49,1,1,kill,CHUCK_donka,MP40,DillWeed
+95ce6a7a0ebbd672cef16e84e3af727b,50,1,1,kill,John_Mullins,Thompson,CHUCK_donka
+95ce6a7a0ebbd672cef16e84e3af727b,51,1,1,kill,DillWeed,Thompson,illkilla
+95ce6a7a0ebbd672cef16e84e3af727b,52,1,1,kill,DillWeed,Thompson,Lunatic ????
+95ce6a7a0ebbd672cef16e84e3af727b,53,1,1,Objective,Allies,Offense flag,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,54,1,1,Suicide,,/kill,John_Mullins
+95ce6a7a0ebbd672cef16e84e3af727b,55,1,1,Objective,Allies,Offense plant,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,56,1,1,Suicide,,/kill,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,59,1,1,kill,Kittens,Thompson,Lunatic ????
+95ce6a7a0ebbd672cef16e84e3af727b,60,1,1,Objective,Allies,Mid objective,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,61,1,1,Suicide,,/kill,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,62,1,1,kill,Lunatic ????,MP40,DillWeed
+95ce6a7a0ebbd672cef16e84e3af727b,63,1,1,Objective,Allies,Offense plant,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,64,1,1,kill,John_Mullins,Thompson,illkilla
+95ce6a7a0ebbd672cef16e84e3af727b,65,1,1,Suicide,,Grenade,CHUCK_donka
+95ce6a7a0ebbd672cef16e84e3af727b,66,1,1,Suicide,,Grenade,illkilla
+95ce6a7a0ebbd672cef16e84e3af727b,67,1,1,Suicide,,/kill,John_Mullins
+95ce6a7a0ebbd672cef16e84e3af727b,68,1,1,Suicide,,/kill,Lunatic ????
+95ce6a7a0ebbd672cef16e84e3af727b,70,1,1,Objective,Allies,Stole objective,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,72,1,1,kill,DillWeed,Thompson,CHUCK_donka
+95ce6a7a0ebbd672cef16e84e3af727b,75,1,1,kill,John_Mullins,Thompson,illkilla
+95ce6a7a0ebbd672cef16e84e3af727b,76,1,1,Suicide,,/kill,John_Mullins
+95ce6a7a0ebbd672cef16e84e3af727b,77,1,1,Objective,Allies,Mid objective,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,81,1,1,Suicide,,/kill,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,82,1,1,Suicide,,/kill,John_Mullins
+95ce6a7a0ebbd672cef16e84e3af727b,86,1,1,Objective,Allies,Stole objective,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,88,1,1,kill,Lunatic ????,Grenade,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,89,1,1,kill,DillWeed,Thompson,Lunatic ????
+95ce6a7a0ebbd672cef16e84e3af727b,91,1,1,Objective,Allies,Stole objective,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,92,1,1,kill,CHUCK_donka,MP40,DillWeed
+95ce6a7a0ebbd672cef16e84e3af727b,94,1,1,kill,Kittens,Thompson,CHUCK_donka
+95ce6a7a0ebbd672cef16e84e3af727b,96,1,1,kill,John_Mullins,Thompson,illkilla
+95ce6a7a0ebbd672cef16e84e3af727b,97,1,1,Suicide,,Grenade,Kittens
+95ce6a7a0ebbd672cef16e84e3af727b,98,1,1,kill,John_Mullins,Thompson,SOURCE
+95ce6a7a0ebbd672cef16e84e3af727b,99,1,1,Team kill,CHUCK_donka,None,Lunatic ????
+95ce6a7a0ebbd672cef16e84e3af727b,102,1,1,kill,John_Mullins,Colt,CHUCK_donka
+95ce6a7a0ebbd672cef16e84e3af727b,103,1,1,kill,Lunatic ????,MP40,John_Mullins
+95ce6a7a0ebbd672cef16e84e3af727b,104,1,1,Objective,Allies,Stole objective,Axis
+95ce6a7a0ebbd672cef16e84e3af727b,105,1,1,kill,Kittens,Thompson,Lunatic ????
+95ce6a7a0ebbd672cef16e84e3af727b,106,1,1,Objective,Allies,Offense win,Axis
+c153631d68f7bfba19215f78f9b1f5e6,151,2,2,kill,Lunatic ????,Thompson,DillWeed
+c153631d68f7bfba19215f78f9b1f5e6,152,2,2,kill,CHUCK_donka,Thompson,Fister Miagi
+c153631d68f7bfba19215f78f9b1f5e6,153,2,2,kill,John_Mullins,MP40,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,154,2,2,kill,Lunatic ????,Colt,John_Mullins
+c153631d68f7bfba19215f78f9b1f5e6,155,2,2,Objective,Allies,Offense flag,Axis
+c153631d68f7bfba19215f78f9b1f5e6,156,2,2,Suicide,,/kill,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,157,2,2,kill,CHUCK_donka,Thompson,Kittens
+c153631d68f7bfba19215f78f9b1f5e6,158,2,2,Objective,Allies,Offense plant,Axis
+c153631d68f7bfba19215f78f9b1f5e6,159,2,2,kill,Fister Miagi,Grenade,illkilla
+c153631d68f7bfba19215f78f9b1f5e6,161,2,2,kill,Lunatic ????,Thompson,DillWeed
+c153631d68f7bfba19215f78f9b1f5e6,162,2,2,Suicide,,/kill,Lunatic ????
+c153631d68f7bfba19215f78f9b1f5e6,163,2,2,kill,Fister Miagi,MP40,illkilla
+c153631d68f7bfba19215f78f9b1f5e6,164,2,2,kill,Lunatic ????,Thompson,Fister Miagi
+c153631d68f7bfba19215f78f9b1f5e6,165,2,2,kill,John_Mullins,MP40,Lunatic ????
+c153631d68f7bfba19215f78f9b1f5e6,166,2,2,Objective,Allies,Mid objective,Axis
+c153631d68f7bfba19215f78f9b1f5e6,167,2,2,kill,CHUCK_donka,Thompson,DillWeed
+c153631d68f7bfba19215f78f9b1f5e6,168,2,2,kill,SOURCE,Colt,John_Mullins
+c153631d68f7bfba19215f78f9b1f5e6,169,2,2,Objective,Allies,Offense plant,Axis
+c153631d68f7bfba19215f78f9b1f5e6,170,2,2,Suicide,,/kill,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,171,2,2,kill,Kittens,MP40,SOURCE
+c153631d68f7bfba19215f78f9b1f5e6,172,2,2,Objective,Allies,Defense flag,Axis
+c153631d68f7bfba19215f78f9b1f5e6,173,2,2,kill,Kittens,Grenade,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,174,2,2,kill,Lunatic ????,Thompson,Fister Miagi
+c153631d68f7bfba19215f78f9b1f5e6,175,2,2,Objective,Allies,Mid objective,Axis
+c153631d68f7bfba19215f78f9b1f5e6,176,2,2,kill,illkilla,Thompson,DillWeed
+c153631d68f7bfba19215f78f9b1f5e6,177,2,2,kill,Kittens,MP40,illkilla
+c153631d68f7bfba19215f78f9b1f5e6,178,2,2,Objective,Allies,Offense flag,Axis
+c153631d68f7bfba19215f78f9b1f5e6,179,2,2,kill,Kittens,MP40,Lunatic ????
+c153631d68f7bfba19215f78f9b1f5e6,180,2,2,kill,CHUCK_donka,Thompson,John_Mullins
+c153631d68f7bfba19215f78f9b1f5e6,182,2,2,kill,DillWeed,MP40,SOURCE
+c153631d68f7bfba19215f78f9b1f5e6,183,2,2,kill,Lunatic ????,Thompson,DillWeed
+c153631d68f7bfba19215f78f9b1f5e6,184,2,2,kill,CHUCK_donka,Thompson,Kittens
+c153631d68f7bfba19215f78f9b1f5e6,185,2,2,kill,Lunatic ????,Thompson,John_Mullins
+c153631d68f7bfba19215f78f9b1f5e6,186,2,2,Objective,Allies,Stole objective,Axis
+c153631d68f7bfba19215f78f9b1f5e6,187,2,2,kill,Fister Miagi,MP40,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,188,2,2,kill,illkilla,Colt,Fister Miagi
+c153631d68f7bfba19215f78f9b1f5e6,189,2,2,Objective,Allies,Stole objective,Axis
+c153631d68f7bfba19215f78f9b1f5e6,192,2,2,kill,Lunatic ????,Thompson,Fister Miagi
+c153631d68f7bfba19215f78f9b1f5e6,193,2,2,kill,John_Mullins,MP40,Lunatic ????
+c153631d68f7bfba19215f78f9b1f5e6,194,2,2,kill,John_Mullins,MP40,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,195,2,2,Suicide,,/kill,SOURCE
+c153631d68f7bfba19215f78f9b1f5e6,197,2,2,kill,SOURCE,Grenade,John_Mullins
+c153631d68f7bfba19215f78f9b1f5e6,198,2,2,kill,DillWeed,MP40,Lunatic ????
+c153631d68f7bfba19215f78f9b1f5e6,199,2,2,kill,DillWeed,MP40,CHUCK_donka
+c153631d68f7bfba19215f78f9b1f5e6,200,2,2,kill,DillWeed,MP40,illkilla
+c153631d68f7bfba19215f78f9b1f5e6,201,2,2,Objective,Allies,Returned objective,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,226,3,1,kill,John_Mullins,MP40,CHUCK_donka
+337ab9ebeebfac4c7c0ee07f1ba523d3,227,3,1,kill,illkilla,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,228,3,1,kill,illkilla,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,229,3,1,kill,Kittens,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,230,3,1,kill,CHUCK_donka,Thompson,Kittens
+337ab9ebeebfac4c7c0ee07f1ba523d3,231,3,1,Objective,Allies,Offense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,232,3,1,Suicide,,/kill,CHUCK_donka
+337ab9ebeebfac4c7c0ee07f1ba523d3,233,3,1,kill,Lunatic ????,Thompson,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,234,3,1,kill,DillWeed,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,236,3,1,kill,Lunatic ????,Colt,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,237,3,1,Suicide,,/kill,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,238,3,1,kill,Kittens,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,239,3,1,kill,John_Mullins,MP40,CHUCK_donka
+337ab9ebeebfac4c7c0ee07f1ba523d3,240,3,1,kill,John_Mullins,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,241,3,1,Suicide,,/kill,Kittens
+337ab9ebeebfac4c7c0ee07f1ba523d3,242,3,1,Objective,Allies,Defense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,243,3,1,kill,Lunatic ????,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,244,3,1,kill,Fister Miagi,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,245,3,1,kill,SOURCE,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,246,3,1,Objective,Allies,Offense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,247,3,1,kill,CHUCK_donka,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,249,3,1,Objective,Allies,Offense plant,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,250,3,1,kill,CHUCK_donka,Grenade,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,251,3,1,kill,CHUCK_donka,Thompson,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,252,3,1,Suicide,,/kill,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,253,3,1,kill,John_Mullins,MP40,CHUCK_donka
+337ab9ebeebfac4c7c0ee07f1ba523d3,254,3,1,Suicide,,/kill,Kittens
+337ab9ebeebfac4c7c0ee07f1ba523d3,255,3,1,Suicide,,/kill,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,257,3,1,Objective,Allies,Mid objective,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,258,3,1,Objective,Allies,Offense plant,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,259,3,1,kill,Kittens,MP40,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,260,3,1,kill,Kittens,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,261,3,1,Objective,Allies,Defense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,263,3,1,kill,DillWeed,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,264,3,1,Suicide,,/kill,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,265,3,1,Objective,Allies,Mid objective,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,266,3,1,Objective,Allies,Offense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,267,3,1,kill,John_Mullins,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,268,3,1,Objective,Allies,Defense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,269,3,1,kill,Lunatic ????,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,270,3,1,Objective,Allies,Offense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,271,3,1,Team kill,SOURCE,None,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,272,3,1,kill,Lunatic ????,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,273,3,1,kill,Kittens,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,274,3,1,kill,SOURCE,MP40,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,275,3,1,Suicide,,/kill,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,276,3,1,kill,John_Mullins,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,277,3,1,Objective,Allies,Stole objective,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,278,3,1,kill,illkilla,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,279,3,1,Suicide,,/kill,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,280,3,1,kill,John_Mullins,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,281,3,1,kill,John_Mullins,MP40,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,282,3,1,kill,CHUCK_donka,Thompson,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,285,3,1,Objective,Allies,Defense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,286,3,1,kill,Lunatic ????,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,287,3,1,kill,CHUCK_donka,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,288,3,1,Objective,Allies,Offense flag,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,289,3,1,Suicide,,/kill,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,290,3,1,kill,Fister Miagi,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,293,3,1,Suicide,,/kill,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,294,3,1,kill,Lunatic ????,Thompson,Kittens
+337ab9ebeebfac4c7c0ee07f1ba523d3,295,3,1,kill,John_Mullins,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,297,3,1,kill,Lunatic ????,Thompson,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,298,3,1,kill,illkilla,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,299,3,1,kill,Lunatic ????,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,300,3,1,kill,Kittens,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,301,3,1,kill,DillWeed,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,302,3,1,kill,Fister Miagi,MP40,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,303,3,1,kill,CHUCK_donka,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,304,3,1,kill,illkilla,Thompson,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,305,3,1,kill,Kittens,MP40,CHUCK_donka
+337ab9ebeebfac4c7c0ee07f1ba523d3,306,3,1,Objective,Allies,Returned objective,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,307,3,1,kill,John_Mullins,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,308,3,1,kill,Lunatic ????,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,309,3,1,kill,SOURCE,MP40,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,310,3,1,kill,Kittens,MP40,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,311,3,1,kill,Kittens,MP40,illkilla
+337ab9ebeebfac4c7c0ee07f1ba523d3,312,3,1,kill,SOURCE,MP40,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,313,3,1,kill,Kittens,MP40,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,314,3,1,kill,Kittens,MP40,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,315,3,1,Objective,Allies,Stole objective,Axis
+337ab9ebeebfac4c7c0ee07f1ba523d3,316,3,1,kill,SOURCE,Colt,Kittens
+337ab9ebeebfac4c7c0ee07f1ba523d3,317,3,1,kill,illkilla,Thompson,John_Mullins
+337ab9ebeebfac4c7c0ee07f1ba523d3,318,3,1,kill,Fister Miagi,MP40,SOURCE
+337ab9ebeebfac4c7c0ee07f1ba523d3,319,3,1,kill,SOURCE,Grenade,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,320,3,1,kill,Lunatic ????,Thompson,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,321,3,1,kill,Lunatic ????,Thompson,Fister Miagi
+337ab9ebeebfac4c7c0ee07f1ba523d3,322,3,1,Team kill,CHUCK_donka,None,Lunatic ????
+337ab9ebeebfac4c7c0ee07f1ba523d3,323,3,1,kill,CHUCK_donka,Grenade,DillWeed
+337ab9ebeebfac4c7c0ee07f1ba523d3,324,3,1,kill,CHUCK_donka,Thompson,Kittens
+337ab9ebeebfac4c7c0ee07f1ba523d3,325,3,1,Objective,Allies,Offense win,Axis
+317ab0e1b2a407e03bb177798f664cea,357,4,2,Objective,Allies,Offense flag,Axis
+317ab0e1b2a407e03bb177798f664cea,358,4,2,Suicide,,/kill,John_Mullins
+317ab0e1b2a407e03bb177798f664cea,359,4,2,kill,Kittens,Thompson,illkilla
+317ab0e1b2a407e03bb177798f664cea,360,4,2,kill,John_Mullins,Thompson,CHUCK_donka
+317ab0e1b2a407e03bb177798f664cea,361,4,2,kill,John_Mullins,Thompson,SOURCE
+317ab0e1b2a407e03bb177798f664cea,362,4,2,kill,Lunatic ????,Grenade,John_Mullins
+317ab0e1b2a407e03bb177798f664cea,364,4,2,kill,Kittens,Thompson,Lunatic ????
+317ab0e1b2a407e03bb177798f664cea,366,4,2,kill,Kittens,Grenade,Lunatic ????
+317ab0e1b2a407e03bb177798f664cea,367,4,2,Suicide,,/kill,DillWeed
+317ab0e1b2a407e03bb177798f664cea,368,4,2,Suicide,,/kill,John_Mullins
+317ab0e1b2a407e03bb177798f664cea,369,4,2,Objective,Allies,Stole objective,Axis
+317ab0e1b2a407e03bb177798f664cea,370,4,2,Objective,Allies,Offense plant,Axis
+317ab0e1b2a407e03bb177798f664cea,371,4,2,kill,CHUCK_donka,Grenade,DillWeed
+317ab0e1b2a407e03bb177798f664cea,372,4,2,kill,John_Mullins,Thompson,SOURCE
+317ab0e1b2a407e03bb177798f664cea,373,4,2,Suicide,,Grenade,CHUCK_donka
+317ab0e1b2a407e03bb177798f664cea,376,4,2,Objective,Allies,Offense plant,Axis
+317ab0e1b2a407e03bb177798f664cea,377,4,2,kill,Kittens,Thompson,CHUCK_donka
+317ab0e1b2a407e03bb177798f664cea,378,4,2,kill,Lunatic ????,MP40,DillWeed
+317ab0e1b2a407e03bb177798f664cea,379,4,2,kill,John_Mullins,Thompson,SOURCE
+317ab0e1b2a407e03bb177798f664cea,380,4,2,Objective,Allies,Mid objective,Axis
+317ab0e1b2a407e03bb177798f664cea,381,4,2,kill,Lunatic ????,MP40,John_Mullins
+317ab0e1b2a407e03bb177798f664cea,383,4,2,kill,Lunatic ????,Grenade,DillWeed
+317ab0e1b2a407e03bb177798f664cea,384,4,2,Objective,Allies,Mid objective,Axis
+317ab0e1b2a407e03bb177798f664cea,385,4,2,kill,Kittens,Thompson,Lunatic ????
+317ab0e1b2a407e03bb177798f664cea,386,4,2,Objective,Allies,Offense win,Axis
+8251ad1dfabbd75f4a412022d9eb173a,456,5,1,kill,DillWeed,Thompson,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,457,5,1,kill,CHUCK_donka,Grenade,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,458,5,1,kill,Kittens,Thompson,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,459,5,1,Objective,Allies,Offense flag,Axis
+8251ad1dfabbd75f4a412022d9eb173a,460,5,1,Suicide,,/kill,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,461,5,1,kill,Fister Miagi,Thompson,illkilla
+8251ad1dfabbd75f4a412022d9eb173a,462,5,1,kill,Lunatic ????,MP40,Kittens
+8251ad1dfabbd75f4a412022d9eb173a,463,5,1,kill,PennyWi$E,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,464,5,1,kill,Kittens,Grenade,Lunatic ????
+8251ad1dfabbd75f4a412022d9eb173a,465,5,1,Suicide,,World,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,466,5,1,Team kill,illkilla,None,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,467,5,1,Objective,Allies,Offense plant,Axis
+8251ad1dfabbd75f4a412022d9eb173a,469,5,1,Suicide,,/kill,Kittens
+8251ad1dfabbd75f4a412022d9eb173a,471,5,1,Objective,Allies,Stole objective,Axis
+8251ad1dfabbd75f4a412022d9eb173a,472,5,1,Team kill,Lunatic ????,None,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,473,5,1,Objective,Allies,Offense plant,Axis
+8251ad1dfabbd75f4a412022d9eb173a,474,5,1,kill,Lunatic ????,MP40,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,475,5,1,kill,DillWeed,Thompson,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,476,5,1,kill,Kittens,Grenade,Lunatic ????
+8251ad1dfabbd75f4a412022d9eb173a,477,5,1,kill,CHUCK_donka,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,478,5,1,Suicide,,/kill,Kittens
+8251ad1dfabbd75f4a412022d9eb173a,479,5,1,Objective,Allies,Mid objective,Axis
+8251ad1dfabbd75f4a412022d9eb173a,482,5,1,kill,Lunatic ????,MP40,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,483,5,1,Objective,Allies,Mid objective,Axis
+8251ad1dfabbd75f4a412022d9eb173a,484,5,1,kill,illkilla,Luger,Fister Miagi
+8251ad1dfabbd75f4a412022d9eb173a,485,5,1,Objective,Allies,Returned objective,Axis
+8251ad1dfabbd75f4a412022d9eb173a,486,5,1,kill,John_Mullins,Thompson,Lunatic ????
+8251ad1dfabbd75f4a412022d9eb173a,487,5,1,kill,illkilla,MP40,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,488,5,1,kill,DillWeed,Thompson,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,489,5,1,kill,CHUCK_donka,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,490,5,1,kill,DillWeed,Grenade,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,491,5,1,Objective,Allies,Stole objective,Axis
+8251ad1dfabbd75f4a412022d9eb173a,492,5,1,Suicide,,/kill,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,493,5,1,Suicide,,/kill,illkilla
+8251ad1dfabbd75f4a412022d9eb173a,494,5,1,kill,PennyWi$E,MP40,Fister Miagi
+8251ad1dfabbd75f4a412022d9eb173a,495,5,1,kill,CHUCK_donka,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,496,5,1,kill,John_Mullins,Thompson,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,497,5,1,kill,John_Mullins,Thompson,illkilla
+8251ad1dfabbd75f4a412022d9eb173a,498,5,1,kill,CHUCK_donka,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,499,5,1,kill,John_Mullins,Thompson,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,500,5,1,kill,PennyWi$E,MP40,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,501,5,1,kill,CHUCK_donka,Grenade,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,502,5,1,kill,Kittens,Thompson,illkilla
+8251ad1dfabbd75f4a412022d9eb173a,503,5,1,kill,PennyWi$E,MP40,Fister Miagi
+8251ad1dfabbd75f4a412022d9eb173a,504,5,1,kill,Kittens,Thompson,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,505,5,1,kill,PennyWi$E,MP40,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,506,5,1,kill,DillWeed,Thompson,Lunatic ????
+8251ad1dfabbd75f4a412022d9eb173a,507,5,1,kill,CHUCK_donka,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,509,5,1,kill,Kittens,Thompson,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,511,5,1,kill,John_Mullins,Thompson,illkilla
+8251ad1dfabbd75f4a412022d9eb173a,513,5,1,Team kill,Kittens,None,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,516,5,1,kill,Lunatic ????,Grenade,Fister Miagi
+8251ad1dfabbd75f4a412022d9eb173a,517,5,1,kill,John_Mullins,Thompson,Lunatic ????
+8251ad1dfabbd75f4a412022d9eb173a,518,5,1,kill,John_Mullins,Thompson,CHUCK_donka
+8251ad1dfabbd75f4a412022d9eb173a,519,5,1,kill,PennyWi$E,MP40,John_Mullins
+8251ad1dfabbd75f4a412022d9eb173a,520,5,1,kill,PennyWi$E,MP40,DillWeed
+8251ad1dfabbd75f4a412022d9eb173a,521,5,1,kill,Kittens,Thompson,PennyWi$E
+8251ad1dfabbd75f4a412022d9eb173a,522,5,1,Objective,Allies,Offense win,Axis
+91c4c2576199efa31425dc748f2804e1,558,6,2,kill,Lunatic ????,Thompson,DillWeed
+91c4c2576199efa31425dc748f2804e1,559,6,2,kill,DillWeed,Grenade,illkilla
+91c4c2576199efa31425dc748f2804e1,560,6,2,kill,Kittens,MP40,SOURCE
+91c4c2576199efa31425dc748f2804e1,561,6,2,kill,Lunatic ????,Thompson,John_Mullins
+91c4c2576199efa31425dc748f2804e1,562,6,2,kill,illkilla,MP40,Kittens
+91c4c2576199efa31425dc748f2804e1,563,6,2,Objective,Allies,Offense flag,Axis
+91c4c2576199efa31425dc748f2804e1,564,6,2,kill,Fister Miagi,Grenade,Lunatic ????
+91c4c2576199efa31425dc748f2804e1,565,6,2,kill,Lunatic ????,Colt,Fister Miagi
+91c4c2576199efa31425dc748f2804e1,566,6,2,Team kill,CHUCK_donka,None,Lunatic ????
+91c4c2576199efa31425dc748f2804e1,567,6,2,kill,John_Mullins,MP40,illkilla
+91c4c2576199efa31425dc748f2804e1,571,6,2,kill,John_Mullins,MP40,CHUCK_donka
+91c4c2576199efa31425dc748f2804e1,572,6,2,Suicide,,World,John_Mullins
+91c4c2576199efa31425dc748f2804e1,573,6,2,kill,Lunatic ????,Colt,DillWeed
+91c4c2576199efa31425dc748f2804e1,574,6,2,Objective,Allies,Offense plant,Axis
+91c4c2576199efa31425dc748f2804e1,575,6,2,Suicide,,World,PennyWi$E
+91c4c2576199efa31425dc748f2804e1,576,6,2,Suicide,,/kill,Lunatic ????
+91c4c2576199efa31425dc748f2804e1,577,6,2,kill,SOURCE,Grenade,DillWeed
+91c4c2576199efa31425dc748f2804e1,578,6,2,Team kill,PennyWi$E,None,Fister Miagi
+91c4c2576199efa31425dc748f2804e1,579,6,2,kill,PennyWi$E,MP40,SOURCE
+91c4c2576199efa31425dc748f2804e1,580,6,2,kill,CHUCK_donka,Grenade,PennyWi$E
+91c4c2576199efa31425dc748f2804e1,582,6,2,kill,Kittens,MP40,CHUCK_donka
+91c4c2576199efa31425dc748f2804e1,584,6,2,Objective,Allies,Mid objective,Axis
+91c4c2576199efa31425dc748f2804e1,585,6,2,Suicide,,/kill,John_Mullins
+91c4c2576199efa31425dc748f2804e1,586,6,2,Objective,Allies,Offense plant,Axis
+91c4c2576199efa31425dc748f2804e1,589,6,2,Suicide,,/kill,SOURCE
+91c4c2576199efa31425dc748f2804e1,592,6,2,kill,illkilla,Thompson,PennyWi$E
+91c4c2576199efa31425dc748f2804e1,593,6,2,kill,Fister Miagi,MP40,illkilla
+91c4c2576199efa31425dc748f2804e1,594,6,2,kill,Lunatic ????,Thompson,Fister Miagi
+91c4c2576199efa31425dc748f2804e1,595,6,2,kill,John_Mullins,MP40,P.I.M.P.
+91c4c2576199efa31425dc748f2804e1,596,6,2,kill,John_Mullins,Luger,CHUCK_donka
+91c4c2576199efa31425dc748f2804e1,597,6,2,kill,SOURCE,MP40,John_Mullins
+91c4c2576199efa31425dc748f2804e1,599,6,2,kill,Kittens,MP40,Lunatic ????
+91c4c2576199efa31425dc748f2804e1,600,6,2,Suicide,,/kill,Kittens
+91c4c2576199efa31425dc748f2804e1,601,6,2,Suicide,,/kill,illkilla
+91c4c2576199efa31425dc748f2804e1,603,6,2,Objective,Allies,Mid objective,Axis
+91c4c2576199efa31425dc748f2804e1,604,6,2,kill,John_Mullins,MP40,SOURCE
+91c4c2576199efa31425dc748f2804e1,605,6,2,Team kill,CHUCK_donka,None,illkilla
+91c4c2576199efa31425dc748f2804e1,608,6,2,kill,CHUCK_donka,Thompson,PennyWi$E
+91c4c2576199efa31425dc748f2804e1,609,6,2,kill,DillWeed,MP40,illkilla
+91c4c2576199efa31425dc748f2804e1,610,6,2,kill,CHUCK_donka,Thompson,DillWeed
+91c4c2576199efa31425dc748f2804e1,611,6,2,kill,Kittens,Grenade,CHUCK_donka
+91c4c2576199efa31425dc748f2804e1,612,6,2,kill,illkilla,MP40,Fister Miagi
+91c4c2576199efa31425dc748f2804e1,613,6,2,kill,Lunatic ????,Thompson,Kittens
+91c4c2576199efa31425dc748f2804e1,614,6,2,kill,John_Mullins,MP40,Lunatic ????
+91c4c2576199efa31425dc748f2804e1,615,6,2,kill,illkilla,MP40,John_Mullins
+91c4c2576199efa31425dc748f2804e1,616,6,2,kill,PennyWi$E,MP40,illkilla
+91c4c2576199efa31425dc748f2804e1,617,6,2,kill,P.I.M.P.,Colt,PennyWi$E
+91c4c2576199efa31425dc748f2804e1,618,6,2,kill,SOURCE,Thompson,DillWeed
+91c4c2576199efa31425dc748f2804e1,619,6,2,kill,Kittens,Grenade,SOURCE
+91c4c2576199efa31425dc748f2804e1,622,6,2,kill,Kittens,MP40,P.I.M.P.
+91c4c2576199efa31425dc748f2804e1,624,6,2,kill,illkilla,MP40,Kittens
+91c4c2576199efa31425dc748f2804e1,625,6,2,kill,CHUCK_donka,Thompson,PennyWi$E
+91c4c2576199efa31425dc748f2804e1,626,6,2,kill,DillWeed,MP40,CHUCK_donka
+91c4c2576199efa31425dc748f2804e1,627,6,2,kill,SOURCE,Thompson,DillWeed
+91c4c2576199efa31425dc748f2804e1,628,6,2,Objective,Allies,Stole objective,Axis
+91c4c2576199efa31425dc748f2804e1,629,6,2,kill,SOURCE,Colt,Fister Miagi
+91c4c2576199efa31425dc748f2804e1,630,6,2,kill,P.I.M.P.,Thompson,Kittens
+91c4c2576199efa31425dc748f2804e1,632,6,2,kill,John_Mullins,MP40,illkilla
+91c4c2576199efa31425dc748f2804e1,633,6,2,Objective,Allies,Offense win,Axis
+de4f448f842d84924b4dab6a7d738abe,696,7,1,kill,illkilla,Grenade,Kittens
+de4f448f842d84924b4dab6a7d738abe,697,7,1,kill,CHUCK_donka,Thompson,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,698,7,1,Objective,Axis,Offense plant,Allies
+de4f448f842d84924b4dab6a7d738abe,699,7,1,kill,DillWeed,MP40,CHUCK_donka
+de4f448f842d84924b4dab6a7d738abe,700,7,1,kill,Lunatic ????,Thompson,PennyWi$E
+de4f448f842d84924b4dab6a7d738abe,701,7,1,Objective,Axis,Offense flag,Allies
+de4f448f842d84924b4dab6a7d738abe,702,7,1,Suicide,,/kill,John_Mullins
+de4f448f842d84924b4dab6a7d738abe,704,7,1,Objective,Axis,Defense disarmed,Allies
+de4f448f842d84924b4dab6a7d738abe,705,7,1,kill,John_Mullins,MP40,SOURCE
+de4f448f842d84924b4dab6a7d738abe,709,7,1,kill,Lunatic ????,Thompson,DillWeed
+de4f448f842d84924b4dab6a7d738abe,711,7,1,kill,Lunatic ????,Colt,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,712,7,1,kill,DillWeed,MP40,Lunatic ????
+de4f448f842d84924b4dab6a7d738abe,713,7,1,kill,illkilla,Thompson,DillWeed
+de4f448f842d84924b4dab6a7d738abe,717,7,1,kill,CHUCK_donka,Thompson,John_Mullins
+de4f448f842d84924b4dab6a7d738abe,718,7,1,kill,Kittens,MP40,illkilla
+de4f448f842d84924b4dab6a7d738abe,719,7,1,kill,Kittens,MP40,P.I.M.P.
+de4f448f842d84924b4dab6a7d738abe,722,7,1,Objective,Axis,Offense plant,Allies
+de4f448f842d84924b4dab6a7d738abe,724,7,1,kill,P.I.M.P.,Thompson,Kittens
+de4f448f842d84924b4dab6a7d738abe,725,7,1,Objective,Axis,Defense flag,Allies
+de4f448f842d84924b4dab6a7d738abe,726,7,1,Suicide,,/kill,Lunatic ????
+de4f448f842d84924b4dab6a7d738abe,727,7,1,Objective,Axis,Offense flag,Allies
+de4f448f842d84924b4dab6a7d738abe,728,7,1,Objective,Axis,Mid objective,Allies
+de4f448f842d84924b4dab6a7d738abe,729,7,1,kill,P.I.M.P.,Thompson,John_Mullins
+de4f448f842d84924b4dab6a7d738abe,730,7,1,Suicide,,/kill,CHUCK_donka
+de4f448f842d84924b4dab6a7d738abe,731,7,1,kill,P.I.M.P.,Grenade,DillWeed
+de4f448f842d84924b4dab6a7d738abe,732,7,1,kill,Lunatic ????,Thompson,PennyWi$E
+de4f448f842d84924b4dab6a7d738abe,733,7,1,kill,SOURCE,Grenade,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,735,7,1,kill,John_Mullins,MP40,illkilla
+de4f448f842d84924b4dab6a7d738abe,736,7,1,kill,P.I.M.P.,Thompson,Kittens
+de4f448f842d84924b4dab6a7d738abe,737,7,1,kill,illkilla,MP40,John_Mullins
+de4f448f842d84924b4dab6a7d738abe,738,7,1,Suicide,,/kill,SOURCE
+de4f448f842d84924b4dab6a7d738abe,739,7,1,kill,P.I.M.P.,Thompson,Kittens
+de4f448f842d84924b4dab6a7d738abe,741,7,1,kill,Fister Miagi,MP40,P.I.M.P.
+de4f448f842d84924b4dab6a7d738abe,743,7,1,kill,John_Mullins,MP40,illkilla
+de4f448f842d84924b4dab6a7d738abe,744,7,1,kill,CHUCK_donka,Thompson,John_Mullins
+de4f448f842d84924b4dab6a7d738abe,746,7,1,kill,Lunatic ????,Colt,Kittens
+de4f448f842d84924b4dab6a7d738abe,748,7,1,kill,Lunatic ????,Colt,DillWeed
+de4f448f842d84924b4dab6a7d738abe,749,7,1,kill,PennyWi$E,MP40,CHUCK_donka
+de4f448f842d84924b4dab6a7d738abe,750,7,1,kill,CHUCK_donka,Thompson,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,752,7,1,kill,PennyWi$E,MP40,Lunatic ????
+de4f448f842d84924b4dab6a7d738abe,753,7,1,kill,P.I.M.P.,Thompson,DillWeed
+de4f448f842d84924b4dab6a7d738abe,754,7,1,Objective,Axis,Stole objective,Allies
+de4f448f842d84924b4dab6a7d738abe,755,7,1,kill,illkilla,Airstrike,PennyWi$E
+de4f448f842d84924b4dab6a7d738abe,756,7,1,kill,John_Mullins,MP40,P.I.M.P.
+de4f448f842d84924b4dab6a7d738abe,757,7,1,kill,Kittens,MP40,illkilla
+de4f448f842d84924b4dab6a7d738abe,758,7,1,kill,CHUCK_donka,Colt,John_Mullins
+de4f448f842d84924b4dab6a7d738abe,759,7,1,kill,Kittens,MP40,SOURCE
+de4f448f842d84924b4dab6a7d738abe,760,7,1,Objective,Axis,Returned objective,Allies
+de4f448f842d84924b4dab6a7d738abe,761,7,1,Objective,Axis,Stole objective,Allies
+de4f448f842d84924b4dab6a7d738abe,762,7,1,kill,P.I.M.P.,Grenade,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,763,7,1,Objective,Axis,Stole objective,Allies
+de4f448f842d84924b4dab6a7d738abe,765,7,1,kill,John_Mullins,MP40,SOURCE
+de4f448f842d84924b4dab6a7d738abe,768,7,1,Team kill,illkilla,None,P.I.M.P.
+de4f448f842d84924b4dab6a7d738abe,771,7,1,kill,illkilla,Artillery,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,772,7,1,kill,John_Mullins,MP40,CHUCK_donka
+de4f448f842d84924b4dab6a7d738abe,773,7,1,kill,PennyWi$E,MP40,illkilla
+de4f448f842d84924b4dab6a7d738abe,774,7,1,Suicide,,/kill,PennyWi$E
+de4f448f842d84924b4dab6a7d738abe,775,7,1,kill,John_Mullins,MP40,Lunatic ????
+de4f448f842d84924b4dab6a7d738abe,776,7,1,kill,SOURCE,MP40,PennyWi$E
+de4f448f842d84924b4dab6a7d738abe,787,7,1,kill,DillWeed,MP40,illkilla
+de4f448f842d84924b4dab6a7d738abe,788,7,1,kill,John_Mullins,MP40,P.I.M.P.
+de4f448f842d84924b4dab6a7d738abe,789,7,1,kill,CHUCK_donka,Thompson,Fister Miagi
+de4f448f842d84924b4dab6a7d738abe,790,7,1,kill,DillWeed,MP40,CHUCK_donka
+de4f448f842d84924b4dab6a7d738abe,791,7,1,kill,Lunatic ????,Thompson,DillWeed
+de4f448f842d84924b4dab6a7d738abe,792,7,1,Objective,Axis,Offense win,Allies
+88eb36b421d2c6ec52ee5a179edc0343,830,8,2,kill,Kittens,Grenade,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,831,8,2,kill,SOURCE,MP40,PennyWi$E
+88eb36b421d2c6ec52ee5a179edc0343,832,8,2,kill,Fister Miagi,Thompson,SOURCE
+88eb36b421d2c6ec52ee5a179edc0343,833,8,2,kill,DillWeed,MP40,illkilla
+88eb36b421d2c6ec52ee5a179edc0343,834,8,2,kill,P.I.M.P.,MP40,Kittens
+88eb36b421d2c6ec52ee5a179edc0343,835,8,2,kill,John_Mullins,Thompson,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,836,8,2,kill,SOURCE,Grenade,John_Mullins
+88eb36b421d2c6ec52ee5a179edc0343,837,8,2,kill,SOURCE,MP40,DillWeed
+88eb36b421d2c6ec52ee5a179edc0343,838,8,2,kill,SOURCE,MP40,Fister Miagi
+88eb36b421d2c6ec52ee5a179edc0343,839,8,2,Objective,Axis,Offense flag,Allies
+88eb36b421d2c6ec52ee5a179edc0343,840,8,2,Suicide,,/kill,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,841,8,2,kill,PennyWi$E,Grenade,SOURCE
+88eb36b421d2c6ec52ee5a179edc0343,842,8,2,kill,illkilla,MP40,PennyWi$E
+88eb36b421d2c6ec52ee5a179edc0343,843,8,2,kill,PennyWi$E,Grenade,illkilla
+88eb36b421d2c6ec52ee5a179edc0343,844,8,2,kill,PennyWi$E,Grenade,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,845,8,2,kill,John_Mullins,Thompson,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,846,8,2,kill,Kittens,Thompson,CHUCK_donka
+88eb36b421d2c6ec52ee5a179edc0343,849,8,2,Objective,Axis,Defense flag,Allies
+88eb36b421d2c6ec52ee5a179edc0343,850,8,2,kill,SOURCE,MP40,Kittens
+88eb36b421d2c6ec52ee5a179edc0343,851,8,2,kill,CHUCK_donka,Grenade,John_Mullins
+88eb36b421d2c6ec52ee5a179edc0343,852,8,2,Objective,Axis,Offense flag,Allies
+88eb36b421d2c6ec52ee5a179edc0343,853,8,2,Suicide,,/kill,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,854,8,2,kill,Lunatic ????,MP40,Fister Miagi
+88eb36b421d2c6ec52ee5a179edc0343,855,8,2,kill,CHUCK_donka,MP40,PennyWi$E
+88eb36b421d2c6ec52ee5a179edc0343,856,8,2,kill,DillWeed,Thompson,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,857,8,2,kill,SOURCE,MP40,DillWeed
+88eb36b421d2c6ec52ee5a179edc0343,858,8,2,Objective,Axis,Offense plant,Allies
+88eb36b421d2c6ec52ee5a179edc0343,860,8,2,kill,John_Mullins,Thompson,SOURCE
+88eb36b421d2c6ec52ee5a179edc0343,861,8,2,kill,John_Mullins,Thompson,CHUCK_donka
+88eb36b421d2c6ec52ee5a179edc0343,862,8,2,kill,Kittens,Grenade,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,863,8,2,kill,Kittens,Grenade,SOURCE
+88eb36b421d2c6ec52ee5a179edc0343,865,8,2,Suicide,,/kill,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,867,8,2,Suicide,,/kill,Kittens
+88eb36b421d2c6ec52ee5a179edc0343,868,8,2,Suicide,,/kill,John_Mullins
+88eb36b421d2c6ec52ee5a179edc0343,870,8,2,Suicide,,/kill,illkilla
+88eb36b421d2c6ec52ee5a179edc0343,871,8,2,kill,John_Mullins,Thompson,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,872,8,2,kill,John_Mullins,Thompson,CHUCK_donka
+88eb36b421d2c6ec52ee5a179edc0343,885,8,2,Objective,Axis,Mid objective,Allies
+88eb36b421d2c6ec52ee5a179edc0343,886,8,2,kill,illkilla,MP40,PennyWi$E
+88eb36b421d2c6ec52ee5a179edc0343,887,8,2,kill,John_Mullins,Colt,CHUCK_donka
+88eb36b421d2c6ec52ee5a179edc0343,888,8,2,kill,SOURCE,MP40,John_Mullins
+88eb36b421d2c6ec52ee5a179edc0343,889,8,2,kill,Kittens,Thompson,illkilla
+88eb36b421d2c6ec52ee5a179edc0343,890,8,2,kill,Kittens,Thompson,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,891,8,2,kill,Fister Miagi,Thompson,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,892,8,2,kill,Fister Miagi,Thompson,SOURCE
+88eb36b421d2c6ec52ee5a179edc0343,893,8,2,kill,PennyWi$E,Grenade,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,894,8,2,kill,illkilla,MP40,PennyWi$E
+88eb36b421d2c6ec52ee5a179edc0343,895,8,2,kill,CHUCK_donka,MP40,John_Mullins
+88eb36b421d2c6ec52ee5a179edc0343,898,8,2,kill,Kittens,Thompson,CHUCK_donka
+88eb36b421d2c6ec52ee5a179edc0343,899,8,2,Objective,Axis,Stole objective,Allies
+88eb36b421d2c6ec52ee5a179edc0343,900,8,2,kill,Kittens,Thompson,illkilla
+88eb36b421d2c6ec52ee5a179edc0343,901,8,2,Objective,Axis,Returned objective,Allies
+88eb36b421d2c6ec52ee5a179edc0343,902,8,2,kill,P.I.M.P.,MP40,Kittens
+88eb36b421d2c6ec52ee5a179edc0343,903,8,2,kill,John_Mullins,Thompson,illkilla
+88eb36b421d2c6ec52ee5a179edc0343,904,8,2,Team kill,Fister Miagi,None,DillWeed
+88eb36b421d2c6ec52ee5a179edc0343,905,8,2,kill,John_Mullins,Thompson,Lunatic ????
+88eb36b421d2c6ec52ee5a179edc0343,906,8,2,Objective,Axis,Defense flag,Allies
+88eb36b421d2c6ec52ee5a179edc0343,908,8,2,kill,SOURCE,MP40,PennyWi$E
+88eb36b421d2c6ec52ee5a179edc0343,911,8,2,kill,Fister Miagi,Thompson,SOURCE
+88eb36b421d2c6ec52ee5a179edc0343,914,8,2,kill,John_Mullins,Thompson,P.I.M.P.
+88eb36b421d2c6ec52ee5a179edc0343,916,8,2,kill,CHUCK_donka,Luger,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,952,9,1,kill,PennyWi$E,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,953,9,1,kill,John_Mullins,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,956,9,1,kill,illkilla,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,957,9,1,kill,Fister Miagi,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,958,9,1,kill,DillWeed,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,959,9,1,kill,illkilla,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,960,9,1,kill,Kittens,Thompson,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,961,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,965,9,1,kill,John_Mullins,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,966,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,967,9,1,kill,illkilla,Grenade,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,968,9,1,Team kill,PennyWi$E,None,Kittens
+9a616c8d474c2dff7c61476c53fea121,971,9,1,kill,Fister Miagi,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,972,9,1,Objective,Axis,Offense plant,Allies
+9a616c8d474c2dff7c61476c53fea121,973,9,1,kill,DillWeed,Airstrike,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,974,9,1,kill,SOURCE,Grenade,DillWeed
+9a616c8d474c2dff7c61476c53fea121,975,9,1,kill,John_Mullins,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,976,9,1,Team kill,Lunatic ????,None,SOURCE
+9a616c8d474c2dff7c61476c53fea121,979,9,1,kill,Fister Miagi,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,981,9,1,kill,CHUCK_donka,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,983,9,1,kill,Lunatic ????,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,984,9,1,Objective,Axis,Defense disarmed,Allies
+9a616c8d474c2dff7c61476c53fea121,985,9,1,kill,SOURCE,Grenade,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,987,9,1,kill,Kittens,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,988,9,1,kill,P.I.M.P.,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,989,9,1,kill,illkilla,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,991,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,992,9,1,kill,Cypher,MP40,TK|POW
+9a616c8d474c2dff7c61476c53fea121,993,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,994,9,1,Team kill,SOURCE,None,Cypher
+9a616c8d474c2dff7c61476c53fea121,995,9,1,kill,SOURCE,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,996,9,1,Suicide,,/kill,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,997,9,1,Suicide,,/kill,illkilla
+9a616c8d474c2dff7c61476c53fea121,998,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,999,9,1,kill,SOURCE,Luger,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1000,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1001,9,1,kill,Lunatic ????,Luger,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1002,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1003,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1004,9,1,kill,Kittens,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1005,9,1,kill,Kittens,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1006,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1007,9,1,kill,John_Mullins,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1009,9,1,kill,Lunatic ????,Luger,Kittens
+9a616c8d474c2dff7c61476c53fea121,1012,9,1,kill,PennyWi$E,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1013,9,1,kill,PennyWi$E,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1014,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1015,9,1,Suicide,,/kill,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1016,9,1,Objective,Axis,Offense plant,Allies
+9a616c8d474c2dff7c61476c53fea121,1017,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1018,9,1,kill,CHUCK_donka,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1019,9,1,Team kill,Lunatic ????,None,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1021,9,1,kill,Kittens,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1022,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1023,9,1,kill,Lunatic ????,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1024,9,1,Suicide,,/kill,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1025,9,1,Suicide,,/kill,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1026,9,1,kill,Fister Miagi,Grenade,Cypher
+9a616c8d474c2dff7c61476c53fea121,1027,9,1,kill,PennyWi$E,Grenade,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1028,9,1,Suicide,,Grenade,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1029,9,1,kill,illkilla,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1031,9,1,Suicide,,/kill,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1032,9,1,Objective,Axis,Mid objective,Allies
+9a616c8d474c2dff7c61476c53fea121,1033,9,1,kill,illkilla,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1034,9,1,kill,TK|POW,Thompson,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1035,9,1,kill,John_Mullins,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1036,9,1,kill,John_Mullins,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1037,9,1,Team kill,Fister Miagi,None,TK|POW
+9a616c8d474c2dff7c61476c53fea121,1038,9,1,kill,Kittens,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1039,9,1,kill,Lunatic ????,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1040,9,1,kill,DillWeed,Grenade,Cypher
+9a616c8d474c2dff7c61476c53fea121,1042,9,1,kill,Lunatic ????,Knife,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1043,9,1,kill,P.I.M.P.,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1044,9,1,Team kill,SOURCE,None,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1046,9,1,kill,P.I.M.P.,Grenade,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1047,9,1,kill,PennyWi$E,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1048,9,1,kill,Kittens,Thompson,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1049,9,1,kill,John_Mullins,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1050,9,1,Suicide,,/kill,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1054,9,1,kill,Kittens,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1055,9,1,Suicide,,/kill,Kittens
+9a616c8d474c2dff7c61476c53fea121,1056,9,1,kill,John_Mullins,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1057,9,1,kill,John_Mullins,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1058,9,1,kill,Fister Miagi,Grenade,illkilla
+9a616c8d474c2dff7c61476c53fea121,1059,9,1,kill,SOURCE,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1061,9,1,kill,SOURCE,Airstrike,TK|POW
+9a616c8d474c2dff7c61476c53fea121,1062,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1063,9,1,kill,PennyWi$E,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1064,9,1,kill,P.I.M.P.,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1065,9,1,Suicide,,/kill,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1066,9,1,kill,P.I.M.P.,MP40,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1067,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1068,9,1,kill,CHUCK_donka,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1069,9,1,kill,Kittens,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1070,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1071,9,1,Suicide,,/kill,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1072,9,1,Suicide,,/kill,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1073,9,1,kill,John_Mullins,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1074,9,1,Suicide,,Grenade,Kittens
+9a616c8d474c2dff7c61476c53fea121,1075,9,1,kill,Kittens,Grenade,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1076,9,1,kill,Lunatic ????,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1077,9,1,kill,SOURCE,Grenade,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1079,9,1,kill,SOURCE,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1081,9,1,Team kill,P.I.M.P.,None,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1082,9,1,kill,PennyWi$E,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1083,9,1,Suicide,,Grenade,Kittens
+9a616c8d474c2dff7c61476c53fea121,1084,9,1,kill,Kittens,Grenade,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1085,9,1,Suicide,,/kill,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1087,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1088,9,1,kill,Lunatic ????,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1089,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1090,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1091,9,1,kill,John_Mullins,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1092,9,1,kill,Kittens,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1093,9,1,kill,Cypher,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1094,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1096,9,1,kill,TK|POW,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1098,9,1,Suicide,,/kill,Kittens
+9a616c8d474c2dff7c61476c53fea121,1099,9,1,kill,PennyWi$E,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1100,9,1,kill,Lunatic ????,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1101,9,1,kill,P.I.M.P.,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1102,9,1,kill,John_Mullins,Thompson,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1103,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1104,9,1,kill,Fister Miagi,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1105,9,1,Suicide,,/kill,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1106,9,1,Suicide,,/kill,Kittens
+9a616c8d474c2dff7c61476c53fea121,1107,9,1,Suicide,,/kill,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1108,9,1,kill,PennyWi$E,Grenade,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1109,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1110,9,1,kill,Lunatic ????,MP40,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1112,9,1,Team kill,Kittens,None,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1113,9,1,kill,Kittens,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1114,9,1,Suicide,,/kill,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1115,9,1,Suicide,,/kill,Kittens
+9a616c8d474c2dff7c61476c53fea121,1116,9,1,kill,Cypher,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1117,9,1,kill,DillWeed,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1118,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1119,9,1,kill,SOURCE,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1120,9,1,kill,PennyWi$E,Colt,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1121,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1122,9,1,kill,Kittens,Colt,Cypher
+9a616c8d474c2dff7c61476c53fea121,1123,9,1,kill,John_Mullins,Thompson,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1124,9,1,kill,illkilla,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1125,9,1,Suicide,,/kill,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1126,9,1,kill,John_Mullins,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1127,9,1,kill,PennyWi$E,MP40,illkilla
+9a616c8d474c2dff7c61476c53fea121,1128,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1129,9,1,kill,PennyWi$E,MP40,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1130,9,1,kill,Lunatic ????,MP40,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1131,9,1,kill,SOURCE,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1132,9,1,kill,Fister Miagi,Grenade,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1133,9,1,Suicide,,/kill,Kittens
+9a616c8d474c2dff7c61476c53fea121,1134,9,1,kill,Cypher,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1135,9,1,kill,DillWeed,Grenade,Cypher
+9a616c8d474c2dff7c61476c53fea121,1136,9,1,kill,DillWeed,Grenade,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1139,9,1,kill,Kittens,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1140,9,1,kill,John_Mullins,Grenade,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1141,9,1,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1142,9,1,kill,P.I.M.P.,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1143,9,1,kill,Kittens,Thompson,illkilla
+9a616c8d474c2dff7c61476c53fea121,1145,9,1,Suicide,,/kill,Kittens
+9a616c8d474c2dff7c61476c53fea121,1146,9,1,Suicide,,/kill,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1147,9,1,kill,PennyWi$E,Grenade,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1148,9,1,kill,Cypher,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1149,9,1,kill,Kittens,Thompson,Cypher
+9a616c8d474c2dff7c61476c53fea121,1150,9,1,Objective,Axis,Defense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1151,9,1,kill,illkilla,MP40,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1152,9,1,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1154,9,1,Suicide,,/kill,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1155,9,1,kill,Kittens,Grenade,illkilla
+9a616c8d474c2dff7c61476c53fea121,1155,9,1,kill,SOURCE,Panzerfaust,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1156,9,1,kill,DillWeed,Thompson,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1157,9,1,kill,Lunatic ????,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1158,9,1,kill,John_Mullins,Thompson,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1159,9,1,Team kill,SOURCE,None,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1160,9,1,Objective,Axis,Offense flag,Allies
+9a616c8d474c2dff7c61476c53fea121,1161,9,1,kill,John_Mullins,Thompson,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1162,9,1,kill,Cypher,MP40,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1163,9,1,kill,Lunatic ????,MP40,Kittens
+9a616c8d474c2dff7c61476c53fea121,1163,9,1,kill,PennyWi$E,Panzerfaust,SOURCE
+9a616c8d474c2dff7c61476c53fea121,1164,9,1,Suicide,,Panzerfaust,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1165,9,1,kill,Lunatic ????,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1166,9,1,Suicide,,Panzerfaust,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1167,9,1,kill,PennyWi$E,Panzerfaust,Cypher
+9a616c8d474c2dff7c61476c53fea121,1168,9,1,Suicide,,Grenade,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1169,9,1,kill,CHUCK_donka,Grenade,John_Mullins
+9a616c8d474c2dff7c61476c53fea121,1170,9,1,Team kill,Lunatic ????,None,P.I.M.P.
+9a616c8d474c2dff7c61476c53fea121,1173,9,1,kill,illkilla,MP40,DillWeed
+9a616c8d474c2dff7c61476c53fea121,1174,9,1,kill,Fister Miagi,Thompson,Lunatic ????
+9a616c8d474c2dff7c61476c53fea121,1175,9,1,kill,P.I.M.P.,MP40,Fister Miagi
+9a616c8d474c2dff7c61476c53fea121,1176,9,1,kill,Cypher,MP40,PennyWi$E
+9a616c8d474c2dff7c61476c53fea121,1177,9,1,Objective,Axis,Stole objective,Allies
+9a616c8d474c2dff7c61476c53fea121,1178,9,1,Suicide,,World,TK|POW
+9a616c8d474c2dff7c61476c53fea121,1179,9,1,Suicide,,World,CHUCK_donka
+9a616c8d474c2dff7c61476c53fea121,1180,9,1,Objective,Axis,Stole objective,Allies
+9a616c8d474c2dff7c61476c53fea121,1181,9,1,kill,Kittens,Colt,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1226,10,2,kill,Kittens,Grenade,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1227,10,2,kill,Lunatic ????,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1228,10,2,Suicide,,/kill,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1229,10,2,Team kill,PennyWi$E,None,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1230,10,2,Suicide,,/kill,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1231,10,2,Team kill,SOURCE,None,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1232,10,2,Objective,Axis,Offense plant,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1233,10,2,kill,P.I.M.P.,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1235,10,2,kill,Lunatic ????,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1236,10,2,kill,SOURCE,Colt,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1237,10,2,kill,John_Mullins,Grenade,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1238,10,2,Objective,Axis,Defense disarmed,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1239,10,2,kill,Cypher,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1240,10,2,kill,Kittens,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1241,10,2,kill,PennyWi$E,Panzerfaust,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1242,10,2,kill,PennyWi$E,Luger,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1243,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1245,10,2,Suicide,,/kill,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1246,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1247,10,2,Suicide,,/kill,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1248,10,2,Suicide,,/kill,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1249,10,2,kill,SOURCE,Panzerfaust,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1251,10,2,Objective,Axis,Offense plant,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1252,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1253,10,2,kill,TK|POW,MP40,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1254,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1256,10,2,kill,Cypher,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1257,10,2,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1258,10,2,kill,PennyWi$E,Panzerfaust,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1259,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1260,10,2,Suicide,,/kill,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1261,10,2,Suicide,,/kill,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1262,10,2,Suicide,,/kill,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1263,10,2,kill,John_Mullins,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1264,10,2,kill,Cypher,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1265,10,2,kill,Fister Miagi,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1266,10,2,Objective,Axis,Mid objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1267,10,2,kill,Lunatic ????,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1268,10,2,kill,SOURCE,Panzerfaust,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1269,10,2,kill,CHUCK_donka,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1270,10,2,kill,Fister Miagi,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1271,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1272,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1273,10,2,kill,CHUCK_donka,Thompson,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1274,10,2,kill,Cypher,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1277,10,2,kill,P.I.M.P.,Grenade,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1278,10,2,kill,CHUCK_donka,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1278,10,2,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1279,10,2,kill,John_Mullins,MP40,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1281,10,2,kill,illkilla,MP40,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1282,10,2,kill,SOURCE,Panzerfaust,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1283,10,2,kill,PennyWi$E,Grenade,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1285,10,2,Team kill,Cypher,None,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1286,10,2,kill,CHUCK_donka,Grenade,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1287,10,2,kill,CHUCK_donka,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1288,10,2,kill,P.I.M.P.,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1289,10,2,Suicide,,/kill,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1290,10,2,kill,Cypher,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1291,10,2,Suicide,,Grenade,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1292,10,2,kill,Cypher,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1293,10,2,kill,John_Mullins,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1294,10,2,kill,CHUCK_donka,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1295,10,2,Team kill,PennyWi$E,None,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1296,10,2,Suicide,,/kill,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1297,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1298,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1298,10,2,kill,SOURCE,Panzerfaust,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1300,10,2,kill,Lunatic ????,MP40,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1302,10,2,kill,Kittens,MP40,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1303,10,2,kill,P.I.M.P.,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1304,10,2,kill,PennyWi$E,Panzerfaust,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1305,10,2,kill,Cypher,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1306,10,2,kill,illkilla,MP40,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1307,10,2,kill,Cypher,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1308,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1309,10,2,Suicide,,/kill,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1310,10,2,kill,Kittens,MP40,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1311,10,2,kill,Cypher,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1312,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1313,10,2,kill,Kittens,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1314,10,2,kill,PennyWi$E,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1315,10,2,Suicide,,/kill,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1316,10,2,Suicide,,/kill,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1317,10,2,kill,Kittens,Luger,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1319,10,2,kill,John_Mullins,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1320,10,2,kill,Cypher,Grenade,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1321,10,2,kill,Kittens,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1322,10,2,kill,Cypher,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1323,10,2,kill,Kittens,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1324,10,2,Team kill,SOURCE,None,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1325,10,2,kill,illkilla,Grenade,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1326,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1327,10,2,Suicide,,/kill,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1328,10,2,Suicide,,/kill,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1329,10,2,kill,PennyWi$E,Panzerfaust,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1331,10,2,Objective,Axis,Stole objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1332,10,2,kill,SOURCE,Panzerfaust,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1333,10,2,kill,CHUCK_donka,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1334,10,2,kill,CHUCK_donka,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1335,10,2,kill,John_Mullins,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1336,10,2,Objective,Axis,Returned objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1337,10,2,kill,Cypher,Colt,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1338,10,2,kill,P.I.M.P.,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1339,10,2,Suicide,,/kill,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1340,10,2,Suicide,,/kill,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1341,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1342,10,2,Suicide,,/kill,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1343,10,2,Suicide,,/kill,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1344,10,2,kill,SOURCE,Panzerfaust,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1345,10,2,kill,SOURCE,Panzerfaust,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1346,10,2,kill,Lunatic ????,MP40,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1347,10,2,kill,Cypher,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1348,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1349,10,2,kill,Cypher,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1350,10,2,kill,TK|POW,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1351,10,2,kill,CHUCK_donka,Thompson,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1352,10,2,kill,CHUCK_donka,Grenade,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1353,10,2,kill,PennyWi$E,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1354,10,2,kill,Cypher,Grenade,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1355,10,2,kill,Cypher,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1356,10,2,kill,SOURCE,Colt,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1358,10,2,kill,CHUCK_donka,Thompson,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1359,10,2,kill,Cypher,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1361,10,2,kill,John_Mullins,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1362,10,2,Suicide,,/kill,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1363,10,2,Suicide,,/kill,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1364,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1365,10,2,kill,PennyWi$E,MP40,P.I.M.P.
+74c32565d7495b0b73094d53b1fdfaf8,1366,10,2,Objective,Axis,Stole objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1368,10,2,kill,Cypher,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1369,10,2,kill,P.I.M.P.,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1370,10,2,kill,CHUCK_donka,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1371,10,2,Objective,Axis,Returned objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1372,10,2,kill,Lunatic ????,Colt,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1373,10,2,kill,CHUCK_donka,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1374,10,2,kill,John_Mullins,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1375,10,2,kill,illkilla,MP40,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1377,10,2,kill,SOURCE,Panzerfaust,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1378,10,2,Team kill,P.I.M.P.,None,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1380,10,2,kill,Kittens,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1381,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1382,10,2,Suicide,,/kill,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1383,10,2,kill,TK|POW,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1384,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1385,10,2,Objective,Axis,Offense plant,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1389,10,2,kill,Kittens,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1390,10,2,kill,John_Mullins,MP40,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1395,10,2,kill,Cypher,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1396,10,2,Suicide,,Panzerfaust,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1397,10,2,kill,SOURCE,Panzerfaust,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1398,10,2,kill,P.I.M.P.,Thompson,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1399,10,2,Objective,Axis,Stole objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1400,10,2,Suicide,,/kill,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1401,10,2,Suicide,,World,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1402,10,2,Objective,Axis,Returned objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1403,10,2,kill,John_Mullins,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1404,10,2,kill,Lunatic ????,MP40,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1405,10,2,kill,SOURCE,Panzerfaust,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1406,10,2,kill,SOURCE,Panzerfaust,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1408,10,2,kill,CHUCK_donka,Grenade,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1409,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1410,10,2,kill,Kittens,MP40,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1411,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1412,10,2,Suicide,,/kill,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1413,10,2,kill,CHUCK_donka,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1414,10,2,kill,Lunatic ????,MP40,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1415,10,2,kill,John_Mullins,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1416,10,2,kill,SOURCE,Panzerfaust,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1417,10,2,kill,John_Mullins,MP40,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1418,10,2,kill,Lunatic ????,MP40,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1419,10,2,kill,illkilla,MP40,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1420,10,2,kill,CHUCK_donka,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1421,10,2,kill,Kittens,MP40,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1422,10,2,kill,DillWeed,MP40,illkilla
+74c32565d7495b0b73094d53b1fdfaf8,1423,10,2,kill,SOURCE,Panzerfaust,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1424,10,2,kill,PennyWi$E,Luger,Cypher
+74c32565d7495b0b73094d53b1fdfaf8,1425,10,2,kill,DillWeed,MP40,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1426,10,2,kill,DillWeed,MP40,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1427,10,2,Suicide,,/kill,TK|POW
+74c32565d7495b0b73094d53b1fdfaf8,1428,10,2,kill,P.I.M.P.,Thompson,PennyWi$E
+74c32565d7495b0b73094d53b1fdfaf8,1429,10,2,kill,Cypher,Thompson,DillWeed
+74c32565d7495b0b73094d53b1fdfaf8,1430,10,2,kill,SOURCE,Panzerfaust,John_Mullins
+74c32565d7495b0b73094d53b1fdfaf8,1433,10,2,kill,CHUCK_donka,Thompson,Kittens
+74c32565d7495b0b73094d53b1fdfaf8,1435,10,2,Objective,Axis,Defense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1436,10,2,Suicide,,/kill,Lunatic ????
+74c32565d7495b0b73094d53b1fdfaf8,1437,10,2,Objective,Axis,Stole objective,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1438,10,2,Objective,Axis,Offense flag,Allies
+74c32565d7495b0b73094d53b1fdfaf8,1439,10,2,kill,John_Mullins,MP40,SOURCE
+74c32565d7495b0b73094d53b1fdfaf8,1440,10,2,kill,illkilla,MP40,Fister Miagi
+74c32565d7495b0b73094d53b1fdfaf8,1441,10,2,Suicide,,/kill,CHUCK_donka
+74c32565d7495b0b73094d53b1fdfaf8,1442,10,2,kill,DillWeed,MP40,Cypher
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1565,11,1,kill,John_Mullins,Airstrike,illkilla
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1566,11,1,kill,SOURCE,Colt,PennyWi$E
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1568,11,1,Team kill,Kittens,None,John_Mullins
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1569,11,1,Suicide,,/kill,SOURCE
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1572,11,1,kill,P.I.M.P.,Thompson,Kittens
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1573,11,1,Team kill,SOURCE,None,P.I.M.P.
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1578,11,1,Suicide,,/kill,DillWeed
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1579,11,1,Objective,Allies,Offense plant,Axis
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1580,11,1,kill,DillWeed,Airstrike,Cypher
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1581,11,1,kill,John_Mullins,MP40,illkilla
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1582,11,1,kill,SOURCE,Grenade,Fister Miagi
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1583,11,1,Objective,Allies,Offense flag,Axis
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1585,11,1,kill,Kittens,Grenade,SOURCE
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1586,11,1,Team kill,Kittens,None,DillWeed
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1587,11,1,Objective,Allies,Defense flag,Axis
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1588,11,1,kill,Lunatic ????,MP40,John_Mullins
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1589,11,1,Objective,Allies,Mid objective,Axis
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1590,11,1,Objective,Allies,Offense flag,Axis
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1591,11,1,kill,John_Mullins,MP40,CHUCK_donka
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1592,11,1,kill,SOURCE,Panzerfaust,John_Mullins
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1594,11,1,kill,Lunatic ????,MP40,TK|POW
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1595,11,1,kill,P.I.M.P.,Thompson,PennyWi$E
+b9f5f1d4a4d418fa3c117859ffc0a0bc,1596,11,1,Objective,Allies,Offense win,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1641,12,1,kill,PennyWi$E,Panzerfaust,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1644,12,1,Objective,Allies,Offense plant,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1645,12,1,kill,P.I.M.P.,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1646,12,1,kill,SOURCE,Panzerfaust,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1647,12,1,kill,SOURCE,Panzerfaust,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1648,12,1,Suicide,,/kill,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1650,12,1,Suicide,,/kill,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1652,12,1,kill,DillWeed,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1653,12,1,Objective,Allies,Offense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1654,12,1,kill,PennyWi$E,Panzerfaust,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1655,12,1,kill,Cypher,MP40,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1656,12,1,Objective,Allies,Defense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1657,12,1,Team kill,Lunatic ????,None,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1658,12,1,kill,CHUCK_donka,MP40,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1659,12,1,kill,CHUCK_donka,MP40,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1660,12,1,kill,Kittens,Grenade,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1661,12,1,kill,John_Mullins,Sniper,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1662,12,1,kill,SOURCE,Panzerfaust,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1663,12,1,Objective,Allies,Mid objective,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1669,12,1,Suicide,,/kill,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1670,12,1,Suicide,,/kill,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1671,12,1,Suicide,,/kill,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1672,12,1,Objective,Allies,Offense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1674,12,1,kill,CHUCK_donka,Grenade,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1675,12,1,kill,CHUCK_donka,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1676,12,1,kill,SOURCE,Panzerfaust,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1677,12,1,kill,DillWeed,Thompson,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1679,12,1,Suicide,,Panzerfaust,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1680,12,1,kill,PennyWi$E,Panzerfaust,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1681,12,1,Suicide,,/kill,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1682,12,1,Suicide,,/kill,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1684,12,1,Suicide,,/kill,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1685,12,1,kill,Kittens,Thompson,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1686,12,1,Team kill,SOURCE,None,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1688,12,1,kill,Fister Miagi,Thompson,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1689,12,1,kill,Cypher,MP40,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1690,12,1,kill,Kittens,Thompson,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1691,12,1,kill,Fister Miagi,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1692,12,1,kill,CHUCK_donka,Grenade,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1694,12,1,kill,CHUCK_donka,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1697,12,1,Suicide,,/kill,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1698,12,1,Suicide,,/kill,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1699,12,1,kill,John_Mullins,Thompson,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1700,12,1,Objective,Allies,Offense plant,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1701,12,1,kill,John_Mullins,Thompson,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1702,12,1,kill,CHUCK_donka,MP40,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1703,12,1,kill,Kittens,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1704,12,1,kill,Cypher,MP40,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1705,12,1,kill,CHUCK_donka,Luger,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1706,12,1,Suicide,,/kill,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1707,12,1,Suicide,,/kill,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1708,12,1,kill,Lunatic ????,MP40,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1709,12,1,Objective,Allies,Mid objective,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1709,12,1,kill,SOURCE,Panzerfaust,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1710,12,1,kill,Lunatic ????,MP40,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1711,12,1,Objective,Allies,Defense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1712,12,1,kill,Lunatic ????,MP40,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1713,12,1,kill,DillWeed,Thompson,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1714,12,1,kill,Cypher,MP40,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1715,12,1,Objective,Allies,Offense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1716,12,1,kill,SOURCE,Grenade,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1717,12,1,Objective,Allies,Defense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1719,12,1,kill,Fister Miagi,Thompson,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1720,12,1,kill,Fister Miagi,Thompson,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1721,12,1,kill,Kittens,Thompson,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1722,12,1,kill,P.I.M.P.,Grenade,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1723,12,1,kill,P.I.M.P.,MP40,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1724,12,1,kill,John_Mullins,Thompson,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1728,12,1,Suicide,,/kill,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1730,12,1,kill,PennyWi$E,Colt,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1731,12,1,kill,CHUCK_donka,MP40,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1733,12,1,kill,Kittens,Grenade,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1734,12,1,Objective,Allies,Offense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1735,12,1,Objective,Allies,Defense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1736,12,1,kill,Lunatic ????,MP40,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1737,12,1,kill,John_Mullins,Thompson,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1739,12,1,kill,John_Mullins,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1740,12,1,Objective,Allies,Offense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1741,12,1,kill,Cypher,MP40,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1742,12,1,kill,Cypher,Luger,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1743,12,1,kill,John_Mullins,Thompson,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1744,12,1,kill,Fister Miagi,Thompson,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1745,12,1,kill,CHUCK_donka,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1747,12,1,kill,P.I.M.P.,MP40,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1748,12,1,kill,illkilla,MP40,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1750,12,1,Suicide,,/kill,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1751,12,1,Suicide,,/kill,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1752,12,1,Suicide,,/kill,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1754,12,1,kill,SOURCE,Panzerfaust,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1755,12,1,Suicide,,/kill,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1756,12,1,Suicide,,/kill,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1757,12,1,Suicide,,/kill,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1758,12,1,Suicide,,/kill,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1759,12,1,Suicide,,/kill,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1761,12,1,kill,Lunatic ????,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1762,12,1,kill,John_Mullins,Thompson,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1763,12,1,kill,SOURCE,Panzerfaust,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1764,12,1,kill,illkilla,MP40,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1765,12,1,kill,Kittens,Thompson,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1766,12,1,Suicide,,/kill,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1767,12,1,kill,Lunatic ????,MP40,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1768,12,1,Suicide,,/kill,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1769,12,1,kill,SOURCE,Luger,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1770,12,1,kill,illkilla,MP40,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1771,12,1,kill,illkilla,MP40,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1772,12,1,kill,SOURCE,Panzerfaust,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1773,12,1,kill,Kittens,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1774,12,1,kill,P.I.M.P.,MP40,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1775,12,1,Objective,Allies,Defense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1776,12,1,Suicide,,/kill,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1777,12,1,Objective,Allies,Offense flag,Axis
+cdcbc2bb0aa54e07c212c1fd96c9e815,1778,12,1,kill,P.I.M.P.,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1779,12,1,kill,SOURCE,Panzerfaust,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1780,12,1,Suicide,,Panzerfaust,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1781,12,1,kill,SOURCE,Panzerfaust,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1783,12,1,kill,illkilla,MP40,TK|POW
+cdcbc2bb0aa54e07c212c1fd96c9e815,1784,12,1,kill,P.I.M.P.,MP40,DillWeed
+cdcbc2bb0aa54e07c212c1fd96c9e815,1786,12,1,kill,DillWeed,Grenade,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1789,12,1,kill,Kittens,Thompson,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1790,12,1,kill,Kittens,Thompson,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1791,12,1,kill,SOURCE,Panzerfaust,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1792,12,1,kill,DillWeed,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1794,12,1,kill,PennyWi$E,Panzerfaust,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1795,12,1,kill,Kittens,Grenade,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1797,12,1,kill,DillWeed,Thompson,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1805,12,1,kill,Lunatic ????,MP40,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1806,12,1,kill,Fister Miagi,Thompson,SOURCE
+cdcbc2bb0aa54e07c212c1fd96c9e815,1807,12,1,kill,Lunatic ????,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1808,12,1,kill,Kittens,Thompson,illkilla
+cdcbc2bb0aa54e07c212c1fd96c9e815,1809,12,1,kill,Kittens,Thompson,Lunatic ????
+cdcbc2bb0aa54e07c212c1fd96c9e815,1812,12,1,kill,CHUCK_donka,MP40,John_Mullins
+cdcbc2bb0aa54e07c212c1fd96c9e815,1813,12,1,kill,Kittens,Thompson,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1815,12,1,kill,DillWeed,Thompson,Cypher
+cdcbc2bb0aa54e07c212c1fd96c9e815,1816,12,1,kill,DillWeed,Thompson,CHUCK_donka
+cdcbc2bb0aa54e07c212c1fd96c9e815,1817,12,1,Suicide,,World,P.I.M.P.
+cdcbc2bb0aa54e07c212c1fd96c9e815,1818,12,1,kill,illkilla,MP40,PennyWi$E
+cdcbc2bb0aa54e07c212c1fd96c9e815,1820,12,1,Team kill,John_Mullins,None,Kittens
+cdcbc2bb0aa54e07c212c1fd96c9e815,1822,12,1,kill,Lunatic ????,MP40,Fister Miagi
+cdcbc2bb0aa54e07c212c1fd96c9e815,1823,12,1,Objective,Allies,Offense win,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1892,13,2,kill,Kittens,Grenade,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1893,13,2,kill,Kittens,Grenade,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,1894,13,2,Suicide,,/kill,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,1895,13,2,kill,Kittens,MP40,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,1896,13,2,Objective,Allies,Offense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1897,13,2,Objective,Allies,Defense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1898,13,2,Suicide,,/kill,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1899,13,2,Suicide,,/kill,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1900,13,2,Objective,Allies,Offense plant,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1901,13,2,kill,DillWeed,MP40,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,1902,13,2,Suicide,,/kill,SOURCE
+dd4984debb615b5b6e83d66f0dfb790f,1904,13,2,kill,DillWeed,Airstrike,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,1905,13,2,kill,DillWeed,Airstrike,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,1906,13,2,kill,John_Mullins,Airstrike,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1907,13,2,kill,soobsoob,Thompson,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1909,13,2,kill,SOURCE,Panzerfaust,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1910,13,2,kill,SOURCE,Panzerfaust,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,1911,13,2,kill,Kittens,Airstrike,SOURCE
+dd4984debb615b5b6e83d66f0dfb790f,1912,13,2,kill,Kittens,Airstrike,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,1913,13,2,kill,soobsoob,Thompson,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,1914,13,2,Suicide,,/kill,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,1916,13,2,kill,CHUCK_donka,Thompson,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,1917,13,2,Objective,Allies,Mid objective,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1918,13,2,Suicide,,/kill,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,1919,13,2,kill,CHUCK_donka,Thompson,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1920,13,2,kill,illkilla,Thompson,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1921,13,2,kill,SOURCE,Panzerfaust,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,1922,13,2,kill,SOURCE,Panzerfaust,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,1923,13,2,kill,SOURCE,Panzerfaust,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,1925,13,2,kill,TK|POW,MP40,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,1926,13,2,Objective,Allies,Offense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1928,13,2,kill,SOURCE,Panzerfaust,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,1929,13,2,Objective,Allies,Offense plant,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1930,13,2,Team kill,Fister Miagi,None,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,1931,13,2,kill,Cypher,Thompson,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1933,13,2,kill,PennyWi$E,Panzerfaust,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,1934,13,2,kill,Kittens,MP40,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,1935,13,2,kill,Lunatic ????,Grenade,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1936,13,2,kill,Kittens,MP40,SOURCE
+dd4984debb615b5b6e83d66f0dfb790f,1937,13,2,kill,Lunatic ????,MP40,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1938,13,2,kill,DillWeed,MP40,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,1939,13,2,kill,illkilla,Grenade,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,1940,13,2,kill,Kittens,MP40,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,1941,13,2,kill,TK|POW,MP40,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1942,13,2,Suicide,,/kill,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,1943,13,2,kill,Fister Miagi,MP40,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,1944,13,2,kill,illkilla,Grenade,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,1945,13,2,kill,illkilla,Grenade,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,1946,13,2,kill,DillWeed,Grenade,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1947,13,2,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,1948,13,2,kill,PennyWi$E,Panzerfaust,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,1949,13,2,Objective,Allies,Mid objective,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1951,13,2,kill,John_Mullins,MP40,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,1951,13,2,kill,SOURCE,Panzerfaust,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1953,13,2,kill,Fister Miagi,Grenade,SOURCE
+dd4984debb615b5b6e83d66f0dfb790f,1954,13,2,kill,P.I.M.P.,Grenade,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,1956,13,2,kill,Fister Miagi,MP40,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,1957,13,2,Objective,Allies,Defense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1958,13,2,Team kill,DillWeed,None,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,1959,13,2,Suicide,,/kill,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1960,13,2,Objective,Allies,Offense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1962,13,2,kill,P.I.M.P.,Thompson,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,1963,13,2,kill,Kittens,MP40,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1964,13,2,kill,illkilla,MP40,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,1965,13,2,kill,CHUCK_donka,Thompson,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1966,13,2,kill,Kittens,MP40,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,1967,13,2,kill,DillWeed,MP40,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,1968,13,2,kill,soobsoob,Thompson,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,1969,13,2,Suicide,,/kill,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1970,13,2,Suicide,,/kill,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,1971,13,2,kill,soobsoob,Thompson,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,1972,13,2,kill,Fister Miagi,MP40,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,1973,13,2,kill,Kittens,MP40,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,1974,13,2,kill,John_Mullins,MP40,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,1975,13,2,kill,SOURCE,Panzerfaust,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,1978,13,2,kill,soobsoob,Thompson,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1979,13,2,kill,illkilla,MP40,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,1980,13,2,kill,soobsoob,Thompson,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,1981,13,2,kill,soobsoob,Colt,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,1983,13,2,Team kill,CHUCK_donka,None,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,1984,13,2,Objective,Allies,Defense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,1985,13,2,kill,John_Mullins,MP40,SOURCE
+dd4984debb615b5b6e83d66f0dfb790f,1986,13,2,kill,Kittens,MP40,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1987,13,2,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,1988,13,2,kill,PennyWi$E,Panzerfaust,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,1990,13,2,kill,SOURCE,Panzerfaust,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,1992,13,2,kill,P.I.M.P.,Thompson,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,1994,13,2,kill,Kittens,Grenade,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,1997,13,2,kill,Kittens,MP40,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,1998,13,2,Suicide,,/kill,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,1999,13,2,kill,SOURCE,Grenade,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,2000,13,2,Objective,Allies,Offense flag,Axis
+dd4984debb615b5b6e83d66f0dfb790f,2003,13,2,kill,Kittens,MP40,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,2004,13,2,kill,Cypher,Thompson,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,2005,13,2,kill,illkilla,Thompson,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,2006,13,2,kill,Kittens,MP40,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,2007,13,2,kill,DillWeed,MP40,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,2008,13,2,kill,SOURCE,Panzerfaust,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,2011,13,2,Team kill,Fister Miagi,None,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,2012,13,2,kill,TK|POW,MP40,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,2013,13,2,kill,soobsoob,Thompson,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,2015,13,2,kill,illkilla,Thompson,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,2016,13,2,Suicide,,/kill,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,2017,13,2,kill,Fister Miagi,Grenade,Cypher
+dd4984debb615b5b6e83d66f0dfb790f,2019,13,2,kill,illkilla,Colt,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,2020,13,2,kill,P.I.M.P.,Thompson,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,2021,13,2,kill,Lunatic ????,MP40,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,2022,13,2,kill,SOURCE,Panzerfaust,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,2023,13,2,kill,Kittens,MP40,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,2025,13,2,Team kill,SOURCE,None,P.I.M.P.
+dd4984debb615b5b6e83d66f0dfb790f,2026,13,2,kill,SOURCE,Grenade,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,2027,13,2,kill,PennyWi$E,Panzerfaust,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,2028,13,2,kill,Cypher,Thompson,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,2030,13,2,kill,Fister Miagi,MP40,soobsoob
+dd4984debb615b5b6e83d66f0dfb790f,2031,13,2,kill,Cypher,Grenade,PennyWi$E
+dd4984debb615b5b6e83d66f0dfb790f,2032,13,2,kill,John_Mullins,MP40,CHUCK_donka
+dd4984debb615b5b6e83d66f0dfb790f,2033,13,2,Suicide,,/kill,Lunatic ????
+dd4984debb615b5b6e83d66f0dfb790f,2034,13,2,kill,SOURCE,Panzerfaust,Kittens
+dd4984debb615b5b6e83d66f0dfb790f,2038,13,2,Team kill,Lunatic ????,None,SOURCE
+dd4984debb615b5b6e83d66f0dfb790f,2039,13,2,kill,P.I.M.P.,Thompson,John_Mullins
+dd4984debb615b5b6e83d66f0dfb790f,2040,13,2,Team kill,soobsoob,None,illkilla
+dd4984debb615b5b6e83d66f0dfb790f,2042,13,2,kill,P.I.M.P.,Thompson,TK|POW
+dd4984debb615b5b6e83d66f0dfb790f,2043,13,2,kill,Cypher,Thompson,Fister Miagi
+dd4984debb615b5b6e83d66f0dfb790f,2044,13,2,kill,illkilla,Thompson,DillWeed
+dd4984debb615b5b6e83d66f0dfb790f,2045,13,2,Objective,Allies,Offense win,Axis
+08858b5f95d7b2624ad7413ca01401c8,2087,14,1,kill,soobsoob,Thompson,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2088,14,1,kill,Lunatic ????,MP40,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2089,14,1,kill,PennyWi$E,Panzerfaust,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2090,14,1,Suicide,,/kill,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2091,14,1,Objective,Allies,Offense plant,Axis
+08858b5f95d7b2624ad7413ca01401c8,2092,14,1,kill,Kittens,Airstrike,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2093,14,1,kill,Lunatic ????,MP40,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2094,14,1,kill,Kittens,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2095,14,1,kill,CHUCK_donka,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2096,14,1,Team kill,SOURCE,None,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2097,14,1,kill,SOURCE,Panzerfaust,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2098,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2099,14,1,Suicide,,/kill,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2100,14,1,Suicide,,/kill,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2101,14,1,Suicide,,/kill,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2103,14,1,Objective,Allies,Mid objective,Axis
+08858b5f95d7b2624ad7413ca01401c8,2104,14,1,Suicide,,/kill,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2105,14,1,kill,Fister Miagi,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2106,14,1,kill,SOURCE,Grenade,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2109,14,1,kill,P.I.M.P.,Thompson,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2110,14,1,kill,Kittens,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2111,14,1,kill,soobsoob,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2112,14,1,Suicide,,/kill,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2113,14,1,Suicide,,/kill,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2115,14,1,Objective,Allies,Offense plant,Axis
+08858b5f95d7b2624ad7413ca01401c8,2116,14,1,kill,PennyWi$E,Panzerfaust,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2117,14,1,kill,CHUCK_donka,Thompson,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2118,14,1,kill,John_Mullins,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2119,14,1,kill,CHUCK_donka,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2120,14,1,kill,John_Mullins,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2121,14,1,kill,John_Mullins,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2122,14,1,Objective,Allies,Defense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2123,14,1,kill,P.I.M.P.,Colt,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2124,14,1,Suicide,,/kill,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2125,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2127,14,1,Suicide,,/kill,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2128,14,1,Suicide,,/kill,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2129,14,1,Objective,Allies,Mid objective,Axis
+08858b5f95d7b2624ad7413ca01401c8,2130,14,1,kill,John_Mullins,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2131,14,1,kill,Kittens,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2133,14,1,kill,illkilla,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2134,14,1,kill,John_Mullins,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2135,14,1,kill,soobsoob,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2136,14,1,kill,P.I.M.P.,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2137,14,1,Objective,Allies,Defense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2138,14,1,kill,P.I.M.P.,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2139,14,1,kill,PennyWi$E,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2140,14,1,Suicide,,/kill,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2141,14,1,kill,soobsoob,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2142,14,1,kill,CHUCK_donka,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2143,14,1,kill,Lunatic ????,MP40,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2144,14,1,kill,DillWeed,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2145,14,1,kill,illkilla,Thompson,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2146,14,1,kill,SOURCE,Grenade,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2147,14,1,kill,Kittens,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2148,14,1,kill,PennyWi$E,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2149,14,1,kill,Kittens,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2150,14,1,Suicide,,/kill,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2151,14,1,kill,PennyWi$E,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2152,14,1,kill,P.I.M.P.,Thompson,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2153,14,1,kill,DillWeed,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2154,14,1,kill,John_Mullins,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2155,14,1,kill,soobsoob,Grenade,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2156,14,1,kill,Fister Miagi,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2157,14,1,Suicide,,/kill,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2158,14,1,Suicide,,/kill,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2159,14,1,kill,John_Mullins,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2160,14,1,kill,John_Mullins,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2162,14,1,kill,Lunatic ????,MP40,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2165,14,1,kill,PennyWi$E,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2166,14,1,Suicide,,/kill,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2167,14,1,Suicide,,/kill,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2168,14,1,Suicide,,/kill,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2169,14,1,kill,Fister Miagi,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2170,14,1,kill,John_Mullins,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2171,14,1,kill,Lunatic ????,MP40,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2172,14,1,Suicide,,Panzerfaust,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2173,14,1,kill,CHUCK_donka,Grenade,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2174,14,1,kill,CHUCK_donka,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2175,14,1,kill,Cypher,Thompson,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2176,14,1,kill,Kittens,Grenade,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2177,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2178,14,1,kill,P.I.M.P.,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2179,14,1,Suicide,,/kill,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2180,14,1,kill,John_Mullins,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2181,14,1,kill,Fister Miagi,Grenade,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2182,14,1,kill,Lunatic ????,MP40,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2183,14,1,kill,Kittens,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2184,14,1,kill,SOURCE,Panzerfaust,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2187,14,1,kill,Lunatic ????,MP40,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2188,14,1,kill,Lunatic ????,Colt,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2189,14,1,kill,Lunatic ????,Colt,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2190,14,1,kill,Cypher,Thompson,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2191,14,1,kill,PennyWi$E,Panzerfaust,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2192,14,1,Suicide,,/kill,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2193,14,1,kill,John_Mullins,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2195,14,1,Objective,Allies,Defense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2196,14,1,kill,illkilla,Grenade,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2197,14,1,kill,Fister Miagi,Grenade,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2198,14,1,Team kill,PennyWi$E,None,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2199,14,1,kill,illkilla,Colt,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2201,14,1,kill,SOURCE,Panzerfaust,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2203,14,1,kill,DillWeed,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2204,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2205,14,1,kill,soobsoob,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2206,14,1,Objective,Allies,Defense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2207,14,1,kill,Lunatic ????,MP40,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2208,14,1,kill,DillWeed,MP40,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2209,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2211,14,1,Suicide,,/kill,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2212,14,1,kill,Kittens,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2213,14,1,Team kill,SOURCE,None,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2214,14,1,kill,John_Mullins,MP40,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2215,14,1,kill,SOURCE,Colt,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2217,14,1,kill,soobsoob,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2220,14,1,Objective,Allies,Defense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2221,14,1,kill,Lunatic ????,MP40,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2222,14,1,kill,P.I.M.P.,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2223,14,1,kill,PennyWi$E,Panzerfaust,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2224,14,1,kill,PennyWi$E,Panzerfaust,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2225,14,1,kill,Lunatic ????,MP40,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2226,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2227,14,1,kill,soobsoob,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2228,14,1,kill,Cypher,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2229,14,1,Suicide,,/kill,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2230,14,1,Objective,Allies,Defense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2231,14,1,Team kill,Lunatic ????,None,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2232,14,1,kill,Lunatic ????,MP40,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2233,14,1,Suicide,,/kill,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2234,14,1,Objective,Allies,Offense flag,Axis
+08858b5f95d7b2624ad7413ca01401c8,2235,14,1,kill,DillWeed,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2236,14,1,kill,P.I.M.P.,Thompson,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2237,14,1,kill,Kittens,MP40,P.I.M.P.
+08858b5f95d7b2624ad7413ca01401c8,2238,14,1,kill,CHUCK_donka,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2239,14,1,kill,Kittens,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2240,14,1,kill,PennyWi$E,Panzerfaust,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2241,14,1,Suicide,,Panzerfaust,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2242,14,1,Suicide,,/kill,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2243,14,1,kill,soobsoob,MP40,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2244,14,1,Suicide,,/kill,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2245,14,1,kill,Cypher,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2246,14,1,Suicide,,Panzerfaust,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2247,14,1,kill,PennyWi$E,Panzerfaust,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2248,14,1,kill,CHUCK_donka,Thompson,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2249,14,1,kill,Kittens,MP40,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2250,14,1,kill,CHUCK_donka,Thompson,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2251,14,1,kill,illkilla,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2252,14,1,kill,John_Mullins,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2253,14,1,Suicide,,/kill,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2255,14,1,kill,Fister Miagi,MP40,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2256,14,1,kill,Kittens,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2257,14,1,kill,P.I.M.P.,Thompson,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2258,14,1,Suicide,,/kill,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2259,14,1,kill,CHUCK_donka,Thompson,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2260,14,1,kill,Cypher,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2261,14,1,kill,CHUCK_donka,Thompson,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2262,14,1,kill,illkilla,Colt,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2264,14,1,kill,DillWeed,MP40,CHUCK_donka
+08858b5f95d7b2624ad7413ca01401c8,2265,14,1,Suicide,,/kill,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2266,14,1,kill,Cypher,Thompson,DillWeed
+08858b5f95d7b2624ad7413ca01401c8,2268,14,1,kill,Fister Miagi,MP40,Cypher
+08858b5f95d7b2624ad7413ca01401c8,2269,14,1,kill,SOURCE,Panzerfaust,John_Mullins
+08858b5f95d7b2624ad7413ca01401c8,2270,14,1,kill,SOURCE,Panzerfaust,Fister Miagi
+08858b5f95d7b2624ad7413ca01401c8,2271,14,1,kill,Lunatic ????,Grenade,soobsoob
+08858b5f95d7b2624ad7413ca01401c8,2272,14,1,kill,CHUCK_donka,Thompson,Kittens
+08858b5f95d7b2624ad7413ca01401c8,2272,14,1,kill,PennyWi$E,Panzerfaust,SOURCE
+08858b5f95d7b2624ad7413ca01401c8,2273,14,1,Suicide,,Panzerfaust,PennyWi$E
+08858b5f95d7b2624ad7413ca01401c8,2274,14,1,kill,PennyWi$E,Panzerfaust,illkilla
+08858b5f95d7b2624ad7413ca01401c8,2276,14,1,kill,Kittens,Sniper,Lunatic ????
+08858b5f95d7b2624ad7413ca01401c8,2277,14,1,Objective,Allies,Offense win,Axis
+df7d4cdf988edc1544c69bf586302923,2322,15,2,Objective,Allies,Offense plant,Axis
+df7d4cdf988edc1544c69bf586302923,2323,15,2,kill,soobsoob,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2324,15,2,Suicide,,/kill,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2325,15,2,Suicide,,/kill,Kittens
+df7d4cdf988edc1544c69bf586302923,2326,15,2,kill,Lunatic ????,Airstrike,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2327,15,2,kill,Cypher,Airstrike,DillWeed
+df7d4cdf988edc1544c69bf586302923,2328,15,2,kill,soobsoob,Thompson,SOURCE
+df7d4cdf988edc1544c69bf586302923,2329,15,2,kill,DillWeed,Grenade,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2330,15,2,kill,John_Mullins,Sniper,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2336,15,2,kill,SOURCE,Panzerfaust,soobsoob
+df7d4cdf988edc1544c69bf586302923,2338,15,2,kill,John_Mullins,Sniper,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2340,15,2,kill,Fister Miagi,Thompson,Cypher
+df7d4cdf988edc1544c69bf586302923,2341,15,2,Team kill,Kittens,None,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2342,15,2,kill,Lunatic ????,MP40,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2343,15,2,Objective,Allies,Offense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2344,15,2,Objective,Allies,Mid objective,Axis
+df7d4cdf988edc1544c69bf586302923,2345,15,2,kill,Kittens,Thompson,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2346,15,2,kill,Kittens,Thompson,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2352,15,2,Suicide,,/kill,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2353,15,2,Suicide,,/kill,Kittens
+df7d4cdf988edc1544c69bf586302923,2354,15,2,kill,CHUCK_donka,Grenade,Kittens
+df7d4cdf988edc1544c69bf586302923,2355,15,2,kill,SOURCE,Panzerfaust,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2356,15,2,kill,Fister Miagi,Thompson,SOURCE
+df7d4cdf988edc1544c69bf586302923,2357,15,2,Objective,Allies,Offense plant,Axis
+df7d4cdf988edc1544c69bf586302923,2358,15,2,kill,soobsoob,Thompson,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2359,15,2,kill,P.I.M.P.,MP40,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2360,15,2,Objective,Allies,Defense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2362,15,2,kill,DillWeed,Thompson,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2363,15,2,Objective,Allies,Offense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2364,15,2,kill,CHUCK_donka,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2365,15,2,Objective,Allies,Defense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2367,15,2,Suicide,,/kill,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2368,15,2,kill,CHUCK_donka,MP40,soobsoob
+df7d4cdf988edc1544c69bf586302923,2371,15,2,kill,Cypher,MP40,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2372,15,2,kill,John_Mullins,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2373,15,2,kill,CHUCK_donka,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2374,15,2,Objective,Allies,Mid objective,Axis
+df7d4cdf988edc1544c69bf586302923,2375,15,2,Objective,Allies,Offense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2377,15,2,kill,John_Mullins,Colt,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2380,15,2,kill,Lunatic ????,MP40,Kittens
+df7d4cdf988edc1544c69bf586302923,2381,15,2,kill,John_Mullins,Colt,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2382,15,2,kill,Cypher,MP40,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2383,15,2,Objective,Allies,Defense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2384,15,2,kill,John_Mullins,Colt,Cypher
+df7d4cdf988edc1544c69bf586302923,2385,15,2,kill,P.I.M.P.,MP40,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2386,15,2,Objective,Allies,Offense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2387,15,2,kill,P.I.M.P.,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2390,15,2,Objective,Allies,Defense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2391,15,2,kill,Kittens,Thompson,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2392,15,2,kill,Kittens,Thompson,Cypher
+df7d4cdf988edc1544c69bf586302923,2393,15,2,Objective,Allies,Offense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2394,15,2,kill,CHUCK_donka,Grenade,soobsoob
+df7d4cdf988edc1544c69bf586302923,2395,15,2,kill,Kittens,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2396,15,2,Team kill,Fister Miagi,None,Kittens
+df7d4cdf988edc1544c69bf586302923,2397,15,2,kill,PennyWi$E,Panzerfaust,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2398,15,2,Suicide,,Panzerfaust,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2399,15,2,Suicide,,/kill,Kittens
+df7d4cdf988edc1544c69bf586302923,2401,15,2,Suicide,,/kill,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2402,15,2,kill,SOURCE,Panzerfaust,Kittens
+df7d4cdf988edc1544c69bf586302923,2403,15,2,kill,SOURCE,Panzerfaust,DillWeed
+df7d4cdf988edc1544c69bf586302923,2404,15,2,kill,CHUCK_donka,MP40,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2405,15,2,Objective,Allies,Defense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2406,15,2,kill,soobsoob,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2407,15,2,kill,Lunatic ????,Grenade,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2408,15,2,kill,soobsoob,Thompson,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2409,15,2,kill,Lunatic ????,MP40,soobsoob
+df7d4cdf988edc1544c69bf586302923,2410,15,2,kill,SOURCE,Luger,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2411,15,2,Suicide,,/kill,SOURCE
+df7d4cdf988edc1544c69bf586302923,2412,15,2,kill,SOURCE,Panzerfaust,soobsoob
+df7d4cdf988edc1544c69bf586302923,2413,15,2,Suicide,,/kill,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2414,15,2,kill,Cypher,MP40,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2415,15,2,kill,CHUCK_donka,MP40,Kittens
+df7d4cdf988edc1544c69bf586302923,2416,15,2,kill,illkilla,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2417,15,2,kill,Fister Miagi,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2418,15,2,Team kill,DillWeed,None,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2419,15,2,kill,soobsoob,Thompson,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2420,15,2,kill,P.I.M.P.,Grenade,Kittens
+df7d4cdf988edc1544c69bf586302923,2422,15,2,kill,John_Mullins,Colt,Cypher
+df7d4cdf988edc1544c69bf586302923,2423,15,2,Suicide,,/kill,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2424,15,2,kill,P.I.M.P.,MP40,soobsoob
+df7d4cdf988edc1544c69bf586302923,2425,15,2,kill,SOURCE,Panzerfaust,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2426,15,2,kill,SOURCE,Panzerfaust,Kittens
+df7d4cdf988edc1544c69bf586302923,2427,15,2,Suicide,,/kill,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2428,15,2,Suicide,,/kill,SOURCE
+df7d4cdf988edc1544c69bf586302923,2429,15,2,kill,P.I.M.P.,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2430,15,2,kill,Lunatic ????,MP40,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2431,15,2,kill,illkilla,MP40,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2432,15,2,Suicide,,/kill,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2433,15,2,kill,CHUCK_donka,MP40,Kittens
+df7d4cdf988edc1544c69bf586302923,2434,15,2,kill,John_Mullins,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2435,15,2,Team kill,SOURCE,None,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2436,15,2,kill,P.I.M.P.,MP40,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2437,15,2,kill,illkilla,MP40,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2438,15,2,kill,PennyWi$E,Panzerfaust,illkilla
+df7d4cdf988edc1544c69bf586302923,2439,15,2,kill,Kittens,Thompson,Cypher
+df7d4cdf988edc1544c69bf586302923,2440,15,2,Suicide,,/kill,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2441,15,2,Suicide,,/kill,soobsoob
+df7d4cdf988edc1544c69bf586302923,2442,15,2,kill,DillWeed,Thompson,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2443,15,2,Suicide,,/kill,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2444,15,2,Suicide,,/kill,SOURCE
+df7d4cdf988edc1544c69bf586302923,2445,15,2,kill,Kittens,Thompson,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2446,15,2,kill,Lunatic ????,Grenade,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2447,15,2,kill,CHUCK_donka,Grenade,soobsoob
+df7d4cdf988edc1544c69bf586302923,2448,15,2,kill,SOURCE,Panzerfaust,Kittens
+df7d4cdf988edc1544c69bf586302923,2449,15,2,kill,DillWeed,Thompson,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2450,15,2,kill,illkilla,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2451,15,2,kill,Fister Miagi,Sniper,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2452,15,2,kill,John_Mullins,Thompson,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2453,15,2,Objective,Allies,Offense flag,Axis
+df7d4cdf988edc1544c69bf586302923,2454,15,2,kill,soobsoob,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2455,15,2,kill,SOURCE,Panzerfaust,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2456,15,2,Suicide,,/kill,Kittens
+df7d4cdf988edc1544c69bf586302923,2457,15,2,Team kill,Lunatic ????,None,SOURCE
+df7d4cdf988edc1544c69bf586302923,2459,15,2,kill,soobsoob,Thompson,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2462,15,2,kill,Lunatic ????,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2463,15,2,Suicide,,/kill,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2464,15,2,Suicide,,/kill,Fister Miagi
+df7d4cdf988edc1544c69bf586302923,2465,15,2,kill,Lunatic ????,MP40,soobsoob
+df7d4cdf988edc1544c69bf586302923,2467,15,2,kill,Lunatic ????,MP40,PennyWi$E
+df7d4cdf988edc1544c69bf586302923,2468,15,2,Team kill,illkilla,None,Lunatic ????
+df7d4cdf988edc1544c69bf586302923,2469,15,2,kill,P.I.M.P.,MP40,Kittens
+df7d4cdf988edc1544c69bf586302923,2469,15,2,kill,PennyWi$E,Panzerfaust,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2470,15,2,kill,John_Mullins,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2471,15,2,kill,CHUCK_donka,Grenade,John_Mullins
+df7d4cdf988edc1544c69bf586302923,2472,15,2,kill,CHUCK_donka,MP40,DillWeed
+df7d4cdf988edc1544c69bf586302923,2474,15,2,kill,Kittens,Thompson,Cypher
+df7d4cdf988edc1544c69bf586302923,2475,15,2,Suicide,,/kill,Kittens
+df7d4cdf988edc1544c69bf586302923,2476,15,2,kill,Kittens,Thompson,CHUCK_donka
+df7d4cdf988edc1544c69bf586302923,2477,15,2,kill,soobsoob,Thompson,illkilla
+df7d4cdf988edc1544c69bf586302923,2479,15,2,kill,Kittens,Thompson,SOURCE
+df7d4cdf988edc1544c69bf586302923,2482,15,2,kill,John_Mullins,Thompson,Cypher
+df7d4cdf988edc1544c69bf586302923,2483,15,2,kill,Kittens,Thompson,Cypher
+df7d4cdf988edc1544c69bf586302923,2484,15,2,kill,Fister Miagi,Thompson,P.I.M.P.
+df7d4cdf988edc1544c69bf586302923,2485,15,2,Objective,Allies,Offense win,Axis

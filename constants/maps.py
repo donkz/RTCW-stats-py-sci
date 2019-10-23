@@ -68,11 +68,11 @@ class ConstMap:
                       [O_OBJ,"The Main Door has been breached!"],
                       [O_PLANT, "Dynamite planted near the service door!"],
                       [O_PLANT, "Dynamite planted near the main door!"],
-                      [O_PLANT, "Dynamite planted near the storage wall!"] #TODO check this
+                      [O_PLANT, "Dynamite planted near the storage wall!"] 
                     ],
             "axis_complex" : [
                       [O_WIN,"Allies have transmitted the decoder manual!"],
-                      [D_FLAG,"Axis reclaims the Forward Deployment area!"], #TODO check this
+                      [D_FLAG,"Axis reclaims the Forward Deployment area!"], 
                       [O_FLAG,"Allies capture the Forward Deployment area!"],
                       [O_OBJ,"The service door has been breached!"],
                       [O_OBJ,"The Eastern Tower has been breached!"],
@@ -151,6 +151,14 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near Service Door!"],
                       [O_PLANT, "Process started with valid password!"],
                       [O_OBJ,"Process finished!"]
+                    ],
+            "mp_chateau" : [
+                      [O_WIN,"Allies have transmitted the Top Secret Documents!"],
+                      [D_FLAG, "Axis reclaims the Grand Staircase!"],
+                      [O_FLAG,"Allies capture the Grand Staircase!"],
+                      [O_OBJ,"Allies have gained entry into the Chateau."],
+                      [O_PLANT, "Dynamite planted near the Main Door!"], 
+                      [O_PLANT, "Dynamite planted near the Cellar Door!"]
                     ]
             #TODO: church, ?
             }
@@ -160,25 +168,28 @@ class ConstMap:
     '''
     def load_maps(self):
         maps = {}
-        #                                  code,                name,         announcements,                         defense,       offense,    timelimit  Objective name
+        #                                  code,                name,         announcements from above               defense,       offense,    timelimit  Objective name
         maps["mp_ice"] =           RTCWMap("mp_ice",           "Ice",         self.map_announce["mp_ice"],           self.G_ALLIES, self.G_AXIS,   10,   "Allied Documents")
-        maps["axis_complex"] =     RTCWMap("axis_complex",     "Axis Complex",self.map_announce["axis_complex"],     self.G_AXIS,   self.G_ALLIES, 10,   "The Decoder Manual")     #check timelimit
-        maps["te_escape"] =        RTCWMap("te_escape",        "Escape",      self.map_announce["te_escape"],        self.G_AXIS,   self.G_ALLIES, 10,   "the Unholy Grail")       #check timelimit
+        maps["axis_complex"] =     RTCWMap("axis_complex",     "Axis Complex",self.map_announce["axis_complex"],     self.G_AXIS,   self.G_ALLIES, 10,   "The Decoder Manual")     #TODO: check timelimit
+        maps["te_escape"] =        RTCWMap("te_escape",        "Escape",      self.map_announce["te_escape"],        self.G_AXIS,   self.G_ALLIES, 10,   "the Unholy Grail")       #TODO: check timelimit
         maps["te_ufo"] =           RTCWMap("te_ufo",           "UFO",         self.map_announce["te_ufo"],           self.G_AXIS,   self.G_ALLIES, 12,   "The UFO Documents")
         maps["te_frostbite"] =     RTCWMap("te_frostbite",     "Frostbite",   self.map_announce["te_frostbite"],     self.G_AXIS,   self.G_ALLIES, 10,   "the War Documents")
         maps["mp_village"] =       RTCWMap("mp_village",       "Village",     self.map_announce["mp_village"],       self.G_AXIS,   self.G_ALLIES, 10,   "the Gold")
-        maps["mp_beach"] =         RTCWMap("mp_beach",         "Beach",       self.map_announce["mp_beach"],         self.G_AXIS,   self.G_ALLIES, 8,    "the War Documents")
+        maps["mp_beach"] =         RTCWMap("mp_beach",         "Beach",       self.map_announce["mp_beach"],         self.G_AXIS,   self.G_ALLIES, 8,    "the War Documents")      # same as frostbite
         maps["mp_sub"] =           RTCWMap("mp_sub",           "Sub",         self.map_announce["mp_sub"],           self.G_AXIS,   self.G_ALLIES, 12,    "")
         maps["mp_base"] =          RTCWMap("mp_base",          "Base",        self.map_announce["mp_base"],          self.G_AXIS,   self.G_ALLIES, 15,    "")
         maps["tundra_rush_beta"] = RTCWMap("tundra_rush_beta", "Tundra",      self.map_announce["tundra_rush_beta"], self.G_AXIS,   self.G_ALLIES, 12,    "The Docs")
         maps["mp_assault"] =       RTCWMap("mp_assault",       "Assault",     self.map_announce["mp_assault"],       self.G_ALLIES, self.G_AXIS,   10,    "")
         maps["mp_password"] =      RTCWMap("mp_password",      "Password",    self.map_announce["mp_password"],      self.G_AXIS,   self.G_ALLIES, 12,    "the Endoarm")
+        maps["mp_chateau"] =       RTCWMap("mp_chateau",       "Chateau",     self.map_announce["mp_chateau"],       self.G_AXIS,   self.G_ALLIES, 10,    "the Top Secret Documents!") #"the War Documents" also shows up mid-game on chateau although it shouldnt
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         #each map will have additional objective likes related to stoled and returned objectives
         for mapname, map_ in maps.items():
+            if(map_.objname == "the War Documents"):
+                continue #throw away lines with "the War Documents" because they are shared between several maps (beach, frost, chateau)
             map_.announcements.append([self.D_RETURN, map_.defense + " have returned " + map_.objname + "!"])
-            map_.announcements.append([self.O_STEAL,  map_.offense + " have stolen " +   map_.objname + "!"])
+            map_.announcements.append([self.O_STEAL,  map_.offense + " have stolen "   + map_.objname + "!"])
         self.maps = maps
     
     def transpose_by_obj(self):
