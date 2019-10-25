@@ -21,7 +21,8 @@ debug_file = r".\test_samples\testfile.txt"
 #read_file = r".\test_samples\rtcwconsole-2019-10-02.log"
 #read_file = r".\test_samples\rtcwconsole-09-19-2019.log"
 #read_file = r".\test_samples\rtcwconsole-2019-10-10.log"
-read_file = r".\test_samples\rtcwconsole-2019-10-17.log"
+#read_file = r".\test_samples\rtcwconsole-2019-10-17.log"
+read_file = r".\test_samples\rtcwconsole-2019-10-24.log"
 
 processor = FileProcessor(read_file, debug_file)
 results = processor.process_log()
