@@ -1,6 +1,9 @@
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
+from time import gmtime
+from time import strftime
+
 award_explanations = {
         "FirstInDoor" : "First killer or victim of the round",
         "Blownup"     : "Exploded by grenade, AS, dynamite",
@@ -254,14 +257,16 @@ def match_results_to_html(table_match_results):
         td["class"]="bars"
         total_time = row["round_time"] + row["round_diff"]
         percentage = row["round_time"]/total_time*100
+        time_label = Tag(soup, name = 'label')
+        time_text = strftime("%M:%S", gmtime(row["round_time"]))
+        time_label.string = time_text
         progress_bar = Tag(soup, name = 'progress')
         progress_bar["id"] = "round_time"
         progress_bar["max"] = "100"
         progress_bar["value"] = str(round(percentage,0))
         width = "width:" + str(int((row["round_time"] + row["round_diff"])/720*10+1)) + "em;"
         progress_bar["style"] = width
-        
-        #progress_bar_string = "<progress id=\"round\" max=\"100\" value=\"" + str(round(percentage,0)) + ">" + str(row["round_time"]) + "</progress>"
+        td.append(time_label)
         td.append(progress_bar)
         tr.append(td)
         

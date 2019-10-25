@@ -350,7 +350,10 @@ class FileProcessor:
                             tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"round_win"] = abs(1 - new_match_line.defense_hold)
                             tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"round_win"] = new_match_line.defense_hold
                             tmp_stats_all["game_result"] = "R1MSB"
-                            new_match_line.winner = tmp_map.offense #TODO: if timelimit - then DEFENCE!!!!!
+                            if int(tmp_map.timelimit*60) == int(new_match_line.round_time):
+                                new_match_line.winner = tmp_map.defense
+                            else:
+                                new_match_line.winner = tmp_map.offense
                             
                         if value.event == Const.EVENT_OSP_NOT_REACHED:
                             #round 2 DEFENSE HELD (WON OR DRAW)
@@ -359,15 +362,12 @@ class FileProcessor:
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"round_win"] = 1 #they get a round win , but a game win is full hold
                                 tmp_stats_all["game_result"] = "FULLHOLD"
                                 #new_match_line.winner = "Draw"
-                                print("here" + tmp_map.defense + tmp_map.name)
                                 new_match_line.winner = tmp_map.defense
                             elif tmp_r1_fullhold == 0:
-                                #print("R1 fh not detected")
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"round_win"] = 0 
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"round_win"] = 1
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"game_result"] = "WON"
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"game_result"] = "LOST"
-                                print("here" + tmp_map.defense + tmp_map.name)
                                 new_match_line.winner = tmp_map.defense
                             else:
                                 print("bad round 2 winner status")
