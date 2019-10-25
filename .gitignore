@@ -48,3 +48,14 @@ Temporary Items
 
 # Python compiled bite code
 *.pyc
+*.pyc.swp
+
+# Python compiled bite code
+*.pyc
+
+# HTML Files
+*.htm*
+
+# debug file
+test_samples\testfile.txt
+
