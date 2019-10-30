@@ -21,14 +21,21 @@ award_explanations = {
 
 
 def report_to_html(*argv):
+    
     if len(argv) == 0:
         outfile ="html_report.html"
     else:
         outfile = argv[0]
         
     soup = BeautifulSoup("","lxml")
+    
+    #<html>
     html = Tag(soup, name = "html")
+    
+    #<head>
     head = Tag(soup, name = "head")
+    
+    #css and libraries
     link = Tag(soup, name = "link")
     link["rel"] = "stylesheet"
     link["href"] = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
@@ -37,7 +44,7 @@ def report_to_html(*argv):
     script2 = Tag(soup, name = "script")
     script2["src"] = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
     style = Tag(soup, name = "style")
-    body = Tag(soup, name = "body")
+    
     soup.append(html)
     soup.html.append(head)
     soup.head.append(link)
@@ -45,6 +52,9 @@ def report_to_html(*argv):
     soup.head.append(script2)
     soup.head.append(style)
     soup.style.append(style_css)
+    
+    #<body>    
+    body = Tag(soup, name = "body")
     soup.html.append(body)
     soup.body.append(insert_header("Results"))
     soup.body.append(match_results_to_html(table_match_results))
@@ -57,11 +67,12 @@ def report_to_html(*argv):
     soup.body.append(insert_header("Kill matrix"))
     soup.body.append(kill_matrix_to_html(kill_matrix_stats))
     
+    #jquery scripts
     script_jq = Tag(soup, name = "script")
     script_jq["type"] = "text/javascript"
     script_jq.append(jquery_sort)
     soup.body.append(script_jq)
-    
+    #end of html report
     
     html_file = open(outfile,"w")
     html_file.write(soup.prettify())
@@ -232,7 +243,7 @@ def match_results_to_html(table_match_results):
     tr = Tag(soup, name = "tr")
     table.append(tr)
     
-    cols = ["#","map","Round","Round Time", "Team 1", "winner","Team 2"]
+    cols = ["#","map","Round",". . . Round Time . . .", "Team 1", "winner","Team 2"]
     
     for col in cols:
         th = Tag(soup, name = "th")
@@ -273,8 +284,11 @@ def match_results_to_html(table_match_results):
         players = row["players"]
         
         td = Tag(soup, name = 'td')
+        if(players == None):
+            players = [["??","??","??"],["??","??","??"]]
         td["title"] = players[0][0].replace(" ","_").replace("#","\n")
         td.string = players[0][0][0:30].replace("#"," ,")
+        
         team_1 = players[0][1]
         team_2 = players[1][1]
         
@@ -284,10 +298,10 @@ def match_results_to_html(table_match_results):
         td = Tag(soup, name = 'td')
         if(row["winner"] == team_1):
             result = ">"
-            td["class"] = "versusgt"
+            td["class"] = "versusgt" + str(row["round_num"])
         else:
             result = "<"
-            td["class"] = "versuslt"
+            td["class"] = "versuslt" + str(row["round_num"])
         
         td.string = result
         
@@ -304,13 +318,21 @@ def match_results_to_html(table_match_results):
     return soup
 
 style_css = """
-.versusgt {
+.versuslt1 {
   font-weight: bold;
-  color: blue;
 }
-.versusgt {
+.versusgt1 {
+  font-weight: bold;
+}
+.versuslt2 {
   font-weight: bold;
   color: red;
+  font-size: 14px !important;;
+}
+.versusgt2 {
+  font-weight: bold;
+  color: red;
+  font-size: 14px !important;;
 }
 .gold {
   background-color: #D4AF37;
@@ -327,9 +349,8 @@ style_css = """
 .Axis {
   background-color: #FFBFBF;
 }
-.norank {
-  background-color: #F5F5F5;
-}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
     
 table.blueTable {
   font-family: "Courier New", Courier, monospace;
@@ -347,8 +368,7 @@ table.blueTable td, table.blueTable th {
   padding: 0px 6px;
 }
 table.blueTable tbody td {
-  font-size: 14px;
-  color: #292929;
+  font-size: 12px;
 }
 table.blueTable thead {
   background: #030D14;
@@ -387,6 +407,12 @@ progress[value]::-webkit-progress-bar {
 }
 .ui-tooltip {
     white-space: pre-line;
+	font-size:12;
+	background: #A0A0A0;
+	box-shadow: none;
+	border-style: solid;
+	border-width: 10px 10px 0;
+	z-index: 0;
 }
 """
 

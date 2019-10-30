@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import hashlib
+import re
 
 from constants.logtext import Const
 
@@ -83,11 +84,13 @@ def add_team_name(stats_all):
         axis = stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index.values
         allies_team_name = get_team_name(allies)
         axis_team_name = get_team_name(axis)
-#        print(stats_all[Const.STAT_OSP_SUM_PLAYER])
-#        print(allies_team_name)
-#        print(stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(to_replace=allies_team_name, value=""))
-#        stats_all["player_strip"]=stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(to_replace=allies_team_name, value="").str.replace(to_replace=axis_team_name, value="").str.strip()   
-        stats_all["player_strip"]=""
+        #print(stats_all[Const.STAT_OSP_SUM_PLAYER])
+        #print("---------Team name " + allies_team_name)
+        #print(stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(allies_team_name, ""))
+        #print("try")
+        stats_all["player_strip"]=stats_all[Const.STAT_OSP_SUM_PLAYER].str.replace(re.escape(allies_team_name),"").str.replace(re.escape(axis_team_name), "").str.strip()   
+        #print("passed")
+        #stats_all["player_strip"]=""
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_name"] = allies_team_name
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_name"] = axis_team_name

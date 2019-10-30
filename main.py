@@ -1,10 +1,12 @@
+import os
 import pandas as pd
 
 from processfile import FileProcessor
 from textsci.awards import Awards 
 from textsci.matchstats import MatchStats
 
-RTCWPY_PATH = "C:\\Users\\zveres\\Documents\\Github\\RTCW-stats-py-sci"
+
+RTCWPY_PATH = os.getcwd()
 import sys
 if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
@@ -22,14 +24,16 @@ debug_file = r".\test_samples\testfile.txt"
 #read_file = r".\test_samples\rtcwconsole-09-19-2019.log"
 #read_file = r".\test_samples\rtcwconsole-2019-10-10.log"
 #read_file = r".\test_samples\rtcwconsole-2019-10-17.log"
-read_file = r".\test_samples\rtcwconsole-2019-10-24.log"
+#read_file = r".\test_samples\rtcwconsole-2019-10-24.log"
+read_file = r".\test_samples\rtcwconsoleOct28.log"
 
 processor = FileProcessor(read_file, debug_file)
 results = processor.process_log()
 
-logdf = results["logdf"]
-statsdf= results["stats"]
-matchesdf = results["matchesdf"]
+if results is not None:
+    logdf = results["logdf"]
+    statsdf= results["stats"]
+    matchesdf = results["matchesdf"]
 
 
 log_date = matchesdf["log_date"][0] 
@@ -52,42 +56,10 @@ table_map_list = matchstats.table_map_list(results)
 
 
 
-#matchesdf[["round_order","round_num","round_time","winner"]]
-
-# =============================================================================
-# event_lines_dataframe = logdf
-# print(Awards.award_pack_of_five(event_lines_dataframe))
-# print(Awards.award_death_streak(event_lines_dataframe))
-# print(Awards.award_kill_streak(event_lines_dataframe))
-# print(Awards.award_most_blown_up(event_lines_dataframe))
-# print(Awards.award_most_panzed(event_lines_dataframe))
-# print(Awards.award_first_in_door(event_lines_dataframe))
-# print(Awards.award_efficiency_of_the_night(event_lines_dataframe))
-# print(Awards.award_kills_of_the_night(event_lines_dataframe))
-# 
-# sum_lines_dataframe = statsdf
-# print(Awards.award_most_useful_points(sum_lines_dataframe))
-# print(Awards.award_most_holds(sum_lines_dataframe))
-# print(Awards.award_most_caps(sum_lines_dataframe))
-# =============================================================================
-
 #Sanity check 1
 statsdf.groupby(["round_num","round_win","game_result"])[["game_result"]].nunique()
 
 
-# =============================================================================
-# matchesdf[['defense_hold', 'log_date', 'map', 'round_diff', 'round_num', 'round_order', 'round_time', 'winner', 'players']]
-# matchesdf[0:1][['players']].values[0][0][0][1]
-#  matchesdf[0:1][['log_date']].values[0][0]
-#    from time import strftime
-# from time import gmtime
-# strftime("%M:%S", gmtime(145))
-# statsdf[['round_order', 'round_num', 'map', 'side', 'round_win', 'game_result']]  
-#         
-# statsdf["players"] = statsdf.reset_index().groupby(['round_order', 'round_num', 'OSP_Team', 'map', 'side', 'round_win', 'game_result'])['index'].transform(lambda x: ','.join(x))
-# statsdf[['round_order', 'round_num', 'OSP_Team', 'map', 'side', 'round_win', 'game_result','players']]
-# 
-# 
-# =============================================================================
+
 
             
