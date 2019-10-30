@@ -363,7 +363,6 @@ class FileProcessor:
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"side"] = "Defense"
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"side"] = "Offense"
                         
-                        print(tmp_stats_all)
                         if(tmp_stats_all["side"].isnull().sum() == len(tmp_stats_all)):
                             print("No teams found (osp stats not joined)")
                         else: 

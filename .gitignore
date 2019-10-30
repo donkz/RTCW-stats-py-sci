@@ -29,5 +29,5 @@ __pycache__/
 *.csv
 
 # debug file
-test_samples\testfile.txt
+test_samples/testfile.txt
 
