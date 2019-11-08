@@ -36,6 +36,11 @@ class Const:
     EVENT_OSP_NOT_REACHED = "osp_time_not_reached"
     EVENT_OSP_REACHED = "osp_time_reached"
     
+    CONSOLE_PASSWORD_RCON = "Rcon password"
+    CONSOLE_PASSWORD_REF =  "Ref password"
+    CONSOLE_PASSWORD_SERVER = "Server password"
+    
+    
     
     
     WEAPON_GRENADE = "Grenade"
@@ -92,6 +97,7 @@ class Const:
     
    
     line_types = [
+            #kill types            
             ["grenade", "^\[skipnotify\](.*) was exploded by (.*)\'s grenade",EVENT_KILL, WEAPON_GRENADE,True],
             ["Panzerfaust","^\[skipnotify\](.*) was blasted by (.*)\'s Panzerfaust",EVENT_KILL, WEAPON_PANZER, True],
             ["thompson", "^\[skipnotify\](.*) was killed by (.*)\'s Thompson",EVENT_KILL, WEAPON_THOMPSON, True],
@@ -141,8 +147,13 @@ class Const:
             ["clocklostosp", "^\[skipnotify\]>>> Objective reached at (.*) \(original: (.*)\)",EVENT_OSP_REACHED, "", False],
             #file info
             ["logdate","^logfile opened on(.*)", EVENT_LOGFILE_TIMESTAMP, "", False],
+            #chats
             ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
-            ["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False]
+            ["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False],
+            
+            ["passwordserv","^\]\/password (.*)", CONSOLE_PASSWORD_SERVER,"", False],
+            ["passwordref","^\]\/ref (.*)", CONSOLE_PASSWORD_REF,"", False],
+            ["passwordrcon","^\]\/rconpassword (.*)", CONSOLE_PASSWORD_RCON,"", False]
             #the following lines are in maps file
             #Axis engineer disarmed
             #Allied engineer disarmed
@@ -160,7 +171,7 @@ class LogLine:
     def __init__(self, line_type, regex, event, mod, stats):
          self.line_type = line_type # line ID. Not used for other than debugging
          self.regex = regex         # match on this expression
-         self.event = event         # what happened in a given line
+         self.event = event         # what recognized in a given line
          self.mod = mod             # method of death
          self.stats = stats         # True or False - if the line is recordable or just logical
     

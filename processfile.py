@@ -25,7 +25,7 @@ class StatLine:
          self.victim=victim
     
     def toString(self):
-        vars =  [str(self.match_guid),str(self.line_order),str(self.round_order),str(self.round_num), str(self.killer),str(self.event),str(self.mod),str(self.victim)]
+        vars =  [str(self.round_guid),str(self.line_order),str(self.round_order),str(self.round_num), str(self.killer),str(self.event),str(self.mod),str(self.victim)]
         return ",".join(vars)
 
 class MatchLine:
@@ -147,11 +147,13 @@ class FileProcessor:
         line_num = 0
         matches = []
         osp_lines = []
+        
         tmp_r1_fullhold = None
         log_date = str(datetime.now())
         
         tmp_log_events = []
         renames = {}
+        line_event = "Nothing"
         
         #Load in Constants
         colors = setup_colors()
@@ -165,7 +167,7 @@ class FileProcessor:
     
         #Prep debug log
         debug_log = open(self.debug_file,"w")
-        debug_log.write("line".ljust(5) + "roundNum " + "##".ljust(2)  + "Event".ljust(20) + "Logged as".ljust(10) + "LineText".rstrip() + "\n")
+        debug_log.write("line".ljust(5) + "roundNum " + "##".ljust(2)  + "Event".ljust(20) + "Action".ljust(10) + "LineText".rstrip() + "\n")
         log_file_lines = self.openFile()
         fileLen = len(log_file_lines)-1
         
@@ -174,14 +176,12 @@ class FileProcessor:
         file_size = self.get_file_size()
     
         #go through each line in the file
-        for x in range(0,fileLen):
+        for i in range(0,fileLen):
             #strip color coding
-            line = stripColors(log_file_lines[x], colors)
-            
+            line = stripColors(log_file_lines[i], colors)          
             #init loop variables
-            matched = None
             stat_entry = None
-            ospline = None
+            osp_line_processed = False
             
             #for that line loop through all possible log line types and see which type of line it is
             for key, value in log_lines.items():
@@ -189,13 +189,16 @@ class FileProcessor:
                 x = re.search(value.regex, line)
                 #if it looks like something we recognize (x is not None) then add this line appropriately
                 if x:
+                    line_event = value.event
                     line_order = line_order + 1
                     
+                    #player renames in game. Store old and new name in doct for later processing
                     if value.event == Const.EVENT_RENAME:
                         #print("x" + str(x) + " x0: " + x[0] + " x1: " + x[1] + " x2: " + x[2])
                         renames[x[1]] = x[2]
                     
-                    if value.event == Const.EVENT_LOGFILE_TIMESTAMP: #beginning of every logfile
+                    #beginning of every logfile
+                    if value.event == Const.EVENT_LOGFILE_TIMESTAMP: 
                         #Sun Apr 08 18:51:44 2018
                         log_date = str(datetime.strptime(x[1].strip(), "%a %b %d %H:%M:%S %Y" ))
                     
@@ -209,6 +212,7 @@ class FileProcessor:
                         tmp_log_events = []
                         tmp_stats_all = []
                         
+                        #start new match class
                         new_match_line = MatchLine(file_date,   # date of file creation
                                                    log_date,    # date from the text of the log itself
                                                    file_size,   # file size
@@ -222,8 +226,9 @@ class FileProcessor:
                                                    None,        # round time - processed at the end
                                                    None,        # round difference - processed at the end
                                                    None)        # map - processed at the end
-                                         
-                    if game_started and value.event == Const.EVENT_PAUSE: #game paused. Unpause will result in FIGHT line again
+                    
+                    #game paused. Unpause will result in FIGHT line again                    
+                    if game_started and value.event == Const.EVENT_PAUSE: 
                         game_paused = True
                     
                     #^7Accuracy info for: ^3KrAzYkAzE ^7(^22^7 Rounds)
@@ -253,11 +258,16 @@ class FileProcessor:
                     #^1Axis^7   ^7Fister Miagi   ^3   7  12   1  1^7  36^3   1^2  1305^1  1917^6  123^3      6
                     #^4Allies^7 ^7bru            ^3   7  16   0  0^7  30^3   2^2  1442^1  2840^6    0^3     11
                     if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS: #OSP team stats per player
-                        if (game_started == False):
-                            print("Warning: processing OSP stats after OSP objective time string. This should never* happen")
-                        osp_line = self.process_OSP_line(line)
-                        ospDF = ospDF.append(osp_line)
-                        osp_lines.append(line.strip())                      
+                        if game_started == False:
+                            if game_finished == True:
+                                print("Warning: processing OSP stats after OSP objective time string. This should never* happen")
+                            else:
+                                print("Warning: ignoring OSP stats because log of the first round is incomplete")
+                        else:
+                            osp_line = self.process_OSP_line(line)
+                            ospDF = ospDF.append(osp_line)
+                            osp_lines.append(line.strip())   
+                            osp_line_processed = True
                     
                     #^\[skipnotify\]Timelimit hit\.
                     if value.event == Const.EVENT_MAIN_TIMELIMIT: #happens before OSP stats if the time ran out
@@ -266,7 +276,8 @@ class FileProcessor:
                         game_finished = True
                         new_match_line.defense_hold = 1
                         # implement timelimit hit. It appears before OSP stats only when clock ran out
-                                           
+                    
+                    #[skipnotify]Server: timelimit changed to 3.347367                       
                     #if value.event == Const.EVENT_MAIN_SERVER_TIME:  #this can be invoked anytime by rcon or ref or map restart
                         #happens after OSP stats, but not when map changes
                         #also happens anytime ref changes timelimit 
@@ -275,6 +286,7 @@ class FileProcessor:
                         #game_finished = True
                         #new_match_line.round_time = int(float(x[1])*60) # this comes after OSP stats and fucks everything up
                     
+                    #[skipnotify]>>> ^3Objective reached at 1:36 (original: 6:49)
                     if game_started and value.event == Const.EVENT_OSP_REACHED: #osp round 2 defense lost
                         game_started = False
                         game_paused = False
@@ -288,7 +300,8 @@ class FileProcessor:
                         new_match_line.round_diff = int(time2[0])*60 + int(time2[1]) - roundtime
                         #print("round times(t1,t2,diff) " + x[1].strip() + " " + x[2].strip() + " " + str(new_match_line.round_diff))
                         new_match_line.round_num = 2
-                        
+                    
+                    #[skipnotify]>>> ^3Objective NOT reached in time (3:20)
                     if game_started and value.event == Const.EVENT_OSP_NOT_REACHED: #osp round 2 defense lost
                         game_started = False
                         game_paused = False
@@ -299,7 +312,8 @@ class FileProcessor:
                         new_match_line.defense_hold = 1
                         new_match_line.round_num = 2
                         new_match_line.round_time = roundtime
-                        
+                    
+                    #Always Round 1
                     #[skipnotify]>>> Clock set to: 10:00
                     #[skipnotify]>>> Clock set to: 6:56
                     if game_started and value.event == Const.EVENT_OSP_TIME_SET: #osp round 1 end.
@@ -352,17 +366,12 @@ class FileProcessor:
                         
                         #Recalculated scores (substract kills and suicides)
                         tmp_stats_all[Const.STAT_POST_ADJSCORE] = tmp_stats_all[Const.STAT_OSP_SUM_SCORE].fillna(0).astype(int) - tmp_stats_all[Const.STAT_BASE_KILL].fillna(0).astype(int) + tmp_stats_all[Const.STAT_BASE_SUI].fillna(0).astype(int)*3 + tmp_stats_all[Const.STAT_BASE_TK].fillna(0).astype(int)*3
-                        #print(tmp_stats_all[["AdjScore","score","kill","Suicide","TK"]])                  
                         
-                        #print(tmp_stats_all.columns.values)
-                        #print(tmp_stats_all[Const.STAT_OSP_SUM_TEAM])
-                        #print(tmp_map.defense)
-                        #print(tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index)
-                        #print(tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index])
-
+                        #Crossreference maps data and determine if current team (axis or allies) is offense or defence
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"side"] = "Defense"
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"side"] = "Offense"
                         
+                        #If side is not populated with allies and axis don't do this logic
                         if(tmp_stats_all["side"].isnull().sum() == len(tmp_stats_all)):
                             print("No teams found (osp stats not joined)")
                         else: 
@@ -468,31 +477,35 @@ class FileProcessor:
                                 print("---------------Unknown objective: ".ljust(20) + x[1])
                     else:
                         stat_entry = None
-                    matched = key
                     break
             
-            #bad panzer special handling
-            if matched == None:    
+            
+            #if matched == None:    
+            else:
+                #did not match any lines
+                line_event = "Nothing"
+                #bad panzer special handling
                 y = re.search("^\[skipnotify\](.*) was killed by (.*)",line)  
                 if y:
                     value.event = Const.EVENT_KILL
                     stat_entry = StatLine("temp",line_order, round_order,1,y[2],value.event, Const.WEAPON_PANZER, y[1])
                     #print("Bad console line: " + line + "--- processed as " + stat_entry.toString())
-            #end of bad panzer handling
+                #end of bad panzer handling
             
             if stat_entry:
-                processedLine = "Logged" #stat_entry.toString()
+                processedLine = "Logged" 
                 tmp_log_events.append(stat_entry)
                 line_num = line_num + 1
-                #print("Added " + processedLine)
-            elif ospline is not None:
-                processedLine = "OSPline"
+            elif osp_line_processed:
+                processedLine = "Osp added"
+            elif x:
+                processedLine = "Processed"
             else:
                 #
                 processedLine = "Ignored"
-            write_line = str(line_order).ljust(5) + "roundNum " + str(round_order).ljust(2)  + value.event.ljust(20) + processedLine.ljust(10) + line.rstrip() + "\n"
-            
+           
             #write the line processing notes into debig file
+            write_line = str(line_order).ljust(5) + "roundNum " + str(round_order).ljust(3)  + line_event.ljust(20) + processedLine.ljust(10) + line.rstrip() + "\n"
             debug_log.write(write_line)
         
         #close debig file        
@@ -506,6 +519,7 @@ class FileProcessor:
             matches
             logdf
             stats_all
+            renames
         except NameError:
             print("Nothing was processed")
             return None
@@ -514,9 +528,16 @@ class FileProcessor:
             logdf = self.handle_renames(renames, ["killer","victim"], logdf, False)
             stats_all = self.handle_renames(renames, ['player_strip','Killer','team_captain','OSP_Player'], stats_all, True)            
             logdf = logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
+            
+            if(len(renames) > 0):
+                renameDF = pd.DataFrame.from_dict(renames, orient='index').reset_index()
+                renameDF.columns = ["original","renamed_to"]
+            else:
+                renameDF = None
+            
             time_end_process_log = _time.time()
             print ("Time to process " + self.read_file + " is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
-            return {"logdf":logdf, "stats":stats_all, "matchesdf":matchesdf}
+            return {"logdf":logdf, "stats":stats_all, "matchesdf":matchesdf, "renamedf" : renameDF}
             
         
         

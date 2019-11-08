@@ -5,17 +5,6 @@ import pandas as pd
 class MatchStats:
     #debug data = results
     
-    '''
-    list which maps have been played that night
-    map             order  games
-    Escape              2     4
-    Ice                10     3
-    Frostbite          17     1
-    Password           19     1
-    Sub                21     1
-    Chateau            23     1
-    '''
-    
     def match_info_datetime(self,data):
         matches_dataframe     = data["matchesdf"]
         time_of_the_match = matches_dataframe[0:1][['log_date']].values[0][0]
@@ -26,6 +15,16 @@ class MatchStats:
         temp = matches_dataframe[['round_order','map', 'round_num','round_diff', 'round_time', 'winner', 'players']]      
         return [temp,""]
     
+    '''
+    list which maps have been played that night
+    map             order  games
+    Escape              2     4
+    Ice                10     3
+    Frostbite          17     1
+    Password           19     1
+    Sub                21     1
+    Chateau            23     1
+    '''
     def table_map_list(self, data):
         sum_lines_dataframe   = data["stats"]
         result = sum_lines_dataframe[sum_lines_dataframe["round_num"] == 2].groupby(["round_order","map"]).count().reset_index().groupby(["map"]).agg({"round_order":["min","count"]}).sort_values([("round_order","min")])
@@ -33,6 +32,11 @@ class MatchStats:
         result.reset_index(inplace=True)
         return [result, ""]
     
+    def table_renames(self,data):
+        result = data["renamedf"]
+        return [result, ""]
+        
+        
     def table_player_joins(self, data):
         event_lines_dataframe = data["logdf"]
         temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")][["line_order", "killer", "victim"]]
@@ -84,7 +88,7 @@ class MatchStats:
         #columns = [Const.STAT_BASE_KILL, Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS, Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]
         #stats = sum_lines_dataframe[columns]
         stats_all_sum_rank = stats_all_sum.rank(method="min", ascending=False)
-        stats_all_sum_rank[[Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS,Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]] = 0
+        stats_all_sum_rank[[Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS,Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG,"DPF"]] = 0
         stats = stats_all_sum.join(stats_all_sum_rank, rsuffix = "_rank")
         return [stats, ""] #just to match others
     

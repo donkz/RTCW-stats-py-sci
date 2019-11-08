@@ -108,8 +108,8 @@ def get_player_list(stats_all):
         playerlistd = stats_all[stats_all["side"] == "Defense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]
         playerlistd_str = ["#".join(playerlistd[Const.STAT_BASE_KILLER]), playerlistd.iloc[0,1], "Defense"]
         players = sorted([playerlisto_str , playerlistd_str], key=lambda x: x[0])
-        return players #.replace(",","") # for csv
-
+        return players 
+    
 def get_round_guid_client_log(stats_all):
         stats_all[Const.STAT_BASE_KILLER] = stats_all.index #could just reset_index
         match_id_table = stats_all.sort_values([Const.STAT_BASE_KILLER, Const.STAT_BASE_KILL,Const.STAT_BASE_DEATHS])[[Const.STAT_BASE_KILLER, Const.STAT_BASE_KILL,Const.STAT_BASE_DEATHS]]
