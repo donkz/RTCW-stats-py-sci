@@ -41,22 +41,26 @@ def team_name_front(players):
 #Given a team of player names create a list of all sequential strings and find most common one
 #example: players(["+-ab", "+-cd" ) will return +- 
 #example: players(["+ab", "+cd" ) will return nothing because one char is too risky
-#break all player names into segments of 2,3,4,5 characters
+#break all player names into segments of 3,4,5 characters
 #analyze which segment appears the most and its weight based on its length
 def team_name_chars(players):
     """Return a string element common to all players. Works when clan tags are in front"""
     segments = []
-    for segment_length in np.arange(2,6): 
+    for segment_length in np.arange(3,6): 
         for player in players:
+            player_segments = []
             for i in np.arange(len(player)-segment_length+1):
-                segments.append([segment_length,player[i:i+segment_length]])
+                segment = player[i:i+segment_length]
+                if segment not in player_segments:
+                    segments.append([segment_length,segment])
+                    player_segments.append(segment)                
                 
     segdf = pd.DataFrame(segments, columns = ["segment", "chars"])#, index = range(len(segments)))
     sums = pd.DataFrame(segdf.groupby(["segment","chars"])["chars"].count())
     sums.columns = ["count"]
     sums = sums.reset_index()
     team_low_threshold = round(len(players)*.75) # minimum occurenses is 75% players must have this tag
-    team_high_threshold = round(len(players)+1) # number of occurences cannot be higher than number of players
+    team_high_threshold = round(len(players)) # number of occurences cannot be higher than number of players
     sums = sums[(sums["count"]< team_high_threshold) & (sums["count"] >= team_low_threshold)]
     if (len(sums) == 0): return ""
     sums["weight"] = sums["chars"].str.strip().str.len()*sums["count"]
@@ -66,10 +70,14 @@ def get_team_name(players):
     team_name_default = "No tag"
     temp = team_name_front(players)
     if (len(temp) > 0):
+        #print("Found tag " + temp + " using team_name_front function for:")
+        #print(players)
         return temp
     else:
         temp = team_name_chars(players)
         if (len(temp) > 0):
+            #print("Found tag " + temp + " using team_name_chars function for:")
+            #print(players)
             return temp
     return team_name_default
 
@@ -92,9 +100,10 @@ def add_team_name(stats_all):
         #print("passed")
         #stats_all["player_strip"]=""
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_name"] = allies_team_name
-        stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
+        #don't need captains anymore since using round guid
+        #stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_name"] = axis_team_name
-        stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_captain"]  = get_captain(stats_all, "Axis")
+        #stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_captain"]  = get_captain(stats_all, "Axis")
     return stats_all
 
 def get_round_guid_osp(osp_lines):
@@ -103,6 +112,8 @@ def get_round_guid_osp(osp_lines):
     
 def get_player_list(stats_all):
         #debug stats_all = statsdf[statsdf["round_order"]==1]
+        #print("got here")
+        #print(stats_all[["side",Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]])
         playerlisto = stats_all[stats_all["side"] == "Offense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]
         playerlisto_str = ["#".join(playerlisto[Const.STAT_BASE_KILLER]), playerlisto.iloc[0,1], "Offense"]
         playerlistd = stats_all[stats_all["side"] == "Defense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]

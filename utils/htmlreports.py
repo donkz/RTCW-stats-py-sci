@@ -6,7 +6,6 @@ from time import strftime
 
 from textsci.awards import Awards 
 from textsci.matchstats import MatchStats
-import os
 
 class HTMLReport:
     
@@ -21,9 +20,15 @@ class HTMLReport:
         kill_matrix_stats = matchstats.table_kill_matrix(result)
         basic_stats = matchstats.table_base_stats(result)
         match_results = matchstats.table_match_results(result)
-        #match_info_datetime = matchstats.match_info_datetime(result)
-        #table_map_list = matchstats.table_map_list(result)
         renames = matchstats.table_renames(result)
+        
+        self.metrics = matchstats.match_metrics(result)
+        
+        self.match_time = self.match_date = match_datetime = self.metrics["match_time"]
+        match_datetime_arr = match_datetime.split(" ")
+        if len(match_datetime_arr) > 1:
+            self.match_date = match_datetime_arr[0]
+            self.match_time = match_datetime_arr[1]
         
         self.match_results_html_table = self.match_results_to_html(match_results)
         self.basic_stats_html_table = self.all_stats_to_html(basic_stats)
@@ -34,6 +39,7 @@ class HTMLReport:
             self.renames_html_table = None
         else:   
             self.renames_html_table = self.renames_to_html(renames)
+        
        
              
     award_explanations = {
@@ -88,6 +94,8 @@ class HTMLReport:
         #<body>    
         body = Tag(soup, name = "body")
         soup.html.append(body)
+        soup.body.append(self.insert_header("Log file for a match from " + self.match_date,2))
+        soup.body.append(self.summary_text())
         soup.body.append(self.insert_header("Results",2))
         soup.body.append(self.match_results_html_table)
         soup.body.append(self.insert_header("Base stats",2))
@@ -120,6 +128,17 @@ class HTMLReport:
         header1["class"] = "header"
         header1.append(text)
         soup.append(header1)
+        return soup
+    
+    def summary_text(self):
+        soup = BeautifulSoup("","lxml")
+        text = Tag(soup, name = "p")
+        text["class"]="text"
+        content = "Match started at %s. Total of %s players played %s rounds on %s maps and murdered eachother %s times!" % (self.match_time, self.metrics["players_count"] , self.metrics["rounds_count"], self.metrics["maps_count"], self.metrics["kill_sum"])
+        
+        
+        text.append(content)
+        soup.append(text)
         return soup
         
     
@@ -285,7 +304,7 @@ class HTMLReport:
         team_2_score = 0
         r1fullhold = False
         
-        cols = ["#","map","Round",". . . Round Time . . .", "Team 1", "Winner","Score", "Team 2", "Format"]
+        cols = ["#","map","Round",". . . Round Time . . .", "Team 1", "Winner","Score", "Team 2", "Format", "Match Time"]
         
         for col in cols:
             th = Tag(soup, name = "th")
@@ -391,6 +410,11 @@ class HTMLReport:
             td.string = str(t1size) + "v" + str(t2size)
             tr.append(td)
             
+            td = Tag(soup, name = 'td')
+            #print(row["match_date"])
+            td.string = row["match_date"].split(" ")[1] if len(row["match_date"].split(" ")) >1 else row["match_date"]
+            tr.append(td)
+            
             #Finish row
             table.append(tr)
     
@@ -425,6 +449,10 @@ class HTMLReport:
         
     
     style_css = """
+    .text {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 12px;
+    }
     .versuslt1 {
       font-weight: bold;
     }
@@ -552,5 +580,5 @@ class HTMLReport:
 
 
 #debug execution
-#h = HTMLReport(results)
+#h = HTMLReport(result[0])
 #h.report_to_html("a.html")

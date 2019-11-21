@@ -30,11 +30,13 @@ r".\test_samples\rtcwconsole-2019-10-10.log",
 r".\test_samples\rtcwconsole-2019-10-17.log",
 r".\test_samples\rtcwconsole-2019-10-24.log",
 r".\test_samples\rtcwconsoleOct28.log",
-#r".\test_samples\rtcwconsole-MNF-2019-11-05.log",
-r".\test_samples\rtcwconsole-2019-11-07.log"
+r".\test_samples\rtcwconsole-MNF-2019-11-05 - clean.log",
+r".\test_samples\rtcwconsole-2019-11-07.log",
+r".\test_samples\rtcwconsole-2019-11-14.log",
+r".\test_samples\rtcwconsoleNov19.log"
 ]
 
-#just pick one for debugging
+#just pick last one for debugging
 stat_files = stat_files[-1:]
 
 results = []
@@ -43,15 +45,17 @@ for read_file in stat_files:
     result = processor.process_log()
     results.append(result)
     index = str(len(results) -1)
+    #print(result["stats"][['OSP_Player', 'player_strip', 'team_name','Killer']].drop_duplicates())
     print(f'Processed file: {read_file} into results[{index}]')
 
-results = results[-1] #temporary
-    
-if (1==2) and results is not None:
-    logdf = results["logdf"]
-    statsdf= results["stats"]
-    matchesdf = results["matchesdf"]
-    renamedf = results["renamedf"]
+
+
+if (1==1) and results is not None:   
+    result_last = results[-1] #temporary
+    logdf = result_last["logdf"]
+    statsdf= result_last["stats"]
+    matchesdf = result_last["matchesdf"]
+    renamedf = result_last["renamedf"]
 
 if(1==2): #manual execution
     logdf.to_csv(r"./test_samples/result_client_log.csv", index=False)
@@ -59,8 +63,32 @@ if(1==2): #manual execution
     matchesdf.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
 
 #debug execution
-html_report = HTMLReport(results)
+html_report = HTMLReport(result_last)
 html_report.report_to_html(r".\test_samples\html_report.html")
 
 
-            
+
+'''
+r".\test_samples\rtcwconsole-2019-11-07.log"
+
+Proccessed round 1  winner Allies on Ice        . Events: 284   . Players: 16
+Proccessed round 2  winner Axis   on Ice        . Events: 206   . Players: 16
+Proccessed round 3  winner Allies on Base       . Events: 83    . Players: 16
+Proccessed round 4  winner Axis   on Base       . Events: 82    . Players: 16
+WARNING: Multiple objectives related to maps: Counter({'te_frostbite': 8, 'mp_beach': 1})
+Proccessed round 5  winner Allies on Frostbite  . Events: 54    . Players: 16
+WARNING: Multiple objectives related to maps: Counter({'te_frostbite': 2, 'mp_beach': 1})
+Proccessed round 6  winner Allies on Frostbite  . Events: 38    . Players: 16
+Proccessed round 7  winner Allies on Village    . Events: 143   . Players: 16
+Proccessed round 8  winner Axis   on Village    . Events: 145   . Players: 16
+Proccessed round 9  winner Axis   on Beach      . Events: 185   . Players: 16
+Proccessed round 10 winner Allies on Beach      . Events: 120   . Players: 16
+Proccessed round 11 winner Allies on Chateau    . Events: 95    . Players: 14
+Proccessed round 12 winner Axis   on Chateau    . Events: 96    . Players: 14
+Proccessed round 13 winner Axis   on Ice        . Events: 130   . Players: 11
+Proccessed round 14 winner Axis   on Ice        . Events: 86    . Players: 11
+Proccessed round 15 winner Allies on Ice        . Events: 162   . Players: 10
+Proccessed round 16 winner Axis   on Ice        . Events: 54    . Players: 10
+'''
+
+      

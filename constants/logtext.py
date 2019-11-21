@@ -1,3 +1,9 @@
+'''
+This class contains constants- strings, arrays, columns specific to RTCW and this application
+Note: map constants are in maps.py
+'''
+
+
 class Const:
     
     EVENT_LOGFILE_TIMESTAMP = "timestamp"
@@ -17,6 +23,8 @@ class Const:
     
     EVENT_OBJECTIVE = "Objective"
     EVENT_CHAT = "Chat"
+    EVENT_TEAM_CHAT = "Team Chat"
+    EVENT_VSAY_CHAT = "Vsay chat"
     EVENT_CALLVOTE = "Callvote"
     EVENT_KICK = "Kick"
     EVENT_START = "Start"
@@ -40,8 +48,10 @@ class Const:
     CONSOLE_PASSWORD_REF =  "Ref password"
     CONSOLE_PASSWORD_SERVER = "Server password"
     
-    
-    
+    EVENT_DATETIME_OSP_MAP_LOAD = "Datetime OSP"
+    EVENT_DATETIME_SCREENSHOT = "Screenshot"
+    EVENT_DATETIME_DEMO = "Record demo"
+    EVENT_DATETIME_OSP_SAVE_STATS = "OSP file"
     
     WEAPON_GRENADE = "Grenade"
     WEAPON_PANZER = "Panzerfaust"
@@ -67,6 +77,9 @@ class Const:
     STAT_BASE_TKd = "TKd"
     STAT_BASE_SUI = "Suicides"
     STAT_BASE_ALLDEATHS = "All_Deaths"
+    
+    NEW_COL_MATCH_DATE = "match_date"
+    
     
     #                                Kll Dth Sui TK Eff Gib DG    DR      TD  Score
     #line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
@@ -127,7 +140,6 @@ class Const:
             ["teamkill", "^\[skipnotify\](.*) WAS KILLED BY TEAMMATE (.*)",EVENT_TEAMKILL, "None", True],
             ["suicide","^\[skipnotify\](.*) killed himself",EVENT_SUICIDE, EVENT_MOD_SLASHKILL, True],
             ["info","^\[skipnotify\]\*\*\* INFO: (.*)",EVENT_OBJECTIVE, "", False],
-            ["teamchat", "^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
             ["vote", "^\[skipnotify\](.*) called a vote", EVENT_CALLVOTE,"", False],
             ["kick", "^\[skipnotify\](.*) player kicked", EVENT_KICK,"", False],
             ["fightline", "^\[skipnotify\]FIGHT\!(.*)",EVENT_START,"",False],
@@ -147,10 +159,19 @@ class Const:
             ["clocklostosp", "^\[skipnotify\]>>> Objective reached at (.*) \(original: (.*)\)",EVENT_OSP_REACHED, "", False],
             #file info
             ["logdate","^logfile opened on(.*)", EVENT_LOGFILE_TIMESTAMP, "", False],
-            #chats
-            ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_CHAT,"", False],
+                        
+            #timestamps
+            ["osploadtime", "^\[skipnotify\]Current time: (.*)",EVENT_DATETIME_OSP_MAP_LOAD, "", False],
+            ["ospdemotime", "^Match starting...recording to (.*)", EVENT_DATETIME_DEMO,"", False],
+            ["ospstattime", "^>>> Stats recorded to: (.*)", EVENT_DATETIME_OSP_SAVE_STATS,"", False],
+            ["ospjpegtime", "^Wrote screenshots(.*)", EVENT_DATETIME_SCREENSHOT,"", False],
+            
+            #chats must be below everything because they match just about anything
+            ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_TEAM_CHAT,"", False],
+            ["vsay","^\[skipnotify\]\: \((.*)\)\: (.*)", EVENT_VSAY_CHAT,"", False],
             ["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False],
             
+            #dont pass passwords further down stream
             ["passwordserv","^\]\/password (.*)", CONSOLE_PASSWORD_SERVER,"", False],
             ["passwordref","^\]\/ref (.*)", CONSOLE_PASSWORD_REF,"", False],
             ["passwordrcon","^\]\/rconpassword (.*)", CONSOLE_PASSWORD_RCON,"", False]

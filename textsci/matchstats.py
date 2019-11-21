@@ -1,18 +1,33 @@
 from constants.logtext import Const 
 import pandas as pd
-
+import numpy as np
 
 class MatchStats:
     #debug data = results
     
+    def match_metrics(self, data):
+        matches_dataframe     = data["matchesdf"]
+        event_lines_dataframe = data["logdf"]
+        sum_lines_dataframe   = data["stats"]
+        
+        metrics = {}
+        metrics["players_count"] = len(sum_lines_dataframe.index.unique())
+        metrics["match_time"] = matches_dataframe[Const.NEW_COL_MATCH_DATE].min()
+        metrics["rounds_count"] = matches_dataframe["round_order"].max()
+        metrics["maps_count"] = len(matches_dataframe["map"].unique())
+        metrics["kill_sum"] = int(sum_lines_dataframe["Kills"].sum())  
+        
+        return metrics
+    
     def match_info_datetime(self,data):
         matches_dataframe     = data["matchesdf"]
-        time_of_the_match = matches_dataframe[0:1][['log_date']].values[0][0]
+        #time_of_the_match = matches_dataframe[0:1][['match_date']].values[0][0]
+        time_of_the_match = matches_dataframe[Const.NEW_COL_MATCH_DATE].min()
         return time_of_the_match
     
     def table_match_results(self, data):
         matches_dataframe     = data["matchesdf"]
-        temp = matches_dataframe[['round_order','map', 'round_num','round_diff', 'round_time', 'winner', 'players']]      
+        temp = matches_dataframe[['round_order','map', 'round_num','round_diff', 'round_time', 'winner', 'players', 'match_date']]      
         return [temp,""]
     
     '''
@@ -82,7 +97,7 @@ class MatchStats:
         stats_all_sum["KDR"] = (stats_all_sum[Const.STAT_BASE_KILL]/stats_all_sum[Const.STAT_BASE_DEATHS]).round(1)
         stats_all_sum["KPR"] = (stats_all_sum[Const.STAT_BASE_KILL]/stats_all_sum["Rounds"]).round(1)
         stats_all_sum["DPR"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG]/stats_all_sum["Rounds"]).astype(int)
-        stats_all_sum["DPF"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG]/stats_all_sum[Const.STAT_BASE_KILL]).astype(int)
+        stats_all_sum["DPF"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG]/stats_all_sum[Const.STAT_BASE_KILL]).replace([np.inf, -np.inf], 999).astype(int)
         
         
         #columns = [Const.STAT_BASE_KILL, Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS, Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]

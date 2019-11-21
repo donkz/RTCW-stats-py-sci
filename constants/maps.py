@@ -159,6 +159,15 @@ class ConstMap:
                       [O_OBJ,"Allies have gained entry into the Chateau."],
                       [O_PLANT, "Dynamite planted near the Main Door!"], 
                       [O_PLANT, "Dynamite planted near the Cellar Door!"]
+                    ],
+            "te_nordic_beta" : [
+                      [O_WIN,"Allies have transmitted the generator plans!"],
+                      [D_FLAG, "Axis reclaim the forward deployment area!"],
+                      [O_FLAG,"Allies capture the forward deployment area!"],
+                      [O_OBJ,"The main gate has been breached!"],
+                      [O_OBJ,"The NOT SO main gate has been breached!"],  # TODO: whats the little door called
+                      [O_PLANT, "Dynamite planted near the Main Gate!"], 
+                      [O_PLANT, "Dynamite planted near the NOT SO MAIN Main Gate!"] # TODO: whats the little door called
                     ]
             #TODO: church, ?
             }
@@ -182,7 +191,9 @@ class ConstMap:
         maps["mp_assault"] =       RTCWMap("mp_assault",       "Assault",     self.map_announce["mp_assault"],       self.G_ALLIES, self.G_AXIS,   10,    "")
         maps["mp_password"] =      RTCWMap("mp_password",      "Password",    self.map_announce["mp_password"],      self.G_AXIS,   self.G_ALLIES, 12,    "the Endoarm")
         maps["mp_chateau"] =       RTCWMap("mp_chateau",       "Chateau",     self.map_announce["mp_chateau"],       self.G_AXIS,   self.G_ALLIES, 10,    "the Top Secret Documents!") #"the War Documents" also shows up mid-game on chateau although it shouldnt
+        maps["te_nordic_beta"] =   RTCWMap("te_nordic_beta",   "Tunordic",    self.map_announce["te_nordic_beta"],   self.G_AXIS,   self.G_ALLIES, 12,    "the Generator Plans")    #TODO: check timelimit
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
+        
         
         #each map will have additional objective likes related to stoled and returned objectives
         for mapname, map_ in maps.items():
