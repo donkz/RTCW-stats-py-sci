@@ -35,6 +35,11 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         
+        x = self.award_megakill(event_lines_dataframe)
+        awardsdf = awardsdf.join(x)
+        columns.append(x.columns[0])
+        columns.append(x.columns[1])
+        
         x = self.award_death_streak(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
@@ -73,9 +78,7 @@ class Awards:
         x = self.award_most_wins(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
-        columns.append(x.columns[1])
-        
-        
+        columns.append(x.columns[1])        
         
         awardsdf['Pack5'] = awardsdf['Pack5'].fillna(0).astype(int)
         awardsdf['Blownup'] = awardsdf['Blownup'].fillna(0).astype(int)
@@ -83,6 +86,7 @@ class Awards:
         awardsdf['Holds'] = awardsdf['Holds'].fillna(0).astype(int)
         awardsdf['Caps'] = awardsdf['Caps'].fillna(0).astype(int)
         awardsdf['Wins'] = awardsdf['Wins'].fillna(0).astype(int)
+        awardsdf['MegaKill'] = awardsdf['MegaKill'].fillna(0).astype(int)
         pd.options.display.float_format = '{:,.2f}'.format
         
         ranks = [name for name in awardsdf.columns if "_rank" in name]
@@ -154,6 +158,19 @@ class Awards:
         result = temp["victim"].value_counts().to_frame()
         result.columns = ["Blownup"]
         result["Blownup_rank"] = 0  
+        return result
+    
+    '''
+    Megakill award
+    Determine the killing spree that happened in an instance
+    '''
+    def award_megakill(self,event_lines_dataframe):
+        #count killers repeating in succession
+        event_lines_dataframe["count"] = event_lines_dataframe.groupby((event_lines_dataframe['killer'] != event_lines_dataframe['killer'].shift(1)).cumsum()).cumcount()+1
+        #select max kills for each player
+        result = event_lines_dataframe[event_lines_dataframe["event"] == "kill"].groupby("killer")["count"].max().to_frame()
+        result.columns = ["MegaKill"]
+        result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
         return result
     
     '''

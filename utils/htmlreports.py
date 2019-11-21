@@ -54,7 +54,8 @@ class HTMLReport:
             "Holds"       : "Held the time on defense",
             "AdjScore"    : "Objective Score (Total minus kills, TKs, and deaths)",
             "Pack5"       : "5 kills without dying",
-            "RankPts"    : "Total rank for the match",
+            "RankPts"     : "Total rank for the match",
+            "MegaKill"    : "Number of kills player done at once"
             }
     
     

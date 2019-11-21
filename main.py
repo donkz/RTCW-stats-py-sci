@@ -11,7 +11,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #expan viewing area for pandas datasets (visual inspection only)
-pd.set_option("display.max_rows",40)
+pd.set_option("display.max_rows",240)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.width",300)
 
@@ -92,3 +92,5 @@ Proccessed round 16 winner Axis   on Ice        . Events: 54    . Players: 10
 '''
 
       
+#logdf["count"] = logdf.groupby((logdf['killer'] != logdf['killer'].shift(1)).cumsum()).cumcount()+1
+#logdf[(logdf["event"] == "kill") & (logdf["count"] > 4)]
