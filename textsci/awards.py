@@ -6,7 +6,7 @@ import pandas as pd
 class Awards:
     
     def collect_awards(self, data):
-        event_lines_dataframe = data["logdf"]
+        event_lines_dataframe = data["logs"]
         sum_lines_dataframe   = data["stats"]
         #matches_dataframe     = data["matchesdf"]
         

@@ -31,3 +31,7 @@ __pycache__/
 # debug file
 test_samples/testfile.txt
 
+
+# output working files
+output/
+

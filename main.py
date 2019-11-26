@@ -2,6 +2,7 @@ import os
 import pandas as pd
 
 from processfile import FileProcessor
+from statswriter import StatsWriter
 from utils.htmlreports import HTMLReport
 
 #set relative path
@@ -33,7 +34,8 @@ r".\test_samples\rtcwconsoleOct28.log",
 r".\test_samples\rtcwconsole-MNF-2019-11-05 - clean.log",
 r".\test_samples\rtcwconsole-2019-11-07.log",
 r".\test_samples\rtcwconsole-2019-11-14.log",
-r".\test_samples\rtcwconsoleNov19.log"
+r".\test_samples\rtcwconsoleNov19.log",
+r".\test_samples\rtcwconsoleNov25.log"
 ]
 
 #just pick last one for debugging
@@ -43,24 +45,26 @@ results = []
 for read_file in stat_files:
     processor = FileProcessor(read_file, debug_file)
     result = processor.process_log()
+    
+    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+    writer.write_results(result)
+    
     results.append(result)
     index = str(len(results) -1)
     #print(result["stats"][['OSP_Player', 'player_strip', 'team_name','Killer']].drop_duplicates())
     print(f'Processed file: {read_file} into results[{index}]')
 
-
-
 if (1==1) and results is not None:   
     result_last = results[-1] #temporary
-    logdf = result_last["logdf"]
-    statsdf= result_last["stats"]
-    matchesdf = result_last["matchesdf"]
-    renamedf = result_last["renamedf"]
+    logs = result_last["logs"]
+    stats= result_last["stats"]
+    matches = result_last["matches"]
+    renames = result_last["renames"]
 
 if(1==2): #manual execution
-    logdf.to_csv(r"./test_samples/result_client_log.csv", index=False)
-    statsdf.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
-    matchesdf.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
+    logs.to_csv(r"./test_samples/result_client_log.csv", index=False)
+    stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
+    matches.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
 
 #debug execution
 html_report = HTMLReport(result_last)

@@ -168,8 +168,23 @@ class ConstMap:
                       [O_OBJ,"The NOT SO main gate has been breached!"],  # TODO: whats the little door called
                       [O_PLANT, "Dynamite planted near the Main Gate!"], 
                       [O_PLANT, "Dynamite planted near the NOT SO MAIN Main Gate!"] # TODO: whats the little door called
+                    ],
+            "mp_rocket" : [
+                      [O_WIN,"Override console been used, rocket launch aborted!"],
+                      [D_FLAG,"Axis reclaims the First Cave!"],
+                      [O_FLAG,"Allies capture the First Cave!"],
+                      [O_OBJ,"Allies have broken through train tunnel cave in!"],
+                      [O_OBJ,"Two doors one break?"], # TODO: what happens when The Upper Rocket Bay Door blows
+                      [O_PLANT, "Dynamite planted near The Upper Rocket Bay Door!"],
+                      [O_PLANT, "Dynamite planted near Tunnel Rubble!"]
+                    ],
+            "mml_church_v1" : [
+                      [O_WIN,"Axis have escaped with the Relic"],
+                      [O_FLAG,"The Allied Alarm is off"],
+                      [D_FLAG,"The Allied Alarm is on"],
+                      [O_OBJ,"Axis have blown open the Side Door"],
+                      [O_PLANT, "Dynamite planted near the Side Door!"]
                     ]
-            #TODO: church, ?
             }
     
     '''
@@ -177,21 +192,23 @@ class ConstMap:
     '''
     def load_maps(self):
         maps = {}
-        #                                  code,                name,         announcements from above               defense,       offense,    timelimit  Objective name
+        #                                  code,                name,         announcements from above               defense,       offense,    timelimit  Objective name without exclamation mark
         maps["mp_ice"] =           RTCWMap("mp_ice",           "Ice",         self.map_announce["mp_ice"],           self.G_ALLIES, self.G_AXIS,   10,   "Allied Documents")
-        maps["axis_complex"] =     RTCWMap("axis_complex",     "Axis Complex",self.map_announce["axis_complex"],     self.G_AXIS,   self.G_ALLIES, 10,   "The Decoder Manual")     #TODO: check timelimit
-        maps["te_escape"] =        RTCWMap("te_escape",        "Escape",      self.map_announce["te_escape"],        self.G_AXIS,   self.G_ALLIES, 10,   "the Unholy Grail")       #TODO: check timelimit
+        maps["axis_complex"] =     RTCWMap("axis_complex",     "Axis Complex",self.map_announce["axis_complex"],     self.G_AXIS,   self.G_ALLIES, 10,   "The Decoder Manual")      #TODO: check timelimit
+        maps["te_escape"] =        RTCWMap("te_escape",        "Escape",      self.map_announce["te_escape"],        self.G_AXIS,   self.G_ALLIES, 10,   "the Unholy Grail")       
         maps["te_ufo"] =           RTCWMap("te_ufo",           "UFO",         self.map_announce["te_ufo"],           self.G_AXIS,   self.G_ALLIES, 12,   "The UFO Documents")
         maps["te_frostbite"] =     RTCWMap("te_frostbite",     "Frostbite",   self.map_announce["te_frostbite"],     self.G_AXIS,   self.G_ALLIES, 10,   "the War Documents")
         maps["mp_village"] =       RTCWMap("mp_village",       "Village",     self.map_announce["mp_village"],       self.G_AXIS,   self.G_ALLIES, 10,   "the Gold")
-        maps["mp_beach"] =         RTCWMap("mp_beach",         "Beach",       self.map_announce["mp_beach"],         self.G_AXIS,   self.G_ALLIES, 8,    "the War Documents")      # same as frostbite
+        maps["mp_beach"] =         RTCWMap("mp_beach",         "Beach",       self.map_announce["mp_beach"],         self.G_AXIS,   self.G_ALLIES, 8,    "the War Documents")       # objective name same as frostbite
         maps["mp_sub"] =           RTCWMap("mp_sub",           "Sub",         self.map_announce["mp_sub"],           self.G_AXIS,   self.G_ALLIES, 12,    "")
         maps["mp_base"] =          RTCWMap("mp_base",          "Base",        self.map_announce["mp_base"],          self.G_AXIS,   self.G_ALLIES, 15,    "")
         maps["tundra_rush_beta"] = RTCWMap("tundra_rush_beta", "Tundra",      self.map_announce["tundra_rush_beta"], self.G_AXIS,   self.G_ALLIES, 12,    "The Docs")
         maps["mp_assault"] =       RTCWMap("mp_assault",       "Assault",     self.map_announce["mp_assault"],       self.G_ALLIES, self.G_AXIS,   10,    "")
         maps["mp_password"] =      RTCWMap("mp_password",      "Password",    self.map_announce["mp_password"],      self.G_AXIS,   self.G_ALLIES, 12,    "the Endoarm")
-        maps["mp_chateau"] =       RTCWMap("mp_chateau",       "Chateau",     self.map_announce["mp_chateau"],       self.G_AXIS,   self.G_ALLIES, 10,    "the Top Secret Documents!") #"the War Documents" also shows up mid-game on chateau although it shouldnt
-        maps["te_nordic_beta"] =   RTCWMap("te_nordic_beta",   "Tunordic",    self.map_announce["te_nordic_beta"],   self.G_AXIS,   self.G_ALLIES, 12,    "the Generator Plans")    #TODO: check timelimit
+        maps["mp_chateau"] =       RTCWMap("mp_chateau",       "Chateau",     self.map_announce["mp_chateau"],       self.G_AXIS,   self.G_ALLIES, 10,    "the Top Secret Documents!") #"the War Documents" also shows up mid-game on chateau although it shouldn't!
+        maps["te_nordic_beta"] =   RTCWMap("te_nordic_beta",   "Tunordic",    self.map_announce["te_nordic_beta"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Generator Plans")
+        maps["mp_rocket"] =        RTCWMap("mp_rocket",        "Rocket",      self.map_announce["mp_rocket"],        self.G_AXIS,   self.G_ALLIES, 12,    "Override Key")         
+        maps["mml_church_v1"] =    RTCWMap("mml_church_v1",    "Church",      self.map_announce["mml_church_v1"],    self.G_ALLIES, self.G_AXIS,   10,    "the Holy Relic")      
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         

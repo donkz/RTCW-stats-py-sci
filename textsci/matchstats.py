@@ -6,8 +6,8 @@ class MatchStats:
     #debug data = results
     
     def match_metrics(self, data):
-        matches_dataframe     = data["matchesdf"]
-        event_lines_dataframe = data["logdf"]
+        matches_dataframe     = data["matches"]
+        #event_lines_dataframe = data["logs"]
         sum_lines_dataframe   = data["stats"]
         
         metrics = {}
@@ -20,13 +20,13 @@ class MatchStats:
         return metrics
     
     def match_info_datetime(self,data):
-        matches_dataframe     = data["matchesdf"]
+        matches_dataframe     = data["matches"]
         #time_of_the_match = matches_dataframe[0:1][['match_date']].values[0][0]
         time_of_the_match = matches_dataframe[Const.NEW_COL_MATCH_DATE].min()
         return time_of_the_match
     
     def table_match_results(self, data):
-        matches_dataframe     = data["matchesdf"]
+        matches_dataframe     = data["matches"]
         temp = matches_dataframe[['round_order','map', 'round_num','round_diff', 'round_time', 'winner', 'players', 'match_date']]      
         return [temp,""]
     
@@ -48,12 +48,12 @@ class MatchStats:
         return [result, ""]
     
     def table_renames(self,data):
-        result = data["renamedf"]
+        result = data["renames"]
         return [result, ""]
         
         
     def table_player_joins(self, data):
-        event_lines_dataframe = data["logdf"]
+        event_lines_dataframe = data["logs"]
         temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")][["line_order", "killer", "victim"]]
         temp2 = (temp[["killer", "line_order"]].rename(columns={"killer": "player"})).append(temp[["victim", "line_order"]].rename(columns={"victim": "player"}))
         playermax = temp2.groupby("player").max().sort_values("line_order")["line_order"]
@@ -69,7 +69,7 @@ class MatchStats:
     Kill matrix (who killed who how many times)
     '''
     def table_kill_matrix(self, data):
-        event_lines_dataframe = data["logdf"]
+        event_lines_dataframe = data["logs"]
         kill_matrix = event_lines_dataframe[event_lines_dataframe.event.isin(["kill","Team kill"])].groupby(["killer","victim"]).count().reset_index().pivot(index = "killer", columns = "victim", values = "event").fillna(0)
         kill_matrix_rank = kill_matrix.rank(method="min", ascending=False, axis = 1)
         result = kill_matrix.join(kill_matrix_rank, rsuffix = "_rank")
@@ -111,7 +111,7 @@ class MatchStats:
     Weapon count awards
     '''
     def table_weapon_counts(self,data):
-        event_lines_dataframe = data["logdf"]
+        event_lines_dataframe = data["logs"]
         #sum_lines_dataframe   = data["stats"]
         #matches_dataframe     = data["matchesdf"]
         temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]

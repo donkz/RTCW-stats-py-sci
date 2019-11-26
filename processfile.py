@@ -235,6 +235,7 @@ class FileProcessor:
                     #x[1] = '20:54:01 (24 Oct 2019)'
                     if value.event == Const.EVENT_DATETIME_SCREENSHOT:
                         osp_jpeg_date = x[1].split("/")[1]
+                        temp_time = x[1].split("/")[2]
                         osp_jpeg_time = temp_time[0:2] + ":" + temp_time[2:4] + ":" + temp_time[4:6]          
                         break
                     
@@ -425,10 +426,13 @@ class FileProcessor:
                         #insert map name into stats dataset
                         if(map_code == None):
                             print("WARNING: Map not found")
+                            map_name = "unknown"
                         else:
                             tmp_map = map_class.maps[map_code]
-                            tmp_stats_all["map"] = tmp_map.name
-                            new_match_line.map = tmp_map.name
+                            map_name = tmp_map.name
+                        
+                        tmp_stats_all["map"] = map_name
+                        new_match_line.map = map_name
                         
                         #Recalculated scores (substract kills and suicides)
                         tmp_stats_all[Const.STAT_POST_ADJSCORE] = tmp_stats_all[Const.STAT_OSP_SUM_SCORE].fillna(0).astype(int) - tmp_stats_all[Const.STAT_BASE_KILL].fillna(0).astype(int) + tmp_stats_all[Const.STAT_BASE_SUI].fillna(0).astype(int)*3 + tmp_stats_all[Const.STAT_BASE_TK].fillna(0).astype(int)*3
@@ -498,7 +502,7 @@ class FileProcessor:
                         new_match_line.osp_guid = osp_guid
                         
                         if osp_demo_date is not None:
-                            round_datetime = osp_demo_date + " " + osp_map_time
+                            round_datetime = osp_demo_date + " " + osp_demo_time
                         elif osp_map_date is not None: 
                             round_datetime = osp_map_date + " " + osp_map_time
                         elif osp_stats_date is not None: 
@@ -630,7 +634,7 @@ class FileProcessor:
             
             time_end_process_log = _time.time()
             print ("Time to process " + self.read_file + " is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
-            return {"logdf":logdf, "stats":stats_all, "matchesdf":matchesdf, "renamedf" : renameDF}
+            return {"logs":logdf, "stats":stats_all, "matches":matchesdf, "renames" : renameDF}
             
         
         
