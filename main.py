@@ -11,7 +11,7 @@ import sys
 if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
-#expan viewing area for pandas datasets (visual inspection only)
+#expand viewing area for pandas datasets (visual inspection only)
 pd.set_option("display.max_rows",240)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.width",300)

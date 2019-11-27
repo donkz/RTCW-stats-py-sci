@@ -23,6 +23,10 @@ class StatsWriter:
     
     def write_results(self, array):
         """Class2 method docstrings go here."""
+        
+        if not os.path.exists(self.filepath):
+                    os.mkdir(self.filepath)
+                    
         for dataset in array:
             if dataset in ["logs", "stats", "matches"]:
                 tmp = array[dataset]
