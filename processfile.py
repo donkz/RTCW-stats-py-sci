@@ -408,8 +408,13 @@ class FileProcessor:
                         
                         if(len(map_counter) == 0):
                             map_code = None
+                            map_name = "unknown"
+                            tmp_map = map_class.maps["anymap"]
                         else:
                             map_code = map_counter.most_common(1)[0][0]
+                            tmp_map = map_class.maps[map_code]
+                            map_name = tmp_map.name
+                            
                         map_counter = Counter() #reset it
                         
                         #round up all events and join them with OSP
@@ -423,16 +428,8 @@ class FileProcessor:
                         tmp_stats_all["osp_guid"] = osp_guid
                         tmp_stats_all["round_num"] = new_match_line.round_num
                         
-                        #insert map name into stats dataset
-                        if(map_code == None):
-                            print("WARNING: Map not found")
-                            map_name = "unknown"
-                        else:
-                            tmp_map = map_class.maps[map_code]
-                            map_name = tmp_map.name
-                        
                         tmp_stats_all["map"] = map_name
-                        new_match_line.map = map_name
+                        new_match_line.map = map_name 
                         
                         #Recalculated scores (substract kills and suicides)
                         tmp_stats_all[Const.STAT_POST_ADJSCORE] = tmp_stats_all[Const.STAT_OSP_SUM_SCORE].fillna(0).astype(int) - tmp_stats_all[Const.STAT_BASE_KILL].fillna(0).astype(int) + tmp_stats_all[Const.STAT_BASE_SUI].fillna(0).astype(int)*3 + tmp_stats_all[Const.STAT_BASE_TK].fillna(0).astype(int)*3

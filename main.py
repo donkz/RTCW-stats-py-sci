@@ -35,7 +35,8 @@ r".\test_samples\rtcwconsole-MNF-2019-11-05 - clean.log",
 r".\test_samples\rtcwconsole-2019-11-07.log",
 r".\test_samples\rtcwconsole-2019-11-14.log",
 r".\test_samples\rtcwconsoleNov19.log",
-r".\test_samples\rtcwconsoleNov25.log"
+r".\test_samples\rtcwconsoleNov25.log",
+r".\test_samples\rtcwconsole-2019-12-10.log"
 ]
 
 #just pick last one for debugging
