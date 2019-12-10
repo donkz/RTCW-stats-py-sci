@@ -566,6 +566,8 @@ class FileProcessor:
                         else:
                             if ("the War Documents" in x[1]):
                                 "This objective repeats in various maps so we are going to skip it"
+                            elif ("Axis have returned the objective!" in x[1]):
+                                "Generic message , skip it"
                             else:
                                 print("---------------Unknown objective: ".ljust(20) + x[1])
                     else:

@@ -141,6 +141,12 @@ class ConstMap:
                       #[O_PLANT, ""],
                       #[O_PLANT, ""]
                     ],
+            "te_pacific2" : [
+                      [O_WIN,"Allied team has disabled the Radar Array!"],
+                      [O_OBJ,"Allied team has destroyed the Barricade"],
+                      [O_PLANT, "Dynamite planted near the Radar Array!"],
+                      [O_PLANT, "Dynamite planted near the Security Wall!"]
+                    ],
             "mp_password" : [
                       [O_WIN,"Allies escaped with the Endoarm!"],
                       [D_FLAG,"Axis reclaims the Service Halls!"],
@@ -209,6 +215,7 @@ class ConstMap:
         maps["te_nordic_beta"] =   RTCWMap("te_nordic_beta",   "Tunordic",    self.map_announce["te_nordic_beta"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Generator Plans")
         maps["mp_rocket"] =        RTCWMap("mp_rocket",        "Rocket",      self.map_announce["mp_rocket"],        self.G_AXIS,   self.G_ALLIES, 12,    "Override Key")         
         maps["mml_church_v1"] =    RTCWMap("mml_church_v1",    "Church",      self.map_announce["mml_church_v1"],    self.G_ALLIES, self.G_AXIS,   10,    "the Holy Relic")      
+        maps["te_pacific2"] =      RTCWMap("te_pacific2",      "Pacific",     self.map_announce["te_pacific2"],      self.G_AXIS,   self.G_ALLIES,  8,    "")      
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         
