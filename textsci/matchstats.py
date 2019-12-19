@@ -21,7 +21,6 @@ class MatchStats:
     
     def match_info_datetime(self,data):
         matches_dataframe     = data["matches"]
-        #time_of_the_match = matches_dataframe[0:1][['match_date']].values[0][0]
         time_of_the_match = matches_dataframe[Const.NEW_COL_MATCH_DATE].min()
         return time_of_the_match
     

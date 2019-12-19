@@ -1,8 +1,9 @@
 import os
+import datetime
 import pandas as pd
 
-from processfile import FileProcessor
 from statswriter import StatsWriter
+from processfile import FileProcessor
 from utils.htmlreports import HTMLReport
 
 #set relative path
@@ -12,7 +13,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #expand viewing area for pandas datasets (visual inspection only)
-pd.set_option("display.max_rows",240)
+pd.set_option("display.max_rows",20)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.width",300)
 
@@ -47,29 +48,44 @@ for read_file in stat_files:
     processor = FileProcessor(read_file, debug_file)
     result = processor.process_log()
     
-    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
-    writer.write_results(result)
-    
+    #writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+    #writer.write_results(result)
+      
     results.append(result)
     index = str(len(results) -1)
     #print(result["stats"][['OSP_Player', 'player_strip', 'team_name','Killer']].drop_duplicates())
     print(f'Processed file: {read_file} into results[{index}]')
 
-if (1==1) and results is not None:   
-    result_last = results[-1] #temporary
-    logs = result_last["logs"]
-    stats= result_last["stats"]
-    matches = result_last["matches"]
-    renames = result_last["renames"]
+for result in results:
+    html_report = HTMLReport(result)
+    try:
+        date = result["matches"]["match_date"].min().split(" ")[0]
+    except: 
+        date = datetime.datetime.today().strftime('%Y-%m-%d')
+    #html_report.report_to_html(r".\test_samples\stats-" + date + ".html")
+    html_report.report_to_html()
+
+
 
 if(1==2): #manual execution
+    for result in results:
+        try:
+            logs
+            stats
+            matches
+        except NameError:
+            logs = result["logs"]
+            stats = result["stats"]
+            matches = result["matches"]
+        else:
+            logs = logs.append(result["logs"])
+            stats = stats.append(result["stats"])
+            matches = matches.append(result["matches"])
+            
     logs.to_csv(r"./test_samples/result_client_log.csv", index=False)
     stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
     matches.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
 
-#debug execution
-html_report = HTMLReport(result_last)
-html_report.report_to_html(r".\test_samples\html_report.html")
 
 
 

@@ -35,3 +35,6 @@ test_samples/testfile.txt
 # output working files
 output/
 
+# vscode settings
+.vscode/
+
