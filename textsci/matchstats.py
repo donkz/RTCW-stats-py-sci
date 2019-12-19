@@ -47,7 +47,11 @@ class MatchStats:
         return [result, ""]
     
     def table_renames(self,data):
-        result = data["renames"]
+        try:
+            result = data["renames"]
+        except: 
+            result = None
+            
         return [result, ""]
         
         

@@ -7,6 +7,9 @@ from time import strftime
 from textsci.awards import Awards 
 from textsci.matchstats import MatchStats
 
+from datetime import datetime
+import hashlib
+
 class HTMLReport:
     
     def __init__(self, single_result):
@@ -60,12 +63,7 @@ class HTMLReport:
     
     
     def report_to_html(self,*argv):
-        
-        if len(argv) == 0:
-            outfile ="html_report.html"
-        else:
-            outfile = argv[0]
-            
+
         soup = BeautifulSoup("","lxml")
         
         #<html>
@@ -117,6 +115,11 @@ class HTMLReport:
         script_jq.append(self.jquery_sort)
         soup.body.append(script_jq)
         #end of html report
+        
+        if len(argv) == 0:
+            outfile ="stats-" + self.match_date + "-" + hashlib.md5(str(datetime.now()).encode()).hexdigest()[0:4] + ".html"
+        else:
+            outfile = argv[0]
         
         html_file = open(outfile,"w")
         html_file.write(soup.prettify())

@@ -65,26 +65,29 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         
-        x = self.award_most_caps(sum_lines_dataframe)
-        awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
-        
-        x = self.award_most_holds(sum_lines_dataframe)
-        awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
+# =============================================================================
+#         x = self.award_most_caps(sum_lines_dataframe)
+#         awardsdf = awardsdf.join(x)
+#         columns.append(x.columns[0])
+#         columns.append(x.columns[1])
+#         
+#         x = self.award_most_holds(sum_lines_dataframe)
+#         awardsdf = awardsdf.join(x)
+#         columns.append(x.columns[0])
+#         columns.append(x.columns[1])
+# =============================================================================
         
         x = self.award_most_wins(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])        
         
+        # TODO: shuffle this to respective areas
         awardsdf['Pack5'] = awardsdf['Pack5'].fillna(0).astype(int)
         awardsdf['Blownup'] = awardsdf['Blownup'].fillna(0).astype(int)
         awardsdf['FirstInDoor'] = awardsdf['FirstInDoor'].fillna(0).astype(int)
-        awardsdf['Holds'] = awardsdf['Holds'].fillna(0).astype(int)
-        awardsdf['Caps'] = awardsdf['Caps'].fillna(0).astype(int)
+        #awardsdf['Holds'] = awardsdf['Holds'].fillna(0).astype(int)
+        #awardsdf['Caps'] = awardsdf['Caps'].fillna(0).astype(int)
         awardsdf['Wins'] = awardsdf['Wins'].fillna(0).astype(int)
         awardsdf['MegaKill'] = awardsdf['MegaKill'].fillna(0).astype(int)
         pd.options.display.float_format = '{:,.2f}'.format

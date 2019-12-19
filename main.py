@@ -41,7 +41,7 @@ r".\test_samples\rtcwconsole-2019-12-10.log"
 ]
 
 #just pick last one for debugging
-stat_files = stat_files[-1:]
+#stat_files = stat_files[-1:]
 
 results = []
 for read_file in stat_files:
@@ -67,7 +67,7 @@ for result in results:
 
 
 
-if(1==2): #manual execution
+if(2==1): #manual execution
     for result in results:
         try:
             logs
@@ -85,6 +85,10 @@ if(1==2): #manual execution
     logs.to_csv(r"./test_samples/result_client_log.csv", index=False)
     stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
     matches.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
+    
+    bigresult = {"logs":logs, "stats":stats, "matches":matches}
+    html_report1 = HTMLReport(bigresult)
+    html_report1.report_to_html()
 
 
 
