@@ -72,7 +72,7 @@ class ConstMap:
                     ],
             "axis_complex" : [
                       [O_WIN,"Allies have transmitted the decoder manual!"],
-                      [D_FLAG,"Axis reclaims the Forward Deployment area!"], 
+                      [D_FLAG,"Axis reclaim the Forward Deployment area!"], 
                       [O_FLAG,"Allies capture the Forward Deployment area!"],
                       [O_OBJ,"The service door has been breached!"],
                       [O_OBJ,"The Eastern Tower has been breached!"],
@@ -89,6 +89,12 @@ class ConstMap:
                       [O_OBJ,"The Main Gate has been destroyed!"],
                       [O_PLANT, "Dynamite planted near the Tunnel Door!"],
                       [O_PLANT, "Dynamite planted near the Main Gate!!"]
+                    ],
+            "mp_keep" : [
+                      [O_WIN,"Allied team captured the Sacred Obelisk!"],
+                      [O_OBJ,"Allies have breached the roof!"],
+                      [O_PLANT, "Dynamite planted near the Southwest Gate!"],
+                      [O_PLANT, "Dynamite planted near the Southeast Gate!"]
                     ],
             "mp_village" : [
                       [O_WIN,"The Allies have escaped with the Gold!"],
@@ -136,10 +142,10 @@ class ConstMap:
                       [D_FLAG,"Allies reclaim the Gate Area!"],
                       [O_FLAG,"Axis captures the Gate Area!"],
                       [O_OBJ,"Axis team breached the Gate Hatch!"],
-                      [O_OBJ,"Axis team breached the Warehouse Door!"]
-                      #[O_PLANT, ""],
-                      #[O_PLANT, ""],
-                      #[O_PLANT, ""]
+                      [O_OBJ,"Axis team breached the Warehouse Door!"],
+                      [O_PLANT, "Dynamite planted near the Gate Hatch!"],
+                      [O_PLANT, "Dynamite planted near the Warehouse Entrance!"],
+                      [O_PLANT, "Dynamite planted near The Communications Tower!"]
                     ],
             "te_pacific2" : [
                       [O_WIN,"Allied team has disabled the Radar Array!"],
@@ -216,6 +222,7 @@ class ConstMap:
         maps["mp_rocket"] =        RTCWMap("mp_rocket",        "Rocket",      self.map_announce["mp_rocket"],        self.G_AXIS,   self.G_ALLIES, 12,    "Override Key")         
         maps["mml_church_v1"] =    RTCWMap("mml_church_v1",    "Church",      self.map_announce["mml_church_v1"],    self.G_ALLIES, self.G_AXIS,   10,    "the Holy Relic")      
         maps["te_pacific2"] =      RTCWMap("te_pacific2",      "Pacific",     self.map_announce["te_pacific2"],      self.G_AXIS,   self.G_ALLIES,  8,    "")      
+        maps["mp_keep"] =          RTCWMap("mp_keep",          "Keep",        self.map_announce["mp_keep"],          self.G_AXIS,   self.G_ALLIES, 10,    "the Sacred Obelisk")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         

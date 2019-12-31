@@ -324,7 +324,7 @@ class FileProcessor:
                         break
                     
                     #^\[skipnotify\]Timelimit hit\.
-                    if value.event == Const.EVENT_MAIN_TIMELIMIT: #happens before OSP stats if the time ran out
+                    if game_started and value.event == Const.EVENT_MAIN_TIMELIMIT: #happens before OSP stats if the time ran out
                         #game_started = False # we still have OSP stats to process
                         game_paused = False
                         game_finished = True
@@ -567,6 +567,8 @@ class FileProcessor:
                             if ("the War Documents" in x[1]):
                                 "This objective repeats in various maps so we are going to skip it"
                             elif ("Axis have returned the objective!" in x[1]):
+                                "Generic message , skip it"
+                            elif ("Allies have returned the objective!" in x[1]):
                                 "Generic message , skip it"
                             else:
                                 print("---------------Unknown objective: ".ljust(20) + x[1])

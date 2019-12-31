@@ -19,6 +19,14 @@ class MatchStats:
         
         return metrics
     
+    def match_players(self, data):
+        sum_lines_dataframe   = data["stats"]
+        tmp = sum_lines_dataframe[["Killer","round_guid"]].groupby("Killer").count().reset_index()      
+        tmp["alias"] = ""
+        players = tmp[["Killer","alias", "round_guid"]]
+        players.columns = ["killer","alias","rounds_played"]
+        print(players.to_csv(index=False, sep="\t"))
+    
     def match_info_datetime(self,data):
         matches_dataframe     = data["matches"]
         time_of_the_match = matches_dataframe[Const.NEW_COL_MATCH_DATE].min()

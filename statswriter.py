@@ -22,7 +22,7 @@ class StatsWriter:
             print("[x] StatsWriter: Unknown media type.")
             exit()
     
-    def correct_castings(df, df_name):
+    def correct_castings(self, df, df_name):
         if df_name == "stats":
             colum_types = {
                     'AdjScore' : 'int',
@@ -88,8 +88,8 @@ class StatsWriter:
                     'side' : " ",
                     'team_name' : " "
                     }
-            df.fillna(value=default_values, inplace=True)
-            df.astype(colum_types, inplace = True)
+            df = df.fillna(value=default_values)
+            df = df.astype(colum_types)
         return df
     
     def write_results(self, array):
@@ -111,7 +111,7 @@ class StatsWriter:
                     df = self.correct_castings(df, dataset)
                     file_name = self.filepath + "\\" + dataset + "\\" + r + ".gz"
                     #print(f"Will write {num_lines} to file {file_name}")
-                    df.to_parquet(file_name, compression='gzip')
+                    df.to_parquet(file_name, compression='gzip', index=False)
     
                     
 athena_stats_fields = """
