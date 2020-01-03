@@ -43,11 +43,12 @@ r".\test_samples\rtcwconsole-2019-12-12.log",
 r".\test_samples\rtcwconsole-2019-12-15.log",
 r".\test_samples\rtcwconsole-2019-12-21.log",
 r".\test_samples\rtcwconsole-2019-12-19.log",
-r".\test_samples\rtcwconsole-2019-12-26.log"
+r".\test_samples\rtcwconsole-2019-12-26.log",
+r".\test_samples\rtcwconsole-2019-01-02.log"
 ]
 
 #just pick last one for debugging
-#stat_files = stat_files[-1:]
+stat_files = stat_files[-1:]
 
 results = []
 for read_file in stat_files:

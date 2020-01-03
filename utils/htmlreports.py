@@ -178,7 +178,7 @@ class HTMLReport:
             tr.append(td)
             for col in metrics:
                 td = Tag(soup, name = 'td')
-                td.insert(1, (str(row[col]) + " ").replace(".0 ",""))
+                td.insert(1, (str(row[col]) + " ").replace(".0 ","") + "==" + str(row[col + "_rank"]))
                 td["class"] = medals.get(row[col + "_rank"],"norank")
                 tr.append(td)
                 table.append(tr)

@@ -93,7 +93,8 @@ class Awards:
         pd.options.display.float_format = '{:,.2f}'.format
         
         ranks = [name for name in awardsdf.columns if "_rank" in name]
-        awardsdf["RankPts"] = awardsdf[ranks].sum(axis=1)
+        awardsdf["RankPts"] = awardsdf[ranks].fillna(5).sum(axis=1)
+        print(awardsdf[ranks])
         awardsdf = awardsdf.sort_values("RankPts")
         awardsdf["RankPts_rank"] = awardsdf["RankPts"].rank(method="min", ascending=True, na_option='bottom')
         columns.append("RankPts")
@@ -108,7 +109,8 @@ class Awards:
         
         
         ranks = [name for name in awardsdf.columns if "rank" in name]
-        rankmax = len(awardsdf)
+        #rankmax = len(awardsdf)
+        rankmax = 5
         for rank in ranks:
             awardsdf[rank] = awardsdf[rank].fillna(rankmax).astype(int)
     
@@ -135,6 +137,7 @@ class Awards:
         result = people.value_counts().to_frame()
         result.columns = ["FirstInDoor"]
         result["FirstInDoor_rank"] = result["FirstInDoor"].rank(method="min", ascending=False, na_option='bottom') 
+        result["FirstInDoor_rank"][result["FirstInDoor_rank"] > 4] = 5
         return result
     
     '''
@@ -174,6 +177,7 @@ class Awards:
         result = event_lines_dataframe[event_lines_dataframe["event"] == "kill"].groupby("killer")["count"].max().to_frame()
         result.columns = ["MegaKill"]
         result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
+        result["MegaKill_rank"][result["MegaKill_rank"] > 4] = 5
         return result
     
     '''
@@ -205,6 +209,7 @@ class Awards:
         resultdf = pd.DataFrame.from_dict(resultdict,orient='index')
         resultdf.columns=['KillStreak']
         resultdf["KillStreak_rank"] = resultdf["KillStreak"].rank(method="min", ascending=False, na_option='bottom')
+        resultdf["KillStreak_rank"][resultdf["KillStreak_rank"] > 4] = 5
         return resultdf
     
     '''
@@ -278,6 +283,7 @@ class Awards:
         resultdf = pd.DataFrame.from_dict(resultdict,orient='index')
         resultdf.columns=['Pack5']
         resultdf["Pack5_rank"] = resultdf["Pack5"].rank(method="min", ascending=False, na_option='bottom')
+        resultdf["Pack5_rank"][resultdf["Pack5_rank"] > 4] = 5
         return resultdf
     
     '''
@@ -287,6 +293,7 @@ class Awards:
         temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")]
         result = temp["killer"].value_counts().to_frame().rename(columns={"killer" : "Kills"})
         result["Kills_rank"] = result["Kills"].rank(method="min", ascending=False, na_option='bottom')  
+        result["Kills_rank"][result["Kills_rank"] > 4] = 5
         return result
     
     '''
@@ -298,7 +305,8 @@ class Awards:
         resultk = temp["killer"].value_counts()
         resultd = temp["victim"].value_counts()
         result = pd.DataFrame({"KDR" : resultk/resultd}).round(2)
-        result["KDR_rank"] = result["KDR"].rank(method="min", ascending=False, na_option='bottom')    
+        result["KDR_rank"] = result["KDR"].rank(method="min", ascending=False, na_option='bottom')   
+        result["KDR_rank"][result["KDR_rank"] > 4] = 5
         return result
 
     '''
@@ -307,7 +315,8 @@ class Awards:
     def award_most_caps(self,sum_lines_dataframe):
         temp = sum_lines_dataframe[(sum_lines_dataframe.side == "Offense") & (sum_lines_dataframe.round_win == 1)]
         result = temp.groupby(Const.STAT_BASE_KILLER)[["round_win"]].sum().rename(columns={"round_win" : "Caps"})
-        result["Caps_rank"] = result["Caps"].rank(method="dense", ascending=False, na_option='bottom')    
+        result["Caps_rank"] = result["Caps"].rank(method="dense", ascending=False, na_option='bottom')  
+        result["Caps_rank"][result["Caps_rank"] > 4] = 5
         return result
     
     '''
@@ -316,7 +325,8 @@ class Awards:
     def award_most_holds(self,sum_lines_dataframe):
         temp = sum_lines_dataframe[(sum_lines_dataframe.side == "Defense") & (sum_lines_dataframe.round_win == 1)]
         result = temp.groupby(Const.STAT_BASE_KILLER)[["round_win"]].sum().rename(columns={"round_win" : "Holds"})
-        result["Holds_rank"] = result["Holds"].rank(method="dense", ascending=False, na_option='bottom')    
+        result["Holds_rank"] = result["Holds"].rank(method="dense", ascending=False, na_option='bottom') 
+        result["Holds_rank"][result["Holds_rank"] > 4] = 5
         return result
     
     '''
@@ -325,7 +335,8 @@ class Awards:
     def award_most_wins(self,sum_lines_dataframe):
         temp = sum_lines_dataframe[sum_lines_dataframe.game_result == "WON"]
         result = temp.groupby(Const.STAT_BASE_KILLER)[["game_result"]].count().rename(columns={"game_result" : "Wins"})
-        result["Wins_rank"] = result["Wins"].rank(method="dense", ascending=False, na_option='bottom')    
+        result["Wins_rank"] = result["Wins"].rank(method="dense", ascending=False, na_option='bottom') 
+        result["Wins_rank"][result["Wins_rank"] > 4] = 5
         return result
     
     '''
@@ -334,6 +345,7 @@ class Awards:
     def award_most_useful_points(self,sum_lines_dataframe):
         result = sum_lines_dataframe.groupby([Const.STAT_BASE_KILLER])[[Const.STAT_POST_ADJSCORE]].sum()
         result[Const.STAT_POST_ADJSCORE + "_rank"] = result[Const.STAT_POST_ADJSCORE].rank(method="min", ascending=False, na_option='bottom')
+        result[Const.STAT_POST_ADJSCORE + "_rank"][result[Const.STAT_POST_ADJSCORE + "_rank"] > 4] = 5
         return result
 
  
