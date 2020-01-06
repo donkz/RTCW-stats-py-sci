@@ -10,6 +10,7 @@ from constants.logtext import Const, LogLine
 from textsci.teams import add_team_name, get_round_guid_client_log, get_round_guid_osp, get_player_list
 from constants.maps import ConstMap
 from collections import Counter
+from textsci.matchstats import MatchStats
 
 
 class StatLine:
@@ -136,6 +137,42 @@ class FileProcessor:
         #print(stats_all)
         stats_all = add_team_name(stats_all)
         
+        return stats_all
+    
+    def add_classes(self, logdf, stats_all):
+        #debug: logdf = results[0]["logs"][results[0]["logs"]["round_num"] == 1]
+        #debug: stats_all = results[0]["stats"][results[0]["stats"]["round_num"] == 1]
+        match_stats = MatchStats()
+        pivoted_weapons = match_stats.weapon_pivot(logdf)
+        
+        stats_all["class"] = ""
+        stats_all = stats_all.join(pivoted_weapons) #tested to be a left join, so nothing is lost
+        #and if it is, it's not sttatistically significant
+        
+        #panzer
+        allied_panzer_index =  stats_all[(stats_all[Const.STAT_OSP_SUM_TEAM] == "Allies") & (stats_all[Const.WEAPON_PANZER] > 0)][Const.WEAPON_PANZER].sort_values(ascending=False).head(1).index.values
+        axis_panzer_index =    stats_all[(stats_all[Const.STAT_OSP_SUM_TEAM] == "Axis") & (stats_all[Const.WEAPON_PANZER] > 0)][Const.WEAPON_PANZER].sort_values(ascending=False).head(1).index.values
+        stats_all.loc[allied_panzer_index, "class"] = Const.CLASS_PANZER
+        stats_all.loc[axis_panzer_index,   "class"] = Const.CLASS_PANZER
+        
+        #LT
+        lt_index =  stats_all[(stats_all[Const.WEAPON_AS] + stats_all[Const.WEAPON_ART]) > 0].index.values    
+        stats_all.loc[lt_index, "class"] = Const.CLASS_LEUTENANT
+        
+        #Sniper
+        sniper_index =  stats_all[stats_all[Const.WEAPON_SNIPER] > 0].index.values    
+        stats_all.loc[sniper_index, "class"] = Const.CLASS_SNIPER
+        
+        #Flamer
+        flamer_index =  stats_all[stats_all[Const.WEAPON_FLAME] > 0].index.values    
+        stats_all.loc[flamer_index, "class"] = Const.CLASS_FLAMER
+        
+        #Venom
+        venom_index =  stats_all[stats_all[Const.WEAPON_VENOM] > 0].index.values    
+        stats_all.loc[venom_index, "class"] = Const.CLASS_VENOM
+        
+        print(stats_all["class"])
+
         return stats_all
 
     def process_log(self):
@@ -420,10 +457,11 @@ class FileProcessor:
                         #round up all events and join them with OSP
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
                         tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
+                        tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
                         tmp_stats_all["round_order"] = round_order
-                        tmp_stats_all = add_team_name(tmp_stats_all)
+
                         round_guid = get_round_guid_client_log(tmp_stats_all)
-                        #print("Processed log stats id: " + round_guid)
+
                         tmp_stats_all["round_guid"] = round_guid
                         tmp_stats_all["osp_guid"] = osp_guid
                         tmp_stats_all["round_num"] = new_match_line.round_num

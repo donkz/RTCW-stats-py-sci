@@ -13,7 +13,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #expand viewing area for pandas datasets (visual inspection only)
-pd.set_option("display.max_rows",20)
+pd.set_option("display.max_rows",60)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.width",300)
 
@@ -21,34 +21,37 @@ pd.set_option("display.width",300)
 debug_file = r".\test_samples\testfile.txt"
 
 #test files to process
-stat_files = [
-r".\test_samples\rtcwconsole - r2.log",
-r".\test_samples\rtcwconsole-8-30-2018.log",
-r".\test_samples\rtcwconsole-20190905.log",
-r".\test_samples\rtcwconsole-09-12-2019.log", #http://krisofwin.com/stats/stats/2019.Sep.13.%2015h54m23s.html
-r".\test_samples\rtcwconsole-2019-10-02.log",
-r".\test_samples\rtcwconsole-09-19-2019.log",
-r".\test_samples\rtcwconsole-2019-10-10.log",
-r".\test_samples\rtcwconsole-2019-10-17.log",
-r".\test_samples\rtcwconsole-2019-10-24.log",
-r".\test_samples\rtcwconsoleOct28.log",
-r".\test_samples\rtcwconsole-MNF-2019-11-05 - clean.log",
-r".\test_samples\rtcwconsole-2019-11-07.log",
-r".\test_samples\rtcwconsole-2019-11-14.log",
-r".\test_samples\rtcwconsoleNov19.log",
-r".\test_samples\rtcwconsoleNov25.log",
-r".\test_samples\rtcwconsole-2019-12-10.log",
-r".\test_samples\rtcwconsole-2019-12-05.log",
-r".\test_samples\rtcwconsole-2019-12-12.log",
-r".\test_samples\rtcwconsole-2019-12-15.log",
-r".\test_samples\rtcwconsole-2019-12-21.log",
-r".\test_samples\rtcwconsole-2019-12-19.log",
-r".\test_samples\rtcwconsole-2019-12-26.log",
-r".\test_samples\rtcwconsole-2019-01-02.log"
-]
+stat_files = []
+stat_files.append(r".\test_samples\rtcwconsole - r2.log")
+stat_files.append(r".\test_samples\rtcwconsole-8-30-2018.log")
+stat_files.append(r".\test_samples\rtcwconsole-20190905.log")
+stat_files.append(r".\test_samples\rtcwconsole-09-12-2019.log") #http://krisofwin.com/stats/stats/2019.Sep.13.%2015h54m23s.html
+stat_files.append(r".\test_samples\rtcwconsole-2019-10-02.log")
+stat_files.append(r".\test_samples\rtcwconsole-09-19-2019.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-10-10.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-10-17.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-10-24.log")
+stat_files.append(r".\test_samples\rtcwconsoleOct28.log")
+stat_files.append(r".\test_samples\rtcwconsole-MNF-2019-11-05 - clean.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-11-07.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-11-14.log")
+stat_files.append(r".\test_samples\rtcwconsoleNov19.log")
+stat_files.append(r".\test_samples\rtcwconsoleNov25.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-10.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-05.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-12.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-15.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-21.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-19.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-12-26.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-01-02.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-01-03.log")
+stat_files.append(r".\test_samples\rtcwconsole-2019-01-05.log")
 
 #just pick last one for debugging
-stat_files = stat_files[-1:]
+stat_files = stat_files[-1:] #last
+#stat_files = stat_files[0:1] #first
+
 
 results = []
 for read_file in stat_files:
@@ -88,6 +91,8 @@ if(2==1): #manual execution
             logs = logs.append(result["logs"])
             stats = stats.append(result["stats"])
             matches = matches.append(result["matches"])
+        finally:
+            print(result["stats"]["class"].value_counts())
             
     logs.to_csv(r"./test_samples/result_client_log.csv", index=False)
     stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)

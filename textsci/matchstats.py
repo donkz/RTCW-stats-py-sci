@@ -124,26 +124,26 @@ class MatchStats:
     '''
     def table_weapon_counts(self,data):
         event_lines_dataframe = data["logs"]
-        #sum_lines_dataframe   = data["stats"]
-        #matches_dataframe     = data["matchesdf"]
+        
+        pivoted_weapons = self.weapon_pivot(event_lines_dataframe)
+        columns = pivoted_weapons.columns
+        for column in columns:
+            pivoted_weapons[column + "_rank"] = pivoted_weapons[column].rank(method="min", ascending=False, na_option='keep') 
+            pivoted_weapons.loc[pivoted_weapons[pivoted_weapons[column] == 0].index, column + "_rank"] = 5
+        return [pivoted_weapons, pivoted_weapons.columns]
+    
+    def weapon_pivot(self, event_lines_dataframe):
         temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]
         temp2 = temp.groupby(["killer","mod"]).count().reset_index()
-        pd.options.display.float_format = '{:,.0f}'.format
         result = temp2.pivot(index = "killer", columns = "mod", values = "event")
+        
         existing_columns = result.columns
-        new_columns = []
+        
         for mod_type in Const.mod_by_type.keys():
             for mod in Const.mod_by_type[mod_type]:
-                if mod in existing_columns: 
-                    new_columns.append(mod)
-                    result[mod + "_rank"] = result[mod].rank(method="min", ascending=False, na_option='keep') 
-                    new_columns.append(mod + "_rank")
-                else:
-                    result[mod] = 0
-                    result[mod + "_rank"] = 0
-                    new_columns.append(mod)
-        return [result.fillna(0), new_columns]
-    
+                if mod not in existing_columns: 
+                    result[mod] = 0        
+        return result.fillna(0).astype(int) #https://stackoverflow.com/questions/46859400/pandas-pivot-changes-dtype
     
     
     

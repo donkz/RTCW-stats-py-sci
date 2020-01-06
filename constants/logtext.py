@@ -70,6 +70,12 @@ class Const:
     WEAPON_DYN = "Dynamite"
     WEAPON_MG42 = "MG42"
     
+    CLASS_PANZER = "P"
+    CLASS_LEUTENANT = "L"
+    CLASS_SNIPER = "S"
+    CLASS_VENOM = "V"
+    CLASS_FLAMER = "F"
+    
     STAT_BASE_KILLER = "Killer" #equivalent to player name
     STAT_BASE_KILL = "Kills"
     STAT_BASE_DEATHS = "Deaths"

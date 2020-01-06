@@ -15,7 +15,7 @@ valid_names = [
  'jaytee',
  'krazykaze',
  'lunatic',
- 'John_Mullins',
+ 'john_mullins',
  'Kittens',
  'murkey',
  'Luna',
@@ -30,7 +30,7 @@ valid_names = [
  'source',
  'spuddy',
  'tragic',
- 'VirUs047',
+ 'virus047',
  'Wang of Pain'
 ]
 
