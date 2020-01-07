@@ -13,7 +13,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #expand viewing area for pandas datasets (visual inspection only)
-pd.set_option("display.max_rows",980)
+pd.set_option("display.max_rows",2080)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.width",300)
 
@@ -47,10 +47,11 @@ stat_files.append(r".\test_samples\rtcwconsole-2019-12-26.log") #22
 stat_files.append(r".\test_samples\rtcwconsole-2019-01-02.log") #23
 stat_files.append(r".\test_samples\rtcwconsole-2019-01-03.log") #24
 stat_files.append(r".\test_samples\rtcwconsole-2019-01-05.log") #25
+stat_files.append(r".\test_samples\rtcwconsole-2019-01-06MNF.log") #26
 
 #just pick last one for debugging
-#stat_files = stat_files[-1:] #last
-stat_files = stat_files[22:23] #[n-1 : n-th] --- to pull n-th file
+stat_files = stat_files[-1:] #last
+#stat_files = stat_files[22:23] #[n-1 : n-th] --- to pull n-th file
 
 
 results = []

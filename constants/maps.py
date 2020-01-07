@@ -179,8 +179,8 @@ class ConstMap:
                       [O_OBJ,"The main gate has been breached!"],
                       [O_OBJ,"The NOT SO main gate has been breached!"],  # TODO: whats the little door called
                       [O_PLANT, "Dynamite planted near the Main Gate!"], 
-                      [O_PLANT, "Dynamite planted near the NOT SO MAIN Main Gate!"] # TODO: whats the little door called
-                    ],
+                      [O_PLANT, "Dynamite planted near The Radio!"]
+                      ],
             "mp_rocket" : [
                       [O_WIN,"Override console been used, rocket launch aborted!"],
                       [D_FLAG,"Axis reclaims the First Cave!"],

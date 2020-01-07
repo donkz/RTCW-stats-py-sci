@@ -315,13 +315,20 @@ class Awards:
         for index, row in temp.iterrows():
             #count a kill for a player
             current_counter[row["killer"]] += 1
-            
+
             #if it is their record kill streak, save it
             if(current_counter[row["killer"]] > top_counter[row["killer"]]):
                 top_counter[row["killer"]] = current_counter[row["killer"]]
+                if row["killer"] == "KrAzYkAzEX":
+                   print(str(current_counter[row["killer"]]) + " killstreak  in round: " + str(row["round_order"])) 
             
             #reset kills for players that died
             current_counter[row["victim"]] = 0
+            
+            if row["killer"] == "KrAzYkAzEX" or row["victim"] == "KrAzYkAzEX":
+                print(row.values[2:])
+                print(" Current counter is " + str(current_counter["KrAzYkAzE"]))
+                #print(" Top counter is " + str(top_counter["KrAzYkAzE"]))
         
         resultdict = {}
         for key, value in top_counter.most_common():
