@@ -37,6 +37,7 @@ class HTMLReport:
         self.basic_stats_html_table = self.all_stats_to_html(basic_stats)
         self.weapon_stats_html_table = self.weapons_to_html(weapon_stats)
         self.award_stats_html_table = self.awards_to_html(award_stats)
+        self.award_megakills_html_table = self.megakills_to_html(award_stats[2])
         self.kill_matrix_stats_html_table = self.kill_matrix_to_html(kill_matrix_stats)
         if renames[0] is None:
             self.renames_html_table = None
@@ -58,7 +59,10 @@ class HTMLReport:
             "AdjScore"    : "Objective Score (Total minus kills, TKs, and deaths)",
             "Pack5"       : "5 kills without dying",
             "RankPts"     : "Total rank for the match",
-            "MegaKill"    : "Number of kills player done at once"
+            "MegaKill"    : "Number of kills player done at once",
+            "Panzer" : "Number of kills using panzerfaust (5 pts penalty)",
+            "Smoker"      : "Artillery and Airstrike kills (3 pts penalty)",
+            "Sniper"      : "Sniper kills (2 pts penalty)"
             }
     
     
@@ -97,14 +101,17 @@ class HTMLReport:
         soup.body.append(self.summary_text())
         soup.body.append(self.insert_header("Results",2))
         soup.body.append(self.match_results_html_table)
+        soup.body.append(self.insert_header("Awards",2))
+        soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Base stats",2))
         soup.body.append(self.basic_stats_html_table)
         soup.body.append(self.insert_header("Weapon stats",2))
         soup.body.append(self.weapon_stats_html_table)
-        soup.body.append(self.insert_header("Awards",2))
-        soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Kill matrix",2))
         soup.body.append(self.kill_matrix_stats_html_table)
+        soup.body.append(self.insert_header("MegaKills",2))
+        soup.body.append(self.insert_text("Kills that happened consequently, all at once"))
+        soup.body.append(self.award_megakills_html_table)
         if self.renames_html_table is not None:
             soup.body.append(self.insert_header("Player rename history",2))
             soup.body.append(self.renames_html_table)
@@ -134,15 +141,19 @@ class HTMLReport:
         soup.append(header1)
         return soup
     
-    def summary_text(self):
+    def insert_text(self, content):
         soup = BeautifulSoup("","lxml")
         text = Tag(soup, name = "p")
         text["class"]="text"
-        content = "Match started at %s. Total of %s players played %s rounds on %s maps and murdered eachother %s times!" % (self.match_time, self.metrics["players_count"] , self.metrics["rounds_count"], self.metrics["maps_count"], self.metrics["kill_sum"])
-        
         
         text.append(content)
         soup.append(text)
+        return soup
+    
+    
+    def summary_text(self):
+        content = "Match started at %s. Total of %s players played %s rounds on %s maps and murdered eachother %s times!" % (self.match_time, self.metrics["players_count"] , self.metrics["rounds_count"], self.metrics["maps_count"], self.metrics["kill_sum"])
+        soup = self.insert_text(content)        
         return soup
         
     
@@ -163,6 +174,9 @@ class HTMLReport:
         table.append(tr)
         
         medals = {1 : "gold", 2 : "silver", 3: "bronze"}
+        panzmedals = {5 : "gold", 4 : "silver", 3: "bronze"}
+        ltmedals = {3 : "gold", 2 : "silver", 1: "bronze"}
+        snipermedals = {2 : "gold", 1 : "silver"}
         
         for col in cols:
             th = Tag(soup, name = "th")
@@ -178,8 +192,16 @@ class HTMLReport:
             tr.append(td)
             for col in metrics:
                 td = Tag(soup, name = 'td')
-                td.insert(1, (str(row[col]) + " ").replace(".0 ","") + "==" + str(row[col + "_rank"]))
-                td["class"] = medals.get(row[col + "_rank"],"norank")
+                td.insert(1, (str(row[col]) + " ").replace(".0 ",""))
+                td["title"] =  "Rank:" + str(row[col + "_rank"])
+                if col == "Panzer":
+                    td["class"] = panzmedals.get(row[col + "_rank"],"norank")
+                elif col == "Smoker":
+                    td["class"] = ltmedals.get(row[col + "_rank"],"norank")
+                elif col == "Sniper":
+                    td["class"] = snipermedals.get(row[col + "_rank"],"norank")
+                else:
+                    td["class"] = medals.get(row[col + "_rank"],"norank")
                 tr.append(td)
                 table.append(tr)
         return soup
@@ -289,6 +311,31 @@ class HTMLReport:
                 td = Tag(soup, name = 'td')
                 td.insert(1, (str(row[col]) + " ").replace(".0 ",""))
                 td["class"] = medals.get(row[col + "_rank"],"norank")
+                tr.append(td)
+                table.append(tr)
+        return soup
+    
+    #megakill table
+    def megakills_to_html(self,megakills):
+        columns = megakills.columns
+        
+        soup = BeautifulSoup("","lxml")        
+        table = Tag(soup, name = "table")
+        table["class"] = "blueTable"
+        soup.append(table)
+        tr = Tag(soup, name = "tr")
+        table.append(tr)
+        
+        for col in columns:
+            th = Tag(soup, name = "th")
+            tr.append(th)
+            th.append(col)
+        for index, row in megakills.iterrows():
+            tr = Tag(soup, name = "tr")
+            td = Tag(soup, name = 'td')
+            for col in columns:
+                td = Tag(soup, name = 'td')
+                td.insert(1, (str(row[col])))
                 tr.append(td)
                 table.append(tr)
         return soup

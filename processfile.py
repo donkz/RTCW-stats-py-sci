@@ -170,8 +170,6 @@ class FileProcessor:
         #Venom
         venom_index =  stats_all[stats_all[Const.WEAPON_VENOM] > 0].index.values    
         stats_all.loc[venom_index, "class"] = Const.CLASS_VENOM
-        
-        print(stats_all["class"])
 
         return stats_all
 
@@ -294,6 +292,7 @@ class FileProcessor:
                         ospDF = pd.DataFrame(columns=Const.osp_columns)
                         tmp_log_events = []
                         tmp_stats_all = []
+                        map_counter = Counter() #reset it
                         
                         #start new match class
                         new_match_line = MatchLine(file_date,   # date of file creation
@@ -452,8 +451,6 @@ class FileProcessor:
                             tmp_map = map_class.maps[map_code]
                             map_name = tmp_map.name
                             
-                        map_counter = Counter() #reset it
-                        
                         #round up all events and join them with OSP
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
                         tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
