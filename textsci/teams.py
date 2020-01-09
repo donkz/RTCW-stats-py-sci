@@ -115,9 +115,9 @@ def get_player_list(stats_all):
         #print("got here")
         #print(stats_all[["side",Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]])
         playerlisto = stats_all[stats_all["side"] == "Offense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]
-        playerlisto_str = ["#".join(playerlisto[Const.STAT_BASE_KILLER]), playerlisto.iloc[0,1], "Offense"]
+        playerlisto_str = [Const.TEXT_PLAYER_SEPARATOR.join(playerlisto[Const.STAT_BASE_KILLER]), playerlisto.iloc[0,1], "Offense"]
         playerlistd = stats_all[stats_all["side"] == "Defense"].sort_values(Const.STAT_BASE_KILLER)[[Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]]
-        playerlistd_str = ["#".join(playerlistd[Const.STAT_BASE_KILLER]), playerlistd.iloc[0,1], "Defense"]
+        playerlistd_str = [Const.TEXT_PLAYER_SEPARATOR.join(playerlistd[Const.STAT_BASE_KILLER]), playerlistd.iloc[0,1], "Defense"]
         players = sorted([playerlisto_str , playerlistd_str], key=lambda x: x[0])
         return players 
     

@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from constants.logtext import Const
 
 class StatsWriter:
     """Class docstrings go here."""
@@ -9,22 +10,15 @@ class StatsWriter:
         self.filepath = None
         self.connection = None
         
-        if media == "disk": 
-            self.filepath = rootpath + subpath
-            self.connection = "dud"
-        elif media == "cloud": 
-            print("[x] Method is not ready")
-            exit()
-        elif media == "nosql": 
-            print("[x] Method is not ready")
-            exit()
-        else:
-            print("[x] StatsWriter: Unknown media type.")
-            exit()
-    
-    def correct_castings(self, df, df_name):
-        if df_name == "stats":
-            colum_types = {
+        #weapon columns (mod = mean of death)
+        self.weapon_cols = {}
+        self.weapon_default_values = {}
+        for mod_type in Const.mod_by_type.keys():
+            for mod in Const.mod_by_type[mod_type]:
+                self.weapon_cols[mod] = 'int'
+                self.weapon_default_values[mod] = 0
+        
+        self.stats_column_types = {
                     'AdjScore' : 'int',
                     'All_Deaths' : 'int',
                     'Deaths' : 'int',
@@ -45,6 +39,7 @@ class StatsWriter:
                     'Suicides' : 'int',
                     'TK' : 'int',
                     'TKd' : 'int',
+                    'class' : 'str',
                     'game_result' : 'str',
                     'map' : 'str',
                     'match_date' : 'str',
@@ -57,7 +52,10 @@ class StatsWriter:
                     'side' : 'str',
                     'team_name' : 'str'
                    }
-            default_values = {
+        
+        self.stats_column_types.update(self.weapon_cols)
+            
+        self.stats_default_values = {
                     'AdjScore' : 0,
                     'All_Deaths' : 0,
                     'Deaths' : 0,
@@ -88,8 +86,38 @@ class StatsWriter:
                     'side' : " ",
                     'team_name' : " "
                     }
-            df = df.fillna(value=default_values)
-            df = df.astype(colum_types)
+        self.stats_default_values.update(self.weapon_default_values)
+            
+        
+        if media == "disk": 
+            self.filepath = rootpath + subpath
+            self.connection = "dud"
+        elif media == "cloud": 
+            print("[x] Method is not ready")
+            exit()
+        elif media == "nosql": 
+            print("[x] Method is not ready")
+            exit()
+        else:
+            print("[x] StatsWriter: Unknown media type.")
+            exit()
+    
+    def correct_castings(self, df, df_name):
+        if df_name == "stats":
+            extra_cols_in_stats   = [value for value in df.columns if value not in self.stats_column_types.keys()]
+            extra_cols_in_casting = [value for value in self.stats_column_types.keys() if value not in df.columns]
+            
+            if len(extra_cols_in_stats) > 0 :
+                print("[!] Warning: there are more columns in new stat files than casting knows about. \n[!] Add new columns to casting variables in statswriter.py:correct_castings()")
+                print(extra_cols_in_stats)
+            
+            if len(extra_cols_in_casting) > 0 :
+                print("[!] Warning: there are extra columns in casting variable. Clean them up")
+                print(extra_cols_in_casting)
+            
+            #do the casting and nan filling    
+            df = df.fillna(value=self.stats_default_values)
+            df = df.astype(self.stats_column_types)
         return df
     
     def write_results(self, array):
@@ -113,37 +141,10 @@ class StatsWriter:
                     #print(f"Will write {num_lines} to file {file_name}")
                     df.to_parquet(file_name, compression='gzip', index=False)
     
-                    
-athena_stats_fields = """
-'AdjScore' int
-'All_Deaths' int
-'Deaths' int
-'Killer' string
-'Kills' int
-'OSP_Damage_Given' int
-'OSP_Damage_Received' int
-'OSP_Deaths' int
-'OSP_Eff' int
-'OSP_Gibs' int
-'OSP_Kills' int
-'OSP_Player' string
-'OSP_Score' int
-'OSP_Suicides' int
-'OSP_TK' int
-'OSP_Team' string
-'OSP_Team_Damage' int
-'Suicides' int
-'TK' int
-'TKd' int
-'game_result' string
-'map' string
-'match_date' string
-'osp_guid' string
-'player_strip' string
-'round_guid' string
-'round_num' int
-'round_order' int
-'round_win' int
-'side' string
-'team_name' string
-"""
+    #not tested for order
+    def make_aws_athena_table(self):
+        schema = ""
+        for col in self.stats_column_types.keys():
+            row = "'" + col + "' " + self.stats_column_types[col] + "\n"
+            schema += row
+        print(schema)

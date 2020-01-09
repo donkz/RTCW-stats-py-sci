@@ -6,6 +6,7 @@ from time import strftime
 
 from textsci.awards import Awards 
 from textsci.matchstats import MatchStats
+from constants.logtext import Const 
 
 from datetime import datetime
 import hashlib
@@ -403,9 +404,9 @@ class HTMLReport:
             td = Tag(soup, name = 'td')
             if(players == None):
                 players = [["??","??","??"],["??","??","??"]]
-            td["title"] = players[0][0].replace(" ","_").replace("#","\n")
-            td.string = players[0][0][0:30].replace("#"," ,")
-            t1size = len(players[0][0].split("#"))
+            td["title"] = players[0][0].replace(" ","_").replace(Const.TEXT_PLAYER_SEPARATOR,"\n")
+            td.string = players[0][0][0:30].replace(Const.TEXT_PLAYER_SEPARATOR," ,")
+            t1size = len(players[0][0].split(Const.TEXT_PLAYER_SEPARATOR))
             
             team_1 = players[0][1]
             team_2 = players[1][1]
@@ -450,10 +451,10 @@ class HTMLReport:
             
             #Team 2
             td = Tag(soup, name = 'td')
-            td["title"] = players[1][0].replace(" ","_").replace("#","\n")
+            td["title"] = players[1][0].replace(" ","_").replace(Const.TEXT_PLAYER_SEPARATOR,"\n")
             td.string = players[1][0][0:30].replace("#"," ,")
             td["class"] = team_2 + " fullroster" 
-            t2size = len(players[1][0].split("#"))
+            t2size = len(players[1][0].split(Const.TEXT_PLAYER_SEPARATOR))
             tr.append(td)
             
             #Format
@@ -461,8 +462,8 @@ class HTMLReport:
             td.string = str(t1size) + "v" + str(t2size)
             tr.append(td)
             
+            #Match Date            
             td = Tag(soup, name = 'td')
-            #print(row["match_date"])
             td.string = row["match_date"].split(" ")[1] if len(row["match_date"].split(" ")) >1 else row["match_date"]
             tr.append(td)
             

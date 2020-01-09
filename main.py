@@ -59,8 +59,8 @@ for read_file in stat_files:
     processor = FileProcessor(read_file, debug_file)
     result = processor.process_log()
     
-    #writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
-    #writer.write_results(result)
+    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+    writer.write_results(result)
       
     results.append(result)
     index = str(len(results) -1)

@@ -353,8 +353,8 @@ class FileProcessor:
                             else:
                                 print("Warning: ignoring OSP stats because log of the first round is incomplete")
                         else:
-                            osp_line = self.process_OSP_line(line)
-                            ospDF = ospDF.append(osp_line)
+                            osp_line = self.process_OSP_line(line)                      
+                            ospDF = ospDF.append(osp_line,sort=False)
                             osp_lines.append(line.strip())   
                             osp_line_processed = True
                         break
@@ -436,7 +436,7 @@ class FileProcessor:
                     #####################wrap up the round################################
                     ######################################################################
                     if game_finished and (value.event == Const.EVENT_OSP_REACHED or value.event == Const.EVENT_OSP_NOT_REACHED or value.event == Const.EVENT_OSP_TIME_SET):
-                        
+                                                
                         #Determine the map                        
                         del map_counter["anymap"]
                         if(len(map_counter) > 1):
@@ -453,6 +453,7 @@ class FileProcessor:
                             
                         #round up all events and join them with OSP
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
+
                         tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
                         tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
                         tmp_stats_all["round_order"] = round_order
@@ -546,7 +547,8 @@ class FileProcessor:
                             
                         new_match_line.match_date = round_datetime
                         tmp_stats_all[Const.NEW_COL_MATCH_DATE] = round_datetime
-
+                        
+                        
                         matches.append(new_match_line)
                         print("Proccessed round " + str(new_match_line.round_order).ljust(2) + " winner " + new_match_line.winner.ljust(6) + " on " + new_match_line.map[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(tmp_stats_all)) )
                         
@@ -556,13 +558,13 @@ class FileProcessor:
                         except NameError:
                             logdf = tmp_logdf
                         else:
-                            logdf = logdf.append(tmp_logdf)
+                            logdf = logdf.append(tmp_logdf,sort=False)
                         try:
                             stats_all
                         except NameError:
                             stats_all = tmp_stats_all
                         else:
-                            stats_all = stats_all.append(tmp_stats_all)
+                            stats_all = stats_all.append(tmp_stats_all,sort=False)
                         
 
                         

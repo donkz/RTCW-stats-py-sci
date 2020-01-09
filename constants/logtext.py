@@ -6,6 +6,8 @@ Note: map constants are in maps.py
 
 class Const:
     
+    TEXT_PLAYER_SEPARATOR = "%"
+    
     EVENT_LOGFILE_TIMESTAMP = "timestamp"
     
     EVENT_KILL = "kill"
