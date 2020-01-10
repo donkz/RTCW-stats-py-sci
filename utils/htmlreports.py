@@ -7,6 +7,7 @@ from time import strftime
 from textsci.awards import Awards 
 from textsci.matchstats import MatchStats
 from constants.logtext import Const 
+from constants.awardtext import AwardText
 
 from datetime import datetime
 import hashlib
@@ -17,7 +18,7 @@ class HTMLReport:
         result = single_result
     
         awards = Awards()
-        award_stats = awards.collect_awards(result)
+        self.award_stats = awards.collect_awards(result)
         
         matchstats = MatchStats()
         weapon_stats = matchstats.table_weapon_counts(result)
@@ -37,35 +38,37 @@ class HTMLReport:
         self.match_results_html_table = self.match_results_to_html(match_results)
         self.basic_stats_html_table = self.all_stats_to_html(basic_stats)
         self.weapon_stats_html_table = self.weapons_to_html(weapon_stats)
-        self.award_stats_html_table = self.awards_to_html(award_stats)
-        self.award_megakills_html_table = self.megakills_to_html(award_stats[2])
+        self.award_info = AwardText()
+        self.award_stats_html_table = self.awards_to_html(self.award_stats)
+        self.award_megakills_html_table = self.megakills_to_html(self.award_stats[2])
         self.kill_matrix_stats_html_table = self.kill_matrix_to_html(kill_matrix_stats)
         if renames[0] is None:
             self.renames_html_table = None
         else:   
             self.renames_html_table = self.renames_to_html(renames)
         
-       
-             
-    award_explanations = {
-            "FirstInDoor" : "First killer or victim of the round",
-            "Blownup"     : "Exploded by grenade, AS, dynamite",
-            "Panzed"      : "Died to panzer",
-            "KillStreak"  : "Kills without dying",
-            "Deathroll"   : "Consecutive deaths without a kill",
-            "Kills"       : "Kills in the entire match",
-            "KDR"         : "Kills to enemy deaths ratio",
-            "Caps"        : "Captured objective on offense",
-            "Holds"       : "Held the time on defense",
-            "AdjScore"    : "Objective Score (Total minus kills, TKs, and deaths)",
-            "Pack5"       : "5 kills without dying",
-            "RankPts"     : "Total rank for the match",
-            "MegaKill"    : "Number of kills player done at once",
-            "Panzer"      : "Number of kills using panzerfaust (5 pts penalty)",
-            "Smoker"      : "Artillery and Airstrike kills (3 pts penalty)",
-            "Sniper"      : "Sniper kills (2 pts penalty)"
-            }
-    
+        self.award_info = AwardText()   
+# =============================================================================
+#     award_explanations = {
+#             "FirstInDoor" : "First killer or victim of the round",
+#             "Blownup"     : "Exploded by grenade, AS, dynamite",
+#             "Panzed"      : "Died to panzer",
+#             "KillStreak"  : "Kills without dying",
+#             "Deathroll"   : "Consecutive deaths without a kill",
+#             "Kills"       : "Kills in the entire match",
+#             "KDR"         : "Kills to enemy deaths ratio",
+#             "Caps"        : "Captured objective on offense",
+#             "Holds"       : "Held the time on defense",
+#             "AdjScore"    : "Objective Score (Total minus kills, TKs, and deaths)",
+#             "Pack5"       : "5 kills without dying",
+#             "RankPts"     : "Total rank for the match",
+#             "MegaKill"    : "Number of kills player done at once",
+#             "Panzer"      : "Number of kills using panzerfaust (5 pts penalty)",
+#             "Smoker"      : "Artillery and Airstrike kills (3 pts penalty)",
+#             "Sniper"      : "Sniper kills (2 pts penalty)"
+#             }
+#     
+# =============================================================================
     
     def report_to_html(self,*argv):
 
@@ -103,6 +106,8 @@ class HTMLReport:
         soup.body.append(self.insert_header("Results",2))
         soup.body.append(self.match_results_html_table)
         soup.body.append(self.insert_header("Awards",2))
+        soup.body.append(self.insert_html(self.award_summaries_to_html(self.award_stats)))
+        soup.body.append(self.insert_header("Award details",3))
         soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Base stats",2))
         soup.body.append(self.basic_stats_html_table)
@@ -151,6 +156,14 @@ class HTMLReport:
         soup.append(text)
         return soup
     
+    def insert_html(self, content):
+        soup = BeautifulSoup("","lxml")
+        wrap = Tag(soup, name = "p")
+        wrap["class"]="text"
+        wrap.append(BeautifulSoup(content, 'html.parser'))
+        soup.append(wrap)
+        return soup
+    
     
     def summary_text(self):
         content = "Match started at %s. Total of %s players played %s rounds on %s maps and murdered eachother %s times!" % (self.match_time, self.metrics["players_count"] , self.metrics["rounds_count"], self.metrics["maps_count"], self.metrics["kill_sum"])
@@ -158,9 +171,27 @@ class HTMLReport:
         return soup
         
     def award_summaries_to_html(self,award_stats):
-        html = ""
-        for 
-        award_stats["Blownup_rank"]
+        awardsdf = award_stats[0]
+        content = ""
+        
+        rank_cols = [c for c in awardsdf.columns if c.endswith('_rank')]
+        ranked_cols = [c for c in awardsdf.columns[awardsdf.max() >0] if c.endswith('_rank')]
+        unranked_cols = [c for c in awardsdf.columns[awardsdf.max() == 0] if c.endswith('_rank')]
+        inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank']
+        for col in rank_cols:
+            col_value  = col.replace("_rank","")
+            if col in inverse_ranked_cols:
+                result = awardsdf.loc[awardsdf[awardsdf[col] == awardsdf[col].max()].index, col_value]
+            elif col in ranked_cols:
+                result = awardsdf.loc[awardsdf[awardsdf[col] == 1].index, col_value]
+            elif col in unranked_cols:
+                result = awardsdf.loc[awardsdf[col_value] == awardsdf[col_value].max(), col_value]
+            else:
+                print("[!] Warning: something left over in awards table: " + col)
+            
+            content += self.award_info.awards[col_value].render(result.index.values, result.values[0])
+        return content
+        
 
     
     def awards_to_html(self,award_stats):
@@ -189,8 +220,8 @@ class HTMLReport:
             tr.append(th)
             th.append(col)
             th["class"] = "awardheader"
-            if(col in self.award_explanations):
-                th["title"] = self.award_explanations[col]
+            if(col in self.award_info.awards.keys()):
+                th["title"] = self.award_info.awards[col].column_title
         for index, row in awardsdf.iterrows():
             tr = Tag(soup, name = "tr")
             td = Tag(soup, name = 'td')
@@ -508,7 +539,7 @@ class HTMLReport:
     style_css = """
     .text {
       font-family: "Courier New", Courier, monospace;
-      font-size: 12px;
+      font-size: 14px;
     }
     .versuslt1 {
       font-weight: bold;
