@@ -61,7 +61,7 @@ class HTMLReport:
             "Pack5"       : "5 kills without dying",
             "RankPts"     : "Total rank for the match",
             "MegaKill"    : "Number of kills player done at once",
-            "Panzer" : "Number of kills using panzerfaust (5 pts penalty)",
+            "Panzer"      : "Number of kills using panzerfaust (5 pts penalty)",
             "Smoker"      : "Artillery and Airstrike kills (3 pts penalty)",
             "Sniper"      : "Sniper kills (2 pts penalty)"
             }
@@ -157,6 +157,11 @@ class HTMLReport:
         soup = self.insert_text(content)        
         return soup
         
+    def award_summaries_to_html(self,award_stats):
+        html = ""
+        for 
+        award_stats["Blownup_rank"]
+
     
     def awards_to_html(self,award_stats):
         awardsdf = award_stats[0]
@@ -452,7 +457,7 @@ class HTMLReport:
             #Team 2
             td = Tag(soup, name = 'td')
             td["title"] = players[1][0].replace(" ","_").replace(Const.TEXT_PLAYER_SEPARATOR,"\n")
-            td.string = players[1][0][0:30].replace("#"," ,")
+            td.string = players[1][0][0:30].replace(Const.TEXT_PLAYER_SEPARATOR," ,")
             td["class"] = team_2 + " fullroster" 
             t2size = len(players[1][0].split(Const.TEXT_PLAYER_SEPARATOR))
             tr.append(td)

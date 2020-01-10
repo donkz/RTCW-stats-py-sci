@@ -48,6 +48,7 @@ stat_files.append(r".\test_samples\rtcwconsole-2019-01-02.log") #23
 stat_files.append(r".\test_samples\rtcwconsole-2019-01-03.log") #24
 stat_files.append(r".\test_samples\rtcwconsole-2019-01-05.log") #25
 stat_files.append(r".\test_samples\rtcwconsole-2019-01-06MNF.log") #26
+stat_files.append(r".\test_samples\rtcwconsole-2019-01-09.log") #27
 
 #just pick last one for debugging
 stat_files = stat_files[-1:] #last
