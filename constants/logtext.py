@@ -172,7 +172,7 @@ class Const:
             ["osploadtime", "^\[skipnotify\]Current time: (.*)",EVENT_DATETIME_OSP_MAP_LOAD, "", False],
             ["ospdemotime", "^Match starting...recording to (.*)", EVENT_DATETIME_DEMO,"", False],
             ["ospstattime", "^>>> Stats recorded to: (.*)", EVENT_DATETIME_OSP_SAVE_STATS,"", False],
-            ["ospjpegtime", "^Wrote screenshots(.*)", EVENT_DATETIME_SCREENSHOT,"", False],
+            ["ospjpegtime", "^Wrote screenshots\\/(.*)\\/(.*)", EVENT_DATETIME_SCREENSHOT,"", False],
             
             #chats must be below everything because they match just about anything
             ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_TEAM_CHAT,"", False],

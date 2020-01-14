@@ -39,12 +39,12 @@ class AwardText:
                                          "{people} drew the first blood {statistic} times!"],
                                          3)
     awards["Blownup"]     = AwardStruct("Exploded by grenade, AS, dynamite",
-                                        ["{people} need{multiplier} to watch your step and not to walk into explosives {statistic} times",
+                                        ["{people} ... watch your step and try not to walk into explosives {statistic} times again!",
                                          "{people}, see that smoke? Don't go there! Exploded {statistic} times!"],
                                          3)
     awards["Panzed"]      = AwardStruct("Died to panzer",
                                         ["{people} attract{multiplier} panzer like a magnet ({statistic} times)!",
-                                         "{people} take{multiplier} one-too-many for the team after getting panzed {statistic} times!",
+                                         "{people} take{multiplier} one-too-many for the team dying {statistic} times to panzer :(",
                                          "{people} get{multiplier} something to complain about. Died to panzer {statistic} times!"],
                                          2)
     awards["KillStreak"]  = AwardStruct("Kills without dying",
@@ -58,7 +58,7 @@ class AwardText:
                                          3)
     awards["Kills"]       = AwardStruct("Kills in the entire match",
                                          ["{people} killed the most people in the match - {statistic}!",
-                                         "{people} had a fragtastic time with {statistic} kills!",
+                                         "{people} enjoys{multiplier} a fragtastic time with {statistic} kills!",
                                          "{people} got the KrisOfWin Slaughterhouse Award with {statistic} frags!"],
                                          3)
     awards["KDR"]         = AwardStruct("Kills to enemy deaths ratio",
@@ -81,7 +81,7 @@ class AwardText:
                                          "not used at the moment"],
                                          3)
     awards["RankPts"]     = AwardStruct("Total rank for the match",
-                                         ["<b>MVP</b> of the night goes to {people}! You did it all with highest rank of {statistic} points!"],
+                                         ["<br/><b>MVP</b> of the night goes to {people}! You did it all with best rank sum of {statistic}!!!"],
                                          4)
     awards["Wins"]        = AwardStruct("Wins in a single AB match",
                                          ["{people} know{multiplier} how to win and has {statistic} wins to show for it!",
@@ -94,10 +94,10 @@ class AwardText:
                                          "{people} got to be one-man army with {statistic} kills at once!"],
                                          3)
     awards["Panzer"]      = AwardStruct("Number of kills using panzerfaust (5 pts penalty)",
-                                         ["{people} get{multiplier} the classic The Panzer-Lama Award with {statistic} panzer kills!"],
+                                         ["{people} get{multiplier} the classic Panzer-Lama Award with {statistic} panzer kills!"],
                                          2)
     awards["Smoker"]      = AwardStruct("Artillery and Airstrike kills (3 pts penalty)",
-                                         ["{people} got the award for The Best Indian Smoke-Messenger with {statistic} arty and airstrike kills!"],
+                                         ["{people} get{multiplier} the award for The Best Indian Smoke-Messenger with {statistic} artillery and airstrike kills!"],
                                          4)
     awards["Sniper"]      = AwardStruct("Sniper kills (2 pts penalty)",
                                          ["{people} like{multiplier} to do it from afar with {statistic} sniper kills.",

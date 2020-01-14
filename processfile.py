@@ -267,11 +267,12 @@ class FileProcessor:
                         break
                     
                     #Wrote screenshots/2019-10-24/215503-donka-mp_ice.jpg
-                    #x[1] = '20:54:01 (24 Oct 2019)'
+                    #x[1] = '2019-10-24'
+                    #x[2] = '215503-donka-mp_ice.jpg'
                     if value.event == Const.EVENT_DATETIME_SCREENSHOT:
-                        osp_jpeg_date = x[1].split("/")[1]
-                        temp_time = x[1].split("/")[2]
-                        osp_jpeg_time = temp_time[0:2] + ":" + temp_time[2:4] + ":" + temp_time[4:6]          
+                        osp_jpeg_date = x[1]
+                        time_name_map = x[2]
+                        osp_jpeg_time = time_name_map[0:2] + ":" + time_name_map[2:4] + ":" + time_name_map[4:6]          
                         break
                     
                     #^3>>> Stats recorded to: ^7stats/2019.10.24/215502.txt
