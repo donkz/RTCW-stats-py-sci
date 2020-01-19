@@ -6,14 +6,21 @@ import numpy as np
 
 class Awards:
     
-    def collect_awards(self, data):
-        event_lines_dataframe = data["logs"]
-        sum_lines_dataframe   = data["stats"]
-        #matches_dataframe     = data["matchesdf"]
+    def __init__(self, result):
+        self.event_lines_dataframe = result["logs"]
+        self.sum_lines_dataframe   = result["stats"]
+        self.matches_dataframe     = result["matches"]
         
-        temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")]
+        temp = self.event_lines_dataframe[(self.event_lines_dataframe.event == "kill")]
         people = temp["killer"].append(temp["victim"]).unique()
-        awardsdf = pd.DataFrame(index=people)
+        self.awardsdf = None
+        self.all_people = pd.DataFrame(index=people)
+    
+    def collect_awards(self):
+        event_lines_dataframe  = self.event_lines_dataframe
+        sum_lines_dataframe    = self.sum_lines_dataframe
+        #matches_dataframe     = self.sum_lines_dataframe
+        awardsdf               = self.all_people
         columns = []
         
         x = self.award_kills_of_the_night(event_lines_dataframe)
@@ -100,49 +107,56 @@ class Awards:
         x = self.award_most_wins(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
-        columns.append(x.columns[1])        
+        columns.append(x.columns[1])   
         
-        #Make sure to plug all the holes after joins
+        #plug the na wholes with appropriate values
+        self.awardsdf = awardsdf
+        awardsdf = self.fill_na_values()
+        
+        #sum all rank points into final RankPts
+        ranks = [name for name in awardsdf.columns if "_rank" in name]
+        awardsdf["RankPts"] = awardsdf[ranks].sum(axis=1)
+        
+        #Re-sort by total rank points and rank the ranks yo dawg
+        awardsdf = awardsdf.sort_values("RankPts")
+        awardsdf["RankPts_rank"] = awardsdf["RankPts"].rank(method="min", ascending=True, na_option='bottom')
+        columns.append("RankPts")
+        columns.append("RankPts_rank")
+               
+        self.awardsdf = awardsdf
+        return [awardsdf,columns, megakilldetail]
+       
+    def fill_na_values(self):
+        awardsdf = self.awardsdf
+        
+        rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols = self.ranked_column_types()
+        
+        #plug rank wholes
+        awardsdf[ranked_cols] = awardsdf[ranked_cols].fillna(Const.RANK_MAX).astype(int)
+        awardsdf[unranked_cols] = awardsdf[unranked_cols].fillna(0).astype(int)
+        awardsdf[inverse_ranked_cols] = awardsdf[inverse_ranked_cols].fillna(0).astype(int)
+                
         #awardsdf['Pack5'] = awardsdf['Pack5'].fillna(0).astype(int)
         awardsdf['Blownup'] = awardsdf['Blownup'].fillna(0).astype(int)
         awardsdf['FirstInDoor'] = awardsdf['FirstInDoor'].fillna(0).astype(int)
+        awardsdf['Deathroll'] = awardsdf['Deathroll'].fillna(0).astype(int)
         #awardsdf['Holds'] = awardsdf['Holds'].fillna(0).astype(int)
         #awardsdf['Caps'] = awardsdf['Caps'].fillna(0).astype(int)
         awardsdf['Wins'] = awardsdf['Wins'].fillna(0).astype(int)
         awardsdf['MegaKill'] = awardsdf['MegaKill'].fillna(0).astype(int)
         awardsdf['Panzer'] = awardsdf['Panzer'].fillna(0).astype(int)
-        pd.options.display.float_format = '{:,.2f}'.format
-        
-        #don't let rank dip below 5 because it greatly separates people in a large crowd
-        rankmax = 5
-        ranks = [name for name in awardsdf.columns if "_rank" in name]
-        awardsdf["RankPts"] = awardsdf[ranks].fillna(rankmax).sum(axis=1)
-        
-        #Resort by total rank points
-        awardsdf = awardsdf.sort_values("RankPts")
-        awardsdf["RankPts_rank"] = awardsdf["RankPts"].rank(method="min", ascending=True, na_option='bottom')
-        columns.append("RankPts")
-        columns.append("RankPts_rank")
-        
-        #awardsdf = awardsdf.fillna(0)
-        #Sanity check - all awards shoudld be matching
-        #print([name.ljust(16) for name in awardsdf.columns if "rank" not in name])
-        #print([name.ljust(16) for name in awardsdf.columns if "rank" in name])
-        
-        #print(awardsdf[[name for name in awardsdf.columns if "rank" not in name]].sort_values("Kills"))
-        
-        
-        ranks = [name for name in awardsdf.columns if "rank" in name]
-        #rankmax = len(awardsdf)
-        
-        for rank in ranks:
-            awardsdf[rank] = awardsdf[rank].fillna(rankmax).astype(int)
+        awardsdf['Panzed'] = awardsdf['Panzed'].fillna(0).astype(int)
+
+        return awardsdf
     
-        #print(awardsdf[[name for name in awardsdf.columns if "_rank" in name]])
-           
-        return [awardsdf,columns, megakilldetail]
-       
-    
+    #TODO: re-write this statically maybe for easier understanding
+    def ranked_column_types(self):
+        rank_cols = [c for c in self.awardsdf.columns if c.endswith('_rank')]
+        ranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() >0] if c.endswith('_rank')]
+        unranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() == 0] if c.endswith('_rank')]
+        inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank']
+        return rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols
+        
     '''
     First in the door award
     Determine who are the first people getting into fight (killing or dying)

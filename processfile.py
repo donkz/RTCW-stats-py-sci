@@ -658,6 +658,7 @@ class FileProcessor:
             renames
         except NameError:
             print("Nothing was processed")
+            exit()
             return None
         else:
             matchesdf = pd.DataFrame([vars(e) for e in matches])

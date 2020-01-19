@@ -14,18 +14,11 @@ import hashlib
 
 class HTMLReport:
     
-    def __init__(self, single_result):
-        result = single_result
-    
-        awards = Awards()
-        self.award_stats = awards.collect_awards(result)
+    def __init__(self, result):
         
+        self.award_info = AwardText()
+        self.awards = Awards(result)
         matchstats = MatchStats()
-        weapon_stats = matchstats.table_weapon_counts(result)
-        kill_matrix_stats = matchstats.table_kill_matrix(result)
-        basic_stats = matchstats.table_base_stats(result)
-        match_results = matchstats.table_match_results(result)
-        renames = matchstats.table_renames(result)
         
         self.metrics = matchstats.match_metrics(result)
         
@@ -35,40 +28,30 @@ class HTMLReport:
             self.match_date = match_datetime_arr[0]
             self.match_time = match_datetime_arr[1]
         
+        match_results = matchstats.table_match_results(result)
         self.match_results_html_table = self.match_results_to_html(match_results)
+        
+        basic_stats = matchstats.table_base_stats(result)
         self.basic_stats_html_table = self.all_stats_to_html(basic_stats)
+        
+        weapon_stats = matchstats.table_weapon_counts(result)
         self.weapon_stats_html_table = self.weapons_to_html(weapon_stats)
-        self.award_info = AwardText()
+        
+        self.award_stats = self.awards.collect_awards()
         self.award_stats_html_table = self.awards_to_html(self.award_stats)
         self.award_megakills_html_table = self.megakills_to_html(self.award_stats[2])
+        
+        self.award_summaries_html_table = self.award_summaries_to_html(self.award_stats)
+        
+        kill_matrix_stats = matchstats.table_kill_matrix(result)
         self.kill_matrix_stats_html_table = self.kill_matrix_to_html(kill_matrix_stats)
+        
+        renames = matchstats.table_renames(result)
         if renames[0] is None:
             self.renames_html_table = None
         else:   
             self.renames_html_table = self.renames_to_html(renames)
-        
-        self.award_info = AwardText()   
-# =============================================================================
-#     award_explanations = {
-#             "FirstInDoor" : "First killer or victim of the round",
-#             "Blownup"     : "Exploded by grenade, AS, dynamite",
-#             "Panzed"      : "Died to panzer",
-#             "KillStreak"  : "Kills without dying",
-#             "Deathroll"   : "Consecutive deaths without a kill",
-#             "Kills"       : "Kills in the entire match",
-#             "KDR"         : "Kills to enemy deaths ratio",
-#             "Caps"        : "Captured objective on offense",
-#             "Holds"       : "Held the time on defense",
-#             "AdjScore"    : "Objective Score (Total minus kills, TKs, and deaths)",
-#             "Pack5"       : "5 kills without dying",
-#             "RankPts"     : "Total rank for the match",
-#             "MegaKill"    : "Number of kills player done at once",
-#             "Panzer"      : "Number of kills using panzerfaust (5 pts penalty)",
-#             "Smoker"      : "Artillery and Airstrike kills (3 pts penalty)",
-#             "Sniper"      : "Sniper kills (2 pts penalty)"
-#             }
-#     
-# =============================================================================
+
     
     def report_to_html(self,*argv):
 
@@ -106,7 +89,7 @@ class HTMLReport:
         soup.body.append(self.insert_header("Results",2))
         soup.body.append(self.match_results_html_table)
         soup.body.append(self.insert_header("Awards",2))
-        soup.body.append(self.insert_html(self.award_summaries_to_html(self.award_stats)))
+        soup.body.append(self.insert_html(self.award_summaries_html_table))
         soup.body.append(self.insert_header("Award details",3))
         soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Base stats",2))
@@ -174,10 +157,7 @@ class HTMLReport:
         awardsdf = award_stats[0]
         content = ""
         
-        rank_cols = [c for c in awardsdf.columns if c.endswith('_rank')]
-        ranked_cols = [c for c in awardsdf.columns[awardsdf.max() >0] if c.endswith('_rank')]
-        unranked_cols = [c for c in awardsdf.columns[awardsdf.max() == 0] if c.endswith('_rank')]
-        inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank']
+        rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols = self.awards.ranked_column_types()
         for col in rank_cols:
             col_value  = col.replace("_rank","")
             if col in inverse_ranked_cols:
@@ -189,7 +169,23 @@ class HTMLReport:
             else:
                 print("[!] Warning: something left over in awards table: " + col)
             
-            content += self.award_info.awards[col_value].render(result.index.values, result.values[0])
+# =============================================================================
+#             print(col_value)
+#             print(content)
+#             print("=====")
+#             print(result.index.values)
+#             print("=====")
+#             print(awardsdf[["Blownup","Blownup_rank"]])
+#             print(result.values)
+# =============================================================================
+            try:
+                content += self.award_info.awards[col_value].render(result.index.values, result.values[0])
+            except:
+                print("[!] Summary award failed!")
+                print("Columns being processed: " + col_value + " and " + col)
+                print("Award dataframe:")
+                print(awardsdf[[col_value,col]])
+                
         return content
         
 

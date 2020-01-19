@@ -1,6 +1,5 @@
 from constants.logtext import Const 
 import pandas as pd
-import numpy as np
 
 class MatchStats:
     #debug data = results

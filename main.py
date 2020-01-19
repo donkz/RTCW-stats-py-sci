@@ -1,4 +1,5 @@
 import os
+import sys, traceback
 import datetime
 import pandas as pd
 
@@ -8,7 +9,6 @@ from utils.htmlreports import HTMLReport
 
 #set relative path
 RTCWPY_PATH = os.getcwd()
-import sys
 if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
@@ -58,15 +58,21 @@ stat_files = stat_files[-1:] #last
 
 results = []
 for read_file in stat_files:
-    processor = FileProcessor(read_file, debug_file)
-    result = processor.process_log()
+    try:
+        processor = FileProcessor(read_file, debug_file)
+        result = processor.process_log()
+    except:
+        print(f"Failed to process {read_file} with the following error:\n\n")
+        exc_type, exc_value, exc_traceback = sys.exc_info()
+        traceback.print_exception(exc_type, exc_value, exc_traceback,
+                              limit=2, file=sys.stdout)
+        
     
-    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
-    writer.write_results(result)
+    #writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+    #writer.write_results(result)
       
     results.append(result)
     index = str(len(results) -1)
-    #print(result["stats"][['OSP_Player', 'player_strip', 'team_name','Killer']].drop_duplicates())
     print(f'Processed file: {read_file} into results[{index}]')
 
 for result in results:
@@ -105,32 +111,3 @@ if(2==1): #manual execution
     html_report1 = HTMLReport(bigresult)
     html_report1.report_to_html()
 
-
-
-
-'''
-r".\test_samples\rtcwconsole-2019-11-07.log"
-
-Proccessed round 1  winner Allies on Ice        . Events: 284   . Players: 16
-Proccessed round 2  winner Axis   on Ice        . Events: 206   . Players: 16
-Proccessed round 3  winner Allies on Base       . Events: 83    . Players: 16
-Proccessed round 4  winner Axis   on Base       . Events: 82    . Players: 16
-WARNING: Multiple objectives related to maps: Counter({'te_frostbite': 8, 'mp_beach': 1})
-Proccessed round 5  winner Allies on Frostbite  . Events: 54    . Players: 16
-WARNING: Multiple objectives related to maps: Counter({'te_frostbite': 2, 'mp_beach': 1})
-Proccessed round 6  winner Allies on Frostbite  . Events: 38    . Players: 16
-Proccessed round 7  winner Allies on Village    . Events: 143   . Players: 16
-Proccessed round 8  winner Axis   on Village    . Events: 145   . Players: 16
-Proccessed round 9  winner Axis   on Beach      . Events: 185   . Players: 16
-Proccessed round 10 winner Allies on Beach      . Events: 120   . Players: 16
-Proccessed round 11 winner Allies on Chateau    . Events: 95    . Players: 14
-Proccessed round 12 winner Axis   on Chateau    . Events: 96    . Players: 14
-Proccessed round 13 winner Axis   on Ice        . Events: 130   . Players: 11
-Proccessed round 14 winner Axis   on Ice        . Events: 86    . Players: 11
-Proccessed round 15 winner Allies on Ice        . Events: 162   . Players: 10
-Proccessed round 16 winner Axis   on Ice        . Events: 54    . Players: 10
-'''
-
-      
-#logdf["count"] = logdf.groupby((logdf['killer'] != logdf['killer'].shift(1)).cumsum()).cumcount()+1
-#logdf[(logdf["event"] == "kill") & (logdf["count"] > 4)]
