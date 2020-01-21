@@ -354,7 +354,11 @@ class FileProcessor:
                             else:
                                 print("Warning: ignoring OSP stats because log of the first round is incomplete")
                         else:
-                            osp_line = self.process_OSP_line(line)                      
+                            osp_line = self.process_OSP_line(line)
+                            #typing /scores in the middle of the game can double the stats. 
+                            #Make sure to drop intermediary line
+                            if(osp_line[Const.STAT_OSP_SUM_PLAYER].values[0] in ospDF[Const.STAT_OSP_SUM_PLAYER].values):
+                                ospDF = ospDF.drop(osp_line.index)
                             ospDF = ospDF.append(osp_line,sort=False)
                             osp_lines.append(line.strip())   
                             osp_line_processed = True

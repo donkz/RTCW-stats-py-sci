@@ -84,7 +84,7 @@ class AwardText:
                                          ["<br/><b>MVP</b> of the night goes to {people}! You did it all with best rank sum of {statistic}!!!"],
                                          4)
     awards["Wins"]        = AwardStruct("Wins in a single AB match",
-                                         ["{people} know{multiplier} how to win and has {statistic} wins to show for it!",
+                                         ["{people} know{multiplier} how to win and got {statistic} wins to show for it!",
                                          "{people} take{multiplier} the cake with {statistic} wins!",
                                          "{people} keep{multiplier} eyes on the prize with {statistic} wins!"],
                                          8)

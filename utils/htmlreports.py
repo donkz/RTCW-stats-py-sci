@@ -158,6 +158,7 @@ class HTMLReport:
         content = ""
         
         rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols = self.awards.ranked_column_types()
+        #print(rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols)
         for col in rank_cols:
             col_value  = col.replace("_rank","")
             if col in inverse_ranked_cols:

@@ -50,6 +50,8 @@ stat_files.append(r".\test_samples\rtcwconsole-2020-01-05.log") #25
 stat_files.append(r".\test_samples\rtcwconsole-2020-01-06MNF.log") #26
 stat_files.append(r".\test_samples\rtcwconsole-2020-01-09.log") #27
 stat_files.append(r".\test_samples\rtcwconsole-2020-01-13.log") #28
+stat_files.append(r".\test_samples\rtcwconsole-2020-01-13.log") #28
+#stat_files.append(r"C:\Users\donka\Downloads\rtcwconsole-2019-01-19-murkey.log") #28
 
 #just pick last one for debugging
 stat_files = stat_files[-1:] #last
