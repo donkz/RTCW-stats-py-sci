@@ -285,6 +285,7 @@ class FileProcessor:
                     
                     #^1FIGHT!
                     if value.event == Const.EVENT_START and game_paused == False:
+                        #round aborted or otherwise interrupted
                         if (game_started): #round aborted or otherwise interrupted
                             tmp_log_events = []                        
                         game_started = True
@@ -437,6 +438,11 @@ class FileProcessor:
                         tmp_r1_fullhold = new_match_line.defense_hold
                         #break # do not
                     
+                    if value.event == Const.CONSOLE_PASSWORD_RCON or (value.event == Const.CONSOLE_PASSWORD_REF and x[1].strip() != "comp") or value.event == Const.CONSOLE_PASSWORD_SERVER:
+                        print("[!] Log contains sensitive information! Edit the log before sharing!")
+                        print(line)
+                        
+                    
                     ######################################################################
                     #####################wrap up the round################################
                     ######################################################################
@@ -474,6 +480,9 @@ class FileProcessor:
                         
                         #Recalculated scores (substract kills and suicides)
                         tmp_stats_all[Const.STAT_POST_ADJSCORE] = tmp_stats_all[Const.STAT_OSP_SUM_SCORE].fillna(0).astype(int) - tmp_stats_all[Const.STAT_BASE_KILL].fillna(0).astype(int) + tmp_stats_all[Const.STAT_BASE_SUI].fillna(0).astype(int)*3 + tmp_stats_all[Const.STAT_BASE_TK].fillna(0).astype(int)*3
+                        #some OSP scores are incorrect and end up having ADJ score -1. Fix them
+                        #debug line: stats[[Const.STAT_POST_ADJSCORE,Const.STAT_OSP_SUM_SCORE,Const.STAT_BASE_KILL,Const.STAT_BASE_SUI,Const.STAT_BASE_TK]].sort_values(by=[Const.STAT_POST_ADJSCORE,Const.STAT_OSP_SUM_SCORE])
+                        tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_POST_ADJSCORE] < 0].index, Const.STAT_POST_ADJSCORE] = 0
                         
                         #Crossreference maps data and determine if current team (axis or allies) is offense or defence
                         tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"side"] = "Defense"
@@ -602,16 +611,18 @@ class FileProcessor:
                             obj_offender = map_info.offense
                             obj_defender = map_info.defense
                             obj_type = announcement_values[0]
-                            map_counter[map_info.code] +=1
+                            if ("Allies transmitted the documents!" not in x[1]):
+                                #Frostbite and beach share this objective"
+                                map_counter[map_info.code] +=1
                             #print("Known objective: ".ljust(20) + x[1] + " map: " + map_info.name)
                             stat_entry = StatLine("temp",line_order, round_order,round_num,obj_offender,"Objective", obj_type, obj_defender)
                         else:
                             if ("the War Documents" in x[1]):
                                 "This objective repeats in various maps so we are going to skip it"
                             elif ("Axis have returned the objective!" in x[1]):
-                                "Generic message , skip it"
+                                "Generic message, skip it"
                             elif ("Allies have returned the objective!" in x[1]):
-                                "Generic message , skip it"
+                                "Generic message, skip it"
                             else:
                                 print("---------------Unknown objective: ".ljust(20) + x[1])
                     else:

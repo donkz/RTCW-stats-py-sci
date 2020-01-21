@@ -162,23 +162,20 @@ class HTMLReport:
         for col in rank_cols:
             col_value  = col.replace("_rank","")
             if col in inverse_ranked_cols:
+                if (awardsdf[col].max() == 0):
+                    continue #do nothing if no one achieved anything
                 result = awardsdf.loc[awardsdf[awardsdf[col] == awardsdf[col].max()].index, col_value]
             elif col in ranked_cols:
-                result = awardsdf.loc[awardsdf[awardsdf[col] == 1].index, col_value]
+                if (awardsdf[col].min() == 5):
+                    continue #do nothing if no one achieved anything
+                result = awardsdf.loc[awardsdf[awardsdf[col] == awardsdf[col].min()].index, col_value]
             elif col in unranked_cols:
                 result = awardsdf.loc[awardsdf[col_value] == awardsdf[col_value].max(), col_value]
+            elif col == "RankPts_rank":
+                "We'll give it a pass this time"
             else:
                 print("[!] Warning: something left over in awards table: " + col)
-            
-# =============================================================================
-#             print(col_value)
-#             print(content)
-#             print("=====")
-#             print(result.index.values)
-#             print("=====")
-#             print(awardsdf[["Blownup","Blownup_rank"]])
-#             print(result.values)
-# =============================================================================
+                
             try:
                 content += self.award_info.awards[col_value].render(result.index.values, result.values[0])
             except:

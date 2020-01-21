@@ -132,6 +132,7 @@ class Awards:
         rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols = self.ranked_column_types()
         
         #plug rank wholes
+        ranked_cols.remove("RankPts_rank") #at this point the col does not exist
         awardsdf[ranked_cols] = awardsdf[ranked_cols].fillna(Const.RANK_MAX).astype(int)
         awardsdf[unranked_cols] = awardsdf[unranked_cols].fillna(0).astype(int)
         awardsdf[inverse_ranked_cols] = awardsdf[inverse_ranked_cols].fillna(0).astype(int)
@@ -155,7 +156,7 @@ class Awards:
     def ranked_column_types(self):
         rank_cols = [c for c in self.awardsdf.columns if c.endswith('_rank')]
         #ranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() >0] if c.endswith('_rank')]
-        ranked_cols = ['Kills_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Wins_rank']
+        ranked_cols = ['Kills_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Wins_rank', 'RankPts_rank']
         #unranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() == 0] if c.endswith('_rank')]
         unranked_cols = ['Deathroll_rank', 'Blownup_rank', 'Panzed_rank']
         inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank']

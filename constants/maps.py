@@ -70,6 +70,15 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near the main door!"],
                       [O_PLANT, "Dynamite planted near the storage wall!"] 
                     ],
+            "mp_beach" : [
+                      [O_WIN,"Allies transmitted the documents!"],#same as frostbite
+                      [D_FLAG,"Axis reclaims the Forward Bunker!"],
+                      [O_FLAG,"Allies capture the Forward Bunker!"],
+                      [O_OBJ,"The Sea Wall has been breached!"],
+                      [O_OBJ,"you would thing there would be something about door here but no"],
+                      [O_PLANT, "Dynamite planted near the Sea Wall breach!"],
+                      [O_PLANT, "Dynamite planted near the Sea Wall door!"]
+                    ],
             "axis_complex" : [
                       [O_WIN,"Allies have transmitted the decoder manual!"],
                       [D_FLAG,"Axis reclaim the Forward Deployment area!"], 
@@ -102,16 +111,6 @@ class ConstMap:
                       [O_FLAG,"Allies capture the Northwest Courtyard!"],
                       [O_OBJ,"The Allies have broken into the Crypt!"],
                       [O_PLANT, "Dynamite planted near Gold Storage Crypt!"]
-                    ],
-            "mp_beach" : [
-                      [O_WIN,"Allies transmitted the documents!"],#same as frostbite
-                      [D_FLAG,"Axis reclaims the Forward Bunker!"],
-                      [O_FLAG,"Allies capture the Forward Bunker!"],
-                      [O_OBJ,"The Sea Wall has been breached!"],
-                      [O_OBJ,"you would thing there would be something about door here but no"],
-                      [OBJ_NM,"the War Documents"], #same as frostbite
-                      [O_PLANT, "Dynamite planted near the Sea Wall breach!"],
-                      [O_PLANT, "Dynamite planted near the Sea Wall door!"]
                     ],
             "mp_sub" : [
                       [O_WIN,"Allied team has destoryed the Axis Submarine!"],
