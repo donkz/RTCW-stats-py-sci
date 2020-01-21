@@ -55,7 +55,7 @@ stat_files.append(r".\test_samples\rtcwconsole - r2.log") #1
 #stat_files.append(r".\test_samples\rtcwconsole-2020-01-20.log") #30
 
 #just pick last one for debugging
-#stat_files = stat_files[-1:] #last
+stat_files = stat_files[-1:] #last
 #stat_files = stat_files[22:23] #[n-1 : n-th] --- to pull n-th file
 
 
