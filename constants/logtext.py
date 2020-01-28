@@ -8,6 +8,7 @@ class Const:
     
     TEXT_PLAYER_SEPARATOR = "%"
     RANK_MAX = 5
+    REF_COMMANDS = ["comp","abort","restart","allready","lock","unlock","putaxis","putallies", "remove","speclock", "specunlock", "pause", "unpause"]
     
     EVENT_LOGFILE_TIMESTAMP = "timestamp"
     

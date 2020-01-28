@@ -29,7 +29,7 @@ __pycache__/
 *.csv
 
 # debug file
-test_samples/testfile.txt
+testfile.txt
 
 
 # output working files

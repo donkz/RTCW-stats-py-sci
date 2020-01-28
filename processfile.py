@@ -1,8 +1,10 @@
+import sys
 import re
 import pandas as pd
 import os.path
 from datetime import datetime
 import time as _time
+import traceback
 
 
 from utils.rtcwcolors import stripColors , setup_colors
@@ -48,9 +50,12 @@ class MatchLine:
 
 class FileProcessor:
 
-    def __init__(self,read_file, debug_file, debug=True):
+    def __init__(self,read_file, debug):
             self.read_file = read_file
-            self.debug_file = debug_file
+            self.debug = debug
+            if debug:
+                #file where processed lines will be written to for the last processed file
+                self.debug_file = "testfile.txt"
     
     def get_file_date(self):
         return str(datetime.fromtimestamp(os.path.getmtime(self.read_file)).strftime('%Y-%m-%d'))
@@ -81,11 +86,17 @@ class FileProcessor:
     # columns to rename
     # dataframe
     def handle_renames(self, renames, columns, df, index):
+        #<img src="5th element" alt="multipass">
+        #one was just not enough when somebody goes bonkers on renaming
+        df = df.replace(renames, regex=False)
+        df = df.replace(renames, regex=False)
         df = df.replace(renames, regex=False)
         if index:
             #print(df.index.unique())
             #print(renames)
             df.index = df.reset_index().replace(renames, regex=False)["index"].values #because stupid regex does not work in df.rename
+            df.index = df.reset_index().replace(renames, regex=False)["index"].values 
+            df.index = df.reset_index().replace(renames, regex=False)["index"].values 
             #print(df.index.unique())
         return df
         
@@ -96,12 +107,15 @@ class FileProcessor:
         ################################
         # Stats collected from logs    #
         ################################
+        
+        #make a blank dataframe with index = playernames (anybody who killed or died)
         stats = pd.DataFrame(index = kills.append(deaths).index.unique())
         
-        #there will be some kills and death i'm sure.... 
+        #add columns for kills and deaths
         stats[Const.STAT_BASE_KILL]  = kills[Const.EVENT_KILL]
         stats[Const.STAT_BASE_DEATHS]= deaths[Const.EVENT_KILL]
 
+        #append columns for TK, TKd, SUI. There's a chance there was a round when none happened, so check first
         if(Const.EVENT_TEAMKILL in kills):
             stats[Const.STAT_BASE_TK]  = kills[Const.EVENT_TEAMKILL]
         else:
@@ -117,16 +131,18 @@ class FileProcessor:
         else: 
             stats[Const.STAT_BASE_SUI] = 0
             
+        #make alldeaths column = sum of all death types
         stats[Const.STAT_BASE_ALLDEATHS]= stats[Const.STAT_BASE_DEATHS].fillna(0) + stats[Const.STAT_BASE_SUI].fillna(0) + stats[Const.STAT_BASE_TKd].fillna(0)
         #print(stats[[Const.STAT_BASE_DEATHS, Const.STAT_BASE_SUI, Const.STAT_BASE_TKd, Const.STAT_BASE_ALLDEATHS]])
         
-        stats = stats.drop(index='') #empty players
+        #drop rows with empy player names and fill NaN values with 0
+        stats = stats.drop(index='') 
         stats = stats.fillna(0)
-
-        #pd.options.display.float_format = '{:0,.0f}'.format
+        
+        #TODO : do we need to cast to int here?
         
         #######################################
-        # Stats collected from osp summary    #
+        # Join log stats with OSP stats       #
         #######################################
         ospdf.index = ospdf[Const.STAT_OSP_SUM_PLAYER]
         stats = stats.reset_index()
@@ -174,6 +190,18 @@ class FileProcessor:
         return stats_all
 
     def process_log(self):
+        result = {}
+        try:
+            result = self.process_log_worker()
+        except:
+            print(f"Failed to process {self.read_file} with the following error:\n\n")
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            traceback.print_exception(exc_type, exc_value, exc_traceback,
+            limit=2, file=sys.stdout)
+        return result
+        
+        
+    def process_log_worker(self):
         time_start_process_log = _time.time()
         #Initialize local variables
         line_order = 0
@@ -208,8 +236,10 @@ class FileProcessor:
         map_counter = Counter()
     
         #Prep debug log
-        debug_log = open(self.debug_file,"w")
-        debug_log.write("line".ljust(5) + "roundNum " + "##".ljust(2)  + "Event".ljust(20) + "Action".ljust(10) + "LineText".rstrip() + "\n")
+        if self.debug:
+            debug_log = open(self.debug_file,"w")
+            debug_log.write("line".ljust(5) + "roundNum " + "##".ljust(2)  + "Event".ljust(20) + "Action".ljust(10) + "LineText".rstrip() + "\n")
+        
         log_file_lines = self.openFile()
         fileLen = len(log_file_lines)-1
         
@@ -438,7 +468,7 @@ class FileProcessor:
                         tmp_r1_fullhold = new_match_line.defense_hold
                         #break # do not
                     
-                    if value.event == Const.CONSOLE_PASSWORD_RCON or (value.event == Const.CONSOLE_PASSWORD_REF and x[1].strip() != "comp") or value.event == Const.CONSOLE_PASSWORD_SERVER:
+                    if value.event == Const.CONSOLE_PASSWORD_RCON or (value.event == Const.CONSOLE_PASSWORD_REF and x[1].strip() not in  Const.REF_COMMANDS) or value.event == Const.CONSOLE_PASSWORD_SERVER:
                         print("[!] Log contains sensitive information! Edit the log before sharing!")
                         print(line)
                         
@@ -657,10 +687,12 @@ class FileProcessor:
            
             #write the line processing notes into the debig file
             write_line = str(line_order).ljust(5) + "roundNum " + str(round_order).ljust(3)  + line_event.ljust(20) + processedLine.ljust(10) + line.rstrip() + "\n"
-            debug_log.write(write_line)
+            if self.debug:
+                debug_log.write(write_line)
         
         #close debig file        
-        debug_log.close() 
+        if self.debug:
+            debug_log.close() 
         
         #logdf = pd.DataFrame([vars(e) for e in log_events])
         #print(matches[1].round_diff)

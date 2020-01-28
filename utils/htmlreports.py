@@ -16,6 +16,13 @@ class HTMLReport:
     
     def __init__(self, result):
         
+        self.empty = False
+        
+        if len(result) == 0:
+            print("[!] Result passed into HTMLReport is empty. HTMLReport did not load any data.")
+            self.empty = True
+            return
+        
         self.award_info = AwardText()
         self.awards = Awards(result)
         matchstats = MatchStats()
@@ -54,6 +61,10 @@ class HTMLReport:
 
     
     def report_to_html(self,*argv):
+        
+        if self.empty:
+            print("[!] Nothing to write.")
+            return
 
         soup = BeautifulSoup("","lxml")
         
