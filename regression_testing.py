@@ -46,9 +46,9 @@ stat_files.append(r".\test_samples\rtcwconsole-2020-01-05.log") #25
 stat_files.append(r".\test_samples\rtcwconsole-2020-01-06MNF.log") #26
 stat_files.append(r".\test_samples\rtcwconsole-2020-01-09.log") #27
 stat_files.append(r".\test_samples\rtcwconsole-2020-01-13.log") #28
-stat_files.append(r".\test_samples\rtcwconsole-2020-01-13.log") #29
-#stat_files.append(r"C:\Users\donka\Downloads\rtcwconsole-2019-01-19-murkey.log") #xx
-stat_files.append(r".\test_samples\rtcwconsole-2020-01-20.log") #30
+stat_files.append(r".\test_samples\rtcwconsole-2020-01-20.log") #29
+stat_files.append(r".\test_samples\rtcwconsole-2020-01-23.log") #30
+stat_files.append(r".\test_samples\rtcwconsole-2020-01-30.log") #31
 
 #just pick last one for debugging
 #stat_files = stat_files[-1:] #last
@@ -67,8 +67,8 @@ for read_file in stat_files:
                               limit=2, file=sys.stdout)
         
     
-    #writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
-    #writer.write_results(result)
+    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+    writer.write_results(result)
       
     results.append(result)
     index = str(len(results) -1)

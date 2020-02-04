@@ -423,11 +423,13 @@ class FileProcessor:
                         collect_events = False
                         new_match_line.defense_hold = 0
                         time1 = x[1].strip().split(":")
-                        roundtime = int(time1[0])*60 + int(time1[1])
+                        round_time = int(time1[0])*60 + int(time1[1])
                         #print("round 2 time is " + str(roundtime))
-                        new_match_line.round_time = roundtime 
                         time2 = x[2].strip().split(":")
-                        new_match_line.round_diff = int(time2[0])*60 + int(time2[1]) - roundtime
+                        round_diff = int(time2[0])*60 + int(time2[1]) - round_time
+                        
+                        new_match_line.round_time = round_time 
+                        new_match_line.round_diff = round_diff
                         #print("round times(t1,t2,diff) " + x[1].strip() + " " + x[2].strip() + " " + str(new_match_line.round_diff))
                         new_match_line.round_num = 2
                         #break # do not
@@ -439,11 +441,13 @@ class FileProcessor:
                         game_finished = True
                         collect_events = False
                         time = x[1].strip().split(":")
-                        roundtime = int(time[0])*60 + int(time[1])
-                        new_match_line.round_diff = 0
+                        round_time = int(time[0])*60 + int(time[1])
+                        round_diff = 0
+                        
                         new_match_line.defense_hold = 1
                         new_match_line.round_num = 2
-                        new_match_line.round_time = roundtime
+                        new_match_line.round_time = round_time
+                        new_match_line.round_diff = round_diff
                         #break # do not
                     
                     #Always Round 1
@@ -460,7 +464,8 @@ class FileProcessor:
                         
                         #Get time from that line
                         time = x[1].strip().split(":")
-                        new_match_line.round_time = int(time[0])*60 + int(time[1])
+                        round_time = int(time[0])*60 + int(time[1])
+                        new_match_line.round_time = round_time
                         
                         new_match_line.round_num = 1
                         #TEMP_STORAGE
@@ -531,7 +536,8 @@ class FileProcessor:
                         #wrap up round one only
                         if value.event == Const.EVENT_OSP_TIME_SET:
                             #round 1. Time set is not indicative of win or loss. It could be set in result of a cap(5:33) or result of hold(10:00)
-                            new_match_line.round_diff = tmp_map.timelimit*60 - new_match_line.round_time
+                            round_diff = tmp_map.timelimit*60 - new_match_line.round_time
+                            new_match_line.round_diff = round_diff
                             tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"round_win"] = abs(1 - new_match_line.defense_hold)
                             tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"round_win"] = new_match_line.defense_hold
                             tmp_stats_all["game_result"] = "R1MSB"
@@ -573,8 +579,10 @@ class FileProcessor:
                         #print(tmp_stats_all.sort_values(Const.STAT_OSP_SUM_TEAM)[[Const.STAT_OSP_SUM_PLAYER,Const.STAT_OSP_SUM_TEAM,"round_num","round_win","game_result", "map"]])      
                         
                         tmp_logdf["round_num"] = new_match_line.round_num
-                        
                         tmp_logdf["round_guid"] = round_guid
+                        tmp_stats_all["round_diff"] = round_diff
+                        tmp_stats_all["round_time"] = round_time
+                        
                         new_match_line.round_guid = round_guid
                         new_match_line.osp_guid = osp_guid
                         

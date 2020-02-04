@@ -50,7 +50,9 @@ class StatsWriter:
                     'round_order' : 'int',
                     'round_win' : 'int',
                     'side' : 'str',
-                    'team_name' : 'str'
+                    'team_name' : 'str',
+                    "round_time" : 'int',
+                    "round_diff" : 'int'
                    }
         
         self.stats_column_types.update(self.weapon_cols)
@@ -84,7 +86,9 @@ class StatsWriter:
                     'round_order' : 0,
                     'round_win' : 0,
                     'side' : " ",
-                    'team_name' : " "
+                    'team_name' : " ",
+                    "round_time" : 600,
+                    "round_diff" : 0
                     }
         self.stats_default_values.update(self.weapon_default_values)
             

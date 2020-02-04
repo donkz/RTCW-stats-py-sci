@@ -8,7 +8,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r"C:\VMswap\rtcw\osp\rtcwconsole.log"
+rtcwlogfile = r".\test_samples\rtcwconsole-2020-01-13.log"
 
 processor = FileProcessor(rtcwlogfile, debug=False)
 result = processor.process_log()
