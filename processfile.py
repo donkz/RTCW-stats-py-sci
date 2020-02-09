@@ -549,6 +549,8 @@ class FileProcessor:
                         #wrap up round two only 
                         if value.event == Const.EVENT_OSP_NOT_REACHED:
                             #round 2 DEFENSE HELD (WON OR DRAW)
+                            if tmp_r1_fullhold is None:
+                                tmp_r1_fullhold = 0
                             if tmp_r1_fullhold == 1:
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"round_win"] = 0 
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.defense].index,"round_win"] = 1 #they get a round win , but a game win is full hold
