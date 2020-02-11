@@ -18,7 +18,7 @@ class HTMLReport:
         
         self.empty = False
         
-        if len(result) == 0:
+        if result is None or len(result) == 0:
             print("[!] Result passed into HTMLReport is empty. HTMLReport did not load any data.")
             self.empty = True
             return

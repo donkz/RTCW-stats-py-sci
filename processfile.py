@@ -237,8 +237,15 @@ class FileProcessor:
     
         #Prep debug log
         if self.debug:
-            debug_log = open(self.debug_file,"w")
+            try:
+                debug_log = open(self.debug_file,"w")
+            except:
+                print("Cannot write to the debug file. Is it already open? File: " + self.debug_file)
             debug_log.write("line".ljust(5) + "roundNum " + "##".ljust(2)  + "Event".ljust(20) + "Action".ljust(10) + "LineText".rstrip() + "\n")
+        
+        if os.path.isfile(self.read_file) == False:
+            print("File does not exist: " + self.read_file)
+            return None
         
         log_file_lines = self.openFile()
         fileLen = len(log_file_lines)-1

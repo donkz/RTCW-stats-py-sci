@@ -8,7 +8,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r".\test_samples\rtcwconsole-2020-01-13.log"
+rtcwlogfile = r"D:\Games\Return to Castle Wolfenstein\osp\rtcwconsole-2020-02-09-NA-VS-KIH.log"
 
 processor = FileProcessor(rtcwlogfile, debug=False)
 result = processor.process_log()
