@@ -180,14 +180,37 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near the Main Gate!"], 
                       [O_PLANT, "Dynamite planted near The Radio!"]
                       ],
+            "mp_depot" : [
+                      [O_WIN,"Axis team destroyed the Allied Field Operations!"],
+                      [D_FLAG, "Axis reclaim the Forward Deployment area!"], # TODO: not confirmed
+                      [O_FLAG, "Allies capture the Forward Deployment Area!"],
+                      [O_OBJ,"Allies have breached the East Gate!"], 
+                      [O_OBJ,"Dynamite planted near the Allied Field Operations!"],  
+                      [O_PLANT, "Dynamite planted near the East Gate!"]
+                      ],
+            "te_delivery_b1" : [
+                      [O_WIN,"Allies have escaped with the Gold!"],
+                      [D_FLAG, "Axis reclaims the Forward Bunker!"],
+                      [O_FLAG, "Allies capture the Forward Bunker!"],
+                      [D_FLAG, "The Loading Door is Closing!"],
+                      [O_FLAG, "The Vault Door is now Open!"],
+                      [O_FLAG, "The Loading Door is Opening!"],
+                      [O_PLANT,"Dynamite planted near the East Wall!"],
+                      [O_PLANT,"Dynamite planted near the West Wall!"],
+                      [O_OBJ, "The West Wall has been breached!"],
+                      [O_PLANT,"Dynamite planted near the Control Room Door!"],
+                      [O_OBJ, "The Control Room Door has been breached!"],
+                      [O_OBJ, "The East Wall has been breached!"]
+                      ],
             "mp_rocket" : [
                       [O_WIN,"Override console been used, rocket launch aborted!"],
                       [D_FLAG,"Axis reclaims the First Cave!"],
                       [O_FLAG,"Allies capture the First Cave!"],
                       [O_OBJ,"Allies have broken through train tunnel cave in!"],
-                      [O_OBJ,"Two doors one break?"], # TODO: what happens when The Upper Rocket Bay Door blows
+                      [O_OBJ,"Allies have destroyed the Rocket Bay Emergency Exit!"], 
                       [O_PLANT, "Dynamite planted near The Upper Rocket Bay Door!"],
-                      [O_PLANT, "Dynamite planted near Tunnel Rubble!"]
+                      [O_PLANT, "Dynamite planted near Tunnel Rubble!"],
+                      [O_PLANT, "Dynamite planted near The Rocket Bay Emergency Exit!"]
                     ],
             "mml_church_v1" : [
                       [O_WIN,"Axis have escaped with the Relic"],
@@ -222,6 +245,8 @@ class ConstMap:
         maps["mml_church_v1"] =    RTCWMap("mml_church_v1",    "Church",      self.map_announce["mml_church_v1"],    self.G_ALLIES, self.G_AXIS,   10,    "the Holy Relic")      
         maps["te_pacific2"] =      RTCWMap("te_pacific2",      "Pacific",     self.map_announce["te_pacific2"],      self.G_AXIS,   self.G_ALLIES,  8,    "")      
         maps["mp_keep"] =          RTCWMap("mp_keep",          "Keep",        self.map_announce["mp_keep"],          self.G_AXIS,   self.G_ALLIES, 10,    "the Sacred Obelisk")
+        maps["te_delivery_b1"] =   RTCWMap("te_delivery_b1",   "Delivery",    self.map_announce["te_delivery_b1"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Axis Gold")
+        maps["mp_depot"] =         RTCWMap("mp_depot",         "Depot",       self.map_announce["mp_depot"],         self.G_AXIS,   self.G_ALLIES, 10,    "")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         

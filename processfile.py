@@ -273,19 +273,16 @@ class FileProcessor:
                     
                     #player renames in game. Store old and new name in doct for later processing
                     if value.event == Const.EVENT_RENAME:
-                        #print("x" + str(x) + " x0: " + x[0] + " x1: " + x[1] + " x2: " + x[2])
                         renames[x[1]] = x[2]
                         break
                     
                     #beginning of every logfile
                     if value.event == Const.EVENT_LOGFILE_TIMESTAMP: 
-                        #Sun Apr 08 18:51:44 2018
-                        log_date = str(datetime.strptime(x[1].strip(), "%a %b %d %H:%M:%S %Y" ))
+                        log_date = str(datetime.strptime(x[1].strip(), "%a %b %d %H:%M:%S %Y" )) #Sun Apr 08 18:51:44 2018
                         break
                     
                     #Match starting...recording to demos/2019-10-24/214736-donka-mp_ice.dm_60.
                     if value.event == Const.EVENT_DATETIME_DEMO:
-                        #osp_demo_date = datetime.strptime(x[1].split("/")[1], "%Y-%M-%d" )
                         osp_demo_date = x[1].split("/")[1]
                         temp_time = x[1].split("/")[2].split("-")[0]
                         osp_demo_time = temp_time[0:2] + ":" + temp_time[2:4] + ":" + temp_time[4:6]
@@ -296,11 +293,6 @@ class FileProcessor:
                     if value.event == Const.EVENT_DATETIME_OSP_MAP_LOAD:
                         osp_map_date = datetime.strptime(x[1].split("(")[1].strip(")"), "%d %b %Y" ).strftime("%Y-%m-%d")
                         osp_map_time = x[1].split(" ")[0]
-# =============================================================================
-#                         print("map load")
-#                         print(osp_map_time)
-#                         print(osp_map_date)
-# =============================================================================
                         break
                     
                     #Wrote screenshots/2019-10-24/215503-donka-mp_ice.jpg
@@ -320,7 +312,7 @@ class FileProcessor:
                         osp_stats_time = temp_time[0:2] + ":" + temp_time[2:4] + ":" + temp_time[4:6]
                         break
                     
-                    #^1FIGHT!
+                    #FIGHT!
                     if value.event == Const.EVENT_START and game_paused == False:
                         #round aborted or otherwise interrupted
                         if (game_started): #round aborted or otherwise interrupted
@@ -354,10 +346,8 @@ class FileProcessor:
                         game_paused = True
                         break
                     
-                    #^7Accuracy info for: ^3KrAzYkAzE ^7(^22^7 Rounds)
+                    #Accuracy info for: /mute doNka (2 Rounds)
                     if game_started and value.event == Const.EVENT_OSP_STATS_ACCURACY: #happens aat the end of every round for a player that is ON A TEAM
-                        #Accuracy info for: /mute doNka (2 Rounds)
-                        #get round number
                         collect_events = False
                         new_match_line.round_num = int(line.split("(")[-1].split(" ")[0])
                         break
@@ -626,15 +616,13 @@ class FileProcessor:
                             stats_all = tmp_stats_all
                         else:
                             stats_all = stats_all.append(tmp_stats_all,sort=False)
-                        
 
-                        
                         
                         ######################################################################
                         ##############END of wrap up the round################################
                         ######################################################################
                         
-                    
+                   
                     
                     #something was matched at this point
                     #IF the line relates to stats (kills, suicides, etc), write a stat_entry
@@ -654,7 +642,6 @@ class FileProcessor:
                         if(x[1] in announcements):                       
                             announcement_values = announcements[x[1]]
                             map_info= map_class.maps[announcement_values[1]]  
-                            #print(x[1] + " interpreted as " + map_info.code)
                             obj_offender = map_info.offense
                             obj_defender = map_info.defense
                             obj_type = announcement_values[0]
