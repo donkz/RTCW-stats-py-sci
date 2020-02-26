@@ -20,5 +20,51 @@ df = df.fillna(0)
 df["c"].astype(int)
 
 
+#######################################################################
+#                    ENCODING                                         #
+#######################################################################
+
+rtcwlogfile = r".\test_samples\rtcwconsole-2020-02-17.log"
+
+with open(rtcwlogfile,"r") as file:
+    lines = file.readlines()
+            
+with open(rtcwlogfile,"rb") as file:
+    lines1 = [l.decode('utf-8', 'ignore') for l in file.readlines()]
+            
+for i in range(0,len(lines)):
+    if (lines[i] == lines1[i]):
+        if(i%500 == 0):
+            print("Equal")
+    else:
+        print(str(i))
+        print(lines[i][0:100])
+        print(lines1[i][0:100])
+
+import codecs
+encodings = ["utf-8","iso8859-1","cp1252"]
+for e in encodings:
+    try:
+        fd = codecs.open(rtcwlogfile,'r',encoding=e)
+        data = fd.read()
+        print(e + " encoding worked")
+    except UnicodeDecodeError as err:
+        print("Encoding failed: ", err)
+
+#######################################################################
+#                    Kwargs                                         #
+#######################################################################
+
+def kek(**kwargs):
+    if "local_file" in kwargs and ("s3bucket" in kwargs or "s3file" in kwargs):
+        print("Provide either local_file or s3 information (s3bucket and s3file)")
+        return None
+    
+    if "local_file" in kwargs:
+        return "Process using " + kwargs.get("local_file")
+    
+    if "bucket" in kwargs:
+        return "Process using " + kwargs.get("bucket")
+
 
 

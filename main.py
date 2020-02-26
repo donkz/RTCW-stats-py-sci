@@ -8,9 +8,9 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r"C:/Users/zveres/Downloads/rtcwconsole-2020-02-10.log"
+rtcwlogfile = r".\test_samples\rtcwconsole-2020-01-13.log"
 
-processor = FileProcessor(rtcwlogfile, debug=False)
+processor = FileProcessor(local_file = rtcwlogfile, debug = False)
 result = processor.process_log()
 html_report = HTMLReport(result)
 html_report.report_to_html()

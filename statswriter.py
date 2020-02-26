@@ -1,4 +1,4 @@
-import os
+import os, sys
 import pandas as pd
 from constants.logtext import Const
 
@@ -128,7 +128,10 @@ class StatsWriter:
         """Class2 method docstrings go here."""
         
         if not os.path.exists(self.filepath):
-                    os.mkdir(self.filepath)
+            try:
+                os.mkdir(self.filepath)
+            except:
+                print("Could not create a directory to write stats out: " + self.filepath)
                     
         for dataset in array:
             if dataset in ["logs", "stats", "matches"]:
@@ -140,7 +143,11 @@ class StatsWriter:
                 for r in rounds:
                     pd.options.mode.use_inf_as_na = True
                     df = tmp[tmp["round_guid"]==r]
-                    df = self.correct_castings(df, dataset)
+                    try:
+                        df = self.correct_castings(df, dataset)
+                    except:
+                        print("[!] Could hard cast the data for round " + r)
+                        print(sys.exc_info()[1])
                     file_name = self.filepath + "\\" + dataset + "\\" + r + ".gz"
                     #print(f"Will write {num_lines} to file {file_name}")
                     df.to_parquet(file_name, compression='gzip', index=False)

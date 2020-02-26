@@ -105,6 +105,15 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near the Southwest Gate!"],
                       [O_PLANT, "Dynamite planted near the Southeast Gate!"]
                     ],
+            "mp_castle" : [
+                      [O_WIN,"The Allies have escaped with the Obelisk!"],
+                      [O_OBJ,"Allies have breached West Gate!"],
+                      [O_OBJ,"Allies have breached the Hallway Gate!"],
+                      [O_OBJ,"The Coffin has been destroyed!"],
+                      [O_PLANT, "Dynamite planted near the West Gate!"],
+                      [O_PLANT, "Dynamite planted near the Hallway Gate!"],
+                      [O_PLANT, "Dynamite planted near the Coffin!"]
+                    ],
             "mp_village" : [
                       [O_WIN,"The Allies have escaped with the Gold!"],
                       [D_FLAG,"Axis reclaims the Northwest Courtyard!"],
@@ -244,6 +253,7 @@ class ConstMap:
         maps["mp_rocket"] =        RTCWMap("mp_rocket",        "Rocket",      self.map_announce["mp_rocket"],        self.G_AXIS,   self.G_ALLIES, 12,    "Override Key")         
         maps["mml_church_v1"] =    RTCWMap("mml_church_v1",    "Church",      self.map_announce["mml_church_v1"],    self.G_ALLIES, self.G_AXIS,   10,    "the Holy Relic")      
         maps["te_pacific2"] =      RTCWMap("te_pacific2",      "Pacific",     self.map_announce["te_pacific2"],      self.G_AXIS,   self.G_ALLIES,  8,    "")      
+        maps["mp_castle"] =        RTCWMap("mp_castle",        "Castle",      self.map_announce["mp_castle"],        self.G_AXIS,   self.G_ALLIES, 10,    "the Obelisk")
         maps["mp_keep"] =          RTCWMap("mp_keep",          "Keep",        self.map_announce["mp_keep"],          self.G_AXIS,   self.G_ALLIES, 10,    "the Sacred Obelisk")
         maps["te_delivery_b1"] =   RTCWMap("te_delivery_b1",   "Delivery",    self.map_announce["te_delivery_b1"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Axis Gold")
         maps["mp_depot"] =         RTCWMap("mp_depot",         "Depot",       self.map_announce["mp_depot"],         self.G_AXIS,   self.G_ALLIES, 10,    "")
