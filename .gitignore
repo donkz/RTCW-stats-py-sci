@@ -39,6 +39,9 @@ temp/
 # output working files
 output/
 
+# seasons working files
+seasons/
+
 # vscode settings
 .vscode/
 

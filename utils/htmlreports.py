@@ -188,9 +188,15 @@ class HTMLReport:
                 print("[!] Warning: something left over in awards table: " + col)
                 
             try:
-                content += self.award_info.awards[col_value].render(result.index.values, result.values[0])
+                if col_value =="Rounds":
+                    "Nothing"
+                else:
+                    content += self.award_info.awards[col_value].render(result.index.values, result.values[0])
             except:
                 print("[!] Summary award failed!")
+                print(col_value in self.award_info.awards.keys())
+                import sys
+                print(sys.exc_info())
                 print("Columns being processed: " + col_value + " and " + col)
                 print("Award dataframe:")
                 print(awardsdf[[col_value,col]])
@@ -323,12 +329,10 @@ class HTMLReport:
     #Basic stats <table>
     def all_stats_to_html(self,basic_stats):
         stats = basic_stats[0]
-        #columns = kill_matrix_stats[1]
         columns = stats.columns
         
         soup = BeautifulSoup("","lxml")
         metrics = [name for name in columns if "rank" not in name]
-        #ranks = [name for name in awardsdf.columns if "rank" in name]
         cols = ["Player"] + metrics
         
         
@@ -344,6 +348,7 @@ class HTMLReport:
             th = Tag(soup, name = "th")
             tr.append(th)
             th.append(col)
+            
         for index, row in stats.iterrows():
             tr = Tag(soup, name = "tr")
             td = Tag(soup, name = 'td')
@@ -505,7 +510,8 @@ class HTMLReport:
             
             #Match Date            
             td = Tag(soup, name = 'td')
-            td.string = row["match_date"].split(" ")[1] if len(row["match_date"].split(" ")) >1 else row["match_date"]
+            #td.string = row["match_date"].split(" ")[1] if len(row["match_date"].split(" ")) >1 else row["match_date"]
+            td.string = row["match_date"]
             tr.append(td)
             
             #Finish row

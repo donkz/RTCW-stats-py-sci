@@ -12,9 +12,19 @@ class Awards:
         self.matches_dataframe     = result["matches"]
         
         temp = self.event_lines_dataframe[(self.event_lines_dataframe.event == "kill")]
+        
+        self.rounds = self.sum_lines_dataframe["round_guid"].groupby(level=0).nunique().to_frame()
+        minrounds = self.sum_lines_dataframe["round_guid"].nunique()/5 #play 20% of the games please!
+        self.minrounds = int(minrounds)
+        self.rounds.columns = ["Rounds"]
+        
+        minutes = self.sum_lines_dataframe["round_time"].groupby(level=0).sum()/60
+        self.minutes = minutes.fillna(0).astype(int).to_frame()
+        self.minutes.columns = ["Minutes"]
+        
         people = temp["killer"].append(temp["victim"]).unique()
         self.awardsdf = None
-        self.all_people = pd.DataFrame(index=people)
+        self.all_people = pd.DataFrame(index=people) #self of all people
     
     def collect_awards(self):
         event_lines_dataframe  = self.event_lines_dataframe
@@ -27,6 +37,12 @@ class Awards:
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        columns.append(x.columns[2])
+        columns.append(x.columns[3])
+        columns.append(x.columns[4])
+        columns.append(x.columns[5]) # this sux
+        columns.append(x.columns[6])
+        columns.append(x.columns[7]) # this sux
     
         x = self.award_efficiency_of_the_night(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
@@ -107,7 +123,9 @@ class Awards:
         x = self.award_most_wins(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
-        columns.append(x.columns[1])   
+        columns.append(x.columns[1])
+        columns.append(x.columns[2])
+        columns.append(x.columns[3])  
         
         #plug the na wholes with appropriate values
         self.awardsdf = awardsdf
@@ -115,6 +133,7 @@ class Awards:
         
         #sum all rank points into final RankPts
         ranks = [name for name in awardsdf.columns if "_rank" in name]
+        #awardsdf.loc[awardsdf[awardsdf["Rounds"]< self.minrounds].index, ranks] = 10
         awardsdf["RankPts"] = awardsdf[ranks].sum(axis=1)
         
         #Re-sort by total rank points and rank the ranks yo dawg
@@ -139,7 +158,7 @@ class Awards:
                 
         #awardsdf['Pack5'] = awardsdf['Pack5'].fillna(0).astype(int)
         awardsdf['Blownup'] = awardsdf['Blownup'].fillna(0).astype(int)
-        awardsdf['FirstInDoor'] = awardsdf['FirstInDoor'].fillna(0).astype(int)
+        awardsdf['FirstInDoor'] = awardsdf['FirstInDoor'].astype(str)
         awardsdf['Deathroll'] = awardsdf['Deathroll'].fillna(0).astype(int)
         #awardsdf['Holds'] = awardsdf['Holds'].fillna(0).astype(int)
         #awardsdf['Caps'] = awardsdf['Caps'].fillna(0).astype(int)
@@ -151,14 +170,13 @@ class Awards:
         awardsdf['Sniper'] = awardsdf['Sniper'].fillna(0).astype(int)
 
         return awardsdf
-    
-    #TODO: re-write this statically maybe for easier understanding
+
     def ranked_column_types(self):
         rank_cols = [c for c in self.awardsdf.columns if c.endswith('_rank')]
         #ranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() >0] if c.endswith('_rank')]
-        ranked_cols = ['Kills_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Wins_rank', 'RankPts_rank']
+        ranked_cols = ['KPM_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Win%_rank', 'RankPts_rank']
         #unranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() == 0] if c.endswith('_rank')]
-        unranked_cols = ['Deathroll_rank', 'Blownup_rank', 'Panzed_rank']
+        unranked_cols = ['Kills_rank', 'Minutes_rank', 'Rounds_rank','Deathroll_rank', 'Blownup_rank', 'Panzed_rank', 'Wins_rank']
         inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank']
         return rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols
         
@@ -179,8 +197,17 @@ class Awards:
         #Count values
         result = people.value_counts().to_frame()
         result.columns = ["FirstInDoor"]
+        
+        result = result.join(self.rounds, how='outer')
+        result["FirstInDoor"] = result["FirstInDoor"]/result["Rounds"]
+        result["FirstInDoor"] = result["FirstInDoor"].fillna(0)
+
+        result.loc[result[result["Rounds"] < self.minrounds].index, "FirstInDoor"] = result.loc[result[result["Rounds"] < self.minrounds].index, "FirstInDoor"].multiply(-1)
         result["FirstInDoor_rank"] = result["FirstInDoor"].rank(method="min", ascending=False, na_option='bottom') 
         result.loc[result[result["FirstInDoor_rank"] > 4].index, "FirstInDoor_rank"] = 5
+
+        result["FirstInDoor"] = result["FirstInDoor"].round(2).multiply(100).astype(int).astype(str)+"%"        
+        result.drop(["Rounds"], axis=1, inplace=True)
         return result
     
     '''
@@ -264,9 +291,7 @@ class Awards:
         result.loc[result[result["Sniper_rank"] < 0].index, "Sniper_rank"] = 0
         result = result_all.join(result).fillna(0)
         return result
-    
-    
-    
+     
     '''
     Most blown up award
     Determine who are the people getting blown up the most
@@ -438,9 +463,27 @@ class Awards:
     def award_kills_of_the_night(self,event_lines_dataframe):
         temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")]
         result = temp["killer"].value_counts().to_frame().rename(columns={"killer" : "Kills"})
-        result["Kills_rank"] = result["Kills"].rank(method="min", ascending=False, na_option='bottom')  
-        result.loc[result[result["Kills_rank"] > 4].index, "Kills_rank"] = 5
-        return result
+        #result["Kills_rank"] = result["Kills"].rank(method="min", ascending=False, na_option='bottom')  
+        #result.loc[result[result["Kills_rank"] > 4].index, "Kills_rank"] = 5
+        
+        
+        result = result.join(self.minutes, how="outer")
+        result = result.join(self.rounds, how="outer")
+        result["Kills"] = result["Kills"].fillna(0)
+        result["Kills_rank"] = 0
+        
+        result["KPM"] = result["Kills"]/result["Minutes"]
+        result["KPM"] = result["KPM"].round(2)
+        result.loc[result[result["Rounds"] < self.minrounds].index, "KPM"] = result.loc[result[result["Rounds"] < self.minrounds].index, "KPM"].multiply(-1)
+        result["KPM_rank"] = result["KPM"].rank(method="min", ascending=False, na_option='bottom')
+        result["KPM_rank"] = result["KPM_rank"]/2 #since there are 2 teams , split rankings on 2
+        result["KPM_rank"] = result["KPM_rank"].apply(np.ceil).astype(int)
+        result.loc[result[result["KPM_rank"] > 7].index, "KPM_rank"] = 8
+        
+        result["Minutes_rank"] = 0
+        result["Rounds_rank"] = 0
+        
+        return result[['Minutes','Minutes_rank','Rounds','Rounds_rank', 'KPM', 'KPM_rank', 'Kills', 'Kills_rank']]
     
     '''
     Best efficiency of the night (Terminator Award from Kris)
@@ -452,12 +495,15 @@ class Awards:
         resultd = temp["victim"].value_counts()
         
         result = pd.DataFrame({"KDR" : resultk/resultd}).round(2)
+        result = result.join(self.rounds, how="outer")
+        result.loc[result[result["Rounds"] < self.minrounds].index, "KDR"] = result.loc[result[result["Rounds"] < self.minrounds].index, "KDR"].multiply(-1)
         result["KDR_rank"] = result["KDR"].rank(method="min", ascending=False, na_option='bottom')   
         
         #since there are 2 teams , split rankings on 2
         result["KDR_rank"] = result["KDR_rank"]/2
         result["KDR_rank"] = result["KDR_rank"].apply(np.ceil).astype(int)
-        #result.loc[result[result["KDR_rank"] > 4].index, "KDR_rank"] = 5
+        result.loc[result[result["KDR_rank"] > 7].index, "KDR_rank"] = 8
+        result.drop(["Rounds"], axis=1, inplace=True)
         return result
 
     '''
@@ -484,11 +530,22 @@ class Awards:
     Most wins
     '''
     def award_most_wins(self,sum_lines_dataframe):
-        temp = sum_lines_dataframe[sum_lines_dataframe.game_result == "WON"]
+        temp = sum_lines_dataframe[sum_lines_dataframe.game_result == "WON"][["Killer","game_result"]]
         result = temp.groupby(Const.STAT_BASE_KILLER)[["game_result"]].count().rename(columns={"game_result" : "Wins"})
-        result["Wins_rank"] = result["Wins"].rank(method="dense", ascending=False, na_option='bottom') 
-        #result["Wins_rank"][result["Wins_rank"] > 4] = 5
-        result.loc[result[result["Wins_rank"] > 4].index, "Wins_rank"] = 5
+        result["Wins_rank"] = 0
+        
+        result = result.join(self.rounds, how='outer')
+        result["Win%"] = result["Wins"]/(result["Rounds"]/2) #one game is 2 rounds
+        result["Win%"] = result["Win%"].fillna(0).round(2)
+        result.loc[result[result["Rounds"] < self.minrounds].index, "Win%"] = result.loc[result[result["Rounds"] < self.minrounds].index, "Win%"].multiply(-1)
+        
+        
+        result["Win%_rank"] = result["Win%"].rank(method="dense", ascending=False, na_option='bottom') 
+        result.loc[result[result["Win%_rank"] > 5].index, "Win%_rank"] = 6
+        
+        result["Win%"] = result["Win%"].round(2).multiply(100).astype(int).astype(str)+"%"        
+        result.drop(["Rounds"], axis=1, inplace=True)
+        
         return result
     
     '''
@@ -496,8 +553,14 @@ class Awards:
     '''
     def award_most_useful_points(self,sum_lines_dataframe):
         result = sum_lines_dataframe.groupby([Const.STAT_BASE_KILLER])[[Const.STAT_POST_ADJSCORE]].sum()
+        
+        result = result.join(self.rounds)
+        result[Const.STAT_POST_ADJSCORE] = result[Const.STAT_POST_ADJSCORE]/result["Rounds"]
+        result[Const.STAT_POST_ADJSCORE] = result[Const.STAT_POST_ADJSCORE].round(1)
+        result.loc[result[result["Rounds"] < self.minrounds].index, Const.STAT_POST_ADJSCORE] = result.loc[result[result["Rounds"] < self.minrounds].index, Const.STAT_POST_ADJSCORE].multiply(-1)
         result[Const.STAT_POST_ADJSCORE + "_rank"] = result[Const.STAT_POST_ADJSCORE].rank(method="min", ascending=False, na_option='bottom')
         result.loc[result[result[Const.STAT_POST_ADJSCORE + "_rank"] > 4].index, Const.STAT_POST_ADJSCORE + "_rank"] = 5
+        result.drop(["Rounds"], axis=1, inplace=True)
         return result
 
  

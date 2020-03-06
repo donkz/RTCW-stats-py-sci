@@ -33,10 +33,10 @@ class AwardStruct:
 class AwardText:
         
     awards = {}
-    awards["FirstInDoor"] = AwardStruct("First killer or victim of the round",
-                                        ["{people}! Good job leading your team with getting in the door first {statistic} times!",
-                                         "{people} wait for no-one with {statistic} first kills/deaths in the game.",
-                                         "{people} drew the first blood {statistic} times!"],
+    awards["FirstInDoor"] = AwardStruct("First killer or victim of the round (per round)",
+                                        ["{people}! Good job leading your team with getting in the door first {statistic} times per round!",
+                                         "{people} wait{multiplier} for no-one with {statistic} of first kills/deaths per round played.",
+                                         "{people} drew the first blood {statistic} of the rounds!"],
                                          3)
     awards["Blownup"]     = AwardStruct("Exploded by grenade, AS, dynamite",
                                         ["{people} ... watch your step and try not to walk into explosives {statistic} times again!",
@@ -57,8 +57,8 @@ class AwardText:
                                          "Tell {people} to regain the composure. {statistic} deathstreak isn't helping anyone."],
                                          3)
     awards["Kills"]       = AwardStruct("Kills in the entire match",
-                                         ["{people} killed the most people in the match - {statistic}!",
-                                         "{people} enjoys{multiplier} a fragtastic time with {statistic} kills!",
+                                         ["{people} killed the most people in this event - {statistic}!",
+                                         "{people} enjoy{multiplier} a fragtastic time with {statistic} kills!",
                                          "{people} got the KrisOfWin Slaughterhouse Award with {statistic} frags!"],
                                          3)
     awards["KDR"]         = AwardStruct("Kills to enemy deaths ratio",
@@ -73,8 +73,8 @@ class AwardText:
                                          ["not used at the moment",
                                          "not used at the moment"],
                                          8)
-    awards["AdjScore"]    = AwardStruct("Objective Score (Total minus kills, TKs, and deaths)",
-                                         ["{people} like{multiplier} to work for the team and bring{multiplier} impressive {statistic} points!"],
+    awards["AdjScore"]    = AwardStruct("Objective Score Per Round (Total minus kills, TKs, and deaths)",
+                                         ["{people} like{multiplier} to work for the team and bring{multiplier} impressive {statistic} points per round!"],
                                          3)
     awards["Pack5"]       = AwardStruct("5 kills without dying",
                                          ["not used at the moment",
@@ -87,6 +87,10 @@ class AwardText:
                                          ["{people} know{multiplier} how to win and got {statistic} wins to show for it!",
                                          "{people} take{multiplier} the cake with {statistic} wins!",
                                          "{people} keep{multiplier} eyes on the prize with {statistic} wins!"],
+                                         8)
+    awards["Win%"]        = AwardStruct("Winning ratio",
+                                         ["{people} show{multiplier} up to win {statistic} of his games!",
+                                          "Who's the conductor of the pain train? Ask {people} with their {statistic} winning percentage."],
                                          8)
     awards["MegaKill"]    = AwardStruct("Number of kills player done at once",
                                          ["Watch out for {people} mowing others down in batches of {statistic}",
@@ -103,3 +107,15 @@ class AwardText:
                                          ["{people} like{multiplier} to do it from afar with {statistic} sniper kills.",
                                          "{people} raked {statistic} sniper kills while everyone else was frontlining."],
                                          2)
+    awards["KPM"]         = AwardStruct("Kills per minute",
+                                         ["{people} showing how to kill with {statistic} kills per minute played!",
+                                         "{people} - top killer{multiplier} per pound (minute) with {statistic} kills per minute."],
+                                         2)
+    awards["Minutes"]     = AwardStruct("Minutes played",
+                                         ["{people} thanks for sticking around the longest - {statistic} minutes!",
+                                         "{people} - hold{multiplier} down the house with {statistic} minutes in action!"],
+                                         20)
+    awards["Rounds"]    = AwardStruct("Rounds played",
+                                     [],
+                                     20)
+    
