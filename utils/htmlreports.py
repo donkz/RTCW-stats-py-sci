@@ -50,8 +50,11 @@ class HTMLReport:
         
         self.award_summaries_html_table = self.award_summaries_to_html(self.award_stats)
         
-        kill_matrix_stats = matchstats.table_kill_matrix(result)
-        self.kill_matrix_stats_html_table = self.kill_matrix_to_html(kill_matrix_stats)
+        #kill_matrix_stats = matchstats.table_kill_matrix(result)
+        #self.kill_matrix_stats_html_table = self.kill_matrix_to_html(kill_matrix_stats)
+        
+        top_feuds = matchstats.table_top_feuds(result)
+        self.feuds_html_table = self.feuds_to_html(top_feuds)
         
         renames = matchstats.table_renames(result)
         if renames[0] is None:
@@ -107,8 +110,12 @@ class HTMLReport:
         soup.body.append(self.basic_stats_html_table)
         soup.body.append(self.insert_header("Weapon stats",2))
         soup.body.append(self.weapon_stats_html_table)
-        soup.body.append(self.insert_header("Kill matrix",2))
-        soup.body.append(self.kill_matrix_stats_html_table)
+        #soup.body.append(self.insert_header("Kill matrix",2))
+        #soup.body.append(self.kill_matrix_stats_html_table)
+        
+        soup.body.append(self.insert_header("Top Feuds",2))
+        soup.body.append(self.insert_text("The most numerous head-to-head encounters of the match"))
+        soup.body.append(self.feuds_html_table)
         soup.body.append(self.insert_header("MegaKills",2))
         soup.body.append(self.insert_text("Kills that happened consequently, all at once"))
         soup.body.append(self.award_megakills_html_table)
@@ -202,7 +209,32 @@ class HTMLReport:
                 print(awardsdf[[col_value,col]])
                 
         return content
+    
+    #feuds table
+    def feuds_to_html(self,top_feuds):
+        feuds = top_feuds[0]
+        columns = top_feuds[1]
         
+        soup = BeautifulSoup("","lxml")        
+        table = Tag(soup, name = "table")
+        table["class"] = "blueTable"
+        soup.append(table)
+        tr = Tag(soup, name = "tr")
+        table.append(tr)
+        
+        for col in columns:
+            th = Tag(soup, name = "th")
+            tr.append(th)
+            th.append(col)
+        for index, row in feuds.iterrows():
+            tr = Tag(soup, name = "tr")
+            td = Tag(soup, name = "td")
+            for col in feuds.columns:
+                td = Tag(soup, name = "td")
+                td.insert(1, (str(row[col])))
+                tr.append(td)
+                table.append(tr)
+        return soup
 
     
     def awards_to_html(self,award_stats):

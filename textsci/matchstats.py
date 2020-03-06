@@ -125,6 +125,17 @@ class MatchStats:
         event_lines_dataframe = data["logs"]
         
         pivoted_weapons = self.weapon_pivot(event_lines_dataframe)
+        
+        #summarize some things
+        pivoted_weapons["Smokes"] = pivoted_weapons["Airstrike"] + pivoted_weapons["Artillery"]
+        pivoted_weapons["Pistols"] = pivoted_weapons["Luger"] + pivoted_weapons["Colt"]
+        pivoted_weapons["MachineGuns"] = pivoted_weapons["MP40"] + pivoted_weapons["Thompson"] + pivoted_weapons["Sten"]
+        pivoted_weapons.drop(["Airstrike","Artillery","Luger","Colt","MP40","Thompson","Sten"], axis=1, inplace = True)
+        
+        #re-order
+        pivoted_weapons = pivoted_weapons[['MachineGuns','Pistols','Grenade','Smokes','Panzerfaust', 'Sniper','Venom', 'Flame', 'Dynamite', 'MG42', 'Knife']]
+        pivoted_weapons = pivoted_weapons.loc[(pivoted_weapons.sum(axis=1) != 0), (pivoted_weapons.sum(axis=0) != 0)]
+        
         columns = pivoted_weapons.columns
         for column in columns:
             pivoted_weapons[column + "_rank"] = pivoted_weapons[column].rank(method="min", ascending=False, na_option='keep') 
@@ -143,6 +154,38 @@ class MatchStats:
                 if mod not in existing_columns: 
                     result[mod] = 0        
         return result.fillna(0).astype(int) #https://stackoverflow.com/questions/46859400/pandas-pivot-changes-dtype
+    
+    '''
+    Who killed who how many times (top10)
+    Replaces Kill matrix
+    '''
+    def table_top_feuds(self,data):
+        event_lines_dataframe = data["logs"]
+        temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]
+        left = temp.groupby(["killer","victim"]).count().reset_index()[["killer","victim","event"]]
+        left.index = left["killer"]+left["victim"]
+        right = left.copy()
+        right.index = left["victim"]+left["killer"]
+        right = right[["event"]]
+        
+        left.columns = ['killer', 'victim', 'left']
+        right.columns = ["right"]
+        
+        joined = left.join(right).dropna()
+        joined["right"] = joined["right"].astype(int)
+        joined["key"] = joined.index
+        joined.index = ["".join(sorted(a)) for a in joined.index.values]
+        unique = joined[["left","key"]].groupby(level=0).max()
+        unique.index = unique["key"]
+        joined.index = joined["key"]
+        unique["keep"] = 1
+        joined = joined.join(unique["keep"])
+        joined = joined[joined["keep"]==1]
+        result = joined[['killer','left','right','victim']].copy()
+        result.columns = ['P1','left','right','P2']
+        result["sum"]=result["right"]+result["left"]
+        result = result.sort_values("sum").tail(10).reset_index(drop=True)
+        return [result[['P1', 'left', 'right', 'P2']],['PlayerA', '', '', 'PlayerB']]
     
     
     
