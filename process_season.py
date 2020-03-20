@@ -25,7 +25,7 @@ def list_files(path):
     print("\n".join(all_files))
     return all_files
 
-season_dir = r".\seasons\2020Jan"
+season_dir = r".\seasons\2020Feb"
 stat_files = list_files(season_dir)
 
 results = []
@@ -39,7 +39,6 @@ for file in stat_files:
     results.append(result)
     #index = str(len(results) -1)
     #print(f'Processed file: {file} into results[{index}]')
-
 
 del logs
 del stats
@@ -182,7 +181,7 @@ renamesJan = {
         "cKy" :  "cky"
         }
 
-renames = renamesJan
+#renames = renamesJan
 
 renamed_logs = logs.replace(renames, regex=False)
 renamed_stats = stats.replace(renames, regex=False)

@@ -2,7 +2,7 @@ from constants.logtext import Const
 from collections import Counter
 import pandas as pd
 import numpy as np
-
+import time as _time
 
 class Awards:
     
@@ -33,6 +33,8 @@ class Awards:
         awardsdf               = self.all_people
         columns = []
         
+        t1 = _time.time()
+        
         x = self.award_kills_of_the_night(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
@@ -40,19 +42,30 @@ class Awards:
         columns.append(x.columns[2])
         columns.append(x.columns[3])
         columns.append(x.columns[4])
-        columns.append(x.columns[5]) # this sux
+        columns.append(x.columns[5]) 
         columns.append(x.columns[6])
         columns.append(x.columns[7]) # this sux
+        t2 = _time.time()
+        print ("Time to process kills is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
+            
+        
     
         x = self.award_efficiency_of_the_night(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process kdr is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_kill_streak(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process killstreak is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
 # =============================================================================
 #         x = self.award_pack_of_five(event_lines_dataframe)
@@ -67,46 +80,73 @@ class Awards:
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process megakill is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_panzer(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process panz is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_smoker(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process smoker is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_sniper(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process sniper is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_death_streak(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process deathstreak is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_most_blown_up(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process blown up is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_most_panzed(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process panzed is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_first_in_door(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process first-in-door is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         x = self.award_most_useful_points(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process points is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
 # =============================================================================
 #         x = self.award_most_caps(sum_lines_dataframe)
@@ -125,7 +165,10 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         columns.append(x.columns[2])
-        columns.append(x.columns[3])  
+        columns.append(x.columns[3]) 
+        t2 = _time.time()
+        print ("Time to process wins is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
         
         #plug the na wholes with appropriate values
         self.awardsdf = awardsdf
@@ -143,6 +186,9 @@ class Awards:
         columns.append("RankPts_rank")
                
         self.awardsdf = awardsdf
+        
+        t2 = _time.time()
+        print ("Time to wrap up awards is " + str(round((t2 - t1),2)) + " s")
         return [awardsdf,columns, megakilldetail]
        
     def fill_na_values(self):
@@ -315,6 +361,83 @@ class Awards:
         
         #this almost worked....as a one liner
         #event_lines_dataframe["count"] = event_lines_dataframe.groupby((event_lines_dataframe['killer'] != event_lines_dataframe['killer'].shift(1)).cumsum()).cumcount()+1
+        t1 = _time.time()
+        
+        event_lines_dataframe = event_lines_dataframe.reset_index()
+        del event_lines_dataframe["index"]
+        temp = event_lines_dataframe[["event","killer","round_order"]]
+        
+        first = True
+        megadict = {} # killer : [count, line_index, count_max, [line_index_max1....line_index_maxn]]
+        for row in temp.itertuples():
+            if first:
+                curr_row = row
+                first = False
+                megadict[curr_row.killer] = [1, curr_row.Index, 0, [0]]
+            else:
+                prev_row = curr_row
+                curr_row = row
+                #if current event is a kill and next event is a kill and killer is the same, set next count to +1
+                if curr_row.event == "kill":
+                    if prev_row.event == "kill" and prev_row.killer == curr_row.killer and prev_row.round_order == curr_row.round_order:
+                        stat = megadict[curr_row.killer]
+                        current_kill_count = stat[0]+1
+                        if current_kill_count == stat[2]:
+                            megadict[curr_row.killer] = [current_kill_count, curr_row.Index, current_kill_count, stat[3] + [curr_row.Index]]
+                        elif current_kill_count > stat[2]:
+                            #print(megadict[curr_row.killer])
+                            megadict[curr_row.killer] = [current_kill_count, curr_row.Index, current_kill_count, [curr_row.Index]]
+                        else:    
+                            megadict[curr_row.killer] = [current_kill_count, curr_row.Index, stat[2], stat[3]]
+                    else:
+                        if curr_row.killer in megadict:
+                            stat = megadict[curr_row.killer]                        
+                            megadict[curr_row.killer] = [1, curr_row.Index, stat[2], stat[3]]
+                        else: 
+                            megadict[curr_row.killer] = [1, curr_row.Index, 1, [curr_row.Index]]
+            
+        #select max kills for each player
+        result = pd.DataFrame(megadict).transpose()
+        result.columns  = ["count","idx","MegaKill","idxmax"]
+        result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
+        result.loc[result[result["MegaKill_rank"] > 4].index, "MegaKill_rank"] = 5
+        
+        t2 = _time.time()
+        print ("Time to process megakills1 is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
+        
+        #extract actual megakills (3 or more)
+        #max_mk = result[result["MegaKill"] >= result["MegaKill"].quantile(.8)]["MegaKill"].min()
+        max_mk = 3
+        tmp_result = result[result["MegaKill"] >= max_mk][['MegaKill', 'idxmax']] #extract info or 3 or more kills in a row
+        megakills = pd.DataFrame()
+        for row in tmp_result.itertuples(index=False):
+            indexmaxes = row.idxmax
+            kill_count = row.MegaKill
+            for i in indexmaxes:
+                df = event_lines_dataframe.iloc[i-kill_count+1 : i+1].copy()
+                df["count"] = kill_count
+                megakills = megakills.append(df)
+        
+        megakills["count"] = megakills["count"].astype(int)
+        
+        time_and_map = self.matches_dataframe[["match_date","map","round_guid"]]
+        megakills2 = megakills.merge(time_and_map, on='round_guid', how='inner', suffixes=('_events', '_matches'))
+        
+        result.drop(["count","idx","idxmax"], axis=1, inplace=True)
+        
+        t2 = _time.time()
+        print ("Time to process megakills2 is " + str(round((t2 - t1),2)) + " s")
+        return [result, megakills2[["match_date","map", "killer", "mod", "victim","count"]]]
+    
+
+    def award_megakill_bkp(self,event_lines_dataframe):
+        #debug: event_lines_dataframe = results[0]["logs"].copy()
+        #count killers repeating in succession
+        
+        #this almost worked....as a one liner
+        #event_lines_dataframe["count"] = event_lines_dataframe.groupby((event_lines_dataframe['killer'] != event_lines_dataframe['killer'].shift(1)).cumsum()).cumcount()+1
+        t1 = _time.time()
         
         event_lines_dataframe = event_lines_dataframe.reset_index()
         del event_lines_dataframe["index"]
@@ -332,6 +455,10 @@ class Awards:
         result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
         result.loc[result[result["MegaKill_rank"] > 4].index, "MegaKill_rank"] = 5
         
+        t2 = _time.time()
+        print ("Time to process megakills1 is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
+        
         #extract actual megakills (3 or more)
         tmp_result = result[result["MegaKill"] > 2]
         megakills = pd.DataFrame()
@@ -342,6 +469,9 @@ class Awards:
                 megakills = megakills.append(df)
         
         megakills["count"] = megakills["count"].astype(int)
+        
+        t2 = _time.time()
+        print ("Time to process megakills2 is " + str(round((t2 - t1),2)) + " s")
         return [result, megakills[["round_order", "killer", "mod", "victim","count"]]]
     
     '''

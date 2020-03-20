@@ -12,9 +12,13 @@ from constants.awardtext import AwardText
 from datetime import datetime
 import hashlib
 
+import time as _time
+
 class HTMLReport:
     
     def __init__(self, result):
+        
+        time_start_html_init = _time.time()
         
         self.empty = False
         
@@ -61,9 +65,14 @@ class HTMLReport:
             self.renames_html_table = None
         else:   
             self.renames_html_table = self.renames_to_html(renames)
+        
+        time_end_html_init = _time.time()
+        print ("Time to load awards is " + str(round((time_end_html_init - time_start_html_init),2)) + " s")
+            
 
     
     def report_to_html(self,*argv):
+        time_start_html_write = _time.time()
         
         if self.empty:
             print("[!] Nothing to write.")
@@ -138,7 +147,11 @@ class HTMLReport:
         html_file = open(outfile,"w")
         html_file.write(soup.prettify())
         html_file.close() 
+        
+        time_end_html_write = _time.time()
+        print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
         print("Wrote html report to " + html_file.name)
+            
         
     def insert_header(self,text, size):
         soup = BeautifulSoup("","lxml")

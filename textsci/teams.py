@@ -23,7 +23,7 @@ def team_name_front(players):
         
     for name in players:
         i = 0
-        for c in list(name):
+        for c in list(name.lower()):
             i = i+1
             if c not in charsdf.index.values: continue
             if i in charsdf.columns:
@@ -50,7 +50,7 @@ def team_name_chars(players):
         for player in players:
             player_segments = []
             for i in np.arange(len(player)-segment_length+1):
-                segment = player[i:i+segment_length]
+                segment = player.lower()[i:i+segment_length]
                 if segment not in player_segments:
                     segments.append([segment_length,segment])
                     player_segments.append(segment)                
@@ -100,10 +100,7 @@ def add_team_name(stats_all):
         #print("passed")
         #stats_all["player_strip"]=""
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_name"] = allies_team_name
-        #don't need captains anymore since using round guid
-        #stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Allies"].index, "team_captain"] = get_captain(stats_all, "Allies")
         stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_name"] = axis_team_name
-        #stats_all.loc[stats_all[stats_all[Const.STAT_OSP_SUM_TEAM]=="Axis"].index, "team_captain"]  = get_captain(stats_all, "Axis")
     return stats_all
 
 def get_round_guid_osp(osp_lines):

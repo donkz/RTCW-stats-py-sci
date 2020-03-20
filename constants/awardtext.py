@@ -54,7 +54,7 @@ class AwardText:
                                          3)
     awards["Deathroll"]   = AwardStruct("Consecutive deaths without a kill",
                                          ["{people} need{multiplier} to take a breather and try not to die {statistic} times in a row!",
-                                         "Tell {people} to regain the composure. {statistic} deathstreak isn't helping anyone."],
+                                         "Tell {people} to regain their composure. {statistic} deathstreak isn't helping anyone."],
                                          3)
     awards["Kills"]       = AwardStruct("Kills in the entire match",
                                          ["{people} killed the most people in this event - {statistic}!",

@@ -76,8 +76,8 @@ class FileProcessor:
         if "s3bucket" in kwargs:
             if "s3file" in kwargs:
                 self.lines = self.get_log_lines_s3(kwargs.get("s3bucket"), kwargs.get("s3file"))
-                self.file_date = "" #TODO: a
-                self.file_size = "" #TODO: a
+                self.file_date = "" #TODO: get cloud filesize and date
+                self.file_size = "" #TODO: _
                 self.medium_agnostic_file_name = "s3://" + kwargs.get("s3bucket") + "/" + kwargs.get("s3file")
             else:
                 print("You have provided s3bucket, but not s3file")
@@ -94,7 +94,9 @@ class FileProcessor:
     #line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
     #line = "Allies /mute sem        19  10   2  2  65   4  3588  2085  226     46"
     def process_OSP_line(self,line):
-        tokens = re.split("\s+", line)    
+        tokens = re.split("\s+", line)
+        if len(tokens) < 10:
+            return None
         player = " ".join(tokens[1:len(tokens)-10])
         temp = pd.DataFrame([[player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2],tokens[-1]]], columns=Const.osp_columns)
         return temp
@@ -154,6 +156,7 @@ class FileProcessor:
         return df
         
     def summarize_round(self, logdf, ospdf):
+        #t1 = _time.time()
         kills = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["killer","event"])["event"].count().unstack()
         deaths = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["victim","event"])["event"].count().unstack()
 
@@ -189,7 +192,8 @@ class FileProcessor:
         #print(stats[[Const.STAT_BASE_DEATHS, Const.STAT_BASE_SUI, Const.STAT_BASE_TKd, Const.STAT_BASE_ALLDEATHS]])
         
         #drop rows with empy player names and fill NaN values with 0
-        stats = stats.drop(index='') 
+        if '' in stats.index.values:
+            stats = stats.drop(index='') 
         stats = stats.fillna(0).astype(int)
         
         #######################################
@@ -201,12 +205,20 @@ class FileProcessor:
         stats_all = stats.join(ospdf) #Totals fall out naturally
         stats_all.index = stats_all['index'] #go back
         del stats_all["index"]
-        #print(stats_all)
-        stats_all = add_team_name(stats_all)
-        
+
+        if False: #TODO: disabling this costly operation for now
+            stats_all = add_team_name(stats_all) #adds up to 0.15s processing (200% per round)
+        else:
+            #trying not to break anything
+            stats_all["player_strip"] = "notused"
+            stats_all["team_name"] = "notused"
+      
+        #t2 = _time.time()
+        #print ("Time to build summary " + str(round((t2 - t1),2)) + " s")
         return stats_all
     
     def add_classes(self, logdf, stats_all):
+        #t1 = _time.time()
         #debug: logdf = results[0]["logs"][results[0]["logs"]["round_num"] == 1]
         #debug: stats_all = results[0]["stats"][results[0]["stats"]["round_num"] == 1]
         match_stats = MatchStats()
@@ -237,7 +249,9 @@ class FileProcessor:
         #Venom
         venom_index =  stats_all[stats_all[Const.WEAPON_VENOM] > 0].index.values    
         stats_all.loc[venom_index, "class"] = Const.CLASS_VENOM
-
+        
+        #t2 = _time.time()
+        #print ("Time to process classes is " + str(round((t2 - t1),2)) + " s")
         return stats_all
     
     def select_time(self, osp_demo_date, osp_demo_time, osp_map_date, osp_map_time, osp_stats_date, osp_stats_time, osp_jpeg_date, osp_jpeg_time, log_date):
@@ -380,6 +394,7 @@ class FileProcessor:
                     
                     #FIGHT!
                     if value.event == Const.EVENT_START:
+                        round_start_time = _time.time()
                         if game_paused:
                             game_paused = False
                         else:
@@ -450,6 +465,8 @@ class FileProcessor:
                     if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS: #OSP team stats per player
                         if game_started:
                             osp_line = self.process_OSP_line(line)
+                            if osp_line is None: #someone echoes "Axis" ... thx Cliffdark
+                                break
                             #typing /scores in the middle of the game can double the stats. 
                             #Make sure to drop intermediary line
                             if(osp_line[Const.STAT_OSP_SUM_PLAYER].values[0] in ospDF[Const.STAT_OSP_SUM_PLAYER].values):
@@ -538,7 +555,7 @@ class FileProcessor:
                     #####################wrap up the round################################
                     ######################################################################
                     if game_finished and (value.event == Const.EVENT_OSP_REACHED or value.event == Const.EVENT_OSP_NOT_REACHED or value.event == Const.EVENT_OSP_TIME_SET):
-                                                
+                        round_end_time = wrap_start_time = _time.time()                       
                         #Determine the map                        
                         del map_counter["anymap"]
                         if(len(map_counter) > 1):
@@ -651,8 +668,7 @@ class FileProcessor:
                         
                         
                         matches.append(new_match_line)
-                        print("Proccessed round " + str(new_match_line.round_order).ljust(2) + " winner " + new_match_line.winner.ljust(6) + " on " + new_match_line.map[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(tmp_stats_all)) )
-                        
+                       
                         #append event log and stats sum to the match dataframe
                         try:
                             logdf
@@ -667,6 +683,8 @@ class FileProcessor:
                         else:
                             stats_all = stats_all.append(tmp_stats_all,sort=False)
 
+                        wrap_end_time = _time.time()  
+                        print("Proccessed round " + str(new_match_line.round_order).ljust(2) + " winner " + new_match_line.winner.ljust(6) + " on " + new_match_line.map[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(tmp_stats_all)).ljust(2) + "(Linestime: " + str(round((round_end_time - round_start_time),2)) + " s " + "Wraptime: " + str(round((wrap_end_time - wrap_start_time),2)) + " s)")
                         
                         ######################################################################
                         ##############END of wrap up the round################################

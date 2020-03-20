@@ -10,7 +10,8 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r"D:\Games\Return to Castle Wolfenstein\osp\rtcwconsole.log"
+#rtcwlogfile = r".\test_samples\rtcwconsole-2020-01-13.log"
+rtcwlogfile = r"C:\Users\zveres\Downloads\rtcwconsole-2020-03-16.log"
 
 dt = datetime.now().strftime("%Y-%m-%d")
 dest = shutil.copyfile(rtcwlogfile, rtcwlogfile.replace(".log", dt+".log")) 
