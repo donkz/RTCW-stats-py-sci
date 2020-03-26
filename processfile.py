@@ -295,6 +295,7 @@ class FileProcessor:
         osp_map_date = osp_map_time = osp_demo_time = osp_jpeg_date = osp_demo_date = osp_jpeg_time= osp_stats_date = osp_stats_time = None
         
         tmp_r1_fullhold = None
+        last_known_map = None
         
         
         tmp_log_events = []
@@ -563,16 +564,29 @@ class FileProcessor:
                         
                         if(len(map_counter) == 0):
                             map_code = None
-                            map_name = "unknown"
+                            if last_known_map:
+                                map_code = last_known_map
+                                tmp_map = map_class.maps[map_code]
+                                print("[!] No current map information found. Assumed the map is previous: " + last_known_map)
+                            else:
+                                map_name = "No info"
+                                tmp_map = map_class.maps["anymap"]
+                        elif(map_counter.most_common(1)[0][0] == "Not listed"):
+                            map_code = None
+                            map_name = "Not listed"
                             tmp_map = map_class.maps["anymap"]
                         else:
                             map_code = map_counter.most_common(1)[0][0]
                             tmp_map = map_class.maps[map_code]
+                            last_known_map = map_code
                             map_name = tmp_map.name
                             
                         #round up all events and join them with OSP
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
 
+                        if len(ospDF) == 0:
+                            break #TODO impute variables
+                            
                         tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
                         tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
                         tmp_stats_all["round_order"] = round_order
@@ -729,6 +743,7 @@ class FileProcessor:
                                 "Generic message, skip it"
                             else:
                                 print("---------------Unknown objective: ".ljust(20) + x[1])
+                                map_counter["Not listed"] +=1
                     else:
                         stat_entry = None
                     break

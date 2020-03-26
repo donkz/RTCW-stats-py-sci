@@ -52,6 +52,7 @@ stat_files.append(r".\test_samples\rtcwconsole-2020-01-30.log") #30
 stat_files.append(r".\test_samples\rtcwconsole-2020-02-06.log") #31
 stat_files.append(r".\test_samples\rtcwconsole-2020-02-10.log") #32
 stat_files.append(r".\test_samples\rtcwconsole-2020-02-17.log") #33
+stat_files.append(r".\test_samples\rtcwconsole-temp-bad-maps.log") #34
 
 #just pick last one for debugging
 #stat_files = stat_files[-2:] #last

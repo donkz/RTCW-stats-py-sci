@@ -25,8 +25,10 @@ def list_files(path):
     print("\n".join(all_files))
     return all_files
 
-season_dir = r".\seasons\2020Feb"
-stat_files = list_files(season_dir)
+season_dir = r".\seasons\\"
+tis_season = "2020Mar"
+season_path = season_dir + tis_season
+stat_files = list_files(season_path)
 
 results = []
 for file in stat_files:
@@ -40,9 +42,12 @@ for file in stat_files:
     #index = str(len(results) -1)
     #print(f'Processed file: {file} into results[{index}]')
 
-del logs
-del stats
-del matches
+try: 
+    del logs
+    del stats
+    del matches
+except:
+    "Nothing"
 
 for result in results:
     try:
@@ -64,7 +69,8 @@ for result in results:
 #stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
 #matches.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
 
-renames = {
+renames = {}
+renames["2020Feb"] = {
         ".:.c@k-el" :  "cakel",
         ".:.CORPSE" :  "corpse",
         ".:.festus" :  "festus",
@@ -127,7 +133,7 @@ renames = {
         "vodka!" :  "vodka"
         }
 
-renamesJan = {
+renames["2020Jan"] = {
         "Cliffdark" :  "cliffdark",
         "Cypher" :  "cypher",
         "DillWeed" :  "dillweed",
@@ -181,12 +187,120 @@ renamesJan = {
         "cKy" :  "cky"
         }
 
-#renames = renamesJan
+renames["2020Mar"] = {
+        "!tH!Gut" : "gut",
+        "#REDUE John_Mullins" : "john_mullins",
+        "-=prowler=-" : "prowler",
+        "-Tv-Ra!ser" : "raiser",
+        "-eh-brian" : "brian",
+        "-n2p)(spaztik" : "spaztik",
+        ".:.Flogzero" : "flogzero",
+        ".:.c@k-el" : "cakel",
+        ".:.crops" : "corpse",
+        ".:.festus" : "festus",
+        ".:.prowler" : "prowler",
+        ".:.spaztik" : "spaztik",
+        "BRND REDUE" : "brandon",
+        "Cliff of Pain" : "cliffdark",
+        "CoronaDill" : "dillweed",
+        "Cypher" : "cypher",
+        "DHS DEADEYE" : "deadeye",
+        "DHS Fistermiagi" : "deadeye",
+        "DHS NIGEL" : "nigel",
+        "DHS jaytee" : "jaytee",
+        "DHS tragiC" : "tragic",
+        "DUBARD <o/" : "dubard",
+        "Deadeye" : "deadeye",
+        "DillWeed" : "dillweed",
+        "Festus" : "festus",
+        "Fister of Pain" : "deadeye",
+        "HuckleBerryTragic" : "tragic",
+        "Jimmy" : "jimmy",
+        "John_Mullins" : "john_mullins",
+        "John_Mullins_of_Pain" : "john_mullins",
+        "Kittens" : "kittens",
+        "MoistSurgeon" : "moistsurgeon",
+        "N/A BRND" : "brandon",
+        "N/A Ra!ser" : "raiser",
+        "N/A donkz" : "donka",
+        "Pasek" : "pasek",
+        "Pasek*" : "pasek",
+        "Pk of Pain" : "pasek",
+        "RAISER" : "raiser",
+        "Raiser" : "raiser",
+        "SCRILL4" : "scrilla",
+        "SOURCE" : "source",
+        "Uber Brian" : "Uber Brian",
+        "Wang of Pain" : "wang",
+        "Yaourt ! ?" : "yaourt",
+        "[>>] Cliffdark" : "cliffdark",
+        "[>>] Helga von Bulow" : "cliffdark",
+        "afk-ternal" : "eternal",
+        "bru" : "bru",
+        "c@k-el" : "cakel",
+        "caffbe bryant" : "caffeine",
+        "coronaBRND" : "brandon",
+        "dillweed" : "dillweed",
+        "donka" : "donka",
+        "donkz" : "donka",
+        "donkz of  Pain" : "donka",
+        "donkztik" : "donka",
+        "eXe|Anialatem" : "anialatem",
+        "eXe|Flogzero" : "flogzero",
+        "eXe|MeaN" : "anialatem",
+        "eXe|Meanguine" : "anialatem",
+        "eternal_" : "eternal",
+        "fisterMiagi" : "deadeye",
+        "fromiam" : "fro",
+        "fucker" : "raiser",
+        "miLes" : "miles",
+        "miles" : "miles",
+        "miles of Pain" : "miles",
+        "mooshu" : "mooshu",
+        "murkey" : "murkey",
+        "n/a SOURCE" : "source",
+        "n/a eternal" : "eternal",
+        "n00b" : "brandon",
+        "nig of Pain" : "nigel",
+        "nigel" : "nigel",
+        "parcher" : "parcher",
+        "parhcer" : "vis",
+        "prowler" : "prowler",
+        "reker" : "reker",
+        "rekernator" : "reker",
+        "roz'murkey" : "murkey",
+        "roz'parcher" : "parcher",
+        "shootz" : "shootz",
+        "source" : "source",
+        "spaz of pain" : "spaztik",
+        "spaztik" : "spaztik",
+        "sscasper" : "casper",
+        "tTt-c@k-el" : "cakel",
+        "tTt-festus" : "festus",
+        "tTt-prowler" : "prowler",
+        "teker" : "tragic",
+        "v57-sOn4R*" : "sonar"   
+        }
 
-renamed_logs = logs.replace(renames, regex=False)
-renamed_stats = stats.replace(renames, regex=False)
-renamed_stats.index = stats.reset_index().replace(renames, regex=False)["index"].values
-    
+if len(renames[tis_season]) == 0:
+    print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(stats.index.unique().values)]))
+    print("Need some renames for this season")
+    exit()
+
+#Round up missing aliases
+missing_aliases = []
+for alias in stats.index.unique().values:
+    if alias not in renames[tis_season]:
+        print(f"[!] {alias} does not have a rename entry")
+        missing_aliases.append(alias)
+print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(missing_aliases)]))
+        
+#Handle renames
+renamed_logs = logs.replace(renames[tis_season], regex=False)
+renamed_stats = stats.replace(renames[tis_season], regex=False)
+renamed_stats.index = stats.reset_index().replace(renames[tis_season], regex=False)["index"].values
+
+#Write HTML!
 bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
 html_report1 = HTMLReport(bigresult)
 html_report1.report_to_html()

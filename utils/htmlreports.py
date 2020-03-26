@@ -31,6 +31,15 @@ class HTMLReport:
         self.awards = Awards(result)
         matchstats = MatchStats()
         
+        self.award_stats = self.awards.collect_awards()
+
+        time_mid_html_init = _time.time()
+        print ("Time to init and load awards is " + str(round((time_mid_html_init - time_start_html_init),2)) + " s")
+           
+        
+        self.award_stats_html_table = self.awards_to_html(self.award_stats)
+        self.award_megakills_html_table = self.megakills_to_html(self.award_stats[2])
+        
         self.metrics = matchstats.match_metrics(result)
         
         self.match_time = self.match_date = match_datetime = self.metrics["match_time"]
@@ -48,9 +57,7 @@ class HTMLReport:
         weapon_stats = matchstats.table_weapon_counts(result)
         self.weapon_stats_html_table = self.weapons_to_html(weapon_stats)
         
-        self.award_stats = self.awards.collect_awards()
-        self.award_stats_html_table = self.awards_to_html(self.award_stats)
-        self.award_megakills_html_table = self.megakills_to_html(self.award_stats[2])
+        
         
         self.award_summaries_html_table = self.award_summaries_to_html(self.award_stats)
         
@@ -67,7 +74,7 @@ class HTMLReport:
             self.renames_html_table = self.renames_to_html(renames)
         
         time_end_html_init = _time.time()
-        print ("Time to load awards is " + str(round((time_end_html_init - time_start_html_init),2)) + " s")
+        print ("Time to build html tables " + str(round((time_end_html_init - time_mid_html_init),2)) + " s")
             
 
     
@@ -114,6 +121,7 @@ class HTMLReport:
         soup.body.append(self.insert_header("Awards",2))
         soup.body.append(self.insert_html(self.award_summaries_html_table))
         soup.body.append(self.insert_header("Award details",3))
+        soup.body.append(self.insert_text("Minimum rounds to be ranked(20%) - " + str(self.awards.minrounds)))
         soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Base stats",2))
         soup.body.append(self.basic_stats_html_table)
@@ -285,7 +293,8 @@ class HTMLReport:
             tr.append(td)
             for col in metrics:
                 td = Tag(soup, name = 'td')
-                td.insert(1, (str(row[col]) + " ").replace(".0 ",""))
+                value = str(row[col]).replace("-","")
+                td.insert(1, value)      
                 td["title"] =  "Rank:" + str(row[col + "_rank"])
                 if col == "Panzer":
                     td["class"] = panzmedals.get(row[col + "_rank"],"norank")
@@ -293,6 +302,8 @@ class HTMLReport:
                     td["class"] = ltmedals.get(row[col + "_rank"],"norank")
                 elif col == "Sniper":
                     td["class"] = snipermedals.get(row[col + "_rank"],"norank")
+                elif str(row[col])[0] == "-":
+                    td["class"] = "nocount"
                 else:
                     td["class"] = medals.get(row[col + "_rank"],"norank")
                 tr.append(td)
@@ -628,7 +639,10 @@ class HTMLReport:
     .Axis {
       background-color: #FFBFBF;
     }
-    
+    .nocount {
+      color: darksalmon;
+    }
+        
     tr:nth-child(even) {background-color: #f2f2f2;}
         
     table.blueTable {

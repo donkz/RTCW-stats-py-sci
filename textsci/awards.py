@@ -63,6 +63,8 @@ class Awards:
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
+        columns.append(x.columns[2])
+        columns.append(x.columns[3])
         t2 = _time.time()
         print ("Time to process killstreak is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
@@ -108,13 +110,13 @@ class Awards:
         print ("Time to process sniper is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        x = self.award_death_streak(event_lines_dataframe)
-        awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
-        t2 = _time.time()
-        print ("Time to process deathstreak is " + str(round((t2 - t1),2)) + " s")
-        t1 = t2
+#        x = self.award_death_streak(event_lines_dataframe)
+#        awardsdf = awardsdf.join(x)
+#        columns.append(x.columns[0])
+#        columns.append(x.columns[1])
+#        t2 = _time.time()
+#        print ("Time to process deathstreak is " + str(round((t2 - t1),2)) + " s")
+#        t1 = t2
         
         x = self.award_most_blown_up(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
@@ -180,7 +182,7 @@ class Awards:
         awardsdf["RankPts"] = awardsdf[ranks].sum(axis=1)
         
         #Re-sort by total rank points and rank the ranks yo dawg
-        awardsdf = awardsdf.sort_values("RankPts")
+        awardsdf = awardsdf.sort_values(["RankPts", "Rounds"], ascending = (True, False))
         awardsdf["RankPts_rank"] = awardsdf["RankPts"].rank(method="min", ascending=True, na_option='bottom')
         columns.append("RankPts")
         columns.append("RankPts_rank")
@@ -430,87 +432,55 @@ class Awards:
         print ("Time to process megakills2 is " + str(round((t2 - t1),2)) + " s")
         return [result, megakills2[["match_date","map", "killer", "mod", "victim","count"]]]
     
-
-    def award_megakill_bkp(self,event_lines_dataframe):
-        #debug: event_lines_dataframe = results[0]["logs"].copy()
-        #count killers repeating in succession
-        
-        #this almost worked....as a one liner
-        #event_lines_dataframe["count"] = event_lines_dataframe.groupby((event_lines_dataframe['killer'] != event_lines_dataframe['killer'].shift(1)).cumsum()).cumcount()+1
-        t1 = _time.time()
-        
-        event_lines_dataframe = event_lines_dataframe.reset_index()
-        del event_lines_dataframe["index"]
-        event_lines_dataframe["count"] = 0
-        for index in event_lines_dataframe.index[0:len(event_lines_dataframe)-1]:
-            #if current event is a kill and next event is a kill and killer is the same, set next count to +1
-            if event_lines_dataframe.loc[index, "event"] == "kill" and event_lines_dataframe.loc[index+1, "event"] == "kill" and event_lines_dataframe.loc[index, "killer"] == event_lines_dataframe.loc[index+1, "killer"]:
-                event_lines_dataframe.loc[index + 1, "count"] = event_lines_dataframe.loc[index, "count"] + 1
-            else:
-                event_lines_dataframe.loc[index + 1, "count"] = 1
-            
-        #select max kills for each player
-        result = event_lines_dataframe[event_lines_dataframe["event"] == "kill"].groupby("killer")["count"].max().to_frame()
-        result.columns = ["MegaKill"]
-        result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
-        result.loc[result[result["MegaKill_rank"] > 4].index, "MegaKill_rank"] = 5
-        
-        t2 = _time.time()
-        print ("Time to process megakills1 is " + str(round((t2 - t1),2)) + " s")
-        t1 = t2
-        
-        #extract actual megakills (3 or more)
-        tmp_result = result[result["MegaKill"] > 2]
-        megakills = pd.DataFrame()
-        for player, row in tmp_result.iterrows():
-            idx = event_lines_dataframe[(event_lines_dataframe["killer"] == player) & (event_lines_dataframe["count"] == row["MegaKill"])].index.values
-            for i in range(len(idx)):
-                df = event_lines_dataframe.iloc[idx[i]+1-int(row["MegaKill"]) : idx[i]+1]
-                megakills = megakills.append(df)
-        
-        megakills["count"] = megakills["count"].astype(int)
-        
-        t2 = _time.time()
-        print ("Time to process megakills2 is " + str(round((t2 - t1),2)) + " s")
-        return [result, megakills[["round_order", "killer", "mod", "victim","count"]]]
-    
     '''
     (most) Kills in a row award
     Determine who had most kills without dying
     '''
     def award_kill_streak(self,event_lines_dataframe):
-        current_counter = Counter()    
-        top_counter = Counter()
+        current_kill_counter = Counter()    
+        top_kill_counter = Counter()
+        current_deaths_counter = Counter()    
+        top_deaths_counter = Counter()
         
         #select only kill events
-        temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]
+        temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"][["killer","victim"]]
         
         #for every row    
-        for index, row in temp.iterrows():
+        for line in temp.itertuples():
             #count a kill for a player
-            current_counter[row["killer"]] += 1
+            current_kill_counter[line.killer] += 1
+            current_deaths_counter[line.victim] += 1
 
             #if it is their record kill streak, save it
-            if(current_counter[row["killer"]] > top_counter[row["killer"]]):
-                top_counter[row["killer"]] = current_counter[row["killer"]]
-                if row["killer"] == "KrAzYkAzEX":
-                   print(str(current_counter[row["killer"]]) + " killstreak  in round: " + str(row["round_order"])) 
+            if(current_kill_counter[line.killer] > top_kill_counter[line.killer]):
+                top_kill_counter[line.killer] = current_kill_counter[line.killer]
             
+            if(current_deaths_counter[line.victim] > top_deaths_counter[line.victim]):
+                top_deaths_counter[line.victim] = current_deaths_counter[line.victim]
+           
             #reset kills for players that died
-            current_counter[row["victim"]] = 0
+            current_kill_counter[line.victim] = 0
+            current_deaths_counter[line.killer] = 0
             
-            if row["killer"] == "KrAzYkAzEX" or row["victim"] == "KrAzYkAzEX":
-                print(row.values[2:])
-                print(" Current counter is " + str(current_counter["KrAzYkAzE"]))
-                #print(" Top counter is " + str(top_counter["KrAzYkAzE"]))
+            debug = False
+            if debug:
+                debug_player = "/mute eternal"
+                if line.killer ==debug_player or line.victim ==debug_player:
+                    print(line)
+                    print(current_kill_counter[debug_player], current_deaths_counter[debug_player])
         
         resultdict = {}
-        for key, value in top_counter.most_common():
+        for key, value in top_kill_counter.most_common():
             resultdict[key]=value
-        resultdf = pd.DataFrame.from_dict(resultdict,orient='index')
-        resultdf.columns=['KillStreak']
+            
+        resultkill = pd.DataFrame.from_dict(dict(top_kill_counter),orient='index')
+        resultdeath = pd.DataFrame.from_dict(dict(top_deaths_counter),orient='index')
+        resultkill.columns=['KillStreak']
+        resultdeath.columns=['Deathroll']
+        resultdf = resultkill.join(resultdeath)
         resultdf["KillStreak_rank"] = resultdf["KillStreak"].rank(method="min", ascending=False, na_option='bottom')
         resultdf.loc[resultdf[resultdf["KillStreak_rank"] > 4].index, "KillStreak_rank"] = 5
+        resultdf["Deathroll_rank"] = 0
         return resultdf
     
     '''
@@ -518,9 +488,9 @@ class Awards:
     Determine who had most deaths without killing
     ranked in reverse order
     '''
-    def award_death_streak(self,event_lines_dataframe):
+    def award_death_streak_bkp(self,event_lines_dataframe):
         current_counter = Counter()    
-        top_counter = Counter()
+        top_counter  = Counter()
         
         #select only kill events
         temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]

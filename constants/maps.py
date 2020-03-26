@@ -227,6 +227,15 @@ class ConstMap:
                       [D_FLAG,"The Allied Alarm is on"],
                       [O_OBJ,"Axis have blown open the Side Door"],
                       [O_PLANT, "Dynamite planted near the Side Door!"]
+                    ],
+            "te_cipher_beta" : [
+                      [O_WIN,"Allies have transmitted the codebook!"],
+                      [D_FLAG, "Axis reclaim the forward deployment area!"],
+                      [O_FLAG,"Allies capture the forward deployment area!"],
+                      [O_OBJ,"The service door has been breached!"],
+                      [O_OBJ,"The East Tower entrance has been breached!"],  
+                      [O_PLANT, "Dynamite planted near the Eastern Tower Entrance!"],
+                      [O_PLANT, "Dynamite planted near the Service Door!"]
                     ]
             }
     
@@ -257,6 +266,7 @@ class ConstMap:
         maps["mp_keep"] =          RTCWMap("mp_keep",          "Keep",        self.map_announce["mp_keep"],          self.G_AXIS,   self.G_ALLIES, 10,    "the Sacred Obelisk")
         maps["te_delivery_b1"] =   RTCWMap("te_delivery_b1",   "Delivery",    self.map_announce["te_delivery_b1"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Axis Gold")
         maps["mp_depot"] =         RTCWMap("mp_depot",         "Depot",       self.map_announce["mp_depot"],         self.G_AXIS,   self.G_ALLIES, 10,    "")
+        maps["te_cipher_beta"] =   RTCWMap("te_cipher_beta",   "Cipher",      self.map_announce["te_cipher_beta"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Enigma codebook")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         
