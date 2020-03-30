@@ -26,7 +26,7 @@ def list_files(path):
     return all_files
 
 season_dir = r".\seasons\\"
-tis_season = "2020Mar"
+tis_season = ""
 season_path = season_dir + tis_season
 stat_files = list_files(season_path)
 
@@ -279,10 +279,33 @@ renames["2020Mar"] = {
         "tTt-festus" : "festus",
         "tTt-prowler" : "prowler",
         "teker" : "tragic",
-        "v57-sOn4R*" : "sonar"   
+        "v57-sOn4R*" : "sonar",
+        ">> Risk!" : "risk",
+        "BRND" : "brandon",
+        "BoN, Dtto" : "ditto",
+        "FisterMiagi" : "deadeye",
+        "Flogzero" : "flogzero",
+        "Joep" : "joep",
+        "LuNa" : "luna",
+        "MEAN" : "anialatem",
+        "Raiser clark" : "raiser",
+        "TommyTomorrow" : "tragic",
+        "boydarilla" : "boydarilla",
+        "c@k kent" : "cakel",
+        "caff stark" : "caffeine",
+        "festus" : "festus",
+        "vodka!" : "vodka",
+        "tTt-spaztik" : "spaztik"
         }
 
-if len(renames[tis_season]) == 0:
+if tis_season == "":
+    print("Processing all seasons")
+    tis_season = "all"
+    renames[tis_season] = {}
+    for season in renames:
+       renames[tis_season].update(renames[season]) 
+
+if tis_season not in renames or len(renames[tis_season]) == 0:
     print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(stats.index.unique().values)]))
     print("Need some renames for this season")
     exit()
@@ -304,5 +327,3 @@ renamed_stats.index = stats.reset_index().replace(renames[tis_season], regex=Fal
 bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
 html_report1 = HTMLReport(bigresult)
 html_report1.report_to_html()
-
-

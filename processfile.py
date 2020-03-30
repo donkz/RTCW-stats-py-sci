@@ -267,6 +267,51 @@ class FileProcessor:
             round_datetime = log_date
         return round_datetime
 
+    def fix_renames(self,renames):
+        newdict = {}
+        appended = False
+        for original in renames:
+            #print("\n\n\n",original," renamed to ",d[original])
+            #print(newdict)
+            appended = False
+            if original not in newdict:
+                for k1 in newdict:
+                    if newdict[k1][-1] == original:
+                        #print("\n------------Found " + original + " in " + ",".join(newdict[k1]))
+                        newdict[k1].append(renames[original])
+                        #print(newdict)
+                        appended = True
+                    else:
+                        appended = False
+                        #print("\n not Found in " + original + " in " + ",".join(newdict[k1]))
+                if not appended:
+                    newdict[original] = [renames[original]]
+                    #print("+Started " + original)
+            else:
+                newdict[original] = [renames[original]] #disregard previous renames
+                #print("\n++replaced " + original)
+       
+        #flatten dict into array
+        arr = []
+        for k in newdict:
+            arr.append([k] + newdict[k])
+       
+        #exclude nicknames that are circular
+        arr2 = []
+        for i in arr:
+            arr2.append([])
+            for j in i:
+                if j != i[-1]:
+                    arr2[-1].append(j)
+            arr2[-1].append(i[-1])
+           
+        #transform array back to dict for pandas the rename function
+        final_dict = {}
+        for i in arr2:
+            for j in i[0:-1]:
+                final_dict[j] = i[-1]
+        return final_dict
+    
     def process_log(self):
         result = {}
         try:
@@ -797,9 +842,16 @@ class FileProcessor:
             exit()
             return None
         else:
+            try:
+                fixed_renames = self.fix_renames(renames)
+            except:
+                fixed_renames = renames
+                print("[!] fix_renames did not work for dictionary")
+                print(renames)
+                
             matchesdf = pd.DataFrame([vars(e) for e in matches])
-            logdf = self.handle_renames(renames, ["killer","victim"], logdf, False)
-            stats_all = self.handle_renames(renames, ['player_strip','Killer','team_captain','OSP_Player'], stats_all, True)            
+            logdf = self.handle_renames(fixed_renames, ["killer","victim"], logdf, False)
+            stats_all = self.handle_renames(fixed_renames, ['player_strip','Killer','team_captain','OSP_Player'], stats_all, True)            
             logdf = logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
             
             if(len(renames) > 0):

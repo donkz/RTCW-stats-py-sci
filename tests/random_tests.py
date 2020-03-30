@@ -54,7 +54,7 @@ for e in encodings:
         print("Encoding failed: ", err)
 
 #######################################################################
-#                    Kwargs                                         #
+#                    Kwargs                                           #
 #######################################################################
 
 def kek(**kwargs):
@@ -69,4 +69,27 @@ def kek(**kwargs):
         return "Process using " + kwargs.get("bucket")
 
 
+#######################################################################
+#                    Average values for panz, sniper, smokes          #
+#######################################################################
+stats_copy = bigresult["stats"].copy()
+stats = stats_copy[["Kills","Panzerfaust", "class"]]
+stats = stats[stats["Panzerfaust"]>0]
+stats["ratio"] = stats["Panzerfaust"]/stats["Kills"]
+stats["ratio"].hist()
+print("Panz mean: " + str(stats.mean()["ratio"]))
+print("Panz median: " + str(stats.mean()["ratio"]))
 
+stats = stats_copy[["Kills","Sniper", "class"]]
+stats = stats[stats["Sniper"]>0]
+stats["ratio"] = stats["Sniper"]/stats["Kills"]
+stats["ratio"].hist()
+print("Sniper mean: " + str(stats.mean()["ratio"]))
+print("Sniper median: " + str(stats.mean()["ratio"]))
+
+stats = stats_copy[["Kills","Airstrike", "Artillery", "class"]]
+stats = stats[(stats["Airstrike"]>0) | (stats["Artillery"]>0)]
+stats["ratio"] = (stats["Airstrike"] + stats["Artillery"])/stats["Kills"]
+stats["ratio"].hist()
+print("LT mean: " + str(stats.mean()["ratio"]))
+print("LT median: " + str(stats.mean()["ratio"]))

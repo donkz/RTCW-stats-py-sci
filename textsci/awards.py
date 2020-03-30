@@ -86,7 +86,16 @@ class Awards:
         print ("Time to process megakill is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        x = self.award_panzer(event_lines_dataframe)
+        x = self.award_tapout(sum_lines_dataframe)
+        awardsdf = awardsdf.join(x)
+        columns.append(x.columns[0])
+        columns.append(x.columns[1])
+        t2 = _time.time()
+        print ("Time to process tapout is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
+        
+        #x = self.award_panzer(event_lines_dataframe)
+        x = self.award_negative_weapons("Panzer", [Const.WEAPON_PANZER], [0,0.10,0.30,0.40,0.50,0.60])
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
@@ -94,7 +103,8 @@ class Awards:
         print ("Time to process panz is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        x = self.award_smoker(event_lines_dataframe)
+        #x = self.award_smoker(event_lines_dataframe)
+        x = self.award_negative_weapons("Smoker", [Const.WEAPON_AS, Const.WEAPON_ART], [0,0.1,0.15,0.2])
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
@@ -102,7 +112,8 @@ class Awards:
         print ("Time to process smoker is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        x = self.award_sniper(event_lines_dataframe)
+        #x = self.award_sniper(event_lines_dataframe)
+        x = self.award_negative_weapons("Sniper", [Const.WEAPON_SNIPER, Const.WEAPON_MAUSER], [0,0.05,0.1])
         awardsdf = awardsdf.join(x)
         columns.append(x.columns[0])
         columns.append(x.columns[1])
@@ -212,10 +223,7 @@ class Awards:
         #awardsdf['Caps'] = awardsdf['Caps'].fillna(0).astype(int)
         awardsdf['Wins'] = awardsdf['Wins'].fillna(0).astype(int)
         awardsdf['MegaKill'] = awardsdf['MegaKill'].fillna(0).astype(int)
-        awardsdf['Panzer'] = awardsdf['Panzer'].fillna(0).astype(int)
         awardsdf['Panzed'] = awardsdf['Panzed'].fillna(0).astype(int)
-        awardsdf['Smoker'] = awardsdf['Smoker'].fillna(0).astype(int)
-        awardsdf['Sniper'] = awardsdf['Sniper'].fillna(0).astype(int)
 
         return awardsdf
 
@@ -225,7 +233,7 @@ class Awards:
         ranked_cols = ['KPM_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Win%_rank', 'RankPts_rank']
         #unranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() == 0] if c.endswith('_rank')]
         unranked_cols = ['Kills_rank', 'Minutes_rank', 'Rounds_rank','Deathroll_rank', 'Blownup_rank', 'Panzed_rank', 'Wins_rank']
-        inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank']
+        inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank', 'Tapout_rank']
         return rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols
         
     '''
@@ -271,74 +279,40 @@ class Awards:
         result["Panzed_rank"] = 0  
         return result
     
-    '''
-    Panzer award (penalty)
-    Determine who are the people that got most panz kills
-    '''
-    def award_panzer(self,event_lines_dataframe):
-        #debug: event_lines_dataframe = results[0]["logs"].copy()
+    def award_negative_weapons(self, weapon_name, weapon_list, penalty_list):
+        #debug: event_lines_dataframe = result["logs"].copy()
+        result_all = self.all_people
+        weapon_kills_str = weapon_name + "kills"
+        weapon_rank_str = weapon_name + "_rank"
+        event_lines_dataframe = self.event_lines_dataframe
         
-        #get all people
         temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")]
-        people = temp["killer"].append(temp["victim"]).unique()
-        result_all = pd.DataFrame(index=people) #, columns=["Panzer","Panzer_rank"]).fillna(0)
-        
-        #select only kill events by panzer
-        temp2 = event_lines_dataframe[(event_lines_dataframe["event"] == "kill") & (event_lines_dataframe["mod"] == Const.WEAPON_PANZER)]
-        result = temp2["killer"].value_counts().to_frame()
-        result.columns = ["Panzer"]
-        result["Panzer_rank"] = result["Panzer"].rank(method="dense", ascending=True, na_option='bottom')
-        scale_down_factor = 5 - result["Panzer_rank"].max()
-        result["Panzer_rank"] = result["Panzer_rank"] + scale_down_factor 
-        result.loc[result[result["Panzer_rank"] < 0].index, "Panzer_rank"] = 0
-        result = result_all.join(result).fillna(0)
-        return result
-    
-    '''
-    Leautenant award (penalty)
-    Determine who are the people that got most artllery and airstrike kills
-    '''
-    def award_smoker(self,event_lines_dataframe):
-        #debug: event_lines_dataframe = results[0]["logs"].copy()
-        
-        #get all people
-        temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")]
-        people = temp["killer"].append(temp["victim"]).unique()
-        result_all = pd.DataFrame(index=people) 
+        kills = temp["killer"].value_counts().to_frame().rename(columns={"killer" : "Kills"})
+        result_all= result_all.join(kills)
         
         #select only kill events by LT
-        temp2 = event_lines_dataframe[(event_lines_dataframe["event"] == "kill") & ((event_lines_dataframe["mod"] == Const.WEAPON_AS) | (event_lines_dataframe["mod"] == Const.WEAPON_ART))]
-        result = temp2["killer"].value_counts().to_frame()
-        result.columns = ["Smoker"]
-        result["Smoker_rank"] = result["Smoker"].rank(method="dense", ascending=True, na_option='bottom')
-        scale_down_factor = 3 - result["Smoker_rank"].max()
-        result["Smoker_rank"] = result["Smoker_rank"] + scale_down_factor 
-        result.loc[result[result["Smoker_rank"] < 0].index, "Smoker_rank"] = 0
-        result = result_all.join(result).fillna(0)
-        return result
-    
-    '''
-    Sniper award (penalty)
-    Determine who are the people that got most sniper kills
-    '''
-    def award_sniper(self,event_lines_dataframe):
-        #debug: event_lines_dataframe = results[0]["logs"].copy()
+        temp2 = event_lines_dataframe[(event_lines_dataframe["event"] == "kill") & ((event_lines_dataframe["mod"].isin(weapon_list)))]
+        weapon_kills = temp2["killer"].value_counts().to_frame()
+        weapon_kills.columns = [weapon_kills_str]
         
-        #get all people
-        temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")]
-        people = temp["killer"].append(temp["victim"]).unique()
-        result_all = pd.DataFrame(index=people) 
+        resultdf= result_all.join(weapon_kills).fillna(0)
+        resultdf[weapon_name] = resultdf[weapon_kills_str]/resultdf["Kills"]
         
-        #select only kill events by LT
-        temp2 = event_lines_dataframe[(event_lines_dataframe["event"] == "kill") & ((event_lines_dataframe["mod"] == Const.WEAPON_SNIPER) | (event_lines_dataframe["mod"] == Const.WEAPON_MAUSER))]
-        result = temp2["killer"].value_counts().to_frame()
-        result.columns = ["Sniper"]
-        result["Sniper_rank"] = result["Sniper"].rank(method="dense", ascending=True, na_option='bottom')
-        scale_down_factor = 2 - result["Sniper_rank"].max()
-        result["Sniper_rank"] = result["Sniper_rank"] + scale_down_factor 
-        result.loc[result[result["Sniper_rank"] < 0].index, "Sniper_rank"] = 0
-        result = result_all.join(result).fillna(0)
-        return result
+        '''
+        old penalty ranking logic
+        resultdf[weapon_rank_str] = resultdf[weapon_name].rank(method="dense", ascending=True, na_option='top') #na = top = 0
+        scale_down_factor = penalty - resultdf[weapon_rank_str].max()
+        resultdf[weapon_rank_str] = resultdf[weapon_rank_str] + scale_down_factor 
+        resultdf.loc[resultdf[resultdf[weapon_rank_str] < 0].index, weapon_rank_str] = 0
+        '''
+        
+        resultdf[weapon_rank_str] = 0
+        for penalty, threshold in enumerate(penalty_list):
+            resultdf.loc[resultdf[resultdf[weapon_name] > threshold].index, weapon_rank_str] = penalty
+        
+        resultdf.drop(['Kills',weapon_kills_str], axis=1, inplace=True)
+        resultdf[weapon_name] = resultdf[weapon_name].fillna(0).round(2).multiply(100).astype(int).astype(str)+"%"   
+        return resultdf
      
     '''
     Most blown up award
@@ -484,47 +458,6 @@ class Awards:
         return resultdf
     
     '''
-    (most) Deaths in a row award (Freefrag Award)
-    Determine who had most deaths without killing
-    ranked in reverse order
-    '''
-    def award_death_streak_bkp(self,event_lines_dataframe):
-        current_counter = Counter()    
-        top_counter  = Counter()
-        
-        #select only kill events
-        temp = event_lines_dataframe[event_lines_dataframe["event"] == "kill"]
-        
-        #for every row    
-        for index, row in temp.iterrows():
-            
-            #count a kill for a player
-            current_counter[row["victim"]] += 1
-            
-            #if it is their record kill streak, save it
-            if(current_counter[row["victim"]] > top_counter[row["victim"]]):
-                top_counter[row["victim"]] = current_counter[row["victim"]]
-            
-            #reset kills for players that died
-            current_counter[row["killer"]] = 0
-            
-            debug = False
-            if debug:
-                debug_player = "/mute eternal"
-                if row["killer"] ==debug_player or row["victim"] ==debug_player:
-                    print(row)
-                    print(current_counter[debug_player])
-        
-        resultdict = {}
-        for key, value in top_counter.most_common():
-            resultdict[key]=value
-        resultdf = pd.DataFrame.from_dict(resultdict,orient='index')
-        resultdf.columns=['Deathroll']
-        resultdf["Deathroll_rank"] = 0
-        return resultdf
-
-    
-    '''
     Pack of 5 award (Brutal Rambo Award from Kris)
     Determine how many times a player killed 5 enemies without dying
     '''
@@ -662,6 +595,27 @@ class Awards:
         result.loc[result[result[Const.STAT_POST_ADJSCORE + "_rank"] > 4].index, Const.STAT_POST_ADJSCORE + "_rank"] = 5
         result.drop(["Rounds"], axis=1, inplace=True)
         return result
+    
+    '''
+    Suicide/Tapout (penalty)
+    Determine who suiceides the most and penilize them
+    '''
+    def award_tapout(self,sum_lines_dataframe):
+        #debug: sum_lines_dataframe = result["stats"].copy()
+
+        base_stats_sum = sum_lines_dataframe.groupby(sum_lines_dataframe.index).agg({Const.STAT_BASE_KILL : "sum", Const.STAT_BASE_DEATHS : "sum", Const.STAT_BASE_SUI : "sum"})
+        base_stats_sum["Tapout"] = base_stats_sum["Suicides"]/(base_stats_sum["Deaths"] + base_stats_sum["Suicides"])
+        resultdf = self.all_people
+        base_stats_sum.drop(['Kills', 'Deaths', 'Suicides'], axis=1, inplace=True)
+        resultdf = resultdf.join(base_stats_sum)
+       
+        resultdf["Tapout_rank"] = 0
+        resultdf.loc[resultdf[resultdf["Tapout"] > 0.25].index, "Tapout_rank"] = 1
+        resultdf.loc[resultdf[resultdf["Tapout"] > 0.33].index, "Tapout_rank"] = 2
+        resultdf.loc[resultdf[resultdf["Tapout"] > 0.40].index, "Tapout_rank"] = 3
+     
+        resultdf["Tapout"] = resultdf["Tapout"].round(2).multiply(100).astype(int).astype(str)+"%"
+        return resultdf
 
  
 # =============================================================================
@@ -721,3 +675,9 @@ class Awards:
 # v osp  - most points 
 
 
+'''
+panz 20 30 40 50 60 [0,0.10,0.30,0.40,0.50,0.60]# 0-5 penalty
+lt 10 15 20 [0,0.1,0.15,0.2] # 0-3 penalty 
+sniper 5 10 [0,0.05,0.1] # 0-2 penalty
+tapout [0,0.25,0.33,0.4] # 0-3 penalty
+'''

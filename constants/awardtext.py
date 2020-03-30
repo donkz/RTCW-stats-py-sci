@@ -107,6 +107,10 @@ class AwardText:
                                          ["{people} like{multiplier} to do it from afar with {statistic} sniper kills.",
                                          "{people} raked {statistic} sniper kills while everyone else was frontlining."],
                                          2)
+    awards["Tapout"]      = AwardStruct("High suicide/deaths ratio (3 pts penalty)",
+                                         ["{people} come{multiplier} back fresh. {statistic} of all deaths are suicides.",
+                                         "{people} tap{multiplier} out at the slightest sign of danger."],
+                                         2)
     awards["KPM"]         = AwardStruct("Kills per minute",
                                          ["{people} showing how to kill with {statistic} kills per minute played!",
                                          "{people} - top killer{multiplier} per pound (minute) with {statistic} kills per minute."],

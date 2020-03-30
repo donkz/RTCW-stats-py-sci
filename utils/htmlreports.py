@@ -275,9 +275,10 @@ class HTMLReport:
         table.append(tr)
         
         medals = {1 : "gold", 2 : "silver", 3: "bronze"}
-        panzmedals = {5 : "gold", 4 : "silver", 3: "bronze"}
-        ltmedals = {3 : "gold", 2 : "silver", 1: "bronze"}
-        snipermedals = {2 : "gold", 1 : "silver"}
+        panzmedals = {5 : "red5", 4 : "red4", 3: "red3", 2 : "red2", 1 : "red1"}
+        ltmedals = {3 : "red3", 2 : "red2", 1: "red1"}
+        tapoutmedals = {3 : "red3", 2 : "red2", 1: "red1"}
+        snipermedals = {2 : "red2", 1 : "red1"}
         
         for col in cols:
             th = Tag(soup, name = "th")
@@ -302,6 +303,8 @@ class HTMLReport:
                     td["class"] = ltmedals.get(row[col + "_rank"],"norank")
                 elif col == "Sniper":
                     td["class"] = snipermedals.get(row[col + "_rank"],"norank")
+                elif col == "Tapout":
+                    td["class"] = tapoutmedals.get(row[col + "_rank"],"norank")
                 elif str(row[col])[0] == "-":
                     td["class"] = "nocount"
                 else:
@@ -632,6 +635,21 @@ class HTMLReport:
     }
     .bronze {
       background-color: #cd7f32;
+    }
+    .red5 {
+      background-color: #F50000;
+    }
+    .red4 {
+      background-color: #ff704d;
+    }
+    .red3 {
+      background-color: #ff9980;
+    }
+    .red2 {
+      background-color: #ffc2b3;
+    }
+    .red1 {
+      background-color: #ffebe6;
     }
     .Allies {
       background-color: #BFDAFF;
