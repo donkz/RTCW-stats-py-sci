@@ -26,7 +26,7 @@ def list_files(path):
     return all_files
 
 season_dir = r".\seasons\\"
-tis_season = ""
+tis_season = "2020Apr"
 season_path = season_dir + tis_season
 stat_files = list_files(season_path)
 
@@ -34,6 +34,9 @@ results = []
 for file in stat_files:
     processor = FileProcessor(local_file = file, debug = False)
     result = processor.process_log()
+    
+    html_reportx = HTMLReport(result)
+    html_reportx.report_to_html(season_dir + tis_season +"\\" + "reports" + "\\")
 
     #writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
     #writer.write_results(result)
@@ -295,7 +298,38 @@ renames["2020Mar"] = {
         "caff stark" : "caffeine",
         "festus" : "festus",
         "vodka!" : "vodka",
-        "tTt-spaztik" : "spaztik"
+        "tTt-spaztik" : "spaztik",
+        "Boydarilla" : "boydarilla",
+        "DHS LUNA" : "luna",
+        "brujah" : "bru",
+        "caff eating" : "caffeine",
+        "flogzero" : "flogzero",
+        "jaytee***" : "jaytee",
+        "kick gut" : "gut",
+        "nigel**" : "nigel",
+        "raiser" : "raiser"
+        }
+
+renames["2020Apr"] = {
+        ".:.prowler" : "prowler",
+        "Cliffdark" : "cliffdark",
+        "DillWeed" : "dillweed",
+        "Jimmy" : "pasek",
+        "Kittens" : "kittens",
+        "NABRND" : "brandon",
+        "SOURCE" : "source",
+        "bru" : "bru",
+        "eXe|Boo7y" : "booty",
+        "eXe|Flogzero" : "flogzero",
+        "eXe|MeaN" : "anialatem",
+        "eXe|eternal" : "eternal",
+        "miles" : "miles",
+        "murkey" : "murkey",
+        "not13KDAMAGE" : "raiser",
+        "parcher" : "parcher",
+        "risk" : "risk",
+        "spaztik" : "spaztik",
+        "tragiC" : "tragic"
         }
 
 if tis_season == "":
@@ -307,23 +341,23 @@ if tis_season == "":
 
 if tis_season not in renames or len(renames[tis_season]) == 0:
     print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(stats.index.unique().values)]))
-    print("Need some renames for this season")
-    exit()
+    print("\n\n\n[!] Need some renames for this season\n\n\n")
 
-#Round up missing aliases
-missing_aliases = []
-for alias in stats.index.unique().values:
-    if alias not in renames[tis_season]:
-        print(f"[!] {alias} does not have a rename entry")
-        missing_aliases.append(alias)
-print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(missing_aliases)]))
-        
-#Handle renames
-renamed_logs = logs.replace(renames[tis_season], regex=False)
-renamed_stats = stats.replace(renames[tis_season], regex=False)
-renamed_stats.index = stats.reset_index().replace(renames[tis_season], regex=False)["index"].values
+else:
+    #Round up missing aliases
+    missing_aliases = []
+    for alias in stats.index.unique().values:
+        if alias not in renames[tis_season]:
+            print(f"[!] {alias} does not have a rename entry")
+            missing_aliases.append(alias)
+    print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(missing_aliases)]))
+            
+    #Handle renames
+    renamed_logs = logs.replace(renames[tis_season], regex=False)
+    renamed_stats = stats.replace(renames[tis_season], regex=False)
+    renamed_stats.index = stats.reset_index().replace(renames[tis_season], regex=False)["index"].values
 
-#Write HTML!
-bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
-html_report1 = HTMLReport(bigresult)
-html_report1.report_to_html()
+    #Write HTML!
+    bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
+    html_report1 = HTMLReport(bigresult)
+    html_report1.report_to_html(season_dir + tis_season +"\\" + "season-2020-Mar-")

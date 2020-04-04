@@ -131,7 +131,7 @@ def process_games(stats):
     df.columns = ["player","elo"]
     print(df.sort_values(by="elo", ascending = False))
     
-    return elo_report
+    return df.sort_values(by="elo", ascending = False)
        
     
 def process_elos(player_score_df, elo_dict):

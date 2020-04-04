@@ -10,14 +10,16 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r"C:\Users\zveres\Downloads\rtcwconsole.log"
-#rtcwlogfile = r"C:\Users\zveres\Downloads\rtcwconsole-2020-03-16.log"
+rtcwlogfile = r".\test_samples\rtcwconsole-2020-01-13.log"
+#rtcwlogfile = r"C:\Games\rtcw\osp\rtcwconsole.log"
 
-dt = datetime.now().strftime("%Y-%m-%d")
-dest = shutil.copyfile(rtcwlogfile, rtcwlogfile.replace(".log", dt+".log")) 
-print("Copied file to: " + dest)
+if "rtcwconsole.log" in rtcwlogfile:
+    dt = datetime.now().strftime("%Y-%m-%d")
+    dest = shutil.copyfile(rtcwlogfile, rtcwlogfile.replace(".log", "-" + dt + ".log")) 
+    print("Copied file to: " + dest)
 
-processor = FileProcessor(local_file = rtcwlogfile, debug = False)
+processor = FileProcessor(local_file = rtcwlogfile, debug = True)
 result = processor.process_log()
+
 html_report = HTMLReport(result)
 html_report.report_to_html()

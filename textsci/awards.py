@@ -7,6 +7,7 @@ import time as _time
 class Awards:
     
     def __init__(self, result):
+        self.debug_time = False
         self.event_lines_dataframe = result["logs"]
         self.sum_lines_dataframe   = result["stats"]
         self.matches_dataframe     = result["matches"]
@@ -15,7 +16,7 @@ class Awards:
         
         self.rounds = self.sum_lines_dataframe["round_guid"].groupby(level=0).nunique().to_frame()
         minrounds = self.sum_lines_dataframe["round_guid"].nunique()/5 #play 20% of the games please!
-        self.minrounds = int(minrounds)
+        self.minrounds = min(40,int(minrounds)) #20% or 40 rounds, which ever is less
         self.rounds.columns = ["Rounds"]
         
         minutes = self.sum_lines_dataframe["round_time"].groupby(level=0).sum()/60
@@ -46,7 +47,7 @@ class Awards:
         columns.append(x.columns[6])
         columns.append(x.columns[7]) # this sux
         t2 = _time.time()
-        print ("Time to process kills is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process kills is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
             
         
@@ -56,7 +57,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process kdr is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process kdr is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_kill_streak(event_lines_dataframe)
@@ -66,7 +67,7 @@ class Awards:
         columns.append(x.columns[2])
         columns.append(x.columns[3])
         t2 = _time.time()
-        print ("Time to process killstreak is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process killstreak is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
 # =============================================================================
@@ -83,7 +84,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process megakill is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process megakill is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_tapout(sum_lines_dataframe)
@@ -91,7 +92,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process tapout is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process tapout is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         #x = self.award_panzer(event_lines_dataframe)
@@ -100,7 +101,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process panz is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process panz is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         #x = self.award_smoker(event_lines_dataframe)
@@ -109,7 +110,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process smoker is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process smoker is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         #x = self.award_sniper(event_lines_dataframe)
@@ -118,7 +119,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process sniper is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process sniper is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
 #        x = self.award_death_streak(event_lines_dataframe)
@@ -126,7 +127,7 @@ class Awards:
 #        columns.append(x.columns[0])
 #        columns.append(x.columns[1])
 #        t2 = _time.time()
-#        print ("Time to process deathstreak is " + str(round((t2 - t1),2)) + " s")
+#        if self.debug_time: print ("Time to process deathstreak is " + str(round((t2 - t1),2)) + " s")
 #        t1 = t2
         
         x = self.award_most_blown_up(event_lines_dataframe)
@@ -134,7 +135,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process blown up is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process blown up is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_most_panzed(event_lines_dataframe)
@@ -142,7 +143,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process panzed is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process panzed is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_first_in_door(event_lines_dataframe)
@@ -150,7 +151,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process first-in-door is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process first-in-door is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_most_useful_points(sum_lines_dataframe)
@@ -158,7 +159,7 @@ class Awards:
         columns.append(x.columns[0])
         columns.append(x.columns[1])
         t2 = _time.time()
-        print ("Time to process points is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process points is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
 # =============================================================================
@@ -180,7 +181,7 @@ class Awards:
         columns.append(x.columns[2])
         columns.append(x.columns[3]) 
         t2 = _time.time()
-        print ("Time to process wins is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process wins is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         #plug the na wholes with appropriate values
@@ -201,7 +202,7 @@ class Awards:
         self.awardsdf = awardsdf
         
         t2 = _time.time()
-        print ("Time to wrap up awards is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to wrap up awards is " + str(round((t2 - t1),2)) + " s")
         return [awardsdf,columns, megakilldetail]
        
     def fill_na_values(self):
@@ -379,7 +380,7 @@ class Awards:
         result.loc[result[result["MegaKill_rank"] > 4].index, "MegaKill_rank"] = 5
         
         t2 = _time.time()
-        print ("Time to process megakills1 is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process megakills1 is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         #extract actual megakills (3 or more)
@@ -403,7 +404,7 @@ class Awards:
         result.drop(["count","idx","idxmax"], axis=1, inplace=True)
         
         t2 = _time.time()
-        print ("Time to process megakills2 is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("Time to process megakills2 is " + str(round((t2 - t1),2)) + " s")
         return [result, megakills2[["match_date","map", "killer", "mod", "victim","count"]]]
     
     '''

@@ -191,11 +191,21 @@ class ConstMap:
                       ],
             "mp_depot" : [
                       [O_WIN,"Axis team destroyed the Allied Field Operations!"],
-                      [D_FLAG, "Axis reclaim the Forward Deployment area!"], # TODO: not confirmed
+                      [O_WIN,"Allied team destoyed the Anti-Aircraft gun!"],
+                      [D_FLAG, "Axis captures the Forward Deployment Area!"],
                       [O_FLAG, "Allies capture the Forward Deployment Area!"],
                       [O_OBJ,"Allies have breached the East Gate!"], 
                       [O_OBJ,"Dynamite planted near the Allied Field Operations!"],  
+                      [O_OBJ,"Dynamite planted near the Anti-Aircraft Gun!"],
                       [O_PLANT, "Dynamite planted near the East Gate!"]
+                      ],
+            "mp_marketgarden" : [
+                      [O_WIN,"Axis team destroyed the Allied Command Center!"],
+                      [D_FLAG, "Allied team defused the Bridge Detonator!"],
+                      [D_FLAG, "Allies have stolen (null)!"],
+                      [O_FLAG, "Axis capture the Forward Deployment Area!"],
+                      [O_PLANT, "Dynamite planted near the Allied Command Center!"],
+                      [O_PLANT, "Dynamite planted near the Water Tower Door!"]
                       ],
             "te_delivery_b1" : [
                       [O_WIN,"Allies have escaped with the Gold!"],
@@ -236,7 +246,41 @@ class ConstMap:
                       [O_OBJ,"The East Tower entrance has been breached!"],  
                       [O_PLANT, "Dynamite planted near the Eastern Tower Entrance!"],
                       [O_PLANT, "Dynamite planted near the Service Door!"]
-                    ]
+                    ],
+             "mp_breakout" : [
+                      [O_WIN,"Allies have disabled the German 88!"],
+                      [D_FLAG, "Axis take the Eastern Courtyard!"],
+                      [O_FLAG, "Allies take the Eastern Courtyard!"],
+                      [O_FLAG, "Allies take the Western Courtyard!"],
+                      [O_FLAG, "Allies take the Western Control Point!"],
+                      [D_FLAG, "Axis take the Eastern Control Point!"],
+                      [O_FLAG, "Allies take the Eastern Control Point!"],
+                      [D_FLAG, "Axis take the Western Courtyard!"],
+                      [O_FLAG, "Allies take the Southern Control Point!"],
+                      [D_FLAG, "Axis take the Northern Control Point!"],
+                      [O_FLAG, "Allies take the Northern Control Point!"],
+                      [O_FLAG, "Allies take the Town Market!"],
+                      [D_FLAG, "Axis take the South Gate Area!"],
+                      [D_FLAG, "Axis take the Artillery Gun!"],
+                      [O_FLAG, "Allies take the Sewers!"],
+                      [O_FLAG, "Dynamite planted near The Back Alley Wall!"],
+                      [O_OBJ, "Dynamite planted near The German 88!"],
+                      [D_FLAG, "Axis have Destroyed the Back Alley Wall!"],
+                      [O_PLANT, "Dynamite planted near The Allied Field Communications!"],
+                      [O_PLANT, "Dynamite planted near The Church Alley Gate!"],
+                      [O_OBJ, "Allies have destroyed the Church Gate!"]
+                    ],
+             "mp_tram" : [
+                      [O_WIN,"Allies transmitted the Radio Codes Booklet!"], # TODO: never seen this actually
+                      [D_FLAG,"Axis gains control of the Village Tram Tower!"],
+                      [O_FLAG,"Allies gain control of the Village Tram Tower!"],
+                      [O_OBJ,"Allies breached the Castle Basement!"],
+                      [O_OBJ,"Allies breached the Outpost Lower Access Door!"],
+                      [O_PLANT, "Dynamite planted near the Castle Basement Door!"],
+                      [O_PLANT, "Dynamite planted near the Lower Access Door!"],
+                      [O_OBJ,"Allies breached the Outpost Supply Room!"],
+                      [O_PLANT, "Dynamite planted near the Supply Room Door!"]
+                    ],
             }
     
     '''
@@ -267,6 +311,9 @@ class ConstMap:
         maps["te_delivery_b1"] =   RTCWMap("te_delivery_b1",   "Delivery",    self.map_announce["te_delivery_b1"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Axis Gold")
         maps["mp_depot"] =         RTCWMap("mp_depot",         "Depot",       self.map_announce["mp_depot"],         self.G_AXIS,   self.G_ALLIES, 10,    "")
         maps["te_cipher_beta"] =   RTCWMap("te_cipher_beta",   "Cipher",      self.map_announce["te_cipher_beta"],   self.G_AXIS,   self.G_ALLIES, 10,    "the Enigma codebook")
+        maps["mp_marketgarden"] =  RTCWMap("mp_marketgarden",  "Market garden",self.map_announce["mp_marketgarden"], self.G_ALLIES, self.G_AXIS,   20,    "(null)")
+        maps["mp_breakout"] =      RTCWMap("mp_breakout",      "Breakout",    self.map_announce["mp_breakout"],      self.G_AXIS,   self.G_ALLIES, 16,    "")
+        maps["mp_tram"] =          RTCWMap("mp_tram",          "Tram",        self.map_announce["mp_tram"],          self.G_AXIS,   self.G_ALLIES, 20,    "the Radio Codes Booklet") 
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         

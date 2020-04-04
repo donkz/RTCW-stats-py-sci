@@ -132,7 +132,14 @@ class FileProcessor:
                 print("[!] Unexpected error: %s" % err)
             return None
             
-        lines = obj['Body'].read().decode('cp1252').split('\r\n')    
+        lines = obj['Body'].read().decode('cp1252').split('\r\n')
+        
+        print("FOUND LINES with rn: " + str(len(lines)))
+        
+        if len(lines) == 1:
+            print("[!] Unusual line separators. Splitting by n")
+            lines = lines[0].split('\n')
+            
         return lines
     
     # Rename players in the datasets as they change their names in game
@@ -141,18 +148,11 @@ class FileProcessor:
     # columns to rename
     # dataframe
     def handle_renames(self, renames, columns, df, index):
-        #<img src="5th element" alt="multipass">
-        #one was just not enough when somebody goes bonkers on renaming
-        df = df.replace(renames, regex=False)
-        df = df.replace(renames, regex=False)
         df = df.replace(renames, regex=False)
         if index:
             #print(df.index.unique())
             #print(renames)
             df.index = df.reset_index().replace(renames, regex=False)["index"].values #because stupid regex does not work in df.rename
-            df.index = df.reset_index().replace(renames, regex=False)["index"].values 
-            df.index = df.reset_index().replace(renames, regex=False)["index"].values 
-            #print(df.index.unique())
         return df
         
     def summarize_round(self, logdf, ospdf):
@@ -735,6 +735,7 @@ class FileProcessor:
                             logdf = tmp_logdf
                         else:
                             logdf = logdf.append(tmp_logdf,sort=False)
+                            
                         try:
                             stats_all
                         except NameError:

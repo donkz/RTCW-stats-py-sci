@@ -83,7 +83,7 @@ class HTMLReport:
         
         if self.empty:
             print("[!] Nothing to write.")
-            return
+            return (None, None)
 
         soup = BeautifulSoup("","lxml")
         
@@ -117,27 +117,34 @@ class HTMLReport:
         soup.body.append(self.insert_header("Log file for a match from " + self.match_date,2))
         soup.body.append(self.summary_text())
         soup.body.append(self.insert_header("Results",2))
+        soup.body.append(self.insert_toggle("results"))
         soup.body.append(self.match_results_html_table)
         soup.body.append(self.insert_header("Awards",2))
         soup.body.append(self.insert_html(self.award_summaries_html_table))
         soup.body.append(self.insert_header("Award details",3))
-        soup.body.append(self.insert_text("Minimum rounds to be ranked(20%) - " + str(self.awards.minrounds)))
+        soup.body.append(self.insert_text("Minimum rounds to be ranked 20% - " + str(self.awards.minrounds) + " or 40"))
+        soup.body.append(self.insert_toggle("awards"))
         soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Base stats",2))
+        soup.body.append(self.insert_toggle("allstats"))
         soup.body.append(self.basic_stats_html_table)
         soup.body.append(self.insert_header("Weapon stats",2))
+        soup.body.append(self.insert_toggle("weapons"))
         soup.body.append(self.weapon_stats_html_table)
         #soup.body.append(self.insert_header("Kill matrix",2))
         #soup.body.append(self.kill_matrix_stats_html_table)
         
         soup.body.append(self.insert_header("Top Feuds",2))
         soup.body.append(self.insert_text("The most numerous head-to-head encounters of the match"))
+        soup.body.append(self.insert_toggle("feuds"))
         soup.body.append(self.feuds_html_table)
         soup.body.append(self.insert_header("MegaKills",2))
+        soup.body.append(self.insert_toggle("megakills"))
         soup.body.append(self.insert_text("Kills that happened consequently, all at once"))
         soup.body.append(self.award_megakills_html_table)
         if self.renames_html_table is not None:
             soup.body.append(self.insert_header("Player rename history",2))
+            soup.body.append(self.insert_toggle("renames"))
             soup.body.append(self.renames_html_table)
         
         #jquery scripts
@@ -147,18 +154,20 @@ class HTMLReport:
         soup.body.append(script_jq)
         #end of html report
         
+        out_file_name = "stats-" + self.match_date + "-" + hashlib.md5(str(datetime.now()).encode()).hexdigest()[0:4] + ".html"
         if len(argv) == 0:
-            outfile ="stats-" + self.match_date + "-" + hashlib.md5(str(datetime.now()).encode()).hexdigest()[0:4] + ".html"
+            outpath = out_file_name
         else:
-            outfile = argv[0]
+            outpath = argv[0] + out_file_name
         
-        html_file = open(outfile,"w")
+        html_file = open(outpath,"w")
         html_file.write(soup.prettify())
         html_file.close() 
         
         time_end_html_write = _time.time()
         print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
         print("Wrote html report to " + html_file.name)
+        return (outpath, out_file_name)
             
         
     def insert_header(self,text, size):
@@ -186,6 +195,14 @@ class HTMLReport:
         soup.append(wrap)
         return soup
     
+    def insert_toggle(self, toggle_div):
+        soup = BeautifulSoup("","lxml")
+        link = Tag(soup, name = "a")
+        link["href"] = "#"
+        link["id"] = toggle_div
+        link.append("Hide/Show")
+        soup.append(link)
+        return soup
     
     def summary_text(self):
         content = "Match started at %s. Total of %s players played %s rounds on %s maps and murdered eachother %s times!" % (self.match_time, self.metrics["players_count"] , self.metrics["rounds_count"], self.metrics["maps_count"], self.metrics["kill_sum"])
@@ -239,6 +256,7 @@ class HTMLReport:
         soup = BeautifulSoup("","lxml")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divfeuds"
         soup.append(table)
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -270,6 +288,7 @@ class HTMLReport:
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divawards"
         soup.append(table)
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -324,6 +343,7 @@ class HTMLReport:
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divweapons"
         soup.append(table)
         
         tr = Tag(soup, name = "tr")
@@ -397,6 +417,7 @@ class HTMLReport:
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divallstats"
         soup.append(table)
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -428,6 +449,7 @@ class HTMLReport:
         soup = BeautifulSoup("","lxml")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divmegakills"
         soup.append(table)
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -453,6 +475,7 @@ class HTMLReport:
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divresults"
         soup.append(table)
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -586,6 +609,7 @@ class HTMLReport:
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
+        table["id"] = "divrenames"
        
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -736,6 +760,12 @@ class HTMLReport:
         if (!this.asc){rows = rows.reverse()}
         for (var i = 0; i < rows.length; i++){table.append(rows[i])}
     })
+        
+    $('a').click(
+        function(event) {
+        $('#div' + event.target.id).slideToggle();
+    });
+
     
     $(document).ready(function(){
        $(".awardheader").tooltip();
