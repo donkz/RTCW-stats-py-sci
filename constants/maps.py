@@ -271,7 +271,7 @@ class ConstMap:
                       [O_OBJ, "Allies have destroyed the Church Gate!"]
                     ],
              "mp_tram" : [
-                      [O_WIN,"Allies transmitted the Radio Codes Booklet!"], # TODO: never seen this actually
+                      [O_WIN,"Allies transmitted the radio signal!"],
                       [D_FLAG,"Axis gains control of the Village Tram Tower!"],
                       [O_FLAG,"Allies gain control of the Village Tram Tower!"],
                       [O_OBJ,"Allies breached the Castle Basement!"],
