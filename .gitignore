@@ -32,8 +32,10 @@ __pycache__/
 testfile.txt
 
 #temp extracts
-
 temp/
+
+#lambda make folder
+lambda/
 
 
 # output working files
