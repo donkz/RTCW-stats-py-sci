@@ -78,12 +78,53 @@ class HTMLReport:
             
 
     
-    def report_to_html(self,*argv):
+    def report_to_html(self,folder="", filenoext=""):
+        r"""
+        Write the awards into an HTML file
+        
+        Parameters
+        ----------
+        folder : str, default empty, resolves to current working directory
+            Folder path where to place the report
+        filenoext : str, default empty,  resolves to stats-date-hash.html
+            Output file name without extension.
+        
+        Returns
+        -------
+        Tuple of (str,str) or (None,None) where:
+            [0] is path to file
+            [1] is filename
+        
+        Examples
+        --------
+        >>> html_report = HTMLReport(result)
+           Initialization of html_report and all loaded information (awards, metrics, etc.)
+        >>> html_report.report_to_html()
+           Writes file stats-2020-04-02-58ab.html to current working directory
+        >>> html_report.report_to_html(folder="/tmp/") #linux
+           Writes file stats-2020-04-02-58ab.html to current working directory + /tmp/
+        >>> html_report.report_to_html(folder="C:\\a\\") #Windows
+        >>> html_report.report_to_html(folder="C:/a/")   #Windows
+           Writes file stats-2020-04-02-58ab.html to C:\a\stats-2020-01-13-f04d.html
+        >>> html_report.report_to_html(folder="/tmp/", filenoext = "file-kek")
+           Writes file /tmp/file-kek.html  
+        """
+        outpath = ""
+        nothing = (None, None)
+        out_file_name = "stats-" + self.match_date + "-" + hashlib.md5(str(datetime.now()).encode()).hexdigest()[0:4] + ".html"
+        if folder != "":
+            outpath += folder
+        if filenoext != "":
+            out_file_name = filenoext + ".html"
+            outpath += out_file_name
+        else:
+            outpath = outpath + out_file_name        
+        
         time_start_html_write = _time.time()
         
         if self.empty:
             print("[!] Nothing to write.")
-            return (None, None)
+            return nothing
 
         soup = BeautifulSoup("","lxml")
         
@@ -154,19 +195,20 @@ class HTMLReport:
         soup.body.append(script_jq)
         #end of html report
         
-        out_file_name = "stats-" + self.match_date + "-" + hashlib.md5(str(datetime.now()).encode()).hexdigest()[0:4] + ".html"
-        if len(argv) == 0:
-            outpath = out_file_name
-        else:
-            outpath = argv[0] + out_file_name
+        try:
+            html_file = open(outpath,"w")
+            html_file.write(soup.prettify())
+            html_file.close() 
         
-        html_file = open(outpath,"w")
-        html_file.write(soup.prettify())
-        html_file.close() 
-        
-        time_end_html_write = _time.time()
-        print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
-        print("Wrote html report to " + html_file.name)
+            time_end_html_write = _time.time()
+            print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
+            print("Wrote html report to " + html_file.name)
+        except FileNotFoundError as err:
+            print("Could not write to " + outpath + " Error: ", err)
+            return nothing
+        except:
+            print("Could not write to " + outpath + " Unhandled error.")
+            pass
         return (outpath, out_file_name)
             
         

@@ -25,7 +25,7 @@ def lambda_handler(event, context):
     result = processor.process_log()
     
     html_report = HTMLReport(result)
-    local_file, filename = html_report.report_to_html("/tmp/")
+    local_file, filename = html_report.report_to_html(folder="/tmp/", filenoext = os.path.basename(file_key).replace(".log",""))
     
     s3 = boto3.resource('s3')
     bucket = s3.Bucket('donkanator.com')

@@ -313,6 +313,13 @@ class FileProcessor:
         return final_dict
     
     def process_log(self):
+        """ 
+        The constructor for ComplexNumber class. 
+  
+        Parameters: 
+           real (int): The real part of complex number. 
+           imag (int): The imaginary part of complex number.    
+        """
         result = {}
         try:
             result = self.process_log_worker()
