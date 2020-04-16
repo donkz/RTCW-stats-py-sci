@@ -119,3 +119,7 @@ if(2==1): #manual execution
     result = processor.process_log()
     html_report = HTMLReport(result)
     html_report.report_to_html()
+
+#duplication check
+m = bigresult["matches"]
+print(m["round_guid"].value_counts().sort_values(ascending=False)[0:5])

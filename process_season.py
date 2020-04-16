@@ -5,6 +5,7 @@ import pandas as pd
 from statswriter import StatsWriter
 from processfile import FileProcessor
 from utils.htmlreports import HTMLReport
+import csv
 
 #set relative path
 RTCWPY_PATH = os.getcwd()
@@ -38,8 +39,8 @@ for file in stat_files:
     html_reportx = HTMLReport(result)
     html_reportx.report_to_html(season_dir + tis_season +"\\" + "reports" + "\\")
 
-    #writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
-    #writer.write_results(result)
+    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+    writer.write_results(result)
       
     results.append(result)
     #index = str(len(results) -1)
@@ -233,7 +234,7 @@ renames["2020Mar"] = {
         "Raiser" : "raiser",
         "SCRILL4" : "scrilla",
         "SOURCE" : "source",
-        "Uber Brian" : "Uber Brian",
+        "Uber Brian" : "kotip",
         "Wang of Pain" : "wang",
         "Yaourt ! ?" : "yaourt",
         "[>>] Cliffdark" : "cliffdark",
@@ -329,7 +330,71 @@ renames["2020Apr"] = {
         "parcher" : "parcher",
         "risk" : "risk",
         "spaztik" : "spaztik",
-        "tragiC" : "tragic"
+        "tragiC" : "tragic",
+        "-playa-" : "playa",
+        "Gutzwrzynski" : "gut",
+        "Lunatic ????" : "luna",
+        "Oops" : "oops",
+        "Ra!sa" : "raiser",
+        "caff ********" : "caffeine",
+        "eXe|donka" : "donka",
+        "eXe|prowler" : "prowler",
+        "eternal" : "eternal",
+        "kotip" : "kotip",
+        "paper" : "paper",
+        "rozmurk3y" : "murkey",
+        "shrek" : "shrek",
+        "#REDUE John_Mullins" : "john_mullins",
+        "*** Cliffdark" : "cliffdark",
+        "*** DozA" : "doza",
+        "*** chinamann" : "chinamann",
+        "*** sOnAR. <o/" : "sonar",
+        "*** schwien" : "schwien",
+        "-eh-brian" : "brian",
+        ".:.spaztik" : "spaztik",
+        "@blackmagik" : "blackmagik",
+        "BRND" : "brandon",
+        "Boydarilla" : "boydarilla",
+        "Cock-El" : "parcher",
+        "Cypher" : "cypher",
+        "DHS Fistermiagi" : "deadeye",
+        "DHS jaytee" : "jaytee",
+        "FisterMiagi" : "deadeye",
+        "Joep" : "joep",
+        "Paint:>" : "paint",
+        "RAZERRA!SER" : "raiser",
+        "Ra!ser" : "raiser",
+        "SCRILL4" : "scrilla",
+        "SpuddyBuddy" : "spuddy",
+        "TK|POW" : "tkpow",
+        "Wang of Pain" : "wang",
+        "[>>] Cliffdark" : "cliffdark",
+        "aristotle" : "aristotle",
+        "blackmagiknc." : "blackmagik",
+        "c@k-3l" : "cakel",
+        "c@k-el" : "cakel",
+        "c@k-el*" : "cakel",
+        "d13 caff" : "caffeine",
+        "donka" : "donka",
+        "donkz" : "donka",
+        "eXe|Prowler" : "prowler",
+        "festus" : "festus",
+        "festusmoelesac" : "festus",
+        "flogzero" : "flogzero",
+        "gutzzzz" : "gut",
+        "jaytee**************" : "jaytee",
+        "mooshu" : "mooshu",
+        "naper" : "naper",
+        "nigel" : "nigel",
+        "nigel ***" : "nigel",
+        "nigel**" : "nigel",
+        "playa" : "playa",
+        "proWler" : "prowler",
+        "prowler" : "prowler",
+        "reker" : "reker",
+        "spuddy" : "spuddy",
+        "traggart" : "tragic",
+        "trag|c" : "tragic"
         }
 
 if tis_season == "":
@@ -360,4 +425,19 @@ else:
     #Write HTML!
     bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
     html_report1 = HTMLReport(bigresult)
-    html_report1.report_to_html(season_dir + tis_season +"\\" + "season-2020-Mar-")
+    html_report1.report_to_html(season_dir + tis_season +"\\" + "season-")
+    
+if (False):
+    renames_export = {}
+    for season in renames:
+       renames_export.update(renames[season])
+    
+    renames_export_df = pd.DataFrame.from_dict(renames_export, orient='index').reset_index()
+    renames_export_df["rounds_played"]=-1 # TODO
+    renames_export_df.columns = ["killer","real_name","rounds_played"]
+    renames_export_df.to_csv("Renames_2020-Jan-Mar.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
+    
+#duplication check
+m = bigresult["matches"]
+print("\n\n\n Duplicates check\n\n\n")
+print(m["round_guid"].value_counts().sort_values(ascending=False)[0:5])
