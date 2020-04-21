@@ -37,6 +37,9 @@ temp/
 #lambda make folder
 lambda/
 
+#lambda make folder
+.spyderproject/
+
 
 # output working files
 output/
