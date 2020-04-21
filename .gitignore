@@ -38,7 +38,7 @@ temp/
 lambda/
 
 #lambda make folder
-.spyderproject/
+.spyproject/
 
 
 # output working files
