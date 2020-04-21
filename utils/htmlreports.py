@@ -21,6 +21,7 @@ class HTMLReport:
         time_start_html_init = _time.time()
         
         self.empty = False
+        self.debug_time = False
         
         if result is None or len(result) == 0:
             print("[!] Result passed into HTMLReport is empty. HTMLReport did not load any data.")
@@ -34,7 +35,7 @@ class HTMLReport:
         self.award_stats = self.awards.collect_awards()
 
         time_mid_html_init = _time.time()
-        print ("Time to init and load awards is " + str(round((time_mid_html_init - time_start_html_init),2)) + " s")
+        if self.debug_time: print ("Time to init and load awards is " + str(round((time_mid_html_init - time_start_html_init),2)) + " s")
            
         
         self.award_stats_html_table = self.awards_to_html(self.award_stats)
@@ -74,7 +75,7 @@ class HTMLReport:
             self.renames_html_table = self.renames_to_html(renames)
         
         time_end_html_init = _time.time()
-        print ("Time to build html tables " + str(round((time_end_html_init - time_mid_html_init),2)) + " s")
+        if self.debug_time: print ("Time to build html tables " + str(round((time_end_html_init - time_mid_html_init),2)) + " s")
             
 
     
@@ -201,7 +202,7 @@ class HTMLReport:
             html_file.close() 
         
             time_end_html_write = _time.time()
-            print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
+            if self.debug_time: print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
             print("Wrote html report to " + html_file.name)
         except FileNotFoundError as err:
             print("Could not write to " + outpath + " Error: ", err)
