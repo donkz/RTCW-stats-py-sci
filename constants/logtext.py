@@ -6,6 +6,12 @@ Note: map constants are in maps.py
 
 class Const:
     
+    EXTRAPOLATE_DG_PER_KILL = 215.285062
+    EXTRAPOLATE_DR_PER_DEATH = 175.897769
+    EXTRAPOLATE_GIB_PER_KILL = 0.294608
+    EXTRAPOLATE_SCORE_PER_SEC = 0.039578
+    EXTRAPOLATE_TEAM_DMG_PER_SEC = 0.422699
+    
     TEXT_PLAYER_SEPARATOR = "%"
     RANK_MAX = 5
     REF_COMMANDS = ["comp","abort","restart","allready","lock","unlock","putaxis","putallies", "remove","speclock", "specunlock", "pause", "unpause"]

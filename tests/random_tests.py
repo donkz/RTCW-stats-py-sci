@@ -1,3 +1,8 @@
+from constants.logtext import Const
+import pandas as pd
+import numpy as np
+
+
 df = pd.DataFrame()
 df["a"] = [1,2,3,4,5,6,7]
 df["b"] = [0,2,np.nan,4,5,6,7]
@@ -93,3 +98,19 @@ stats["ratio"] = (stats["Airstrike"] + stats["Artillery"])/stats["Kills"]
 stats["ratio"].hist()
 print("LT mean: " + str(stats.mean()["ratio"]))
 print("LT median: " + str(stats.mean()["ratio"]))
+
+
+#######################################################################
+#                    Average values DMG, gibs, scores, etc            #
+#######################################################################
+s = bigresult["stats"].copy()
+s = s[['OSP_Damage_Given', 'OSP_Damage_Received', 'OSP_Deaths', 'OSP_Gibs', 'OSP_Kills', 'OSP_Score','OSP_Suicides', 'OSP_TK', 'OSP_Team_Damage','round_time']].dropna()
+#s["OSP_Damage_Given"] = s["OSP_Damage_Given"].astype(int)
+#s["OSP_Damage_Received"] = s["OSP_Damage_Received"].astype(int)
+s = s.astype(float)
+s["dg"] = s["OSP_Damage_Given"]/s["OSP_Kills"]
+s["dr"] = s["OSP_Damage_Received"]/s["OSP_Deaths"]
+s["gib"] = s["OSP_Gibs"]/s["OSP_Kills"]
+s["score"] = (s[Const.STAT_OSP_SUM_SCORE] - s[Const.STAT_OSP_SUM_FRAGS] + s[Const.STAT_OSP_SUM_SUICIDES]*3 + s[Const.STAT_OSP_SUM_TK]*3)/s["round_time"]
+s["td"] = s["OSP_Team_Damage"]/s["round_time"]
+ssum = s[['dg', 'dr', 'gib', 'score', 'td']].mean(axis=0)
