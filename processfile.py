@@ -54,6 +54,7 @@ class FileProcessor:
     def __init__(self,**kwargs):
         
         self.lines = []
+        self.debug_time = False
         
         if "local_file" in kwargs and ("s3bucket" in kwargs or "s3file" in kwargs):
             print("Provide either local_file or s3 information (s3bucket and s3file)")
@@ -155,8 +156,8 @@ class FileProcessor:
             df.index = df.reset_index().replace(renames, regex=False)["index"].values #because stupid regex does not work in df.rename
         return df
         
-    def summarize_round(self, logdf, ospdf):
-        #t1 = _time.time()
+    def summarize_round_base(self, logdf):
+        t1 = _time.time()
         kills = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["killer","event"])["event"].count().unstack()
         deaths = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["victim","event"])["event"].count().unstack()
 
@@ -196,13 +197,19 @@ class FileProcessor:
             stats = stats.drop(index='') 
         stats = stats.fillna(0).astype(int)
         
+        t2 = _time.time()
+        if self.debug_time: print ("Time to build base_stats " + str(round((t2 - t1),2)) + " s")
+        return stats
+    
+    def summarize_round_join_osp(self, base_stats, osp_stats):
+        t1 = _time.time()
         #######################################
         # Join log stats with OSP stats       #
         #######################################
-        ospdf.index = ospdf[Const.STAT_OSP_SUM_PLAYER]
-        stats = stats.reset_index() #stash valid player names in "index" column
-        stats.index = stats['index'].str[0:15] #because OSP names are 15 chars only
-        stats_all = stats.join(ospdf) #Totals fall out naturally
+        osp_stats.index = osp_stats[Const.STAT_OSP_SUM_PLAYER]
+        base_stats = base_stats.reset_index() #stash valid player names in "index" column
+        base_stats.index = base_stats['index'].str[0:15] #because OSP names are 15 chars only
+        stats_all = base_stats.join(osp_stats) #Totals fall out naturally
         stats_all.index = stats_all['index'] #go back
         del stats_all["index"]
 
@@ -213,8 +220,8 @@ class FileProcessor:
             stats_all["player_strip"] = "notused"
             stats_all["team_name"] = "notused"
       
-        #t2 = _time.time()
-        #print ("Time to build summary " + str(round((t2 - t1),2)) + " s")
+        t2 = _time.time()
+        if self.debug_time: print ("Time to join base and osp stats " + str(round((t2 - t1),2)) + " s")
         return stats_all
     
     def add_classes(self, logdf, stats_all):
@@ -311,6 +318,107 @@ class FileProcessor:
             for j in i[0:-1]:
                 final_dict[j] = i[-1]
         return final_dict
+    
+    def impute_osp_variables(self, tmp_base_stats, round_time, round_number, logdf):
+        #tmp_base_stats = bigresult["stats"][['Kills','Deaths','TK','Suicides']].reset_index()
+        #round_time = 600
+        #logdf = result["logs"]
+        #logdf = logdf[logdf["round_order"]==16]
+        #import random
+        #test_teams = ["Axis","Allies"]
+        #...random.choice(test_teams)
+        
+        teams = self.guess_team(logdf)
+        
+        tmp_base_stats = tmp_base_stats.reset_index()
+        osp_rows = []
+        for index, base in tmp_base_stats.iterrows():
+            STAT_OSP_SUM_PLAYER = base["index"]
+            
+            team = None
+            try:
+                team = teams[STAT_OSP_SUM_PLAYER]
+            except:
+                print("Player's team is undetermined: " + STAT_OSP_SUM_PLAYER)
+                print(teams)
+            finally:
+                team = team if team else "Allies" # stick them on offence
+                
+            STAT_OSP_SUM_TEAM = team
+            STAT_OSP_SUM_FRAGS = base["Kills"]*round_number
+            STAT_OSP_SUM_DEATHS = base["Deaths"]*round_number
+            STAT_OSP_SUM_SUICIDES = base["Suicides"]*round_number
+            STAT_OSP_SUM_TK = base["TK"]*round_number
+            STAT_OSP_SUM_EFF = int(100.0*STAT_OSP_SUM_FRAGS/(STAT_OSP_SUM_FRAGS + STAT_OSP_SUM_DEATHS+1))
+            STAT_OSP_SUM_GIBS = int(STAT_OSP_SUM_FRAGS*Const.EXTRAPOLATE_GIB_PER_KILL*round_number)
+            STAT_OSP_SUM_DMG = int(STAT_OSP_SUM_FRAGS*Const.EXTRAPOLATE_DG_PER_KILL*round_number)
+            STAT_OSP_SUM_DMR = int(STAT_OSP_SUM_DEATHS*round_number*Const.EXTRAPOLATE_DR_PER_DEATH)
+            STAT_OSP_SUM_TEAMDG = int(Const.EXTRAPOLATE_TEAM_DMG_PER_SEC*round_time)
+            STAT_OSP_SUM_SCORE = int(Const.EXTRAPOLATE_SCORE_PER_SEC*round_time) + base["Kills"] - base["Suicides"]*3 - base["TK"]*3
+            
+            osp_row=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_OSP_SUM_SCORE]
+            osp_rows.append(osp_row)
+        
+        ospDF = pd.DataFrame(osp_rows, columns=Const.osp_columns)
+        return ospDF
+    
+    def guess_team(self, logdf):
+        #test
+        #logdf = result["logs"]
+        #logdf = logdf[logdf["round_order"]==1]
+        #test
+        
+#        match_stats = MatchStats()
+#        pivoted_weapons = match_stats.weapon_pivot(logdf)
+#        pivoted_weapons["Allies"] =  pivoted_weapons[Const.WEAPON_THOMPSON] + pivoted_weapons[Const.WEAPON_COLT]
+#        pivoted_weapons["Axis"] =  pivoted_weapons[Const.WEAPON_MP40] + pivoted_weapons[Const.WEAPON_LUGER]
+#        pivoted_weapons = pivoted_weapons[pivoted_weapons.columns[-2:]]
+        
+        kills = logdf[logdf["event"].isin(["kill","Team kill"])][['event', 'killer', 'mod', 'victim']]
+        kills["count"]=1
+        kills["WeaponSide"] = kills["mod"].replace("MP40","-1").replace("Luger","-100").replace("Thompson","2").replace("Colt","100")
+        kills["WeaponSide"] = pd.to_numeric(kills["WeaponSide"], errors='coerce').fillna(0).astype(int)
+        kills.drop(["mod"], axis=1, inplace=True)
+        kills = kills.groupby(['event', 'killer', 'victim']).sum().reset_index().sort_values("count", ascending = False)
+                
+        player0 = kills[["killer","count"]].groupby("killer").sum().sort_values("count", ascending=False).index.values[0]
+        
+        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="kill")].index,"VicTeam"] = "B"
+        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="Team kill")].index,"VicTeam"] = "A"
+        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
+        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="Team kill")].index,"KilTeam"] = "B"
+        
+        for x in range(5): # 2 works. 5 is for safety
+            teamB = kills[kills["VicTeam"]=="B"]["victim"].unique()        
+            for p in teamB:
+                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"VicTeam"] = "A"
+                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "B"
+                       
+                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="Team kill")].index,"KilTeam"] = "B"
+                
+                kills.loc[kills[(kills["victim"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
+
+            
+            teamA = kills[kills["KilTeam"]=="A"]["killer"].unique() 
+            for p in teamA:
+                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"VicTeam"] = "B"
+                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
+                
+                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="Team kill")].index,"KilTeam"] = "A"   
+
+                kills.loc[kills[(kills["victim"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "B"
+
+        
+        playersraw = kills[["killer","KilTeam"]].rename(columns={"killer": "player", "KilTeam": "Team"}).append(kills[["victim","VicTeam"]].rename(columns={"victim": "player", "VicTeam": "Team"}))
+        players = playersraw.groupby(["player","Team"]).size().reset_index()
+        players.drop(players.columns[-1], axis=1, inplace=True)
+        players.index = players["Team"]
+        teams = kills[['WeaponSide', 'VicTeam']].groupby("VicTeam").sum()
+        res = players.join(teams)
+        res.loc[res[res["WeaponSide"]<0].index,"TeamName"] = "Axis"
+        res.loc[res[res["WeaponSide"]>0].index,"TeamName"] = "Allies"
+        res.index = res["player"]
+        return res["TeamName"].to_dict()
     
     def process_log(self):
         """ 
@@ -503,9 +611,9 @@ class FileProcessor:
                             osp_lines = []
                         else:
                             if game_finished:
-                                print("Warning: processing OSP stats after OSP objective time string. This should never* happen")
+                                print("[!] Processing OSP stats after OSP objective time string. This should never* happen")
                             else:
-                                print("Warning: ignoring OSP stats because log of the first round is incomplete")
+                                print("[!] Ignoring OSP stats because log of the first round is incomplete")
                         break
                     
                     #^1Axis^7   ^5Totals           59  67  20  3^5  46^3  22^2 12154^1 10969^6  844^3     32
@@ -612,7 +720,7 @@ class FileProcessor:
                         #Determine the map                        
                         del map_counter["anymap"]
                         if(len(map_counter) > 1):
-                            print("WARNING: Multiple objectives related to maps: " + str(map_counter))
+                            print("[!] Multiple objectives related to maps: " + str(dict(map_counter)))
                         
                         if(len(map_counter) == 0):
                             map_code = None
@@ -636,10 +744,16 @@ class FileProcessor:
                         #round up all events and join them with OSP
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
 
+                        
+                        tmp_base_stats = self.summarize_round_base(tmp_logdf)
+                        
                         if len(ospDF) == 0:
-                            break #TODO impute variables
+                            print ("[!] Missing OSP stats. Imputing variables.")
+                            #break
+                            osp_guid = "imputed"
+                            ospDF = self.impute_osp_variables(tmp_base_stats, round_time, new_match_line.round_num, tmp_logdf)
                             
-                        tmp_stats_all = self.summarize_round(tmp_logdf, ospDF)
+                        tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
                         tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
                         tmp_stats_all["round_order"] = round_order
 
@@ -751,7 +865,7 @@ class FileProcessor:
                             stats_all = stats_all.append(tmp_stats_all,sort=False)
 
                         wrap_end_time = _time.time()  
-                        print("Proccessed round " + str(new_match_line.round_order).ljust(2) + " winner " + new_match_line.winner.ljust(6) + " on " + new_match_line.map[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(tmp_stats_all)).ljust(2) + "(Linestime: " + str(round((round_end_time - round_start_time),2)) + " s " + "Wraptime: " + str(round((wrap_end_time - wrap_start_time),2)) + " s)")
+                        print("[ ] Proccessed round " + str(new_match_line.round_order).ljust(2) + " winner " + new_match_line.winner.ljust(6) + " on " + new_match_line.map[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(tmp_stats_all)).ljust(2) + "(Linestime: " + str(round((round_end_time - round_start_time),2)) + " s " + "Wraptime: " + str(round((wrap_end_time - wrap_start_time),2)) + " s)")
                         
                         ######################################################################
                         ##############END of wrap up the round################################

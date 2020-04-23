@@ -26,6 +26,7 @@ class HTMLReport:
         if result is None or len(result) == 0:
             print("[!] Result passed into HTMLReport is empty. HTMLReport did not load any data.")
             self.empty = True
+            self.match_date = ""
             return
         
         self.award_info = AwardText()
