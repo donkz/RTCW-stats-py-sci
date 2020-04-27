@@ -112,11 +112,11 @@ class StatsWriter:
             extra_cols_in_casting = [value for value in self.stats_column_types.keys() if value not in df.columns]
             
             if len(extra_cols_in_stats) > 0 :
-                print("[!] Warning: there are more columns in new stat files than casting knows about. \n[!] Add new columns to casting variables in statswriter.py:correct_castings()")
+                print("[!] There are more columns in new stat files than casting knows about. \n[!] Add new columns to casting variables in statswriter.py:correct_castings()")
                 print(extra_cols_in_stats)
             
             if len(extra_cols_in_casting) > 0 :
-                print("[!] Warning: there are extra columns in casting variable. Clean them up")
+                print("[!] There are extra columns in casting variable. Clean them up")
                 print(extra_cols_in_casting)
             
             #do the casting and nan filling    

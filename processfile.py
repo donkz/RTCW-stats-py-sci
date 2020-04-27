@@ -90,7 +90,7 @@ class FileProcessor:
     def get_file_size(self):
         return str(os.path.getsize(self.local_file))
 
-    #Disassemble the following lines into a dataframe
+    #Disassemble the following lines into a tuple of (player,statline)
     #                                Kll Dth Sui TK Eff Gib DG    DR      TD  Score
     #line = "Allies /mute doNka      19   3   0  0  86   5  2367  1435    0     48"
     #line = "Allies /mute sem        19  10   2  2  65   4  3588  2085  226     46"
@@ -99,8 +99,7 @@ class FileProcessor:
         if len(tokens) < 10:
             return None
         player = " ".join(tokens[1:len(tokens)-10])
-        temp = pd.DataFrame([[player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2],tokens[-1]]], columns=Const.osp_columns)
-        return temp
+        return (player, [player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2],tokens[-1]])
     
     
     def get_log_lines_local(self):    
@@ -206,7 +205,6 @@ class FileProcessor:
         #######################################
         # Join log stats with OSP stats       #
         #######################################
-        osp_stats.index = osp_stats[Const.STAT_OSP_SUM_PLAYER]
         base_stats = base_stats.reset_index() #stash valid player names in "index" column
         base_stats.index = base_stats['index'].str[0:15] #because OSP names are 15 chars only
         stats_all = base_stats.join(osp_stats) #Totals fall out naturally
@@ -331,7 +329,7 @@ class FileProcessor:
         teams = self.guess_team(logdf)
         
         tmp_base_stats = tmp_base_stats.reset_index()
-        osp_rows = []
+        osp_rows = {}
         for index, base in tmp_base_stats.iterrows():
             STAT_OSP_SUM_PLAYER = base["index"]
             
@@ -356,10 +354,9 @@ class FileProcessor:
             STAT_OSP_SUM_TEAMDG = int(Const.EXTRAPOLATE_TEAM_DMG_PER_SEC*round_time)
             STAT_OSP_SUM_SCORE = int(Const.EXTRAPOLATE_SCORE_PER_SEC*round_time) + base["Kills"] - base["Suicides"]*3 - base["TK"]*3
             
-            osp_row=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_OSP_SUM_SCORE]
-            osp_rows.append(osp_row)
+            osp_rows[STAT_OSP_SUM_PLAYER]=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_OSP_SUM_SCORE]
         
-        ospDF = pd.DataFrame(osp_rows, columns=Const.osp_columns)
+        ospDF = pd.DataFrame.from_dict(osp_rows, orient='index', columns=Const.osp_columns)
         return ospDF
     
     def guess_team(self, logdf):
@@ -564,7 +561,7 @@ class FileProcessor:
                             game_started = True
                             game_finished = False
                             round_order = round_order + 1
-                            ospDF = pd.DataFrame(columns=Const.osp_columns)
+                            osp_stats_dict = {}
                             tmp_log_events = []
                             tmp_stats_all = []
                             map_counter = Counter() #reset it
@@ -625,14 +622,10 @@ class FileProcessor:
                     #^4Allies^7 ^7bru            ^3   7  16   0  0^7  30^3   2^2  1442^1  2840^6    0^3     11
                     if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS: #OSP team stats per player
                         if game_started:
-                            osp_line = self.process_OSP_line(line)
+                            osp_player, osp_line = self.process_OSP_line(line)
                             if osp_line is None: #someone echoes "Axis" ... thx Cliffdark
                                 break
-                            #typing /scores in the middle of the game can double the stats. 
-                            #Make sure to drop intermediary line
-                            if(osp_line[Const.STAT_OSP_SUM_PLAYER].values[0] in ospDF[Const.STAT_OSP_SUM_PLAYER].values):
-                                ospDF = ospDF.drop(osp_line.index)
-                            ospDF = ospDF.append(osp_line,sort=False)
+                            osp_stats_dict[osp_player] = osp_line
                             osp_lines.append(line.strip())   
                             osp_line_processed = True
                         break
@@ -747,11 +740,14 @@ class FileProcessor:
                         
                         tmp_base_stats = self.summarize_round_base(tmp_logdf)
                         
-                        if len(ospDF) == 0:
+                        if len(osp_stats_dict) == 0:
                             print ("[!] Missing OSP stats. Imputing variables.")
+                            # TODO: impute individual missing players
                             #break
                             osp_guid = "imputed"
                             ospDF = self.impute_osp_variables(tmp_base_stats, round_time, new_match_line.round_num, tmp_logdf)
+                        else:
+                            ospDF = pd.DataFrame.from_dict(osp_stats_dict, orient='index', columns = Const.osp_columns)
                             
                         tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
                         tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
@@ -781,7 +777,6 @@ class FileProcessor:
                             #print(tmp_stats_all[["side",Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]])
                             #IF OSP Stats are not joined (player is spectator)
                             #THEN there is no information about SIDE(Offense/Defense) or TEAM(Allies/Axis)
-                            #TODO: determine teams based on kills just for this scenario
                             print("No teams found. OSP stats not joined for round " + str(tmp_stats_all["round_order"].min()))
                         else: 
                             new_match_line.players = get_player_list(tmp_stats_all)
