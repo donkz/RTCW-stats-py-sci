@@ -5,6 +5,7 @@ import pandas as pd
 from statswriter import StatsWriter
 from processfile import FileProcessor
 from utils.htmlreports import HTMLReport
+from textsci.aliases import decypher_name
 import csv
 
 #set relative path
@@ -28,6 +29,7 @@ def list_files(path):
 
 season_dir = r".\seasons\\"
 tis_season = "2020Apr"
+all_seasons="all"
 season_path = season_dir + tis_season
 stat_files = list_files(season_path)
 
@@ -394,15 +396,46 @@ renames["2020Apr"] = {
         "reker" : "reker",
         "spuddy" : "spuddy",
         "traggart" : "tragic",
-        "trag|c" : "tragic"
+        "trag|c" : "tragic",
+        "notvis" : "vis",
+        "vodka!" : "vodka",
+        "-Tv-Ra!ser" : "raiser",
+        "c@kztik" : "cakel",
+        "-Tv-Conscious*" : "conscious",
+        "corpse" : "corpse",
+        "blackmagik" : "blackmagik",
+        ".=[AoH]BlAZ" : "blaz",
+        "jaytee*****" : "jaytee",
+        "Ra!ser*" : "raiser",
+        "c@k-el***" : "cakel",
+        "Flogzero" : "flogzero",
+        "OLIOKATH" : "oliokath",
+        "RekeR" : "reker",
+        "Festusmoesac" : "festus",
+        "Cliffdark***" : "cliffdark",
+        "mooshu*" : "mooshu",
+        "nigel***" : "nigel",
+        "trag|C" : "tragic",
+        "MeaN" : "anialatem",
+        "knifey" : "knifey",
+        "[>>] jaytee" : "jaytee",
+        "C0RPSE" : "corpse",
+        "CAFF D13" : "caffeine",
+        "not blackvis" : "vis",
+        "oIiokath" : "oliokath",
+        "rekernator" : "reker"
         }
+
 
 if tis_season == "":
     print("Processing all seasons")
-    tis_season = "all"
-    renames[tis_season] = {}
-    for season in renames:
-       renames[tis_season].update(renames[season]) 
+    tis_season = all_seasons
+    
+renames[all_seasons] = {}
+for season in renames:
+   renames[all_seasons].update(renames[season]) 
+
+valid_names = list(set(renames["all"].values()))
 
 if tis_season not in renames or len(renames[tis_season]) == 0:
     print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(stats.index.unique().values)]))
@@ -410,12 +443,14 @@ if tis_season not in renames or len(renames[tis_season]) == 0:
 
 else:
     #Round up missing aliases
-    missing_aliases = []
+    missing_aliases = {}
     for alias in stats.index.unique().values:
         if alias not in renames[tis_season]:
             print(f"[!] {alias} does not have a rename entry")
-            missing_aliases.append(alias)
-    print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(missing_aliases)]))
+            missing_aliases[alias]= decypher_name(alias, valid_names)
+    #print("\n".join(["        \"" + name + "\" : \"" +  + "\"," for name in sorted(missing_aliases)]))
+    for alias, guessed_name in missing_aliases.items():
+        print("        \"" + alias + "\" : \"" + guessed_name + "\",")
             
     #Handle renames
     renamed_logs = logs.replace(renames[tis_season], regex=False)
