@@ -204,12 +204,12 @@ class HTMLReport:
         
             time_end_html_write = _time.time()
             if self.debug_time: print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
-            print("Wrote html report to " + html_file.name)
+            print("[ ] Wrote html report to " + html_file.name)
         except FileNotFoundError as err:
-            print("Could not write to " + outpath + " Error: ", err)
+            print("[!] Could not write to " + outpath + " Error: ", err)
             return nothing
         except:
-            print("Could not write to " + outpath + " Unhandled error.")
+            print("[x] Could not write to " + outpath + " Unhandled error.")
             pass
         return (outpath, out_file_name)
             

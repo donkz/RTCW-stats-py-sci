@@ -57,7 +57,7 @@ class FileProcessor:
         self.debug_time = False
         
         if "local_file" in kwargs and ("s3bucket" in kwargs or "s3file" in kwargs):
-            print("Provide either local_file or s3 information (s3bucket and s3file)")
+            print("[x] Provide either local_file or s3 information (s3bucket and s3file)")
             return None
     
         if "local_file" in kwargs:
@@ -81,7 +81,7 @@ class FileProcessor:
                 self.file_size = "" #TODO: _
                 self.medium_agnostic_file_name = "s3://" + kwargs.get("s3bucket") + "/" + kwargs.get("s3file")
             else:
-                print("You have provided s3bucket, but not s3file")
+                print("[x] You have provided s3bucket, but not s3file")
     
     
     def get_file_date(self):
@@ -134,7 +134,7 @@ class FileProcessor:
             
         lines = obj['Body'].read().decode('cp1252').split('\r\n')
         
-        print("FOUND LINES with rn: " + str(len(lines)))
+        print("[ ] FOUND LINES with rn: " + str(len(lines)))
         
         if len(lines) == 1:
             print("[!] Unusual line separators. Splitting by n")
@@ -197,7 +197,7 @@ class FileProcessor:
         stats = stats.fillna(0).astype(int)
         
         t2 = _time.time()
-        if self.debug_time: print ("Time to build base_stats " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("[t] Time to build base_stats " + str(round((t2 - t1),2)) + " s")
         return stats
     
     def summarize_round_join_osp(self, base_stats, osp_stats):
@@ -219,11 +219,11 @@ class FileProcessor:
             stats_all["team_name"] = "notused"
       
         t2 = _time.time()
-        if self.debug_time: print ("Time to join base and osp stats " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("[t] Time to join base and osp stats " + str(round((t2 - t1),2)) + " s")
         return stats_all
     
     def add_classes(self, logdf, stats_all):
-        #t1 = _time.time()
+        t1 = _time.time()
         #debug: logdf = results[0]["logs"][results[0]["logs"]["round_num"] == 1]
         #debug: stats_all = results[0]["stats"][results[0]["stats"]["round_num"] == 1]
         match_stats = MatchStats()
@@ -255,8 +255,8 @@ class FileProcessor:
         venom_index =  stats_all[stats_all[Const.WEAPON_VENOM] > 0].index.values    
         stats_all.loc[venom_index, "class"] = Const.CLASS_VENOM
         
-        #t2 = _time.time()
-        #print ("Time to process classes is " + str(round((t2 - t1),2)) + " s")
+        t2 = _time.time()
+        if self.debug_time: print ("[t] Time to process classes is " + str(round((t2 - t1),2)) + " s")
         return stats_all
     
     def select_time(self, osp_demo_date, osp_demo_time, osp_map_date, osp_map_time, osp_stats_date, osp_stats_time, osp_jpeg_date, osp_jpeg_time, log_date):
@@ -337,7 +337,7 @@ class FileProcessor:
             try:
                 team = teams[STAT_OSP_SUM_PLAYER]
             except:
-                print("Player's team is undetermined: " + STAT_OSP_SUM_PLAYER)
+                print("[!] Player's team is undetermined: " + STAT_OSP_SUM_PLAYER)
                 print(teams)
             finally:
                 team = team if team else "Allies" # stick them on offence
@@ -429,7 +429,7 @@ class FileProcessor:
         try:
             result = self.process_log_worker()
         except:
-            print(f"Failed to process {self.medium_agnostic_file_name} with the following error:\n\n")
+            print(f"[x] Failed to process {self.medium_agnostic_file_name} with the following error:\n\n")
             exc_type, exc_value, exc_traceback = sys.exc_info()
             traceback.print_exception(exc_type, exc_value, exc_traceback,
             limit=4, file=sys.stdout)
@@ -777,7 +777,7 @@ class FileProcessor:
                             #print(tmp_stats_all[["side",Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]])
                             #IF OSP Stats are not joined (player is spectator)
                             #THEN there is no information about SIDE(Offense/Defense) or TEAM(Allies/Axis)
-                            print("No teams found. OSP stats not joined for round " + str(tmp_stats_all["round_order"].min()))
+                            print("[!] No teams found. OSP stats not joined for round " + str(tmp_stats_all["round_order"].min()))
                         else: 
                             new_match_line.players = get_player_list(tmp_stats_all)
                                             
@@ -812,7 +812,7 @@ class FileProcessor:
                                 tmp_stats_all.loc[tmp_stats_all[tmp_stats_all[Const.STAT_OSP_SUM_TEAM] == tmp_map.offense].index,"game_result"] = "LOST"
                                 new_match_line.winner = tmp_map.defense
                             else:
-                                print("bad round 2 winner status")
+                                print("[!] Bad round 2 winner status for round #" + str(round_order) + " map: " + map_name)
 
                         #wrap up round two only     
                         if value.event == Const.EVENT_OSP_REACHED:
@@ -890,7 +890,7 @@ class FileProcessor:
                             obj_offender = map_info.offense
                             obj_defender = map_info.defense
                             obj_type = announcement_values[0]
-                            if ("Allies transmitted the documents!" not in x[1] and "Forward Bunker" not in x[1]):
+                            if ("Allies transmitted the documents!" not in x[1] and "Forward Bunker" not in x[1] and "Dynamite planted near the Service Door!" not in x[1]):
                                 #Frostbite and beach same objectives
                                 #Delivery and beach same objectives
                                 map_counter[map_info.code] +=1
@@ -904,7 +904,7 @@ class FileProcessor:
                             elif ("Allies have returned the objective!" in x[1]):
                                 "Generic message, skip it"
                             else:
-                                print("---------------Unknown objective: ".ljust(20) + x[1])
+                                print("[!] -----------Unknown objective: ".ljust(20) + x[1])
                                 map_counter["Not listed"] +=1
                     else:
                         stat_entry = None
@@ -955,7 +955,7 @@ class FileProcessor:
             stats_all
             renames
         except NameError:
-            print("Nothing was processed")
+            print("[x] Nothing was processed")
             exit()
             return None
         else:
@@ -978,7 +978,7 @@ class FileProcessor:
                 renameDF = None
             
             time_end_process_log = _time.time()
-            print ("Time to process " + self.medium_agnostic_file_name + " is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
+            print ("[ ] File processed " + self.medium_agnostic_file_name + ". Total time is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
             return {"logs":logdf, "stats":stats_all, "matches":matchesdf, "renames" : renameDF}
             
         
