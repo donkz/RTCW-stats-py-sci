@@ -80,20 +80,10 @@ class KReduction:
 
 def process_games(stats): 
     df = stats[stats["round_num"]==2]
-    df = df.reset_index()[["index", "Kills","round_time", "game_result", "round_guid"]]
+    df = df.reset_index()[["index", "Kills","round_time", "game_result", "round_guid", "Panzerfaust","Sniper", "Artillery", "Airstrike", "match_date"]]
+    df ["Killpoints"] = df["Kills"] - df["Panzerfaust"]*.5 -df["Sniper"]*.5 - df["Artillery"]*.5 - df["Airstrike"]*.5
+    df = df.sort_values("match_date")
     df["games"] = df.groupby('index').cumcount()+1
-    
-    
-    #test
-    '''
-    guid = "6610d6cb91d4aed2e2854073317d65d2"
-    b = df[df["round_guid"]==guid].copy()
-    print(b.sort_values(by="Kills", ascending = False))
-    b["rank"] = b["Kills"].rank(method="dense", ascending=True, na_option='bottom')
-    b["rank2"] = b["rank"]
-    b.loc[b[b["game_result"] == "LOST"].index,"rank2"] = b["rank"] - 1.5
-    print(b.sort_values(by="rank2", ascending = False))
-    '''
     
     elo_dict ={}
     lines = []
@@ -102,7 +92,7 @@ def process_games(stats):
     for guid in matches:
         gameno +=1
         b = df[df["round_guid"]==guid].copy()
-        b["rank"] = b["Kills"].rank(method="dense", ascending=True, na_option='bottom')
+        b["rank"] = b["Killpoints"].rank(method="dense", ascending=True, na_option='bottom')
         b["rank2"] = b["rank"]
         b.loc[b[b["game_result"] == "LOST"].index,"rank2"] = b["rank"] - 1.5
         c = b.reset_index()
