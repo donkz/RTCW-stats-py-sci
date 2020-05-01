@@ -373,7 +373,7 @@ class FileProcessor:
         
         kills = logdf[logdf["event"].isin(["kill","Team kill"])][['event', 'killer', 'mod', 'victim']]
         kills["count"]=1
-        kills["WeaponSide"] = kills["mod"].replace("MP40","-1").replace("Luger","-100").replace("Thompson","2").replace("Colt","100")
+        kills["WeaponSide"] = kills["mod"].replace("MP40","-1").replace("Luger","-100").replace("Thompson","4").replace("Colt","100")
         kills["WeaponSide"] = pd.to_numeric(kills["WeaponSide"], errors='coerce').fillna(0).astype(int)
         kills.drop(["mod"], axis=1, inplace=True)
         kills = kills.groupby(['event', 'killer', 'victim']).sum().reset_index().sort_values("count", ascending = False)
