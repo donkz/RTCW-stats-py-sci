@@ -10,7 +10,7 @@ if not RTCWPY_PATH in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r".\test_samples\rtcwconsole-2020-01-13.log"
+rtcwlogfile = r".\seasons\2020Apr\miles-04-30-2020-05-20-44.log"
 #rtcwlogfile = r"C:\Games\rtcw\osp\rtcwconsole.log"
 
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup

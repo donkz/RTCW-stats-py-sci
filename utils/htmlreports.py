@@ -16,7 +16,7 @@ import time as _time
 
 class HTMLReport:
     
-    def __init__(self, result):
+    def __init__(self, result, elodf = None):
         
         time_start_html_init = _time.time()
         
@@ -34,13 +34,15 @@ class HTMLReport:
         matchstats = MatchStats()
         
         self.award_stats = self.awards.collect_awards()
+        if elodf is not None:
+            self.award_stats["awards"] = self.award_stats["awards"].join(elodf)
 
         time_mid_html_init = _time.time()
         if self.debug_time: print ("Time to init and load awards is " + str(round((time_mid_html_init - time_start_html_init),2)) + " s")
            
         
-        self.award_stats_html_table = self.awards_to_html(self.award_stats)
-        self.award_megakills_html_table = self.megakills_to_html(self.award_stats[2])
+        self.award_stats_html_table = self.awards_to_html(self.award_stats["awards"])
+        self.award_megakills_html_table = self.megakills_to_html(self.award_stats["megakills"])
         
         self.metrics = matchstats.match_metrics(result)
         
@@ -59,13 +61,8 @@ class HTMLReport:
         weapon_stats = matchstats.table_weapon_counts(result)
         self.weapon_stats_html_table = self.weapons_to_html(weapon_stats)
         
-        
-        
-        self.award_summaries_html_table = self.award_summaries_to_html(self.award_stats)
-        
-        #kill_matrix_stats = matchstats.table_kill_matrix(result)
-        #self.kill_matrix_stats_html_table = self.kill_matrix_to_html(kill_matrix_stats)
-        
+        self.award_summaries_html_table = self.award_summaries_to_html(self.award_stats["awards"])
+                
         top_feuds = matchstats.table_top_feuds(result)
         self.feuds_html_table = self.feuds_to_html(top_feuds)
         
@@ -244,7 +241,8 @@ class HTMLReport:
         link = Tag(soup, name = "a")
         link["href"] = "#"
         link["id"] = toggle_div
-        link.append("Hide/Show")
+        link["class"] = "text"
+        link.append("+/-")
         soup.append(link)
         return soup
     
@@ -253,8 +251,7 @@ class HTMLReport:
         soup = self.insert_text(content)        
         return soup
         
-    def award_summaries_to_html(self,award_stats):
-        awardsdf = award_stats[0]
+    def award_summaries_to_html(self,awardsdf):
         content = ""
         
         rank_cols, ranked_cols, unranked_cols, inverse_ranked_cols = self.awards.ranked_column_types()
@@ -320,15 +317,8 @@ class HTMLReport:
         return soup
 
     
-    def awards_to_html(self,award_stats):
-        awardsdf = award_stats[0]
-        columns = award_stats[1]
-        
+    def awards_to_html(self,awardsdf):
         soup = BeautifulSoup("","lxml")
-        metrics = [name for name in columns if "rank" not in name]
-        #ranks = [name for name in awardsdf.columns if "rank" in name]
-        cols = ["Player"] + metrics
-        
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
@@ -338,11 +328,28 @@ class HTMLReport:
         table.append(tr)
         
         medals = {1 : "gold", 2 : "silver", 3: "bronze"}
-        panzmedals = {5 : "red5", 4 : "red4", 3: "red3", 2 : "red2", 1 : "red1"}
-        ltmedals = {3 : "red3", 2 : "red2", 1: "red1"}
-        tapoutmedals = {3 : "red3", 2 : "red2", 1: "red1"}
-        snipermedals = {2 : "red2", 1 : "red1"}
+        penalty_classes = {5 : "red5", 4 : "red4", 3: "red3", 2 : "red2", 1 : "red1"}
+        award_classes = {5 : "green5", 4 : "green4", 3: "green3", 2 : "green2", 1 : "green1"}
+
+        columns = awardsdf.columns
+        metrics = [name for name in columns if "rank" not in name]
+
+        awards_order = ['Minutes', 'Rounds', 'Kills', 'KPM', 'KDR', 'FirstInDoor', 'AdjScore',  'KillStreak', 'MegaKill', 'Win%', 'Wins']
+        penalties_order = ['Tapout', 'Panzer', 'Smoker', 'Sniper']
+        sympathy_order = ['Deathroll', 'Blownup', 'Panzed']
+        final = ['RankPts']
         
+        if "elo" in metrics:
+            final.append("elo")
+        
+        order = awards_order + penalties_order + sympathy_order + final
+        
+        difference = set(metrics) - set(order)
+        if len(difference) > 0:
+            print("[!] There are more awards than HTML report knows about. Add " + str(difference) + " to 'order' variable")
+        
+        cols = ["Player"] + order
+
         for col in cols:
             th = Tag(soup, name = "th")
             tr.append(th)
@@ -355,19 +362,15 @@ class HTMLReport:
             td = Tag(soup, name = 'td')
             td.insert(1, index)
             tr.append(td)
-            for col in metrics:
+            for col in order:
                 td = Tag(soup, name = 'td')
                 value = str(row[col]).replace("-","")
                 td.insert(1, value)      
                 td["title"] =  "Rank:" + str(row[col + "_rank"])
-                if col == "Panzer":
-                    td["class"] = panzmedals.get(row[col + "_rank"],"norank")
-                elif col == "Smoker":
-                    td["class"] = ltmedals.get(row[col + "_rank"],"norank")
-                elif col == "Sniper":
-                    td["class"] = snipermedals.get(row[col + "_rank"],"norank")
-                elif col == "Tapout":
-                    td["class"] = tapoutmedals.get(row[col + "_rank"],"norank")
+                if col in penalties_order:
+                    td["class"] = penalty_classes.get(row[col + "_rank"],"norank")
+                elif col in ['KillStreak', 'MegaKill', 'Win%']:
+                    td["class"] = award_classes.get(row[col + "_rank"],"norank")
                 elif str(row[col])[0] == "-":
                     td["class"] = "nocount"
                 else:
@@ -718,6 +721,20 @@ class HTMLReport:
     }
     .red1 {
       background-color: #ffebe6;
+    }
+    .green5 {
+    }
+    .green4 {
+      background-color: #adffab;
+    }
+    .green3 {
+      background-color: #90ee90;
+    }
+    .green2 {
+      background-color: #82df83;
+    }
+    .green1 {
+      background-color: #65c368;
     }
     .Allies {
       background-color: #BFDAFF;

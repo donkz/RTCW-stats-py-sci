@@ -27,7 +27,7 @@ def list_files(path):
     print("\n".join(all_files))
     return all_files
 
-season_dir = r".\seasons\\"
+season_dir = ".\\seasons\\"
 tis_season = "2020Apr"
 all_seasons="all"
 season_path = season_dir + tis_season
@@ -48,29 +48,19 @@ for file in stat_files:
     #index = str(len(results) -1)
     #print(f'Processed file: {file} into results[{index}]')
 
-try: 
-    del logs
-    del stats
-    del matches
-except:
-    "Nothing"
+logs = stats = matches = None
+
 
 for result in results:
-    try:
-        logs
-        stats
-        matches
-    except NameError:
-        logs = result["logs"]
-        stats = result["stats"]
-        matches = result["matches"]
-    else:
+    if logs is not None and stats is not None and matches is not None:
         logs = logs.append(result["logs"],sort=True)
         stats = stats.append(result["stats"],sort=True)
         matches = matches.append(result["matches"],sort=True)
-#    finally:
-#        print(result["stats"]["class"].value_counts())
-            
+    else:
+        logs = result["logs"]
+        stats = result["stats"]
+        matches = result["matches"]
+
 #logs.to_csv(r"./test_samples/result_client_log.csv", index=False)
 #stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
 #matches.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
@@ -310,7 +300,8 @@ renames["2020Mar"] = {
         "jaytee***" : "jaytee",
         "kick gut" : "gut",
         "nigel**" : "nigel",
-        "raiser" : "raiser"
+        "raiser" : "raiser",
+        "woodChop" : "woodchop"
         }
 
 renames["2020Apr"] = {
@@ -423,7 +414,37 @@ renames["2020Apr"] = {
         "CAFF D13" : "caffeine",
         "not blackvis" : "vis",
         "oIiokath" : "oliokath",
-        "rekernator" : "reker"
+        "rekernator" : "reker",
+        "woodChop" : "woodchop",
+        "Ra!ser ???" : "raiser",
+        "brian" : "brian",
+        "Ex-)Festus" : "festus",
+        "VENOM" : "venom",
+        "Euclid" : "euclid",
+        "mooshu sux" : "mooshu",
+        "eXe|Ra!se" : "raiser",
+        "SPEC nigel" : "nigel",
+        "fistermiagi" : "deadeye",
+        "gut" : "gut",
+        "raiser" : "raiser",
+        "Tier B Ra!ser" : "raiser",
+        "Tier C Jimmy" : "pasek",
+        "Tier C c@k" : "cakel",
+        "Tier C miles" : "miles",
+        "valor-conscious*" : "conscious",
+        "Tier C Fistermiagi" : "deadeye",
+        "TIER F kotip" : "kotip",
+        "Fistermiagi" : "deadeye",
+        "bluemagik" : "blackmagic",
+        "jaytee'" : "jaytee",
+        "gutz0rz" : "gut",
+        "Misha X" : "elsa",
+        "Conscious*" : "conscious",
+        "TIER C SPAZTIK" : "spaztik",
+        "nigel." : "nigel",
+        "f0nz3*" : "f0nz3",
+        "HyperNegatiVemaN" : "HyperNegatiVemaN",
+        "troll fans" : "reflex"
         }
 
 
@@ -460,7 +481,7 @@ else:
     #Write HTML!
     bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
     html_report1 = HTMLReport(bigresult)
-    html_report1.report_to_html(season_dir + tis_season +"\\" + "season-")
+    html_report1.report_to_html(season_dir + tis_season + "\\" + "season-")
     
 if (False):
     renames_export = {}
@@ -476,3 +497,25 @@ if (False):
 m = bigresult["matches"]
 print("\n\n\n Duplicates check\n\n\n")
 print(m["round_guid"].value_counts().sort_values(ascending=False)[0:5])
+dups = m["round_guid"].value_counts().sort_values(ascending=False)
+dups = dups[dups > 1]
+m[m["round_guid"].isin(dups.index)]
+m[m["round_guid"].isin(dups.index)]["file_date"].unique()
+
+#attach elos
+# 1. run season stats for all games
+# 2. capture elos
+if False:
+    from tests.elo import process_games
+    bigresult2020 = bigresult.copy()
+    elos = process_games(bigresult2020["stats"])
+    elos.index = elos["player"]
+    elos.drop(["player"],inplace=True, axis=1)
+    elos["elo"] = elos["elo"].astype(int)
+    elos["elo_rank"] = elos["elo"].rank(method="min", ascending=False, na_option='bottom').fillna(999).astype(int)
+        
+    
+    #process current season alone
+    html_report2 = HTMLReport(bigresult, elos)
+    html_report2.report_to_html(season_dir + tis_season + "\\" + "season-")
+    

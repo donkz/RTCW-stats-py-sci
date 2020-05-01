@@ -101,9 +101,7 @@ def process_games(stats):
         elos = process_elos(player_score_df, elo_dict)
         for p in elos:
             lines.append([gameno, elos[p].player_id, elos[p].elo, elos[p].games])
-#        print(player_score_df) 
-#        print(elo_dict["donka"])
-        
+
         for e in elos:
             elo_dict[e] = elos[e]
 
@@ -115,7 +113,6 @@ def process_games(stats):
     #print
     array = []
     for p in elo_dict:
-        #print(p.ljust(20) + str(elo_dict[p].elo))
         array.append([p, elo_dict[p].elo])
     df = pd.DataFrame(array)
     df.columns = ["player","elo"]

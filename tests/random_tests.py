@@ -114,3 +114,32 @@ s["gib"] = s["OSP_Gibs"]/s["OSP_Kills"]
 s["score"] = (s[Const.STAT_OSP_SUM_SCORE] - s[Const.STAT_OSP_SUM_FRAGS] + s[Const.STAT_OSP_SUM_SUICIDES]*3 + s[Const.STAT_OSP_SUM_TK]*3)/s["round_time"]
 s["td"] = s["OSP_Team_Damage"]/s["round_time"]
 ssum = s[['dg', 'dr', 'gib', 'score', 'td']].mean(axis=0)
+
+
+############################################
+#    Check if panda objects are immutable  #
+############################################
+import pandas as pd
+df = pd.DataFrame([[1,2],[3,4],[5,6]], columns = ["col1","col2"])
+
+def other_func(df_param):
+    df_param["new_column"] = df_param["col1"].add(10)
+
+print("Dataframe before passing to function")
+print(df)
+other_func(df)
+print("Dataframe after being used in the function")
+print(df)
+
+'''
+Dataframe before passing to function
+   col1  col2
+0     1     2
+1     3     4
+2     5     6
+Dataframe after being used in the function
+   col1  col2  new_column
+0     1     2          11
+1     3     4          13
+2     5     6          15
+'''

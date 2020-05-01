@@ -38,97 +38,53 @@ class Awards:
         
         x = self.award_kills_of_the_night(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
-        columns.append(x.columns[2])
-        columns.append(x.columns[3])
-        columns.append(x.columns[4])
-        columns.append(x.columns[5]) 
-        columns.append(x.columns[6])
-        columns.append(x.columns[7]) # this sux
         t2 = _time.time()
         if self.debug_time: print ("Time to process kills is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
             
-        
-    
         x = self.award_efficiency_of_the_night(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
         t2 = _time.time()
         if self.debug_time: print ("Time to process kdr is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_kill_streak(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
-        columns.append(x.columns[2])
-        columns.append(x.columns[3])
         t2 = _time.time()
         if self.debug_time: print ("Time to process killstreak is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
-        
-# =============================================================================
-#         x = self.award_pack_of_five(event_lines_dataframe)
-#         awardsdf = awardsdf.join(x)
-#         columns.append(x.columns[0])
-#         columns.append(x.columns[1])
-# =============================================================================
         
         mk = self.award_megakill(event_lines_dataframe) #special for now
         x = mk[0]
         megakilldetail = mk[1]
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
         t2 = _time.time()
         if self.debug_time: print ("Time to process megakill is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
         x = self.award_tapout(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
         t2 = _time.time()
         if self.debug_time: print ("Time to process tapout is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        #x = self.award_panzer(event_lines_dataframe)
-        x = self.award_negative_weapons("Panzer", [Const.WEAPON_PANZER], [0,0.10,0.30,0.40,0.50,0.60])
+        x = self.award_negative_weapons("Panzer", [Const.WEAPON_PANZER], Const.PENALTY_PANZ_RANGES)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
         t2 = _time.time()
         if self.debug_time: print ("Time to process panz is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        #x = self.award_smoker(event_lines_dataframe)
-        x = self.award_negative_weapons("Smoker", [Const.WEAPON_AS, Const.WEAPON_ART], [0,0.1,0.15,0.2])
+        x = self.award_negative_weapons("Smoker", [Const.WEAPON_AS, Const.WEAPON_ART], Const.PENALTY_SMOKER_RANGES)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
         t2 = _time.time()
         if self.debug_time: print ("Time to process smoker is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-        #x = self.award_sniper(event_lines_dataframe)
-        x = self.award_negative_weapons("Sniper", [Const.WEAPON_SNIPER, Const.WEAPON_MAUSER], [0,0.05,0.1])
+        x = self.award_negative_weapons("Sniper", [Const.WEAPON_SNIPER, Const.WEAPON_MAUSER], Const.PENALTY_SNIPER_RANGES)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
         t2 = _time.time()
         if self.debug_time: print ("Time to process sniper is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
-        
-#        x = self.award_death_streak(event_lines_dataframe)
-#        awardsdf = awardsdf.join(x)
-#        columns.append(x.columns[0])
-#        columns.append(x.columns[1])
-#        t2 = _time.time()
-#        if self.debug_time: print ("Time to process deathstreak is " + str(round((t2 - t1),2)) + " s")
-#        t1 = t2
         
         x = self.award_most_blown_up(event_lines_dataframe)
         awardsdf = awardsdf.join(x)
@@ -162,24 +118,8 @@ class Awards:
         if self.debug_time: print ("Time to process points is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
-# =============================================================================
-#         x = self.award_most_caps(sum_lines_dataframe)
-#         awardsdf = awardsdf.join(x)
-#         columns.append(x.columns[0])
-#         columns.append(x.columns[1])
-#         
-#         x = self.award_most_holds(sum_lines_dataframe)
-#         awardsdf = awardsdf.join(x)
-#         columns.append(x.columns[0])
-#         columns.append(x.columns[1])
-# =============================================================================
-        
         x = self.award_most_wins(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
-        columns.append(x.columns[0])
-        columns.append(x.columns[1])
-        columns.append(x.columns[2])
-        columns.append(x.columns[3]) 
         t2 = _time.time()
         if self.debug_time: print ("Time to process wins is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
@@ -203,7 +143,7 @@ class Awards:
         
         t2 = _time.time()
         if self.debug_time: print ("Time to wrap up awards is " + str(round((t2 - t1),2)) + " s")
-        return [awardsdf,columns, megakilldetail]
+        return {"awards" : awardsdf, "megakills" :  megakilldetail}
        
     def fill_na_values(self):
         awardsdf = self.awardsdf
@@ -376,8 +316,10 @@ class Awards:
         #select max kills for each player
         result = pd.DataFrame(megadict).transpose()
         result.columns  = ["count","idx","MegaKill","idxmax"]
-        result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
-        result.loc[result[result["MegaKill_rank"] > 4].index, "MegaKill_rank"] = 5
+        
+        #result["MegaKill_rank"] = result["MegaKill"].rank(method="min", ascending=False, na_option='bottom')
+        #result.loc[result[result["MegaKill_rank"] > 4].index, "MegaKill_rank"] = 5
+        self.apply_rank_range(result, "MegaKill", Const.RANK_RANGE_MEGAKILL)
         
         t2 = _time.time()
         if self.debug_time: print ("Time to process megakills1 is " + str(round((t2 - t1),2)) + " s")
@@ -453,8 +395,11 @@ class Awards:
         resultkill.columns=['KillStreak']
         resultdeath.columns=['Deathroll']
         resultdf = resultkill.join(resultdeath)
-        resultdf["KillStreak_rank"] = resultdf["KillStreak"].rank(method="min", ascending=False, na_option='bottom')
-        resultdf.loc[resultdf[resultdf["KillStreak_rank"] > 4].index, "KillStreak_rank"] = 5
+        
+        #resultdf["KillStreak_rank"] = resultdf["KillStreak"].rank(method="min", ascending=False, na_option='bottom')
+        #resultdf.loc[resultdf[resultdf["KillStreak_rank"] > 4].index, "KillStreak_rank"] = 5
+        self.apply_rank_range(resultdf, "KillStreak", Const.RANK_RANGE_KILLSTREAK)
+        
         resultdf["Deathroll_rank"] = 0
         return resultdf
     
@@ -569,16 +514,19 @@ class Awards:
         result["Wins_rank"] = 0
         
         result = result.join(self.rounds, how='outer')
-        result["Win%"] = result["Wins"]/(result["Rounds"]/2) #one game is 2 rounds
+        
+        result["full_games"] = result["Rounds"].div(2).apply(np.ceil)
+        result["Win%"] = result["Wins"]/result["full_games"]
         result["Win%"] = result["Win%"].fillna(0).round(2)
         result.loc[result[result["Rounds"] < self.minrounds].index, "Win%"] = result.loc[result[result["Rounds"] < self.minrounds].index, "Win%"].multiply(-1)
         
         
-        result["Win%_rank"] = result["Win%"].rank(method="dense", ascending=False, na_option='bottom') 
-        result.loc[result[result["Win%_rank"] > 5].index, "Win%_rank"] = 6
+        #result["Win%_rank"] = result["Win%"].rank(method="dense", ascending=False, na_option='bottom') 
+        #result.loc[result[result["Win%_rank"] > 5].index, "Win%_rank"] = 6
+        self.apply_rank_range(result, "Win%", Const.RANK_RANGE_WINS)
         
         result["Win%"] = result["Win%"].round(2).multiply(100).astype(int).astype(str)+"%"        
-        result.drop(["Rounds"], axis=1, inplace=True)
+        result.drop(["Rounds", "full_games"], axis=1, inplace=True)
         
         return result
     
@@ -617,7 +565,29 @@ class Awards:
      
         resultdf["Tapout"] = resultdf["Tapout"].round(2).multiply(100).astype(int).astype(str)+"%"
         return resultdf
-
+    
+    def apply_rank_range(self, df, column, rank_range):
+        r"""
+        Attach a new column with rank values
+        
+        Parameters
+        ----------
+        df: dataframe 
+        column: column with values that need ranked
+        rank_range: what ranges to apply to values to rank them
+        
+        Returns
+        ----------
+        dataframe with a new column containing ranks
+        """
+        column_rank_name = column + "_rank"
+        
+        max_rank = len(rank_range) + 1 #supposedly 5
+        df[column_rank_name] = max_rank
+        for i, threshold in enumerate(rank_range[::-1],1):
+            df.loc[df[df[column] >= threshold].index, column_rank_name] = max_rank - i
+        
+        
  
 # =============================================================================
 # a = pd.DataFrame(index = statsdf["player"].unique())    

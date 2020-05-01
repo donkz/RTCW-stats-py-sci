@@ -97,10 +97,10 @@ class AwardText:
                                          "The impressive megakill{multiplier} by {people}. {statistic} kills at once!",
                                          "{people} got to be one-man army with {statistic} kills at once!"],
                                          3)
-    awards["Panzer"]      = AwardStruct("Number of kills using panzerfaust (5 pts penalty)",
+    awards["Panzer"]      = AwardStruct("Number of kills using panzerfaust (3 pts penalty)",
                                          ["{people} get{multiplier} the classic Panzer-Lama Award with {statistic} panzer kills!"],
                                          2)
-    awards["Smoker"]      = AwardStruct("Artillery and Airstrike kills (3 pts penalty)",
+    awards["Smoker"]      = AwardStruct("Artillery and Airstrike kills (2 pts penalty)",
                                          ["{people} get{multiplier} the award for The Best Indian Smoke-Messenger with {statistic} artillery and airstrike kills!"],
                                          4)
     awards["Sniper"]      = AwardStruct("Sniper kills (2 pts penalty)",
@@ -119,7 +119,10 @@ class AwardText:
                                          ["{people} thanks for sticking around the longest - {statistic} minutes!",
                                          "{people} - hold{multiplier} down the house with {statistic} minutes in action!"],
                                          20)
-    awards["Rounds"]    = AwardStruct("Rounds played",
-                                     [],
-                                     20)
+    awards["Rounds"]      = AwardStruct("Rounds played",
+                                        [],
+                                        20)
+    awards["elo"]         = AwardStruct("ELO Score for the year",
+                                        [],
+                                        20)
     

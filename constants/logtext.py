@@ -12,6 +12,18 @@ class Const:
     EXTRAPOLATE_SCORE_PER_SEC = 0.039578
     EXTRAPOLATE_TEAM_DMG_PER_SEC = 0.422699
     
+    
+    #Penalty deductions         <--0      <--1     <--2    <--3
+    PENALTY_PANZ_RANGES   = [0,     0.15,     0.30,    0.50    ]
+    PENALTY_SMOKER_RANGES = [0,     0.1,      0.2      ]
+    PENALTY_SNIPER_RANGES = [0,     0.05,     0.1      ]
+    PENALTY_TAPTOU_RANGES = [0,     0.25,     0.33,    0.40    ]
+    
+    #Award points                <--1      <--2     <--3       <--4    <--5
+    RANK_RANGE_WINS =       [       0.67,     0.57,    0.50,      0.45    ]
+    RANK_RANGE_KILLSTREAK = [       20,       15,      10,        6       ]
+    RANK_RANGE_MEGAKILL =   [       6,        5,       4,         3       ]
+    
     TEXT_PLAYER_SEPARATOR = "%"
     RANK_MAX = 5
     REF_COMMANDS = ["comp","abort","restart","allready","lock","unlock","putaxis","putallies", "remove","speclock", "specunlock", "pause", "unpause"]
