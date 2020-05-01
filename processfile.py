@@ -327,6 +327,8 @@ class FileProcessor:
         #...random.choice(test_teams)
         
         teams = self.guess_team(logdf)
+        if teams == None:
+            return None
         
         tmp_base_stats = tmp_base_stats.reset_index()
         osp_rows = {}
@@ -362,7 +364,7 @@ class FileProcessor:
     def guess_team(self, logdf):
         #test
         #logdf = result["logs"]
-        #logdf = logdf[logdf["round_order"]==1]
+        #logdf = logdf[logdf["round_order"]==35]
         #test
         
 #        match_stats = MatchStats()
@@ -385,7 +387,7 @@ class FileProcessor:
         kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
         kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="Team kill")].index,"KilTeam"] = "B"
         
-        for x in range(5): # 2 works. 5 is for safety
+        for x in range(5): # 2 works. 5 is safer
             teamB = kills[kills["VicTeam"]=="B"]["victim"].unique()        
             for p in teamB:
                 kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"VicTeam"] = "A"
@@ -404,7 +406,13 @@ class FileProcessor:
                 kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="Team kill")].index,"KilTeam"] = "A"   
 
                 kills.loc[kills[(kills["victim"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "B"
-
+        
+        #plug holes
+        kills.loc[kills[(kills["KilTeam"]=="A") & (kills["event"]=="kill")].index,"VicTeam"] = "B"
+        kills.loc[kills[(kills["KilTeam"]=="A") & (kills["event"]=="Team kill")].index,"VicTeam"] = "A"
+        kills.loc[kills[(kills["KilTeam"]=="B") & (kills["event"]=="kill")].index,"VicTeam"] = "A"
+        kills.loc[kills[(kills["KilTeam"]=="B") & (kills["event"]=="Team kill")].index,"VicTeam"] = "B"
+        
         
         playersraw = kills[["killer","KilTeam"]].rename(columns={"killer": "player", "KilTeam": "Team"}).append(kills[["victim","VicTeam"]].rename(columns={"victim": "player", "VicTeam": "Team"}))
         players = playersraw.groupby(["player","Team"]).size().reset_index()
@@ -412,9 +420,14 @@ class FileProcessor:
         players.index = players["Team"]
         teams = kills[['WeaponSide', 'VicTeam']].groupby("VicTeam").sum()
         res = players.join(teams)
-        res.loc[res[res["WeaponSide"]<0].index,"TeamName"] = "Axis"
-        res.loc[res[res["WeaponSide"]>0].index,"TeamName"] = "Allies"
+        res.loc[res[res["WeaponSide"] == res["WeaponSide"].min()].index,"TeamName"] = "Axis"
+        res.loc[res[res["WeaponSide"] == res["WeaponSide"].max()].index,"TeamName"] = "Allies"
         res.index = res["player"]
+        
+        if res["TeamName"].nunique() < 2: 
+            print("[!] Could not guess teams while imputing variables. Skipping this round")
+            return None
+        
         return res["TeamName"].to_dict()
     
     def process_log(self):
@@ -748,7 +761,10 @@ class FileProcessor:
                             ospDF = self.impute_osp_variables(tmp_base_stats, round_time, new_match_line.round_num, tmp_logdf)
                         else:
                             ospDF = pd.DataFrame.from_dict(osp_stats_dict, orient='index', columns = Const.osp_columns)
-                            
+                        
+                        if ospDF is None:
+                            break
+                        
                         tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
                         tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
                         tmp_stats_all["round_order"] = round_order
