@@ -27,30 +27,42 @@ def list_files(path):
     print("\n".join(all_files))
     return all_files
 
+#settings
 season_dir = ".\\seasons\\"
-tis_season = "2020Apr"
+tis_season = "2020May"
+keep_only_pattern = ""
 all_seasons="all"
+write_daily_stats = False
+write_parquet = False
+
+
+#process files
 season_path = season_dir + tis_season
 stat_files = list_files(season_path)
+
+if keep_only_pattern != "":
+    print("[ ] Looking only for files like " + keep_only_pattern)
+    stat_files = [filename for filename in stat_files if keep_only_pattern in filename]
+    print("[ ] Filtered files to:\n")
+    print(stat_files)
 
 results = []
 for file in stat_files:
     processor = FileProcessor(local_file = file, debug = False)
     result = processor.process_log()
     
-    html_reportx = HTMLReport(result)
-    html_reportx.report_to_html(season_dir + tis_season +"\\" + "reports" + "\\")
-
-    writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
-    writer.write_results(result)
+    if write_daily_stats:
+        html_reportx = HTMLReport(result)
+        html_reportx.report_to_html(season_dir + tis_season +"\\" + "reports" + "\\")
+    
+    if write_parquet:
+        writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
+        writer.write_results(result)
       
     results.append(result)
-    #index = str(len(results) -1)
-    #print(f'Processed file: {file} into results[{index}]')
 
+#stich them up!
 logs = stats = matches = None
-
-
 for result in results:
     if logs is not None and stats is not None and matches is not None:
         logs = logs.append(result["logs"],sort=True)
@@ -60,10 +72,6 @@ for result in results:
         logs = result["logs"]
         stats = result["stats"]
         matches = result["matches"]
-
-#logs.to_csv(r"./test_samples/result_client_log.csv", index=False)
-#stats.to_csv(r"./test_samples/result_client_log_sum_stats.csv", index=False)
-#matches.to_csv(r"./test_samples/result_client_log_matches.csv", index=False)
 
 renames = {}
 renames["2020Feb"] = {
@@ -91,7 +99,7 @@ renames["2020Feb"] = {
         "DillWeed" :  "dillweed",
         "donka" :  "donka",
         "eternal_" :  "eternal",
-        "eXe|Anialatem" :  "anialatem",
+        "eXe|Anialatem" :  "mean",
         "eXe|Boo7y" :  "booty",
         "eXe|Flogzero" :  "flogzero",
         "FisterMiagi" :  "deadeye",
@@ -146,7 +154,7 @@ renames["2020Jan"] = {
         "spaztik" :  "spaztik",
         "illkilla" :  "illkilla",
         "nigel" :  "nigel",
-        "eXe|Anialatem" :  "anialatem",
+        "eXe|Anialatem" :  "mean",
         "John_Mullins" :  "john_mullins",
         "[>>] Cliffdark" :  "cliffdark",
         "aaa" :  "parcher",
@@ -241,10 +249,10 @@ renames["2020Mar"] = {
         "donkz" : "donka",
         "donkz of  Pain" : "donka",
         "donkztik" : "donka",
-        "eXe|Anialatem" : "anialatem",
+        "eXe|Anialatem" : "mean",
         "eXe|Flogzero" : "flogzero",
-        "eXe|MeaN" : "anialatem",
-        "eXe|Meanguine" : "anialatem",
+        "eXe|MeaN" : "mean",
+        "eXe|Meanguine" : "mean",
         "eternal_" : "eternal",
         "fisterMiagi" : "deadeye",
         "fromiam" : "fro",
@@ -283,7 +291,7 @@ renames["2020Mar"] = {
         "Flogzero" : "flogzero",
         "Joep" : "joep",
         "LuNa" : "luna",
-        "MEAN" : "anialatem",
+        "MEAN" : "mean",
         "Raiser clark" : "raiser",
         "TommyTomorrow" : "tragic",
         "boydarilla" : "boydarilla",
@@ -315,7 +323,7 @@ renames["2020Apr"] = {
         "bru" : "bru",
         "eXe|Boo7y" : "booty",
         "eXe|Flogzero" : "flogzero",
-        "eXe|MeaN" : "anialatem",
+        "eXe|MeaN" : "mean",
         "eXe|eternal" : "eternal",
         "miles" : "miles",
         "murkey" : "murkey",
@@ -407,7 +415,7 @@ renames["2020Apr"] = {
         "mooshu*" : "mooshu",
         "nigel***" : "nigel",
         "trag|C" : "tragic",
-        "MeaN" : "anialatem",
+        "MeaN" : "mean",
         "knifey" : "knifey",
         "[>>] jaytee" : "jaytee",
         "C0RPSE" : "corpse",
@@ -442,9 +450,58 @@ renames["2020Apr"] = {
         "Conscious*" : "conscious",
         "TIER C SPAZTIK" : "spaztik",
         "nigel." : "nigel",
-        "f0nz3*" : "f0nz3",
+        "f0nz3*" : "fonze",
         "HyperNegatiVemaN" : "HyperNegatiVemaN",
-        "troll fans" : "reflex"
+        "troll fans" : "reflex",
+        "// Jimmy" : "pasek",
+        "c@kzero" : "cakel",
+        "fonze*" : "fonze",
+        "c@k" : "cakel"
+        }
+renames["2020May"] = {
+        "@corpse," : "corpse",
+        "@jaytee" : "jaytee",
+        "Jimmy" : "pasek",
+        "MeaN" : "mean",
+        "Ra!ser..." : "raiser",
+        "beast" : "beast",
+        "bru" : "bru",
+        "eXe|Flogzero" : "flogzero",
+        "fromiam" : "fro",
+        "murkey" : "murkey",
+        "nigel" : "nigel",
+        "prowler" : "prowler",
+        "Conscious*" : "conscious",
+        "fonze" : "fonze",
+        "FisterMiagi" : "deadeye",
+        "Kittens" : "kittens",
+        "blackmagik" : "blackmagik",
+        "c@k-el" : "cakel",
+        "donka" : "donka",
+        "miles" : "miles",
+        "oIiokath" : "oliokath",
+        "Dr3sserWo0d!" : "dresserwood",
+        "#REDUE John_Mullins" : "john_mullins",
+        "DozA" : "doza",
+        "festus" : "festus",
+        "kindergarden c@k" : "cakel",
+        "spaztik" : "spaztik",
+        "vodka!" : "vodka",
+        "*** Cliffdark" : "cliffdark",
+        "Dress3rWo0d!" : "dresserwood",
+        "fonze*" : "fonze",
+        "blackmagiknc." : "blackmagik",
+        "*Conscious'gA" : "conscious",
+        "paper" : "paper",
+        "eXe|MeaN" : "mean",
+        "*Conscious'" : "conscious",
+        "Jimmy Bones" : "pasek",
+        "corpse" : "corpse",
+        "valor-conscious*" : "conscious",
+        "pixi" : "pixi",
+        "Ra!ser" : "raiser",
+        "-n2p)(spaztik-" : "spaztik",
+        "$upac@k" : "cakel"
         }
 
 
@@ -459,7 +516,6 @@ for season in renames:
 valid_names = list(set(renames["all"].values()))
 
 if tis_season not in renames or len(renames[tis_season]) == 0:
-    print("\n".join(["        \"" + name + "\" : \"\"," for name in sorted(stats.index.unique().values)]))
     print("\n\n\n[!] Need some renames for this season\n\n\n")
 
 else:
@@ -494,13 +550,15 @@ if (False):
     renames_export_df.to_csv("Renames_2020-Jan-Mar.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
     
 #duplication check
-m = bigresult["matches"]
+matches = bigresult["matches"]
 print("\n\n\n Duplicates check\n\n\n")
-print(m["round_guid"].value_counts().sort_values(ascending=False)[0:5])
-dups = m["round_guid"].value_counts().sort_values(ascending=False)
+print(matches["round_guid"].value_counts().sort_values(ascending=False)[0:5])
+dups = matches["round_guid"].value_counts().sort_values(ascending=False)
 dups = dups[dups > 1]
-m[m["round_guid"].isin(dups.index)]
-m[m["round_guid"].isin(dups.index)]["file_date"].unique()
+if len(dups) > 1:
+    print("[!] Found duplicates\n\n\n")
+    print(matches[matches["round_guid"].isin(dups.index)])
+    print(matches[matches["round_guid"].isin(dups.index)]["file_date"].unique())
 
 #attach elos
 # 1. run season stats for all games

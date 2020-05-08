@@ -4,6 +4,7 @@ def decypher_name(name, valid_names):
     '''Try to guess the original alias of the provided player string'''
     n=2
     name = name.lower()
+    name = name.translate(str.maketrans(replace_chars))
     name_chain = [name[i:i+n] for i in range(0, len(name)-(n-1), 1)] #break the name into n-char chains
     matched_name = "??"
     #print(name_chain)
@@ -18,6 +19,26 @@ def decypher_name(name, valid_names):
         if len(commonalities) >= base_length*.75:
             matched_name = valid_name
     return matched_name
+
+replace_chars = {
+        '!': 'i',
+        '@': 'a',
+        "-" : "",
+        "." : "",
+        "*" : "",
+        "$" : "s",
+        "|" : "",
+        "[" : "",
+        "]" : "",
+        "{" : "",
+        "}" : "",
+        "(" : "",
+        ")" : "",
+        "'" : "",
+        "_" : "",
+        "0" : "o",
+        "1" : "i",
+        }
 
 if (False): #debug
     name = "n!kon"
