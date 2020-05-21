@@ -97,7 +97,7 @@ class FileProcessor:
     def process_OSP_line(self,line):
         tokens = re.split("\s+", line)
         if len(tokens) < 10:
-            return None
+            return (None, None)
         player = " ".join(tokens[1:len(tokens)-10])
         return (player, [player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2],tokens[-1]])
     
