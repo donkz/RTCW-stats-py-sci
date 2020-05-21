@@ -50,7 +50,11 @@ results = []
 for file in stat_files:
     processor = FileProcessor(local_file = file, debug = False)
     result = processor.process_log()
-    
+    results.append(result)
+
+#stich them up!
+logs = stats = matches = None
+for result in results:
     if write_daily_stats:
         html_reportx = HTMLReport(result)
         html_reportx.report_to_html(season_dir + tis_season +"\\" + "reports" + "\\")
@@ -58,12 +62,7 @@ for file in stat_files:
     if write_parquet:
         writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")
         writer.write_results(result)
-      
-    results.append(result)
-
-#stich them up!
-logs = stats = matches = None
-for result in results:
+    
     if logs is not None and stats is not None and matches is not None:
         logs = logs.append(result["logs"],sort=True)
         stats = stats.append(result["stats"],sort=True)
@@ -443,7 +442,7 @@ renames["2020Apr"] = {
         "Tier C Fistermiagi" : "deadeye",
         "TIER F kotip" : "kotip",
         "Fistermiagi" : "deadeye",
-        "bluemagik" : "blackmagic",
+        "bluemagik" : "blackmagik",
         "jaytee'" : "jaytee",
         "gutz0rz" : "gut",
         "Misha X" : "elsa",
@@ -501,9 +500,117 @@ renames["2020May"] = {
         "pixi" : "pixi",
         "Ra!ser" : "raiser",
         "-n2p)(spaztik-" : "spaztik",
-        "$upac@k" : "cakel"
+        "$upac@k" : "cakel",
+        "c@ktens" : "cakel",
+        "asianjaytee" : "jaytee",
+        "Jimbo" : "pasek",
+        "siTtIns" : "corpse",
+        "conscious*" : "conscious",
+        "Ra!ser -_-" : "raiser",
+        "Anialatem" : "mean",
+        "Flogzero" : "flogzero",
+        "Pixi" : "pixi",
+        "Ra!ser-D" : "raiser",
+        "blackmagik)" : "blackmagik",
+        "dresserwood!" : "dresserwood",
+        "mooshu" : "mooshu",
+        "eternal)" : "eternal",
+        "spaztik*" : "spaztik",
+        "trag|c*" : "tragic",
+        "sscasper" : "casper",
+        "eXe|Anialatem" : "mean",
+        "@festus" : "festus",
+        "(503th.esla)" : "elsa",
+        "parcher" : "parcher",
+        "prwlr-$mG" : "prowler",
+        "virus047" : "virus",
+        "Cypher" : "cypher",
+        "eXe|Folgzero" : "flogzero",
+        "eelsa" : "elsa",
+        "milse" : "miles",
+        "rampage !!!!" : "rampage",
+        "caff 23" : "caffeine",
+        "playa" : "playa",
+        "eternal" : "eternal",
+        "Oops" : "oops",
+        "reker" : "reker",
+        "DillWeed" : "dillweed",
+        "MoistSurgeon" : "moistsurgeon",
+        "Tittens" : "tragic",
+        "Becky G" : "elsa",
+        "Cliffdark" : "cliffdark",
+        "MILES" : "miles",
+        "paper*" : "naper",
+        "tragiC" : "tragic",
+        "Luna" : "luna",
+        "mooshu@" : "mooshu",
+        "@eternal)" : "eternal",
+        "CORPSE" : "corpse",
+        "jaytee" : "jaytee",
+        "BRU" : "bru",
+        "kotip" : "kotip",
+        "prowl3r" : "prowler",
+        "dresserwood" : "dresserwood",
+        "blackmagik(d)" : "blackmagik",
+        "purples.Jimbo" : "pasek",
+        "cK aimO" : "aimology",
+        "(Daria.Skyhigh)" : "elsa",
+        "-d-blackmagik" : "blackmagik",
+        "TE)(spaztik" : "spaztik",
+        "-a-Ra!ser-)" : "raiser",
+        "m|Volks" : "volks",
+        "[>>] Daria Cross" : "cliffdark",
+        "-a-Ra!ser" : "raiser"
         }
 
+renames["2020MayDraft"] = {
+        "8===DBRU" : "bru",
+        "8===DFONZ" : "fonze",
+        "8===DKittens" : "kittens",
+        "8===DMLS" : "miles",
+        "8==DFistermiagi" : "deadeye",
+        "@blackmagik" : "blackmagik",
+        "@c@k-el" : "cakel",
+        "@corpse" : "corpse",
+        "@eternal)" : "eternal",
+        "@festus" : "festus",
+        "@nigel" : "nigel",
+        "8===DOIiO" : "oliokath",
+        "REDUE-Cypher" : "cypher",
+        "REDUE-Jimmy" : "pasek",
+        "REDUE-Spaztik" : "spaztik",
+        "Ra!ser" : "raiser",
+        "Redue-Conscious*" : "conscious",
+        "Redue-Flogzero" : "flogzero",
+        "donka" : "donka",
+        "murkey" : "murkey",
+        "pixi" : "pixi",
+        "rekernator" : "reker",
+        "traggart" : "tragic",
+        ":+:VirUs047`" : "virus",
+        "meaN" : "mean",
+        "REDUE-Prowler" : "prowler",
+        "Redue-Ra!ser-D^" : "raiser",
+        "8===DillWeed" : "dillweed",
+        "8===Dknifey" : "knifey",
+        "8===DoIiokath" : "oliokath",
+        "Dimension" : "dimension",
+        "MeaN" : "mean",
+        "gart" : "tragic",
+        "reker" : "reker",
+        "virus" : "virus",
+        "8==DFisterMiagi" : "deadeye",
+        "beast" : "beast",
+        "Redue-Cypher" : "cypher",
+        "Redue-Elsa" : "elsa",
+        "Redue-Jimmy" : "pasek",
+        "Redue-Ra!ser" : "raiser",
+        "Redue-Spaztik" : "spaztik",
+        "@corpse'" : "corpse",
+        "@fromiam" : "fro",
+        "@jaytee" : "jaytee",
+        "vodka!" : "vodka"
+        }
 
 if tis_season == "":
     print("Processing all seasons")
@@ -517,6 +624,9 @@ valid_names = list(set(renames["all"].values()))
 
 if tis_season not in renames or len(renames[tis_season]) == 0:
     print("\n\n\n[!] Need some renames for this season\n\n\n")
+    print("Start a new dictionary element:\n")
+    print("renames[\"" + tis_season + " \"] = {\n        \"donkz\" : \"donka\"\n        }")
+    
 
 else:
     #Round up missing aliases
@@ -547,7 +657,7 @@ if (False):
     renames_export_df = pd.DataFrame.from_dict(renames_export, orient='index').reset_index()
     renames_export_df["rounds_played"]=-1 # TODO
     renames_export_df.columns = ["killer","real_name","rounds_played"]
-    renames_export_df.to_csv("Renames_2020-Jan-Mar.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
+    renames_export_df.to_csv("Renames_2020-Jan-May.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
     
 #duplication check
 matches = bigresult["matches"]
@@ -557,7 +667,10 @@ dups = matches["round_guid"].value_counts().sort_values(ascending=False)
 dups = dups[dups > 1]
 if len(dups) > 1:
     print("[!] Found duplicates\n\n\n")
-    print(matches[matches["round_guid"].isin(dups.index)])
+    pd.set_option("display.max_columns",20)
+    pd.set_option("display.max_colwidth",30)
+    pd.set_option("display.width",300)
+    print(matches[matches["round_guid"].isin(dups.index)][['file_date', 'file_size', 'map', 'match_date', 'round_num', 'round_order', 'round_time']])
     print(matches[matches["round_guid"].isin(dups.index)]["file_date"].unique())
 
 #attach elos
