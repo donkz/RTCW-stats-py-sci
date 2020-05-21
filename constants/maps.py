@@ -281,6 +281,17 @@ class ConstMap:
                       [O_OBJ,"Allies breached the Outpost Supply Room!"],
                       [O_PLANT, "Dynamite planted near the Supply Room Door!"]
                     ],
+            "adlernest_b3" : [
+                      [O_WIN,"Allies transmitted Hitler's Documents!"],
+                      [D_FLAG,"Axis reclaim the Warehouse Flag!"],
+                      [O_FLAG,"Allies capture the Warehouse Flag!"],
+                      [O_PLANT, "Dynamite planted near the Door Controls!"],
+                      [O_OBJ,"The Doors are opening!"],
+                      [O_PLANT, "Dynamite planted near the Pipe Side Door!"],
+                      [O_OBJ,"Pipe Side Door breached!"],
+                      [O_FLAG, "Main Blast Doors closing!"],
+                      [O_OBJ,"Main Blast Doors opening!"]
+                    ]        
             }
     
     '''
@@ -314,6 +325,7 @@ class ConstMap:
         maps["mp_marketgarden"] =  RTCWMap("mp_marketgarden",  "Market garden",self.map_announce["mp_marketgarden"], self.G_ALLIES, self.G_AXIS,   20,    "(null)")
         maps["mp_breakout"] =      RTCWMap("mp_breakout",      "Breakout",    self.map_announce["mp_breakout"],      self.G_AXIS,   self.G_ALLIES, 16,    "")
         maps["mp_tram"] =          RTCWMap("mp_tram",          "Tram",        self.map_announce["mp_tram"],          self.G_AXIS,   self.G_ALLIES, 20,    "the Radio Codes Booklet") 
+        maps["adlernest_b3"] =     RTCWMap("adlernest_b3",     "Adlernest",   self.map_announce["adlernest_b3"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         
