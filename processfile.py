@@ -132,14 +132,9 @@ class FileProcessor:
                 print("[!] Unexpected error: %s" % err)
             return None
             
-        lines = obj['Body'].read().decode('cp1252').split('\r\n')
-        
-        print("[ ] FOUND LINES with rn: " + str(len(lines)))
-        
-        if len(lines) == 1:
-            print("[!] Unusual line separators. Splitting by n")
-            lines = lines[0].split('\n')
-            
+        lines = obj['Body'].read().decode('cp1252').replace('\r\n','\n').split('\n')  
+        print("[ ] Number of lines in the file: " + str(len(lines)))
+
         return lines
     
     # Rename players in the datasets as they change their names in game
