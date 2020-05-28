@@ -66,6 +66,10 @@ class HTMLReport:
         top_feuds = matchstats.table_top_feuds(result)
         self.feuds_html_table = self.feuds_to_html(top_feuds)
         
+        best_friends = matchstats.table_best_friends(result)
+        self.friends_html_table = self.friends_to_html(best_friends)
+        
+        
         renames = matchstats.table_renames(result)
         if renames[0] is None:
             self.renames_html_table = None
@@ -178,6 +182,13 @@ class HTMLReport:
         soup.body.append(self.insert_text("The most numerous head-to-head encounters of the match"))
         soup.body.append(self.insert_toggle("feuds"))
         soup.body.append(self.feuds_html_table)
+        
+        if self.metrics["rounds_count"] > 40 and len(self.friends_html_table.text) > 100:
+            soup.body.append(self.insert_header("Best Friends",2))
+            soup.body.append(self.insert_text("Players that win together"))
+            soup.body.append(self.insert_toggle("friends"))
+            soup.body.append(self.friends_html_table)
+        
         soup.body.append(self.insert_header("MegaKills",2))
         soup.body.append(self.insert_toggle("megakills"))
         soup.body.append(self.insert_text("Kills that happened consequently, all at once"))
@@ -523,6 +534,10 @@ class HTMLReport:
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
         table["id"] = "divresults"
+        
+        if self.metrics["rounds_count"] > 40:
+            table["style"] = "display: none;"
+            
         soup.append(table)
         tr = Tag(soup, name = "tr")
         table.append(tr)
@@ -674,7 +689,32 @@ class HTMLReport:
             table.append(tr)    
         
         soup.append(table)
-        return soup 
+        return soup
+    
+    def friends_to_html(self,best_friends):
+        columns = best_friends.columns
+        
+        soup = BeautifulSoup("","lxml")        
+        table = Tag(soup, name = "table")
+        table["class"] = "blueTable"
+        table["id"] = "divfriends"
+        soup.append(table)
+        tr = Tag(soup, name = "tr")
+        table.append(tr)
+        
+        for col in columns:
+            th = Tag(soup, name = "th")
+            tr.append(th)
+            th.append(col)
+        for index, row in best_friends.iterrows():
+            tr = Tag(soup, name = "tr")
+            td = Tag(soup, name = "td")
+            for col in columns:
+                td = Tag(soup, name = "td")
+                td.insert(1, (str(row[col])))
+                tr.append(td)
+                table.append(tr)
+        return soup
         
     
     style_css = """

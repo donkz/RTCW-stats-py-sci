@@ -143,3 +143,91 @@ Dataframe after being used in the function
 1     3     4          13
 2     5     6          15
 '''
+
+#########
+# PATH  #
+#########
+os.getcwd()
+
+
+
+############
+# S# File  #
+############
+
+from processfile import FileProcessor
+from utils.htmlreports import HTMLReport
+bucket_name = "rtcw-stats-py-sci"
+file_key = "input/donka4-04-27-2020-06-20-31.log"
+debug=True
+debug_file = r".\debug_file.txt"
+
+processor = FileProcessor(s3bucket=bucket_name, s3file = file_key, debug = debug, debug_file = "/tmp/debug_file.txt")
+result = processor.process_log()
+html_report = HTMLReport(result)
+local_file, filename = html_report.report_to_html(folder="/tmp/", filenoext = os.path.basename(file_key).replace(".log",""))
+
+
+######################
+### Best friends #####
+######################
+
+pd.set_option('display.max_rows', 500)
+pd.set_option("display.max_columns",20)
+pd.set_option("display.max_colwidth",15)
+pd.set_option("display.width",300)
+from constants.logtext import Const
+
+
+stats = result["stats"].copy()
+sr2 = stats[stats["round_num"]==2][["game_result", "round_guid", Const.STAT_OSP_SUM_TEAM]]
+sr2 = sr2.reset_index()
+sr2 = sr2.dropna()
+sr2.columns = ['friend', 'game_result', 'round_guid', "team"]
+sr2b = sr2.copy()
+
+joined = sr2.merge(sr2b, left_on=['team', 'round_guid'], right_on = ['team', 'round_guid'], how='left', suffixes=('-a','-b'))
+joined = joined.drop(["game_result-b"],axis=1).rename(columns={"game_result-a" : "game_result"})
+joined = joined[joined["friend-a"] != joined["friend-b"]]
+joined["key"] = joined["friend-a"] + joined["friend-b"] + joined["round_guid"] + joined['team']
+joined["keysort"] = ["".join(sorted(a)) for a in joined["key"]]
+joined["num"] = 1
+
+no_dups = joined.sort_values(by=["friend-a","round_guid"]).drop_duplicates(subset = ["keysort"], keep = "first", inplace=False)
+
+pairgames = no_dups[["friend-a","friend-b","num"]].groupby(["friend-a","friend-b"]).sum().reset_index()
+wins = no_dups[no_dups["game_result"]=="WON"][["friend-a","friend-b","num"]].groupby(["friend-a","friend-b"]).sum().reset_index()
+losses = no_dups[no_dups["game_result"]=="LOST"][["friend-a","friend-b","num"]].groupby(["friend-a","friend-b"]).sum().reset_index()
+fh = no_dups[no_dups["game_result"]=="FULLHOLD"][["friend-a","friend-b","num"]].groupby(["friend-a","friend-b"]).sum().reset_index()
+
+
+pairgames.columns = ['friend-a', 'friend-b', 'games']
+wins.columns = ['friend-a', 'friend-b', 'won']
+losses.columns = ['friend-a', 'friend-b', 'lost']
+fh.columns = ['friend-a', 'friend-b', 'fullhold']
+
+final = pairgames.merge(wins, left_on=['friend-a', 'friend-b'], right_on = ['friend-a', 'friend-b'], how='left').merge(losses, left_on=['friend-a', 'friend-b'], right_on = ['friend-a', 'friend-b'], how='left').merge(fh, left_on=['friend-a', 'friend-b'], right_on = ['friend-a', 'friend-b'], how='left')
+final = final.fillna(0)
+final["win%"] = final["won"]/final["games"]*100
+final["loss%"] = final["lost"]/final["games"]*100
+final["fullhold%"] = final["fullhold"]/final["games"]*100
+
+desired_num_rows = 30 
+min_games_together = 20 
+min_win_ratio = 50
+
+#topx = final["games"].sort_values().tail(desired_num_rows).min()
+#topx = topx if topx > min_games_together else min_games_together
+final = final[(final["games"]>=min_games_together) & (final["win%"]>= min_win_ratio)]
+
+final = final.round(1)
+final["won"] = final["won"].astype(int)
+final["lost"] = final["lost"].astype(int)
+final["fullhold"] = final["fullhold"].astype(int)
+final = final.sort_values(by="win%", ascending=False).head(desired_num_rows).reset_index().drop(["index"],axis=1)
+final[['friend-a', 'friend-b', 'games', 'win%', 'loss%', 'fullhold%']]
+
+
+
+
+
