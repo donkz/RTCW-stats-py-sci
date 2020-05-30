@@ -203,7 +203,8 @@ class Awards:
         result["FirstInDoor_rank"] = result["FirstInDoor"].rank(method="min", ascending=False, na_option='bottom') 
         result.loc[result[result["FirstInDoor_rank"] > 4].index, "FirstInDoor_rank"] = 5
 
-        result["FirstInDoor"] = result["FirstInDoor"].round(2).multiply(100).astype(int).astype(str)+"%"        
+        result["FirstInDoor"] = result["FirstInDoor"].round(2).multiply(100).astype(int).apply(lambda x: '{0:0>2}'.format(x))+"%"        
+        result["FirstInDoor"] = result["FirstInDoor"].replace("100%","X%").replace("00%","0%").replace("X%","100%")
         result.drop(["Rounds"], axis=1, inplace=True)
         return result
     
@@ -252,7 +253,8 @@ class Awards:
             resultdf.loc[resultdf[resultdf[weapon_name] > threshold].index, weapon_rank_str] = penalty
         
         resultdf.drop(['Kills',weapon_kills_str], axis=1, inplace=True)
-        resultdf[weapon_name] = resultdf[weapon_name].fillna(0).round(2).multiply(100).astype(int).astype(str)+"%"   
+        resultdf[weapon_name] = resultdf[weapon_name].fillna(0).round(2).multiply(100).astype(int).apply(lambda x: '{0:0>2}'.format(x))+"%"
+        resultdf[weapon_name] = resultdf[weapon_name].replace("100%","X%").replace("00%","0%").replace("X%","100%")
         return resultdf
      
     '''
@@ -525,7 +527,8 @@ class Awards:
         #result.loc[result[result["Win%_rank"] > 5].index, "Win%_rank"] = 6
         self.apply_rank_range(result, "Win%", Const.RANK_RANGE_WINS)
         
-        result["Win%"] = result["Win%"].round(2).multiply(100).astype(int).astype(str)+"%"        
+        result["Win%"] = result["Win%"].round(2).multiply(100).astype(int).apply(lambda x: '{0:0>2}'.format(x))+"%"  
+        result["Win%"] = result["Win%"].replace("100%","X%").replace("00%","0%").replace("X%","100%")
         result.drop(["Rounds", "full_games"], axis=1, inplace=True)
         
         return result
