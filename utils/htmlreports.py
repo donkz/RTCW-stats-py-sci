@@ -172,7 +172,7 @@ class HTMLReport:
         soup.body.append(self.insert_header("Base stats",2))
         soup.body.append(self.insert_toggle("allstats"))
         soup.body.append(self.basic_stats_html_table)
-        soup.body.append(self.insert_header("Weapon stats",2))
+        soup.body.append(self.insert_header("Weapon signatures",2))
         soup.body.append(self.insert_toggle("weapons"))
         soup.body.append(self.weapon_stats_html_table)
         #soup.body.append(self.insert_header("Kill matrix",2))
