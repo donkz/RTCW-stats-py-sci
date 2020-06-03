@@ -566,7 +566,8 @@ class Awards:
         resultdf.loc[resultdf[resultdf["Tapout"] > 0.33].index, "Tapout_rank"] = 2
         resultdf.loc[resultdf[resultdf["Tapout"] > 0.40].index, "Tapout_rank"] = 3
      
-        resultdf["Tapout"] = resultdf["Tapout"].round(2).multiply(100).astype(int).astype(str)+"%"
+        resultdf["Tapout"] = resultdf["Tapout"].round(2).multiply(100).astype(int).apply(lambda x: '{0:0>2}'.format(x))+"%"
+        resultdf["Tapout"] = resultdf["Tapout"].replace("100%","X%").replace("00%","0%").replace("X%","100%")
         return resultdf
     
     def apply_rank_range(self, df, column, rank_range):
