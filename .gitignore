@@ -45,7 +45,7 @@ lambda/
 output/
 
 # seasons working files
-seasons/
+seasons_data/
 
 # vscode settings
 .vscode/
