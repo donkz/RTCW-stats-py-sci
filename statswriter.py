@@ -124,18 +124,26 @@ class StatsWriter:
             df = df.astype(self.stats_column_types)
         return df
     
-    def write_results(self, array):
-        """Class2 method docstrings go here."""
+    def write_results(self, result):
+        r"""
+        Write a result to parquet split into rounds
+        
+        Parameters
+        ----------
+        result: dataframe containing logs, stats, and matches
+        
+        Returns Nothing
+        """
         
         if not os.path.exists(self.filepath):
             try:
                 os.mkdir(self.filepath)
             except:
-                print("Could not create a directory to write stats out: " + self.filepath)
+                print("Could not create a directory to write stats out to : " + self.filepath)
                     
-        for dataset in array:
+        for dataset in result:
             if dataset in ["logs", "stats", "matches"]:
-                tmp = array[dataset]
+                tmp = result[dataset]
                 rounds = tmp['round_guid'].unique()
                 
                 if not os.path.exists(self.filepath + "\\" + dataset):
@@ -151,6 +159,38 @@ class StatsWriter:
                     file_name = self.filepath + "\\" + dataset + "\\" + r + ".gz"
                     #print(f"Will write {num_lines} to file {file_name}")
                     df.to_parquet(file_name, compression='gzip', index=False)
+    
+    
+    def write_result_whole(self, result):
+        r"""
+        Write a huge result to parquet as a whole
+        
+        Parameters
+        ----------
+        result: dataframe containing logs, stats, and matches
+        
+        Returns Nothing
+        """
+        
+        pd.options.mode.use_inf_as_na = True 
+        if not os.path.exists(self.filepath):
+            try:
+                os.mkdir(self.filepath)
+            except:
+                print("Could not create a directory to write stats out to : " + self.filepath)
+                    
+        for dataset in result:
+            if dataset in ["logs", "stats", "matches"]:
+                df = result[dataset]
+                
+                try:
+                    df = self.correct_castings(df, dataset)
+                except:
+                    print("[!] Could hard cast the data.")
+                    print(sys.exc_info()[1])
+                file_name = self.filepath + "\\" + dataset + "_all" + ".gz"
+                #print(f"Will write {num_lines} to file {file_name}")
+                df.to_parquet(file_name, compression='gzip', index=False)
     
     #not tested for order
     def make_aws_athena_table(self):
