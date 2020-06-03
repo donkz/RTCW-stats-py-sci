@@ -108,6 +108,8 @@ def process_games(stats):
     elo_report = pd.DataFrame(lines)
     elo_report.columns = ["gameno", "player", "elo", "playergame"]
     elo_report.to_clipboard(sep=",", index=False)
+    elo_report.to_csv(r"./elo.csv", index=False)
+    
     
 
     #print
