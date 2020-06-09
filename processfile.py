@@ -143,7 +143,8 @@ class FileProcessor:
     # columns to rename
     # dataframe
     def handle_renames(self, renames, columns, df, index):
-        df = df.replace(renames, regex=False)
+        for col in columns:
+            df[col] = df[col].replace(renames, regex=False)
         if index:
             #print(df.index.unique())
             #print(renames)
@@ -192,7 +193,7 @@ class FileProcessor:
         stats = stats.fillna(0).astype(int)
         
         t2 = _time.time()
-        if self.debug_time: print ("[t] Time to build base_stats " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("[t] Time to build base_stats " + str(round((t2 - t1),3)) + " s")
         return stats
     
     def summarize_round_join_osp(self, base_stats, osp_stats):
@@ -214,7 +215,7 @@ class FileProcessor:
             stats_all["team_name"] = "notused"
       
         t2 = _time.time()
-        if self.debug_time: print ("[t] Time to join base and osp stats " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("[t] Time to join base and osp stats " + str(round((t2 - t1),3)) + " s")
         return stats_all
     
     def add_classes(self, logdf, stats_all):
@@ -251,7 +252,7 @@ class FileProcessor:
         stats_all.loc[venom_index, "class"] = Const.CLASS_VENOM
         
         t2 = _time.time()
-        if self.debug_time: print ("[t] Time to process classes is " + str(round((t2 - t1),2)) + " s")
+        if self.debug_time: print ("[t] Time to process classes is " + str(round((t2 - t1),3)) + " s")
         return stats_all
     
     def select_time(self, osp_demo_date, osp_demo_time, osp_map_date, osp_map_time, osp_stats_date, osp_stats_time, osp_jpeg_date, osp_jpeg_time, log_date):
@@ -745,7 +746,6 @@ class FileProcessor:
                         #round up all events and join them with OSP
                         tmp_logdf = pd.DataFrame([vars(e) for e in tmp_log_events])
 
-                        
                         tmp_base_stats = self.summarize_round_base(tmp_logdf)
                         
                         if len(osp_stats_dict) == 0:
@@ -760,6 +760,9 @@ class FileProcessor:
                         if ospDF is None:
                             break
                         
+                        cp0 = _time.time()
+                        if self.debug_time: print ("[t] Checkpoint0 " + str(round((cp0  - wrap_start_time),3)) + " s")
+                        
                         tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
                         tmp_stats_all = self.add_classes(tmp_logdf,tmp_stats_all)
                         tmp_stats_all["round_order"] = round_order
@@ -772,6 +775,9 @@ class FileProcessor:
                         
                         tmp_stats_all["map"] = map_name
                         new_match_line.map = map_name 
+                        
+                        cp1 = _time.time()
+                        if self.debug_time: print ("[t] Checkpoint1 " + str(round((cp1  - cp0),3)) + " s")
                         
                         #Recalculated scores (substract kills and suicides)
                         tmp_stats_all[Const.STAT_POST_ADJSCORE] = tmp_stats_all[Const.STAT_OSP_SUM_SCORE].fillna(0).astype(int) - tmp_stats_all[Const.STAT_BASE_KILL].fillna(0).astype(int) + tmp_stats_all[Const.STAT_BASE_SUI].fillna(0).astype(int)*3 + tmp_stats_all[Const.STAT_BASE_TK].fillna(0).astype(int)*3
@@ -791,7 +797,10 @@ class FileProcessor:
                             print("[!] No teams found. OSP stats not joined for round " + str(tmp_stats_all["round_order"].min()))
                         else: 
                             new_match_line.players = get_player_list(tmp_stats_all)
-                                            
+                        
+                        cp2 = _time.time()
+                        if self.debug_time: print ("[t] Checkpoint2 " + str(round((cp2  - cp1),3)) + " s")
+                        
                         #wrap up round one only
                         if value.event == Const.EVENT_OSP_TIME_SET:
                             #round 1. Time set is not indicative of win or loss. It could be set in result of a cap(5:33) or result of hold(10:00)
@@ -824,7 +833,9 @@ class FileProcessor:
                                 new_match_line.winner = tmp_map.defense
                             else:
                                 print("[!] Bad round 2 winner status for round #" + str(round_order) + " map: " + map_name)
-
+                        
+                        cp3 = _time.time()
+                        if self.debug_time: print ("[t] Checkpoint3 " + str(round((cp3  - cp2),3)) + " s")
                         #wrap up round two only     
                         if value.event == Const.EVENT_OSP_REACHED:
                             #round 2 DEFENSE LOST THE GAME
@@ -847,7 +858,9 @@ class FileProcessor:
                         new_match_line.round_guid = round_guid
                         new_match_line.osp_guid = osp_guid
                         
-
+                        cp4 = _time.time()
+                        if self.debug_time: print ("[t] Checkpoint4 " + str(round((cp4  - cp3),3)) + " s")
+                        
                         round_datetime = self.select_time(osp_demo_date, osp_demo_time, osp_map_date, osp_map_time, osp_stats_date, osp_stats_time, osp_jpeg_date, osp_jpeg_time, log_date)
                         new_match_line.match_date = round_datetime
                         tmp_stats_all[Const.NEW_COL_MATCH_DATE] = round_datetime
@@ -869,7 +882,10 @@ class FileProcessor:
                             stats_all = tmp_stats_all
                         else:
                             stats_all = stats_all.append(tmp_stats_all,sort=False)
-
+                        
+                        cp5 = _time.time()
+                        if self.debug_time: print ("[t] Checkpoint5 " + str(round((cp5  - cp4),3)) + " s")
+                        
                         wrap_end_time = _time.time()  
                         print("[ ] Proccessed round " + str(new_match_line.round_order).ljust(2) + " winner " + new_match_line.winner.ljust(6) + " on " + new_match_line.map[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(tmp_stats_all)).ljust(2) + "(Linestime: " + str(round((round_end_time - round_start_time),2)) + " s " + "Wraptime: " + str(round((wrap_end_time - wrap_start_time),2)) + " s)")
                         
@@ -979,7 +995,7 @@ class FileProcessor:
                 
             matchesdf = pd.DataFrame([vars(e) for e in matches])
             logdf = self.handle_renames(fixed_renames, ["killer","victim"], logdf, False)
-            stats_all = self.handle_renames(fixed_renames, ['player_strip','Killer','team_captain','OSP_Player'], stats_all, True)            
+            stats_all = self.handle_renames(fixed_renames, ['player_strip','Killer','OSP_Player'], stats_all, True)            
             logdf = logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
             
             if(len(renames) > 0):
