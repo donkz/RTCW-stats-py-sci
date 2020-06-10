@@ -35,7 +35,7 @@ testfile.txt
 temp/
 
 #lambda make folder
-lambda/
+lambda/tmp/
 
 #lambda make folder
 .spyproject/

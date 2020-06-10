@@ -18,6 +18,7 @@
 @rmdir /s /q "tests/__pycache__"
 @rmdir /s /q "textsci/__pycache__"
 @rmdir /s /q "utils/__pycache__"
+@rmdir /s /q "seasons_code/__pycache__"
 @rmdir /s /q "__pycache__"
 @rmdir /s /q "temp"
 @echo. 
