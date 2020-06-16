@@ -158,14 +158,14 @@ os.getcwd()
 from processfile import FileProcessor
 from utils.htmlreports import HTMLReport
 bucket_name = "rtcw-stats-py-sci"
-file_key = "input/donka4-04-27-2020-06-20-31.log"
+file_key = "input/2020-06-05-05-29-07-rtcwconsole.log"
 debug=True
 debug_file = r".\debug_file.txt"
 
-processor = FileProcessor(s3bucket=bucket_name, s3file = file_key, debug = debug, debug_file = "/tmp/debug_file.txt")
+processor = FileProcessor(s3bucket=bucket_name, s3file = file_key, debug = debug, debug_file = debug_file)
 result = processor.process_log()
-html_report = HTMLReport(result)
-local_file, filename = html_report.report_to_html(folder="/tmp/", filenoext = os.path.basename(file_key).replace(".log",""))
+html_report = HTMLReport(result,amendments={"KPM":0.3,"KDR":0.3})
+local_file, filename = html_report.report_to_html()
 
 
 ######################
@@ -175,7 +175,7 @@ local_file, filename = html_report.report_to_html(folder="/tmp/", filenoext = os
 pd.set_option('display.max_rows', 500)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.max_colwidth",15)
-pd.set_option("display.width",300)
+pd.set_option("display.width",500)
 from constants.logtext import Const
 
 
@@ -227,7 +227,65 @@ final["fullhold"] = final["fullhold"].astype(int)
 final = final.sort_values(by="win%", ascending=False).head(desired_num_rows).reset_index().drop(["index"],axis=1)
 final[['friend-a', 'friend-b', 'games', 'win%', 'loss%', 'fullhold%']]
 
+####################################
+# See dataset integrity on a graph #
+####################################
+import seaborn as sns; sns.set()
+sns.heatmap(result["stats"].isnull(),yticklabels=False,cbar=False, cmap='viridis')
+sns.heatmap(result["matches"].isnull(),yticklabels=False,cbar=False, cmap='viridis')
+sns.heatmap(result["logs"].isnull(),yticklabels=False,cbar=False, cmap='viridis')
+
+####################################
+# See who hadnt played in a while  #
+####################################
+stats = bigresult2020plusstats
+res = stats[["Killer","round_guid","match_date"]].groupby(["Killer"]).agg({'round_guid' : "count",'match_date' : np.max})
+res.columns = ["Rounds_played", "Last_seen"]
+res[res["Rounds_played"]>20].sort_values("Last_seen").reset_index()
+
+####################################
+# ELO to chart                     #
+####################################
+elo_progress = pd.read_csv("elo.csv")
+games = elo_progress["gameno"].unique()
+elo_progress.index = elo_progress["gameno"].astype(str) + elo_progress["player"]
+donka = elo_progress[elo_progress["player"]=="donka"]
+flog = elo_progress[elo_progress["player"]=="flogzero"]
 
 
+data = []
+elo = 100
+for game in games:
+    idx = str(game) + "donka"
+    if idx in donka.index.values:
+        elo = donka.loc[idx, "elo"].astype(int)
+    #print(str(game) + " : "  + str(elo))
+    data.append(elo)
 
 
+data = []
+elo = 100
+for game in games:
+    idx = str(game) + "flogzero"
+    if idx in flog.index.values:
+        elo = flog.loc[idx, "elo"].astype(int)
+    #print(str(game) + " : "  + str(elo))
+    data.append(elo)
+
+_data = {}
+for player in elo_progress["player"].unique():
+    data = []
+    elo = 100
+    tmp = elo_progress[elo_progress["player"]==player]
+    for game in games:
+        idx = str(game) + player
+        if idx in tmp.index.values:
+            elo = tmp.loc[idx, "elo"].astype(int)
+        data.append(int(elo))
+    _data[player] = data
+    
+import json
+
+with open('elo_json.txt', 'w') as file:
+     file.write(json.dumps(_data)) # use `json.loads` to do the reverse
+        
