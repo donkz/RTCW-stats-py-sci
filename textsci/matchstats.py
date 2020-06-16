@@ -135,18 +135,24 @@ class MatchStats:
         #re-order
         pivoted_weapons = pivoted_weapons[['SMGs','Pistols','Grenade','Smokes','Panzerfaust', 'Sniper','Venom', 'Flame', 'Dynamite', 'MG42', 'Knife']]
         pivoted_weapons = pivoted_weapons.loc[(pivoted_weapons.sum(axis=1) != 0), (pivoted_weapons.sum(axis=0) != 0)]
+        
+        
+        #add total
+        #pivoted_weapons = pivoted_weapons.reset_index()
+        total = pivoted_weapons.sum(axis=0).to_frame().T
+        total.index = ["Total"]
+        pivoted_weapons = pivoted_weapons.append(total)
         kills = pivoted_weapons.sum(axis=1)
+        
         #kills = kills[kills > 0]
         #pivoted_weapons = pivoted_weapons[pivoted_weapons["kills"] > 0]
-        pivoted_weapons = pivoted_weapons.div(kills, axis=0).mul(100).round(1).fillna(0)
+        pivoted_weapons_perc = pivoted_weapons.div(kills, axis=0).mul(100).round(1).fillna(0)
+        pivoted_weapons = pivoted_weapons.join(pivoted_weapons_perc, lsuffix="_kills")
         
-        columns = list(pivoted_weapons.columns)
+        columns = list(pivoted_weapons_perc.columns)
         pivoted_weapons["Kills"] = kills
         columns = ["Kills"] + columns
         
-        for column in columns:
-            pivoted_weapons[column + "_rank"] = pivoted_weapons[column].rank(method="min", ascending=False, na_option='keep') 
-            #pivoted_weapons.loc[pivoted_weapons[pivoted_weapons[column] == 0].index, column + "_rank"] = 5
         pivoted_weapons = pivoted_weapons[pivoted_weapons["Kills"]>0]
         for column in columns[1:]:
             pivoted_weapons[column] = pivoted_weapons[column].apply(lambda x: '{0:0>4}'.format(x)).astype(str)+"%"

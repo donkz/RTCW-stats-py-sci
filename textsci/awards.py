@@ -6,7 +6,7 @@ import time as _time
 
 class Awards:
     
-    def __init__(self, result):
+    def __init__(self, result, amendments = None):
         self.debug_time = False
         self.event_lines_dataframe = result["logs"]
         self.sum_lines_dataframe   = result["stats"]
@@ -26,6 +26,7 @@ class Awards:
         people = temp["killer"].append(temp["victim"]).unique()
         self.awardsdf = None
         self.all_people = pd.DataFrame(index=people) #self of all people
+        self.amendments = amendments
     
     def collect_awards(self):
         event_lines_dataframe  = self.event_lines_dataframe
@@ -130,8 +131,24 @@ class Awards:
         
         #sum all rank points into final RankPts
         ranks = [name for name in awardsdf.columns if "_rank" in name]
-        #awardsdf.loc[awardsdf[awardsdf["Rounds"]< self.minrounds].index, ranks] = 10
-        awardsdf["RankPts"] = awardsdf[ranks].sum(axis=1)
+        if self.amendments is None or len(self.amendments) == 0:
+            print("[ ] Summarizing without amendments")
+            awardsdf["RankPts"] = awardsdf[ranks].sum(axis=1)
+        else:
+            print("[ ] Summarizing with amendments: " + str(self.amendments))
+            amend_rank_cols = []
+            for i in self.amendments.keys():
+                amend_rank_cols.append(i+"_rank")
+                
+            regular_ranks_cols = [c for c in ranks if c not in amend_rank_cols]
+            amended_ranks_cols = amend_rank_cols
+            
+            tmp_df = pd.DataFrame(index=awardsdf.index)
+            for c in amended_ranks_cols:
+                tmp_df[c] = awardsdf[c]*self.amendments[c.replace("_rank","")]
+            amended_ranks = tmp_df.sum(axis=1).astype(int)
+            regular_sum = awardsdf[regular_ranks_cols].sum(axis=1)
+            awardsdf["RankPts"] = regular_sum + amended_ranks
         
         #Re-sort by total rank points and rank the ranks yo dawg
         awardsdf = awardsdf.sort_values(["RankPts", "Rounds"], ascending = (True, False))

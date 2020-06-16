@@ -16,7 +16,7 @@ import time as _time
 
 class HTMLReport:
     
-    def __init__(self, result, elodf = None):
+    def __init__(self, result, elodf = None, amendments = None):
         
         time_start_html_init = _time.time()
         
@@ -30,7 +30,8 @@ class HTMLReport:
             return
         
         self.award_info = AwardText()
-        self.awards = Awards(result)
+        self.awards = Awards(result, amendments)
+        self.amendments = amendments
         matchstats = MatchStats()
         
         self.award_stats = self.awards.collect_awards()
@@ -167,6 +168,8 @@ class HTMLReport:
         soup.body.append(self.insert_html(self.award_summaries_html_table))
         soup.body.append(self.insert_header("Award details",3))
         soup.body.append(self.insert_text("Minimum rounds to be ranked 20% - " + str(self.awards.minrounds) + " or 40"))
+        if self.amendments:
+            soup.body.append(self.insert_text("Amendments to ranks - " + str(self.amendments)))
         soup.body.append(self.insert_toggle("awards"))
         soup.body.append(self.award_stats_html_table)
         soup.body.append(self.insert_header("Base stats",2))
@@ -395,7 +398,7 @@ class HTMLReport:
         weapondf = weapon_stats[0]
         columns = weapon_stats[1]
         soup = BeautifulSoup("","lxml")
-        metrics = [name for name in columns if "rank" not in name]
+        metrics = [name for name in columns if "_kills" not in name]
         #ranks = [name for name in awardsdf.columns if "rank" in name]
         cols = ["Player"] + metrics
         
@@ -421,7 +424,8 @@ class HTMLReport:
             for col in metrics:
                 td = Tag(soup, name = 'td')
                 td.insert(1, str(row[col]).replace(".0",""))
-                td["class"] = medals.get(row[col + "_rank"],"norank")
+                if (col != "Kills"):
+                    td["title"] = "Kills:" + str(row[col + "_kills"])
                 tr.append(td)
                 table.append(tr)    
         return soup
