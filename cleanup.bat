@@ -15,6 +15,7 @@
 
 @echo Deleting pychache folders
 @rmdir /s /q "constants/__pycache__"
+@rmdir /s /q "iortcw/__pycache__"
 @rmdir /s /q "tests/__pycache__"
 @rmdir /s /q "textsci/__pycache__"
 @rmdir /s /q "utils/__pycache__"
