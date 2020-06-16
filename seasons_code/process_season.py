@@ -2,7 +2,7 @@ import os
 import sys
 import pandas as pd
 
-from statswriter import StatsWriter
+from iortcw.statswriter import StatsWriter
 from processfile import FileProcessor
 from utils.htmlreports import HTMLReport
 from textsci.aliases import decypher_name
@@ -30,7 +30,7 @@ def list_files(path):
 
 #settings
 season_dir = "..\\seasons_data\\" #.. is back one folder. 
-tis_season = "2020MayDraft"
+tis_season = "2020Jun"
 keep_only_pattern = ""
 all_seasons="all"
 write_daily_stats = False
@@ -73,13 +73,10 @@ for result in results:
         stats = result["stats"]
         matches = result["matches"]
 
-
-
 if tis_season == "":
     print("Processing all seasons")
     tis_season = all_seasons
 
- 
 renames[all_seasons] = {}
 for season in renames:
    renames[all_seasons].update(renames[season]) 
@@ -110,7 +107,7 @@ else:
 
     #Write HTML!
     bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches}
-    html_report1 = HTMLReport(bigresult)
+    html_report1 = HTMLReport(bigresult, amendments={"KPM":0.5,"KDR":0.5})
     html_report1.report_to_html(season_dir + tis_season + "\\" + "season-")
     
 if (False):
@@ -142,8 +139,19 @@ if len(dups) > 1:
 # 2. capture elos
 if False:
     from tests.elo import process_games
-    bigresult2020 = bigresult.copy()
-    elos = process_games(bigresult2020["stats"])
+    bigresult2020 = {}
+    try:
+        bigresult2020["stats"] = pd.read_parquet("..\\output\\stats_all.gz")
+        bigresult2020["stats"].index = bigresult2020["stats"]["Killer"]
+        bigresult2020["stats"].index.name = "index"
+    except:
+        print("Did not load bigresult2020 from archive")
+        bigresult2020 = bigresult.copy()
+
+    
+    bigresult2020plusstats  = bigresult2020["stats"].append(bigresult["stats"])
+    
+    elos = process_games(bigresult2020plusstats)
     elos.index = elos["player"]
     elos.drop(["player"],inplace=True, axis=1)
     elos["elo"] = elos["elo"].astype(int)
@@ -152,7 +160,7 @@ if False:
     
     #Here you need to process current season and then run the rest of the lines
     
-    html_report2 = HTMLReport(bigresult, elos)
+    html_report2 = HTMLReport(bigresult, elos, amendments={"KPM":0.5,"KDR":0.5})
     html_report2.report_to_html(season_dir + tis_season + "\\" + "season-")    
     
     writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\output")

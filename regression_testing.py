@@ -2,7 +2,7 @@ import os
 import sys, traceback
 import pandas as pd
 
-from statswriter import StatsWriter
+from iortcw.statswriter import StatsWriter
 from processfile import FileProcessor
 from utils.htmlreports import HTMLReport
 
