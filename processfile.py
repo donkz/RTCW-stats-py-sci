@@ -226,7 +226,7 @@ class FileProcessor:
         pivoted_weapons = match_stats.weapon_pivot(logdf)
         
         stats_all["class"] = ""
-        stats_all = stats_all.join(pivoted_weapons) #tested to be a left join, so nothing is lost
+        stats_all = stats_all.join(pivoted_weapons).fillna(0) #tested to be a left join, so nothing is lost
         #and if it is, it's not sttatistically significant
         
         #panzer
