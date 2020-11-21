@@ -1,4 +1,4 @@
-from constants.logtext import Const
+from rtcwlog.constants.logtext import Const
 import pandas as pd
 import numpy as np
 
@@ -31,7 +31,7 @@ df.shift(-2).loc[1,"c"] == df.loc[1,"c"]
 #                    ENCODING                                         #
 #######################################################################
 
-rtcwlogfile = r".\test_samples\rtcwconsole-2020-02-17.log"
+rtcwlogfile = r".\data\test_samples\rtcwconsole-2020-02-17.log"
 
 with open(rtcwlogfile,"r") as file:
     lines = file.readlines()
@@ -155,14 +155,16 @@ os.getcwd()
 # S# File  #
 ############
 
-from processfile import FileProcessor
-from utils.htmlreports import HTMLReport
+from rtcwlog.clientlog import ClientLogProcessor
+from rtcwlog.report.htmlreports import HTMLReport
 bucket_name = "rtcw-stats-py-sci"
 file_key = "input/2020-06-05-05-29-07-rtcwconsole.log"
 debug=True
 debug_file = r".\debug_file.txt"
 
-processor = FileProcessor(s3bucket=bucket_name, s3file = file_key, debug = debug, debug_file = debug_file)
+
+
+processor = ClientLogProcessor(s3bucket=bucket_name, s3file = file_key, debug = debug, debug_file = debug_file)
 result = processor.process_log()
 html_report = HTMLReport(result,amendments={"KPM":0.3,"KDR":0.3})
 local_file, filename = html_report.report_to_html()
@@ -176,7 +178,7 @@ pd.set_option('display.max_rows', 500)
 pd.set_option("display.max_columns",20)
 pd.set_option("display.max_colwidth",15)
 pd.set_option("display.width",500)
-from constants.logtext import Const
+from rtcwlog.constants.logtext import Const
 
 
 stats = result["stats"].copy()
@@ -238,7 +240,8 @@ sns.heatmap(result["logs"].isnull(),yticklabels=False,cbar=False, cmap='viridis'
 ####################################
 # See who hadnt played in a while  #
 ####################################
-stats = bigresult2020plusstats
+import numpy as np
+stats = bigresult2020["stats"]
 res = stats[["Killer","round_guid","match_date"]].groupby(["Killer"]).agg({'round_guid' : "count",'match_date' : np.max})
 res.columns = ["Rounds_played", "Last_seen"]
 res[res["Rounds_played"]>20].sort_values("Last_seen").reset_index()
@@ -246,34 +249,16 @@ res[res["Rounds_played"]>20].sort_values("Last_seen").reset_index()
 ####################################
 # ELO to chart                     #
 ####################################
-elo_progress = pd.read_csv("elo.csv")
-games = elo_progress["gameno"].unique()
+elo_progress = pd.read_csv("..\data\elo\elo.csv")
+games = pd.Series(elo_progress["gameno"].unique())
+games = games[games > games.astype(int).quantile(.8)]
 elo_progress.index = elo_progress["gameno"].astype(str) + elo_progress["player"]
-donka = elo_progress[elo_progress["player"]=="donka"]
-flog = elo_progress[elo_progress["player"]=="flogzero"]
-
-
-data = []
-elo = 100
-for game in games:
-    idx = str(game) + "donka"
-    if idx in donka.index.values:
-        elo = donka.loc[idx, "elo"].astype(int)
-    #print(str(game) + " : "  + str(elo))
-    data.append(elo)
-
-
-data = []
-elo = 100
-for game in games:
-    idx = str(game) + "flogzero"
-    if idx in flog.index.values:
-        elo = flog.loc[idx, "elo"].astype(int)
-    #print(str(game) + " : "  + str(elo))
-    data.append(elo)
 
 _data = {}
-for player in elo_progress["player"].unique():
+players = bigresult["stats"].reset_index()["index"].value_counts().nlargest(30).index.values
+#players = elo_progress["player"].unique()
+
+for player in players:
     data = []
     elo = 100
     tmp = elo_progress[elo_progress["player"]==player]
@@ -286,6 +271,228 @@ for player in elo_progress["player"].unique():
     
 import json
 
-with open('elo_json.txt', 'w') as file:
+with open(r'..\data\elo\games.txt', 'w') as file:
+     file.write(json.dumps(list(games))) # use `json.loads` to do the reverse
+with open(r'..\data\elo\elo_json.txt', 'w') as file:
      file.write(json.dumps(_data)) # use `json.loads` to do the reverse
+     
+from bs4 import BeautifulSoup
+from bs4 import Tag
+
+with open(r'..\data\elo\elos-template.html', 'r') as f:
+
+    contents = f.read()
+
+    soup = BeautifulSoup(contents, 'lxml')
+    tag = soup.body.script
+    tag.string = tag.string.replace("@@games",json.dumps(list(games))).replace("@@data",json.dumps(_data))
+    print(soup.body.script)
+    
+with open(r'..\data\elo\elos.html', 'w') as file:
+     file.write(soup.prettify()) # use `json.loads` to do the reverse
+
+
+####################################
+# Find zero player stats           #
+####################################
+for c in playerdf.columns:
+    if len(playerdf[c].unique()) < 5:
+        print(c, " ", len(playerdf[c].unique()))
+        print(playerdf[c].unique())
         
+        
+####################################
+# process guids                    #
+####################################
+from rtcwlog.utils.rtcwcolors import stripColors , setup_colors
+from collections import Counter
+colors = setup_colors()
+
+guids = {}
+with open(r"C:\a\2019-2020-guids.txt","r") as file:
+    for line in file:      
+        line = stripColors(line, colors)
+        guid = line.replace("PunkBuster Client:","").strip()[3:11]
+        player = line.replace("PunkBuster Client:","").strip()[31:]
+        print(line.replace("PunkBuster Client:","").strip()[3:11], line.replace("PunkBuster Client:","").strip()[31:].ljust(20), line.strip())
+        if guid not in guids:
+            guids[guid] = Counter()
+        guids[guid][player] +=1
+
+for g in guids:
+    print("\"", g, "\" : \"", guids[g].most_common(1)[0][0], "\",", sep="")
+
+guids = {}
+with open(r"C:\a\201x-guids-unlisted.txt","r") as file:
+    for line in file:
+        tokens = line.strip().split(" ")
+        guid = tokens[1][0:8]
+        player = tokens[-1]
+        print(guid, player.ljust(20), line.strip())
+        if guid not in guids:
+            guids[guid] = Counter()
+        guids[guid][player] +=1
+
+for g in guids:
+    print("\"", g, "\" : \"", guids[g].most_common(1)[0][0], "\",", sep="")
+        
+        
+#for i, l in enumerate("14 19ce8ec3(-) OK   3.1 0{0|0} [>>] Cliffdark"): print(i,l)
+
+import requests
+import time as _time
+t1 = _time.time()
+response = requests.get("https://a1xebidwfb.execute-api.us-east-1.amazonaws.com/default/rtcw-guids?guids=349004f0,3c155812,0471e175,72b633a9")
+t2 = _time.time()
+print ("[t] Time to call API: " + str(round((t2 - t1),3)) + " s")
+# Print the status code of the response.
+print(json.loads(response.text))
+
+
+import re 
+x = re.search("[A-Fa-f0-9]{8}\(-\) OK   (.*)} (.*)","12 0471e175(-) OK   3.0 0{0|0} donka")
+print(x[0][0:8] + " : " + x[2])
+
+teststr = """
+^55  ae2a45bc(-) OK   3.0 0{0|0} ^n.:.^7spaztik
+^56  e79bf650(-) OK   3.0 0{0|0} ^cf^0es^ctus
+^57  39c94359(-) OK   3.0 0{0|0} ^ecaffbe ^3bryant
+^58  0471e175(-) OK   3.0 0{0|0} ^1N^7/^4A ^1d^7onk^4z
+^59  9379b5c9(-) OK   3.0 0{0|0} ^7Pasek^3*
+^510 1fd439bb(-) OK   3.0 0{0|0} ^7n/a SOURCE
+^511 90d3a7c2(-) OK   3.0 0{0|0} ^>C^7y^>pher
+^512 cbd47303(-) OK   3.0 0{0|0} ^5-^0eh^5-^7bri^5an
+^513 d1a52e5f(-) OK   3.0 0{0|0} ^3reker
+^514 f0e29ead(-) OK   3.0 0{0|0} ^1N^7/^4A ^7Ra!ser
+^515 bc975af2(-) OK   3.0 0{0|0} ^3teker
+^516 2a463009(-) OK   3.0 0{0|0} ^0e^3X^0e^7|^3F^0logzero
+^517 f742e062(-) OK   3.0 0{0|0} ^0-^1=^7prowler^1=^0-
+^518 19ce8ec3(-) OK   3.0 0{0|0} ^0[^7>>^0] Cliffdark
+^519 6191c31f(-) OK   3.0 0{0|0} ^6parhcer
+^520 2354ba51(-) OK   3.2 0{0|0} ^nnigel
+^521 bc2042f9(-) OK   3.2 0{0|0} ^5.^5:^5.^7Meanguine
+^522 9f1c131c(-) OK   4.2 0{0|0} shoot^0z
+^55  6de54f4d(-) OK   3.0 0{0|0} ^0.:.^7c@k-el
+^56  ae2a45bc(-) OK   3.0 0{0|0} ^0.:.^7spaztik
+^57  0656b8b9(-) OK   3.0 0{0|0} ^>Joh^4n_M^dull^uins
+^58  2354ba51(-) OK   3.0 0{0|0} ^nnigel
+^59  69c691cd(-) OK   3.0 0{0|0} ^>fister^0Miagi
+^510 e79bf650(-) OK   3.0 0{0|0} ^2.:.^6^1^7festus
+^511 1fd439bb(-) OK   3.0 0{0|0} ^7SOURCE
+^512 17e888cc(-) OK   3.0 0{0|0} ^1D^2i^3l^4l^5W^6e^7e^8d
+^513 2a463009(-) OK   3.0 0{0|0} ^0e^3X^0e^7|^3F^0logzero
+^514 0471e175(-) OK   3.0 0{0|0} donka
+^516 f0e29ead(-) OK   3.0 0{0|0} ^1N^7/^4A ^7Ra!ser
+^55  17e888cc(-) OK   3.0 0{0|0} ^1D^2i^3l^4l^5W^6e^7e^8d
+^56  0471e175(-) OK   3.0 0{0|0} donka
+^57  1fd439bb(-) OK   3.0 0{0|0} SOURCE
+^58  2354ba51(-) OK   3.0 0{0|0} ^nnigel
+^59  4df83547(-) OK   2.9 0{0|0} parcher
+^510 ae2a45bc(-) OK   3.0 0{0|0} ^ospaztik
+^511 f0e29ead(-) OK   3.0 0{0|0} ^0Ra!ser
+^512 26732ba8(-) OK   3.0 0{0|0} Kittens
+^513 19ce8ec3(-) OK   3.0 0{0|0} ^0[^7>>^0] Cliffdark
+^514 727a2b29(-) OK   3.0 0{0|0} ^pTK^w|^PPOW
+^515 90d3a7c2(-) OK   3.0 0{0|0} ^>C^7y^>pher
+^516 69c691cd(-) OK   3.0 0{0|0} ^0-[^1x^0]-DeadEye
+^517 eec144bf(-) OK   3.0 0{0|0} Marcus ^5Mariguta
+^518 dda4d8d9(-) OK   3.0 0{0|0} ^0e^1X*^7Fe^0st^2^1us
+^519 9379b5c9(-) OK   3.0 0{0|0} ^eSKOL^3|^eBoo^37^ey
+^520 3c155812(-) OK   3.3 0{0|0} elsa
+^521 fa8da266(-) OK   3.1 0{0|0} ^0tweek
+^55  2a463009(-) OK   3.0 1{0|0} ^0e^3X^0e^7|^0Flog^3z^0ero
+^56  6e79c99b(-) OK   3.0 1{0|0} ^0magik
+^57  d61dff40(-) OK   3.0 1{0|0} ^ifromiam
+^58  57e36653(-) OK   3.0 1{0|0} spaztik
+^59  6de54f4d(-) OK   3.0 1{0|0} c@k-el
+^510 3c155812(-) OK   3.0 1{0|0} LLM ^vBecky ^cG
+^511 c0c35219(-) OK   3.0 1{0|0} miles
+^512 70bbe988(-) OK   3.0 1{0|0} ^cconsc^7i^cous^7*
+^513 d0af5e20(-) OK   3.0 1{0|0} ^0fonze^1*
+^514 0471e175(-) OK   3.0 1{0|0} donka
+^515 39c94359(-) OK   3.0 1{0|0} fuck it caff
+^516 69c691cd(-) OK   3.0 1{0|0} ^0Fister^1Miagi
+^55  6de54f4d(-) OK   3.0 0{0|0} ^0.:.^7c@k-el
+^56  ae2a45bc(-) OK   3.0 0{0|0} ^0.:.^7spaztik
+^57  0656b8b9(-) OK   3.0 0{0|0} ^>Joh^4n_M^dull^uins
+^58  2354ba51(-) OK   3.0 0{0|0} ^nnigel
+^59  69c691cd(-) OK   3.0 0{0|0} ^>fister^0Miagi
+^510 e79bf650(-) OK   3.0 0{0|0} ^2.:.^6^1^7festus
+^511 1fd439bb(-) OK   3.0 0{0|0} ^7SOURCE
+^512 17e888cc(-) OK   3.0 0{0|0} ^1D^2i^3l^4l^5W^6e^7e^8d
+^513 2a463009(-) OK   3.0 0{0|0} ^0e^3X^0e^7|^3F^0logzero
+^514 0471e175(-) OK   3.0 0{0|0} donka
+^516 f0e29ead(-) OK   3.0 0{0|0} ^1N^7/^4A ^7Ra!ser
+"""
+
+from rtcwlog.utils.rtcwcolors import stripColors , setup_colors
+colors = setup_colors()
+strings = teststr.split("\n")
+for s in strings:
+    s = stripColors(s, colors) 
+    x = re.search("[A-Fa-f0-9]{8}\(-\) OK   (.*)} (.*)",s)
+    if x is not None:
+        print("String: " + s.ljust(70) + " found: " + x[0][0:8] + " : " + x[2])
+    
+
+##
+#List of people who played more than 20 rounds this year attached with ELO
+#
+rounds2020 = bigresult2020["stats"].groupby(level=0).count()["round_guid"]
+rounds2020elo = rounds2020.to_frame().join(elos)
+rounds2020elofilt  = rounds2020elo[rounds2020elo["round_guid"]>20].reset_index().sort_values("index")
+rounds2020elofilt.columns = ['player', 'rounds', 'elo', 'kek']
+rounds2020elofilt["elo"] = rounds2020elofilt["elo"].astype(int)
+rounds2020elofilt.index = rounds2020elofilt['player']
+rounds2020elofilt[['rounds', 'elo']]
+
+###
+#dAYS OF WEEK
+###
+stats = bigresult2020["stats"]
+stats["match_date_date"] = pd.to_datetime(stats["match_date"], format='%Y-%m-%d %H:%M:%S', errors="raise")
+stats["year"] = stats["match_date_date"].dt.year.astype(int)
+stats["month"] = stats["match_date_date"].dt.month.astype(int)
+stats["weekday"] = stats["match_date_date"].dt.dayofweek
+recent = stats[(stats["month"] == 10) | (stats["month"] == 9)][["Killer","weekday"]].copy()
+recent["rounds"] = 1
+recent_grouped = recent.groupby(["Killer", "weekday"]).count().reset_index()
+print("The day of the week with Monday=0, T=1,W=2,Th=3,F=4,Sat=5, Sunday=6")
+df = recent_grouped.reset_index().pivot(index='Killer', columns='weekday', values='rounds')
+df.fillna(0).astype(int).sort_values(by=[3,6], ascending=False)
+
+
+###
+#Guid checks
+###
+pd.set_option('display.max_rows', 500)
+pd.set_option("display.max_columns",30)
+pd.set_option("display.max_colwidth",20)
+pd.set_option("display.width",300)
+
+s = bigresult2020["stats"]
+guids = s.groupby(["Killer","pb_guid"]).count()["side"].reset_index()
+guids = guids[~guids["pb_guid"].isin([""," "])]
+print(guids.sort_values(by="pb_guid"))
+
+guids_dup = guids.groupby(["pb_guid"]).count()["Killer"].reset_index()
+guids_dup = guids_dup[guids_dup["Killer"]>1]
+print(guids[guids["pb_guid"].isin(guids_dup["pb_guid"].values)].sort_values(by="pb_guid"))
+
+duplicates = s[s["pb_guid"].isin(guids_dup["pb_guid"].values)][["round_guid","match_date","Killer","pb_guid"]].sort_values(by=["pb_guid", "match_date"])
+print(duplicates)
+
+#get only right guids
+guids_sorted = guids.sort_values(by=["pb_guid","side"], ascending = False)
+guids_unique = guids_sorted.drop_duplicates(["pb_guid"], keep="first")
+print("Writing guids pickle to: " + os.path.abspath(r'..\data\guids\guids.pkl'))
+guids_unique.to_pickle(r'..\data\guids\guids.pkl')
+
+
+#player sanity check - not as important
+players_dup = guids_unique.groupby(["Killer"]).count()["pb_guid"].reset_index()
+players_dup = players_dup[players_dup["pb_guid"]>1]
+
+duplicate_players = guids_unique[guids_unique["Killer"].isin(players_dup["Killer"].values)].sort_values(by=["Killer"])
+print(duplicate_players)
+s[s["pb_guid"]=="3bcbcf14"][["round_guid","match_date","Killer","pb_guid"]].sort_values(by=["pb_guid", "match_date"])

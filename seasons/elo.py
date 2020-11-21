@@ -5,7 +5,7 @@ credit to https://github.com/PredatH0r/XonStat/blob/master/xonstat/elo.py
 ELO algorithm to calculate player ranks
 
 """
-
+import os
 from datetime import datetime
 import logging
 import math
@@ -96,6 +96,9 @@ def process_games(stats):
         b["rank2"] = b["rank"]
         b.loc[b[b["game_result"] == "LOST"].index,"rank2"] = b["rank"] - 1.5
         c = b.reset_index()
+        
+        #print(c.sort_values(by="rank2"))
+        
         player_score_df = c[["index","rank2","round_time","games"]].copy()
         player_score_df.columns = ["player","rank2","duration", "games"]
         elos = process_elos(player_score_df, elo_dict)
@@ -108,23 +111,23 @@ def process_games(stats):
     elo_report = pd.DataFrame(lines)
     elo_report.columns = ["gameno", "player", "elo", "playergame"]
     elo_report.to_clipboard(sep=",", index=False)
-    elo_report.to_csv(r"./elo.csv", index=False)
+    output_dest = r"..\data\elo\elo.csv"
+    print("Writing elo.csv to: " + os.path.abspath(output_dest))
+    elo_report.to_csv(output_dest, index=False)
     
-    
-
     #print
     array = []
     for p in elo_dict:
         array.append([p, elo_dict[p].elo])
     df = pd.DataFrame(array)
     df.columns = ["player","elo"]
-    print(df.sort_values(by="elo", ascending = False))
+    #print(df.sort_values(by="elo", ascending = False))
     
     return df.sort_values(by="elo", ascending = False)
        
     
 def process_elos(player_score_df, elo_dict):
-
+    
     duration = player_score_df["duration"].max()
     
     scores = {}
@@ -169,7 +172,8 @@ def process_elos(player_score_df, elo_dict):
             del(elos[pid])
             del(scores[pid])
             del(alivetimes[pid])
-            
+    
+    #print(elos)
     elos = update_elos(elos, scores, ELOPARMS)
     
     #print("\nScores\n")

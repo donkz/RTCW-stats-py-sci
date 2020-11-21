@@ -1,8 +1,8 @@
 #run the app first to initialize the namespaces
-from textsci.aliases import decypher_name
+from rtcwlog.textsci.aliases import decypher_name
 import time
-from textsci.teams import team_name_chars, team_name_front, get_team_name
-from textsci.awards import Awards 
+from rtcwlog.textsci.teams import team_name_chars, team_name_front, get_team_name
+from rtcwlog.report.awards import Awards 
 
 name = "n!kon"
 valid_names = ["donka","caffeine","nikon","source", "lunatic","reker","corpse"]
