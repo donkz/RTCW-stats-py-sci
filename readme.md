@@ -32,7 +32,7 @@ cd into the directory of the project and do:
 
 This will install all necessary packages
 
-Once installed, edit main.py to provide the path to your rtcwconsole.log file and run it
+Once installed, edit test/main.py to provide the path to your rtcwconsole.log file and run it
 
 > What else does it do? 
 
@@ -45,7 +45,7 @@ RTCW-stats-py-sci is oriented much further than providing one html report:
 * Reads files from AWS S3
 * Compatible with AWS lambda
 * Has quite a few nifty NLP algorythms to detect clan tags and plans to decipher player name variations
-* It has means of easy extensibility for new maps and awards
+* It has means of extensibility for new maps and awards
 
 Most importantly, it has current active support
 

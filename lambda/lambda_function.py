@@ -1,6 +1,6 @@
 import os, sys
-from processfile import FileProcessor
-from utils.htmlreports import HTMLReport
+from rtcwlog.clientlog import ClientLogProcessor
+from rtcwlog.report.htmlreports import HTMLReport
 import logging
 import boto3
 
@@ -13,15 +13,16 @@ def lambda_handler(event, context):
     if not RTCWPY_PATH in sys.path:
         sys.path.append(RTCWPY_PATH)
 
-    #rtcwlogfile = r"/var/task/test_samples/rtcwconsole-2020-02-17.log"
-    #processor = FileProcessor(local_file = rtcwlogfile, debug = False)
+    #rtcwlogfile = r"/var/task/data/test_samples/rtcwconsole-2020-02-17.log"
+    #processor = ClientLogProcessor(local_file = rtcwlogfile, debug = False)
     
     bucket_name = event['Records'][0]['s3']['bucket']['name']
     file_key = event['Records'][0]['s3']['object']['key']
+    file_size = event["Records"][0]["s3"]["object"]["size"]
     logger.info('Reading {} from {}'.format(file_key, bucket_name))
 
     debug = True
-    processor = FileProcessor(s3bucket=bucket_name, s3file = file_key, debug = debug, debug_file = "/tmp/debug_file.txt")
+    processor = ClientLogProcessor(s3bucket=bucket_name, s3file = file_key, s3file_size = file_size, debug = debug, debug_file = "/tmp/debug_file.txt")
     result = processor.process_log()
     
     html_report = HTMLReport(result)

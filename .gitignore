@@ -28,11 +28,8 @@ __pycache__/
 # CSV Report Working Files
 *.csv
 
-# debug file
-testfile.txt
-
-#temp extracts
-temp/
+# data files
+data/
 
 #lambda make folder
 lambda/tmp/
@@ -40,13 +37,14 @@ lambda/tmp/
 #lambda make folder
 .spyproject/
 
-
 # output working files
 output/
 
-# seasons working files
-seasons_data/
-
 # vscode settings
 .vscode/
+
+#packaging
+dist/
+build/
+*egg-info/
 

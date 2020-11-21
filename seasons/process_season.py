@@ -102,7 +102,7 @@ for season in renames:
 
 valid_names = list(set(renames["all"].values()))
 
-saved_guids = pd.read_pickle(r'..\data\guids\guids.pkl')
+saved_guids = pd.read_pickle(r'..\seasons\guids.pkl')
 
 if tis_season not in renames or len(renames[tis_season]) == 0:
     print("\n\n\n[!] Need some renames for this season\n\n\n")

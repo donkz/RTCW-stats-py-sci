@@ -279,7 +279,7 @@ with open(r'..\data\elo\elo_json.txt', 'w') as file:
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-with open(r'..\data\elo\elos-template.html', 'r') as f:
+with open(r'..\seasons\elos-template.html', 'r') as f:
 
     contents = f.read()
 
@@ -485,8 +485,8 @@ print(duplicates)
 #get only right guids
 guids_sorted = guids.sort_values(by=["pb_guid","side"], ascending = False)
 guids_unique = guids_sorted.drop_duplicates(["pb_guid"], keep="first")
-print("Writing guids pickle to: " + os.path.abspath(r'..\data\guids\guids.pkl'))
-guids_unique.to_pickle(r'..\data\guids\guids.pkl')
+print("Writing guids pickle to: " + os.path.abspath(r'..\seasons\guids.pkl'))
+guids_unique.to_pickle(r'..\seasons\guids.pkl')
 
 
 #player sanity check - not as important

@@ -309,10 +309,12 @@ def get_player_castings():
             elif tokens[1] == "date":
                 castings[key] = "str"
             else:
-                print("[!] Unknown key before writing parquet")
+                print("[!] Unknown key before writing parquet 1", key)
         else:
             if key in ["rounds", "AmmoGiven", "AmmoDropped", "HealthGiven", "HealthDropped", "Revivals"]:
                 castings[key] = "int"
+            elif key in ["file","archive"]:
+                castings[key] = "str"
             else:
-                print("[!] Unknown key before writing parquet")
+                print("[!] Unknown key before writing parquet 2", key)
     return castings

@@ -73,7 +73,7 @@ def get_osp_files(path):
     filename, file_extension = os.path.splitext(path)
     
     main_file_name = os.path.split(path)[1].replace(".zip","")
-    extract_to = "..\\temp" + "\\" + main_file_name + "\\"
+    extract_to = "..\\data\\osptemp" + "\\" + main_file_name + "\\"
     force_delete = False
     
     if(file_extension == ""):
