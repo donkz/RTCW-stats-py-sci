@@ -40,11 +40,20 @@ html_report.report_to_html()
 #html_report.report_to_html(folder="C:/stats/")
 #html_report.report_to_html(folder="C:/stats/", filenoext = "mystats" )
 
-#RTCWPro TODO 
-#Allies have lost the Unholy Grail!
-#[skipnotify] before clocks
-#[skipnotify]^z before /statsall
+#RTCWPro differences with OSP/breaking changes
+#Allies have lost the Unholy Grail! <-- is this new? "Allies lost" has never been seen before
 
+#[skipnotify] is missing before all types of round ends: clock set, objective reached, obj not reached
+
+#normal invidiual accuracy stats are ok, but /statsall now has extra
+#[skipnotify]^z before each line
+#rtcwpro - ingame
+#^7Overall stats for:
+#rtcwpro - statsall
+#[skipnotify]^7Overall stats for:
+
+#each round stats line used to start with Allies or Axis. Removing it is a breaking change because otherwise these lines
+#have no machine pattern to be recognizeable
 #osp
 #^1Axis^7   ^7Fister Miagi   ^3   7  12   1  1^7  36^3   1^2  1305^1  1917^6  123^3      6
 #^4Allies^7 ^7bru            ^3   7  16   0  0^7  30^3   2^2  1442^1  2840^6    0^3     11
@@ -58,10 +67,7 @@ html_report.report_to_html()
 #osp
 #Accuracy info for:
 #rtcwpro
-#Overall stats for:
+#Overall stats for:  - is this staying? I can live with this, but we shouldn't be upsetting other people work potentially
 
-#rtcwpro - ingame
-#^7Overall stats for:
-#rtcwpro - statsall
-#[skipnotify]^7Overall stats for:
+
 
