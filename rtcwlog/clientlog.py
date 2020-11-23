@@ -184,12 +184,15 @@ class ClientLogProcessor:
     # columns to rename
     # dataframe
     def handle_renames(self, renames, columns, df, index):
-        for col in columns:
-            df[col] = df[col].replace(renames, regex=False)
-        if index:
-            #print(df.index.unique())
-            #print(renames)
-            df.index = df.reset_index().replace(renames, regex=False)["index"].values #because stupid regex does not work in df.rename
+        try:
+            for col in columns:
+                df[col] = df[col].replace(renames, regex=False)
+            if index:
+                #print(df.index.unique())
+                #print(renames)
+                df.index = df.reset_index().replace(renames, regex=False)["index"].values #because stupid regex does not work in df.rename
+        except:
+            print("[x] Failed to process renames: ", sys.exc_info()[0])
         return df
     
     def populate_guids(self, stats_all, pb_players, renames):
@@ -210,6 +213,9 @@ class ClientLogProcessor:
         
     def summarize_round_base(self, logdf):
         t1 = _time.time()
+        if len(logdf) == 0:
+            print("[!] Nothing was logged this round")
+            return None
         kills = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["killer","event"])["event"].count().unstack()
         deaths = logdf[logdf["event"].isin([Const.EVENT_TEAMKILL,Const.EVENT_SUICIDE,Const.EVENT_KILL])].groupby(["victim","event"])["event"].count().unstack()
 
@@ -637,7 +643,9 @@ class ClientLogProcessor:
         #round up all events and join them with OSP
         tmp_logdf = pd.DataFrame([vars(e) for e in currentRound.tmp_log_events])
         tmp_base_stats = self.summarize_round_base(tmp_logdf)
-        
+        if tmp_base_stats is None:
+            return None
+            
         ospDF = self.build_osp_stats_dataframe(currentRound, tmp_base_stats, tmp_logdf)                     
         if ospDF is None:
             #break # TODO test this
@@ -813,7 +821,7 @@ class ClientLogProcessor:
                      ###  OSP accuracies            ##
                      #################################
                     if value.event == ConstOsp.EVENT_PLAYER_ACC:
-                        #print("[Debug] 1.5" + line)
+                        #print("[Debug] 1.5 " + line)
                         hits,attacks = osp_token_one_slash_two(x[1][5:15].strip())
                         rest_tokens = x[1][15:].split()
 
@@ -844,8 +852,7 @@ class ClientLogProcessor:
                         break
                     
                     if value.event == ConstOsp.EVENT_PLAYER_DMG:
-                        
-                        if current_player:
+                        if current_player:   
                             #print("[Debug] 2", current_player)#, tmp_player_stat)
                             currentRound.player_stats[current_player] = tmp_player_stat.copy() #store the processed player
                             #print("[Debug] players :",len(currentRound.player_stats))

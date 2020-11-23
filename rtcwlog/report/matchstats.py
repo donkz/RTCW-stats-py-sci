@@ -254,6 +254,8 @@ class MatchStats:
     
     def table_accuracy(self, data):
         players_dataframe   = data["players"]
+        if len(players_dataframe) == 0:
+            return None
         players_dataframe = players_dataframe[players_dataframe["rounds"]=="2"]
         #players_dataframe = players_dataframe.drop_duplicates(["osp_guid"], keep="first")
         

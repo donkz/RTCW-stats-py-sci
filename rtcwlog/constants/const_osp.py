@@ -218,36 +218,36 @@ class ConstOsp:
    
     line_types = [
             
-            ["map", "^>>> Map: (.*)",EVENT_PLAYER_MAP,STAT_OSPFILE_MAP, True],
+            ["map", "^>>> Map: (.*)",EVENT_PLAYER_MAP,STAT_OSPFILE_MAP, False],
             #stat types            
-            ["ospaccgrenade", "^Grenade  : (.*)",EVENT_PLAYER_ACC, WEAPON_GRENADE,True],
-            ["ospaccPanzerfaust","^Panzer   : (.*)",EVENT_PLAYER_ACC, WEAPON_PANZER, True],
-            ["ospaccthompson", "^Thompson : (.*)",EVENT_PLAYER_ACC, WEAPON_THOMPSON, True],
-            ["ospaccmp40", "^MP-40    : (.*)",EVENT_PLAYER_ACC, WEAPON_MP40, True],
-            ["ospaccsten", "^Sten     : (.*)",EVENT_PLAYER_ACC,WEAPON_STEN, True],
-            ["ospaccluger", "^Luger    : (.*)",EVENT_PLAYER_ACC,WEAPON_LUGER, True],
-            ["ospacccolt", "^Colt     : (.*)",EVENT_PLAYER_ACC,WEAPON_COLT, True],
-            ["ospaccsniper", "^SniperRfl: (.*)",EVENT_PLAYER_ACC,WEAPON_SNIPER, True],
-            ["ospaccvenom", "^Venom    : (.*)",EVENT_PLAYER_ACC,WEAPON_VENOM, True],
-            ["ospaccflamethrower", "^F.Thrower: (.*)",EVENT_PLAYER_ACC,WEAPON_FLAME, True],
-            ["ospaccknife", "^Knife    : (.*)",EVENT_PLAYER_ACC,WEAPON_KNIFE, True],
-            ["ospaccsupport", "^Airstrike: (.*)",EVENT_PLAYER_ACC,WEAPON_AS, True],
-            ["ospaccartillery1", "^Artillery: (.*)",EVENT_PLAYER_ACC,WEAPON_ART, True],
-            ["ospaccartillery2", "^Artillary: (.*)",EVENT_PLAYER_ACC,WEAPON_ART, True],
-            ["ospaccdynamite", "^Dynamite : (.*)",EVENT_PLAYER_ACC,WEAPON_DYN, True],  
-            ["ospaccsyringe", "Syringe  : (.*)",EVENT_PLAYER_ACC,WEAPON_SYRINGE, True],
-            ["ospaccmg42", "CrewGun  : (.*)",EVENT_PLAYER_ACC,WEAPON_MG42, True],
+            ["ospaccgrenade", "^Grenade  : (.*)",EVENT_PLAYER_ACC, WEAPON_GRENADE,False],
+            ["ospaccPanzerfaust","^Panzer   : (.*)",EVENT_PLAYER_ACC, WEAPON_PANZER, False],
+            ["ospaccthompson", "^Thompson : (.*)",EVENT_PLAYER_ACC, WEAPON_THOMPSON, False],
+            ["ospaccmp40", "^MP-40    : (.*)",EVENT_PLAYER_ACC, WEAPON_MP40, False],
+            ["ospaccsten", "^Sten     : (.*)",EVENT_PLAYER_ACC,WEAPON_STEN, False],
+            ["ospaccluger", "^Luger    : (.*)",EVENT_PLAYER_ACC,WEAPON_LUGER, False],
+            ["ospacccolt", "^Colt     : (.*)",EVENT_PLAYER_ACC,WEAPON_COLT, False],
+            ["ospaccsniper", "^SniperRfl: (.*)",EVENT_PLAYER_ACC,WEAPON_SNIPER, False],
+            ["ospaccvenom", "^Venom    : (.*)",EVENT_PLAYER_ACC,WEAPON_VENOM, False],
+            ["ospaccflamethrower", "^F.Thrower: (.*)",EVENT_PLAYER_ACC,WEAPON_FLAME, False],
+            ["ospaccknife", "^Knife    : (.*)",EVENT_PLAYER_ACC,WEAPON_KNIFE, False],
+            ["ospaccsupport", "^Airstrike: (.*)",EVENT_PLAYER_ACC,WEAPON_AS, False],
+            ["ospaccartillery1", "^Artillery: (.*)",EVENT_PLAYER_ACC,WEAPON_ART, False],
+            ["ospaccartillery2", "^Artillary: (.*)",EVENT_PLAYER_ACC,WEAPON_ART, False],
+            ["ospaccdynamite", "^Dynamite : (.*)",EVENT_PLAYER_ACC,WEAPON_DYN, False],  
+            ["ospaccsyringe", "Syringe  : (.*)",EVENT_PLAYER_ACC,WEAPON_SYRINGE, False],
+            ["ospaccmg42", "CrewGun  : (.*)",EVENT_PLAYER_ACC,WEAPON_MG42, False],
             
             #extra lines
-            ["ospaccammo1", "^Ammopacks: (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_AMMOPACK, True],
-            ["ospaccammo2", "^Ammopacks  : (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_AMMOPACK, True],
-            ["ospacchp", "^Healthpacks: (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_HEALTHPACK, True],
-            ["ospaccrev1", "^Revivals: (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_REVIVE, True],
-            ["ospaccrev2", "^Revivals   : (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_REVIVE, True],
-            ["ospaccrev3", "^Revivals : (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_REVIVE, True],
-            ["ospaccdmr", "^Damage Recvd: (.*)",EVENT_PLAYER_DMR,STAT_OSPFILE_PLAYER_DMR, True],
-            ["ospaccdmg", "^Damage Given: (.*)",EVENT_PLAYER_DMG,STAT_OSPFILE_PLAYER_DMG, True],
-            ["time", "^Stats recorded: (.*)",EVENT_PLAYER_TS,STAT_OSPFILE_DATE, True],
+            ["ospaccammo1", "^Ammopacks: (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_AMMOPACK, False],
+            ["ospaccammo2", "^Ammopacks  : (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_AMMOPACK, False],
+            ["ospacchp", "^Healthpacks: (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_HEALTHPACK, False],
+            ["ospaccrev1", "^Revivals: (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_REVIVE, False],
+            ["ospaccrev2", "^Revivals   : (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_REVIVE, False],
+            ["ospaccrev3", "^Revivals : (.*)",EVENT_PLAYER_EXTRA,STAT_OSPFILE_PU_REVIVE, False],
+            ["ospaccdmr", "^Damage Recvd: (.*)",EVENT_PLAYER_DMR,STAT_OSPFILE_PLAYER_DMR, False],
+            ["ospaccdmg", "^Damage Given: (.*)",EVENT_PLAYER_DMG,STAT_OSPFILE_PLAYER_DMG, False],
+            ["time", "^Stats recorded: (.*)",EVENT_PLAYER_TS,STAT_OSPFILE_DATE, False],
 
             ["ospbegin", "^TEAM   Player          Kll Dth Sui",EVENT_OSP_STATS_START, "", False],
             
@@ -259,6 +259,7 @@ class ConstOsp:
             #endof these
             
             ["roundind", "^Accuracy info for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False], #could use "^Accuracy info for: (.*) \((.*) Round(.*)\):"
+            ["roundindpro", "^Overall stats for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False], #could use "^Accuracy info for: (.*) \((.*) Round(.*)\):"
             ["ospaccseparator", "^-------------------------------------", "", "", False],
             ["ospaccplayerheader", "^Weapon     Acrcy Hits/Atts Kll Dth HS", "", "", False],
             ["ospaccnoweapon", "^No weapon info available.", EVENT_OSP_STATS_NO_INFO, "", False]

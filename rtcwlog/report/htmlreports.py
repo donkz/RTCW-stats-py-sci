@@ -59,7 +59,10 @@ class HTMLReport:
         self.basic_stats_html_table = self.all_stats_to_html(basic_stats)
         
         accuracy_table = matchstats.table_accuracy(result)
-        self.personal_stats_html_table = self.accuracy_to_html(accuracy_table)
+        
+        self.personal_stats_html_table = ""
+        if accuracy_table is not None:
+            self.personal_stats_html_table = self.accuracy_to_html(accuracy_table)            
         
         weapon_stats = matchstats.table_weapon_counts(result)
         self.weapon_stats_html_table = self.weapons_to_html(weapon_stats)

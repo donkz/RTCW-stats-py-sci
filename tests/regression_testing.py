@@ -15,7 +15,7 @@ if not RTCWPY_PATH in sys.path:
 #expand viewing area for pandas datasets (visual inspection only)
 pd.set_option('display.max_rows', 500)
 pd.set_option("display.max_columns",30)
-pd.set_option("display.max_colwidth",20)
+pd.set_option("display.max_colwidth",30)
 pd.set_option("display.width",300)
 
 #test files to process
