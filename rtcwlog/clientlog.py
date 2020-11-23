@@ -635,6 +635,13 @@ class ClientLogProcessor:
            currentRound - class of parameters extracted only for this current round
         """       
         #print("[Debug] CurrentRound contents\n",[vars(currentRound)])
+        if not currentRound.game_happened:
+            return None
+        
+        if not currentRound.game_finished:
+            print("[!] Round did not finish. Aborting.")
+            return None
+            
         currentRound.round_end_time = wrap_start_time = _time.time() 
         if not currentRound.game_happened:
             return None                      
@@ -649,10 +656,8 @@ class ClientLogProcessor:
         ospDF = self.build_osp_stats_dataframe(currentRound, tmp_base_stats, tmp_logdf)                     
         if ospDF is None:
             #break # TODO test this
-            print("[x] Round could not be summarized, aborving this round.")
+            print("[x] Round could not be summarized, aborting this round.")
             return None
-        
-        
         
         cp0 = _time.time()
         if self.debug_time: print ("[t] Checkpoint0 " + str(round((cp0  - wrap_start_time),3)) + " s")
