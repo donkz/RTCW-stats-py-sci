@@ -21,6 +21,9 @@ $RECYCLE.BIN/
 __pycache__/
 *.py[cod]
 
+# Python crash log
+*debug.log
+
 # HTML Report Working Files
 *.htm*
 
