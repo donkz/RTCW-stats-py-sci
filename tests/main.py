@@ -23,7 +23,6 @@ from rtcwlog.report.htmlreports import HTMLReport
     
 rtcwlogfile = r"D:\Games\Return to Castle Wolfenstein\rtcwpro\rtcwconsole11-22-2020-b.log"
 
-
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup
 if rtcwlogfile[-16:] == "\rtcwconsole.log":
     dt = datetime.now().strftime("%Y-%m-%d")
@@ -39,6 +38,11 @@ html_report = HTMLReport(result)
 html_report.report_to_html()
 #html_report.report_to_html(folder="C:/stats/")
 #html_report.report_to_html(folder="C:/stats/", filenoext = "mystats" )
+
+
+
+
+
 
 #RTCWPro differences with OSP/breaking changes
 #Allies have lost the Unholy Grail! <-- is this new? "Allies lost" has never been seen before
@@ -69,5 +73,8 @@ html_report.report_to_html()
 #rtcwpro
 #Overall stats for:  - is this staying? I can live with this, but we shouldn't be upsetting other people work potentially
 
-
+#verify this is not in the new versions
+#[!] -----------Unknown objective: 
+#[!] -----------Unknown objective: Axis is now SPECLOCKED
+#[!] -----------Unknown objective: All players are now ready!
 

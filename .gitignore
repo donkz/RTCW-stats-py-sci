@@ -26,6 +26,7 @@ __pycache__/
 
 # HTML Report Working Files
 *.htm*
+tests/testfile.txt
 
 
 # CSV Report Working Files

@@ -634,7 +634,7 @@ class ClientLogProcessor:
            self (ClientLogProcessor) with match-long values
            currentRound - class of parameters extracted only for this current round
         """       
-        
+        #print("[Debug] CurrentRound contents\n",[vars(currentRound)])
         currentRound.round_end_time = wrap_start_time = _time.time() 
         if not currentRound.game_happened:
             return None                      
