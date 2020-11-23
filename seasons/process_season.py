@@ -41,7 +41,8 @@ def duplicate_round_guids(new_df_guids, existing_round_guids):
 
 #settings
 season_dir = "..\\data\\seasons_data\\" #.. is back one folder. 
-tis_season = "eu\\gsix"
+#tis_season = "eu\\gsix"
+tis_season = "2020Nov"
 keep_only_pattern = ""
 all_seasons="all"
 write_daily_stats = False
@@ -60,14 +61,14 @@ if keep_only_pattern != "":
 
 results = []
 for file in stat_files:
-    processor = ClientLogProcessor(local_file = file, debug = False)
+    processor = ClientLogProcessor(local_file = file, debug = True)
     result = processor.process_log()
     results.append(result)
 
 #stich them up!
 logs = stats = matches = players = None
 for result in results:
-    if len(result) > 0:
+    if result and len(result) > 0:
         if write_daily_stats:
             html_reportx = HTMLReport(result)
             html_reportx.report_to_html(season_dir + tis_season +"\\" + "reports" + "\\")

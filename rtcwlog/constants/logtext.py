@@ -187,9 +187,9 @@ class Const:
             ["timelimitmain", "^\[skipnotify\]Timelimit hit\.",EVENT_MAIN_TIMELIMIT, "", False],
             ["clocksetmain", "^\[skipnotify\]Server: timelimit changed to (.*)",EVENT_MAIN_SERVER_TIME, "", False],
             #match ending osp
-            ["fullholdosp", "^\[skipnotify\]>>> Objective NOT reached in time \((.*)\)",EVENT_OSP_NOT_REACHED, "", False],
-            ["clocksetosp", "^\[skipnotify\]>>> Clock set to: (.*)",EVENT_OSP_TIME_SET, "", False],
-            ["clocklostosp", "^\[skipnotify\]>>> Objective reached at (.*) \(original: (.*)\)",EVENT_OSP_REACHED, "", False],
+            ["fullholdosp", ">>> Objective NOT reached in time \((.*)\)",EVENT_OSP_NOT_REACHED, "", False],
+            ["clocksetosp", ">>> Clock set to: (.*)",EVENT_OSP_TIME_SET, "", False],
+            ["clocklostosp", ">>> Objective reached at (.*) \(original: (.*)\)",EVENT_OSP_REACHED, "", False],
             #file info
             ["logdate","^logfile opened on(.*)", EVENT_LOGFILE_TIMESTAMP, "", False],
             ["pbguid","[A-Fa-f0-9]{8}\(-\) OK   (.*)} (.*)", EVENT_PB_GUID, "", False],

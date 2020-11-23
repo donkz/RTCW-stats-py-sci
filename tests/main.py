@@ -21,7 +21,7 @@ from rtcwlog.report.htmlreports import HTMLReport
 #rtcwlogfile = r"..\data\test_samples\rtcwconsole - r2.log"
 #rtcwlogfile = r"..\data\test_samples\rtcwconsole-2019-12-15.log"
     
-rtcwlogfile = r"D:\Games\Return to Castle Wolfenstein\rtcwpro\rtcwconsole11-22-2020-b.log"
+rtcwlogfile = r"..\data\seasons_data\2020Nov\2020-11-20-05-31-16-rtcwconsole.log"
 
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup
 if rtcwlogfile[-16:] == "\rtcwconsole.log":
@@ -75,6 +75,8 @@ html_report.report_to_html()
 
 #verify this is not in the new versions
 #[!] -----------Unknown objective: 
-#[!] -----------Unknown objective: Axis is now SPECLOCKED
-#[!] -----------Unknown objective: All players are now ready!
+#[!] -----------Unknown objective: Axis is now SPECLOCKED ([skipnotify]*** ^3INFO: ^5Axis is now SPECLOCKED)
+#[!] -----------Unknown objective: All players are now ready! ([skipnotify]*** ^3INFO: ^5All players are now ready!)
+#[!] -----------Unknown objective: Axis defused dynamite near the Door Controls!
+#[!] -----------Unknown objective: Allies have lost Hitler's Documents!
 

@@ -495,6 +495,7 @@ class ClientLogProcessor:
         
         t2 = _time.time()
         if self.debug_time: print ("[t] Time to guess team while imputing " + str(round((t2 - t1),3)) + " s")
+        #print(res["TeamName"].to_dict())
         return res["TeamName"].to_dict()
     
     def determine_current_map(self, currentRound):
@@ -603,7 +604,7 @@ class ClientLogProcessor:
     def build_matchdf(self, currentRound):
         #If side is not populated with allies and axis don't do this logic
         if(currentRound.tmp_stats_all["side"].isnull().sum() == len(currentRound.tmp_stats_all)):
-            #print(tmp_stats_all[["side",Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]])
+            #print(currentRound.tmp_stats_all[["side",Const.STAT_BASE_KILLER,Const.STAT_OSP_SUM_TEAM]])
             #IF OSP Stats are not joined (player is spectator)
             #THEN there is no information about SIDE(Offense/Defense) or TEAM(Allies/Axis)
             print("[!] No teams found. OSP stats not joined for round " + str(currentRound.tmp_stats_all["round_order"].min()))
@@ -653,7 +654,7 @@ class ClientLogProcessor:
         if tmp_base_stats is None:
             return None
             
-        ospDF = self.build_osp_stats_dataframe(currentRound, tmp_base_stats, tmp_logdf)                     
+        ospDF = self.build_osp_stats_dataframe(currentRound, tmp_base_stats, tmp_logdf)                    
         if ospDF is None:
             #break # TODO test this
             print("[x] Round could not be summarized, aborting this round.")
@@ -663,6 +664,7 @@ class ClientLogProcessor:
         if self.debug_time: print ("[t] Checkpoint0 " + str(round((cp0  - wrap_start_time),3)) + " s")
         
         currentRound.tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
+        
         currentRound.tmp_stats_all = self.add_classes(tmp_logdf,currentRound.tmp_stats_all)
         currentRound.tmp_stats_all["round_order"] = currentRound.round_order
 
@@ -724,7 +726,6 @@ class ClientLogProcessor:
             tmp_playersdf = build_player_df(players_all)
             tmp_playersdf["match_date"] = currentRound.round_datetime
             self.playersdf = self.playersdf.append(tmp_playersdf)
-            
             
         self.matchesdf = self.matchesdf.append(self.build_matchdf(currentRound),sort=False) 
         self.logdf= self.logdf.append(tmp_logdf,sort=False)
@@ -1154,7 +1155,12 @@ class ClientLogProcessor:
         if self.debug:
             debug_log.close() 
         
-        self.round_close(currentRound) #get last round
+        try:
+            self.round_close(currentRound) #get last round
+        except:
+            print("[x] Failed to close the round!")
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            traceback.print_exception(exc_type, exc_value, exc_traceback,limit=5, file=sys.stdout) 
 
         if self.matchesdf.empty or self.statsdf.empty or self.logdf.empty:
             print("[x] Nothing was processed")
