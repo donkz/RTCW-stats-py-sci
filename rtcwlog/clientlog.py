@@ -667,9 +667,6 @@ class ClientLogProcessor:
         if self.debug_time: print ("[t] Checkpoint0 " + str(round((cp0  - wrap_start_time),3)) + " s")
         
         currentRound.tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
-        print("OSPDF WAS\n",ospDF)
-        print("base was\n",tmp_base_stats)
-        print("cccccctmp_stats_all\n",currentRound.tmp_stats_all)
         
         currentRound.tmp_stats_all = self.add_classes(tmp_logdf,currentRound.tmp_stats_all)
         currentRound.tmp_stats_all["round_order"] = currentRound.round_order
