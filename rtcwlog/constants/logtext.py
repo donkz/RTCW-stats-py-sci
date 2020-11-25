@@ -67,6 +67,11 @@ class Const:
     EVENT_OSP_NOT_REACHED = "osp_time_not_reached"
     EVENT_OSP_REACHED = "osp_time_reached"
     
+    EVENT_PRO_STATS_TOTALS = "pro total footer"
+    EVENT_PRO_STATS_HEADER = "pro total header"
+    EVENT_PRO_SEPARATOR = "pro total separator"
+    EVENT_PRO_TEAM = "pro team indicator"
+    
     CONSOLE_PASSWORD_RCON = "Rcon password"
     CONSOLE_PASSWORD_REF =  "Ref password"
     CONSOLE_PASSWORD_SERVER = "Server password"
@@ -180,8 +185,14 @@ class Const:
             ["ospbegin", "^TEAM   Player          Kll Dth Sui",EVENT_OSP_STATS_START, "", False],
             ["ospmid", "^Axis   Totals",EVENT_OSP_STATS_MID, "", False],
             ["ospend", "^Allies Totals",EVENT_OSP_STATS_END, "", False],
+            ["proallies", "^Allied Team",EVENT_PRO_TEAM, "", False],
+            ["proaxis", "^Axis Team",EVENT_PRO_TEAM, "", False],
             ["ospaxis", "^Axis",EVENT_OSP_STATS_AXIS, "", False],
             ["ospallies", "^Allies",EVENT_OSP_STATS_ALLIES, "", False],
+            ["proheader", "^Player          Kll Dth Sui TK Eff Gib Accrcy HS",EVENT_PRO_STATS_HEADER, "", False],
+            ["profooter", "^Totals",EVENT_PRO_STATS_TOTALS, "", False],
+            ["prosepar", "^--------------------------------------------------------------------------",EVENT_PRO_SEPARATOR, "", False],
+            
             ["roundind", "^Accuracy info for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False],
             ["roundindpro", "^Overall stats for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False],
             ["timelimitmain", "^\[skipnotify\]Timelimit hit\.",EVENT_MAIN_TIMELIMIT, "", False],

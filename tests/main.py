@@ -80,3 +80,5 @@ html_report.report_to_html()
 #[!] -----------Unknown objective: Axis defused dynamite near the Door Controls!
 #[!] -----------Unknown objective: Allies have lost Hitler's Documents!
 
+#round end totals are now all lower case...
+

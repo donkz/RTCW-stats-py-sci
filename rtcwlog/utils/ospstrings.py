@@ -15,6 +15,27 @@ def process_OSP_line(line):
     player = " ".join(tokens[1:len(tokens)-10])
     return (player, [player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2],tokens[-1]])
 
+#Disassemble the following lines into a tuple of (player,statline)
+#        Player          Kll Dth Sui TK Eff Gib Accrcy HS   DG   DR   TD  Rev Score
+                        #Kll Dth Sui TK Eff Gib             DG   DR   TD      Score
+#line = "eslemsil         21   6   4  0  77  3  48.47  12 3354 1729    0    4   82"
+#line = "john mull ns     10  17   3  0  37  1  37.50   4 2644 3015   70    4   59"
+def process_pro_line(line, team_indicator):
+    #print("Incoming line ", line)
+    team = "Allies"
+    tokens = re.split("\s+", line)
+    if len(tokens) < 14:
+        return (None, None)
+    player = " ".join(tokens[0:len(tokens)-13])
+    if team_indicator[0:4] == "Axis":
+        team = "Axis"
+    elif team_indicator[0:4] == "Alli":
+        team = "Allies"
+    else:
+        print(f"[!] Could not extract team from {team_indicator}")
+        #                           kll         dth           sui          tk        eff          gib     dg         dr           TD        Score
+    return (player, [player, team ,tokens[-13],tokens[-12],tokens[-11],tokens[-10],tokens[-9],tokens[-8],tokens[-5],tokens[-4],tokens[-3],tokens[-1]])
+
 #re.search("^Accuracy info for: (.*)","Accuracy info for: -doNka- (2 Rounds)")
 #text = '-doNka- (2 Rounds)'
 def osp_token_accuracy_playername_round(text):

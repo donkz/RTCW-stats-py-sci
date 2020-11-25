@@ -10,7 +10,7 @@ from collections import Counter
 
 
 from rtcwlog.utils.rtcwcolors import stripColors , setup_colors
-from rtcwlog.utils.ospstrings import process_OSP_line, osp_token_one_slash_two, osp_token_accuracy_playername_round
+from rtcwlog.utils.ospstrings import process_OSP_line, process_pro_line, osp_token_one_slash_two, osp_token_accuracy_playername_round
 from rtcwlog.constants.logtext import Const, LogLine
 from rtcwlog.constants.const_osp import ConstOsp, OSPFileLine
 from rtcwlog.textsci.teams import add_team_name, get_round_guid_client_log, get_player_list
@@ -85,6 +85,8 @@ class Round:
          self.exact_map_ss = None
          self.exact_map_load = None
          self.player_stats = {}
+         self.round_stats_team_line = None
+         self.round_stats_confidence = 0
 
 
 class ClientLogProcessor:
@@ -262,8 +264,9 @@ class ClientLogProcessor:
     def summarize_round_join_osp(self, base_stats, osp_stats):
         t1 = _time.time()
         base_stats = base_stats.reset_index() #stash valid player names in "index" column
-        base_stats.index = base_stats['index'].str[0:15] #because OSP names are 15 chars only
-
+        base_stats.index = base_stats['index'].str[0:15].str.lower() #because OSP names are 15 chars only. lower because RTCW PRO just fuckin decided we are doing this now
+        
+        osp_stats.index = osp_stats.index.str.lower()
         stats_all = base_stats.join(osp_stats) #Totals fall out naturally
         #print("[Debug] indexes on join\n", base_stats.index, osp_stats.index)
 
@@ -664,6 +667,9 @@ class ClientLogProcessor:
         if self.debug_time: print ("[t] Checkpoint0 " + str(round((cp0  - wrap_start_time),3)) + " s")
         
         currentRound.tmp_stats_all = self.summarize_round_join_osp(tmp_base_stats, ospDF)
+        print("OSPDF WAS\n",ospDF)
+        print("base was\n",tmp_base_stats)
+        print("cccccctmp_stats_all\n",currentRound.tmp_stats_all)
         
         currentRound.tmp_stats_all = self.add_classes(tmp_logdf,currentRound.tmp_stats_all)
         currentRound.tmp_stats_all["round_order"] = currentRound.round_order
@@ -814,6 +820,19 @@ class ClientLogProcessor:
                 #print("[Debug] Skipping " + line)
                 continue
             
+            if currentRound.round_stats_confidence == 4:
+                if line == "--------------------------------------------------------------------------":
+                    currentRound.round_stats_confidence = 0
+                    continue
+                if currentRound.game_happened:
+                    osp_player, osp_line = process_pro_line(line,currentRound.round_stats_team_line) #for now just conform to osp
+                    if osp_line is None:
+                        currentRound.round_stats_confidence = 0
+                    currentRound.osp_stats_dict[osp_player] = osp_line
+                    currentRound.osp_lines.append(line.strip())   
+                    osp_line_processed = True
+                continue
+                
             #for that line loop through all possible log line types and see which type of line it is
             for key, value in log_lines.items():
                                 
@@ -877,6 +896,30 @@ class ClientLogProcessor:
                             self.tmp_submitter = current_player
                         tmp_player_stat = ConstOsp.player_stat.copy()
                         tmp_player_stat["rounds"] = round_num
+                        break
+                    
+                    if value.event == Const.EVENT_PRO_TEAM:
+                        #print("team", line)
+                        currentRound.round_stats_confidence = 1
+                        currentRound.round_stats_team_line = line
+                        break
+                    
+                    if value.event == Const.EVENT_PRO_SEPARATOR:
+                        #print("sep", line)
+                        if currentRound.round_stats_confidence > 4:
+                            print("sep3", line)
+                            currentRound.round_stats_confidence = 0
+                        currentRound.round_stats_confidence += 1
+                        break
+                    
+                    if value.event == Const.EVENT_PRO_STATS_HEADER:
+                        #print("head", line)
+                        currentRound.round_stats_confidence += 1
+                        break
+                    
+                    if value.event == Const.EVENT_PRO_STATS_TOTALS:
+                        #print("tot", line)
+                        currentRound.round_stats_confidence = 0
                         break
                     
                     #player renames in game. Store old and new name in doct for later processing
