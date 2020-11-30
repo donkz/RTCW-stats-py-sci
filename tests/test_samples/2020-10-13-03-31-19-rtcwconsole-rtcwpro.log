@@ -1,0 +1,2807 @@
+logfile opened on Mon Oct 12 22:55:35 2020
+
+...detecting CPU, found Intel Pentium III
+Bypassing CD checks
+----- Client Initialization -----
+----- Initializing Renderer ----
+-------------------------------
+Loaded 714 translation strings from scripts/translation.cfg
+Loaded 97 translation strings from translations/rocket.cfg
+Loaded 86 translation strings from translations/dam.cfg
+Loaded 114 translation strings from translations/tram.cfg
+Loaded 57 translation strings from translations/chateau.cfg
+Loaded 54 translation strings from translations/keep.cfg
+Loaded 73 translation strings from translations/icelab.cfg
+Loaded 6 translation strings from translations/translation-1_4.cfg
+----- Client Initialization Complete -----
+----- R_Init -----
+Initializing OpenGL subsystem
+...initializing QGL
+...calling LoadLibrary( 'C:\WINDOWS\system32\opengl32.dll' ): succeeded
+...setting mode -1: 1920 1080 FS
+...using colorsbits of 32
+...calling CDS: ok
+...registered window class
+...created window@0,0 (1920x1080)
+Initializing OpenGL driver
+...getting DC: succeeded
+...GLW_ChoosePFD( 32, 24, 0 )
+...219 PFDs found
+...hardware acceleration found
+...PIXELFORMAT 9 selected
+...creating GL context: succeeded
+...making context current: succeeded
+Initializing OpenGL extensions
+...using GL_EXT_texture_compression_s3tc
+...ignoring GL_EXT_texture_env_add
+...using WGL_EXT_swap_control
+...using GL_ARB_multitexture
+...using GL_EXT_compiled_vertex_array
+...WGL_3DFX_gamma_control not found
+...ignoring GL_NV_fog_distance
+
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: GeForce GTX 1650 SUPER/PCIe/SSE2
+GL_VERSION: 4.6.0 NVIDIA 456.38
+GL_EXTENSIONS: GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_depth_texture GL_ARB_draw_buffers GL_ARB_draw_instanced GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_map_buffer_range GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_shader_objects GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shadow GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_compression GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_mirrored_repeat GL_ARB_texture_non_power_of_two GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_transpose_matrix GL_ARB_vertex_array_object GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_specular_color GL_EXT_shadow_funcs GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KTX_buffer_region GL_NV_blend_square GL_NV_conditional_render GL_NV_copy_depth_to_color GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_explicit_multisample GL_NV_fence GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_gpu_program4 GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program_fp64 GL_NV_half_float GL_NV_light_max_exponent GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_shader_buffer_load GL_NV_texgen_reflection GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_rectangle GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NVX_conditional_render GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum GL_WIN_swap_hint WGL_EXT_swap_control 
+GL_MAX_TEXTURE_SIZE: 32768
+GL_MAX_ACTIVE_TEXTURES_ARB: 4
+
+PIXELFORMAT: color(32-bits) Z(24-bit) stencil(0-bits)
+MODE: -1, 1920 x 1080 fullscreen hz:144
+GAMMA: software w/ 0 overbright bits
+CPU: Intel Pentium III
+rendering primitives: single glDrawElements
+texturemode: GL_LINEAR_MIPMAP_NEAREST
+picmip: 2
+texture bits: 32
+multitexture: enabled
+compiled vertex arrays: enabled
+texenv add: disabled
+compressed textures: enabled
+NV distance fog: disabled
+HACK: using vertex lightmap approximation
+Initializing Shaders
+----- finished R_Init -----
+
+------- sound initialization -------
+Initializing DirectSound
+DirectSound initialized successfully
+------------------------------------
+----- Sound Info -----
+sound system is muted
+    1 stereo
+32768 samples
+   16 samplebits
+    1 submission_chunk
+22050 speed
+0x248e0050 dma buffer
+No background file.
+----------------------
+Sound memory manager started
+--- Common Initialization Complete ---
+Winsock Initialized
+Opening IP socket: localhost:27960
+Hostname: fonzepc
+IP: 192.168.0.104
+Working directory: C:\Return to Castle Wolfenstein 1.4
+^5PunkBuster Client: Changing (Vista) homepath to [C:\Users\fonze\AppData\Local\PunkBuster\RTCW\pb\]
+^5PunkBuster Client: Attempting to resolve master2.evenbalance.com
+^5PunkBuster Client: Resolved to [172.105.159.84] (0)
+^5PunkBuster Client: PunkBuster Client (v2.164 | A0) Enabled
+Resolving wolfmotd.idsoftware.com
+Couldn't resolve address
+^5PunkBuster Client: Game Version [Wolf 1.4-MP win-x86 Oct 28 2002]
+^5PunkBuster Client: Not Connected to a Server
+^5PunkBuster Client: PB Services socket initialized
+Scanning for servers on the local network...
+57 servers listed in browser with 357 players.
+2 servers not listed (filtered out by game browser settings)
+^5PunkBuster Client: PnkBstrA successfully loaded PnkBstrB
+Requesting servers from the master...
+CL_ServersResponsePacket
+58 servers parsed (total 58)
+57 servers listed in browser with 408 players.
+1 servers not listed (filtered out by game browser settings)
+^5PunkBuster Client: PnkBstrB service installed and started successfully
+Added favorite server 18.228.117.228:27960
+Resolving wolfmotd.idsoftware.com
+Couldn't resolve address
+18.228.117.228:27960 resolved to 18.228.117.228:27960
+Resolving wolfauthorize.idsoftware.com
+Couldn't resolve address
+^5PunkBuster Client: Connected to Server 18.228.117.228:27960
+Current search path:
+C:\Return to Castle Wolfenstein 1.4\rtcwpro\rtcwpro.pk3 (106 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps1.pk3 (34 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak5.pk3 (77 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak4.pk3 (5 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak3.pk3 (76 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak2.pk3 (3 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak1.pk3 (308 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak0.pk3 (783 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_basement.pk3 (6 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_frostbite.pk3 (99 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_escape2.pk3 (11 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\pak0.pk3 (4775 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\adlernest_b3.pk3 (164 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4/rtcwpro
+C:\Return to Castle Wolfenstein 1.4\main\mp_rend2_shaders0.pk3 (2 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_password2_v1.pk3 (103 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak_kungfugrip.pk3 (208 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps6.pk3 (81 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps5.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps4.pk3 (52 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps3.pk3 (83 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps2.pk3 (47 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps0.pk3 (21 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak01.pk3 (16 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_marketgarden.pk3 (82 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_garage.pk3 (25 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_ctfmultidemo.pk3 (10 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_communique.pk3 (8 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_bin0.pk3 (13 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_bin.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\Zero_k.pk3 (46 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\ufo_homiefix.pk3 (32 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\tundra_rush_beta.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\tj3_final.pk3 (28 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_pacific2.pk3 (22 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_nordic_b2.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_delivery_b1.pk3 (119 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_complex_b1.pk3 (25 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_cipher_b2.pk3 (47 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\supplydepot_b2_fixed.pk3 (213 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump_RLD.pk3 (93 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump5.pk3 (168 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump3.pk3 (179 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump2.pk3 (39 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump1.pk3 (19 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump5.pk3 (67 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump4_v3.pk3 (78 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump3_v2.pk3 (79 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump2.pk3 (68 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump1.pk3 (65 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mml_headshot.pk3 (20 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mml_church_v1.pk3 (79 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\lights.pk3 (51 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\HkJumpz_beta1.pk3 (36 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\dzm_trickjump.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\CTF_BooZZe.pk3 (28 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\brickjump_final.pk3 (9 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\braundorf_b5_rtcw.pk3 (219 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_valhalla2.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_valhalla.pk3 (6 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_badplace.pk3 (21 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4/main
+
+handle 1: rtcwconsole.log
+handle 3: video/mp_beach.roq
+----------------------
+18236 files in pk3 files
+RE_Shutdown( 0 )
+Hunk_Clear: reset the hunk ok
+----- R_Init -----
+
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: GeForce GTX 1650 SUPER/PCIe/SSE2
+GL_VERSION: 4.6.0 NVIDIA 456.38
+GL_EXTENSIONS: GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_depth_texture GL_ARB_draw_buffers GL_ARB_draw_instanced GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_map_buffer_range GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_shader_objects GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shadow GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_compression GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_mirrored_repeat GL_ARB_texture_non_power_of_two GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_transpose_matrix GL_ARB_vertex_array_object GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_specular_color GL_EXT_shadow_funcs GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KTX_buffer_region GL_NV_blend_square GL_NV_conditional_render GL_NV_copy_depth_to_color GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_explicit_multisample GL_NV_fence GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_gpu_program4 GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program_fp64 GL_NV_half_float GL_NV_light_max_exponent GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_shader_buffer_load GL_NV_texgen_reflection GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_rectangle GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NVX_conditional_render GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum GL_WIN_swap_hint WGL_EXT_swap_control 
+GL_MAX_TEXTURE_SIZE: 32768
+GL_MAX_ACTIVE_TEXTURES_ARB: 4
+
+PIXELFORMAT: color(32-bits) Z(24-bit) stencil(0-bits)
+MODE: -1, 1920 x 1080 fullscreen hz:144
+GAMMA: software w/ 0 overbright bits
+CPU: Intel Pentium III
+rendering primitives: single glDrawElements
+texturemode: GL_LINEAR_MIPMAP_NEAREST
+picmip: 2
+texture bits: 32
+multitexture: enabled
+compiled vertex arrays: enabled
+texenv add: disabled
+compressed textures: enabled
+NV distance fog: disabled
+HACK: using vertex lightmap approximation
+Initializing Shaders
+----- finished R_Init -----
+LOADING... collision map
+[skipnotify]^2*** You have been authorized "referee" status ***
+Type: ^3ref^7 (by itself) for a list of referee commands.
+LOADING... sounds
+voice chat memory size = 3264
+
+.........................
+Initializing Sound Scripts
+...loading 'sound/scripts/cutscene1.sounds'
+...loading 'sound/scripts/cutscene6.sounds'
+...loading 'sound/scripts/cutscene9.sounds'
+...loading 'sound/scripts/cutscene11.sounds'
+...loading 'sound/scripts/cutscene14.sounds'
+...loading 'sound/scripts/cutscene19.sounds'
+...loading 'sound/scripts/escape1.sounds'
+...loading 'sound/scripts/escape2.sounds'
+...loading 'sound/scripts/tram.sounds'
+...loading 'sound/scripts/village1.sounds'
+...loading 'sound/scripts/crypt1.sounds'
+...loading 'sound/scripts/crypt2.sounds'
+...loading 'sound/scripts/church.sounds'
+...loading 'sound/scripts/boss1.sounds'
+...loading 'sound/scripts/forest.sounds'
+...loading 'sound/scripts/rocket.sounds'
+...loading 'sound/scripts/assault.sounds'
+...loading 'sound/scripts/sfm.sounds'
+...loading 'sound/scripts/factory.sounds'
+...loading 'sound/scripts/trainyard.sounds'
+...loading 'sound/scripts/swf.sounds'
+...loading 'sound/scripts/norway.sounds'
+...loading 'sound/scripts/xlabs.sounds'
+...loading 'sound/scripts/boss2.sounds'
+...loading 'sound/scripts/dam.sounds'
+...loading 'sound/scripts/village2.sounds'
+...loading 'sound/scripts/chateau.sounds'
+...loading 'sound/scripts/dark.sounds'
+...loading 'sound/scripts/castle.sounds'
+...loading 'sound/scripts/end.sounds'
+...loading 'sound/scripts/ai.sounds'
+...loading 'sound/scripts/general.sounds'
+...loading 'sound/scripts/combat.sounds'
+...loading 'sound/scripts/movers.sounds'
+done.
+LOADING... graphics
+LOADING... maps/mp_beach.bsp
+stitched 0 LoD cracks
+...loaded 5432 faces, 264 meshes, 259 trisurfs, 168 flares
+LOADING... entities
+LOADING... game media
+LOADING...  - textures
+LOADING...  - models
+LOADING...  - weapons
+LOADING...  - items
+LOADING...  - inline models
+LOADING...  - server models
+LOADING...  - particles
+LOADING...  - game media done
+LOADING... flamechunks
+LOADING... clients
+LOADING... S|A Ivysd
+LOADING... murkey*
+LOADING... fonze*
+LOADING... ^>John_Mullins
+LOADING... mooshu
+LOADING... SIA Blazk
+LOADING... S|A Pipe
+LOADING... spaztik
+LOADING... Du5t3r
+LOADING... S|A v1RKES
+LOADING... S|A Snipercat
+LOADING... prowler
+LOADING... Flogzero
+LOADING... S|A BrianN
+LOADING... S|A CaL1bRin
+UI menu load time = 12 milli seconds
+CL_InitCGame:  3.45 seconds
+5 msec to draw all images
+Com_TouchMemory: 0 msec
+execing wolfconfig_mp.cfg
+ch_font will be changed upon restarting.
+usage: seta <variable> <value>
+r_rmse will be changed upon restarting.
+Unknown command "+scores"
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Flogzero^7's Thompson
+^5PunkBuster Client: PnkBstrB service installed and started successfully
+^5Going ^5AXIS...^7 
+[skipnotify](^0fonze^1*^7) (Beach): ^5^8going medic
+[skipnotify]^0fonze^1*^7 joined the ^1Axis ^7team.
+[skipnotify]*** ^3INFO: ^5rtcwPro BETA 0.1
+[skipnotify]This server is running ^3RtcwPro 1.0 beta
+[skipnotify]^7Type ^3/commands ^7to see the list of all available options.
+^4Default spawn side 
+[skipnotify]*** ^3INFO: ^5Allies have stolen the War Documents!
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Pipe^7^7's MP40
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+^1ZoomedOut 
+^1ZoomedIn 
+^1ZoomedOut 
+[skipnotify]*** ^3INFO: ^3Allies have lost the War Documents! 
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by mooshu^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Basement): ^5Danke.
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]^0Flogzero^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]*** ^3INFO: ^5Axis have returned the War Documents!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hi.
+[skipnotify]^0fonze^1*^7 was killed by ^0murkey^1*^7's Thompson
+^1ZoomedIn 
+^1ZoomedOut 
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+^4Default spawn side 
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]Match is already in progress!
+
+[skipnotify]*** ^3INFO: ^5Allies have stolen the War Documents!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Upper Base): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify](^1S^J|^kA v1RKES^7) (Back Stairway): ^5^aGranada^3!!!
+[skipnotify]mooshu^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^J|^kA v1RKES^7's Luger 9mm
+[skipnotify]^0Flogzero^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^0spaztik^7: ^2NONONO
+[skipnotify]*** ^3INFO: ^3Allies have lost the War Documents! 
+[skipnotify]^0murkey^1*^7 was killed by ^0fonze^1*^7's Luger 9mm
+[skipnotify]*** ^3INFO: ^5Axis have returned the War Documents!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radio Stairway): ^5I'm a lieutenant.
+[skipnotify]: (mooshu)^3(Basement): ^5I'm a medic.
+[skipnotify]*** ^3INFO: ^5Allies have stolen the War Documents!
+[skipnotify](mooshu^7) (Basement): ^5^1[^7Spawning^1:^7Axis-side^1]^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^1S^J|^kA v1RKES^7's Luger 9mm
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^0fonze^1*^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^0Flogzero^7 was killed by mooshu^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Upper Base): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]^0Du5^4t3r^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Upper Base): ^2Negative.
+[skipnotify]^1S^7I^4A ^7Blazk^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify](^1S^J|^kA v1RKES^7) (Back Stairway): ^5LLLL
+[skipnotify]^0Du5^4t3r^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]*** ^3INFO: ^3Allies have lost the War Documents! 
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Pipe^7^7's MP40
+[skipnotify]*** ^3INFO: ^5Axis have returned the War Documents!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Negative.
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]: ^0spaztik ^3(Basement Barracks): ^2The enemy is weakened.
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Upper Base): ^5Medic!
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2lool
+[skipnotify]*** ^3INFO: ^5Allies have stolen the War Documents!
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2fucker
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Upper Base): ^5Incoming!
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by mooshu^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Upper Base): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by mooshu^7's MP40
+[skipnotify]: mooshu ^3(Upper Base): ^2Hey!
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify]mooshu^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]*** ^3INFO: ^5Allies transmitted the documents!
+[skipnotify]>>> ^3Objective reached at 5:24 (original: 5:58)
+
+^3>>> Map: ^3mp_beach
+
+^7Overall stats for: ^z^0fonze^1* ^7(^20^7 Rounds)
+
+Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+-------------------------------------------------
+^zLuger    : ^7 46.7 ^5   7/15   ^2    1 ^1     0 ^3        0
+^zMP-40    : ^7 23.0 ^5  17/74   ^2    2 ^1     1 ^3        0
+^zThompson :                 ^2    0 ^1     1 ^3        0
+^zSyringe  : ^7100.0 ^5   1/1    ^2    0 ^1     0
+
+^zDamage Given: ^7364     ^zTeam Damage : ^742
+^zDamage Recvd: ^7397     ^zBodies Gibbed: ^70 
+
+Wrote screenshots/2020-10-12/225756-fonze-mp_beach.jpg
+[skipnotify](^1S^J|^kA v1RKES^7) (Basement): ^5^aGranada^3!!!
+
+Mod: RtcwPro 1.0 beta 
+^7Server: RTCWCHILE.COM ^1S^7|^4A  
+^7Time: ^702:57:53 ^d(^713 Oct 2020^d)
+
+^1Axis ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7mooshu         ^e  18^7  13   0  0^7^c  58^7  4  43.56   9^2 3066^1 2792^4    0^5   11^7   46
+^7s|a v1rkes     ^e  14^7  11   0  1^7^c  56^7  6  27.02  10^2 2335^1 1795^4  178^5    1^7   38
+^3fonze*         ^e   3^7   2   0  1^3^c  60^7  0  26.97   0^2  364^1  397^4   42^5    1^7   13
+^7john_mullins   ^e  22^7  17   5  0^7^c  56^7  5  39.59  13^2 4899^1 2888^4   46^5    0^7    4
+^7s|a cal1brin   ^e   4^7  10   0  0^7^c  28^7  3  49.02   2^2 1048^1 1143^4   10^5    1^7    4
+^7prowler        ^e   4^7  14   1  0^7^c  22^7  2  24.89   4^2 1724^1 2553^4   14^5    1^7    1
+^7spaztik        ^e  11^7  15   3  2^7^c  42^7 12  22.22   2^2 3190^1 2049^4  388^5    0^7   -4
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  76^7  82   9  4  48 32 ^7 35.12  40^216626^113617^4  678^5   15^7  102
+
+
+^4Allied ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7s|a pipe       ^e   8^7  16   5  1^7^c  33^7  2  33.15   3^2 1725^1 1914^4  273^5    0^7   39
+^7s|a briann     ^e  10^7   9   2  2^7^c  52^7  7  33.64   2^2 1570^1 2221^4   86^5    7^7   17
+^7s|a snipercat  ^e  12^7  14   1  1^7^c  46^7  2  21.46   8^2 1606^1 2399^4   14^5    0^7   16
+^7murkey*        ^e  17^7  10   7  0^7^c  62^7  2  40.81   9^2 4068^1 2283^4    0^5    3^7   15
+^7du5t3r         ^e   5^7  11   2  3^7^c  31^7  4  19.72   2^2  932^1 2577^4  191^5    8^7    8
+^7flogzero       ^e  20^7   8   5  1^7^c  71^7  2  32.07  11^2 2808^1 1942^4  154^5    7^7    6
+^7s|a ivysd      ^e   2^7   8   0  0^7^c  20^7  3  20.00   5^2  530^1 1287^4  114^5    0^7    3
+^7sia blazk      ^e   8^7  13   2  1^7^c  38^7  3  31.76   7^2 1190^1 3020^4   82^5    4^7   -1
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  82^7  89  24  9  47 25 ^7 28.60  47^214429^117643^4  914^5   29^7  103
+
+
+
+[skipnotify]
+^3>>> Stats recorded to: ^7stats/Oct.12.2020/225756.mp_beach.txt
+Not recording a demo.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2The enemy is weakened.
+[skipnotify]Server: timelimit changed to 10
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]^0spaztik^7 called a vote.  Voting for: Change map to mp_base
+^4Default spawn side 
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]Vote passed.
+^4Default spawn side 
+Current search path:
+C:\Return to Castle Wolfenstein 1.4\rtcwpro\rtcwpro.pk3 (106 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps1.pk3 (34 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak5.pk3 (77 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak4.pk3 (5 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak3.pk3 (76 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak2.pk3 (3 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak1.pk3 (308 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak0.pk3 (783 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_basement.pk3 (6 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_frostbite.pk3 (99 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_escape2.pk3 (11 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\pak0.pk3 (4775 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\adlernest_b3.pk3 (164 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4/rtcwpro
+C:\Return to Castle Wolfenstein 1.4\main\mp_rend2_shaders0.pk3 (2 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_password2_v1.pk3 (103 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak_kungfugrip.pk3 (208 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps6.pk3 (81 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps5.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps4.pk3 (52 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps3.pk3 (83 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps2.pk3 (47 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps0.pk3 (21 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak01.pk3 (16 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_marketgarden.pk3 (82 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_garage.pk3 (25 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_ctfmultidemo.pk3 (10 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_communique.pk3 (8 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_bin0.pk3 (13 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_bin.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\Zero_k.pk3 (46 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\ufo_homiefix.pk3 (32 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\tundra_rush_beta.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\tj3_final.pk3 (28 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_pacific2.pk3 (22 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_nordic_b2.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_delivery_b1.pk3 (119 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_complex_b1.pk3 (25 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_cipher_b2.pk3 (47 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\supplydepot_b2_fixed.pk3 (213 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump_RLD.pk3 (93 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump5.pk3 (168 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump3.pk3 (179 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump2.pk3 (39 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump1.pk3 (19 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump5.pk3 (67 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump4_v3.pk3 (78 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump3_v2.pk3 (79 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump2.pk3 (68 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump1.pk3 (65 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mml_headshot.pk3 (20 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mml_church_v1.pk3 (79 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\lights.pk3 (51 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\HkJumpz_beta1.pk3 (36 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\dzm_trickjump.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\CTF_BooZZe.pk3 (28 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\brickjump_final.pk3 (9 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\braundorf_b5_rtcw.pk3 (219 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_valhalla2.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_valhalla.pk3 (6 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_badplace.pk3 (21 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4/main
+
+handle 1: rtcwconsole.log
+----------------------
+27407 files in pk3 files
+RE_Shutdown( 0 )
+Hunk_Clear: reset the hunk ok
+----- R_Init -----
+
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: GeForce GTX 1650 SUPER/PCIe/SSE2
+GL_VERSION: 4.6.0 NVIDIA 456.38
+GL_EXTENSIONS: GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_depth_texture GL_ARB_draw_buffers GL_ARB_draw_instanced GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_map_buffer_range GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_shader_objects GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shadow GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_compression GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_mirrored_repeat GL_ARB_texture_non_power_of_two GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_transpose_matrix GL_ARB_vertex_array_object GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_specular_color GL_EXT_shadow_funcs GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KTX_buffer_region GL_NV_blend_square GL_NV_conditional_render GL_NV_copy_depth_to_color GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_explicit_multisample GL_NV_fence GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_gpu_program4 GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program_fp64 GL_NV_half_float GL_NV_light_max_exponent GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_shader_buffer_load GL_NV_texgen_reflection GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_rectangle GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NVX_conditional_render GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum GL_WIN_swap_hint WGL_EXT_swap_control 
+GL_MAX_TEXTURE_SIZE: 32768
+GL_MAX_ACTIVE_TEXTURES_ARB: 4
+
+PIXELFORMAT: color(32-bits) Z(24-bit) stencil(0-bits)
+MODE: -1, 1920 x 1080 fullscreen hz:144
+GAMMA: software w/ 0 overbright bits
+CPU: Intel Pentium III
+rendering primitives: single glDrawElements
+texturemode: GL_LINEAR_MIPMAP_NEAREST
+picmip: 2
+texture bits: 32
+multitexture: enabled
+compiled vertex arrays: enabled
+texenv add: disabled
+compressed textures: enabled
+NV distance fog: disabled
+HACK: using vertex lightmap approximation
+Initializing Shaders
+----- finished R_Init -----
+LOADING... collision map
+[skipnotify]^2*** You have been authorized "referee" status ***
+Type: ^3ref^7 (by itself) for a list of referee commands.
+LOADING... sounds
+voice chat memory size = 3264
+
+.........................
+Initializing Sound Scripts
+...loading 'sound/scripts/cutscene1.sounds'
+...loading 'sound/scripts/cutscene6.sounds'
+...loading 'sound/scripts/cutscene9.sounds'
+...loading 'sound/scripts/cutscene11.sounds'
+...loading 'sound/scripts/cutscene14.sounds'
+...loading 'sound/scripts/cutscene19.sounds'
+...loading 'sound/scripts/escape1.sounds'
+...loading 'sound/scripts/escape2.sounds'
+...loading 'sound/scripts/tram.sounds'
+...loading 'sound/scripts/village1.sounds'
+...loading 'sound/scripts/crypt1.sounds'
+...loading 'sound/scripts/crypt2.sounds'
+...loading 'sound/scripts/church.sounds'
+...loading 'sound/scripts/boss1.sounds'
+...loading 'sound/scripts/forest.sounds'
+...loading 'sound/scripts/rocket.sounds'
+...loading 'sound/scripts/assault.sounds'
+...loading 'sound/scripts/sfm.sounds'
+...loading 'sound/scripts/factory.sounds'
+...loading 'sound/scripts/trainyard.sounds'
+...loading 'sound/scripts/swf.sounds'
+...loading 'sound/scripts/norway.sounds'
+...loading 'sound/scripts/xlabs.sounds'
+...loading 'sound/scripts/boss2.sounds'
+...loading 'sound/scripts/dam.sounds'
+...loading 'sound/scripts/village2.sounds'
+...loading 'sound/scripts/chateau.sounds'
+...loading 'sound/scripts/dark.sounds'
+...loading 'sound/scripts/castle.sounds'
+...loading 'sound/scripts/end.sounds'
+...loading 'sound/scripts/ai.sounds'
+...loading 'sound/scripts/general.sounds'
+...loading 'sound/scripts/combat.sounds'
+...loading 'sound/scripts/movers.sounds'
+done.
+LOADING... graphics
+LOADING... maps/mp_base.bsp
+stitched 9 LoD cracks
+...loaded 10150 faces, 287 meshes, 163 trisurfs, 209 flares
+LOADING... entities
+LOADING... game media
+LOADING...  - textures
+LOADING...  - models
+LOADING...  - weapons
+LOADING...  - items
+LOADING...  - inline models
+LOADING...  - server models
+LOADING...  - particles
+LOADING...  - game media done
+LOADING... flamechunks
+LOADING... clients
+LOADING... S|A Ivysd
+LOADING... murkey*
+LOADING... fonze*
+LOADING... ^>John_Mullins
+LOADING... mooshu
+LOADING... SIA Blazk
+LOADING... S|A Pipe
+LOADING... spaztik
+LOADING... Du5t3r
+LOADING... S|A v1RKES
+LOADING... S|A Snipercat
+LOADING... prowler
+LOADING... Flogzero
+LOADING... S|A BrianN
+LOADING... S|A CaL1bRin
+LOADING... Tank Spank
+UI menu load time = 13 milli seconds
+CL_InitCGame:  3.20 seconds
+5 msec to draw all images
+Com_TouchMemory: 0 msec
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^7Spawning^0:^3LT/MP-40 ^1(AXIS)
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Zone 03): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Zone 03): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]^0spaztik^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7CaL1bRin^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Zone 03): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Zone 03): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 killed himself.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7CaL1bRin^7
+[skipnotify]^0spaztik^7 ^1WAS KILLED BY TEAMMATE^7 ^0p^1r^7owl^4e^0r^7
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+^4Default spawn side 
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Zone 03): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Zone 03): ^5^7GRANADA
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^0spaztik^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7CaL1bRin^7
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]^1S^7I^4A ^7Blazk^7 killed himself.
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^J|^kA v1RKES^7
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]mooshu^7: ^2why is ur ping ass everywhere brainn?
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 01): ^5^7* inge.smg
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 killed himself.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2HAWAII
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^1S^7I^4A ^7Blazk^7: ^2^1L^2o^3O^4L^0!
+[skipnotify]^1S^J|^kA v1RKES^7: ^2^0:_D
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]*** ^3INFO: ^5All players are now ready!
+recording to demos/2020-10-12/225933-fonze-mp_base.dm_60.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: ^1S^7|^4A ^7Pipe^7 ^3(unknown): ^2YEE-HAW!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^7Spawning^0:^3LT/MP-40 ^1(AXIS)
+^5PunkBuster Client: No Master Query Sent - DNS has not yet resolved for ID2.EVENBALANCE.COM
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Axis Deployment): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Axis Deployment): ^5^7GRANADA
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2aw mane
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 killed himself.
+[skipnotify]: mooshu ^3(Axis Deployment): ^2Sorry.
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2be patient
+[skipnotify]: ^0murkey^1* ^3(unknown): ^2Yeah!
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hi.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Radar 02): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 02): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Inner Compound): ^5^7GRANADA
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Inner Compound): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Inner Compound): ^5Fire in the hole!
+[skipnotify]^0murkey^1*^7 was exploded by ^1S^7|^4A ^7CaL1bRin^7's grenade
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was exploded by ^1S^7|^4A ^7CaL1bRin^7's grenade
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was exploded by ^1S^7|^4A ^7CaL1bRin^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2perro culiao
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^1S^7I^4A ^7Blazk^7 was exploded by ^0spaztik^7's grenade
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Inner Compound): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Inner Compound): ^5^7GRANADA
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Inner Compound): ^5Sorry.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hi.
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Inner Compound): ^2Great shot.
+[skipnotify]^0spaztik^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's MP40
+[skipnotify]^0Flogzero^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]: (^0fonze^1*)^3(Northeast Tower): ^5I need ammo!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 02): ^5I need backup!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 01): ^5I'm a lieutenant.
+[skipnotify]^0murkey^1*^7 killed himself.
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 02): ^52
+[skipnotify]^1S^7I^4A ^7Blazk^7 was shelled by ^1S^J|^kA v1RKES^7's artillery support
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]mooshu^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 02): ^5Incoming!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 02): ^5Incoming!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 02): ^5Incoming!
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hi.
+[skipnotify]^0Flogzero^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Zone 03): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Zone 03): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was exploded by ^0spaztik^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Yeah!
+[skipnotify]eternal^7 disconnected
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Radar 02): ^5Fire in the hole!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Affirmative.
+[skipnotify]^1Tank Spank^7 joined the ^4Allied ^7team.
+[skipnotify]^0Flogzero^7 killed himself.
+[skipnotify]^0p^1r^7owl^4e^0r^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the South Radar [02]! 
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0fonze^1*^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]: (^0fonze^1*)^3(Northeast Tower): ^5Incoming!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northeast Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 02): ^5^7GRANADA
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by mooshu^7's Luger 9mm
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^0Du5^4t3r^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]*** ^3INFO: ^3Axis defused dynamite near the South Radar [02]! 
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2YEE-HAW!
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Northeast Tower): ^5Incoming!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Northeast Tower): ^5Incoming!
+[skipnotify](^1S^J|^kA v1RKES^7) (Northeast Tower): ^5net
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Radar 02): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]^0murkey^1*^7 was killed by mooshu^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Radar 02): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Radar 02): ^5Fire in the hole!
+[skipnotify]: (^0spaztik)^3(Northeast Tower): ^5Incoming!
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 02): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 02): ^5^7GRANADA
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1Tank Spank^7's Thompson
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by ^>Joh^4n_M^dull^uins^7's support fire
+[skipnotify]^1Tank Spank^7 was blasted by ^>Joh^4n_M^dull^uins^7's support fire
+[skipnotify]: mooshu ^3(Northeast Tower): ^2Great shot.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Negative.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^0spaztik ^3(Zone 03): ^2Yes!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Fire in the hole!
+[skipnotify]: mooshu ^3(Northeast Tower): ^2YES!
+[skipnotify]^0spaztik^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Radar 02): ^2Affirmative.
+[skipnotify]: (^0spaztik)^3(Zone 03): ^5Medic!
+[skipnotify]: (^0spaztik)^3(Zone 03): ^5Medic!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]: (^0spaztik)^3(Zone 03): ^5Medic!
+[skipnotify]: (^0spaztik)^3(Zone 03): ^5Medic!
+[skipnotify]mooshu^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify](^0spaztik^7) (Zone 03): ^5mg
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Inner Compound): ^2Bye.
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Inner Compound): ^2Bye.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Bye.
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's Thompson
+[skipnotify](mooshu^7) (Radar 01): ^5mek tunnel
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Incoming!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Incoming!
+[skipnotify]^0murkey^1*^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the South Radar [02]! 
+[skipnotify]^0fonze^1*^7 was killed by ^0Flogzero^7's .45ACP 1911
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's MP40
+[skipnotify]^0Flogzero^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 01): ^5I'm a lieutenant.
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Zone 03): ^5Sorry.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 02): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 02): ^5^7GRANADA
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 01): ^5Medic!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by mooshu^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 was exploded by ^1S^7I^4A ^7Blazk^7's grenade
+[skipnotify](^1S^J|^kA v1RKES^7) (Northeast Tower): ^5^aGranada^3!!!
+[skipnotify]^0Du5^4t3r^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]^1S^J|^kA v1RKES^7 was exploded by ^1S^7|^4A ^7Snipercat^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2WOOHOOO!
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0fonze^1*^7's Luger 9mm
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]*** ^3INFO: ^5Allied team has disabled the South Radar!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^0murkey^1*^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Pipe^7^7's .45ACP 1911
+[skipnotify]: (^0spaztik)^3(Northeast Tower): ^5Medic!
+[skipnotify]: (^0spaztik)^3(Northeast Tower): ^5Medic!
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]^1Tank Spank^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Woohooo!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northeast Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Northeast Tower): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7: ^2^0L^1o^3o^2o^5o^6o^0L^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northeast Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Northeast Tower): ^5^7GRANADA
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Snipercat^7's Thompson
+[skipnotify]: (mooshu)^3(Radar 01): ^5Medic!
+[skipnotify](^1S^J|^kA v1RKES^7) (Radar 01): ^5^aGranada^3!!!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was exploded by ^1S^7|^4A ^7CaL1bRin^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2WOOHOOO!
+[skipnotify]^0Du5^4t3r^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0spaztik^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify](mooshu^7) (Radar 01): ^5TUNNEL HARD
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7|^4A ^7Snipercat^7's Thompson
+[skipnotify]eternal^7 joined the ^1Axis ^7team.
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Axis Deployment): ^5Sorry.
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 01): ^5You're welcome.
+[skipnotify]mooshu^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^0fonze^1*^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's .45ACP 1911
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Zone 03): ^2Negative.
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^0Flogzero^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]: mooshu ^3(Northeast Tower): ^2Great shot.
+[skipnotify]^0spaztik^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]: ^0spaztik ^3(Radar 02): ^2Negative.
+[skipnotify]: ^0spaztik ^3(Radar 02): ^2Negative.
+[skipnotify]: ^0spaztik ^3(Radar 02): ^2Negative.
+[skipnotify]: ^0spaztik ^3(Radar 02): ^2Negative.
+[skipnotify]: ^0Du5^4t3r ^3(unknown): ^2Affirmative.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5I'm an engineer.
+[skipnotify]eternal^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]^0murkey^1*^7 was killed by ^1S^J|^kA v1RKES^7's Luger 9mm
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify](^0fonze^1*^7) (Radar 01): ^5ETERNAL COMMS
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Fire in the hole!
+[skipnotify]eternal^7: ^2how do i c hange the font
+[skipnotify]^0Du5^4t3r^7 was blasted by ^1S^J|^kA v1RKES^7's support fire
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Zone 03): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Zone 03): ^5^7GRANADA
+[skipnotify](^1S^J|^kA v1RKES^7) (Radar 01): ^5^aGranada^3!!!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^0fonze^1*^7 was blasted by ^1Tank Spank^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Snipercat^7's Thompson
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Radar 01): ^5Fire in the hole!
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^1Tank Spank^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]eternal^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0p^1r^7owl^4e^0r^7's Luger 9mm
+[skipnotify]^0spaztik^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's .45ACP 1911
+[skipnotify]^0Flogzero^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify](eternal^7) (Radar 01): ^5^js^kn^li^mp^ne^or^p.
+[skipnotify]^0murkey^1*^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^aGranada^3!!!
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Pipe^7^7's Thompson
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the North Radar [01]! 
+[skipnotify]^0spaztik^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^0fonze^1*^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0spaztik^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^0murkey^1*^7 obliterated himself.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by ^1S^J|^kA v1RKES^7's support fire
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5We need an engineer!
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 fired-for-effect on himself.
+[skipnotify]eternal^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify](mooshu^7) (Radar 01): ^5:<
+[skipnotify]*** ^3INFO: ^3Axis defused dynamite near the North Radar [01]! 
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Radar 01): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Zone 03): ^2YES!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 01): ^5^7GRANADA
+[skipnotify](eternal^7) (Axis Deployment): ^5^jm^ke^ld^mi^nc^ox^pD
+[skipnotify]mooshu^7 killed himself.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^0Du5^4t3r^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Affirmative.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0fonze^1*^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by eternal^7's MP40
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]^0Du5^4t3r^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0Flogzero^7 was killed by mooshu^7's MP40
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5Medic!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 mooshu^7
+[skipnotify]^0spaztik^7 was blasted by ^1Tank Spank^7's Panzerfaust
+[skipnotify]^1S^J|^kA v1RKES^7 was blasted by ^1Tank Spank^7's Panzerfaust
+[skipnotify]: ^0spaztik ^3(Radar 01): ^2Hello.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5Danke.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 01): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^0p^1r^7owl^4e^0r^7 was exploded by ^1Tank Spank^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Snipercat^7's Thompson
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0Flogzero^7 was killed by ^0spaztik^7's Luger 9mm
+[skipnotify](^1S^J|^kA v1RKES^7) (Axis Deployment): ^5^aGranada^3!!!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^0murkey^1*^7 killed himself.
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2xD?
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^J|^kA v1RKES^7
+[skipnotify]^1S^J|^kA v1RKES^7 killed himself.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 01): ^5^7GRANADA
+[skipnotify]^0spaztik^7 vaporized himself.
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Axis Deployment): ^5Fire in the hole!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+[skipnotify]: ^1S^7I^4A ^7Blazk ^3(unknown): ^2Negative.
+[skipnotify]eternal^7 was killed by ^1S^7|^4A ^7Pipe^7^7's Thompson
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Incoming!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Incoming!
+[skipnotify]^0Du5^4t3r^7 was killed by mooshu^7's MP40
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the North Radar [01]! 
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]^0murkey^1*^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^3(^1Ingeniero^3)
+[skipnotify]mooshu^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Flogzero^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2YEE-HAW!
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Yeah!
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the North Radar [01]! 
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Negative.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^aGranada^3!!!
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1Tank Spank^7
+[skipnotify]^0murkey^1*^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^0Flogzero^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]*** ^3INFO: ^5Allied team has disabled the North Radar!
+[skipnotify]^0spaztik^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]>>> ^3Objective reached at 8:07 (original: 10:00)
+
+^3>>> Map: ^3mp_base
+
+^7Overall stats for: ^z^0fonze^1* ^7(^21^7 Round)
+
+Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+-------------------------------------------------
+^zKnife    : ^7  0.0 ^5   0/20   ^2    0 ^1     0
+^zLuger    : ^7 28.6 ^5   2/7    ^2    1 ^1     0 ^3        0
+^zColt     :                 ^2    0 ^1     1 ^3        0
+^zMP-40    : ^7 23.5 ^5  82/349  ^2    8 ^1     0 ^3        8
+^zThompson :                 ^2    0 ^1     4 ^3        0
+^zPanzer   :                 ^2    0 ^1     1 ^3        0
+^zGrenade  : ^7  0.0 ^5   0/2    ^2    0 ^1     0
+^zSyringe  : ^7 80.0 ^5   8/10   ^2    0 ^1     0
+
+^zDamage Given: ^71472    ^zTeam Damage : ^7149
+^zDamage Recvd: ^71574    ^zBodies Gibbed: ^77 
+
+Wrote screenshots/2020-10-12/230752-fonze-mp_base.jpg
+
+Mod: RtcwPro 1.0 beta 
+^7Server: RTCWCHILE.COM ^1S^7|^4A  
+^7Time: ^703:07:49 ^d(^713 Oct 2020^d)
+
+^1Axis ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^3fonze*         ^e   9^7   7   0  1^3^c  56^7  7  23.60   8^2 1472^1 1574^4  149^5    8^7   23
+^7s|a v1rkes     ^e  11^7  13   1  1^7^c  45^7  7  18.34   4^2 1775^1 1563^4  431^5    0^7   20
+^7prowler        ^e  11^7   5   1  0^7^c  68^7  6  25.50   5^2 1696^1 1825^4   14^5    5^7   19
+^7s|a cal1brin   ^e   6^7  10   0  0^7^c  37^7  0  23.71   5^2 1384^1 1234^4   29^5    0^7   16
+^7mooshu         ^e   5^7   9   1  1^7^c  35^7  2  28.39   3^2 1152^1 1148^4   14^5    4^7    8
+^7eternal        ^e   1^7   6   0  0^7^c  14^7  0  15.00   3^2  342^1 1048^4    0^5    2^7    5
+^7john_mullins   ^e  23^7  15   4  6^7^c  60^7 12  28.32   8^2 4849^1 2066^4 1373^5    0^7   -4
+^7spaztik        ^e   9^7  14   4  3^7^c  39^7  9  66.67   1^2 2538^1 1747^4  466^5    0^7  -13
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  75^7  79  11 12  48 43 ^7 25.13  37^215208^112205^4 2476^5   19^7   74
+
+
+^4Allied ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7murkey*        ^e  20^7  11   2  2^7^c  64^7  6  33.00  17^2 3114^1 2069^4  470^5    1^7   16
+^7flogzero       ^e  11^7   8   1  2^7^c  57^7  2  30.42   9^2 2232^1 2064^4   54^5    5^7   15
+^7s|a briann     ^e   8^7   9   0  0^7^c  47^7  2  35.38   3^2 1374^1 2605^4    0^5    3^7   15
+^7s|a snipercat  ^e   5^7  10   0  2^7^c  33^7  0  22.46   5^2 1294^1 1546^4  313^5    0^7   13
+^7s|a pipe       ^e   3^7   8   0  2^7^c  27^7  0  34.72   0^2  475^1 1627^4  165^5    0^7   12
+^7du5t3r         ^e   1^7   9   0  0^7^c  10^7  0  21.34   2^2  694^1 1723^4    0^5    5^7   12
+^7s|a ivysd      ^e   6^7  11   0  1^7^c  35^7  1  21.05   1^2  750^1 1239^4  129^5    0^7    9
+^7tank spank     ^e   6^7   6   0  0^7^c  50^7  4  26.42   0^2 1385^1  786^4   18^5    1^7    9
+^7sia blazk      ^e   7^7  12   0  0^7^c  36^7  0  22.53   1^2  887^1 1549^4    0^5    0^7    7
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  67^7  84   3  9  44 15 ^7 28.31  38^212205^115208^4 1149^5   15^7  108
+
+
+
+[skipnotify]
+^3>>> Stats recorded to: ^7stats/Oct.12.2020/230752.mp_base.txt
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Radar 01): ^2YES!
+[skipnotify]eternal^7: ^2vod
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2The enemy is weakened.
+Stopped demo.
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2WOOHOOO!
+[skipnotify]Server: timelimit changed to 8.128333
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40^4Default spawn side 
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Allied Deployment): ^5^7Spawning^0:^3LT/MP-40 ^1(AXIS)
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (West Bridge): ^5^7Spawning^0:^3LT/MP-40 ^4(ALLIES)
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Allied Deployment): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^0Flogzero^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+]/PLAYERS
+[skipnotify]
+^3Status^1   : ^3ID^1 : ^3Player                    Nudge  Rate  MaxPkts  Snaps
+[skipnotify]^1---------------------------------------------------------------------^7
+[skipnotify]^3(READY)^1  :^1X^7 0 ^1:^7 s|a ivysd                 ^7    0 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^7 1 ^1:^7 murkey*                   ^7    0 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^4L^7 2 ^1:^7 fonze*                    ^7  -10 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^4L^7 3 ^1:^7 ^>john_mullins            ^7  -15 25000      100     40  ^3
+[skipnotify]NOTREADY^1 :^4L^7 4 ^1:^7 mooshu                    ^7  -20 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^7 5 ^1:^7 sia blazk                 ^7  -20 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^7 6 ^1:^7 s|a pipe                  ^7  -10 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^4L^7 7 ^1:^7 spaztik                   ^7  -11 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^7 8 ^1:^7 du5t3r                    ^7  -10 25000      100     40  ^3
+[skipnotify]NOTREADY^1 :^4L^7 9 ^1:^7 s|a v1rkes                ^7  -10 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^710 ^1:^7 s|a snipercat             ^7    0 25000      100     40  ^3
+[skipnotify]NOTREADY^1 :^4L^711 ^1:^7 prowler                   ^7  -10 25000       30     40  ^3
+[skipnotify]^3(READY)^1  :^1X^712 ^1:^7 flogzero                  ^7  -20 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^713 ^1:^7 s|a briann                ^7    0 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^4L^714 ^1:^7 s|a cal1brin              ^7  -10 25000      100     40  ^3
+[skipnotify]^3(READY)^1  :^1X^715 ^1:^7 tank spank                ^7    0 25000       30     20  ^3
+[skipnotify]NOTREADY^1 :^4L^716 ^1:^7 eternal                   ^7    0 25000       30     40  ^3
+[skipnotify]
+^317^7 total players
+
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^0murkey^1*^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1Tank Spank^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Allied Deployment): ^5I'm an engineer.
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^0Flogzero^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7I^4A ^7Blazk^7 killed himself.
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2The enemy is weakened.
+[skipnotify](mooshu^7) (Northwest Courtyard): ^5^1[^7Spawning^1:^7Medic^1]^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2The enemy is weakened.
+[skipnotify]mooshu^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]^0Flogzero^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (West Bridge): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 fell to his death.
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^0Flogzero^7: ^2rdy
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 mooshu^7
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0Flogzero^7
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(North Tunnel): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (North Tunnel): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 mooshu^7
+[skipnotify]*** ^3INFO: ^5All players are now ready!
+recording to demos/2020-10-12/230905-fonze-mp_base.dm_60.
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 mooshu^7
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northwest Courtyard): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Northwest Courtyard): ^5^7GRANADA
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify]^1S^J|^kA v1RKES^7 was exploded by ^0Flogzero^7's grenade
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7CaL1bRin^7
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]: (^1S^J|^kA v1RKES)^3(Allied Deployment): ^5I'm an engineer.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify](^1S^J|^kA v1RKES^7) (Inner Compound): ^5^aGranada^3!!!
+[skipnotify](^1S^J|^kA v1RKES^7) (Inner Compound): ^5^aGranada^3!!!
+[skipnotify]^0Flogzero^7 killed himself.
+[skipnotify]^1Tank Spank^7 vaporized himself.
+[skipnotify]^0fonze^1*^7 was blasted by ^1Tank Spank^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]^1S^J|^kA v1RKES^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Inner Compound): ^5Incoming!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Inner Compound): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Inner Compound): ^5^7GRANADA
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^1S^J|^kA v1RKES^7's Thompson
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Inner Compound): ^2Bye.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by mooshu^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^0murkey^1*^7 was exploded by ^0p^1r^7owl^4e^0r^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Yes!
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the South Radar [02]! 
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 02): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 02): ^5^7GRANADA
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by mooshu^7's .45ACP 1911
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Pipe^7^7's MP40
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was exploded by ^1S^7|^4A ^7CaL1bRin^7's grenade
+[skipnotify](^1S^J|^kA v1RKES^7) (North Tunnel): ^5^aGranada^3!!!
+[skipnotify]^1Tank Spank^7 was exploded by ^1S^7|^4A ^7CaL1bRin^7's grenade
+[skipnotify]mooshu^7 was killed by ^0Flogzero^7's MP40
+[skipnotify]^0fonze^1*^7 was killed by ^0Flogzero^7's MP40
+[skipnotify]: ^0fonze^1* ^3(Northeast Tower): ^2Great shot.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]*** ^3INFO: ^5Allied team has disabled the South Radar!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 dynamited himself to pieces.
+[skipnotify]^0Flogzero^7 was exploded by ^1S^J|^kA v1RKES^7's grenade
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]^0Du5^4t3r^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^0Du5^4t3r ^3(unknown): ^2Negative.
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]: ^0spaztik ^3(Zone 03): ^2WOOHOOO!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by mooshu^7's Thompson
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^aGranada^3!!!
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]mooshu^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Luger 9mm
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0Flogzero^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northwest Courtyard): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (North Tunnel): ^5^7GRANADA
+[skipnotify](^0p^1r^7owl^4e^0r^7) (Radar 01): ^5^0]-[^7Spawn ^1As ^7Engineer^0]-[
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify]^0Du5^4t3r^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 fell to his death.
+[skipnotify]: ^1S^7|^4A ^7Pipe^7 ^3(unknown): ^2Great shot.
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Zone 03): ^2WOOHOOO!
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]^1Tank Spank^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^0Flogzero^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify](^1S^J|^kA v1RKES^7) (Allied Deployment): ^5^aGranada^3!!!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Pipe^7^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7) (North Tunnel): ^5^aGranada^3!!!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^0murkey^1*^7 was exploded by ^0p^1r^7owl^4e^0r^7's grenade
+[skipnotify]^0fonze^1*^7 was killed by ^1S^7|^4A ^7Pipe^7^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]: (^0fonze^1*)^3(Radar 01): ^5Incoming!
+[skipnotify]^0Du5^4t3r^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]: mooshu ^3(Inner Compound): ^2Hi.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^1S^J|^kA v1RKES^7's Thompson
+[skipnotify]: ^0spaztik ^3(Inner Compound): ^2Hi.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^>Joh^4n_M^dull^uins^7 was exploded by ^1S^7|^4A ^7Pipe^7^7's grenade
+[skipnotify]^0Flogzero^7 killed himself.
+[skipnotify](^1S^J|^kA v1RKES^7) (Radar 01): ^5^aGranada^3!!!
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]^0fonze^1*^7 was blasted by ^1Tank Spank^7's Panzerfaust
+[skipnotify]^0spaztik^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by mooshu^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by mooshu^7's Thompson
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Zone 03): ^5Fire in the hole!
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Allied Deployment): ^5Move!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify](^1S^J|^kA v1RKES^7) (North Tunnel): ^5^aGranada^3!!!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Zone 03): ^5Fire in the hole!
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: (^0fonze^1*)^3(Inner Compound): ^5Fire in the hole!
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]mooshu^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was exploded by mooshu^7's grenade
+[skipnotify]^0murkey^1*^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hello.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0spaztik^7 was killed by ^0Flogzero^7's MP40
+[skipnotify]: ^0spaztik ^3(Zone 03): ^2YEE-HAW!
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^3(^1Medico^3)
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Flogzero^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^3(^1Lt-^0MP40^3)
+[skipnotify]eternal^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2YES!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: (mooshu)^3(West Bridge): ^5You're welcome.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northeast Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Northeast Tower): ^5^7GRANADA
+[skipnotify]^>Joh^4n_M^dull^uins^7 was shelled by ^1S^7|^4A ^7Ivys^6d^7's artillery support
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hey!
+[skipnotify]^0fonze^1*^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Flogzero^7's MP40
+[skipnotify]: (^0fonze^1*)^3(Northeast Tower): ^5I need ammo!
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was exploded by mooshu^7's grenade
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^J|^kA v1RKES^7
+[skipnotify]^1Tank Spank^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0Du5^4t3r^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^aGranada^3!!!
+[skipnotify]: ^1Tank Spank ^3(unknown): ^2Great shot.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]mooshu^7 was killed by ^0murkey^1*^7's Luger 9mm
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify](eternal^7) (Inner Compound): ^5^jpa^kn^lz^mer^nfa^ous^pt
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Inner Compound): ^5Lets go.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: (mooshu)^3(Inner Compound): ^5Affirmative.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 killed himself.
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]^0Flogzero^7 was killed by eternal^7's Thompson
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7's Luger 9mm
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: (eternal)^3(Northeast Tower): ^5Medic!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northeast Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Northeast Tower): ^5^7GRANADA
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Zone 03): ^5Fire in the hole!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0murkey^1*^7 was killed by mooshu^7's Thompson
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^J|^kA v1RKES^7
+[skipnotify]^0spaztik^7: ^2are you the REAL tank spank?
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]: (eternal)^3(Radar 01): ^5Thanks.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]mooshu^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0Du5^4t3r^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^119^0|^149
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^119^0|^149
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^119^0|^149
+[skipnotify]: mooshu ^3(Northeast Tower): ^2Great shot.
+[skipnotify]eternal^7 was blasted by ^1Tank Spank^7's Panzerfaust
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]^1S^7|^4A ^7Snipercat^7 fell to his death.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0Du5^4t3r^7 killed himself.
+[skipnotify]^1Tank Spank^7: ^2yep
+[skipnotify]^0Flogzero^7 killed himself.
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^119^0|^149
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Northeast Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Northeast Tower): ^5^7GRANADA
+[skipnotify]mooshu^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^>Joh^4n_M^dull^uins^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^120^0|^150
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]^1Tank Spank^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0murkey^1*^7 was killed by ^0fonze^1*^7's .45ACP 1911
+[skipnotify]^0fonze^1*^7 was killed by ^0murkey^1*^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hey!
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was exploded by ^0spaztik^7's grenade
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0p^1r^7owl^4e^0r^7's Thompson
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^120^0|^150
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7) (Zone 03): ^5^aGranada^3!!!
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^0Du5^4t3r^7 was exploded by ^0spaztik^7's grenade
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1Tank Spank^7: ^2nice to see you spaz
+[skipnotify]^0murkey^1*^7 was killed by eternal^7's .45ACP 1911
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]: ^0spaztik ^3(Northeast Tower): ^2Hi.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 joined the ^3spectators^7.
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0p^1r^7owl^4e^0r^7's Thompson
+[skipnotify]^1Tank Spank^7 was killed by ^1S^J|^kA v1RKES^7's .45ACP 1911
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Zone 03): ^2Hi.
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Flogzero^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^120^0|^150
+[skipnotify](^>Joh^4n_M^dull^uins^7) (North Tunnel): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify](^1S^J|^kA v1RKES^7) (Axis Deployment): ^5^aGranada^3!!!
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0spaztik^7
+[skipnotify]^1Tank Spank^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0murkey^1*^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by ^1S^J|^kA v1RKES^7's support fire
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]^0Flogzero^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 joined the ^1Axis ^7team.
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0Du5^4t3r^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]*** ^3INFO: ^3Dynamite planted near the North Radar [01]! 
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Negative.
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Radar 01): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Radar 01): ^5^7GRANADA
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Zone 03): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Zone 03): ^5Fire in the hole!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1Tank Spank^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by mooshu^7's Thompson
+[skipnotify]^0murkey^1*^7 was killed by eternal^7's .45ACP 1911
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0spaztik^7's .45ACP 1911
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]mooshu^7 was exploded by ^1S^7|^4A ^7Bria^1n^4N^7^7's grenade
+[skipnotify]^0p^1r^7owl^4e^0r^7 was exploded by ^1S^7|^4A ^7Bria^1n^4N^7^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2YES!
+[skipnotify]^0fonze^1*^7 was killed by ^0Flogzero^7's MP40
+[skipnotify]: mooshu ^3(Zone 03): ^2Oops.
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^120^0|^150
+[skipnotify]eternal^7 was killed by ^0Du5^4t3r^7's MP40
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]*** ^3INFO: ^5Allied team has disabled the North Radar!
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]>>> ^3Clock set to: 8:07
+
+^3>>> Map: ^3mp_base
+
+^7Overall stats for: ^z^0fonze^1* ^7(^22^7 Rounds)
+
+Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+-------------------------------------------------
+^zKnife    : ^7  0.0 ^5   0/28   ^2    0 ^1     0
+^zLuger    : ^7 28.6 ^5   2/7    ^2    1 ^1     0 ^3        0
+^zColt     : ^7 30.0 ^5   3/10   ^2    1 ^1     1 ^3        1
+^zMP-40    : ^7 23.5 ^5  82/349  ^2    8 ^1     3 ^3        8
+^zThompson : ^7 24.7 ^5  48/194  ^2    4 ^1     4 ^3        3
+^zPanzer   :                 ^2    0 ^1     4 ^3        0
+^zGrenade  : ^7 16.7 ^5   1/6    ^2    0 ^1     1
+^zSyringe  : ^7 84.6 ^5  11/13   ^2    0 ^1     0
+
+^zDamage Given: ^72556    ^zTeam Damage : ^7320
+^zDamage Recvd: ^73412    ^zBodies Gibbed: ^711 
+
+Wrote screenshots/2020-10-12/231624-fonze-mp_base.jpg
+
+Mod: RtcwPro 1.0 beta 
+^7Server: RTCWCHILE.COM ^1S^7|^4A  
+^7Time: ^703:16:21 ^d(^713 Oct 2020^d)
+
+^1Axis ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7s|a briann     ^e  18^7  15   0  1^7^c  54^7  4  30.02   8^2 2987^1 3840^4   78^5    8^7   19
+^7murkey*        ^e  35^7  20   2  3^7^c  63^7 17  29.56  21^2 6721^1 3352^4  726^5    1^7   15
+^7sia blazk      ^e  14^7  21   0  1^7^c  40^7  0  27.45   5^2 1829^1 3627^4   28^5    2^7   12
+^7s|a snipercat  ^e   9^7  19   0  2^7^c  32^7  2  22.27   7^2 2210^1 2970^4  369^5    0^7   12
+^7du5t3r         ^e   5^7  17   1  0^7^c  22^7  4  20.09   7^2 1616^1 3692^4    0^5    9^7   11
+^7s|a ivysd      ^e   8^7  20   0  1^7^c  28^7  1  24.45   1^2 1386^1 3090^4  227^5    0^7    8
+^7flogzero       ^e  19^7  12   4  2^7^c  61^7  4  28.85  15^2 3648^1 3543^4   54^5    8^7    7
+^7tank spank     ^e   9^7  17   0  1^7^c  34^7  8  18.99   0^2 2266^1 2755^4  250^5    1^7    1
+^7s|a pipe       ^e   0^7   2   0  0^7^c   0^7  0   0.00   0^2    0^1  332^4    0^5    0^7    0
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e 117^7 143   7 11  45 40 ^7 26.36  64^222663^127201^4 1732^5   29^7   85
+
+
+^4Allied ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7mooshu         ^e  14^7  19   1  1^7^c  42^7  6  30.15   3^2 2430^1 3047^4   14^5    7^7   15
+^7s|a cal1brin   ^e  14^7  17   0  1^7^c  45^7  5  26.65   7^2 2723^1 1759^4  414^5    0^7   15
+^7prowler        ^e  15^7  12   1  0^7^c  55^7  7  25.63   6^2 2725^1 2904^4   14^5    7^7    9
+^7eternal        ^e  10^7  12   0  0^7^c  45^7  4  17.95   7^2 2062^1 2435^4    0^5    2^7    9
+^3fonze*         ^e  14^7  14   0  2^3^c  50^7 11  24.29  12^2 2556^1 3412^4  320^5   11^7    8
+^7s|a v1rkes     ^e  17^7  23   1  3^7^c  42^7  7  21.66   7^2 2967^1 2698^4  770^5    0^7    3
+^7spaztik        ^e  27^7  18   8  5^7^c  60^7 20  52.27   1^2 6711^1 2664^4  710^5    0^7    0
+^7john_mullins   ^e  36^7  28   9  7^7^c  56^7 18  28.19  16^2 8539^1 4544^4 1543^5    0^7   -5
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e 147^7 143  20 19  50 78 ^7 26.16  59^230713^123463^4 3785^5   27^7   54
+
+
+
+[skipnotify]
+^3>>> Stats recorded to: ^7stats/Oct.12.2020/231624.mp_base.txt
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(West Bridge): ^2The enemy is weakened.
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(West Bridge): ^2The enemy is weakened.
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(West Bridge): ^2The enemy is weakened.
+[skipnotify]: ^1S^7|^4A ^7CaL1bRin ^3(Radar 01): ^2YEE-HAW!
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2The enemy is weakened.
+[skipnotify]Server: timelimit changed to 10
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]^0spaztik^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^0Flogzero^7: ^2ggs
+[skipnotify]^1S^J|^kA v1RKES^7: ^2wng demand mp tram
+[skipnotify]^1S^J|^kA v1RKES^7: ^2wang
+[skipnotify]^0Flogzero^7 disconnected
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2aww man
+[skipnotify]^0spaztik^7: ^2ggs
+[skipnotify]^>Joh^4n_M^dull^uins^7 called a vote.  Voting for: Change map to mp_tram
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^1Tank Spank^7: ^2only one map here? no beach huh
+[skipnotify]^0spaztik^7 dove on his own grenade.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 dove on his own grenade.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+^4Default spawn side 
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2f1
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7CaL1bRin^7
+[skipnotify]^0murkey^1*^7: ^2BEACH BANNED
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Allied Deployment): ^2Affirmative.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]Vote cast.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7: ^2f1
+[skipnotify]^0fonze^1*^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+[skipnotify]^0murkey^1*^7 was killed by ^0p^1r^7owl^4e^0r^7's Thompson
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7: ^2ass
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0p^1r^7owl^4e^0r^7's Thompson
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2mp tram xD
+[skipnotify]^0Du5^4t3r^7 killed himself.
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7: ^2ault
+[skipnotify]^0murkey^1*^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1Tank Spank^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]Vote failed.
+[skipnotify]^1S^J|^kA v1RKES^7 called a vote.  Voting for: Change map to mp_village
+[skipnotify]^1S^7I^4A ^7Blazk^7: ^2vill
+[skipnotify]^0spaztik^7 drowned.
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2assult
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]mooshu^7: ^2KUNGFU GRIP
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]: ^1S^7|^4A ^7CaL1bRin ^3(Inner Compound): ^2Affirmative.
+[skipnotify]^1S^7I^4A ^7Blazk^7: ^2^1L^2o^3O^4L^0!
+^4Default spawn side 
+Current search path:
+C:\Return to Castle Wolfenstein 1.4\rtcwpro\rtcwpro.pk3 (106 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps1.pk3 (34 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak5.pk3 (77 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak4.pk3 (5 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak3.pk3 (76 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak2.pk3 (3 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak1.pk3 (308 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak0.pk3 (783 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_basement.pk3 (6 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_frostbite.pk3 (99 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_escape2.pk3 (11 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\pak0.pk3 (4775 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\adlernest_b3.pk3 (164 files)
+    on the pure list
+C:\Return to Castle Wolfenstein 1.4/rtcwpro
+C:\Return to Castle Wolfenstein 1.4\main\mp_rend2_shaders0.pk3 (2 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_password2_v1.pk3 (103 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak_kungfugrip.pk3 (208 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps6.pk3 (81 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps5.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps4.pk3 (52 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps3.pk3 (83 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps2.pk3 (47 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pakmaps0.pk3 (21 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_pak01.pk3 (16 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_marketgarden.pk3 (82 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_garage.pk3 (25 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_ctfmultidemo.pk3 (10 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_communique.pk3 (8 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_bin0.pk3 (13 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mp_bin.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\Zero_k.pk3 (46 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\ufo_homiefix.pk3 (32 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\tundra_rush_beta.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\tj3_final.pk3 (28 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_pacific2.pk3 (22 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_nordic_b2.pk3 (35 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_delivery_b1.pk3 (119 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_complex_b1.pk3 (25 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\te_cipher_b2.pk3 (47 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\supplydepot_b2_fixed.pk3 (213 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump_RLD.pk3 (93 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump5.pk3 (168 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump3.pk3 (179 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump2.pk3 (39 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\strayjump1.pk3 (19 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump5.pk3 (67 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump4_v3.pk3 (78 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump3_v2.pk3 (79 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump2.pk3 (68 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\rtcw_trickjump1.pk3 (65 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mml_headshot.pk3 (20 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\mml_church_v1.pk3 (79 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\lights.pk3 (51 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\HkJumpz_beta1.pk3 (36 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\dzm_trickjump.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\CTF_BooZZe.pk3 (28 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\brickjump_final.pk3 (9 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\braundorf_b5_rtcw.pk3 (219 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_valhalla2.pk3 (4 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_valhalla.pk3 (6 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4\main\bp_badplace.pk3 (21 files)
+    not on the pure list
+C:\Return to Castle Wolfenstein 1.4/main
+
+handle 1: rtcwconsole.log
+handle 2: demos/2020-10-12/230905-fonze-mp_base.dm_60
+----------------------
+36578 files in pk3 files
+RE_Shutdown( 0 )
+Hunk_Clear: reset the hunk ok
+----- R_Init -----
+
+GL_VENDOR: NVIDIA Corporation
+GL_RENDERER: GeForce GTX 1650 SUPER/PCIe/SSE2
+GL_VERSION: 4.6.0 NVIDIA 456.38
+GL_EXTENSIONS: GL_ARB_color_buffer_float GL_ARB_compatibility GL_ARB_copy_buffer GL_ARB_depth_buffer_float GL_ARB_depth_texture GL_ARB_draw_buffers GL_ARB_draw_instanced GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_imaging GL_ARB_map_buffer_range GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_shader_objects GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shadow GL_ARB_texture_border_clamp GL_ARB_texture_buffer_object GL_ARB_texture_compression GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_mirrored_repeat GL_ARB_texture_non_power_of_two GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_transpose_matrix GL_ARB_vertex_array_object GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_float GL_ATI_texture_mirror_once GL_S3_s3tc GL_EXT_texture_env_add GL_EXT_abgr GL_EXT_bgra GL_EXT_bindable_uniform GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_Cg_shader GL_EXT_depth_bounds_test GL_EXT_direct_state_access GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXTX_framebuffer_mixed_formats GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_specular_color GL_EXT_shadow_funcs GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_texture_shared_exponent GL_EXT_texture_sRGB GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_KTX_buffer_region GL_NV_blend_square GL_NV_conditional_render GL_NV_copy_depth_to_color GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_explicit_multisample GL_NV_fence GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_gpu_program4 GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program_fp64 GL_NV_half_float GL_NV_light_max_exponent GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_shader_buffer_load GL_NV_texgen_reflection GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_rectangle GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NVX_conditional_render GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum GL_WIN_swap_hint WGL_EXT_swap_control 
+GL_MAX_TEXTURE_SIZE: 32768
+GL_MAX_ACTIVE_TEXTURES_ARB: 4
+
+PIXELFORMAT: color(32-bits) Z(24-bit) stencil(0-bits)
+MODE: -1, 1920 x 1080 fullscreen hz:144
+GAMMA: software w/ 0 overbright bits
+CPU: Intel Pentium III
+rendering primitives: single glDrawElements
+texturemode: GL_LINEAR_MIPMAP_NEAREST
+picmip: 2
+texture bits: 32
+multitexture: enabled
+compiled vertex arrays: enabled
+texenv add: disabled
+compressed textures: enabled
+NV distance fog: disabled
+HACK: using vertex lightmap approximation
+Initializing Shaders
+----- finished R_Init -----
+LOADING... collision map
+[skipnotify]^2*** You have been authorized "referee" status ***
+Type: ^3ref^7 (by itself) for a list of referee commands.
+LOADING... sounds
+voice chat memory size = 3264
+
+.........................
+Initializing Sound Scripts
+...loading 'sound/scripts/cutscene1.sounds'
+...loading 'sound/scripts/cutscene6.sounds'
+...loading 'sound/scripts/cutscene9.sounds'
+...loading 'sound/scripts/cutscene11.sounds'
+...loading 'sound/scripts/cutscene14.sounds'
+...loading 'sound/scripts/cutscene19.sounds'
+...loading 'sound/scripts/escape1.sounds'
+...loading 'sound/scripts/escape2.sounds'
+...loading 'sound/scripts/tram.sounds'
+...loading 'sound/scripts/village1.sounds'
+...loading 'sound/scripts/crypt1.sounds'
+...loading 'sound/scripts/crypt2.sounds'
+...loading 'sound/scripts/church.sounds'
+...loading 'sound/scripts/boss1.sounds'
+...loading 'sound/scripts/forest.sounds'
+...loading 'sound/scripts/rocket.sounds'
+...loading 'sound/scripts/assault.sounds'
+...loading 'sound/scripts/sfm.sounds'
+...loading 'sound/scripts/factory.sounds'
+...loading 'sound/scripts/trainyard.sounds'
+...loading 'sound/scripts/swf.sounds'
+...loading 'sound/scripts/norway.sounds'
+...loading 'sound/scripts/xlabs.sounds'
+...loading 'sound/scripts/boss2.sounds'
+...loading 'sound/scripts/dam.sounds'
+...loading 'sound/scripts/village2.sounds'
+...loading 'sound/scripts/chateau.sounds'
+...loading 'sound/scripts/dark.sounds'
+...loading 'sound/scripts/castle.sounds'
+...loading 'sound/scripts/end.sounds'
+...loading 'sound/scripts/ai.sounds'
+...loading 'sound/scripts/general.sounds'
+...loading 'sound/scripts/combat.sounds'
+...loading 'sound/scripts/movers.sounds'
+done.
+LOADING... graphics
+LOADING... maps/mp_village.bsp
+stitched 0 LoD cracks
+...loaded 16743 faces, 260 meshes, 586 trisurfs, 63 flares
+LOADING... entities
+LOADING... game media
+LOADING...  - textures
+LOADING...  - models
+LOADING...  - weapons
+LOADING...  - items
+LOADING...  - inline models
+LOADING...  - server models
+LOADING...  - particles
+LOADING...  - game media done
+LOADING... flamechunks
+LOADING... clients
+LOADING... S|A Ivysd
+LOADING... murkey*
+LOADING... fonze*
+LOADING... ^>John_Mullins
+LOADING... mooshu
+LOADING... SIA Blazk
+LOADING... S|A Pipe
+LOADING... spaztik
+LOADING... Du5t3r
+LOADING... S|A v1RKES
+LOADING... S|A Snipercat
+LOADING... prowler
+LOADING... S|A BrianN
+LOADING... S|A CaL1bRin
+LOADING... Tank Spank
+LOADING... eternal
+UI menu load time = 12 milli seconds
+CL_InitCGame:  3.36 seconds
+5 msec to draw all images
+Com_TouchMemory: 0 msec
+[skipnotify]No vote in progress.
+[skipnotify]No vote in progress.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hello.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Southeast City Wall): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Southeast City Wall): ^2Yeah!
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+^1ui1 ^2fs1 
+^1ui0 ^2fs0 
+^1ui1 ^2fs0 
+[skipnotify]^0spaztik^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1Tank Spank^7: ^2ahhh ok thank you
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^>Joh^4n_M^dull^uins^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^0p^1r^7owl^4e^0r^7
+^4Default spawn side 
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^0p^1r^7owl^4e^0r^7 dove on his own grenade.
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^0p^1r^7owl^4e^0r^7
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0p^1r^7owl^4e^0r^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+[skipnotify]^1S^7I^4A ^7Blazk^7 killed himself.
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (South Tower): ^5^7* medico.
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^0p^1r^7owl^4e^0r^7
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2kick tankspank
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Southeast City Wall): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify]*** ^3INFO: ^5All players are now ready!
+Already recording.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Allied Truck): ^5^7Spawning^0:^1Medic
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1Tank Spank^7: ^2kick you in the ass
+[skipnotify]^1S^7I^4A ^7Blazk^7: ^2^1L^2o^3O^4L^0!
+[skipnotify]^1S^J|^kA v1RKES^7: ^2hes awesome
+[skipnotify]: mooshu ^3(South Tower): ^2Affirmative.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^1Tank Spank^7: ^2after i spank it
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]eternal^7 vaporized himself.
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify](^1S^J|^kA v1RKES^7) (South Tower): ^5^aGranada^3!!!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(South Tower): ^5Fire in the hole!
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^J|^kA v1RKES^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]eternal^7 vaporized himself.
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2XD?
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0Du5^4t3r^7
+[skipnotify]^0spaztik^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0p^1r^7owl^4e^0r^7 dove on his own grenade.
+[skipnotify]^0spaztik^7: ^2XD!
+[skipnotify]^0fonze^1*^7 was exploded by ^1S^7|^4A ^7Pipe^7^7's grenade
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify](^1S^J|^kA v1RKES^7) (Tavern): ^5^aGranada^3!!!
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2where is parcher
+[skipnotify]*** ^3INFO: ^5Allies capture the Northwest Courtyard!
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Northwest Courtyard): ^5I'm a lieutenant.
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Northwest Courtyard): ^5Medic!
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Northwest Courtyard): ^5I'm a lieutenant.
+[skipnotify]^1Tank Spank^7 was killed by ^>Joh^4n_M^dull^uins^7's Thompson
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7CaL1bRin^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^0murkey^1*^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]^0Du5^4t3r^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]*** ^3INFO: ^3Dynamite planted near Gold Storage Crypt! 
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by mooshu^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Cemetary): ^5Fire in the hole!
+[skipnotify]mooshu^7 was killed by ^1Tank Spank^7's Luger 9mm
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^J|^kA v1RKES^7
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^1S^J|^kA v1RKES^7's support fire
+[skipnotify](mooshu^7) (Cemetary): ^508
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify](^1S^J|^kA v1RKES^7) (Cemetary): ^5^aGranada^3!!!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Wine Cellar): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Wine Cellar): ^5^7GRANADA
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^J|^kA v1RKES^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^7Spawning^0:^3LT/MP-40 ^1(AXIS)
+[skipnotify]: (^0spaztik)^3(Northwest Courtyard): ^5Sorry.
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Axis Deployment Area): ^5You're welcome.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Wine Cellar): ^5^7Spawning^0:^3LT/MP-40 ^4(ALLIES)
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Pipe^7^7's MP40
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]*** ^3INFO: ^5The Allies have broken into the Crypt!
+[skipnotify](^1S^J|^kA v1RKES^7) (Axis Deployment Area): ^5^3*** ^2RESPAWN ^7AUTOMATICO
+[skipnotify]^0murkey^1*^7 was exploded by eternal^7's grenade
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^>Joh^4n_M^dull^uins^7's Thompson
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Cemetary): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Cemetary): ^5^7GRANADA
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Cemetary): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]^0fonze^1*^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Cemetary): ^5Fire in the hole!
+[skipnotify]^0Du5^4t3r^7 was exploded by ^0p^1r^7owl^4e^0r^7's grenade
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^0p^1r^7owl^4e^0r^7 killed himself.
+[skipnotify](^0p^1r^7owl^4e^0r^7) (Cemetary): ^5^0]-[^7Spawn ^1As ^7Medic^0]-[
+[skipnotify]^0spaztik^7 killed himself.
+[skipnotify]eternal^7 killed himself.
+[skipnotify]: (^0spaztik)^3(Cemetary): ^5Fire in the hole!
+[skipnotify]: (^0spaztik)^3(Cemetary): ^5Fire in the hole!
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: (^0spaztik)^3(Cemetary): ^5Fire in the hole!
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^7SPAWNPOINT^0:^72
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]: mooshu ^3(Wine Cellar): ^2Great shot.
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^0murkey^1*^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Tavern): ^5Incoming!
+[skipnotify](^0spaztik^7) (Wine Cellar): ^5^0spawn^o @ ^4allies
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+[skipnotify]^0Du5^4t3r^7 was killed by ^0fonze^1*^7's .45ACP 1911
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]^1Tank Spank^7 was killed by mooshu^7's Thompson
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by eternal^7
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hey!
+[skipnotify]*** ^3INFO: ^5Axis have returned the Gold!
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Hello.
+[skipnotify]^0murkey^1*^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Bye.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 killed himself.
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]*** ^3INFO: ^5Axis reclaims the Northwest Courtyard!
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Southwest Courtyard): ^5I'm a lieutenant.
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]eternal^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]*** ^3INFO: ^5Axis have returned the Gold!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1Tank Spank^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1Tank Spank^7: ^2hitsound work here?
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Axis Deployment Area): ^2Negative.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]: ^0murkey^1* ^3(unknown): ^2Negative.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Negative.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]^1Tank Spank^7: ^2thanks
+[skipnotify]*** ^3INFO: ^5Allies capture the Northwest Courtyard!
+[skipnotify]^0fonze^1*^7 killed himself.
+[skipnotify]*** ^3INFO: ^5Axis reclaims the Northwest Courtyard!
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]mooshu^7 killed himself.
+[skipnotify]^0murkey^1*^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]^1Tank Spank^7 was blasted by ^1S^J|^kA v1RKES^7's support fire
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was exploded by eternal^7's grenade
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^1Airstrike Incoming (5 Seconds)
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^106^0|^136
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^106^0|^136
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^106^0|^136
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^106^0|^136
+[skipnotify](^1S^J|^kA v1RKES^7) (Axis Deployment Area): ^5^aGranada^3!!!
+[skipnotify]eternal^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's MP40
+[skipnotify]: (mooshu)^3(Southwest Courtyard): ^5Negative.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^106^0|^136
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was exploded by eternal^7's grenade
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by mooshu^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]*** ^3INFO: ^5Axis have returned the Gold!
+[skipnotify]^1Tank Spank^7 was blasted by ^1S^J|^kA v1RKES^7's support fire
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Heh heh.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]mooshu^7 was killed by ^0Du5^4t3r^7's MP40
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify]^0spaztik^7 was killed by ^0murkey^1*^7's Luger 9mm
+[skipnotify]: ^0spaztik ^3(Cemetary): ^2Hi.
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify](^1S^J|^kA v1RKES^7): ^5^7Enemy spawns at ^106^0|^136
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^0fonze^1*^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]^0murkey^1*^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was blasted by ^>Joh^4n_M^dull^uins^7's support fire
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by ^>Joh^4n_M^dull^uins^7's support fire
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Bridge): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^J|^kA v1RKES^7's MP40
+[skipnotify]^1Tank Spank^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]*** ^3INFO: ^5Allies capture the Northwest Courtyard!
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's MP40
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Cottage): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Cottage): ^5^7GRANADA
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Tavern): ^5Medic!
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0p^1r^7owl^4e^0r^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Tavern): ^5Thanks.
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Tavern): ^5Cover me!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^0Du5^4t3r^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]eternal^7 vaporized himself.
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2uta la wea
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2ctm
+[skipnotify]: eternal ^3(Axis Deployment Area): ^2The enemy is weakened.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2mueve po
+[skipnotify]^0murkey^1*^7 was killed by ^0fonze^1*^7's Thompson
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Southwest Courtyard): ^5Medic!
+[skipnotify](^0spaztik^7) (Central Courtyard): ^5^0spawn^o @ ^4allies
+[skipnotify]^1Tank Spank^7 was exploded by ^0fonze^1*^7's grenade
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(South Tower): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (South Tower): ^5^7GRANADA
+[skipnotify]*** ^3INFO: ^5The Allies have escaped with the Gold!
+[skipnotify](^1S^J|^kA v1RKES^7) (Central Bridge): ^5^aGranada^3!!!
+[skipnotify]>>> ^3Objective reached at 5:26 (original: 10:00)
+
+^3>>> Map: ^3mp_village
+
+^7Overall stats for: ^z^0fonze^1* ^7(^21^7 Round)
+
+Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+-------------------------------------------------
+^zKnife    : ^7  0.0 ^5   0/10   ^2    0 ^1     0
+^zColt     : ^7 60.0 ^5   3/5    ^2    1 ^1     0 ^3        1
+^zMP-40    :                 ^2    0 ^1     1 ^3        0
+^zThompson : ^7 25.4 ^5  50/197  ^2    7 ^1     0 ^3        5
+^zPanzer   :                 ^2    0 ^1     1 ^3        0
+^zGrenade  : ^7 33.3 ^5   1/3    ^2    1 ^1     1
+^zSyringe  : ^7100.0 ^5   4/4    ^2    0 ^1     0
+^zMG-42 Gun: ^7  0.0 ^5   4/0    ^2    0 ^1     0 ^3        0
+
+^zDamage Given: ^71409    ^zTeam Damage : ^768
+^zDamage Recvd: ^71081    ^zBodies Gibbed: ^77 
+
+Wrote screenshots/2020-10-12/232343-fonze-mp_village.jpg
+
+Mod: RtcwPro 1.0 beta 
+^7Server: RTCWCHILE.COM ^1S^7|^4A  
+^7Time: ^703:23:40 ^d(^713 Oct 2020^d)
+
+^1Axis ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7s|a briann     ^e   5^7   8   0  0^7^c  38^7  0  31.62   2^2  632^1 1831^4    0^5    4^7   45
+^7s|a snipercat  ^e   4^7   9   0  1^7^c  30^7  0  29.20   2^2  996^1  988^4   71^5    0^7   32
+^7murkey*        ^e   4^7   7   0  2^7^c  36^7  1  36.17   2^2 1178^1 1049^4  502^5    0^7   18
+^7sia blazk      ^e   2^7   7   0  1^7^c  22^7  0  20.00   3^2  526^1 1903^4   28^5    3^7   17
+^7du5t3r         ^e   3^7   8   0  1^7^c  27^7  2  23.68   2^2  576^1 1573^4   42^5    6^7   12
+^7s|a pipe       ^e   2^7   7   1  0^7^c  22^7  0  29.17   1^2  340^1 1314^4    0^5    0^7    3
+^7s|a ivysd      ^e   0^7   2   0  0^7^c   0^7  0   0.00   0^2    0^1  388^4    0^5    0^7    0
+^7tank spank     ^e   1^7   8   0  1^7^c  11^7  1  17.20   0^2  226^1 1715^4   50^5    1^7    0
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  21^7  56   1  6  27  4 ^7 26.40  12^2 4474^110761^4  693^5   14^7  127
+
+
+^4Allied ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7prowler        ^e   2^7   2   1  1^7^c  50^7  0  13.27   0^2  381^1  387^4  233^5    1^7   35
+^3fonze*         ^e   9^7   3   1  0^3^c  75^7  7  26.24   6^2 1409^1 1081^4   68^5    4^7   26
+^7s|a v1rkes     ^e   5^7   4   0  1^7^c  55^7  4  26.24   1^2 1146^1  434^4  297^5    0^7   19
+^7eternal        ^e  14^7   5   1  2^7^c  73^7  9   0.00   0^2 3557^1  313^4  528^5    0^7   14
+^7s|a cal1brin   ^e   3^7   4   0  1^7^c  42^7  0  27.83   3^2  636^1  587^4   50^5    1^7   13
+^7john_mullins   ^e   9^7   5   4  0^7^c  64^7  3  30.51   6^2 1391^1  556^4  185^5    0^7   11
+^7mooshu         ^e   3^7   3   1  0^7^c  50^7  0  40.74   4^2  771^1  609^4   50^5    0^7    1
+^7spaztik        ^e   5^7   4   2  4^7^c  55^7  5  33.33   0^2 1470^1  507^4  725^5    0^7  -10
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  50^7  30  10  9  62 28 ^7 27.27  20^210761^1 4474^4 2136^5    6^7  109
+
+
+
+[skipnotify]
+^3>>> Stats recorded to: ^7stats/Oct.12.2020/232343.mp_village.txt
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Negative.
+Stopped demo.
+]
+[skipnotify]Server: timelimit changed to 5.439167
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]^1S^7|^4A ^7Pipe^7^7 killed himself.
+^4Default spawn side 
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1Tank Spank^7: ^2lotta camping here huh
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Oops.
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Destroyed Cottage): ^2Affirmative.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2aaaw man
+[skipnotify]eternal^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^1Tank Spank^7: ^2hiding in corners huh
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^7Spawning^0:^3LT/MP-40 ^1(AXIS)
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+^4Default spawn side 
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^0murkey^1*^7: ^2only difference between ecgn and here
+[skipnotify]^1S^J|^kA v1RKES^7: ^2thats the obj
+[skipnotify]mooshu^7: ^2lol
+[skipnotify]^0murkey^1*^7: ^2lots of camping
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Affirmative.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 killed himself.
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2kick tank
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+]LAST GAME FOR ME
+[skipnotify]^0fonze^1*^7: ^2LAST GAME FOR ME
+[skipnotify]: mooshu ^3(Cemetary): ^2Negative.
+[skipnotify]^0spaztik^7: ^2same
+[skipnotify]: ^1S^7|^4A ^7CaL1bRin ^3(Cemetary): ^2Affirmative.
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Bria^1n^4N^7^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^1S^7I^4A ^7Blazk ^3(unknown): ^2Affirmative.
+[skipnotify]eternal^7: ^2and panzer is way better here
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Cemetary): ^5^7* inge.smg
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^0fonze^1*^7 killed himself.
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Snipercat^7
+[skipnotify]^1S^J|^kA v1RKES^7: ^2=p
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0Du5^4t3r^7
+[skipnotify](^1S^J|^kA v1RKES^7) (Axis Deployment Area): ^5^3(^1Panzer^3)
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^1S^J|^kA v1RKES^7 killed himself.
+[skipnotify]eternal^7: ^2doesnt have hte arc
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Cemetary): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Cemetary): ^5^7GRANADA
+[skipnotify]^1Tank Spank^7: ^2stfu john
+]you guys should all download aldernest and password 2
+[skipnotify]^0fonze^1*^7: ^2you guys should all download aldernest and password 2
+[skipnotify]^0murkey^1*^7 vaporized himself.
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Central Bridge): ^2Affirmative.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Axis Deployment Area): ^2Affirmative.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Bridge): ^5^7READY^0/^7SPAWNPOINT^0:^70 ^2AUTO
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1Tank Spank^7: ^2you cock sucker :)
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^7SPAWNPOINT^0:^72
+[skipnotify]^1S^J|^kA v1RKES^7: ^2i will
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^7SPAWNPOINT^0:^71
+^4Default spawn side 
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]^0fonze^1*^7 killed himself.
+[skipnotify]^0fonze^1*^7 killed himself.
+[skipnotify]*** ^3INFO: ^5All players are now ready!
+recording to demos/2020-10-12/232454-fonze-mp_village.dm_60.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Axis Deployment Area):^5^7SPAWNPOINT^0:^7101
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^0murkey^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Pipe^7^7
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^0p^1r^7owl^4e^0r^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0spaztik^7
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]: mooshu ^3(Cemetary): ^2Great shot.
+^4Default spawn side 
+[skipnotify]You are already ^nREADY^7!
+[skipnotify]eternal^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]mooshu^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^J|^kA v1RKES^7
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2YEE-HAW!
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Central Courtyard): ^5Move!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was blasted by ^1S^J|^kA v1RKES^7's Panzerfaust
+[skipnotify]^1Tank Spank^7 was blasted by ^1S^J|^kA v1RKES^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by ^1S^J|^kA v1RKES^7's Panzerfaust
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Central Courtyard): ^5Fire in the hole!
+[skipnotify]^0Du5^4t3r^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Central Courtyard): ^2Hey!
+[skipnotify](^1S^J|^kA v1RKES^7) (Central Courtyard): ^5^aGranada^3!!!
+[skipnotify](^1S^J|^kA v1RKES^7) (Central Courtyard): ^5^3(^1Medico^3)
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0p^1r^7owl^4e^0r^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify](^>Joh^4n_M^dull^uins^7) (South Tower): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(South Tower): ^5Fire in the hole!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^0Du5^4t3r^7 was blasted by ^1S^J|^kA v1RKES^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by ^1S^J|^kA v1RKES^7's Panzerfaust
+[skipnotify](^1S^J|^kA v1RKES^7) (South Tower): ^5^aGranada^3!!!
+[skipnotify]: mooshu ^3(Tavern): ^2Great shot.
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^1S^J|^kA v1RKES^7
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0fonze^1*^7's Luger 9mm
+[skipnotify]eternal^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]: ^1S^J|^kA v1RKES ^3(South Tower): ^2Yes!
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]^0murkey^1*^7 was killed by mooshu^7's MP40
+[skipnotify]^0fonze^1*^7 was exploded by ^1S^7|^4A ^7Pipe^7^7's grenade
+[skipnotify]^0spaztik^7 was exploded by ^1S^7|^4A ^7Pipe^7^7's grenade
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: (^0fonze^1*)^3(Tavern): ^5Medic!
+[skipnotify](^1S^J|^kA v1RKES^7) (South Tower): ^5^3(^1Medico^3)
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]: (^0spaztik)^3(Tavern): ^5Medic!
+[skipnotify]: (^1S^7|^4A ^7CaL1bRin)^3(Wine Cellar): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Cottage): ^5^7GRANADA
+[skipnotify](^1S^J|^kA v1RKES^7) (South Tower): ^5^3(^1Lt-^0MP40^3)
+[skipnotify](eternal^7) (Tavern): ^5almost to flag
+[skipnotify]*** ^3INFO: ^5Allies capture the Northwest Courtyard!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (South Tower): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]*** ^3INFO: ^5Axis reclaims the Northwest Courtyard!
+[skipnotify]: (eternal)^3(Tavern): ^5Incoming!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was exploded by ^0p^1r^7owl^4e^0r^7's grenade
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(South Tower): ^5Fire in the hole!
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Oops.
+[skipnotify]^0murkey^1*^7 vaporized himself.
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^0p^1r^7owl^4e^0r^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2YEE-HAW!
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]eternal^7 was killed by ^1Tank Spank^7's Thompson
+[skipnotify]: (^0fonze^1*)^3(Cemetary): ^5Danke.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Northwest Courtyard): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]mooshu^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^0spaztik^7's Luger 9mm
+[skipnotify]^>Joh^4n_M^dull^uins^7: ^2XD?
+[skipnotify]*** ^3INFO: ^3Dynamite planted near Gold Storage Crypt! 
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^0Du5^4t3r^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7I^4A ^7Blazk^7
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+[skipnotify]^1Tank Spank^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7
+[skipnotify]: eternal ^3(Destroyed Cottage): ^2Negative.
+[skipnotify]: eternal ^3(Destroyed Cottage): ^2Negative.
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Negative.
+[skipnotify]: eternal ^3(Destroyed Cottage): ^2Negative.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0p^1r^7owl^4e^0r^7's MP40
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Cemetary): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0fonze^1*^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]: (^0fonze^1*)^3(Northwest Courtyard): ^5Incoming!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify]^0spaztik^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]*** ^3INFO: ^5Allies capture the Northwest Courtyard!
+[skipnotify]^0murkey^1*^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's MP40
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was exploded by ^1S^7|^4A ^7Pipe^7^7's grenade
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Cemetary): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Tavern): ^5I'm a lieutenant.
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Cemetary): ^5Fire in the hole!
+[skipnotify](^1S^7|^4A ^7CaL1bRin^7) (Cemetary): ^5^7* medico.
+[skipnotify]^>Joh^4n_M^dull^uins^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was shelled by ^>Joh^4n_M^dull^uins^7's artillery support
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]*** ^3INFO: ^5The Allies have broken into the Crypt!
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Cemetary): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]^0fonze^1*^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was killed by eternal^7's Luger 9mm
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Yeah!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^0spaztik^7 vaporized himself.
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^0Du5^4t3r^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]: (mooshu)^3(Central Courtyard): ^5Sorry.
+[skipnotify]*** ^3INFO: ^5Axis have returned the Gold!
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Cemetary): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Cemetary): ^5Fire in the hole!
+[skipnotify]eternal^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was exploded by ^>Joh^4n_M^dull^uins^7's grenade
+[skipnotify]mooshu^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Cemetary): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2YEE-HAW!
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Bridge): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2YEE-HAW!
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^0murkey^1*^7 killed himself.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(South Tower): ^5I'm a lieutenant.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^0fonze^1*^7 was killed by ^0murkey^1*^7's .45ACP 1911
+[skipnotify]: (^0fonze^1*)^3(Southwest Courtyard): ^5Incoming!
+[skipnotify]^1S^J|^kA v1RKES^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^0p^1r^7owl^4e^0r^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]^0murkey^1*^7 was killed by mooshu^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Southwest Courtyard): ^5Incoming!
+[skipnotify]^0Du5^4t3r^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]^1Tank Spank^7 was blasted by eternal^7's Panzerfaust
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Southeast City Wall): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]mooshu^7 was killed by ^1S^7|^4A ^7Bria^1n^4N^7^7's Thompson
+[skipnotify](^>Joh^4n_M^dull^uins^7) (South Tower): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was blasted by ^>Joh^4n_M^dull^uins^7's support fire
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Allied Truck): ^5Fire in the hole!
+[skipnotify]^0Du5^4t3r^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's MP40
+[skipnotify]eternal^7 was killed by ^1S^7|^4A ^7Ivys^6d^7's MP40
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^>Joh^4n_M^dull^uins^7's MP40
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was killed by ^1S^7|^4A ^7CaL1bRin^7's MP40
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Medic!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was blasted by ^0murkey^1*^7's Panzerfaust
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 was blasted by eternal^7's Panzerfaust
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(Destroyed Cottage): ^5I'm a lieutenant.
+[skipnotify]: (^0fonze^1*)^3(Central Courtyard): ^5Danke.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Southeast City Wall): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify](eternal^7) (Southwest Courtyard): ^5s turn
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Lets go.
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Lets go.
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Lets go.
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Lets go.
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Lets go.
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Incoming!
+[skipnotify]mooshu^7 was killed by ^0murkey^1*^7's MP40
+[skipnotify]: (eternal)^3(Southwest Courtyard): ^5Incoming!
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^0murkey^1*^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]: (^1S^J|^kA v1RKES)^3(South Tower): ^5Incoming!
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^0fonze^1*^7 was exploded by ^0murkey^1*^7's grenade
+[skipnotify]^1Tank Spank^7 ^1WAS KILLED BY TEAMMATE^7 ^0murkey^1*^7
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was killed by ^>Joh^4n_M^dull^uins^7's Luger 9mm
+[skipnotify]^>Joh^4n_M^dull^uins^7 was killed by ^1S^7I^4A ^7Blazk^7's .45ACP 1911
+[skipnotify](mooshu^7) (South Tower): ^5sw now
+[skipnotify](mooshu^7) (South Tower): ^5spaz
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 was exploded by ^0p^1r^7owl^4e^0r^7's grenade
+[skipnotify]^0Du5^4t3r^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 ^0p^1r^7owl^4e^0r^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was exploded by eternal^7's grenade
+[skipnotify]: ^1S^7|^4A ^7Ivys^6d ^3(unknown): ^2Oops.
+^5PunkBuster Client: No Master Query Sent - DNS has not yet resolved for MASTER1.EVENBALANCE.COM
+[skipnotify]^1S^7|^4A ^7Pipe^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was blasted by ^1S^7|^4A ^7Pipe^7^7's support fire
+[skipnotify]^0p^1r^7owl^4e^0r^7 was blasted by ^1S^7|^4A ^7Pipe^7^7's support fire
+[skipnotify]eternal^7 was blasted by ^1S^7|^4A ^7Pipe^7^7's support fire
+[skipnotify]*** ^3INFO: ^3Allies have lost the Gold! 
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 was blasted by ^0spaztik^7's Panzerfaust
+[skipnotify]^1S^7I^4A ^7Blazk^7 was killed by ^0fonze^1*^7's MP40
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]*** ^3INFO: ^5Axis have returned the Gold!
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Great shot.
+[skipnotify]: mooshu ^3(South Tower): ^2Yes!
+[skipnotify]^0murkey^1*^7 was killed by ^0spaztik^7's Luger 9mm
+[skipnotify]: ^1S^J|^kA v1RKES ^3(Central Bridge): ^2Yes!
+[skipnotify]: eternal ^3(Central Bridge): ^2YES!
+[skipnotify]^0fonze^1*^7 killed himself.
+[skipnotify]^0spaztik^7 was killed by ^1S^7|^4A ^7Snipercat^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2loooooool
+[skipnotify]: eternal ^3(Central Bridge): ^2YES!
+[skipnotify]^0p^1r^7owl^4e^0r^7 was killed by ^0Du5^4t3r^7's Thompson
+[skipnotify]: eternal ^3(Axis Deployment Area): ^2Yes!
+[skipnotify]: eternal ^3(Axis Deployment Area): ^2Heh heh.
+[skipnotify]mooshu^7: ^2raped
+[skipnotify]^>Joh^4n_M^dull^uins^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]^1S^7|^4A ^7Snipercat^7 killed himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Destroyed Cottage): ^5^1Called Arty (10 - 12 Seconds)
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Affirmative.
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2nice panz lol
+[skipnotify]: ^0spaztik ^3(Cemetary): ^2Heh heh.
+[skipnotify]^0fonze^1*^7 was killed by ^1S^7I^4A ^7Blazk^7's Thompson
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 was blasted by ^0murkey^1*^7's Panzerfaust
+[skipnotify]eternal^7 was killed by ^0murkey^1*^7's .45ACP 1911
+[skipnotify]^1S^7|^4A ^7Snipercat^7 was exploded by eternal^7's grenade
+[skipnotify]^1S^J|^kA v1RKES^7 was killed by ^0murkey^1*^7's .45ACP 1911
+[skipnotify]^0spaztik^7 was killed by ^0murkey^1*^7's .45ACP 1911
+^4Default spawn side 
+[skipnotify]Match is already in progress!
+
+[skipnotify]*** ^3INFO: ^5Allies have stolen the Gold!
+[skipnotify]^1S^7|^4A ^7CaL1bRin^7 ^1WAS KILLED BY TEAMMATE^7 ^0fonze^1*^7
+[skipnotify](^>Joh^4n_M^dull^uins^7) (South Tower): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^1Tank Spank^7 was killed by mooshu^7's MP40
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7 ^1WAS KILLED BY TEAMMATE^7 ^1S^7|^4A ^7Ivys^6d^7
+[skipnotify]^1S^7|^4A ^7Ivys^6d^7 obliterated himself.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (South Tower): ^5^1Airstrike Incoming (5 Seconds)
+[skipnotify]^0fonze^1*^7 ^1WAS KILLED BY TEAMMATE^7 eternal^7
+[skipnotify]eternal^7 vaporized himself.
+[skipnotify]^1S^7|^4A ^7Snipercat^7 fell to his death.
+[skipnotify]Timelimit hit.
+[skipnotify]>>> ^3Objective NOT reached in time (5:26)
+
+^3>>> Map: ^3mp_village
+
+^7Overall stats for: ^z^0fonze^1* ^7(^22^7 Rounds)
+
+Weapon     Acrcy Hits/Atts Kills Deaths Headshots
+-------------------------------------------------
+^zKnife    : ^7  0.0 ^5   0/10   ^2    0 ^1     0
+^zLuger    : ^7 58.3 ^5   7/12   ^2    1 ^1     0 ^3        1
+^zColt     : ^7 60.0 ^5   3/5    ^2    1 ^1     1 ^3        1
+^zMP-40    : ^7 25.6 ^5  55/215  ^2    4 ^1     1 ^3        4
+^zThompson : ^7 25.4 ^5  50/197  ^2    7 ^1     3 ^3        5
+^zPanzer   :                 ^2    0 ^1     1 ^3        0
+^zGrenade  : ^7 14.3 ^5   1/7    ^2    1 ^1     3
+^zSyringe  : ^7100.0 ^5   5/5    ^2    0 ^1     0
+^zMG-42 Gun: ^7  0.0 ^5   4/0    ^2    0 ^1     0 ^3        0
+
+^zDamage Given: ^72481    ^zTeam Damage : ^7260
+^zDamage Recvd: ^72221    ^zBodies Gibbed: ^77 
+
+Wrote screenshots/2020-10-12/233032-fonze-mp_village.jpg
+
+Mod: RtcwPro 1.0 beta 
+^7Server: RTCWCHILE.COM ^1S^7|^4A  
+^7Time: ^703:30:29 ^d(^713 Oct 2020^d)
+
+^1Axis ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7spaztik        ^e  10^7   9   2  5^7^c  52^7 13  42.86   2^2 2709^1 1126^4  977^5    0^7   22
+^7eternal        ^e  25^7  14   1  5^7^c  64^7 19  12.50   0^2 5336^1 2012^4 1432^5    0^7   17
+^7john_mullins   ^e  18^7  13   6  0^7^c  58^7  7  29.30   9^2 3592^1 1409^4  267^5    0^7   12
+^7s|a v1rkes     ^e  11^7  10   0  1^7^c  52^7 10  23.33   2^2 2783^1 1270^4  353^5    0^7   12
+^7s|a cal1brin   ^e   6^7  12   0  1^7^c  33^7  0  29.05   5^2 1110^1 2029^4   50^5    2^7    9
+^7prowler        ^e   5^7   9   1  2^7^c  35^7  0  10.93   0^2  804^1 1952^4  261^5    5^7    8
+^7mooshu         ^e   6^7   7   2  0^7^c  46^7  1  36.72  11^2 1471^1 1350^4   78^5    1^7    2
+^3fonze*         ^e  14^7  11   2  1^3^c  56^7  7  27.04  11^2 2481^1 2221^4  260^5    5^7    1
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  95^7  85  14 15  52 57 ^7 26.96  40^220286^113369^4 3678^5   13^7   83
+
+
+^4Allied ^7Team
+^7--------------------------------------------------------------------------
+Player          ^eKll ^7Dth Sui TK ^cEff ^7Gib Accrcy HS   ^2DG   ^1DR   ^4TD  ^5Rev ^3Score
+^7--------------------------------------------------------------------------
+^7murkey*        ^e  22^7  13   1  4^7^c  62^7 41  46.10   9^2 4907^1 1703^4  910^5    0^7   29
+^7s|a briann     ^e   8^7  13   0  0^7^c  38^7  0  26.78   2^2 1010^1 3000^4  108^5    9^7   25
+^7du5t3r         ^e  10^7  15   0  1^7^c  40^7  3  29.47   5^2 1716^1 2934^4   42^5    8^7   23
+^7sia blazk      ^e   9^7  14   0  2^7^c  39^7  1  27.57   3^2 1606^1 3760^4   46^5    7^7   13
+^7tank spank     ^e   2^7  13   0  1^7^c  13^7  1  20.33   1^2  420^1 2840^4  104^5    5^7   12
+^7s|a pipe       ^e   8^7  13   1  0^7^c  38^7  2  26.92   1^2 1417^1 1977^4    0^5    0^7    9
+^7s|a snipercat  ^e   8^7  19   2  1^7^c  29^7  6  27.70   5^2 1831^1 2603^4  189^5    0^7    3
+^7s|a ivysd      ^e   3^7  10   0  6^7^c  23^7  3  37.93   0^2  462^1 1469^4 1172^5    0^7   -2
+^7--------------------------------------------------------------------------
+^eTotals^7         ^e  70^7 110   4 15  38 57 ^7 29.36  26^213369^120286^4 2571^5   29^7  112
+
+
+
+[skipnotify]
+^3>>> Stats recorded to: ^7stats/Oct.12.2020/233032.mp_village.txt
+]
+Stopped demo.
+]GGS
+[skipnotify]^0murkey^1*^7 disconnected
+[skipnotify]^0fonze^1*^7: ^2GGS
+]
+[skipnotify]^0Du5^4t3r^7 disconnected
+[skipnotify]^0spaztik^7: ^2GGS DUDES
+[skipnotify]Server: timelimit changed to 10
+[skipnotify]server: sv_car cg_bobupp IN 0 0.005[skipnotify]server: sv_car cg_bobpiitch IN 0 0.002[skipnotify]server: sv_car cg_bobrooll IN 0 0.002[skipnotify]server: sv_car cg_fov IIN 90 120[skipnotify]server: sv_car cg_shadoows EQ 0[skipnotify]server: sv_car cg_thirddperson EQ 0[skipnotify]server: sv_car cg_zoomDDefaultSniper IN 0 125[skipnotify]server: sv_car cl_avideemo EQ 0[skipnotify]server: sv_car cl_maxpaackets EQ 100[skipnotify]server: sv_car cl_pitchhspeed IN 0 180[skipnotify]server: sv_car cl_timennudge IN -20 0[skipnotify]server: sv_car cl_yawsppeed IN 0 180[skipnotify]server: sv_car com_maxffps IN 60 125[skipnotify]server: sv_car m_pitch OUT -0.015 0.015[skipnotify]server: sv_car m_yaw EQQ 0.022[skipnotify]server: sv_car r_ati_fssaa_samples EQ 0[skipnotify]server: sv_car r_ati_trruform_tess EQ 0[skipnotify]server: sv_car r_colorbbits EQ 32[skipnotify]server: sv_car r_ext_ATTI_pntriangles EQ 0[skipnotify]server: sv_car r_ext_NVV_fog_dist EQ 0[skipnotify]server: sv_car r_ext_teexture_filter_anisotropic EQ 0[skipnotify]server: sv_car r_gamma IN 0 3[skipnotify]server: sv_car r_flaress IN 0 1[skipnotify]server: sv_car r_ignoreehwgamma EQ 1[skipnotify]server: sv_car r_intenssity IN 0 3[skipnotify]server: sv_car r_mapoveerbrightbits IN 0 4[skipnotify]server: sv_car r_overbrrightbits IN 0 4[skipnotify]server: sv_car r_picmipp IN 0 3[skipnotify]server: sv_car r_primittives IN 0 2[skipnotify]server: sv_car r_rmse EEQ 0[skipnotify]server: sv_car r_texturremode INCLUDE GL_LINEAR[skipnotify]server: sv_car r_uifulllscreen IN 0 1[skipnotify]server: sv_car r_vertexxlight IN 0 1[skipnotify]server: sv_car rate EQ 25000[skipnotify]server: sv_car snaps EQQ 40[skipnotify]^1S^7|^4A ^7CaL1bRin^7: ^2ggs
+[skipnotify]^1S^J|^kA v1RKES^7: ^2thx guys
+[skipnotify]eternal^7 disconnected
+[skipnotify]^1S^7I^4A ^7Blazk^7: ^2ggs
+[skipnotify]^1S^7|^4A ^7Bria^1n^4N^7^7: ^2AAW MANE
+[skipnotify]^0p^1r^7owl^4e^0r^7: ^2ggs
+]WAS FUN
+[skipnotify]^0spaztik^7 disconnected
+[skipnotify]^0fonze^1*^7: ^2WAS FUN
+[skipnotify]: ^>Joh^4n_M^dull^uins ^3(Axis Deployment Area): ^2Affirmative.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Affirmative.
+]CYA 
+[skipnotify]^0fonze^1*^7: ^2CYA
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Good game.
+[skipnotify]: ^1S^7|^4A ^7Bria^1n^4N^7 ^3(unknown): ^2Good game.
+[skipnotify](^>Joh^4n_M^dull^uins^7) (Central Courtyard): ^5^1Grenade ^1Primed ^1(4 ^1Seconds)
+[skipnotify]: (^>Joh^4n_M^dull^uins)^3(Central Courtyard): ^5Fire in the hole!
+[skipnotify]^1S^7I^4A ^7Blazk^7 ^1WAS KILLED BY TEAMMATE^7 ^1Tank Spank^7
+]/QUIT
+----- CL_Shutdown -----
+RE_Shutdown( 1 )
+Shutting down OpenGL subsystem
+...wglMakeCurrent( NULL, NULL ): success
+...deleting GL context: success
+...releasing DC: success
+...destroying window
+...resetting display
+...shutting down QGL
+...unloading OpenGL DLL
+-----------------------

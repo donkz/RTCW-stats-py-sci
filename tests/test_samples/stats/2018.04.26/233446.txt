@@ -1,0 +1,42 @@
+Accuracy info for: wish*BRNDDDDD (1 Round)
+
+Weapon     Acrcy Hits/Atts Kll Dth HS
+-------------------------------------
+Luger    :  50.0    3/6      0   0  0
+MP-40    :                   0   1  0
+Thompson :                   0   1  0
+SniperRfl:                   0   1  0
+Panzer   : 100.0    5/5      5   0  0
+Grenade  :  20.0    2/10     2   0
+
+Damage Given: 1821    Bodies Gibbed: 5
+Damage Recvd: 628     Team Damage  : 172
+
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Axis   endddddddddd      5   5   0  0  50   2   898  1266    0     37
+Axis   wish*raiser       3   4   0  0  42   0   740   859    3      5
+Axis   wish*WarRi0R      7   6   2  0  53   1  1171   669    0      4
+Axis   wish*virus047     3   5   1  1  37   2   586   637   59      0
+Axis   wish*Dagg3r       1   6   1  0  14   0   546  1494   28      0
+Axis   wish*BRNDDDDD     7   5   3  1  58   5  1821   628  172     -3
+---------------------------------------------------------------------
+Axis   Totals           26  31   7  2  45  10  5762  5553  262     43
+
+TEAM   Player          Kll Dth Sui TK Eff Gib    DG    DR   TD  Score
+---------------------------------------------------------------------
+Allies avg.krazykaze     3   4   0  0  42   0   518  1077    0     53
+Allies avg.reker         2   8   3  0  20   2   470  1044    0     29
+Allies avg.murkey        6   6   0  0  50   2   872  1603    0     17
+Allies avg.Cypher        3   7   0  0  30   4   866   960   64      6
+Allies avg.siluro        7   4   2  0  63   2  1646   924    0      4
+Allies avg.n!kon         5   3   3  1  62   2  1181   154   18     -4
+---------------------------------------------------------------------
+Allies Totals           26  32   8  1  44  12  5553  5762   82    105
+
+
+
+Stats recorded: 23:34:46 (26 Apr 2018)
+
+

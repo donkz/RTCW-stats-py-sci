@@ -14,14 +14,7 @@ from rtcwlog.report.htmlreports import HTMLReport
 
 
 #file to process
-#rtcwlogfile = r"..\data\test_samples\rtcwconsole - r2.log"
-#rtcwlogfile = r"..\data\test_samples\2020-08-09-07-02-37-rtcwconsole.log"
-#rtcwlogfile = r"..\data\seasons_data\2020Oct\2020-10-23-04-02-26-rtcwconsole2222.log"
-#rtcwlogfile = r"..\data\test_samples\rtcwconsole-2020-01-09.log" #map error
-#rtcwlogfile = r"..\data\test_samples\rtcwconsole - r2.log"
-#rtcwlogfile = r"..\data\test_samples\rtcwconsole-2019-12-15.log"
-    
-rtcwlogfile = r"..\data\seasons_data\2020Nov\2020-11-20-05-31-16-rtcwconsole.log"
+rtcwlogfile = r"..\tests\test_samples\rtcwconsole-2019-12-15.log"
 
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup
 if rtcwlogfile[-16:] == "\rtcwconsole.log":
