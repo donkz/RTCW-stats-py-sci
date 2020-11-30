@@ -13,7 +13,7 @@ def lambda_handler(event, context):
     if not RTCWPY_PATH in sys.path:
         sys.path.append(RTCWPY_PATH)
 
-    #rtcwlogfile = r"/var/task/data/test_samples/rtcwconsole-2020-02-17.log"
+    #rtcwlogfile = r"/var/task/tests/test_samples/rtcwconsole-2020-02-17.log"
     #processor = ClientLogProcessor(local_file = rtcwlogfile, debug = False)
     
     bucket_name = event['Records'][0]['s3']['bucket']['name']

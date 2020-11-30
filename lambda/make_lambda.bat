@@ -18,8 +18,8 @@
 
 @mkdir tmp\seasons
 
-@mkdir tmp\data
-@mkdir tmp\data\test_samples
+@mkdir tmp\tests
+@mkdir tmp\tests\test_samples
 
 
 @echo Copying essential files into %CD%\lambda...
@@ -51,7 +51,7 @@ copy ..\rtcwlog\clientlog.py tmp\rtcwlog
 
 copy ..\seasons\season_medals.py tmp\seasons
 
-copy ..\data\test_samples\rtcwconsole-2020-02-17.log tmp\data\test_samples
+copy ..\tests\test_samples\rtcwconsole-2020-02-17.log tmp\tests\test_samples
 
 copy lambda_function.py tmp\
 
