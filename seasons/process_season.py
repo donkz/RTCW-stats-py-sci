@@ -148,7 +148,7 @@ else:
     bigresult = {"logs":renamed_logs, "stats":renamed_stats, "matches":matches, "players" : renamed_players}
     #html_report1 = HTMLReport(bigresult, amendments={"Win%":3}) #qcon
     #html_report1 = HTMLReport(bigresult, amendments={'Panzer' : 0, 'Smoker' : 0, 'Sniper' : 0, 'Tapout' : 0})
-    html_report1 = HTMLReport(bigresult, minimum_rounds=16)
+    html_report1 = HTMLReport(bigresult)
     #debug ranks html_report1.award_stats["awards"].filter(regex='_rank')
     html_report1.report_to_html(season_dir + tis_season + "\\" + "season-")
     
@@ -160,7 +160,7 @@ if (False):
     renames_export_df = pd.DataFrame.from_dict(renames_export, orient='index').reset_index()
     renames_export_df["rounds_played"]=-1 # TODO
     renames_export_df.columns = ["killer","real_name","rounds_played"]
-    renames_export_df.to_csv("..\\data\\output\\aliases\\Renames_2020-Jan-Oct.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
+    renames_export_df.to_csv("..\\data\\output\\aliases\\Renames_2020-Jan-Nov.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
     
 #duplication check
 matches = bigresult["matches"]
@@ -175,11 +175,6 @@ if len(dups) > 1:
     pd.set_option("display.width",300)
     print(matches[matches["round_guid"].isin(dups.index)][['file_date', 'file_size', 'map', 'match_date', 'round_num', 'round_order', 'round_time']])
     print(matches[matches["round_guid"].isin(dups.index)]["file_date"].unique())
-    
-    print("\n\n[!] Deduplicating\n")
-    #bigresult["matches"].drop_duplicates(["round_guid"], keep="first", inplace=True)
-    #bigresult["logs"].drop_duplicates(["round_guid", "line_order"], keep="first", inplace=True)
-    #bigresult["stats"].drop_duplicates(["round_guid", "Killer"], keep="first", inplace=True)
 
 #attach elos
 # 1. run season stats for all games
