@@ -194,7 +194,7 @@ class Const:
             ["prosepar", "^--------------------------------------------------------------------------",EVENT_PRO_SEPARATOR, "", False],
             
             ["roundind", "^Accuracy info for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False],
-            ["roundindpro", "^Overall stats for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False],
+            ["roundindpro", "Overall stats for: (.*)", EVENT_OSP_STATS_ACCURACY, "", False],
             ["timelimitmain", "^\[skipnotify\]Timelimit hit\.",EVENT_MAIN_TIMELIMIT, "", False],
             ["clocksetmain", "^\[skipnotify\]Server: timelimit changed to (.*)",EVENT_MAIN_SERVER_TIME, "", False],
             #match ending osp
