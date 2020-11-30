@@ -213,9 +213,9 @@ class Const:
             ["ospjpegtime", "^Wrote screenshots\\/(.*)\\/(.*)", EVENT_DATETIME_SCREENSHOT,"", False],
             
             #chats must be below everything because they match just about anything
-            ["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_TEAM_CHAT,"", False],
-            ["vsay","^\[skipnotify\]\: \((.*)\)\: (.*)", EVENT_VSAY_CHAT,"", False],
-            ["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False],
+            #["teamchat","^\[skipnotify\]\((.*)\: (.*)", EVENT_TEAM_CHAT,"", False],
+            #["vsay","^\[skipnotify\]\: \((.*)\)\: (.*)", EVENT_VSAY_CHAT,"", False],
+            #["chat","^\[skipnotify\](.*)\: (.*)", EVENT_CHAT,"", False],
             
             #dont pass passwords further down stream
             ["passwordserv","^\]\/password (.*)", CONSOLE_PASSWORD_SERVER,"", False],
