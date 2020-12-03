@@ -175,10 +175,11 @@ class Const:
             ["rename","^\[skipnotify\](.*) renamed to (.*)",EVENT_RENAME, "",False],
             ["teamkill", "^\[skipnotify\](.*) WAS KILLED BY TEAMMATE (.*)",EVENT_TEAMKILL, "None", True],
             ["suicide","^\[skipnotify\](.*) killed himself",EVENT_SUICIDE, EVENT_MOD_SLASHKILL, True],
+            ["fightline", "\[skipnotify\]FIGHT\!(.*)",EVENT_START,"",False], #removed ^ for now due to bugs in RTCWPro
+            ["fightunpause", "\[skipnotify]\*\*\* INFO: FIGHT",EVENT_START,"",False], #RTCWpro unpause
             ["info","^\[skipnotify\]\*\*\* INFO: (.*)",EVENT_OBJECTIVE, "", False],
             ["vote", "^\[skipnotify\](.*) called a vote", EVENT_CALLVOTE,"", False],
             ["kick", "^\[skipnotify\](.*) player kicked", EVENT_KICK,"", False],
-            ["fightline", "^\[skipnotify\]FIGHT\!(.*)",EVENT_START,"",False],
             ["pause", "^\[skipnotify\](.*) PAUSED",EVENT_PAUSE, "", False ],
             ["mapload", "^LOADING... maps/(.*).bsp",EVENT_MAPLOAD, "", False ],
             #match ending main 
