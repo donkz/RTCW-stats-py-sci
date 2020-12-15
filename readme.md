@@ -9,6 +9,7 @@ This is a python program that processes rtcwconsole.log files and spits out a ma
 rtcwmp.exe creates the file if you have setting /logfile 2. It creates the file in the folder of the mod that the game is using, for example:
 
 * c:\rtcw\osp\rtcwconsole.log
+* c:\rtcw\rtcwpro\rtcwconsole.log
 
 > Why this one?
 
