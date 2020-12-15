@@ -1191,7 +1191,7 @@ class ClientLogProcessor:
             if self.debug:
                 debug_log.write(write_line)
         
-        #close debig file        
+        #close debug file        
         if self.debug:
             debug_log.close() 
         

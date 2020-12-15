@@ -230,9 +230,8 @@ class HTMLReport:
         #end of html report
         
         try:
-            html_file = open(outpath,"w",encoding="utf-8")
-            html_file.write(soup.prettify())
-            html_file.close() 
+            with open(outpath,"w",encoding="utf-8") as html_file:
+                html_file.write(soup.prettify())
         
             time_end_html_write = _time.time()
             if self.debug_time: print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
