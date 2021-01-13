@@ -263,7 +263,10 @@ class MatchStats:
         
         for c in players_dataframe.columns:
             if '_Hits' in c or '_Attacks' in c or 'Revivals' in c or 'Dropped' in c or 'Given' in c or '_HeadShots' in c or c == 'rounds':
-                players_dataframe[c] = players_dataframe[c].astype(int)
+                try:
+                    players_dataframe[c] = players_dataframe[c].astype(float).astype(int)
+                except:
+                    print("[x] Failed to convert column " + c)
         players_dataframe['SMG_Hits'] = players_dataframe['Sten_Hits'] + players_dataframe['MP40_Hits'] + players_dataframe['Thompson_Hits']
         players_dataframe['SMG_Attacks'] = players_dataframe['Sten_Attacks'] + players_dataframe['MP40_Attacks'] + players_dataframe['Thompson_Attacks']
         players_dataframe['SMG_HeadShots'] = players_dataframe['Sten_HeadShots'] + players_dataframe['MP40_HeadShots'] + players_dataframe['Thompson_HeadShots']

@@ -561,7 +561,12 @@ class ClientLogProcessor:
             currentRound.osp_guid = "imputed"
             ospDF = self.impute_osp_variables(tmp_base_stats, currentRound.round_time, currentRound.round_num, tmp_logdf)
         else:
-            ospDF = pd.DataFrame.from_dict(currentRound.osp_stats_dict, orient='index', columns = Const.osp_columns)
+            try: 
+                ospDF = pd.DataFrame.from_dict(currentRound.osp_stats_dict, orient='index', columns = Const.osp_columns)
+            except:
+                print(currentRound.osp_stats_dict)
+            finally:
+                return ospDF
         return ospDF
     
     def determine_round_result(self,currentRound, event):
@@ -824,10 +829,11 @@ class ClientLogProcessor:
                 if currentRound.game_happened:
                     osp_player, osp_line = process_pro_line(line,currentRound.round_stats_team_line) #for now just conform to osp
                     if osp_line is None:
-                        currentRound.round_stats_confidence = 0
-                    currentRound.osp_stats_dict[osp_player] = osp_line
-                    currentRound.osp_lines.append(line.strip())   
-                    osp_line_processed = True
+                        currentRound.round_stats_confidence = 0 #this does not work
+                    else:
+                        currentRound.osp_stats_dict[osp_player] = osp_line
+                        currentRound.osp_lines.append(line.strip())   
+                        osp_line_processed = True
                 continue
                 
             #for that line loop through all possible log line types and see which type of line it is
@@ -1022,11 +1028,10 @@ class ClientLogProcessor:
                     if value.event == Const.EVENT_OSP_STATS_ALLIES or value.event == Const.EVENT_OSP_STATS_AXIS: #OSP team stats per player
                         if currentRound.game_happened:
                             osp_player, osp_line = process_OSP_line(line)
-                            if osp_line is None: #someone echoes "Axis" ... thx Cliffdark
-                                break
-                            currentRound.osp_stats_dict[osp_player] = osp_line
-                            currentRound.osp_lines.append(line.strip())   
-                            osp_line_processed = True
+                            if osp_line is not None: #someone echoes "Axis" ... thx Cliffdark or someone has 1246 kills (thx scrilla)
+                                currentRound.osp_stats_dict[osp_player] = osp_line
+                                currentRound.osp_lines.append(line.strip())   
+                                osp_line_processed = True
                         break
                     
                     #^\[skipnotify\]Timelimit hit\.
@@ -1140,7 +1145,7 @@ class ClientLogProcessor:
                                 obj_offender = map_info.offense
                                 obj_defender = map_info.defense
                                 obj_type = announcement_values[0]
-                                if ("Allies transmitted the documents!" not in x[1] and "Forward Bunker" not in x[1] and "Dynamite planted near the Service Door!" not in x[1]):
+                                if "Allies transmitted the documents!" not in x[1] and "Forward Bunker" not in x[1] and "Dynamite planted near the Service Door!" not in x[1]:
                                     #Frostbite and beach same objectives
                                     #Delivery and beach same objectives
                                     currentRound.map_counter[map_info.code] +=1
@@ -1152,6 +1157,14 @@ class ClientLogProcessor:
                                 elif ("Axis have returned the objective!" in x[1]):
                                     "Generic message, skip it"
                                 elif ("Allies have returned the objective!" in x[1]):
+                                    "Generic message, skip it"
+                                elif ("Allies have lost" in x[1]):
+                                    "Generic message, skip it"
+                                elif ("Dynamite planted near" in x[1]):
+                                    "Generic message, skip it"
+                                elif ("Axis defused dynamite" in x[1]):
+                                    "Generic message, skip it"
+                                elif ("Axis have lost" in x[1]):
                                     "Generic message, skip it"
                                 else:
                                     print("[!] -----------Unknown objective: ".ljust(20) + x[1])

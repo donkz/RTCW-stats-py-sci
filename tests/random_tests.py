@@ -279,7 +279,7 @@ with open(r'..\data\elo\elo_json.txt', 'w') as file:
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
-with open(r'..\seasons\elos-template.html', 'r') as f:
+with open(r'..\tests\elos-template.htx', 'r') as f:
 
     contents = f.read()
 

@@ -21,8 +21,9 @@ season_medals = {
     "siluro" : "a1",
     #notorious
     "caffeine" : "p1",
-    "john_mullins" : "l2,s2",
-    "fro":"b1",
-    "pasek":"b1"
+    "john_mullins" : "l2,s3",
+    "fro":"b2",
+    "pasek":"b1",
+    "druwin": "g1"
     }
 #diamond = 5 golds

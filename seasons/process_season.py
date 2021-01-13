@@ -30,23 +30,25 @@ def list_files(path):
     print("\n".join(all_files))
     return all_files
 
-def duplicate_round_guids(new_df_guids, existing_round_guids):
+def duplicate_round_guids(new_df_guids, existing_round_guids, matches):
     duplicate_rounds = []
     for guid in new_df_guids: #for each guid in incoming df
         if guid in existing_round_guids:
             duplicate_rounds.append(guid)
-            print(f"[!] Found {guid} as duplicate")
+            date = matches[matches["round_guid"]==guid]["match_date"].values[0]
+            size = matches[matches["round_guid"]==guid]["file_size"].values[0]
+            print(f"[!] Found {guid} as duplicate from " + date + " size " + size)
     return duplicate_rounds
 
 
 #settings
 season_dir = "..\\data\\seasons_data\\" #.. is back one folder. 
 #tis_season = "eu\\gsix"
-tis_season = "2020Nov"
+tis_season = "2020Dec"
 keep_only_pattern = ""
 all_seasons="all"
 write_daily_stats = False
-write_parquet = True
+write_parquet = False
 
 
 #process files
@@ -80,7 +82,7 @@ for result in results:
         if logs is not None and stats is not None and matches is not None:
             new_df_guids = list(result["matches"]["round_guid"].unique())
             existing_round_guids = list(matches["round_guid"].unique())
-            duplicate_rounds = duplicate_round_guids(new_df_guids, existing_round_guids)
+            duplicate_rounds = duplicate_round_guids(new_df_guids, existing_round_guids, matches)
             
             logs = logs.append(result["logs"][~result["logs"]["round_guid"].isin(duplicate_rounds)],sort=True)
             stats = stats.append(result["stats"][~result["stats"]["round_guid"].isin(duplicate_rounds)],sort=True)
@@ -160,7 +162,7 @@ if (False):
     renames_export_df = pd.DataFrame.from_dict(renames_export, orient='index').reset_index()
     renames_export_df["rounds_played"]=-1 # TODO
     renames_export_df.columns = ["killer","real_name","rounds_played"]
-    renames_export_df.to_csv("..\\data\\output\\aliases\\Renames_2020-Jan-Nov.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
+    renames_export_df.to_csv("..\\data\\output\\aliases\\Renames_2020-Jan-Dec.csv", index=False, quoting=csv.QUOTE_NONE, sep="\t")
     
 #duplication check
 matches = bigresult["matches"]
@@ -182,6 +184,14 @@ if len(dups) > 1:
 if False:
     from seasons.elo import process_games
     bigresult2020 = {}
+    if False: #2020 only
+        bigresult2020["stats"] = bigresult["stats"]
+        bigresult2020["logs"] = bigresult["logs"]
+        bigresult2020["matches"] = bigresult["matches"]
+#        bigresult2020["stats"].drop(index="jerk", inplace=True)
+#        bigresult2020["stats"].drop(index="aimtastic", inplace=True)
+#        bigresult2020["logs"].drop()
+            
     try:
         bigresult2020["stats"] = pd.read_parquet("..\\data\\output\\stats_all.gz")
         bigresult2020["logs"] = pd.read_parquet("..\\data\\output\\logs_all.gz")
@@ -212,12 +222,17 @@ if False:
     
     #Here you need to process current season and then run the rest of the lines
     
+    
     html_report2 = HTMLReport(bigresult, elos.fillna(0))
     html_report2.report_to_html(season_dir + tis_season + "\\" + "season-")    
 
 if False:
     writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\data\output")
     writer.write_result_whole(bigresult2020)
+    
+if False:
+    html_report3 = HTMLReport(bigresult2020, elos.fillna(0))
+    html_report3.report_to_html(season_dir + tis_season + "\\" + "season-") 
     
 if False:
     html_report3 = HTMLReport(bigresult2020, elos)

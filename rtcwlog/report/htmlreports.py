@@ -36,6 +36,7 @@ class HTMLReport:
         self.award_stats = self.awards.collect_awards()
         if elodf is not None:
             self.award_stats["awards"] = self.award_stats["awards"].join(elodf)
+            self.award_stats["awards"]["elo"].fillna(100)
 
         time_mid_html_init = _time.time()
         if self.debug_time: print ("Time to init and load awards is " + str(round((time_mid_html_init - time_start_html_init),2)) + " s")

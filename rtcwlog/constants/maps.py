@@ -338,6 +338,7 @@ class ConstMap:
         maps["mp_breakout"] =      RTCWMap("mp_breakout",      "Breakout",    self.map_announce["mp_breakout"],      self.G_AXIS,   self.G_ALLIES, 16,    "")
         maps["mp_tram"] =          RTCWMap("mp_tram",          "Tram",        self.map_announce["mp_tram"],          self.G_AXIS,   self.G_ALLIES, 20,    "the Radio Codes Booklet") 
         maps["adlernest_b5"] =     RTCWMap("adlernest_b5",     "Adlernest",   self.map_announce["adlernest_b5"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
+        maps["adlernest_b5_rtcwpro"] =     RTCWMap("adlernest_b5",     "Adlernest",   self.map_announce["adlernest_b5"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
         maps["braundorf_b5"] =     RTCWMap("braundorf_b5",     "Braundorf",   self.map_announce["braundorf_b5"],     self.G_AXIS,   self.G_ALLIES, 8,     "")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         

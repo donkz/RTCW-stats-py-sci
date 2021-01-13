@@ -1,20 +1,18 @@
 import os, sys
 import shutil
 from datetime import datetime
-
-#set relative path
-RTCWPY_PATH = os.getcwd()
-RTCWPY_PATH = RTCWPY_PATH.replace("\\tests","")
-if not RTCWPY_PATH in sys.path:
-    sys.path.append(RTCWPY_PATH)
-
 from rtcwlog.clientlog import ClientLogProcessor
 from rtcwlog.report.htmlreports import HTMLReport
 
-
+#set relative path
+RTCWPY_PATH = os.getcwd()
+RTCWPY_PATH = RTCWPY_PATH.replace("\\tests", "")
+if RTCWPY_PATH not in sys.path:
+    sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r"..\tests\test_samples\rtcwconsole-2019-12-15.log"
+rtcwlogfile = r"..\data\seasons_data\2020Dec\2020-12-31-06-23-00-rtcwconsole.log"
+
 
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup
 if rtcwlogfile[-16:] == "\rtcwconsole.log":
@@ -74,4 +72,3 @@ html_report.report_to_html()
 #[!] -----------Unknown objective: Allies have lost Hitler's Documents!
 
 #round end totals are now all lower case...
-

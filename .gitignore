@@ -38,7 +38,7 @@ data/
 #lambda make folder
 lambda/tmp/
 
-#lambda make folder
+#Spyder project folder
 .spyproject/
 
 # output working files
@@ -46,6 +46,13 @@ output/
 
 # vscode settings
 .vscode/
+
+# pycharm settings
+.idea/
+
+# vertual environment
+venv/
+
 
 #packaging
 dist/
