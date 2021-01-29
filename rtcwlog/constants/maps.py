@@ -303,6 +303,24 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near the Bunker Controls!"],
                       [O_PLANT, "Dynamite planted near the Main Gate!"], #frequent obj across several maps
                       [O_PLANT, "Dynamite planted near the Side Door!"] #same as church
+                    ],
+            "bd_bunker_b2" : [
+                      [O_WIN,"Allies have transmitted the Quiz Answers!"],
+                      #[D_FLAG, "Axis capture the Factory Flag!"],
+                      [O_FLAG,"Allies have captured the Inner Compound"],
+                      [O_OBJ,"Allies have breached the Bunker Door!"],
+                      [O_OBJ,"Allies have breached the Storage Wall!"],  
+                      [O_PLANT, "Dynamite planted near the Storage Wall!"],
+                      [O_PLANT, "Dynamite planted near the Bunker Door!"]
+                    ],
+            "radar_b4" : [
+                      [O_WIN,"Axis have escaped with the West Radar Parts!"],
+                      [D_FLAG, "Allies reclaim the Forward Bunker!"],
+                      [O_FLAG,"Axis capture the Forward Bunker!"],
+                      [O_OBJ,"Axis have breached the Main Entrance!"],
+                      [O_OBJ,"Axis have breached the Side Entrance!"],  
+                      [O_PLANT, "Dynamite planted near the Side Entrance!"],
+                      #[O_PLANT, "Dynamite planted near the Bunker Door!"]
                     ]
             }
     
@@ -340,6 +358,8 @@ class ConstMap:
         maps["adlernest_b5"] =     RTCWMap("adlernest_b5",     "Adlernest",   self.map_announce["adlernest_b5"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
         maps["adlernest_b5_rtcwpro"] =     RTCWMap("adlernest_b5",     "Adlernest",   self.map_announce["adlernest_b5"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
         maps["braundorf_b5"] =     RTCWMap("braundorf_b5",     "Braundorf",   self.map_announce["braundorf_b5"],     self.G_AXIS,   self.G_ALLIES, 8,     "")
+        maps["bd_bunker_b2"] =     RTCWMap("bd_bunker_b2",     "Brewdog",     self.map_announce["bd_bunker_b2"],     self.G_AXIS,   self.G_ALLIES, 10,     "the Secret Documents")
+        maps["radar_b4"] =         RTCWMap("radar_b4",         "Radar",       self.map_announce["radar_b4"],         self.G_ALLIES, self.G_AXIS,   10,     "the West Radar Parts")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         
