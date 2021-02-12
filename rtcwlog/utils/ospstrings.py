@@ -13,7 +13,8 @@ def process_OSP_line(line):
     if len(tokens) < 10:
         return (None, None)
     player = " ".join(tokens[1:len(tokens)-10])
-    return (player, [player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5],tokens[-4],tokens[-3],tokens[-2],tokens[-1]])
+    #                                       kll         dth         sui       tk     eff         gib       ac_fake      hs_fake      dg         dr           TD       Rev_fake   Score
+    return (player, [player, tokens[0],tokens[-10],tokens[-9],tokens[-8],tokens[-7],tokens[-6],tokens[-5], "0.0",       "0",      tokens[-4],tokens[-3],tokens[-2],    "0",     tokens[-1]])
 
 #Disassemble the following lines into a tuple of (player,statline)
 #        Player          Kll Dth Sui TK Eff Gib Accrcy HS   DG   DR   TD  Rev Score
@@ -33,8 +34,9 @@ def process_pro_line(line, team_indicator):
         team = "Allies"
     else:
         print(f"[!] Could not extract team from {team_indicator}")
-        #                           kll         dth           sui          tk        eff          gib     dg         dr           TD        Score
-    return (player, [player, team ,tokens[-13],tokens[-12],tokens[-11],tokens[-10],tokens[-9],tokens[-8],tokens[-5],tokens[-4],tokens[-3],tokens[-1]])
+    #                                         kll         dth           sui          tk        eff          gib       ac           hs           dg         dr           TD       Rev       Score
+    result_touple =  (player, [player, team ,tokens[-13],tokens[-12],tokens[-11],tokens[-10],tokens[-9],tokens[-8],tokens[-7], tokens[-6], tokens[-5],tokens[-4],tokens[-3],tokens[-2], tokens[-1]])
+    return result_touple
 
 #re.search("^Accuracy info for: (.*)","Accuracy info for: -doNka- (2 Rounds)")
 #text = '-doNka- (2 Rounds)'
@@ -111,7 +113,7 @@ def build_player_df(players_all):
     try: 
         submitter = playerdf["player"].value_counts().sort_values().tail(1).index.values[0]
     except:
-        print("[!] Could not determine submitter\n", players_all)
+        print("[!] Could not determine submitter\n", players_all, playerdf["player"])
     
     playerdf["submitter"] = submitter
     return playerdf

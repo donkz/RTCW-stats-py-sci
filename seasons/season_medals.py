@@ -5,7 +5,7 @@ season_medals = {
     "source" : "g2,s1,b1,q1",
     "flogzero" : "s2,b1",
     "kittens" : "s3,b1,q1",
-    "parcher" : "s1,b1",
+    "parcher" : "s1,b2",
     "nigel" : "g1,q1",
     "donka" : "b1",
     "brandon" : "s1,q1",
@@ -21,9 +21,10 @@ season_medals = {
     "siluro" : "a1",
     #notorious
     "caffeine" : "p1",
-    "john_mullins" : "l2,s3",
-    "fro":"b2",
+    "john_mullins" : "l2,g1,s3",
+    "fro":"b3",
     "pasek":"b1",
-    "druwin": "g1"
+    "druwin": "g2",
+    "jam" : "b1"
     }
 #diamond = 5 golds

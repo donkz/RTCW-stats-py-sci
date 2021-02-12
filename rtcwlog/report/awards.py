@@ -123,6 +123,14 @@ class Awards:
         if self.debug_time: print ("Time to process points is " + str(round((t2 - t1),2)) + " s")
         t1 = t2
         
+        x = self.award_most_revives(sum_lines_dataframe)
+        awardsdf = awardsdf.join(x)
+        columns.append(x.columns[0])
+        columns.append(x.columns[1])
+        t2 = _time.time()
+        if self.debug_time: print ("Time to process revives is " + str(round((t2 - t1),2)) + " s")
+        t1 = t2
+        
         x = self.award_most_wins(sum_lines_dataframe)
         awardsdf = awardsdf.join(x)
         t2 = _time.time()
@@ -196,7 +204,7 @@ class Awards:
     def ranked_column_types(self):
         rank_cols = [c for c in self.awardsdf.columns if c.endswith('_rank')]
         #ranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() >0] if c.endswith('_rank')]
-        ranked_cols = ['KPM_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Win%_rank', 'RankPts_rank']
+        ranked_cols = ['KPM_rank', 'KDR_rank', 'KillStreak_rank', 'MegaKill_rank', 'Panzer_rank', 'Smoker_rank', 'FirstInDoor_rank', 'AdjScore_rank', 'Win%_rank', 'RankPts_rank', 'Revives_rank']
         #unranked_cols = [c for c in self.awardsdf.columns[self.awardsdf.max() == 0] if c.endswith('_rank')]
         unranked_cols = ['Kills_rank', 'Minutes_rank', 'Rounds_rank','Deathroll_rank', 'Blownup_rank', 'Panzed_rank']
         inverse_ranked_cols = ['Panzer_rank', 'Smoker_rank', 'Sniper_rank', 'Tapout_rank']
@@ -571,6 +579,22 @@ class Awards:
         result.loc[result[result[Const.STAT_POST_ADJSCORE + "_rank"] > 4].index, Const.STAT_POST_ADJSCORE + "_rank"] = 5
         result.drop(["Rounds"], axis=1, inplace=True)
         return result
+    
+        '''
+    Most revives
+    '''
+    def award_most_revives(self,sum_lines_dataframe):
+        sum_lines_dataframe[Const.STAT_PRO_REV]  = sum_lines_dataframe[Const.STAT_PRO_REV].fillna(0).astype(int)
+        resultdf = sum_lines_dataframe.groupby([Const.STAT_BASE_KILLER])[[Const.STAT_PRO_REV]].sum()
+        
+        resultdf = resultdf.join(self.rounds)
+        resultdf[Const.STAT_PRO_REV] = resultdf[Const.STAT_PRO_REV]/resultdf["Rounds"]
+        resultdf[Const.STAT_PRO_REV] = resultdf[Const.STAT_PRO_REV].round(1)
+        resultdf.loc[resultdf[resultdf["Rounds"] < self.minrounds].index, Const.STAT_PRO_REV] = resultdf.loc[resultdf[resultdf["Rounds"] < self.minrounds].index, Const.STAT_PRO_REV].multiply(-1)
+        resultdf[Const.STAT_PRO_REV + "_rank"] = resultdf[Const.STAT_PRO_REV].rank(method="min", ascending=False, na_option='bottom')
+        resultdf.loc[resultdf[resultdf[Const.STAT_PRO_REV + "_rank"] > 4].index, Const.STAT_PRO_REV + "_rank"] = 5
+        resultdf.drop(["Rounds"], axis=1, inplace=True)
+        return resultdf
     
     '''
     Suicide/Tapout (penalty)

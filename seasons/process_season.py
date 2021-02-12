@@ -37,14 +37,15 @@ def duplicate_round_guids(new_df_guids, existing_round_guids, matches):
             duplicate_rounds.append(guid)
             date = matches[matches["round_guid"]==guid]["match_date"].values[0]
             size = matches[matches["round_guid"]==guid]["file_size"].values[0]
-            print(f"[!] Found {guid} as duplicate from " + date + " size " + size)
+            file = matches[matches["round_guid"]==guid]["file_name"].values[0]
+            print(f"[!] Found {guid} as duplicate from " + date + " size " + size + " name " + file)
     return duplicate_rounds
 
 
 #settings
 season_dir = "..\\data\\seasons_data\\" #.. is back one folder. 
 #tis_season = "eu\\gsix"
-tis_season = "2020Dec"
+tis_season = "2021Jan"
 keep_only_pattern = ""
 all_seasons="all"
 write_daily_stats = False
@@ -94,6 +95,11 @@ for result in results:
             stats = result["stats"]
             matches = result["matches"]
             players = result["players"]
+
+#dups = matches.groupby(["round_guid"]).count().index.unique()
+dups = matches["round_guid"].value_counts().sort_values(ascending=False)
+dups = dups[dups > 1]
+
 
 if tis_season == "":
     print("Processing all seasons")
@@ -183,37 +189,38 @@ if len(dups) > 1:
 # 2. capture elos
 if False:
     from seasons.elo import process_games
-    bigresult2020 = {}
+    year_sum = {}
     if False: #2020 only
-        bigresult2020["stats"] = bigresult["stats"]
-        bigresult2020["logs"] = bigresult["logs"]
-        bigresult2020["matches"] = bigresult["matches"]
-#        bigresult2020["stats"].drop(index="jerk", inplace=True)
-#        bigresult2020["stats"].drop(index="aimtastic", inplace=True)
-#        bigresult2020["logs"].drop()
+        year_sum["stats"] = bigresult["stats"]
+        year_sum["logs"] = bigresult["logs"]
+        year_sum["matches"] = bigresult["matches"]
+#        year_sum["stats"].drop(index="jerk", inplace=True)
+#        year_sum["stats"].drop(index="aimtastic", inplace=True)
+#        year_sum["logs"].drop()
             
     try:
-        bigresult2020["stats"] = pd.read_parquet("..\\data\\output\\stats_all.gz")
-        bigresult2020["logs"] = pd.read_parquet("..\\data\\output\\logs_all.gz")
-        bigresult2020["matches"] = pd.read_parquet("..\\data\\output\\matches_all.gz") 
+        year_sum["stats"] = pd.read_parquet("..\\data\\output\\stats_all.gz")
+        year_sum["logs"] = pd.read_parquet("..\\data\\output\\logs_all.gz")
+        year_sum["matches"] = pd.read_parquet("..\\data\\output\\matches_all.gz") 
     except:
-        print("Did not load bigresult2020 from archive")
-        bigresult2020 = bigresult.copy()
+        print("Did not load year_sum from archive")
+        year_sum = bigresult.copy()
 
-    bigresult2020["stats"].index = bigresult2020["stats"]["Killer"]
-    bigresult2020["stats"].index.name = "index"
+    year_sum["stats"].index = year_sum["stats"]["Killer"]
+    year_sum["stats"].index.name = "index"
     
-    bigresult2020["stats"] = bigresult2020["stats"].append(bigresult["stats"])
-    bigresult2020["logs"] = bigresult2020["logs"].append(bigresult["logs"])
-    bigresult2020["matches"] = bigresult2020["matches"].append(bigresult["matches"])
-    bigresult2020["players"] = bigresult["players"] # TODO !!!!
+    #todo year logic jan vs rest
+    year_sum["stats"] = year_sum["stats"].append(bigresult["stats"])
+    year_sum["logs"] = year_sum["logs"].append(bigresult["logs"])
+    year_sum["matches"] = year_sum["matches"].append(bigresult["matches"])
+    year_sum["players"] = bigresult["players"] # TODO !!!!
 
     
-    bigresult2020["logs"].reset_index(inplace=True, drop=True)
-    bigresult2020["matches"].reset_index(inplace=True, drop=True)
-    bigresult2020["players"] = bigresult["players"].astype(str)
+    year_sum["logs"].reset_index(inplace=True, drop=True)
+    year_sum["matches"].reset_index(inplace=True, drop=True)
+    year_sum["players"] = bigresult["players"].astype(str)
     
-    elos = process_games(bigresult2020["stats"])
+    elos = process_games(year_sum["stats"])
     elos.index = elos["player"]
     elos.drop(["player"],inplace=True, axis=1)
     elos["elo"] = elos["elo"].astype(int).fillna(100)
@@ -228,12 +235,9 @@ if False:
 
 if False:
     writer = StatsWriter(media="disk", rootpath=RTCWPY_PATH, subpath=r"\data\output")
-    writer.write_result_whole(bigresult2020)
+    writer.write_result_whole(year_sum)
+    
     
 if False:
-    html_report3 = HTMLReport(bigresult2020, elos.fillna(0))
+    html_report3 = HTMLReport(year_sum, elos.fillna(0))
     html_report3.report_to_html(season_dir + tis_season + "\\" + "season-") 
-    
-if False:
-    html_report3 = HTMLReport(bigresult2020, elos)
-    html_report3.report_to_html(season_dir + tis_season + "\\" + "season-")  

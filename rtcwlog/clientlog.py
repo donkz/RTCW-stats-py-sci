@@ -38,7 +38,8 @@ class StatLine:
 
 class MatchLine:
       
-    def __init__(self, file_date, match_date, file_size, round_guid, osp_guid, round_order, round_num, players, defense_hold, winner, round_time, round_diff, map_):
+    def __init__(self, file_name, file_date, match_date, file_size, round_guid, osp_guid, round_order, round_num, players, defense_hold, winner, round_time, round_diff, map_):
+         self.file_name = file_name
          self.file_date = file_date
          self.match_date = match_date
          self.file_size = file_size
@@ -58,13 +59,13 @@ class Round:
     def __init__(self, round_order):
          self.round_order = round_order
          self.tmp_log_events = []
-         self.osp_lines = []
+         self.stats_lines = []
          self.round_num = 1
          self.game_started = False
          self.game_paused = False
          self.game_finished = False
          self.game_happened = False
-         self.osp_stats_dict = {}
+         self.stats_dict = {}
          self.tmp_stats_all = None
          self.map_counter = Counter()
          self.obj_counter = Counter()
@@ -109,6 +110,8 @@ class ClientLogProcessor:
         self.last_known_map = None
         self.tmp_exact_map = None
         self.tmp_submitter = "UnnamedPlayer"
+        self.submitter = "?"
+        self.match_type = "?"
         
         if "local_file" in kwargs and ("s3bucket" in kwargs or "s3file" in kwargs):
             print("[x] Provide either local_file or s3 information (s3bucket and s3file)")
@@ -120,6 +123,7 @@ class ClientLogProcessor:
             self.file_size = self.get_file_size()
             self.lines = self.get_log_lines_local()
             self.medium_agnostic_file_name = self.local_file
+            self.match_type = "local"
             
         if "debug" in kwargs:
             self.debug = kwargs.get("debug")
@@ -132,6 +136,10 @@ class ClientLogProcessor:
             if "s3file" in kwargs:
                 self.lines = self.get_log_lines_s3(kwargs.get("s3bucket"), kwargs.get("s3file"))
                 self.medium_agnostic_file_name = "s3://" + kwargs.get("s3bucket") + "/" + kwargs.get("s3file")
+                try:
+                    self.match_type = "/".join(kwargs.get("s3file").split("/")[1:3])
+                except:
+                    print("[!] Type could not be derived from " + kwargs.get("s3file"))
             else:
                 print("[x] You have provided s3bucket, but not s3file")
     
@@ -407,6 +415,10 @@ class ClientLogProcessor:
                 print(teams)
             finally:
                 team = team if team else "Allies" # stick them on offence
+            
+            if round_time is None:
+                print("[!] Closing a round without exact round time")
+                round_time = 600
                 
             STAT_OSP_SUM_TEAM = team
             STAT_OSP_SUM_FRAGS = base["Kills"] * round_number
@@ -415,14 +427,17 @@ class ClientLogProcessor:
             STAT_OSP_SUM_TK = base["TK"] * round_number
             STAT_OSP_SUM_EFF = int(100.0*STAT_OSP_SUM_FRAGS/(STAT_OSP_SUM_FRAGS + STAT_OSP_SUM_DEATHS+1))
             STAT_OSP_SUM_GIBS = int(STAT_OSP_SUM_FRAGS*Const.EXTRAPOLATE_GIB_PER_KILL * round_number)
+            STAT_PRO_ACC = 30.0 # semi science
+            STAT_PRO_HEADSHOTS = int(STAT_OSP_SUM_FRAGS*Const.EXTRAPOLATE_GIB_PER_KILL * round_number)
             STAT_OSP_SUM_DMG = int(STAT_OSP_SUM_FRAGS*Const.EXTRAPOLATE_DG_PER_KILL * round_number)
             STAT_OSP_SUM_DMR = int(STAT_OSP_SUM_DEATHS*round_number * Const.EXTRAPOLATE_DR_PER_DEATH)
             STAT_OSP_SUM_TEAMDG = int(Const.EXTRAPOLATE_TEAM_DMG_PER_SEC * round_time)
+            STAT_PRO_REVIVES = int(STAT_OSP_SUM_FRAGS*Const.EXTRAPOLATE_REV * round_number)
             STAT_OSP_SUM_SCORE = int(Const.EXTRAPOLATE_SCORE_PER_SEC*round_time) + base["Kills"] - base["Suicides"]*3 - base["TK"]*3
             
-            osp_rows[STAT_OSP_SUM_PLAYER]=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_OSP_SUM_SCORE]
+            osp_rows[STAT_OSP_SUM_PLAYER]=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_PRO_ACC, STAT_PRO_HEADSHOTS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_PRO_REVIVES, STAT_OSP_SUM_SCORE]
         
-        ospDF = pd.DataFrame.from_dict(osp_rows, orient='index', columns=Const.osp_columns)
+        ospDF = pd.DataFrame.from_dict(osp_rows, orient='index', columns=Const.stat_columns)
         t2 = _time.time()
         if self.debug_time: print ("[t] Time to impute OSP stats " + str(round((t2 - t1),3)) + " s")
         return ospDF
@@ -554,17 +569,22 @@ class ClientLogProcessor:
         return tmp_map
     
     def build_osp_stats_dataframe(self, currentRound, tmp_base_stats, tmp_logdf):
-        if len(currentRound.osp_stats_dict) == 0:
+        if len(currentRound.stats_dict) == 0:
             print ("[!] Missing OSP stats. Imputing variables.")
             # TODO: impute individual missing players
             #break
             currentRound.osp_guid = "imputed"
+            #print("[Debug] current round time: " + str(currentRound.round_time))
+            #print("[Debug]\n", vars(currentRound))
+            if currentRound.round_time is None:
+                print("[!] Round did not fully report itself. Skipping.")
+                return None
             ospDF = self.impute_osp_variables(tmp_base_stats, currentRound.round_time, currentRound.round_num, tmp_logdf)
         else:
             try: 
-                ospDF = pd.DataFrame.from_dict(currentRound.osp_stats_dict, orient='index', columns = Const.osp_columns)
+                ospDF = pd.DataFrame.from_dict(currentRound.stats_dict, orient='index', columns = Const.stat_columns)
             except:
-                print(currentRound.osp_stats_dict)
+                print(currentRound.stats_dict)
             finally:
                 return ospDF
         return ospDF
@@ -619,7 +639,8 @@ class ClientLogProcessor:
         else: 
             players = get_player_list(currentRound.tmp_stats_all)
         
-        new_match_line = MatchLine(self.file_date,                 # date of file creation
+        new_match_line = MatchLine(self.medium_agnostic_file_name,
+                                   self.file_date,                 # date of file creation
                                    currentRound.round_datetime,    # date from the text of the log itself
                                    self.file_size,                 # file size
                                    currentRound.round_guid,        # match guid - processed at the end
@@ -662,7 +683,7 @@ class ClientLogProcessor:
         if tmp_base_stats is None:
             return None
             
-        ospDF = self.build_osp_stats_dataframe(currentRound, tmp_base_stats, tmp_logdf)                    
+        ospDF = self.build_osp_stats_dataframe(currentRound, tmp_base_stats, tmp_logdf)   
         if ospDF is None:
             #break # TODO test this
             print("[x] Round could not be summarized, aborting this round.")
@@ -732,6 +753,7 @@ class ClientLogProcessor:
             players_all = {}
             players_all[currentRound.osp_guid] = currentRound.player_stats
             tmp_playersdf = build_player_df(players_all)
+            self.submitter = tmp_playersdf.iloc[0,]["submitter"]
             tmp_playersdf["match_date"] = currentRound.round_datetime
             self.playersdf = self.playersdf.append(tmp_playersdf)
             
@@ -816,7 +838,7 @@ class ClientLogProcessor:
             line = stripColors(val, colors)
             #init loop variables
             stat_entry = None
-            osp_line_processed = False
+            stat_line_processed = False
                  
             if (line[1:3] == ":\\" and line[-6:] == "files)") or line == "    not on the pure list" or line == "    on the pure list" or len(line) == 0 or (line[0:10] == "LOADING..." and line[11:16] != "maps/"):
                 #print("[Debug] Skipping " + line)
@@ -827,13 +849,13 @@ class ClientLogProcessor:
                     currentRound.round_stats_confidence = 0
                     continue
                 if currentRound.game_happened:
-                    osp_player, osp_line = process_pro_line(line,currentRound.round_stats_team_line) #for now just conform to osp
-                    if osp_line is None:
+                    pro_player, pro_line = process_pro_line(line,currentRound.round_stats_team_line) #for now just conform to osp
+                    if pro_line is None:
                         currentRound.round_stats_confidence = 0 #this does not work
                     else:
-                        currentRound.osp_stats_dict[osp_player] = osp_line
-                        currentRound.osp_lines.append(line.strip())   
-                        osp_line_processed = True
+                        currentRound.stats_dict[pro_player] = pro_line
+                        currentRound.stats_lines.append(line.strip())   
+                        stat_line_processed = True
                 continue
                 
             #for that line loop through all possible log line types and see which type of line it is
@@ -1005,11 +1027,11 @@ class ClientLogProcessor:
                     if value.event == Const.EVENT_OSP_STATS_END:
                         if currentRound.game_happened:
                             #currentRound.reading_osp_stats = False
-                            currentRound.osp_guid = get_round_guid_osp(currentRound.osp_lines)
+                            currentRound.osp_guid = get_round_guid_osp(currentRound.stats_lines)
                             #print("Processing OSP stats id: " + osp_guid)
                             #print("Osp stats for guid calculation. Round: " + str(round_order))
-                            #print(*currentRound.osp_lines, sep = "\n")
-                            currentRound.osp_lines = []
+                            #print(*currentRound.stats_lines, sep = "\n")
+                            currentRound.stats_lines = []
                         else:
                             if currentRound.game_finished:
                                 #this will be non-issue after round is processed FIGHT to FIGHT
@@ -1029,9 +1051,9 @@ class ClientLogProcessor:
                         if currentRound.game_happened:
                             osp_player, osp_line = process_OSP_line(line)
                             if osp_line is not None: #someone echoes "Axis" ... thx Cliffdark or someone has 1246 kills (thx scrilla)
-                                currentRound.osp_stats_dict[osp_player] = osp_line
-                                currentRound.osp_lines.append(line.strip())   
-                                osp_line_processed = True
+                                currentRound.stats_dict[osp_player] = osp_line
+                                currentRound.stats_lines.append(line.strip())   
+                                stat_line_processed = True
                         break
                     
                     #^\[skipnotify\]Timelimit hit\.
@@ -1039,6 +1061,7 @@ class ClientLogProcessor:
                         #currentRound.game_started = False # we still have OSP stats to process
                         currentRound.game_finished = True
                         currentRound.defense_hold = 1
+                        currentRound.result_type = Const.EVENT_OSP_NOT_REACHED
                         # implement timelimit hit. It appears before OSP stats only when clock ran out
                         break
                     
@@ -1191,7 +1214,7 @@ class ClientLogProcessor:
             if stat_entry:
                 processedLine = "Logged" 
                 currentRound.tmp_log_events.append(stat_entry)
-            elif osp_line_processed:
+            elif stat_line_processed:
                 processedLine = "Osp added"
             elif x:
                 processedLine = "Processed"
@@ -1245,4 +1268,4 @@ class ClientLogProcessor:
             
             time_end_process_log = _time.time()
             print ("[ ] File processed " + self.medium_agnostic_file_name + ". Total time is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
-            return {"logs":self.logdf, "stats":self.statsdf, "matches":self.matchesdf, "renames" : renameDF, "players" : self.playersdf}
+            return {"logs":self.logdf, "stats":self.statsdf, "matches":self.matchesdf, "renames" : renameDF, "players" : self.playersdf, "submitter" : self.submitter, "type" : self.match_type}

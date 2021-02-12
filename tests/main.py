@@ -13,7 +13,6 @@ if RTCWPY_PATH not in sys.path:
 #file to process
 rtcwlogfile = r"..\data\seasons_data\2020Dec\2020-12-31-06-23-00-rtcwconsole.log"
 
-
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup
 if rtcwlogfile[-16:] == "\rtcwconsole.log":
     dt = datetime.now().strftime("%Y-%m-%d")

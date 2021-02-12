@@ -97,8 +97,8 @@ class MatchStats:
         base_stats_sum.rename(columns={Const.STAT_BASE_KILLER : "Rounds"}, inplace=True)
         #stats using osp data
         #use only round 2 stats
-        osp_stats  = sum_lines_dataframe[sum_lines_dataframe["round_num"] == 2][[Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]].fillna(0).astype(int)
-        osp_stats_sum = osp_stats.groupby(osp_stats.index).agg({Const.STAT_OSP_SUM_GIBS : "sum", Const.STAT_OSP_SUM_DMG : "sum" , Const.STAT_OSP_SUM_DMR : "sum" , Const.STAT_OSP_SUM_TEAMDG : "sum"})
+        osp_stats  = sum_lines_dataframe[sum_lines_dataframe["round_num"] == 2][[Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG, Const.STAT_PRO_HEADSHOTS, Const.STAT_PRO_REV]].fillna(0).astype(int)
+        osp_stats_sum = osp_stats.groupby(osp_stats.index).agg({Const.STAT_OSP_SUM_GIBS : "sum", Const.STAT_OSP_SUM_DMG : "sum" , Const.STAT_OSP_SUM_DMR : "sum" , Const.STAT_OSP_SUM_TEAMDG : "sum", Const.STAT_PRO_HEADSHOTS : "sum", Const.STAT_PRO_REV : "sum"})
         
         #Join base and OSP
         stats_all_sum = base_stats_sum.join(osp_stats_sum)

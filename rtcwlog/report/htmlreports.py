@@ -85,7 +85,9 @@ class HTMLReport:
         
         time_end_html_init = _time.time()
         if self.debug_time: print ("Time to build html tables " + str(round((time_end_html_init - time_mid_html_init),2)) + " s")
-            
+        
+        self.submitter = result["submitter"]
+        self.match_type = result["type"]
 
     
     def report_to_html(self,folder="", filenoext=""):
@@ -169,6 +171,8 @@ class HTMLReport:
         body = Tag(soup, name = "body")
         soup.html.append(body)
         soup.body.append(self.insert_header("Log file for a match from " + self.match_date,2))
+        
+        soup.body.append(self.submission_text())
         soup.body.append(self.summary_text())
         soup.body.append(self.insert_header("Results",2))
         soup.body.append(self.insert_toggle("results"))
@@ -288,6 +292,11 @@ class HTMLReport:
         content = "Match started at %s. Total of %s players played %s rounds on %s maps and murdered eachother %s times!" % (self.match_time, self.metrics["players_count"] , self.metrics["rounds_count"], self.metrics["maps_count"], self.metrics["kill_sum"])
         soup = self.insert_text(content)        
         return soup
+    
+    def submission_text(self):
+        content = "This logfile was submitted by %s and categorized under %s." % (self.submitter, self.match_type)
+        soup = self.insert_text(content)        
+        return soup
         
     def award_summaries_to_html(self,awardsdf):
         soup = BeautifulSoup("","lxml")        
@@ -322,7 +331,7 @@ class HTMLReport:
             elif col == "RankPts_rank":
                 "We'll give it a pass this time"
             else:
-                print("[!] Warning: something left over in awards table: " + col)
+                print("[!] Warning: something left over in awards table. Add it to HTMLReport.ranked_column_types and awards_order: " + col)
                 
             try:
                 if col_value in ["Rounds"]:# do not award
@@ -345,11 +354,10 @@ class HTMLReport:
                     
             except:
                 print("[!] Summary award failed!")
-                print(col_value in self.award_info.awards.keys())
                 import sys
                 print(sys.exc_info())
-                print("Columns being processed: " + col_value + " and " + col)
-                print("Award dataframe:")
+                print("[!] Columns being processed: " + col_value + " and " + col)
+                print("[!] Award dataframe:")
                 print(awardsdf[[col_value,col]])
         soup.append(table)
         return soup
@@ -399,7 +407,7 @@ class HTMLReport:
         columns = awardsdf.columns
         metrics = [name for name in columns if "rank" not in name]
 
-        awards_order = ['Minutes', 'Rounds', 'Kills', 'KPM', 'KDR', 'FirstInDoor', 'AdjScore',  'KillStreak', 'MegaKill', 'Win%']
+        awards_order = ['Minutes', 'Rounds', 'Kills', 'KPM', 'KDR', 'FirstInDoor', 'AdjScore', 'Revives', 'KillStreak', 'MegaKill', 'Win%']
         penalties_order = ['Tapout', 'Panzer', 'Smoker', 'Sniper']
         sympathy_order = ['Deathroll', 'Blownup', 'Panzed']
         final = ['RankPts']
@@ -564,7 +572,58 @@ class HTMLReport:
     #Basic stats <table>
     def all_stats_to_html(self,basic_stats):
         stats = basic_stats[0]
+        # TODO: temporary adjustment
+        stats.drop(['All_Deaths', 'All_Deaths_rank'], axis=1, inplace=True)
+        stats['Rounds_rank']=0
+        stats.rename(columns={'OSP_Gibs':'Gibs'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Given':'DMG'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Received':'DMR'}, inplace=True)
+        stats.rename(columns={'OSP_Team_Damage':'TDM'}, inplace=True)
+        stats.rename(columns={'DPF':'DPK'}, inplace=True)
+        
+        stats.rename(columns={'OSP_Gibs_rank':'Gibs_rank'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Given_rank':'DMG_rank'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Received_rank':'DMR_rank'}, inplace=True)
+        stats.rename(columns={'OSP_Team_Damage_rank':'TDM_rank'}, inplace=True)
+        stats.rename(columns={'DPF_rank':'DPK_rank'}, inplace=True)
+        stats = stats[
+            [ 'Rounds', 'Kills',
+             'KDR',
+             'KPR',
+             'Deaths',
+             'TK',
+             'TKd',
+             'Suicides',
+             'Gibs',
+             'Headshots', 'Revives',
+             'DMG',
+             'DMR',
+             'TDM',
+             'DPR',
+             'DPK',
+             'Kills_rank',
+             'Deaths_rank',
+             'TK_rank',
+             'TKd_rank',
+             'Suicides_rank',
+             'Rounds_rank',
+             'Gibs_rank',
+             'Headshots_rank', 'Revives_rank',
+             'DMG_rank',
+             'DMR_rank',
+             'TDM_rank',
+             'KDR_rank',
+             'KPR_rank',
+             'DPR_rank',
+             'DPK_rank']
+            ]
+        # TODO: end of temporary adjustment
+        
+        
         columns = stats.columns
+        
+        
+        
         
         soup = BeautifulSoup("","lxml")
         metrics = [name for name in columns if "rank" not in name]
@@ -696,7 +755,7 @@ class HTMLReport:
             if(players == None):
                 players = [["??","??","??"],["??","??","??"]]
             td["title"] = players[0][0].replace(" ","_").replace(Const.TEXT_PLAYER_SEPARATOR,"\n")
-            td.string = players[0][0][0:30].replace(Const.TEXT_PLAYER_SEPARATOR," ,")
+            td.string = players[0][0][0:50].replace(Const.TEXT_PLAYER_SEPARATOR," ,")
             t1size = len(players[0][0].split(Const.TEXT_PLAYER_SEPARATOR))
             
             try:
@@ -747,7 +806,7 @@ class HTMLReport:
             #Team 2
             td = Tag(soup, name = 'td')
             td["title"] = players[1][0].replace(" ","_").replace(Const.TEXT_PLAYER_SEPARATOR,"\n")
-            td.string = players[1][0][0:30].replace(Const.TEXT_PLAYER_SEPARATOR," ,")
+            td.string = players[1][0][0:50].replace(Const.TEXT_PLAYER_SEPARATOR," ,")
             td["class"] = team_2 + " fullroster" 
             t2size = len(players[1][0].split(Const.TEXT_PLAYER_SEPARATOR))
             tr.append(td)

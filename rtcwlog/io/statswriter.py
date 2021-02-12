@@ -37,6 +37,9 @@ class StatsWriter:
                     'OSP_Team' : 'str',
                     'OSP_Team_Damage' : 'int',
                     'Suicides' : 'int',
+                    'Accuracy'  : 'float', 
+                    'Headshots' : 'int', 
+                    'Revives' : 'int',
                     'TK' : 'int',
                     'TKd' : 'int',
                     'class' : 'str',
@@ -75,6 +78,9 @@ class StatsWriter:
                     'OSP_Team' : '',
                     'OSP_Team_Damage' : 0,
                     'Suicides' : 0,
+                    'Accuracy'  : 0.0, 
+                    'Headshots' : 0, 
+                    'Revives' : 0,
                     'TK' : 0,
                     'TKd' : 0,
                     'game_result' : '',
@@ -107,7 +113,8 @@ class StatsWriter:
                 'winner': 'str',
                 'round_time':'int',
                 'round_diff':'int',
-                'map': 'str'
+                'map': 'str',
+                'file_name' :'str'
                 }
         self.matches_default_values = {
                 'file_date': '1999-07-31',
@@ -122,7 +129,8 @@ class StatsWriter:
                 'winner': 'Allies',
                 'round_time':600,
                 'round_diff':0,
-                'map': 'Ice'
+                'map': 'Ice',
+                'file_name' :'str'
                 }
             
         
@@ -191,6 +199,8 @@ class StatsWriter:
             except:
                 print("Could not create a directory to write stats out to : " + self.filepath)
                     
+        if result is None:
+            return
         for dataset in result:
             if dataset in ["logs", "stats", "matches"]:
                 tmp = result[dataset]

@@ -171,4 +171,9 @@ class AwardText:
                                         "ELO Score for the year",
                                         [],
                                         20)
+    awards["Revives"]     = AwardStruct("Medic",
+                                        "Revives per round",
+                                         ["Provide{multiplier} best team support with {statistic} revives per round!",
+                                         "Resurrect{multiplier} over {statistic} corpses every round!"],
+                                         2)
     

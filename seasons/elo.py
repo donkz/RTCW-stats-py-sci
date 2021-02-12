@@ -81,7 +81,7 @@ class KReduction:
 def process_games(stats): 
     df = stats[stats["round_num"]==2]
     df = df.reset_index()[["index", "Kills","round_time", "game_result", "round_guid", "Panzerfaust","Sniper", "Artillery", "Airstrike", "match_date"]]
-    df ["Killpoints"] = df["Kills"] - df["Panzerfaust"]*.5 -df["Sniper"]*.5 - df["Artillery"]*.5 - df["Airstrike"]*.5
+    df ["Killpoints"] = df["Kills"] - df["Panzerfaust"]*.3 -df["Sniper"]*.3 - df["Artillery"]*.3 - df["Airstrike"]*.3
     df = df.sort_values("match_date")
     df["games"] = df.groupby('index').cumcount()+1
     

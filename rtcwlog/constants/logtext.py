@@ -11,13 +11,15 @@ class Const:
     EXTRAPOLATE_GIB_PER_KILL = 0.294608
     EXTRAPOLATE_SCORE_PER_SEC = 0.039578
     EXTRAPOLATE_TEAM_DMG_PER_SEC = 0.422699
+    EXTRAPOLATE_HS_PER_KILL = 1 #not science
+    EXTRAPOLATE_REV = 0.5 #not science
     
     
-    #Penalty deductions         <--0      <--1     <--2    <--3
-    PENALTY_PANZ_RANGES   = [0,     0.15,     0.30,    0.50    ]
-    PENALTY_SMOKER_RANGES = [0,     0.1,      0.2      ]
-    PENALTY_SNIPER_RANGES = [0,     0.05,     0.1      ]
-    PENALTY_TAPTOU_RANGES = [0,     0.25,     0.33,    0.40    ]
+    #Penalty deductions         <--0      <--1     <--2 
+    PENALTY_PANZ_RANGES   = [0,     0.2,     0.50]
+    PENALTY_SMOKER_RANGES = [0,     0.1]
+    PENALTY_SNIPER_RANGES = [0,     0.05,     0.2      ]
+    PENALTY_TAPOUT_RANGES = [0,     0.25,     0.33,    0.40    ]
     
     #Award points                <--1      <--2     <--3       <--4    <--5
     RANK_RANGE_WINS =       [       0.7 ,     0.57,    0.50,      0.45    ]
@@ -127,11 +129,14 @@ class Const:
     STAT_OSP_SUM_TK = "OSP_TK"
     STAT_OSP_SUM_EFF = "OSP_Eff"
     STAT_OSP_SUM_GIBS = "OSP_Gibs"
+    STAT_PRO_ACC = "Accuracy"
+    STAT_PRO_HEADSHOTS = "Headshots"
     STAT_OSP_SUM_DMG = "OSP_Damage_Given"
     STAT_OSP_SUM_DMR = "OSP_Damage_Received"
     STAT_OSP_SUM_TEAMDG = "OSP_Team_Damage"
+    STAT_PRO_REV = "Revives"
     STAT_OSP_SUM_SCORE = "OSP_Score"
-    osp_columns=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_OSP_SUM_SCORE]
+    stat_columns=[STAT_OSP_SUM_PLAYER, STAT_OSP_SUM_TEAM, STAT_OSP_SUM_FRAGS, STAT_OSP_SUM_DEATHS, STAT_OSP_SUM_SUICIDES, STAT_OSP_SUM_TK, STAT_OSP_SUM_EFF, STAT_OSP_SUM_GIBS, STAT_PRO_ACC, STAT_PRO_HEADSHOTS, STAT_OSP_SUM_DMG, STAT_OSP_SUM_DMR, STAT_OSP_SUM_TEAMDG, STAT_PRO_REV, STAT_OSP_SUM_SCORE]
     #osp_columns=["player", "team","frags","deaths","suicides","teamkills","Eff", "gibs","dmg","dmr","teamdmg","score"]
 
     STAT_POST_ADJSCORE = "AdjScore"
