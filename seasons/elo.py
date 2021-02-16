@@ -54,6 +54,7 @@ class EloParms:
 
 
 class KReduction:
+    #KREDUCTION = KReduction(900, 75, 0.5, 5, 15, 0.2)
     def __init__(self, fulltime, mintime, minratio, games_min, games_max, games_factor):
         self.fulltime = fulltime
         self.mintime = mintime
@@ -75,6 +76,7 @@ class KReduction:
             k *= self.games_factor
         elif mygames > self.games_min:
             k *= 1.0 - (1.0 - self.games_factor) * (mygames - self.games_min) / float(self.games_max - self.games_min)
+        #print("Elo.KReduction.eval: " + str(k))
         return k
 
 
@@ -167,7 +169,6 @@ def process_elos(player_score_df, elo_dict):
 
     for pid in list(player_ids):
         elos[pid].k = KREDUCTION.eval(games[pid], alivetimes[pid], duration)
-        #elos[pid].k = KREDUCTION.eval(elos[pid].games, alivetimes[pid], duration)
         if elos[pid].k == 0:
             del(elos[pid])
             del(scores[pid])
