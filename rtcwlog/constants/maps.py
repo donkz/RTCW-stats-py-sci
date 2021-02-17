@@ -321,6 +321,13 @@ class ConstMap:
                       [O_OBJ,"Axis have breached the Side Entrance!"],  
                       [O_PLANT, "Dynamite planted near the Side Entrance!"],
                       #[O_PLANT, "Dynamite planted near the Bunker Door!"]
+                    ],
+            "te_industrial" : [
+                      [O_WIN,"Allies transmitted the documents!"],
+                      [O_OBJ,"The Main Gate has been breached!"],
+                      [O_OBJ,"The Transmitter Door has been breached!"],  
+                      [O_PLANT, "Dynamite planted near the Transmitter Door!"],
+                      [O_PLANT, "Dynamite planted near the Main Gate!"]
                     ]
             }
     
@@ -360,6 +367,7 @@ class ConstMap:
         maps["braundorf_b5"] =     RTCWMap("braundorf_b5",     "Braundorf",   self.map_announce["braundorf_b5"],     self.G_AXIS,   self.G_ALLIES, 8,     "")
         maps["bd_bunker_b2"] =     RTCWMap("bd_bunker_b2",     "Brewdog",     self.map_announce["bd_bunker_b2"],     self.G_AXIS,   self.G_ALLIES, 10,     "the Secret Documents")
         maps["radar_b4"] =         RTCWMap("radar_b4",         "Radar",       self.map_announce["radar_b4"],         self.G_ALLIES, self.G_AXIS,   10,     "the West Radar Parts")
+        maps["te_industrial"] =     RTCWMap("te_industrial",   "Industrial",  self.map_announce["te_industrial"],    self.G_AXIS,   self.G_ALLIES, 8,     "the Supply Documents")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         
