@@ -24,9 +24,25 @@ def process_OSP_line(line):
 def process_pro_line(line, team_indicator):
     #print("Incoming line ", line)
     team = "Allies"
+    
+    #tokenize the stat line, first by spaces, if fails - by fixed length
     tokens = re.split("\s+", line)
     if len(tokens) < 14:
-        return (None, None)
+        print("[!] Less than 14 spaces tokens in stat line \n[!]",line)
+        tokens = []
+        #                Player Kll Dth Sui TK Eff Gib Accrcy HS   DG   DR   TD  Rev Score
+        fixed_len_tokens = [15,   4,  4, 4,  3,  4,  3,     7, 4,   5,   5,   5,   5,    5]
+        current_start = 0
+        for token_size in fixed_len_tokens:
+            current_end = current_start + token_size
+            tokens.append(line[current_start:current_end].strip())
+            current_start +=token_size
+        if len(tokens) != 14:
+            #if even that does not work - return nothing
+            return (None, None)
+        else:
+            print("[!] Tokenized by fixed length instead\n[!]",tokens)
+        
     player = " ".join(tokens[0:len(tokens)-13])
     if team_indicator[0:4] == "Axis":
         team = "Axis"

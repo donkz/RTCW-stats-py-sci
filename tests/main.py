@@ -11,7 +11,8 @@ if RTCWPY_PATH not in sys.path:
     sys.path.append(RTCWPY_PATH)
 
 #file to process
-rtcwlogfile = r"..\data\seasons_data\2020Dec\2020-12-31-06-23-00-rtcwconsole.log"
+rtcwlogfile = r"..\tests\test_samples\2021-01-31-06-37-16-rtcwconsole.log"
+
 
 #if it's a plain rtcwconsole.log file copy it into rtcwconsole-date.log for backup
 if rtcwlogfile[-16:] == "\rtcwconsole.log":

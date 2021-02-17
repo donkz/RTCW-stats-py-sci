@@ -496,3 +496,20 @@ players_dup = players_dup[players_dup["pb_guid"]>1]
 duplicate_players = guids_unique[guids_unique["Killer"].isin(players_dup["Killer"].values)].sort_values(by=["Killer"])
 print(duplicate_players)
 s[s["pb_guid"]=="3bcbcf14"][["round_guid","match_date","Killer","pb_guid"]].sort_values(by=["pb_guid", "match_date"])
+
+
+# =============================================================================
+# RTCW FIXED LEN STRINGS
+# =============================================================================
+stat_line = "eternal_         15  14  11  1  51  3  24.52  13 2812 2281  218    0   35"
+stat_tokens = []
+#                Player Kll Dth Sui TK Eff Gib Accrcy HS   DG   DR   TD  Rev Score
+fixed_len_tokens = [15,   4,  4, 4,  3,  4,  3,     7, 4,   5,   5,   5,   5,    5]
+current_start = 0
+for token_size in fixed_len_tokens:
+    current_end = current_start + token_size
+    stat_tokens.append(stat_line[current_start:current_end].strip())
+    current_start +=token_size  
+print(stat_tokens)
+print(len(stat_tokens))
+    
