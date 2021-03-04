@@ -46,11 +46,11 @@ def duplicate_round_guids(new_df_guids, existing_round_guids, matches):
 season_dir = "..\\data\\seasons_data\\" #.. is back one folder. 
 #tis_season = "eu\\gsix"
 #tis_season = "na\\gthree"
-tis_season = "2020Dec"
+tis_season = "2021Feb"
 keep_only_pattern = ""
 all_seasons="all"
 write_daily_stats = False
-write_parquet = False
+write_parquet = True
 
 
 #process files
@@ -191,7 +191,7 @@ if len(dups) > 1:
 # 2. capture elos
 if False:
     from seasons.elo import process_games
-    year_sum = {}
+    year_sum = {"submitter": "various artists", "type" : "6+"}
     
     fresh_run = False
     if fresh_run: 

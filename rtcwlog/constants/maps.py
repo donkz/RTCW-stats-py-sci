@@ -246,6 +246,7 @@ class ConstMap:
                       [O_OBJ,"The main entrance has been breached!"],
                       [O_OBJ,"The East Tower entrance has been breached!"],  
                       [O_PLANT, "Dynamite planted near the Eastern Tower Entrance!"],
+                      [O_PLANT, "Dynamite planted near the East Tower Entrance!"],
                       [O_PLANT, "Dynamite planted near the Warehouse Door!"],
                       [O_PLANT, "Dynamite planted near the Main Entrance!"]
                     ],
@@ -322,6 +323,15 @@ class ConstMap:
                       [O_PLANT, "Dynamite planted near the Side Entrance!"],
                       #[O_PLANT, "Dynamite planted near the Bunker Door!"]
                     ],
+            "kungfugrip" : [
+                      [O_WIN,"Axis have transmitted the CD-Key!"],
+                      [D_FLAG, "Allies reclaim the Forward Bunker!"],
+                      [O_FLAG,"Allies reclaim the Playboy!"],
+                      [O_OBJ,"Axis have breached the East heat duct!"],
+                      [O_OBJ,"Axis have breached the North heat duct!"],  
+                      [O_PLANT, "Dynamite planted near the East Vent!"],
+                      [O_PLANT, "Dynamite planted near the North Vent!"]
+                    ],
             "te_industrial" : [
                       [O_WIN,"Allies transmitted the documents!"],
                       [O_OBJ,"The Main Gate has been breached!"],
@@ -365,9 +375,10 @@ class ConstMap:
         maps["adlernest_b5"] =     RTCWMap("adlernest_b5",     "Adlernest",   self.map_announce["adlernest_b5"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
         maps["adlernest_b5_rtcwpro"] =     RTCWMap("adlernest_b5",     "Adlernest",   self.map_announce["adlernest_b5"],     self.G_AXIS,   self.G_ALLIES, 10,    "Hitler's Documents")
         maps["braundorf_b5"] =     RTCWMap("braundorf_b5",     "Braundorf",   self.map_announce["braundorf_b5"],     self.G_AXIS,   self.G_ALLIES, 8,     "")
-        maps["bd_bunker_b2"] =     RTCWMap("bd_bunker_b2",     "Brewdog",     self.map_announce["bd_bunker_b2"],     self.G_AXIS,   self.G_ALLIES, 10,     "the Secret Documents")
-        maps["radar_b4"] =         RTCWMap("radar_b4",         "Radar",       self.map_announce["radar_b4"],         self.G_ALLIES, self.G_AXIS,   10,     "the West Radar Parts")
-        maps["te_industrial"] =     RTCWMap("te_industrial",   "Industrial",  self.map_announce["te_industrial"],    self.G_AXIS,   self.G_ALLIES, 8,     "the Supply Documents")
+        maps["bd_bunker_b2"] =     RTCWMap("bd_bunker_b2",     "Brewdog",     self.map_announce["bd_bunker_b2"],     self.G_AXIS,   self.G_ALLIES, 10,    "the Secret Documents")
+        maps["radar_b4"] =         RTCWMap("radar_b4",         "Radar",       self.map_announce["radar_b4"],         self.G_ALLIES, self.G_AXIS,   10,    "the West Radar Parts")
+        maps["kungfugrip"] =       RTCWMap("kungfugrip",       "Kungfugrip",  self.map_announce["kungfugrip"],       self.G_ALLIES, self.G_AXIS,   9,     "the CD-Key")
+        maps["te_industrial"] =    RTCWMap("te_industrial",    "Industrial",  self.map_announce["te_industrial"],    self.G_AXIS,   self.G_ALLIES, 8,     "the Supply Documents")
         maps["anymap"] =           RTCWMap("anymap",           "anymap",      self.map_announce["anymap"],           self.G_ALLIES, self.G_AXIS,   10,    "")
         
         
@@ -377,6 +388,7 @@ class ConstMap:
                 continue #throw away lines with "the War Documents" because they are shared between several maps (beach, frost, chateau)
             map_.announcements.append([self.D_RETURN, map_.defense + " have returned " + map_.objname + "!"])
             map_.announcements.append([self.O_STEAL,  map_.offense + " have stolen "   + map_.objname + "!"])
+            map_.announcements.append([self.O_STEAL,  map_.offense + " have lost "   + map_.objname + "!"])
         self.maps = maps
     
     def transpose_by_obj(self):

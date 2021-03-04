@@ -4,6 +4,7 @@ from time import strftime
 from datetime import datetime
 import hashlib
 import time as _time
+import ast
 
 from bs4 import BeautifulSoup
 from bs4 import Tag
@@ -759,8 +760,13 @@ class HTMLReport:
             t1size = len(players[0][0].split(Const.TEXT_PLAYER_SEPARATOR))
             
             try:
-                team_1 = players[0][1]
-                team_2 = players[1][1]
+                if len(players) == 2:
+                    team_1 = players[0][1]
+                    team_2 = players[1][1]
+                else:
+                    players_list = ast.literal_eval(players)
+                    team_1 = players_list[0][1]
+                    team_2 = players_list[1][1]
             except IndexError:
                 print("[!] Bad player record", players)
                 team_2 = team_1 = "unkn"
