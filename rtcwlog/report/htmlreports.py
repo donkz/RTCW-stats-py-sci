@@ -462,8 +462,8 @@ class HTMLReport:
         soup.append(player_span)
         try:
             from seasons.season_medals import season_medals
-            if player_name in season_medals:
-                medals = season_medals[player_name].split(",")
+            if player_name.lower() in season_medals:
+                medals = season_medals[player_name.lower()].split(",")
                 for medal in medals:
                     color = medal[0]
                     count = int(medal[1:])
