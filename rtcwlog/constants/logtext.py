@@ -186,6 +186,7 @@ class Const:
             ["vote", "^\[skipnotify\](.*) called a vote", EVENT_CALLVOTE,"", False],
             ["kick", "^\[skipnotify\](.*) player kicked", EVENT_KICK,"", False],
             ["pause", "^\[skipnotify\](.*) PAUSED",EVENT_PAUSE, "", False ],
+            ["pause2", "^\[skipnotify\]console(.*) has Paused the match",EVENT_PAUSE, "", False ],
             ["mapload", "^LOADING... maps/(.*).bsp",EVENT_MAPLOAD, "", False ],
             #match ending main 
             ["ospbegin", "^TEAM   Player          Kll Dth Sui",EVENT_OSP_STATS_START, "", False],

@@ -139,7 +139,7 @@ class HTMLReport:
             print("[!] Nothing to write.")
             return nothing
 
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         
         #<html>
         html = Tag(soup, name = "html")
@@ -255,7 +255,7 @@ class HTMLReport:
             
         
     def insert_header(self,text, size):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         header1 = Tag(soup, name = "h" + str(size))
         header1["class"] = "header"
         header1.append(text)
@@ -263,7 +263,7 @@ class HTMLReport:
         return soup
     
     def insert_text(self, content):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         text = Tag(soup, name = "p")
         text["class"]="text"
         
@@ -272,7 +272,7 @@ class HTMLReport:
         return soup
     
     def insert_html(self, content):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         wrap = Tag(soup, name = "p")
         wrap["class"]="text"
         wrap.append(BeautifulSoup(content, 'html.parser'))
@@ -280,7 +280,7 @@ class HTMLReport:
         return soup
     
     def insert_toggle(self, toggle_div):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         link = Tag(soup, name = "a")
         link["href"] = "#"
         link["id"] = toggle_div
@@ -300,7 +300,7 @@ class HTMLReport:
         return soup
         
     def award_summaries_to_html(self,awardsdf):
-        soup = BeautifulSoup("","lxml")        
+        soup = BeautifulSoup("","html.parser")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
         table["id"] = "divawardsum"
@@ -368,7 +368,7 @@ class HTMLReport:
         feuds = top_feuds[0]
         columns = top_feuds[1]
         
-        soup = BeautifulSoup("","lxml")        
+        soup = BeautifulSoup("","html.parser")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
         table["id"] = "divfeuds"
@@ -392,7 +392,7 @@ class HTMLReport:
 
     
     def awards_to_html(self,awardsdf):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
@@ -456,7 +456,7 @@ class HTMLReport:
         return soup
     
     def get_html_medals(self, player_name):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         player_span = Tag(soup, name = 'span')
         player_span.insert(1, player_name)
         soup.append(player_span)
@@ -473,7 +473,7 @@ class HTMLReport:
         return soup
     
     def medal_html_string(self, color, count):
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         if color == "g":
             medal = self.gold_medal_emoji_html
         elif color == "s":
@@ -502,7 +502,7 @@ class HTMLReport:
     def weapons_to_html(self,weapon_stats):
         weapondf = weapon_stats[0]
         columns = weapon_stats[1]
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         metrics = [name for name in columns if "_kills" not in name]
         #ranks = [name for name in awardsdf.columns if "rank" in name]
         cols = ["Player"] + metrics
@@ -626,7 +626,7 @@ class HTMLReport:
         
         
         
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         metrics = [name for name in columns if "rank" not in name]
         cols = ["Player"] + metrics
         
@@ -665,7 +665,7 @@ class HTMLReport:
             return None
         columns = megakills.columns
         
-        soup = BeautifulSoup("","lxml")        
+        soup = BeautifulSoup("","html.parser")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
         table["id"] = "divmegakills"
@@ -690,7 +690,7 @@ class HTMLReport:
     #Match results <table>
     def match_results_to_html(self, table_match_results):
         stats = table_match_results[0]
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
@@ -837,7 +837,7 @@ class HTMLReport:
     def renames_to_html(self, table_renames):
         renamesdf = table_renames[0]
         columns = renamesdf.columns
-        soup = BeautifulSoup("","lxml")
+        soup = BeautifulSoup("","html.parser")
         
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
@@ -864,7 +864,7 @@ class HTMLReport:
     def friends_to_html(self,best_friends):
         columns = best_friends.columns
         
-        soup = BeautifulSoup("","lxml")        
+        soup = BeautifulSoup("","html.parser")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
         table["id"] = "divfriends"
@@ -889,7 +889,7 @@ class HTMLReport:
     def accuracy_to_html(self,accuracy_table):
         columns = accuracy_table.columns
         
-        soup = BeautifulSoup("","lxml")        
+        soup = BeautifulSoup("","html.parser")        
         table = Tag(soup, name = "table")
         table["class"] = "blueTable"
         table["id"] = "divaccuracy"

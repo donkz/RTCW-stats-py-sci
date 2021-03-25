@@ -288,6 +288,7 @@ class ClientLogProcessor:
             stats_all["player_strip"] = "notused"
             stats_all["team_name"] = "notused"
       
+        # print("\n[Debug]\n", base_stats.loc["source","Kills"], "\n[Debug]\n", osp_stats.loc["source","OSP_Kills"])
         t2 = _time.time()
         if self.debug_time: print ("[t] Time to join base and osp stats " + str(round((t2 - t1),3)) + " s")
         return stats_all
@@ -1014,6 +1015,7 @@ class ClientLogProcessor:
                     
                     #game paused. Unpause will result in FIGHT line again                    
                     if currentRound.game_started and value.event == Const.EVENT_PAUSE: 
+                        #print("[Debug] detected pause")
                         currentRound.game_paused = True
                         break
                     
