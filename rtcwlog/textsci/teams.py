@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import hashlib
 import re
+import time as _time
 
 from rtcwlog.constants.logtext import Const
 
@@ -136,3 +137,80 @@ def get_round_desc_client_log(stats_all):
         teams = [allies_team,axis_team]
         teams.sort() #be consistent about identifying a match guid
         return "-vs-".join(map(str, teams))+ "-" + "-".join(stats_all.sort_values("kill")["kill"].astype(int).astype(str))
+
+
+def guess_team(logdf, passes=4, side=False, debug_time=False):
+    """Guess which team players belong to based on their kills and teamkills."""
+    # test
+    # logdf = result["logs"]  # for end-game team determination
+    # logdf = logdf[logdf["round_order"]==35] # for imputing team determination
+    # test
+
+    t1 = _time.time()
+
+    kills = logdf[logdf["event"].isin(["kill", "Team kill"])][['event', 'killer', 'mod', 'victim']]
+    kills["count"] = 1
+    kills["WeaponSide"] = kills["mod"].replace("MP40", "-1").replace("Luger", "-100").replace("Thompson", "4").replace("Colt", "100")
+    kills["WeaponSide"] = pd.to_numeric(kills["WeaponSide"], errors='coerce').fillna(0).astype(int)
+    kills.drop(["mod"], axis=1, inplace=True)
+    kills = kills.groupby(['event', 'killer', 'victim']).sum().reset_index().sort_values("count", ascending=False)
+
+    player0 = kills[["killer", "count"]].groupby("killer").sum().sort_values("count", ascending=False).index.values[0]
+
+    kills.loc[kills[(kills["killer"] == player0) & (kills["event"] == "kill")].index, "VicTeam"] = "B"
+    kills.loc[kills[(kills["killer"] == player0) & (kills["event"] == "Team kill")].index, "VicTeam"] = "A"
+    kills.loc[kills[(kills["killer"] == player0) & (kills["event"] == "kill")].index, "KilTeam"] = "A"
+    kills.loc[kills[(kills["killer"] == player0) & (kills["event"] == "Team kill")].index, "KilTeam"] = "B"
+
+    for x in range(passes):  # 2 works. 4 is safer
+        teamB = kills[kills["VicTeam"] == "B"]["victim"].unique()
+        for p in teamB:
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "kill")].index, "VicTeam"] = "A"
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "kill")].index, "KilTeam"] = "B"
+
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "Team kill")].index, "KilTeam"] = "B"
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "Team kill")].index, "VicTeam"] = "B"
+
+            kills.loc[kills[(kills["victim"] == p) & (kills["event"] == "kill")].index, "KilTeam"] = "A"
+            kills.loc[kills[(kills["victim"] == p) & (kills["event"] == "kill")].index, "VicTeam"] = "B"
+
+        teamA = kills[kills["KilTeam"] == "A"]["killer"].unique()
+        for p in teamA:
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "kill")].index, "VicTeam"] = "B"
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "kill")].index, "KilTeam"] = "A"
+
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "Team kill")].index, "KilTeam"] = "A"
+            kills.loc[kills[(kills["killer"] == p) & (kills["event"] == "Team kill")].index, "VicTeam"] = "A"
+
+            kills.loc[kills[(kills["victim"] == p) & (kills["event"] == "kill")].index, "KilTeam"] = "B"
+            kills.loc[kills[(kills["victim"] == p) & (kills["event"] == "kill")].index, "VicTeam"] = "A"
+
+    # plug holes
+    kills.loc[kills[(kills["KilTeam"] == "A") & (kills["event"] == "kill")].index, "VicTeam"] = "B"
+    kills.loc[kills[(kills["KilTeam"] == "A") & (kills["event"] == "Team kill")].index, "VicTeam"] = "A"
+    kills.loc[kills[(kills["KilTeam"] == "B") & (kills["event"] == "kill")].index, "VicTeam"] = "A"
+    kills.loc[kills[(kills["KilTeam"] == "B") & (kills["event"] == "Team kill")].index, "VicTeam"] = "B"
+
+    playersraw = kills[["killer", "KilTeam"]].rename(columns={"killer": "player", "KilTeam": "Team"}).append(kills[["victim", "VicTeam"]].rename(columns={"victim": "player", "VicTeam": "Team"}))
+    players = playersraw.groupby(["player", "Team"]).size().reset_index()
+    players.drop(players.columns[-1], axis=1, inplace=True)
+    players.index = players["Team"]
+    teams = kills[['WeaponSide', 'KilTeam']].groupby("KilTeam").sum()
+    res = players.join(teams)
+    res.loc[res[res["WeaponSide"] == res["WeaponSide"].min()].index, "TeamName"] = "Axis"
+    res.loc[res[res["WeaponSide"] == res["WeaponSide"].max()].index, "TeamName"] = "Allies"
+    res.index = res["player"]
+    # print(res)
+
+    if res["TeamName"].nunique() < 2:
+        print("[!] Could not guess teams while imputing variables. Skipping this round")
+        return None
+
+    t2 = _time.time()
+    if debug_time:
+        print("[t] Time to guess team while imputing " + str(round((t2 - t1), 3)) + " s")
+
+    if side:
+        return res["TeamName"].to_dict()
+    else:
+        return res["Team"].to_dict()

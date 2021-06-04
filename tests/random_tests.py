@@ -251,7 +251,7 @@ res[res["Rounds_played"]>20].sort_values("Last_seen").reset_index()
 ####################################
 elo_progress = pd.read_csv("..\data\elo\elo.csv")
 games = pd.Series(elo_progress["gameno"].unique())
-games = games[games > games.astype(int).quantile(.8)]
+#games = games[games > games.astype(int).quantile(.8)] #last 20% of the games
 elo_progress.index = elo_progress["gameno"].astype(str) + elo_progress["player"]
 
 _data = {}
@@ -512,4 +512,17 @@ for token_size in fixed_len_tokens:
     current_start +=token_size  
 print(stat_tokens)
 print(len(stat_tokens))
-    
+
+
+# =============================================================================
+# MAP STATS
+# =============================================================================
+r2 = bigresult["stats"][bigresult["stats"]["round_num"]==2]
+smaller = r2[["map", "round_time", "round_guid"]].copy()
+grouped = smaller.groupby(["map","round_guid", "round_time"]).count().reset_index()
+grouped_map = grouped.groupby(["map"]).mean()/60
+
+grouped["fh"] = 0
+grouped.loc[grouped["round_time"] == 600,"fh"] = 1
+grouped_fh = grouped.groupby(["map"])["fh"].mean()
+                

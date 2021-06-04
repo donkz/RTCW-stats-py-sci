@@ -9,11 +9,11 @@ from importlib import import_module
 from collections import Counter
 
 
-from rtcwlog.utils.rtcwcolors import stripColors , setup_colors
+from rtcwlog.utils.rtcwcolors import stripColors, setup_colors
 from rtcwlog.utils.ospstrings import process_OSP_line, process_pro_line, osp_token_one_slash_two, osp_token_accuracy_playername_round
 from rtcwlog.constants.logtext import Const, LogLine
 from rtcwlog.constants.const_osp import ConstOsp, OSPFileLine
-from rtcwlog.textsci.teams import add_team_name, get_round_guid_client_log, get_player_list
+from rtcwlog.textsci.teams import add_team_name, get_round_guid_client_log, get_player_list, guess_team
 from rtcwlog.utils.ospstrings import get_round_guid_osp, build_player_df
 from rtcwlog.constants.maps import ConstMap
 
@@ -372,8 +372,8 @@ class ClientLogProcessor:
         arr = []
         for k in newdict:
             arr.append([k] + newdict[k])
-       
-        #exclude nicknames that are circular
+
+        # exclude nicknames that are circular
         arr2 = []
         for i in arr:
             arr2.append([])
@@ -381,33 +381,34 @@ class ClientLogProcessor:
                 if j != i[-1]:
                     arr2[-1].append(j)
             arr2[-1].append(i[-1])
-           
-        #transform array back to dict for pandas the rename function
+
+        # transform array back to dict for pandas the rename function
         final_dict = {}
         for i in arr2:
             for j in i[0:-1]:
                 final_dict[j] = i[-1]
         return final_dict
-    
+
     def impute_osp_variables(self, tmp_base_stats, round_time, round_number, logdf):
+        """If the OSP/Pro totals are missing, trying to fill in the gaps."""
         t1 = _time.time()
-        #tmp_base_stats = bigresult["stats"][['Kills','Deaths','TK','Suicides']].reset_index()
-        #round_time = 600
-        #logdf = result["logs"]
-        #logdf = logdf[logdf["round_order"]==16]
-        #import random
-        #test_teams = ["Axis","Allies"]
-        #...random.choice(test_teams)
-        
-        teams = self.guess_team(logdf)
-        if teams == None:
+        # tmp_base_stats = bigresult["stats"][['Kills','Deaths','TK','Suicides']].reset_index()
+        # round_time = 600
+        # logdf = result["logs"]
+        # logdf = logdf[logdf["round_order"]==16]
+        # import random
+        # test_teams = ["Axis","Allies"]
+        # ...random.choice(test_teams)
+
+        teams = guess_team(logdf, 4, True, self.debug_time)
+        if not teams:
             return None
-        
+
         tmp_base_stats = tmp_base_stats.reset_index()
         osp_rows = {}
         for index, base in tmp_base_stats.iterrows():
-            STAT_OSP_SUM_PLAYER = base["index"][0:15] # OSP Limitation
-            
+            STAT_OSP_SUM_PLAYER = base["index"][0:15]  # OSP Limitation
+
             team = None
             try:
                 team = teams[base["index"]]
@@ -415,12 +416,12 @@ class ClientLogProcessor:
                 print("[!] Player's team is undetermined: " + STAT_OSP_SUM_PLAYER)
                 print(teams)
             finally:
-                team = team if team else "Allies" # stick them on offence
-            
+                team = team if team else "Allies"  # stick them on offence
+
             if round_time is None:
                 print("[!] Closing a round without exact round time")
                 round_time = 600
-                
+
             STAT_OSP_SUM_TEAM = team
             STAT_OSP_SUM_FRAGS = base["Kills"] * round_number
             STAT_OSP_SUM_DEATHS = base["Deaths"] * round_number
@@ -442,81 +443,7 @@ class ClientLogProcessor:
         t2 = _time.time()
         if self.debug_time: print ("[t] Time to impute OSP stats " + str(round((t2 - t1),3)) + " s")
         return ospDF
-    
-    def guess_team(self, logdf):
-        t1 = _time.time()
-        #test
-        #logdf = result["logs"]
-        #logdf = logdf[logdf["round_order"]==35]
-        #test
-        
-#        match_stats = MatchStats()
-#        pivoted_weapons = match_stats.weapon_pivot(logdf)
-#        pivoted_weapons["Allies"] =  pivoted_weapons[Const.WEAPON_THOMPSON] + pivoted_weapons[Const.WEAPON_COLT]
-#        pivoted_weapons["Axis"] =  pivoted_weapons[Const.WEAPON_MP40] + pivoted_weapons[Const.WEAPON_LUGER]
-#        pivoted_weapons = pivoted_weapons[pivoted_weapons.columns[-2:]]
-        
-        kills = logdf[logdf["event"].isin(["kill","Team kill"])][['event', 'killer', 'mod', 'victim']]
-        kills["count"]=1
-        kills["WeaponSide"] = kills["mod"].replace("MP40","-1").replace("Luger","-100").replace("Thompson","4").replace("Colt","100")
-        kills["WeaponSide"] = pd.to_numeric(kills["WeaponSide"], errors='coerce').fillna(0).astype(int)
-        kills.drop(["mod"], axis=1, inplace=True)
-        kills = kills.groupby(['event', 'killer', 'victim']).sum().reset_index().sort_values("count", ascending = False)
-                
-        player0 = kills[["killer","count"]].groupby("killer").sum().sort_values("count", ascending=False).index.values[0]
-        
-        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="kill")].index,"VicTeam"] = "B"
-        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="Team kill")].index,"VicTeam"] = "A"
-        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
-        kills.loc[kills[(kills["killer"]==player0) & (kills["event"]=="Team kill")].index,"KilTeam"] = "B"
-        
-        for x in range(5): # 2 works. 5 is safer
-            teamB = kills[kills["VicTeam"]=="B"]["victim"].unique()        
-            for p in teamB:
-                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"VicTeam"] = "A"
-                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "B"
-                       
-                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="Team kill")].index,"KilTeam"] = "B"
-                
-                kills.loc[kills[(kills["victim"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
 
-            
-            teamA = kills[kills["KilTeam"]=="A"]["killer"].unique() 
-            for p in teamA:
-                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"VicTeam"] = "B"
-                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "A"
-                
-                kills.loc[kills[(kills["killer"]==p) & (kills["event"]=="Team kill")].index,"KilTeam"] = "A"   
-
-                kills.loc[kills[(kills["victim"]==p) & (kills["event"]=="kill")].index,"KilTeam"] = "B"
-        
-        #plug holes
-        kills.loc[kills[(kills["KilTeam"]=="A") & (kills["event"]=="kill")].index,"VicTeam"] = "B"
-        kills.loc[kills[(kills["KilTeam"]=="A") & (kills["event"]=="Team kill")].index,"VicTeam"] = "A"
-        kills.loc[kills[(kills["KilTeam"]=="B") & (kills["event"]=="kill")].index,"VicTeam"] = "A"
-        kills.loc[kills[(kills["KilTeam"]=="B") & (kills["event"]=="Team kill")].index,"VicTeam"] = "B"
-        
-        
-        playersraw = kills[["killer","KilTeam"]].rename(columns={"killer": "player", "KilTeam": "Team"}).append(kills[["victim","VicTeam"]].rename(columns={"victim": "player", "VicTeam": "Team"}))
-        players = playersraw.groupby(["player","Team"]).size().reset_index()
-        players.drop(players.columns[-1], axis=1, inplace=True)
-        players.index = players["Team"]
-        teams = kills[['WeaponSide', 'KilTeam']].groupby("KilTeam").sum()
-        res = players.join(teams)
-        res.loc[res[res["WeaponSide"] == res["WeaponSide"].min()].index,"TeamName"] = "Axis"
-        res.loc[res[res["WeaponSide"] == res["WeaponSide"].max()].index,"TeamName"] = "Allies"
-        res.index = res["player"]
-        #print(res)
-        
-        if res["TeamName"].nunique() < 2: 
-            print("[!] Could not guess teams while imputing variables. Skipping this round")
-            return None
-        
-        t2 = _time.time()
-        if self.debug_time: print ("[t] Time to guess team while imputing " + str(round((t2 - t1),3)) + " s")
-        #print(res["TeamName"].to_dict())
-        return res["TeamName"].to_dict()
-    
     def determine_current_map(self, currentRound):
         del currentRound.map_counter["anymap"]
         
@@ -768,7 +695,7 @@ class ClientLogProcessor:
         
         wrap_end_time = _time.time()
         #print(currentRound.tmp_stats_all[["round_guid","Killer", "round_order"]].sort_values(by="round_order"))
-        print("[ ] Proccessed round " + str(currentRound.round_order).ljust(2) + " winner " + currentRound.winner.ljust(6) + " on " + currentRound.map_info.name[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(6) + ". Players: " + str(len(currentRound.tmp_stats_all)).ljust(2) + "(Linestime: " + str(round((currentRound.round_end_time - currentRound.round_start_time),2)) + " s " + "Wraptime: " + str(round((wrap_end_time - wrap_start_time),2)) + " s)")                       
+        print("[ ] Rnd " + str(currentRound.round_order).ljust(2) + " winner " + currentRound.winner.ljust(6) + " on " + currentRound.map_info.name[0:10].ljust(11) + ". Events: " + str(len(tmp_logdf)).ljust(4) + ". Players:" + str(len(currentRound.tmp_stats_all)).ljust(2) + "(Lines: " + str(round((currentRound.round_end_time - currentRound.round_start_time),2)) + " s " + "Wrap: " + str(round((wrap_end_time - wrap_start_time),2)) + " s)")                       
     
     def process_log(self):
         """ 
@@ -1041,7 +968,7 @@ class ClientLogProcessor:
                             else:
                                 print("[!] Ignoring OSP stats because log of the first round is incomplete")
                         break
-                    
+
                     #^1Axis^7   ^5Totals           59  67  20  3^5  46^3  22^2 12154^1 10969^6  844^3     32
                     if currentRound.game_started and value.event == Const.EVENT_OSP_STATS_MID:
                         #do nothing, just exit

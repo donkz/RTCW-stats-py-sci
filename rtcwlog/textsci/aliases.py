@@ -6,8 +6,13 @@ def decypher_name(name, valid_names):
     name = name.lower()
     name = name.translate(str.maketrans(replace_chars))
     name_chain = [name[i:i+n] for i in range(0, len(name)-(n-1), 1)] #break the name into n-char chains
-    matched_name = "??"
+    matched_name = name + "9999"
     #print(name_chain)
+    
+    for name_pattern in known_names:
+        if name_pattern in name:
+            return known_names[name_pattern]
+    
     for valid_name in valid_names:
         valid_name = valid_name.lower()
         valid_name_chain = [valid_name[i:i+n] for i in range(0, len(valid_name)-(n-1), 1)]  #break the name into n-char chains
@@ -20,10 +25,24 @@ def decypher_name(name, valid_names):
             matched_name = valid_name
     return matched_name
 
+known_names = {
+    "donkey": "donkey",
+    "donka": "donka",
+    "donkz": "donka",
+    "fister":  "deadeye",
+    "raiser": "raiser",
+    "brnd": "brandon",
+    "etmonster": "ipod",
+    "d|ng": "ding",
+    "magik": "blackmagik",
+    "anonimi": "blackmagik"
+    }
+
 replace_chars = {
         '!': 'i',
         '@': 'a',
         "-" : "",
+        "+" : "",
         "." : "",
         "*" : "",
         "$" : "s",
@@ -38,6 +57,7 @@ replace_chars = {
         "_" : "",
         "0" : "o",
         "1" : "i",
+        "3" : "e",
         }
 
 if (False): #debug

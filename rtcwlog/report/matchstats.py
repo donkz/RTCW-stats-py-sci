@@ -1,23 +1,58 @@
-from rtcwlog.constants.logtext import Const 
+from rtcwlog.constants.logtext import Const
 import pandas as pd
+from rtcwlog.textsci.teams import guess_team, get_team_name
+
 
 class MatchStats:
-    #debug data = results
-    
+    """Derive basic stats tables and metrics."""
+
+    team_info = None
+
     def match_metrics(self, data):
-        matches_dataframe     = data["matches"]
-        #event_lines_dataframe = data["logs"]
-        sum_lines_dataframe   = data["stats"]
-        
+        """Get basic match metrics."""
+        matches_dataframe = data["matches"]
+        event_lines_dataframe = data["logs"]
+        sum_lines_dataframe = data["stats"]
+
         metrics = {}
         metrics["players_count"] = len(sum_lines_dataframe.index.unique())
         metrics["match_time"] = matches_dataframe[Const.NEW_COL_MATCH_DATE].min()
         metrics["rounds_count"] = matches_dataframe["round_guid"].nunique()
         metrics["maps_count"] = len(matches_dataframe["map"].unique())
-        metrics["kill_sum"] = int(sum_lines_dataframe["Kills"].sum())  
-        
+        metrics["kill_sum"] = int(sum_lines_dataframe["Kills"].sum())
+
+        try:
+            average_team_size = sum_lines_dataframe[["side", "round_guid", "Kills"]].groupby(by=["side", "round_guid"]).count().mean().values[0]
+
+            do_teams = False
+            # if it's about 6v6 and total players about 12 + couple of strugglers and number of rounds = 2 maps * 2 games * 2 rounds + 1 decider * 2 rounds
+            if 5 < average_team_size <= 7 and 11 < metrics["players_count"] <= 14 and metrics["rounds_count"] <= 10:
+                do_teams = True
+            if 2 < average_team_size < 4 and 5 < metrics["players_count"] <= 8 and metrics["rounds_count"] <= 14:
+                do_teams = True
+
+            if do_teams:
+                team_info_dict = guess_team(event_lines_dataframe, passes=2, side=False, debug_time=False)
+                self.team_info = pd.DataFrame.from_dict(team_info_dict, orient='index')
+                self.team_info.columns = ["Team"]
+
+                teama = self.team_info[self.team_info["Team"] == "A"].index.values
+                teamb = self.team_info[self.team_info["Team"] == "B"].index.values
+
+                teama_name = get_team_name(teama)
+                teamb_name = get_team_name(teamb)
+
+                if teama_name != 'No tag':
+                    self.team_info.loc[self.team_info[self.team_info["Team"] == "A"].index, "Team"] = teama_name
+                if teamb_name != 'No tag':
+                    self.team_info.loc[self.team_info[self.team_info["Team"] == "B"].index, "Team"] = teamb_name
+                    print("Debug.matchstats.metrics\n")
+                    print(self.team_info)
+        except:
+            print("[!] Tried to determine teams, but could not. Matchstats/match_metrics.")
+
         return metrics
-    
+
     def match_players(self, data):
         sum_lines_dataframe   = data["stats"]
         tmp = sum_lines_dataframe[["Killer","round_guid"]].groupby("Killer").count().reset_index()      
@@ -60,9 +95,9 @@ class MatchStats:
             result = None
             
         return [result, ""]
-        
-        
+
     def table_player_joins(self, data):
+        """Not used - people who joined late?."""
         event_lines_dataframe = data["logs"]
         temp = event_lines_dataframe[(event_lines_dataframe.event == "kill")][["line_order", "killer", "victim"]]
         temp2 = (temp[["killer", "line_order"]].rename(columns={"killer": "player"})).append(temp[["victim", "line_order"]].rename(columns={"victim": "player"}))
@@ -72,56 +107,62 @@ class MatchStats:
         col2 = pd.Series(["min"]).repeat(len(playermin)).append(pd.Series(["max"]).repeat(len(playermax)))
         result = col1.to_frame()
         result['kek'] = col2.values
-        
-        
-    
-    '''
-    Kill matrix (who killed who how many times)
-    '''
+
     def table_kill_matrix(self, data):
+        """Kill matrix (who killed who how many times)."""
         event_lines_dataframe = data["logs"]
-        kill_matrix = event_lines_dataframe[event_lines_dataframe.event.isin(["kill","Team kill"])].groupby(["killer","victim"]).count().reset_index().pivot(index = "killer", columns = "victim", values = "event").fillna(0)
-        kill_matrix_rank = kill_matrix.rank(method="min", ascending=False, axis = 1)
-        result = kill_matrix.join(kill_matrix_rank, rsuffix = "_rank")
-        return [result, ""] #just to match others
-    
-    '''
-    Traditional stats
-    '''
+        kill_matrix = event_lines_dataframe[event_lines_dataframe.event.isin(["kill", "Team kill"])].groupby(["killer", "victim"]).count().reset_index().pivot(index="killer", columns="victim", values="event").fillna(0)
+        kill_matrix_rank = kill_matrix.rank(method="min", ascending=False, axis=1)
+        result = kill_matrix.join(kill_matrix_rank, rsuffix="_rank")
+        return [result, ""]  # just to match others
+
     def table_base_stats(self, data):
-        sum_lines_dataframe   = data["stats"]
-        
-        #stats using base data
-        #base_stats = sum_lines_dataframe[[Const.STAT_BASE_KILL, Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS]]
-        base_stats_sum = sum_lines_dataframe.groupby(sum_lines_dataframe.index).agg({Const.STAT_BASE_KILL : "sum", Const.STAT_BASE_DEATHS : "sum", Const.STAT_BASE_TK : "sum", Const.STAT_BASE_TKd : "sum", Const.STAT_BASE_SUI : "sum", Const.STAT_BASE_ALLDEATHS : "sum", Const.STAT_BASE_KILLER : "count" })
-        base_stats_sum.rename(columns={Const.STAT_BASE_KILLER : "Rounds"}, inplace=True)
-        #stats using osp data
-        #use only round 2 stats
-        osp_stats  = sum_lines_dataframe[sum_lines_dataframe["round_num"] == 2][[Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG, Const.STAT_PRO_HEADSHOTS, Const.STAT_PRO_REV]].fillna(0).astype(int)
-        osp_stats_sum = osp_stats.groupby(osp_stats.index).agg({Const.STAT_OSP_SUM_GIBS : "sum", Const.STAT_OSP_SUM_DMG : "sum" , Const.STAT_OSP_SUM_DMR : "sum" , Const.STAT_OSP_SUM_TEAMDG : "sum", Const.STAT_PRO_HEADSHOTS : "sum", Const.STAT_PRO_REV : "sum"})
-        
-        #Join base and OSP
+        """Traditional stats - kills, deaths, damage, KDR."""
+        sum_lines_dataframe = data["stats"]
+
+        # stats using base data
+        base_stats_sum = sum_lines_dataframe.groupby(sum_lines_dataframe.index).agg({Const.STAT_BASE_KILL: "sum", Const.STAT_BASE_DEATHS: "sum", Const.STAT_BASE_TK: "sum", Const.STAT_BASE_TKd: "sum", Const.STAT_BASE_SUI: "sum", Const.STAT_BASE_ALLDEATHS: "sum", Const.STAT_BASE_KILLER: "count"})
+        base_stats_sum.rename(columns={Const.STAT_BASE_KILLER: "Rounds"}, inplace=True)
+
+        # stats using osp data
+        # use only round 2 stats
+        osp_stats = sum_lines_dataframe[sum_lines_dataframe["round_num"] == 2][[Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG, Const.STAT_PRO_HEADSHOTS, Const.STAT_PRO_REV]].fillna(0).astype(int)
+        osp_stats_sum = osp_stats.groupby(osp_stats.index).agg({Const.STAT_OSP_SUM_GIBS: "sum", Const.STAT_OSP_SUM_DMG: "sum", Const.STAT_OSP_SUM_DMR: "sum", Const.STAT_OSP_SUM_TEAMDG: "sum", Const.STAT_PRO_HEADSHOTS: "sum", Const.STAT_PRO_REV: "sum"})
+
+        # Join base and OSP
         stats_all_sum = base_stats_sum.join(osp_stats_sum)
-        
-        #derived stats
+
+        # derived stats
         pd.options.mode.use_inf_as_na = True
-        stats_all_sum["KDR"] = (stats_all_sum[Const.STAT_BASE_KILL]/stats_all_sum[Const.STAT_BASE_DEATHS]).fillna(0).round(1)
-        stats_all_sum["KPR"] = (stats_all_sum[Const.STAT_BASE_KILL]/stats_all_sum["Rounds"]).fillna(0).round(1)
-        stats_all_sum["DPR"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG]/stats_all_sum["Rounds"]).fillna(0).astype(int)
-        stats_all_sum["DPF"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG]/stats_all_sum[Const.STAT_BASE_KILL]).fillna(0).astype(int)
-        
-        
-        #columns = [Const.STAT_BASE_KILL, Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS, Const.STAT_OSP_SUM_GIBS, Const.STAT_OSP_SUM_DMG, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG]
-        #stats = sum_lines_dataframe[columns]
+        stats_all_sum["KDR"] = (stats_all_sum[Const.STAT_BASE_KILL] / stats_all_sum[Const.STAT_BASE_DEATHS]).fillna(0).round(1)
+        #stats_all_sum["KPR"] = (stats_all_sum[Const.STAT_BASE_KILL] / stats_all_sum["Rounds"]).fillna(0).round(1)
+        #stats_all_sum["DPR"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG] / stats_all_sum["Rounds"]).fillna(0).astype(int)
+        stats_all_sum["DPF"] = (stats_all_sum[Const.STAT_OSP_SUM_DMG] / stats_all_sum[Const.STAT_BASE_KILL]).fillna(0).astype(int)
+
         stats_all_sum_rank = stats_all_sum.rank(method="min", ascending=False)
-        stats_all_sum_rank[[Const.STAT_BASE_DEATHS,Const.STAT_BASE_TK,Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS,Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG,"DPF"]] = 0
-        stats = stats_all_sum.join(stats_all_sum_rank, rsuffix = "_rank")
-        return [stats, ""] #just to match others
-    
-    '''
-    Weapon count awards
-    '''
-    def table_weapon_counts(self,data):
+        stats_all_sum_rank[[Const.STAT_BASE_DEATHS, Const.STAT_BASE_TK, Const.STAT_BASE_TKd, Const.STAT_BASE_SUI, Const.STAT_BASE_ALLDEATHS, Const.STAT_OSP_SUM_DMR, Const.STAT_OSP_SUM_TEAMDG, "DPF"]] = 0
+        stats = stats_all_sum.join(stats_all_sum_rank, rsuffix="_rank")
+
+        if self.team_info is not None:
+            stats = stats.join(self.team_info)
+        else:
+            stats["Team"] = "X"
+            
+        #sum_cols = ['Team', 'Kills', 'Deaths', 'TK', 'TKd', 'Suicides', 'All_Deaths', 'OSP_Gibs', 'OSP_Damage_Given', 'OSP_Damage_Received',  'OSP_Team_Damage', 'Headshots', 'Revives']
+        stats_sums = stats.groupby("Team").sum().reset_index()
+        stats_sums.index = "Totals_" + stats_sums["Team"]
+        stats_sums["KDR"] = round(stats_sums["Kills"]/stats_sums["Deaths"],2)
+        stats_sums["DPF"] = round(stats_sums[Const.STAT_OSP_SUM_DMG]/stats_sums["Kills"],0)
+        for c in stats_sums.columns:
+            if "_rank" in c:
+                stats_sums[c] = 99
+        stats = stats.append(stats_sums)
+        stats = stats.sort_values(by=["Team", "Kills"], ascending=False, na_position='last')
+
+        return [stats, ""]  # just to match others
+
+    def table_weapon_counts(self, data):
+        """Weapon signatures table."""
         event_lines_dataframe = data["logs"]
         
         pivoted_weapons = self.weapon_pivot(event_lines_dataframe)
@@ -299,8 +340,7 @@ class MatchStats:
                 sumdf[c] = sumdf[c].fillna(0).round(2).multiply(100).astype(int).apply(lambda x: '{0:0>2}'.format(x))+"%" 
             if c[-2:] == "PG":
                 sumdf[c] = sumdf[c].fillna(0).round(1)
-        
+
         return sumdf[['SMG%','SMG_hs%','Pistol%','Pistol_hs%','Panzer%','Grenade%','Syringe%','Smoke%','Sniper%','Sniper_hs%','AmmoPG','HealthPG','RevivePG']]
-        
-    
+
 

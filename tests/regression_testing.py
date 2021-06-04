@@ -1,33 +1,34 @@
 import os
-import sys, traceback
+import sys
+import traceback
 import pandas as pd
 
 from rtcwlog.io.statswriter import StatsWriter
 from rtcwlog.clientlog import ClientLogProcessor
 from rtcwlog.report.htmlreports import HTMLReport
 
-#set relative path
+# set relative path
 RTCWPY_PATH = os.getcwd()
-RTCWPY_PATH = RTCWPY_PATH.replace("\\tests","")
-if not RTCWPY_PATH in sys.path:
+RTCWPY_PATH = RTCWPY_PATH.replace("\\tests", "")
+if RTCWPY_PATH not in sys.path:
     sys.path.append(RTCWPY_PATH)
 
-#expand viewing area for pandas datasets (visual inspection only)
+# expand viewing area for pandas datasets (visual inspection only)
 pd.set_option('display.max_rows', 500)
-pd.set_option("display.max_columns",30)
-pd.set_option("display.max_colwidth",20)
-pd.set_option("display.width",300)
+pd.set_option("display.max_columns", 30)
+pd.set_option("display.max_colwidth", 20)
+pd.set_option("display.width", 300)
 
-#stat_files.append(r"..\tests\test_samples\rtcwconsole-09-12-2019.log") #3 #http://krisofwin.com/stats/stats/2019.Sep.13.%2015h54m23s.html
+# stat_files.append(r"..\tests\test_samples\rtcwconsole-09-12-2019.log") #3 #http://krisofwin.com/stats/stats/2019.Sep.13.%2015h54m23s.html
 
 print("\nScanning for test files\n")
-stat_files = [] 
+stat_files = []
 for subdir, dirs, files in os.walk(r"..\tests\test_samples\\"):
-        for file in files:
-            #print os.path.join(subdir, file)
-            filepath = subdir + os.sep + file
-            if filepath.endswith(".log"):
-                stat_files.append(filepath)
+    for file in files:
+        # print os.path.join(subdir, file)
+        filepath = subdir + os.sep + file
+        if filepath.endswith(".log"):
+            stat_files.append(filepath)
 
 
 #just pick last one for debugging

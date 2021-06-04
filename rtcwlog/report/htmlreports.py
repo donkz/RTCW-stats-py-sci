@@ -139,7 +139,7 @@ class HTMLReport:
             print("[!] Nothing to write.")
             return nothing
 
-        soup = BeautifulSoup("","html.parser")
+        soup = BeautifulSoup("", "html.parser")
         
         #<html>
         html = Tag(soup, name = "html")
@@ -158,7 +158,7 @@ class HTMLReport:
         style = Tag(soup, name = "style")
         meta = Tag(soup, name = "meta")
         meta["charset"] = "UTF-8"
-        
+
         soup.append(html)
         soup.html.append(head)
         soup.head.append(meta)
@@ -167,54 +167,57 @@ class HTMLReport:
         soup.head.append(script2)
         soup.head.append(style)
         soup.style.append(self.style_css)
-        
-        #<body>    
-        body = Tag(soup, name = "body")
+
+        # <body>
+        body = Tag(soup, name="body")
         soup.html.append(body)
-        soup.body.append(self.insert_header("Log file for a match from " + self.match_date,2))
+        soup.body.append(self.insert_header("Log file for a match from " + self.match_date, 2))
         
+        soup.body.append(self.insert_link("http://planet-rtcw.donkanator.com/?page=upload_stats", "Submit your own stats. "))
+        soup.body.append(self.insert_link("https://github.com/donkz/RTCW-stats-py-sci/blob/master/readme.md", " (Stats readme)"))
+
         soup.body.append(self.submission_text())
         soup.body.append(self.summary_text())
-        soup.body.append(self.insert_header("Results",2))
+        soup.body.append(self.insert_header("Results", 2))
         soup.body.append(self.insert_toggle("results"))
         soup.body.append(self.match_results_html_table)
-        soup.body.append(self.insert_header("Awards",2))
+        soup.body.append(self.insert_header("Awards", 2))
         soup.body.append(self.insert_toggle("awardsum"))
         soup.body.append(self.award_summaries_html_table)
-        soup.body.append(self.insert_header("Award details",3))
+        soup.body.append(self.insert_header("Award details", 3))
         soup.body.append(self.insert_text("Minimum rounds to be ranked 20% - " + str(self.awards.minrounds) + " or 40"))
-        
+
         if self.amendments:
             soup.body.append(self.insert_text("Amendments to ranks - " + str(self.amendments)))
         soup.body.append(self.insert_toggle("awards"))
         soup.body.append(self.award_stats_html_table)
-        
-        soup.body.append(self.insert_header("Accuracies",2))
+
+        soup.body.append(self.insert_header("Base stats", 2))
+        soup.body.append(self.insert_toggle("allstats"))
+        soup.body.append(self.basic_stats_html_table)
+
+        soup.body.append(self.insert_header("Accuracies", 2))
         soup.body.append(self.insert_text("Availability varies. To get more complete results bind f3 'ready;statsall'"))
         soup.body.append(self.insert_toggle("accuracy"))
         soup.body.append(self.personal_stats_html_table)
-        
-        soup.body.append(self.insert_header("Base stats",2))
-        soup.body.append(self.insert_toggle("allstats"))
-        soup.body.append(self.basic_stats_html_table)
-        
-        soup.body.append(self.insert_header("Weapon signatures",2))
-        soup.body.append(self.insert_toggle("weapons"))
-        soup.body.append(self.weapon_stats_html_table)
-        #soup.body.append(self.insert_header("Kill matrix",2))
-        #soup.body.append(self.kill_matrix_stats_html_table)
-        
-        soup.body.append(self.insert_header("Top Feuds",2))
+
+        # soup.body.append(self.insert_header("Weapon signatures",2))
+        # soup.body.append(self.insert_toggle("weapons"))
+        # soup.body.append(self.weapon_stats_html_table)
+        # soup.body.append(self.insert_header("Kill matrix",2))
+        # soup.body.append(self.kill_matrix_stats_html_table)
+
+        soup.body.append(self.insert_header("Top Feuds", 2))
         soup.body.append(self.insert_text("The most numerous head-to-head encounters of the match"))
         soup.body.append(self.insert_toggle("feuds"))
         soup.body.append(self.feuds_html_table)
-        
+
         if self.metrics["rounds_count"] > 40 and len(self.friends_html_table.text) > 100:
-            soup.body.append(self.insert_header("Best Friends",2))
+            soup.body.append(self.insert_header("Best Friends", 2))
             soup.body.append(self.insert_text("Players that win together"))
             soup.body.append(self.insert_toggle("friends"))
             soup.body.append(self.friends_html_table)
-        
+
         if self.award_megakills_html_table is not None:
             soup.body.append(self.insert_header("MegaKills",2))
             soup.body.append(self.insert_toggle("megakills"))
@@ -269,6 +272,15 @@ class HTMLReport:
         
         text.append(content)
         soup.append(text)
+        return soup
+    
+    def insert_link(self, url, link_text):
+        # <a href="url">link text</a>
+        soup = BeautifulSoup("","html.parser")
+        link = Tag(soup, name = "a")
+        link["href"] = url
+        link.append(link_text)
+        soup.append(link)
         return soup
     
     def insert_html(self, content):
@@ -462,14 +474,36 @@ class HTMLReport:
         soup.append(player_span)
         try:
             from seasons.season_medals import season_medals
-            if player_name.lower() in season_medals:
-                medals = season_medals[player_name.lower()].split(",")
+            replace_chars = {
+                '!': '',
+                '@': '',
+                "-" : "",
+                "+" : "",
+                "." : "",
+                "*" : "",
+                "$" : "s",
+                "|" : "",
+                "[" : "",
+                "]" : "",
+                "{" : "",
+                "}" : "",
+                "(" : "",
+                ")" : "",
+                "'" : "",
+                "0" : "o",
+                "1" : "i",
+                "3" : "e",
+            }
+            player_name_strip = player_name.lower().translate(str.maketrans(replace_chars))
+            if player_name_strip in season_medals:
+                medals = season_medals[player_name_strip].split(",")
                 for medal in medals:
                     color = medal[0]
                     count = int(medal[1:])
                     soup.append(self.medal_html_string(color, count))
         except:
-            print("[!] Medals were not applied")
+            print("[!] Medals were not applied for " + player_name.lower())
+            raise
         return soup
     
     def medal_html_string(self, color, count):
@@ -490,6 +524,12 @@ class HTMLReport:
             medal = self.leaf_emoji_html
         elif color == "d":
             medal = self.diamond_emoji_html
+        elif color == "f":
+            medal = self.silverware_emoji_html
+        elif color == "r":
+            medal = self.springfling_emoji_html
+        elif color == "t":
+            medal = self.trident_emoji_html
         for i in range(0, count):
             medal_span = Tag(soup, name = 'span')
             medal_span["style"] = "font-size:10px;"
@@ -569,28 +609,29 @@ class HTMLReport:
                 tr.append(td)
                 table.append(tr)
         return soup
-    
-    #Basic stats <table>
-    def all_stats_to_html(self,basic_stats):
+
+    def all_stats_to_html(self, basic_stats):
+        """Convert basic stats dataframe to HTML."""
         stats = basic_stats[0]
         # TODO: temporary adjustment
         stats.drop(['All_Deaths', 'All_Deaths_rank'], axis=1, inplace=True)
-        stats['Rounds_rank']=0
-        stats.rename(columns={'OSP_Gibs':'Gibs'}, inplace=True)
-        stats.rename(columns={'OSP_Damage_Given':'DMG'}, inplace=True)
-        stats.rename(columns={'OSP_Damage_Received':'DMR'}, inplace=True)
-        stats.rename(columns={'OSP_Team_Damage':'TDM'}, inplace=True)
-        stats.rename(columns={'DPF':'DPK'}, inplace=True)
-        
-        stats.rename(columns={'OSP_Gibs_rank':'Gibs_rank'}, inplace=True)
-        stats.rename(columns={'OSP_Damage_Given_rank':'DMG_rank'}, inplace=True)
-        stats.rename(columns={'OSP_Damage_Received_rank':'DMR_rank'}, inplace=True)
-        stats.rename(columns={'OSP_Team_Damage_rank':'TDM_rank'}, inplace=True)
-        stats.rename(columns={'DPF_rank':'DPK_rank'}, inplace=True)
+        stats['Rounds_rank'] = 0
+        stats.rename(columns={'OSP_Gibs': 'Gibs'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Given': 'DMG'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Received': 'DMR'}, inplace=True)
+        stats.rename(columns={'OSP_Team_Damage': 'TDM'}, inplace=True)
+        stats.rename(columns={'DPF': 'DPK'}, inplace=True)
+
+        stats.rename(columns={'OSP_Gibs_rank': 'Gibs_rank'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Given_rank': 'DMG_rank'}, inplace=True)
+        stats.rename(columns={'OSP_Damage_Received_rank': 'DMR_rank'}, inplace=True)
+        stats.rename(columns={'OSP_Team_Damage_rank': 'TDM_rank'}, inplace=True)
+        stats.rename(columns={'DPF_rank': 'DPK_rank'}, inplace=True)
         stats = stats[
-            [ 'Rounds', 'Kills',
+            ['Rounds',
+             'Kills',
              'KDR',
-             'KPR',
+#             'KPR',
              'Deaths',
              'TK',
              'TKd',
@@ -600,7 +641,7 @@ class HTMLReport:
              'DMG',
              'DMR',
              'TDM',
-             'DPR',
+ #            'DPR',
              'DPK',
              'Kills_rank',
              'Deaths_rank',
@@ -614,52 +655,64 @@ class HTMLReport:
              'DMR_rank',
              'TDM_rank',
              'KDR_rank',
-             'KPR_rank',
-             'DPR_rank',
+ #            'KPR_rank',
+  #           'DPR_rank',
              'DPK_rank']
-            ]
+        ]
         # TODO: end of temporary adjustment
-        
-        
         columns = stats.columns
-        
-        
-        
-        
-        soup = BeautifulSoup("","html.parser")
+
+        soup = BeautifulSoup("", "html.parser")
         metrics = [name for name in columns if "rank" not in name]
         cols = ["Player"] + metrics
-        
-        
-        table = Tag(soup, name = "table")
+
+        show_team = False
+        if len(basic_stats[0]["Team"].unique()) == 2:
+            cols = ["Team"] + cols
+            stats["Team"] = basic_stats[0]["Team"]
+            show_team = True
+
+        table = Tag(soup, name="table")
         table["class"] = "blueTable"
         table["id"] = "divallstats"
         soup.append(table)
-        tr = Tag(soup, name = "tr")
+        tr = Tag(soup, name="tr")
         table.append(tr)
-        
-        medals = {1 : "gold", 2 : "silver", 3: "bronze"}
-        
+
+        medals = {1: "gold", 2: "silver", 3: "bronze", 99: "totals"}
+
         for col in cols:
-            th = Tag(soup, name = "th")
+            th = Tag(soup, name="th")
             tr.append(th)
             th.append(col)
-            
+
         for index, row in stats.iterrows():
-            tr = Tag(soup, name = "tr")
-            td = Tag(soup, name = 'td')
+            tr = Tag(soup, name="tr")
+            if show_team:
+                td = Tag(soup, name="td")
+                td.insert(1, row["Team"])
+                td = self.set_base_css_class(td, row)
+                tr.append(td)
+            td = Tag(soup, name="td")
             td.insert(1, index)
+            td = self.set_base_css_class(td, row)
             tr.append(td)
             for col in metrics:
-                td = Tag(soup, name = 'td')
-                td.insert(1, (str(row[col]) + " ").replace(".0 ",""))
-                td["class"] = medals.get(row[col + "_rank"],"norank")
+                td = Tag(soup, name="td")
+                td.insert(1, (str(row[col]) + " ").replace(".0 ", ""))
+                td["class"] = medals.get(row[col + "_rank"], "norank")
+                td = self.set_base_css_class(td, row)
                 tr.append(td)
                 table.append(tr)
         return soup
     
+    def set_base_css_class(self, td, row):
+        if row["Kills_rank"] == 99:
+            td["class"] = "totals" 
+        return td
+
     #megakill table
-    def megakills_to_html(self,megakills):
+    def megakills_to_html(self, megakills):
         
         if megakills is None:
             return None
@@ -916,10 +969,8 @@ class HTMLReport:
                 tr.append(td)
                 table.append(tr)
         return soup
-    
-    
-        
-    #https://www.w3schools.com/charsets/ref_emoji.asp
+
+    # https://www.w3schools.com/charsets/ref_emoji.asp
     gold_medal_emoji_html = "&#129351;"
     silver_medal_emoji_html = "&#129352;"
     bronze_medal_emoji_html = "&#129353;"
@@ -927,10 +978,19 @@ class HTMLReport:
     cup_emoji_html = "&#127942;"
     amphora_emoji_html = "&#127994;"
     leaf_emoji_html = "&#127810;"
-    diamond_emoji_html = "&#128142;"#gem
+    diamond_emoji_html = "&#128142;"  # gem = 5 golds
+    silverware_emoji_html = "&#127860;"  # (fork & knife) silverware = 5 silvers
+    springfling_emoji_html = "&#x1F490;"  # spring fling cup win
+    trident_emoji_html = "&#x1F531;"  # 2 gols + 2 silver + 2 bronze
+    
     
     
     style_css = """
+    .totals {
+      background-color: #303030;
+      color: white;
+      font-weight: bold;
+    }
     .text {
       font-family: "Courier New", Courier, monospace;
       font-size: 14px;
