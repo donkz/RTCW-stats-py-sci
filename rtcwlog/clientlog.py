@@ -728,6 +728,7 @@ class ClientLogProcessor:
         line_order = 0
         current_player = None
         tmp_player_stat = ConstOsp.player_stat.copy()
+        colored_names = {}
         
         currentRound = Round(round_order) #likely garbage round because FIGHT did not happen yet
         
@@ -1087,6 +1088,26 @@ class ClientLogProcessor:
                             killer = x[2]
                         else: 
                             killer = ""
+                        
+                        x_with_colors = re.search(value.regex, val)
+                        if x_with_colors:
+                            if len(x.groups()) > 0:
+                                victim_colors = x_with_colors[1]
+                                colored_names[victim] = victim_colors
+                            else: 
+                                victim_colors = ""
+                            if len(x.groups()) > 1:
+                                killer_colors = x_with_colors[2]
+                                colored_names[killer] = killer_colors
+                            else: 
+                                killer_colors = ""
+# =============================================================================
+#                         else:
+#                             # the colors ^1 and ^7 fail the teammate match.... not important
+#                             print("Color regex failed:")
+#                             print("re.search('" + value.regex + "','" + val + "')")
+#                             print(line)
+# =============================================================================
                         stat_entry = StatLine("temp",line_order, round_order,currentRound.round_num,killer,value.event, value.mod, victim)
                     elif not currentRound.game_finished and currentRound.game_started and value.event == Const.EVENT_OBJECTIVE:
                         currentRound.obj_counter[x[1]] += 1
@@ -1178,8 +1199,6 @@ class ClientLogProcessor:
                 print("[!] fix_renames did not work for dictionary:")
                 print(self.renames)
                 
-
-            
             self.logdf = self.handle_renames(fixed_renames, ["killer","victim"], self.logdf, False)
             self.logdf = self.logdf[['round_guid','line_order','round_order','round_num','event','killer','mod','victim']]
             
@@ -1197,4 +1216,4 @@ class ClientLogProcessor:
             
             time_end_process_log = _time.time()
             print ("[ ] File processed " + self.medium_agnostic_file_name + ". Total time is " + str(round((time_end_process_log - time_start_process_log),2)) + " s")
-            return {"logs":self.logdf, "stats":self.statsdf, "matches":self.matchesdf, "renames" : renameDF, "players" : self.playersdf, "submitter" : self.submitter, "type" : self.match_type}
+            return {"logs":self.logdf, "stats":self.statsdf, "matches":self.matchesdf, "renames" : renameDF, "players" : self.playersdf, "submitter" : self.submitter, "type" : self.match_type, "colored_names": colored_names}

@@ -12,7 +12,8 @@ from bs4 import Tag
 from rtcwlog.report.awards import Awards 
 from rtcwlog.report.matchstats import MatchStats
 from rtcwlog.report.awardtext import AwardText
-from rtcwlog.constants.logtext import Const 
+from rtcwlog.constants.logtext import Const
+from rtcwlog.utils.rtcwcolors import rtcw_to_html_colors
 
 class HTMLReport:
     
@@ -42,6 +43,8 @@ class HTMLReport:
         time_mid_html_init = _time.time()
         if self.debug_time: print ("Time to init and load awards is " + str(round((time_mid_html_init - time_start_html_init),2)) + " s")
            
+        self.colored_names_html = self.convert_names_to_html(result)
+        #print("one", self.colored_names_html)
         
         self.award_stats_html_table = self.awards_to_html(self.award_stats["awards"])
         self.award_megakills_html_table = self.megakills_to_html(self.award_stats["megakills"])
@@ -57,6 +60,8 @@ class HTMLReport:
         match_results = matchstats.table_match_results(result)
         self.match_results_html_table = self.match_results_to_html(match_results)
         
+        #print("two", self.colored_names_html)
+        self.colored_names_html = self.convert_names_to_html(result)
         basic_stats = matchstats.table_base_stats(result)
         self.basic_stats_html_table = self.all_stats_to_html(basic_stats)
         
@@ -77,7 +82,7 @@ class HTMLReport:
         self.best_friends = matchstats.table_best_friends(result)
         self.friends_html_table = self.friends_to_html(self.best_friends)
         
-        
+
         renames = matchstats.table_renames(result)
         if renames[0] is None:
             self.renames_html_table = None
@@ -240,7 +245,7 @@ class HTMLReport:
         
         try:
             with open(outpath,"w",encoding="utf-8") as html_file:
-                html_file.write(soup.prettify())
+                html_file.write(str(soup))
         
             time_end_html_write = _time.time()
             if self.debug_time: print ("Time to write html is " + str(round((time_end_html_write - time_start_html_write),2)) + " s")
@@ -251,8 +256,8 @@ class HTMLReport:
         except UnicodeEncodeError as err:
             print("[!] Could not encode weird characters in html report " + outpath + " Error: ", err)
             return nothing
-        except:
-            print("[x] Could not write to " + outpath + " Unhandled error.")
+        except Exception as err:
+            print("[x] Could not write to " + outpath + " Unhandled error.", err)
             pass
         return (outpath, out_file_name)
             
@@ -445,10 +450,15 @@ class HTMLReport:
                 th["title"] = self.award_info.awards[col].column_title
         for index, row in awardsdf.iterrows():
             player_name = index
-            player_name_soup = self.get_html_medals(player_name)
+            player_medals_span = self.get_html_medals(player_name)
+            name_span = self.colored_names_html.get(index, index)
+
             tr = Tag(soup, name = "tr")
             td = Tag(soup, name = 'td')
-            td.insert(1, player_name_soup)
+            
+            td.insert(1, name_span)
+            td.append(player_medals_span)
+            
             tr.append(td)
             for col in order:
                 td = Tag(soup, name = 'td')
@@ -470,7 +480,7 @@ class HTMLReport:
     def get_html_medals(self, player_name):
         soup = BeautifulSoup("","html.parser")
         player_span = Tag(soup, name = 'span')
-        player_span.insert(1, player_name)
+        #player_span.insert(1, player_name)
         soup.append(player_span)
         try:
             from seasons.season_medals import season_medals
@@ -680,7 +690,7 @@ class HTMLReport:
         table.append(tr)
 
         medals = {1: "gold", 2: "silver", 3: "bronze", 99: "totals"}
-
+        
         for col in cols:
             th = Tag(soup, name="th")
             tr.append(th)
@@ -688,15 +698,20 @@ class HTMLReport:
 
         for index, row in stats.iterrows():
             tr = Tag(soup, name="tr")
+            
             if show_team:
                 td = Tag(soup, name="td")
                 td.insert(1, row["Team"])
                 td = self.set_base_css_class(td, row)
                 tr.append(td)
+                
             td = Tag(soup, name="td")
-            td.insert(1, index)
+            name = self.colored_names_html.get(index, index)
+            td.insert(1, name)
             td = self.set_base_css_class(td, row)
             tr.append(td)
+            #print(index, name, td)
+            
             for col in metrics:
                 td = Tag(soup, name="td")
                 td.insert(1, (str(row[col]) + " ").replace(".0 ", ""))
@@ -969,6 +984,14 @@ class HTMLReport:
                 tr.append(td)
                 table.append(tr)
         return soup
+    
+    def convert_names_to_html(self, result):
+        colored_names_html = {}
+        if "colored_names" not in result:
+            return colored_names_html
+        for name in result["colored_names"]:
+            colored_names_html[name] = rtcw_to_html_colors(result["colored_names"][name])
+        return colored_names_html
 
     # https://www.w3schools.com/charsets/ref_emoji.asp
     gold_medal_emoji_html = "&#129351;"
@@ -986,6 +1009,52 @@ class HTMLReport:
     
     
     style_css = """
+    .c0 { font-weight:bold;color:#000000 }
+    .c1 { font-weight:bold;color:#DA0120 }
+    .c2 { font-weight:bold;color:#00B906 }
+    .c3 { font-weight:bold;color:#d8da00;} /* d0d719 #E8FF19 */
+    .c4 { font-weight:bold;color:#170BDB }
+    .c5 { font-weight:bold;color:#23C2C6 }
+    .c6 { font-weight:bold;color:#E201DB }
+    .c7 { font-weight:bold;color:#999999 } /*FFFFFF*/
+    .c8 { font-weight:bold;color:#CA7C27 }
+    .c9 { font-weight:bold;color:#757575 }
+    .ca { font-weight:bold;color:#EB9F53 }
+    .cb { font-weight:bold;color:#106F59 }
+    .cc { font-weight:bold;color:#5A134F }
+    .cd { font-weight:bold;color:#035AFF }
+    .ce { font-weight:bold;color:#681EA7 }
+    .cf { font-weight:bold;color:#5097C1 }
+    .cg { font-weight:bold;color:#BEDAC4 }
+    .ch { font-weight:bold;color:#024D2C }
+    .ci { font-weight:bold;color:#7D081B }
+    .cj { font-weight:bold;color:#90243E }
+    .ck { font-weight:bold;color:#743313 }
+    .cl { font-weight:bold;color:#A7905E }
+    .cm { font-weight:bold;color:#555C26 }
+    .cn { font-weight:bold;color:#AEAC97 }
+    .co { font-weight:bold;color:#C0BF7F }
+    .cp { font-weight:bold;color:#000000 }
+    .cq { font-weight:bold;color:#DA0120 }
+    .cr { font-weight:bold;color:#00B906 }
+    .cs { font-weight:bold;color:#d8da00 } /* E8FF19 */
+    .ct { font-weight:bold;color:#170BDB }
+    .cu { font-weight:bold;color:#23C2C6 }
+    .cv { font-weight:bold;color:#E201DB }
+    .cw { font-weight:bold;color:#CCCCCC } /*FFFFFF*/
+    .cx { font-weight:bold;color:#CA7C27 }
+    .cy { font-weight:bold;color:#757575 }
+    .cz { font-weight:bold;color:#CC8034 }
+    .ccr { font-weight:bold;color:#000000 }
+    .csl { font-weight:bold;color:#DBDF70 } /* / */
+    .cst { font-weight:bold;color:#BBBBBB } /* * */
+    .cmi { font-weight:bold;color:#747228 } /* - */
+    .cpl { font-weight:bold;color:#993400 } /* + */
+    .cqu { font-weight:bold;color:#670504 } /* ? */
+    .cat { font-weight:bold;color:#623307 } /* @ */
+    .cmt { font-weight:bold;color:#170BDB }
+    .clt { font-weight:bold;color:#170BDB }
+    
     .totals {
       background-color: #303030;
       color: white;
